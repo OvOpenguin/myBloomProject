@@ -150,11 +150,20 @@ a {
 
 /* 共用區 */
 
-h2{
+h2 {
     font-size: 32px;
 }
-h3{
+
+h3 {
     font-size: 32px;
+}
+
+.btn {
+    color: brown;
+    padding: 10px 20px;
+    margin: 20px 0;
+    border: 2px solid #000;
+    border-radius: 999px;
 }
 
 /* header區 */
@@ -180,7 +189,7 @@ header ul li a:hover {
     display: flex;
     justify-content: center;
     /* margin: 0px 100px; */
-    height: 100vh;
+    height: auto;
     padding: 40px 0;
 }
 
@@ -210,7 +219,7 @@ header ul li a:hover {
 /* activity */
 
 .activity {
-    margin: 0 200px;
+    margin: 0 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -224,73 +233,125 @@ header ul li a:hover {
 
 .activity h3 {
     text-align: center;
-    padding: 10px 0;
-}
-
-.activity h4 {
-    text-align: center;
-}
-
-.activity figure {
-    /* background-color: aqua; */
-    display: inline-block;
+    padding-bottom: 50px;
 }
 
 .gallery {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
 .gallery h4 {
-    padding: 20px 0;
+    padding: 10px 0;
+    text-align: left;
 }
 
 .pic {
+    width: 100%;
     height: auto;
-    margin: 0 30px;
-
+    object-fit: cover;
+    margin: 0 40px;
 }
 
-
-.f1 {
-    width: 300px;
+.pic .f1 {
+    width: 100%;
     background-image: url('../images/藍底.svg');
     background-repeat: no-repeat;
+    background-position: right
 }
 
-.btn {
-    color: brown;
-    padding: 10px 20px;
-    margin: 20px 0;
-    border: 2px solid #000;
-    border-radius: 999px;
-}
 
 /* 最新消息區 */
 .news {
-    margin: 50px 200px;
+    margin: 50px 100px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
     align-items: center;
 }
 
-.newsList{
+.newsList {
+    /* flex: 1 == flex-grow: 1，將父層剩餘給newsList  */
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-right: 150px;
-}
-.news img{
-    width: 713px;
-    height: 545px;
-}
-.newsList ul{
-    margin: 50px 0;
+    padding: 50px 0 0 100px;
 }
 
-.newsList ul li{
-    padding: 16px 100px
+.news img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.newsList ul {
+    margin: 30px 0 10px 0;
+}
+
+.newsList ul li {
+    padding: 10px 0;
+}
+
+.newsList ul li .tag {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-right: 60px;
+    background-color: aquamarine;
+}
+
+.newsList ul li a {
+    padding: 5px 10px;
+    margin-right: 100px;
+    color: tomato;
+}
+
+/* 認識花卉 */
+.introFlower {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 100px;
+
+}
+
+.introFlower .click {
+    display: flex;
+    margin-right: 100px;
+}
+
+.introFlower .click img{
+    width: 350px;
+}
+.leftPic{
+    margin-right: 30px;
+}
+
+
+.book img {
+    width: 50%;
+    height: auto;
+}
+
+/* 花牆票選 */
+.vote{
+    display: flex;
+    align-items: center;
+    margin: 50px 100px;
+}
+
+.voteTitle{
+    margin-right: 30px;
+}
+.vote .wall{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+/* 頁委區 */
+footer{
+    padding: 10px 0;
+    text-align: center;
 }
