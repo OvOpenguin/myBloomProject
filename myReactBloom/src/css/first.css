@@ -148,6 +148,15 @@ a {
     outline: 1px solid red;
 }
 
+/* 共用區 */
+
+h2{
+    font-size: 32px;
+}
+h3{
+    font-size: 32px;
+}
+
 /* header區 */
 
 header ul {
@@ -161,6 +170,7 @@ header ul li a {
     padding: 10px 10px;
     color: brown;
 }
+
 header ul li a:hover {
     color: blueviolet;
 }
@@ -169,25 +179,27 @@ header ul li a:hover {
 .hero {
     display: flex;
     justify-content: center;
-    /* margin: 0px 100px; */ 
+    /* margin: 0px 100px; */
     height: 100vh;
     padding: 40px 0;
 }
-.name{
+
+.name {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.name img{
+
+.name img {
     width: 150px;
 }
 
-.heroFlower img{
+.heroFlower img {
     width: 800px;
 }
 
-.slogan{
+.slogan {
     display: flex;
     flex-direction: column;
     justify-content: end;
@@ -197,23 +209,88 @@ header ul li a:hover {
 
 /* activity */
 
-.activity{
+.activity {
     margin: 0 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-.activity h2{
+
+.activity h2 {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.activity h3 {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.activity h4 {
     text-align: center;
 }
-.activity h3{
-    text-align: center;
+
+.activity figure {
+    /* background-color: aqua; */
+    display: inline-block;
 }
-.gallery{
+
+.gallery {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.pic{
-    width: 300px;
-    height: 300px;
-    background-color: aqua;
+
+.gallery h4 {
+    padding: 20px 0;
+}
+
+.pic {
+    height: auto;
     margin: 0 30px;
+
+}
+
+
+.f1 {
+    width: 300px;
+    background-image: url('../images/藍底.svg');
+    background-repeat: no-repeat;
+}
+
+.btn {
+    color: brown;
+    padding: 10px 20px;
+    margin: 20px 0;
+    border: 2px solid #000;
+    border-radius: 999px;
+}
+
+/* 最新消息區 */
+.news {
+    margin: 50px 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.newsList{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 150px;
+}
+.news img{
+    width: 713px;
+    height: 545px;
+}
+.newsList ul{
+    margin: 50px 0;
+}
+
+.newsList ul li{
+    padding: 16px 100px
 }
