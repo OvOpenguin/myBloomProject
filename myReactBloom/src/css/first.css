@@ -158,6 +158,11 @@ h3 {
     font-size: 32px;
 }
 
+img{
+    display: block;
+    height: auto;
+}
+
 .btn {
     color: brown;
     padding: 10px 20px;
@@ -267,6 +272,9 @@ header ul li a:hover {
     margin: 50px 100px;
     display: flex;
     align-items: center;
+    background-image: url(../images/大綠底圖.svg);
+    background-repeat: no-repeat;
+    background-position: left;
 }
 
 .newsList {
@@ -276,13 +284,18 @@ header ul li a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 50px 0 0 100px;
+    padding: 50px 0 0 50px;
+    margin-right: 50px;
+    
+}
+
+.newsPic{
+    margin-left: -50px;
 }
 
 .news img {
     width: 100%;
-    height: 300px;
-    object-fit: cover;
+    /* object-fit: cover; */
 }
 
 .newsList ul {
@@ -290,7 +303,9 @@ header ul li a:hover {
 }
 
 .newsList ul li {
+    margin-bottom: 10px;
     padding: 10px 0;
+    background: #fff;
 }
 
 .newsList ul li .tag {
@@ -321,7 +336,7 @@ header ul li a:hover {
 }
 
 .introFlower .click img{
-    width: 350px;
+    width: 100%;
 }
 .leftPic{
     margin-right: 30px;
@@ -343,10 +358,24 @@ header ul li a:hover {
 .voteTitle{
     margin-right: 30px;
 }
+
+.crown img{
+    
+    width: 50%;
+}
+
 .vote .wall{
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    background-color: rgb(210, 236, 255, .5);
+    padding: 30px;
+}
+
+.wall img{
+    display: block;
+    width: 85%;
+    margin: 0 20px;
 }
 
 

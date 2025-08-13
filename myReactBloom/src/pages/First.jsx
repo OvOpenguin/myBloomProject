@@ -6,6 +6,14 @@ import 活動照片 from "../images/活動照片.svg"
 import 花卉介紹 from "../images/底圖_花卉介紹.svg"
 import 花卉遊戲 from "../images/底圖_花卉遊戲.svg"
 import 書 from "../images/書.svg"
+import 王冠 from "../images/王冠.svg"
+import 票選1 from "../images/首頁-票選1-框.svg"
+import 票選2 from "../images/首頁-票選2-框.svg"
+import 票選3 from "../images/首頁-票選3-框.svg"
+import 票選4 from "../images/首頁-票選4-框.svg"
+
+
+
 
 
 
@@ -32,7 +40,7 @@ const App = () => {
 
                 <section className="activity">
                     <h2>近期活動</h2>
-                    <h3>recent events</h3>
+                    <h3>Recent Events</h3>
                     {/* 近期活動切換 */}
                     <div className="gallery">
                         <div className="icon">left 切換鍵</div>
@@ -60,7 +68,7 @@ const App = () => {
                 <section className="news">
                     {/* 左側-消息列表 */}
                     <div className="newsList">
-                        <h2>最新消息 NEWS</h2>
+                        <h2>最新消息 News</h2>
 
                         <ul>
                             <li>
@@ -98,7 +106,7 @@ const App = () => {
                     <div className="click">
 
                         <div className="leftPic"><a href="#"><img src={花卉介紹} alt="花卉介紹" /></a></div>
-                        
+
                         <div className="rightPic"><a href="#"><img src={花卉遊戲} alt="花卉遊戲" /></a></div>
                     </div>
 
@@ -114,22 +122,24 @@ const App = () => {
                     {/* 左側-標題圖示 */}
                     <div className="voteTitle">
                         <h2>花牆票選</h2>
-                        <h3>Popularity vote</h3>
+                        <h3>Popularity Vote</h3>
                         <div>按鈕</div>
-                        <div className="crown"><img src="#" alt="王冠" /></div>
+                        <div className="crown"><img src={王冠} alt="王冠" /></div>
                     </div>
 
                     {/* 右側-花牆切換 */}
                     <div className="wall">
-                        <div><img src="#" alt="花圖1" /></div>
-                        <div><img src="#" alt="花圖1" /></div>
-                        <div><img src="#" alt="花圖1" /></div>
-                        <div><img src="#" alt="花圖1" /></div>
+                        <div><img src={票選1} alt="花圖1" /></div>
+                        <div><img src={票選2} alt="花圖1" /></div>
+                        <div><img src={票選3} alt="花圖1" /></div>
+                        <div><img src={票選4} alt="花圖1" /></div>
                     </div>
                 </section>
             </main>
             {/* 頁尾 */}
-            <footer>@copyright</footer>
+            <footer>
+                <small>Copyright &copy; 北花冊 Bloomchure.</small>
+            </footer>
 
 
         </>
