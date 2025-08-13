@@ -1,4 +1,4 @@
-import "../css/first.css"
+import "../css/home.css"
 import 北花冊 from "../images/北花冊.svg"
 import 大花 from "../images/heroFlower.svg"
 import 貼紙花1 from "../images/貼紙花1.svg"
@@ -12,17 +12,6 @@ import 書 from "../images/書.svg"
 const App = () => {
     return (
         <>
-            <header>
-                <nav>
-                    <ul>
-                        <li><a href="#">花卉地圖</a></li>
-                        <li><a href="#">賞花快訊</a></li>
-                        <li><a href="#">花牆分享</a></li>
-                        <li><a href="#">花卉故事</a></li>
-                        <li><a href="#">登入/註冊</a></li>
-                    </ul>
-                </nav>
-            </header>
             <main>
                 <section className="hero">
                     <div className="name"><img src={北花冊} alt="北花冊" /><p>Bloomchure</p></div>
@@ -128,10 +117,6 @@ const App = () => {
                     </div>
                 </section>
             </main>
-            {/* 頁尾 */}
-            <footer>@copyright</footer>
-
-
         </>
     )
 }

@@ -166,23 +166,7 @@ h3 {
     border-radius: 999px;
 }
 
-/* header區 */
 
-header ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-}
-
-header ul li a {
-    padding: 10px 10px;
-    color: brown;
-}
-
-header ul li a:hover {
-    color: blueviolet;
-}
 
 /* hero區-主視覺 */
 .hero {
@@ -350,8 +334,3 @@ header ul li a:hover {
 }
 
 
-/* 頁委區 */
-footer{
-    padding: 10px 0;
-    text-align: center;
-}
