@@ -1,11 +1,17 @@
-import "../css/home.css"
-import 北花冊 from "../images/北花冊.svg"
+import "../sass/home.scss"
+import 北花冊 from "../images/北花冊.webp"
 import 大花 from "../images/heroFlower.svg"
-import 貼紙花1 from "../images/貼紙花1.svg"
-import 活動照片 from "../images/活動照片.svg"
-import 花卉介紹 from "../images/底圖_花卉介紹.svg"
-import 花卉遊戲 from "../images/底圖_花卉遊戲.svg"
+import 貼紙花1 from "../images/首頁-貼紙花.webp"
+import 活動照片 from "../images/首頁-最新消息-活動圖片.webp"
+import 花卉介紹 from "../images/底圖_花卉介紹.png"
+import 花卉遊戲 from "../images/底圖_花卉遊戲.png"
 import 書 from "../images/書.svg"
+import 票選1 from '../images/首頁-票選1-框.png'
+import 票選2 from '../images/首頁-票選2-框.png'
+import 票選3 from '../images/首頁-票選3-框.png'
+import 票選4 from '../images/首頁-票選4-框.png'
+import 王冠 from '../images/王冠.svg'
+import 首頁消息花 from '../images/首頁消息-花.svg'
 
 
 
@@ -26,15 +32,15 @@ const App = () => {
                     <div className="gallery">
                         <div className="icon">left 切換鍵</div>
 
-                        <div className="pic p1">
+                        <div>
                             <img className="f1" src={貼紙花1} alt="花1" />
                             <h4>花季活動名稱</h4>
                         </div>
-                        <div className="pic p2">
-                            <img className="f1" src={貼紙花1} alt="花1" />
+                        <div>
+                            <img className="f2" src={貼紙花1} alt="花1" />
                             <h4>花季活動名稱</h4>
                         </div>
-                        <div className="pic p3">
+                        <div>
                             <img className="f1" src={貼紙花1} alt="花1" />
                             <h4>花季活動名稱</h4>
                         </div>
@@ -49,7 +55,8 @@ const App = () => {
                 <section className="news">
                     {/* 左側-消息列表 */}
                     <div className="newsList">
-                        <h2>最新消息 NEWS</h2>
+                        <h2>最新消息 News </h2>
+                        <div className="newsF"><img src={首頁消息花} alt="花" /></div>
 
                         <ul>
                             <li>
@@ -87,7 +94,7 @@ const App = () => {
                     <div className="click">
 
                         <div className="leftPic"><a href="#"><img src={花卉介紹} alt="花卉介紹" /></a></div>
-                        
+
                         <div className="rightPic"><a href="#"><img src={花卉遊戲} alt="花卉遊戲" /></a></div>
                     </div>
 
@@ -104,16 +111,17 @@ const App = () => {
                     <div className="voteTitle">
                         <h2>花牆票選</h2>
                         <h3>Popularity vote</h3>
-                        <div>按鈕</div>
-                        <div className="crown"><img src="#" alt="王冠" /></div>
+                        <div className="arrow" >按鈕</div>
+                        <div className="crown"><img src={王冠} alt="王冠" /></div>
                     </div>
 
                     {/* 右側-花牆切換 */}
+
                     <div className="wall">
-                        <div><img src="#" alt="花圖1" /></div>
-                        <div><img src="#" alt="花圖1" /></div>
-                        <div><img src="#" alt="花圖1" /></div>
-                        <div><img src="#" alt="花圖1" /></div>
+                        <figure><img src={票選1} alt="票選1" /></figure>
+                        <figure><img src={票選2} alt="票選2" /></figure>
+                        <figure><img src={票選3} alt="票選3" /></figure>
+                        <figure><img src={票選4} alt="票選4" /></figure>
                     </div>
                 </section>
             </main>

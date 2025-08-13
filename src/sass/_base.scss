@@ -1,0 +1,23 @@
+/*統一設定*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+}

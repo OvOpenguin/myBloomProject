@@ -1,0 +1,234 @@
+@use 'reset';
+@use 'base' as *;
+@use 'layout' as *;
+
+//outline check
+* {
+    outline: 1px solid red;
+}
+
+/* home共用區 */
+
+section {
+    margin: 50px 100px;
+}
+
+h2,
+h3,
+h4 {
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1rem;
+}
+
+.btn {
+    color: brown;
+    padding: 10px 20px;
+    margin: 20px 0;
+    border: 2px solid #5e0e0e;
+    border-radius: 999px;
+    background-color: #fff;
+}
+
+// hero區-主視覺
+.hero {
+    display: flex;
+
+    .name {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 80%;
+        }
+    }
+}
+
+.slogan {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding-bottom: 100px;
+    // margin: 0 -100px;
+}
+
+// 近期活動區-排版結構
+.activity {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .gallery {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        img {
+            width: 100%;
+            background-repeat: no-repeat;
+            background-position: 50%;
+            background-size: 80%;
+        }
+
+        .f1 {
+            background-image: url('../images/首頁-近期活動-圖片底色-藍.svg');
+        }
+
+        .f2 {
+            background-image: url('../images/首頁-近期活動-圖片底色-綠.svg');
+        }
+    }
+}
+
+// 近期活動區-字體間距
+.activity {
+    h2 {
+        padding: 10px 0;
+    }
+
+    h3 {
+        margin-bottom: 40px;
+    }
+
+    h4 {
+        padding: 10px 0;
+    }
+}
+
+// 最新消息區
+.news {
+    display: flex;
+    align-items: center;
+    background-image: url('../images/首頁-最新消息-圖片底色-綠.webp');
+    background-repeat: no-repeat;
+    padding: 50px;
+
+    .newsList {
+        flex: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        margin-left: 150px;
+
+        // 最新消息區的花
+        .newsF{
+            width: 200px;
+            position: absolute;
+            left: 50px;
+            top: 1400px;
+        }
+
+        ul {
+            margin: 30px 0 10px 0;
+
+            li {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                width: 600px;
+                margin-bottom: 10px;
+                padding: 10px 20px;
+                background-color: #fff;
+
+                .tag {
+                    margin-right: 10px;
+                    padding: 5px 10px;
+                    border-radius: 16px;
+                    background-color: aquamarine;
+                }
+
+                a {
+                    margin-right: 40px;
+                    padding: 5px;
+                    color: tomato;
+                }
+
+                time {
+                    padding: 5px;
+                }
+
+
+            }
+        }
+    }
+
+    .newsPic {
+        img {
+            object-fit: cover;
+        }
+    }
+}
+
+// 花牆票選
+.introFlower {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .click {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 30px;
+
+        img {
+            width: 350px;
+        }
+    }
+
+    .book {
+        width: 50%;
+    }
+
+}
+
+// 花牆票選
+.vote {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+    margin-right: 0;
+
+    .voteTitle {
+        .arrow {
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border-radius: 50%;
+            border: 1px solid #000;
+        }
+
+        .crown {
+            width: 150px;
+            transform: rotate(-0.1turn);
+        }
+    }
+
+    .wall {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 30px;
+        gap: 20px;
+        background: rgb(210, 236, 255, .5);
+    }
+
+}
