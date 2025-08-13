@@ -1,0 +1,27 @@
+@use "variable" as *;
+
+/* header區 */
+
+header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+header ul li a {
+    padding: 10px 10px;
+    color: $title-brown;
+}
+
+header ul li a:hover {
+    transform: scale(1.5);
+    color: blueviolet;
+}
+
+
+/* 頁尾區 */
+footer {
+    padding: 10px 0;
+    text-align: center;
+}

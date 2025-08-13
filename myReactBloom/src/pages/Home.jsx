@@ -20,17 +20,6 @@ import 票選4 from "../images/首頁-票選4-框.svg"
 const App = () => {
     return (
         <>
-            <header>
-                <nav>
-                    <ul>
-                        <li><a href="#">花卉地圖</a></li>
-                        <li><a href="#">賞花快訊</a></li>
-                        <li><a href="#">花牆分享</a></li>
-                        <li><a href="#">花卉故事</a></li>
-                        <li><a href="#">登入/註冊</a></li>
-                    </ul>
-                </nav>
-            </header>
             <main>
                 <section className="hero">
                     <div className="name"><img src={北花冊} alt="北花冊" /><p>Bloomchure</p></div>
@@ -74,22 +63,22 @@ const App = () => {
                             <li>
                                 <div className="tag">活動</div>
                                 <a href="#">荷與睡蓮誰美? 北投公園一次看</a>
-                                <time datetime="2025-12-31">2025-12-31</time>
+                                <time dateTime="2025-12-31">2025-12-31</time>
                             </li>
                             <li>
                                 <div className="tag">活動</div>
                                 <a href="#">荷與睡蓮誰美? 北投公園一次看</a>
-                                <time datetime="2025-12-31">2025-12-31</time>
+                                <time dateTime="2025-12-31">2025-12-31</time>
                             </li>
                             <li>
                                 <div className="tag">活動</div>
                                 <a href="#">荷與睡蓮誰美? 北投公園一次看</a>
-                                <time datetime="2025-12-31">2025-12-31</time>
+                                <time dateTime="2025-12-31">2025-12-31</time>
                             </li>
                             <li>
                                 <div className="tag">活動</div>
                                 <a href="#">荷與睡蓮誰美? 北投公園一次看</a>
-                                <time datetime="2025-12-31">2025-12-31</time>
+                                <time dateTime="2025-12-31">2025-12-31</time>
                             </li>
                         </ul>
                         <div className="btn">更多活動</div>
@@ -137,9 +126,9 @@ const App = () => {
                 </section>
             </main>
             {/* 頁尾 */}
-            <footer>
+            {/* <footer>
                 <small>Copyright &copy; 北花冊 Bloomchure.</small>
-            </footer>
+            </footer> */}
 
 
         </>
