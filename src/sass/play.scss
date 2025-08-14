@@ -1,0 +1,72 @@
+@use 'reset';
+@use 'base' as *;
+@use 'layout' as *;
+
+* {
+    outline: 1px solid red;
+}
+
+.playWrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 50px 100px;
+    position: relative;
+
+    // 絕對定位標題(會有動畫)
+    .playH2 {
+        font-size: 2rem;
+        position: absolute;
+        left: 50px;
+        top: 50px;
+    }
+
+    .playExplain {
+
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+
+        .upExplain {
+
+        }
+
+        .startBtn {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+
+            .btnS, .btnE{
+                padding: 50px;
+                background: red;
+            }
+        }
+
+
+    }
+
+    .questions {
+        display: flex;
+
+        figure {
+            min-width: 500px;
+        }
+
+        .answer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 50px;
+
+            .a1,
+            .a2,
+            .a3 {
+                padding: 20px 100px;
+            }
+        }
+    }
+
+
+
+}

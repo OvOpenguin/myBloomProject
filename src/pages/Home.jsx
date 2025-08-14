@@ -53,59 +53,59 @@ const App = () => {
                     <div className="btn">地圖搜尋→</div>
                 </section>
 
-                <section className="IndexNews">
-                    <div className="newsF"><img src={首頁消息花} alt="花" /></div>
-                    {/* 左側-消息列表 */}
-                    <div className="newsList">
-                        <h2>最新消息 News </h2>
+                <section>
+                    <div className="IndexNews">
+                        <div className="newsF"><img src={首頁消息花} alt="花" /></div>
+                        {/* 左側-消息列表 */}
+                        <div className="newsList">
+                            <h2>最新消息 News </h2>
+                            <ul>
+                                <li>
+                                    <div className="tag">活動</div>
+                                    <div className="listContent">
+                                        <a href="#">荷與睡蓮誰美? 北投公園一次看</a>
+                                        <time>2025-12-31</time>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div className="tag">活動</div>
+                                    <div className="listContent">
+                                        <a href="#">荷與睡蓮誰美? 北投公園一次看</a>
+                                        <time >2025-12-31</time>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div className="tag">活動</div>
+                                    <div className="listContent">
+                                        <a href="#">荷與睡蓮誰美? 北投公園一次看</a>
+                                        <time >2025-12-31</time>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div className="btn">更多活動</div>
+                        </div>
 
-
-                        <ul>
-                            <li>
-                                <div className="tag">活動</div>
-                                <div className="listContent">
-                                    <a href="#">荷與睡蓮誰美? 北投公園一次看</a>
-                                    <time datetime="2025-12-31">2025-12-31</time>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="tag">活動</div>
-                                <div className="listContent">
-                                    <a href="#">荷與睡蓮誰美? 北投公園一次看</a>
-                                    <time datetime="2025-12-31">2025-12-31</time>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="tag">活動</div>
-                                <div className="listContent">
-                                    <a href="#">荷與睡蓮誰美? 北投公園一次看</a>
-                                    <time datetime="2025-12-31">2025-12-31</time>
-                                </div>
-                            </li>
-                        </ul>
-                        <div className="btn">更多活動</div>
                     </div>
 
-
-                    {/* 右側-消息圖片 */}
-                    <div className="newsPic"><img src={活動照片} alt="活動照片" /></div>
                 </section>
 
-                <section className="IndexIntroFlower">
 
-                    {/* 左側-圖片按鈕 */}
-                    <div className="click">
+                <section>
+                    <div className="IndexIntroFlower">
+                        {/* 左側-圖片按鈕 */}
+                        <div className="click">
 
-                        <div className="leftPic"><a href="#"><img src={花卉介紹} alt="花卉介紹" /></a></div>
+                            <div className="leftPic"><a href="#"><img src={花卉介紹} alt="花卉介紹" /></a></div>
 
-                        <div className="rightPic"><a href="#"><img src={花卉遊戲} alt="花卉遊戲" /></a></div>
-                    </div>
+                            <div className="rightPic"><a href="#"><img src={花卉遊戲} alt="花卉遊戲" /></a></div>
+                        </div>
 
-                    {/* 右側-標題圖示 */}
-                    <div className="intro">
-                        <h2>認識花卉</h2>
-                        <h3>Flower Story</h3>
-                        <div className="book"><img src={書} alt="書" /></div>
+                        {/* 右側-標題圖示 */}
+                        <div className="intro">
+                            <h2>認識花卉</h2>
+                            <h3>Flower Story</h3>
+                            <div className="book"><img src={書} alt="書" /></div>
+                        </div>
                     </div>
                 </section>
 
@@ -127,7 +127,7 @@ const App = () => {
                         <figure><img src={票選4} alt="票選4" /></figure>
                     </div>
                 </section>
-            </main>
+            </main >
         </>
     )
 }
