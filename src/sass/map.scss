@@ -15,19 +15,26 @@
     .map-search {
         display: flex;
         flex-direction: column;
+        width: 50%;
 
         .map-select {
-            display: flex;
+            display: flex;            
+            margin: 0 auto;
 
             .map-season {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
+                display: flex;
                 
+                .map-four {
+                    width: 300px;
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
 
-                .map-four img {
-                    width: 100%;
-                    padding: 10px;
-                }
+                    img {
+                        width: 100%;
+                        padding: 10px;
+                    }
+                } 
+                
 
             }
         }
