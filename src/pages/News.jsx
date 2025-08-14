@@ -1,28 +1,29 @@
-import "../css/news.css"
+// import "../css/news.css"
+import "../sass/news.scss"
 
 const News = () => {
-  return (
-            <>
+    return (
+        <>
             {/* 圖片bar */}
             <section className="newsBanner">
-                <div className="banner-img">
+                <div className="news-bannerimg">
                     <img src="https://www.gotoju.co.jp/wp-content/themes/main/img/main/img_01.jpg" alt="" />
                 </div>
-                <div className="banner-img">
+                <div className="news-bannerimg">
                     <img src="https://www.gotoju.co.jp/wp-content/themes/main/img/main/img_01.jpg" alt="" />
                 </div>
-                <div className="banner-img">
+                <div className="news-bannerimg">
                     <img src="https://www.gotoju.co.jp/wp-content/themes/main/img/main/img_01.jpg" alt="" />
                 </div>
             </section>
 
             {/* 內容 */}
-            <section className="content">
-                <div className="news">
+            <section className="news-content">
+                <div className="news-news">
                     <div>
                         <h2>最新活動 News</h2>
                         <div>
-                            <select name="droplocation" id="">
+                            <select name="news-droplocation" id="">
                                 <option value="台北市">台北市</option>
                                 <option value="新北市">新北市</option>
                                 <option value="基隆市">基隆市</option>
@@ -34,56 +35,60 @@ const News = () => {
                         </div>
                     </div>
 
-                    <div className="newsCardWarp">
-                        <div className="newsCard">
-                            <div className="labledate">
-                                <div className="lable">活動</div>
+                    <div className="news-CardWarp">
+                        <div className="news-Card">
+                            <div className="news-labledate">
+                                <div className="news-lable">活動</div>
                                 <p>2025.07.28</p>
                             </div>
-                            <p className="cardTitle">標題</p>
+                            <p className="news-cardTitle">標題</p>
                             <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="a-img" alt="" />
                         </div>
-                        <div className="newsCard">
-                            <div className="labledate">
-                                <div className="lable">活動</div>
+                        <div className="news-Card">
+                            <div className="news-labledate">
+                                <div className="news-lable">活動</div>
                                 <p>2025.07.28</p>
                             </div>
-                            <p className="cardTitle">標題</p>
+                            <p className="news-cardTitle">標題</p>
                             <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="a-img" alt="" />
-                        </div>                        <div className="newsCard">
-                            <div className="labledate">
-                                <div className="lable">活動</div>
+                        </div>
+                        <div className="news-Card">
+                            <div className="news-labledate">
+                                <div className="news-lable">活動</div>
                                 <p>2025.07.28</p>
                             </div>
-                            <p className="cardTitle">標題</p>
+                            <p className="news-cardTitle">標題</p>
                             <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="a-img" alt="" />
-                        </div>                        <div className="newsCard">
-                            <div className="labledate">
-                                <div className="lable">活動</div>
+                        </div>
+                        <div className="news-Card">
+                            <div className="news-labledate">
+                                <div className="news-lable">活動</div>
                                 <p>2025.07.28</p>
                             </div>
-                            <p className="cardTitle">標題</p>
+                            <p className="news-cardTitle">標題</p>
                             <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="a-img" alt="" />
-                        </div>                        <div className="newsCard">
-                            <div className="labledate">
-                                <div className="lable">活動</div>
+                        </div>
+                        <div className="news-Card">
+                            <div className="news-labledate">
+                                <div className="news-lable">活動</div>
                                 <p>2025.07.28</p>
                             </div>
-                            <p className="cardTitle">標題</p>
+                            <p className="news-cardTitle">標題</p>
                             <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="a-img" alt="" />
-                        </div>                        <div className="newsCard">
-                            <div className="labledate">
-                                <div className="lable">活動</div>
+                        </div>
+                        <div className="news-Card">
+                            <div className="news-labledate">
+                                <div className="news-lable">活動</div>
                                 <p>2025.07.28</p>
                             </div>
-                            <p className="cardTitle">標題</p>
+                            <p className="news-cardTitle">標題</p>
                             <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="a-img" alt="" />
                         </div>
                     </div>
                     <div> 頁碼區 </div>
                 </div>
 
-                <div className="discount">
+                <div className="news-discount">
                     <div >
                         <h2>優惠專區</h2>
                         <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="a-img" alt="" />
@@ -95,7 +100,7 @@ const News = () => {
                 </div>
             </section>
         </>
-  )
+    )
 }
 
 export default News
