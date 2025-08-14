@@ -47,7 +47,7 @@
 }
 
 // 近期活動區-排版結構
-.activity1 {
+.Indexactivity {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -91,124 +91,11 @@
 }
 
 // 最新消息區
-.IndexNews {
-    width: 80%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url('../images/首頁-最新消息-圖片底色-綠.webp');
-    background-repeat: repeat-x;
-
-    // 最新消息區的花
-    .newsF {
-        position: absolute;
-        width: 200px;
-        top: -80px;
-        left: -80px;
-        // animation: swing 4s ease infinite;
-        // transform-origin: center center;
-    }
-
-
-    .newsList {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-
-
-        ul {
-            margin-top: 30px;
-
-            li {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                gap: 40px;
-                min-width: 800px;
-                margin-bottom: 10px;
-                padding: 5px 10px;
-                background-color: #fff;
-
-                .tag {
-                    padding: 2px 10px;
-                    background-color: rgb(251, 255, 43);
-                }
-
-                .listContent {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    flex: 1 0 0;
-
-                    a {
-                        color: tomato;
-                    }
-                }
-            }
-        }
-    }
-
-    .newsPic {
-
-
-        img {
-            object-fit: cover;
-        }
-    }
-}
-
-// RWD設定
-@media(max-width: 1200px) {
-    .IndexNews {
-        display: flex;
-        flex-direction: column;
-
-        .newsList {
-            margin: 0;
-
-            h2 {
-                margin-top: 50px;
-                ;
-            }
-
-            ul {
-
-                li {
-                    min-width: 600px;
-
-                    .tag {
-                        margin-right: 10px;
-                        padding: 2px 10px;
-                        background-color: rgb(251, 255, 43);
-                    }
-
-                    .listContent {
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        flex: 1 0 0;
-
-                        a {
-                            color: tomato;
-                        }
-
-
-                    }
-                }
-            }
-        }
-
-        .newsPic {
-            display: none;
-        }
-    }
-}
 
 
 
-// 花牆票選
+
+// 花卉故事
 .IndexIntroFlower {
     display: flex;
     justify-content: space-around;

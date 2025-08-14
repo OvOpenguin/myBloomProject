@@ -8,62 +8,101 @@
 
 .playWrap {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    padding: 50px 100px;
-    position: relative;
+    height: 100vh; //由於頁面小於h:1080px,讓高度維持100vh滿版。其他尺寸需讓h:auto
 
     // 絕對定位標題(會有動畫)
     .playH2 {
         font-size: 2rem;
         position: absolute;
-        left: 50px;
-        top: 50px;
+        left: 0px;
+        top: 0px;
+        color: chartreuse;
+        font-weight: 700;
     }
 
     .playExplain {
-
+        position: relative;
+        width: 650px;
         display: flex;
         flex-direction: column;
-        gap: 100px;
+        gap: 50px;
+        padding-top: 80px; //推開上內距，讓標題有空間做特效和裝飾
 
-        .upExplain {
 
+        .playRule {
+            display: flex;
+            justify-content: flex-end;
         }
 
-        .startBtn {
+        .playBtn {
             display: flex;
             flex-direction: column;
             gap: 50px;
+            width: 400px;
 
-            .btnS, .btnE{
-                padding: 50px;
-                background: red;
-            }
         }
 
 
     }
 
+    .play-bg {
+        position: absolute;
+        z-index: -1;
+        left: -150px;
+        top: 100px;
+    }
+
     .questions {
+        max-width: 850px;
         display: flex;
+        position: relative;
 
         figure {
-            min-width: 500px;
+            width: 64%;
         }
 
         .answer {
+            width: 36%;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            gap: 50px;
+            gap: 30px;
 
-            .a1,
-            .a2,
-            .a3 {
-                padding: 20px 100px;
+
+            .a1, .a2, .a3 {
+                text-align: center;
+                width: 200px;
+                height: 200px;
+                position: relative;
+                line-height: 200px;
+
+                &::after {
+                    content: '';
+                    /*一定要有content*/
+                    position: absolute;
+                    top: 10px;
+                    left: -20px;
+                    width: 100%;
+                    height: 100%;
+                    background-image: url('../images/play/play-btn-hover.svg');
+                    background-repeat: no-repeat;
+                    background-size: auto;
+                    z-index: -1;
+                    transform: scaleX(0);
+                    /* 初始時隱藏 */
+                    transform-origin: left;
+                    transition: transform 0.3s ease;
+                }
+
+                 &:hover::after {
+                        transform: scaleX(1);
+                        /* hover 時再顯示 */
+                    }
             }
+
         }
     }
 
