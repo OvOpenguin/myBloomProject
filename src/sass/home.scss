@@ -65,7 +65,7 @@ h4 {
 }
 
 // 近期活動區-排版結構
-.activity {
+.activity1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -94,7 +94,7 @@ h4 {
 }
 
 // 近期活動區-字體間距
-.activity {
+.IndexActivity {
     h2 {
         padding: 10px 0;
     }
@@ -109,12 +109,27 @@ h4 {
 }
 
 // 最新消息區
-.news {
+.IndexNews {
+    position: relative;
     display: flex;
     align-items: center;
     background-image: url('../images/首頁-最新消息-圖片底色-綠.webp');
-    background-repeat: no-repeat;
-    padding: 50px;
+    background-repeat: repeat-x;
+    margin-left: 100px;
+    margin-right: 0;
+
+
+    // 最新消息區的花
+    .newsF {
+        position: absolute;
+        width: 200px;
+        top: -80px;
+        left: -80px;
+        // animation: swing 4s ease infinite;
+        // transform-origin: center center;
+    }
+
+
 
     .newsList {
         flex: 70%;
@@ -122,60 +137,100 @@ h4 {
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        margin-left: 150px;
-
-        // 最新消息區的花
-        .newsF{
-            width: 200px;
-            position: absolute;
-            left: 50px;
-            top: 1400px;
-        }
+        margin-left: 100px;
 
         ul {
-            margin: 30px 0 10px 0;
+            margin-top: 30px;
 
             li {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                flex-wrap: wrap;
-                width: 600px;
+                gap: 40px;
+                min-width: 800px;
                 margin-bottom: 10px;
-                padding: 10px 20px;
+                padding: 5px 10px;
                 background-color: #fff;
 
                 .tag {
-                    margin-right: 10px;
-                    padding: 5px 10px;
-                    border-radius: 16px;
-                    background-color: aquamarine;
+                    padding: 2px 10px;
+                    background-color: rgb(251, 255, 43);
                 }
 
-                a {
-                    margin-right: 40px;
-                    padding: 5px;
-                    color: tomato;
+                .listContent {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    flex: 1 0 0;
+
+                    a {
+                        color: tomato;
+                    }
                 }
-
-                time {
-                    padding: 5px;
-                }
-
-
             }
         }
     }
 
     .newsPic {
+        margin-right: 100PX;
+
         img {
             object-fit: cover;
         }
     }
 }
 
+// RWD設定
+@media(max-width: 1200px) {
+    .IndexNews {
+        display: flex;
+        flex-direction: column;
+
+        .newsList {
+            margin: 0;
+
+            h2 {
+                margin-top: 50px;
+                ;
+            }
+
+            ul {
+
+                li {
+                    min-width: 600px;
+
+                    .tag {
+                        margin-right: 10px;
+                        padding: 2px 10px;
+                        background-color: rgb(251, 255, 43);
+                    }
+
+                    .listContent {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        flex: 1 0 0;
+
+                        a {
+                            color: tomato;
+                        }
+
+
+                    }
+                }
+            }
+        }
+
+        .newsPic {
+            display: none;
+        }
+    }
+}
+
+
+
 // 花牆票選
-.introFlower {
+.IndexIntroFlower {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -199,7 +254,7 @@ h4 {
 }
 
 // 花牆票選
-.vote {
+.IndexVote {
     display: flex;
     align-items: center;
     gap: 30px;

@@ -25,7 +25,7 @@ const App = () => {
                     <p className="slogan">北區賞花季，一頁收藏所有花事</p>
                 </section>
 
-                <section className="activity">
+                <section className="activity1">
                     <h2>近期活動</h2>
                     <h3>recent events</h3>
                     {/* 近期活動切換 */}
@@ -33,6 +33,7 @@ const App = () => {
                         <div className="icon">left 切換鍵</div>
 
                         <div>
+                            <div></div>
                             <img className="f1" src={貼紙花1} alt="花1" />
                             <h4>花季活動名稱</h4>
                         </div>
@@ -52,32 +53,34 @@ const App = () => {
                     <div className="btn">地圖搜尋→</div>
                 </section>
 
-                <section className="news">
+                <section className="IndexNews">
+                    <div className="newsF"><img src={首頁消息花} alt="花" /></div>
                     {/* 左側-消息列表 */}
                     <div className="newsList">
                         <h2>最新消息 News </h2>
-                        <div className="newsF"><img src={首頁消息花} alt="花" /></div>
+
 
                         <ul>
                             <li>
                                 <div className="tag">活動</div>
-                                <a href="#">荷與睡蓮誰美? 北投公園一次看</a>
-                                <time datetime="2025-12-31">2025-12-31</time>
+                                <div className="listContent">
+                                    <a href="#">荷與睡蓮誰美? 北投公園一次看</a>
+                                    <time datetime="2025-12-31">2025-12-31</time>
+                                </div>
                             </li>
                             <li>
                                 <div className="tag">活動</div>
-                                <a href="#">荷與睡蓮誰美? 北投公園一次看</a>
-                                <time datetime="2025-12-31">2025-12-31</time>
+                                <div className="listContent">
+                                    <a href="#">荷與睡蓮誰美? 北投公園一次看</a>
+                                    <time datetime="2025-12-31">2025-12-31</time>
+                                </div>
                             </li>
                             <li>
                                 <div className="tag">活動</div>
-                                <a href="#">荷與睡蓮誰美? 北投公園一次看</a>
-                                <time datetime="2025-12-31">2025-12-31</time>
-                            </li>
-                            <li>
-                                <div className="tag">活動</div>
-                                <a href="#">荷與睡蓮誰美? 北投公園一次看</a>
-                                <time datetime="2025-12-31">2025-12-31</time>
+                                <div className="listContent">
+                                    <a href="#">荷與睡蓮誰美? 北投公園一次看</a>
+                                    <time datetime="2025-12-31">2025-12-31</time>
+                                </div>
                             </li>
                         </ul>
                         <div className="btn">更多活動</div>
@@ -88,7 +91,7 @@ const App = () => {
                     <div className="newsPic"><img src={活動照片} alt="活動照片" /></div>
                 </section>
 
-                <section className="introFlower">
+                <section className="IndexIntroFlower">
 
                     {/* 左側-圖片按鈕 */}
                     <div className="click">
@@ -106,7 +109,7 @@ const App = () => {
                     </div>
                 </section>
 
-                <section className="vote">
+                <section className="IndexVote">
                     {/* 左側-標題圖示 */}
                     <div className="voteTitle">
                         <h2>花牆票選</h2>
