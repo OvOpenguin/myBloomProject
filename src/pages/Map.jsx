@@ -7,6 +7,7 @@ import 春 from "../images/花卉地圖-春季標籤-黃.svg"
 import 夏 from "../images/花卉地圖-夏季標籤-綠.svg"
 import 秋 from "../images/花卉地圖-秋季標籤-橘.svg"
 import 冬 from "../images/花卉地圖-冬季標籤-藍.svg"
+import mapby from "../images/map-bc-y.svg"
 
 
 function MapMonth({ name = "selectedmonth", value, onChange }) {
@@ -95,6 +96,7 @@ const Map = () => {
           </div>
           <div className="map-map">
             <MapIframe />
+            {/* <img src={mapby} alt="" /> */}
           </div>
         </div>
 
