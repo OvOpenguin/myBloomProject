@@ -19,13 +19,15 @@ const App = () => {
     return (
         <>
             <main>
+                {/* Hero 區 */}
                 <section className="hero">
                     <div className="name"><img src={北花冊} alt="北花冊" /><p>Bloomchure</p></div>
                     <div className="heroFlower"><img src={大花} alt="大花" /></div>
                     <p className="slogan">北區賞花季，一頁收藏所有花事</p>
                 </section>
 
-                <section className="activity1">
+                {/* 近期活動 */}
+                <section className="Indexactivity">
                     <h2>近期活動</h2>
                     <h3>recent events</h3>
                     {/* 近期活動切換 */}
@@ -53,62 +55,40 @@ const App = () => {
                     <div className="btn">地圖搜尋→</div>
                 </section>
 
+                {/* 最新消息+花卉科普 */}
                 <section>
-                    <div className="IndexNews">
-                        <div className="newsF"><img src={首頁消息花} alt="花" /></div>
-                        {/* 左側-消息列表 */}
-                        <div className="newsList">
-                            <h2>最新消息 News </h2>
+                    <div className="IndexNsp">
+                        {/* 左側-最新消息 */}
+
+                        <div className="Inews">
+                            <h2>最新消息</h2>
+                            <h3>News</h3>
                             <ul>
-                                <li>
-                                    <div className="tag">活動</div>
-                                    <div className="listContent">
-                                        <a href="#">荷與睡蓮誰美? 北投公園一次看</a>
-                                        <time>2025-12-31</time>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="tag">活動</div>
-                                    <div className="listContent">
-                                        <a href="#">荷與睡蓮誰美? 北投公園一次看</a>
-                                        <time >2025-12-31</time>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="tag">活動</div>
-                                    <div className="listContent">
-                                        <a href="#">荷與睡蓮誰美? 北投公園一次看</a>
-                                        <time >2025-12-31</time>
-                                    </div>
-                                </li>
+                                <li><div className="tag">活動</div><p>我是一大串的活頁消息標題</p><div className="">2025-10-15</div></li>
+                                <li><div>活動</div><div>我是一大串的活頁消息標題</div><div>2025-10-15</div></li>
+                                <li><div>活動</div><div>我是一大串的活頁消息標題</div><div>2025-10-15</div></li>
+                                <li><div>活動</div><div>我是一大串的活頁消息標題</div><div>2025-10-15</div></li>
                             </ul>
-                            <div className="btn">更多活動</div>
+                            <div className="btn">更多消息</div>
                         </div>
 
-                    </div>
-
-                </section>
 
 
-                <section>
-                    <div className="IndexIntroFlower">
-                        {/* 左側-圖片按鈕 */}
-                        <div className="click">
 
-                            <div className="leftPic"><a href="#"><img src={花卉介紹} alt="花卉介紹" /></a></div>
-
-                            <div className="rightPic"><a href="#"><img src={花卉遊戲} alt="花卉遊戲" /></a></div>
+                        {/* 右側-花卉科普 */}
+                        <div className="Isp">
+                            <div className="Istory"><a href="#"><img src={花卉介紹} alt="花卉介紹" /></a></div>
+                            <div className="Iplay"><a href="#"><img src={花卉遊戲} alt="花卉遊戲" /></a></div>
                         </div>
-
-                        {/* 右側-標題圖示 */}
-                        <div className="intro">
+                        {/* 花卉科普的標題 */}
+                        <div className="Istoryicon">
                             <h2>認識花卉</h2>
                             <h3>Flower Story</h3>
                             <div className="book"><img src={書} alt="書" /></div>
                         </div>
                     </div>
                 </section>
-
+                {/* 花牆票選 */}
                 <section className="IndexVote">
                     {/* 左側-標題圖示 */}
                     <div className="voteTitle">

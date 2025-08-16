@@ -24,10 +24,7 @@
 
     }
     // 1024px 以下的rwd未設定!
-    @media (max-width:430px) {
-        display: flex;
-        flex-direction: column;
-    }
+
 
     // 絕對定位標題(會有動畫)
     .playH2 {
@@ -45,7 +42,7 @@
 
     .playExplain {
         position: relative;
-        width: 650px;
+        // width: 650px; //好像不影響但先留著
         display: flex;
         flex-direction: column;
         gap: 50px;

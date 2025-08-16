@@ -6,7 +6,7 @@
 
 //outline check
 * {
-//    outline: 1px solid red;
+    //    outline: 1px solid red;
 }
 
 
@@ -52,6 +52,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: 50px;
 
     .gallery {
         display: flex;
@@ -90,34 +91,66 @@
     }
 }
 
-// 最新消息區
-
-
-
-
-// 花卉故事
-.IndexIntroFlower {
+// 最新消息區+花卉故事
+.IndexNsp {
+    position: relative;
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
+    gap:100px;
+    padding: 50px 100px;
+    background-color: rgb(237, 255, 249);
 
-    .click {
+    .Inews {
+        padding: 50px 100px;
+        background: #fff;
+        border-radius: 16px;
+
+        ul {
+            li {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 50px;
+                margin: 10px 0;
+            }
+        }
+
+        .btn {
+            text-align: center;
+            flex-grow: 0;
+        }
+
+
+
+    }
+
+    .Isp {
+
         display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 30px;
+        flex-direction: column;
+        gap: 20px;
+
 
         img {
-            width: 350px;
+            width: 100%;
+        }
+
+    }
+
+    .Istoryicon {
+        position: absolute;
+        width: 200px;
+        right: 30px;
+        top: -100px;
+
+        .book {
+            width: 70%;
         }
     }
-
-    .book {
-        width: 50%;
-    }
-
 }
+
 
 // 花牆票選
 .IndexVote {
@@ -126,6 +159,7 @@
     justify-content: flex-end;
     align-items: center;
     gap: 30px;
+    padding: 50px 0px 50px 100px;
 
 
     .voteTitle {
