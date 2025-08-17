@@ -103,28 +103,28 @@ const Map = () => {
           <h2>賞花活動 EVENT</h2>
           <div className="map-cardWarp">
             <div className="map-card">
-              <div className="map-lable">台北</div>
+              <p className="map-lable">台北</p>
               <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="map-img" alt="" />
-              <div className="map-date">07.01-09.23</div>
-              <div className="map-title">樟樹步道花海</div>
+              <div className="map-date">07.01 — 09.23</div>
+              <h3 className="map-title">樟樹步道花海</h3>
             </div>
             <div className="map-card">
-              <div className="map-lable">台北</div>
+              <p className="map-lable">台北</p>
               <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="map-img" alt="" />
-              <div className="map-date">07.01-09.23</div>
-              <div className="map-title">樟樹步道花海</div>
+              <div className="map-date">07.01 — 09.23</div>
+              <h3 className="map-title">樟樹步道花海</h3>
             </div>
             <div className="map-card">
-              <div className="map-lable">台北</div>
+              <p className="map-lable">台北</p>
               <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="map-img" alt="" />
-              <div className="map-date">07.01-09.23</div>
-              <div className="map-title">樟樹步道花海</div>
+              <div className="map-date">07.01 — 09.23</div>
+              <h3 className="map-title">樟樹步道花海</h3>
             </div>
             <div className="map-card">
-              <div className="map-lable">台北</div>
+              <p className="map-lable">台北</p>
               <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="map-img" alt="" />
-              <div className="map-date">07.01-09.23</div>
-              <div className="map-title">樟樹步道花海</div>
+              <div className="map-date">07.01 — 09.23</div>
+              <h3 className="map-title">樟樹步道花海</h3>
             </div>
 
           </div>

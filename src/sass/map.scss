@@ -3,7 +3,7 @@
 @use 'layout' as *;
 
 * {
-//    outline: 1px solid red;
+    //    outline: 1px solid red;
 }
 
 .map-inner {
@@ -17,6 +17,7 @@
         font-weight: 700;
         text-align: center;
         padding-top: 10px;
+        color: #64503C;
     }
 
     .map-search {
@@ -93,7 +94,7 @@
             background-image: url('../images/花卉地圖-賞花活動-底圖-藍.svg');
             background-repeat: no-repeat;
             margin-top: 20px;
-            padding: 50px 20px 50px 40px;
+            padding: 30px 20px 0 40px;
             display: flex;
             flex-wrap: wrap;
             grid-template-columns: repeat(2, 1fr);
@@ -109,12 +110,19 @@
                 .map-lable {
                     position: absolute;
                     width: 65px;
+                    height: 65px;
+                    line-height: 65px;
                     z-index: 2;
+                    background-color: #7DC5E4;
+                    border-radius: 99px;
+                    text-align: center;
+                    color: #fff;
                 }
 
                 .map-img {
                     position: relative;
-                    width: 250px;
+                    // width: 250px;
+                    height: 225px;
                     padding: 20px;
                     object-fit: cover;
                 }
@@ -122,32 +130,24 @@
                 .map-date {
                     position: relative;
                     width: 60%;
+                    height: 25px;
                     bottom: 60px;
                     z-index: 2;
                     padding: 0 20px;
+                    background-color: #69C9A0;
+                    color: #fff;
                 }
 
                 .map-title {
                     position: relative;
                     padding: 0 20px;
                     bottom: 40px;
+                    color: #64503C;
+                    font-size: 1rem;
+                    font-weight: 500;
                 }
             }
 
-        }
-
-        .map-lable {
-            width: 65px;
-            height: 65px;
-            background-color: #67a8dd;
-            border-radius: 99px;
-            padding: 15px;
-            text-align: center;
-        }
-
-        .map-date {
-
-            background-color: #67a8dd;
         }
     }
 
