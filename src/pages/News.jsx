@@ -1,7 +1,26 @@
-// import "../css/news.css"
 import "../sass/news.scss"
+import { useState } from "react";
+
+function MapLocation({ name = "selectedlocation", value, onChange }) {
+    return (
+        <select name={name} value={value} onChange={(e) => onChange(e.target.value)}>
+            <option value="" disabled>地區</option>
+            <option value="臺北市">臺北市</option>
+            <option value="新北市">新北市</option>
+            <option value="基隆市">基隆市</option>
+            <option value="桃園市">桃園市</option>
+            <option value="新竹市">新竹市</option>
+            <option value="新竹縣">新竹縣</option>
+            <option value="宜蘭縣">宜蘭縣</option>
+        </select>
+    );
+}
+
 
 const News = () => {
+
+    const [selectedlocation, setSelectedLocation] = useState("");
+
     return (
         <>
             {/* 圖片bar */}
@@ -16,25 +35,15 @@ const News = () => {
                     <img src="https://www.gotoju.co.jp/wp-content/themes/main/img/main/img_01.jpg" alt="" />
                 </div>
             </section>
-
             {/* 內容 */}
             <section className="news-content">
                 <div className="news-news">
                     <div>
                         <h2>最新活動 News</h2>
-                        <div>
-                            <select name="news-droplocation" id="">
-                                <option value="台北市">台北市</option>
-                                <option value="新北市">新北市</option>
-                                <option value="基隆市">基隆市</option>
-                                <option value="桃園縣">桃園縣</option>
-                                <option value="新竹縣">新竹縣</option>
-                                <option value="新竹市">新竹市</option>
-                                <option value="宜蘭縣">宜蘭縣</option>
-                            </select>
+                        <div className="news-select">
+                            <MapLocation value={selectedlocation} onChange={setSelectedLocation} />
                         </div>
                     </div>
-
                     <div className="news-CardWarp">
                         <div className="news-Card">
                             <div className="news-labledate">
@@ -42,7 +51,7 @@ const News = () => {
                                 <p>2025.07.28</p>
                             </div>
                             <p className="news-cardTitle">標題</p>
-                            <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="a-img" alt="" />
+                            <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="news-img" alt="" />
                         </div>
                         <div className="news-Card">
                             <div className="news-labledate">
@@ -50,7 +59,7 @@ const News = () => {
                                 <p>2025.07.28</p>
                             </div>
                             <p className="news-cardTitle">標題</p>
-                            <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="a-img" alt="" />
+                            <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="news-img" alt="" />
                         </div>
                         <div className="news-Card">
                             <div className="news-labledate">
@@ -58,7 +67,7 @@ const News = () => {
                                 <p>2025.07.28</p>
                             </div>
                             <p className="news-cardTitle">標題</p>
-                            <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="a-img" alt="" />
+                            <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="news-img" alt="" />
                         </div>
                         <div className="news-Card">
                             <div className="news-labledate">
@@ -66,7 +75,7 @@ const News = () => {
                                 <p>2025.07.28</p>
                             </div>
                             <p className="news-cardTitle">標題</p>
-                            <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="a-img" alt="" />
+                            <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="news-img" alt="" />
                         </div>
                         <div className="news-Card">
                             <div className="news-labledate">
@@ -74,7 +83,7 @@ const News = () => {
                                 <p>2025.07.28</p>
                             </div>
                             <p className="news-cardTitle">標題</p>
-                            <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="a-img" alt="" />
+                            <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="news-img" alt="" />
                         </div>
                         <div className="news-Card">
                             <div className="news-labledate">
@@ -82,10 +91,10 @@ const News = () => {
                                 <p>2025.07.28</p>
                             </div>
                             <p className="news-cardTitle">標題</p>
-                            <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="a-img" alt="" />
+                            <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="news-img" alt="" />
                         </div>
                     </div>
-                    <div> 頁碼區 </div>
+                    <div className="news-page"> 頁碼區 </div>
                 </div>
 
                 <div className="news-discount">
@@ -99,6 +108,7 @@ const News = () => {
                     </div>
                 </div>
             </section>
+
         </>
     )
 }

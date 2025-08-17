@@ -3,20 +3,20 @@
 @use 'layout' as *;
 
 * {
-    outline: 1px solid red;
+//    outline: 1px solid red;
 }
 
 .map-inner {
     display: flex;
-    padding: 0 100px;
-    justify-content: space-between;
+    padding: 0 50px;
     gap: 20px;
-    height: 100vh;
+    // height: 100vh;
 
     h2 {
-        font-size: 2rem;
+        font-size: 1.5rem;
         font-weight: 700;
         text-align: center;
+        padding-top: 10px;
     }
 
     .map-search {
@@ -27,6 +27,7 @@
         .map-selectAll {
             display: flex;
             margin-top: 20px;
+            padding-left: 40px;
 
             >* {
                 padding: 5px 15px;
@@ -72,13 +73,13 @@
         .map-map {
             background-image: url('../images/map-bc-y.svg');
             background-repeat: no-repeat;
-            background-position:  center;
+            background-position: center;
+            background-size: contain;
             display: flex;
-            width: 100%;
-            height: 500px;
+            height: 450px;
 
             iframe {
-                padding: 45px 60px;
+                padding: 40px 45px;
                 width: 100%;
             }
         }
@@ -92,16 +93,18 @@
             background-image: url('../images/花卉地圖-賞花活動-底圖-藍.svg');
             background-repeat: no-repeat;
             margin-top: 20px;
-            padding: 60px;
-            display: grid;
+            padding: 50px 20px 50px 40px;
+            display: flex;
+            flex-wrap: wrap;
             grid-template-columns: repeat(2, 1fr);
 
-            @media (max-width: 1240px) {
-                grid-template-columns: repeat(1, 1fr);
-            }
+            // @media (max-width: 1240px) {
+            //     grid-template-columns: repeat(1, 1fr);
+            // }
 
             .map-card {
-                display: block;
+                // display: inline-block;
+                width: 250px;
 
                 .map-lable {
                     position: absolute;
@@ -109,9 +112,9 @@
                     z-index: 2;
                 }
 
-                .iimmgg {
+                .map-img {
                     position: relative;
-                    width: 100%;
+                    width: 250px;
                     padding: 20px;
                     object-fit: cover;
                 }
@@ -121,12 +124,12 @@
                     width: 60%;
                     bottom: 60px;
                     z-index: 2;
-                    padding: 0 10px;
+                    padding: 0 20px;
                 }
 
                 .map-title {
                     position: relative;
-                    left: 20px;
+                    padding: 0 20px;
                     bottom: 40px;
                 }
             }

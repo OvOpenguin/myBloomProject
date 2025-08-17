@@ -1,5 +1,4 @@
 import "../sass/map.scss"
-import Select from "react-select"
 import { useState } from "react";
 
 
@@ -9,7 +8,7 @@ import 秋 from "../images/花卉地圖-秋季標籤-橘.svg"
 import 冬 from "../images/花卉地圖-冬季標籤-藍.svg"
 import mapby from "../images/map-bc-y.svg"
 
-
+// 月份選單
 function MapMonth({ name = "selectedmonth", value, onChange }) {
   return (
     <select name={name} value={value} onChange={(e) => onChange(e.target.value)}>
@@ -29,7 +28,7 @@ function MapMonth({ name = "selectedmonth", value, onChange }) {
     </select>
   );
 }
-
+// 地區選單
 function MapLocation({ name = "selectedlocation", value, onChange }) {
   return (
     <select name={name} value={value} onChange={(e) => onChange(e.target.value)}>
@@ -44,7 +43,7 @@ function MapLocation({ name = "selectedlocation", value, onChange }) {
     </select>
   );
 }
-
+// 品種選單
 function MapFlower({ name = "selectedflower", value, onChange }) {
   return (
     <select name={name} value={value} onChange={(e) => onChange(e.target.value)}>
@@ -53,7 +52,7 @@ function MapFlower({ name = "selectedflower", value, onChange }) {
     </select>
   );
 }
-
+// google地圖
 function MapIframe() {
   return (
     <iframe
@@ -89,8 +88,8 @@ const Map = () => {
               </div>
             </div>
             <div className="map-select">
-              <MapMonth value={selectedlocation} onChange={setSelectedLocation} />
-              <MapLocation value={selectedmonth} onChange={setSelectedMonth} />
+              <MapMonth value={selectedmonth} onChange={setSelectedMonth} />
+              <MapLocation value={selectedlocation} onChange={setSelectedLocation} />
               <MapFlower value={selectedflower} onChange={setSelectedFlower} />
             </div>
           </div>
@@ -105,25 +104,25 @@ const Map = () => {
           <div className="map-cardWarp">
             <div className="map-card">
               <div className="map-lable">台北</div>
-              <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="iimmgg" alt="" />
+              <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="map-img" alt="" />
               <div className="map-date">07.01-09.23</div>
               <div className="map-title">樟樹步道花海</div>
             </div>
             <div className="map-card">
               <div className="map-lable">台北</div>
-              <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="iimmgg" alt="" />
+              <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="map-img" alt="" />
               <div className="map-date">07.01-09.23</div>
               <div className="map-title">樟樹步道花海</div>
             </div>
             <div className="map-card">
               <div className="map-lable">台北</div>
-              <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="iimmgg" alt="" />
+              <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="map-img" alt="" />
               <div className="map-date">07.01-09.23</div>
               <div className="map-title">樟樹步道花海</div>
             </div>
             <div className="map-card">
               <div className="map-lable">台北</div>
-              <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="iimmgg" alt="" />
+              <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="map-img" alt="" />
               <div className="map-date">07.01-09.23</div>
               <div className="map-title">樟樹步道花海</div>
             </div>
