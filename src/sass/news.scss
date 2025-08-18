@@ -54,12 +54,12 @@
             flex-wrap: wrap;
 
             .news-Card {
-                display: flex;
+                display: block;
                 flex-direction: column;
                 justify-content: space-between;
-                width: 230px;
-                margin: 5px auto;
-                padding: 10px;
+                width: 30%;
+                margin: 10px;
+                padding: 10px 20px;
                 border: 1px solid rgba(85, 85, 85, 0.373);
                 border-radius: 3px;
 

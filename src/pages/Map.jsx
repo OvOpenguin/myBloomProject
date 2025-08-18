@@ -8,50 +8,6 @@ import 秋 from "../images/花卉地圖-秋季標籤-橘.svg"
 import 冬 from "../images/花卉地圖-冬季標籤-藍.svg"
 import mapby from "../images/map-bc-y.svg"
 
-// 月份選單
-function MapMonth({ name = "selectedmonth", value, onChange }) {
-  return (
-    <select name={name} value={value} onChange={(e) => onChange(e.target.value)}>
-      <option value="" disabled>月份</option>
-      <option value="1月">1月</option>
-      <option value="2月">2月</option>
-      <option value="3月">3月</option>
-      <option value="4月">4月</option>
-      <option value="5月">5月</option>
-      <option value="6月">6月</option>
-      <option value="7月">7月</option>
-      <option value="8月">8月</option>
-      <option value="9月">9月</option>
-      <option value="10月">10月</option>
-      <option value="11月">11月</option>
-      <option value="21月">12月</option>
-    </select>
-  );
-}
-// 地區選單
-function MapLocation({ name = "selectedlocation", value, onChange }) {
-  return (
-    <select name={name} value={value} onChange={(e) => onChange(e.target.value)}>
-      <option value="" disabled>地區</option>
-      <option value="臺北市">臺北市</option>
-      <option value="新北市">新北市</option>
-      <option value="基隆市">基隆市</option>
-      <option value="桃園市">桃園市</option>
-      <option value="新竹市">新竹市</option>
-      <option value="新竹縣">新竹縣</option>
-      <option value="宜蘭縣">宜蘭縣</option>
-    </select>
-  );
-}
-// 品種選單
-function MapFlower({ name = "selectedflower", value, onChange }) {
-  return (
-    <select name={name} value={value} onChange={(e) => onChange(e.target.value)}>
-      <option value="" disabled>品種</option>
-
-    </select>
-  );
-}
 // google地圖
 function MapIframe() {
   return (
@@ -68,9 +24,12 @@ function MapIframe() {
 
 const Map = () => {
 
-  const [selectedmonth, setSelectedMonth] = useState("");
   const [selectedlocation, setSelectedLocation] = useState("");
+  const oplocation = ['臺北市', '新北市', '基隆市', '桃園市', '新竹市', '新竹縣', '宜蘭縣']
+  const [selectmonth, setSelectMonth] = useState("");
+  const opmonth = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
   const [selectedflower, setSelectedFlower] = useState("");
+  const opflower = ['玫瑰'];
 
   return (
     <>
@@ -88,9 +47,30 @@ const Map = () => {
               </div>
             </div>
             <div className="map-select">
-              <MapMonth value={selectedmonth} onChange={setSelectedMonth} />
-              <MapLocation value={selectedlocation} onChange={setSelectedLocation} />
-              <MapFlower value={selectedflower} onChange={setSelectedFlower} />
+              <select name="" id="" value={selectmonth} onChange={(e) => { setSelectMonth(e.target.value); }}>
+                <option value="" disabled>選擇</option>
+                {
+                  opmonth.map((item, index) => {
+                    return <option key={item} value={opmonth[index]}>{item}</option>
+                  })
+                }
+              </select>
+              <select name="" id="" value={selectedlocation} onChange={(e) => { setSelectedLocation(e.target.value); }}>
+                <option value="" disabled>選擇</option>
+                {
+                  oplocation.map((item, index) => {
+                    return <option key={item} value={oplocation[index]}>{item}</option>
+                  })
+                }
+              </select>
+              <select name="" id="" value={selectedflower} onChange={(e) => { setSelectedFlower(e.target.value); }}>
+                <option value="" disabled>選擇</option>
+                {
+                  opflower.map((item, index) => {
+                    return <option key={item} value={opflower[index]}>{item}</option>
+                  })
+                }
+              </select>
             </div>
           </div>
           <div className="map-map">

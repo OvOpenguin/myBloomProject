@@ -1,25 +1,11 @@
 import "../sass/news.scss"
 import { useState } from "react";
 
-function MapLocation({ name = "selectedlocation", value, onChange }) {
-    return (
-        <select name={name} value={value} onChange={(e) => onChange(e.target.value)}>
-            <option value="" disabled>地區</option>
-            <option value="臺北市">臺北市</option>
-            <option value="新北市">新北市</option>
-            <option value="基隆市">基隆市</option>
-            <option value="桃園市">桃園市</option>
-            <option value="新竹市">新竹市</option>
-            <option value="新竹縣">新竹縣</option>
-            <option value="宜蘭縣">宜蘭縣</option>
-        </select>
-    );
-}
-
 
 const News = () => {
 
     const [selectedlocation, setSelectedLocation] = useState("");
+    const oplocation = ['臺北市', '新北市', '基隆市', '桃園市', '新竹市', '新竹縣', '宜蘭縣']
 
     return (
         <>
@@ -41,7 +27,14 @@ const News = () => {
                     <div>
                         <h2>最新活動 News</h2>
                         <div className="news-select">
-                            <MapLocation value={selectedlocation} onChange={setSelectedLocation} />
+                            <select name="" id="" value={selectedlocation} onChange={(e) => { setSelectedLocation(e.target.value); }}>
+                                <option value="" disabled>選擇</option>
+                                {
+                                    oplocation.map((item, index) => {
+                                        return <option key={item} value={oplocation[index]}>{item}</option>
+                                    })
+                                }
+                            </select>
                         </div>
                     </div>
                     <div className="news-CardWarp">

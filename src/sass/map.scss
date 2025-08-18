@@ -3,14 +3,14 @@
 @use 'layout' as *;
 
 * {
-    //    outline: 1px solid red;
+    // outline: 1px solid red;
 }
 
 .map-inner {
     display: flex;
-    padding: 0 50px;
+    padding: 0 100px;
     gap: 20px;
-    // height: 100vh;
+    height: 100vh;
 
     h2 {
         font-size: 1.5rem;
@@ -28,7 +28,7 @@
         .map-selectAll {
             display: flex;
             margin-top: 20px;
-            padding-left: 40px;
+            justify-content: center;
 
             >* {
                 padding: 5px 15px;
@@ -78,10 +78,16 @@
             background-size: contain;
             display: flex;
             height: 450px;
+            justify-content: center;
 
             iframe {
+                display: block;
                 padding: 40px 45px;
                 width: 100%;
+                max-width: 600px;
+                height: 450px;
+
+
             }
         }
 
@@ -93,15 +99,17 @@
         .map-cardWarp {
             background-image: url('../images/花卉地圖-賞花活動-底圖-藍.svg');
             background-repeat: no-repeat;
+            margin: auto;
             margin-top: 20px;
             padding: 30px 20px 0 40px;
             display: flex;
             flex-wrap: wrap;
-            grid-template-columns: repeat(2, 1fr);
+            max-width: 600px;
+            width: 100%;
 
-            // @media (max-width: 1240px) {
-            //     grid-template-columns: repeat(1, 1fr);
-            // }
+            @media (max-width:1360px) {
+                max-width: 350px;
+            }
 
             .map-card {
                 // display: inline-block;
@@ -121,7 +129,6 @@
 
                 .map-img {
                     position: relative;
-                    // width: 250px;
                     height: 225px;
                     padding: 20px;
                     object-fit: cover;
