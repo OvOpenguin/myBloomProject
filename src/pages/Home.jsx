@@ -1,17 +1,17 @@
 import "../sass/home.scss"
-import 北花冊 from "../images/北花冊.webp"
-import 大花 from "../images/heroFlower.svg"
-import 貼紙花1 from "../images/首頁-貼紙花.webp"
-import 活動照片 from "../images/首頁-最新消息-活動圖片.webp"
-import 花卉介紹 from "../images/底圖_花卉介紹.png"
-import 花卉遊戲 from "../images/底圖_花卉遊戲.png"
-import 書 from "../images/書.svg"
-import 票選1 from '../images/首頁-票選1-框.png'
-import 票選2 from '../images/首頁-票選2-框.png'
-import 票選3 from '../images/首頁-票選3-框.png'
-import 票選4 from '../images/首頁-票選4-框.png'
-import 王冠 from '../images/王冠.svg'
-import 首頁消息花 from '../images/首頁消息-花.svg'
+import 北花冊 from "../images/home/北花冊.webp"
+import 大花 from "../images/home/heroFlower.svg"
+import 貼紙花1 from "../images/home/首頁-貼紙花.webp"
+import 活動照片 from "../images/home/首頁-最新消息-活動圖片.webp"
+import 花卉介紹 from "../images/home/底圖_花卉介紹.png"
+import 花卉遊戲 from "../images/home/底圖_花卉遊戲.png"
+import 書 from "../images/home/書.svg"
+import 票選1 from '../images/home/首頁-票選1-框.png'
+import 票選2 from '../images/home/首頁-票選2-框.png'
+import 票選3 from '../images/home/首頁-票選3-框.png'
+import 票選4 from '../images/home/首頁-票選4-框.png'
+import 王冠 from '../images/home/王冠.svg'
+import 首頁消息花 from '../images/home/首頁消息-花.svg'
 
 
 
