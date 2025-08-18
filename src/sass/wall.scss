@@ -1,0 +1,27 @@
+@use 'reset';
+@use 'base' as *;
+@use 'layout' as *;
+
+* {
+    // outline: 1px solid red;
+}
+
+.wall-champion {
+    display: flex;
+    gap: 20px;
+    padding: 0 0 0 300px;
+
+    .wall-c-title {
+        width: 450px;
+        margin: 300px 0 150px 0;
+
+        h2{
+            margin-bottom: 20px;
+        }
+        p{
+            text-align: justify;
+            margin-bottom: 40px;
+        }
+    }
+
+}
