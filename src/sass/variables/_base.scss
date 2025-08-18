@@ -1,3 +1,5 @@
+@use '../variables/color' as *;
+
 /*統一設定*/
 *,
 *::before,
@@ -22,6 +24,14 @@ a {
     text-decoration: none;
 }
 
+h1,
+h2,
+h3,
+h4,
+p {
+    color: $brown-100;
+}
+
 h2 {
     font-size: 2rem;
 }
@@ -33,4 +43,3 @@ h3 {
 h4 {
     font-size: 1rem;
 }
-

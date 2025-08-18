@@ -1,31 +1,114 @@
+@use 'reset';
+@use './variables/' as *;
+
 * {
     outline: 1px solid red;
 }
 
 .story {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    // height: calc(100vh - 108px); 
+    padding: 50px;
 
     .sList {
-        .sMenu {
-            background-color: aquamarine;
-            width: 250px;
-            height: 300px;
+
+        h4 {
+            margin-bottom: 20px;
         }
 
+        .sMenu {
+            display: flex;
+            justify-content: space-between;
+            ul {
+                background-color: $white;
+                li {
+                    a {
+                        color: $brown-100;
+                        display: block;
+                        padding: 10px;
+                    }
+
+                }
+            }
+        }
+
+        .btn-play {
+            color: $brown-100;
+            margin-top: 20px;
+            padding: 8px 32px;
+            border-radius: 8px;
+            font-size: 1.25rem;
+            letter-spacing: 10%;
+            &:hover{
+                background-color: $brown-100;
+                color: $white;
+            }
+        }
+
+        @media (max-width:1200px) {
+            display: none;
+        }
     }
 
     .sContent {
-        
+        max-width: 500px;
+        min-width: 500px;
         width: 40%;
-        .sflowerName{
-            margin: 50px 0;
-            background-color: aqua; 
+
+        .sflowerName {
+            padding-left: 30px;
+            margin-bottom: 50px;
+            h2 {
+                margin-bottom: 10px;
+            }
         }
-        .sflowerIntro{
-            width: 500px;
+
+        .sflowerIntro {
+            padding: 20px;
+            // 底圖
+            background-image: url(../images/story/story-bg-y.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+
+            .sclass {
+                display: flex;
+                gap: 30px;
+                margin-bottom: 10px;
+
+                .classtxt {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+
+                    .family,
+                    .genus {
+                        color:$brown-100;
+                        font-size: 1.5rem;
+                        border: 2px solid $brown-100;
+                        border-radius: 999px;
+                        padding: 5px 10px;
+                        background-color: $white;
+                    }
+                }
+
+            }
+
+            .introtxt {
+                color: $brown-100;
+                background-color: #fff;
+                padding: 10px;
+                
+            }
         }
     }
 
-    .sImg {}
+    .sImg {
+        width: 40%;
+        min-width: 400px;
+    }
 }

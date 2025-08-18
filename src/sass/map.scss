@@ -1,6 +1,5 @@
 @use 'reset';
-@use 'base' as *;
-@use 'layout' as *;
+@use './variables/' as *;
 
 // * {
 //     outline: 1px solid red;
