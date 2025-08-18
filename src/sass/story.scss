@@ -1,0 +1,31 @@
+* {
+    outline: 1px solid red;
+}
+
+.story {
+    display: flex;
+    justify-content: space-around;
+
+    .sList {
+        .sMenu {
+            background-color: aquamarine;
+            width: 250px;
+            height: 300px;
+        }
+
+    }
+
+    .sContent {
+        
+        width: 40%;
+        .sflowerName{
+            margin: 50px 0;
+            background-color: aqua; 
+        }
+        .sflowerIntro{
+            width: 500px;
+        }
+    }
+
+    .sImg {}
+}
