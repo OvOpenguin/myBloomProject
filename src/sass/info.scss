@@ -1,0 +1,24 @@
+@use 'reset';
+@use './variables/' as *;
+
+
+.info-basic {
+    display: flex;
+    flex-direction: column; // 垂直排列
+    margin: 0 400px;
+
+    @media (max-width:1200px) {
+        margin: 0 40px;
+    }
+
+    .info-tag {
+        margin-top: 10px;
+        display: flex;
+        gap: 20px;
+
+    img {
+        height: 30px; // 統一高度
+        width: auto; // 保持原比例
+    }
+    }
+}
