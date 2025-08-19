@@ -5,8 +5,6 @@ import 春 from "../images/map/花卉地圖-春季標籤-黃.svg"
 import 夏 from "../images/map/花卉地圖-夏季標籤-綠.svg"
 import 秋 from "../images/map/花卉地圖-秋季標籤-橘.svg"
 import 冬 from "../images/map/花卉地圖-冬季標籤-藍.svg"
-import Info from './Info.jsx'
-import mapby from "../images/map/map-bc-y.svg"
 
 // google地圖
 function MapIframe() {
@@ -82,7 +80,7 @@ const Map = () => {
         <div className="map-event">
           <h2>賞花活動 EVENT</h2>
           <div className="map-cardWarp">
-            <a  href={<Info/>} className="map-card">
+            <a  href="#" className="map-card">
               <p className="map-lable">台北</p>
               <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="map-img" alt="" />
               <div className="map-date">07.01 — 09.23</div>
