@@ -1,5 +1,8 @@
 import "../sass/story.scss"
 import 白玫瑰 from '../images/story/whiterose.png'
+import tape from '../images/story/tape-y.png'
+import tape2 from '../images/story/title-tape.svg'
+
 
 const Story = () => {
   return (
@@ -7,10 +10,11 @@ const Story = () => {
       <div className='story'>
 
         {/* 左側-選單 */}
-        
         <div className="sList">
-          <h3>其他花種</h3>
-          <h4>Others</h4>
+          {/* 膠帶 */}
+          <div className="tape"><img src={tape} alt="膠帶裝飾" /></div>
+          {/* <h3>其他花種</h3>
+          <h4>Others</h4> */}
           <div className='sMenu'>
             <ul>
               <li><a href="#">玻斯菊</a></li>
@@ -27,12 +31,13 @@ const Story = () => {
               <li><a href="#">玻斯菊</a></li>
             </ul>
           </div>
-          <a className="btn-play" href="#">前往遊戲</a>
         </div>
+        {/* <a className="btn-play" href="#">前往遊戲</a> */}
 
         {/* 中間-內容介紹 */}
         <div className='sContent'>
           <div className='sflowerName'>
+            <div className="tape2"><img src={tape2} alt="" /></div>
             <h2>白玫瑰  Rosa alba</h2>
             <p>#純潔　#純高貴　 #天真　 #尊敬　 #誠心敬愛</p>
           </div>

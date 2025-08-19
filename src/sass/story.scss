@@ -10,20 +10,40 @@
     justify-content: center;
     align-items: center;
     gap: 40px;
+
     // height: calc(100vh - 108px); 
     padding: 50px;
 
-    .sList {
+    @media (max-width:940px) {
+        display: flex;
+        flex-direction: column;
 
-        h4 {
-            margin-bottom: 20px;
+    }
+
+
+
+    .sList {
+        position: relative;
+        max-width: 300px;
+        min-width: 200px;
+        padding: 30px;
+        background-image: url(../images/story/story-list-bg-150x200.png);
+        background-size: cover;
+
+        .tape {
+            position: absolute;
+            width: 80px;
+            top: -30px;
+            right: -30px;
         }
 
         .sMenu {
             display: flex;
             justify-content: space-between;
+
             ul {
                 background-color: $white;
+
                 li {
                     a {
                         color: $brown-100;
@@ -42,7 +62,8 @@
             border-radius: 8px;
             font-size: 1.25rem;
             letter-spacing: 10%;
-            &:hover{
+
+            &:hover {
                 background-color: $brown-100;
                 color: $white;
             }
@@ -59,20 +80,30 @@
         width: 40%;
 
         .sflowerName {
-            padding-left: 30px;
+            padding-left: 60px;
             margin-bottom: 50px;
+            position: relative;
+
+            .tape2 {
+                position: absolute;
+                height: 120px;
+                width: 20px;
+                top: -20px;
+                left: 30px;
+                transform: rotate(5deg);
+            }
+
             h2 {
                 margin-bottom: 10px;
             }
         }
 
         .sflowerIntro {
-            padding: 20px;
+            padding: 40px;
             // 底圖
-            background-image: url(../images/story/story-bg-y.png);
-            background-repeat: no-repeat;
-            background-size: contain;
-            background-position: center;
+            background-image: url(../images/story/story-bg-y-500x400.png);
+            background-size: cover;
+
 
             .sclass {
                 display: flex;
@@ -87,7 +118,7 @@
 
                     .family,
                     .genus {
-                        color:$brown-100;
+                        color: $brown-100;
                         font-size: 1.5rem;
                         border: 2px solid $brown-100;
                         border-radius: 999px;
@@ -102,7 +133,6 @@
                 color: $brown-100;
                 background-color: #fff;
                 padding: 10px;
-                
             }
         }
     }
@@ -110,5 +140,6 @@
     .sImg {
         width: 40%;
         min-width: 400px;
+
     }
 }
