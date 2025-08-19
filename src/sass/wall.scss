@@ -1,6 +1,7 @@
 @use 'reset';
 @use './variables/' as *;
 
+
 * {
     // outline: 1px solid red;
 }
@@ -8,16 +9,21 @@
 .wall-c-inner {
     display: flex;
     width: 100%;
-    gap: 20px;
+    gap: 50px;
 
     .wall-c-title {
         flex: 1;
         width: 100%;
-        max-width: 500px;
-        padding: 15% 0 6% 15%;
+        max-width: 700px;
+        padding: 15% 0 6% 25%;
         display: flex;
         flex-direction: column;
         justify-content: center;
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
 
         p {
             text-align: justify;
@@ -56,4 +62,13 @@
 
     }
 
+}
+
+.wall-v-inner {
+
+    .wall-v-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-align: center;
+    }
 }

@@ -19,9 +19,11 @@ const Wall = () => {
         </div>
       </div>
 
-      <section>
-        <h2>花牆票選</h2>
-        <h2>VOTING</h2>
+      <section className="wall-v-inner">
+        <header className="wall-v-title">
+          <h2>花牆票選</h2>
+          <h2>VOTING</h2>
+        </header>
         <div>
         </div>
       </section>

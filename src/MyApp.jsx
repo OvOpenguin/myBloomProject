@@ -9,6 +9,7 @@ import News from './pages/News'
 import Wall from './pages/Wall'
 import Story from './pages/Story'
 import Member from './pages/Member'
+import Info from './pages/Info'
 
 
 
@@ -33,6 +34,8 @@ const MyApp = () => {
                 <Route path="/story" element={<Story/>}></Route>
                 {/* 個人中心 */}
                 <Route path="/member" element={<Member/>}></Route>
+                {/* 資訊頁 */}
+                <Route path="/info" element={<Info/>}></Route>
             </Routes>
 
             {/* 頁尾區 */}

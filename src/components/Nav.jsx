@@ -12,6 +12,7 @@ const Nav = () => {
                     <li><Link to="/wall">花牆分享</Link></li>
                     <li><Link to="/story">花卉故事</Link></li>
                     <li><Link to="/member">個人中心</Link></li>
+                    <li><Link to="/info">資訊頁</Link></li>
                 </ul>
             </nav>
         </header>
