@@ -1,24 +1,208 @@
 @use 'reset';
 @use './variables/' as *;
 
+h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    // text-align: center;
+    // padding-top: 10px;
+    color: #64503C;
+}
 
-.info-basic {
+.info-wrapper {
     display: flex;
-    flex-direction: column; // 垂直排列
-    margin: 0 400px;
+    align-items: flex-start;
+    // gap: 5vh;
+    margin: 0 20%;
+    padding: 50px 0;
+    justify-content: space-between;
+
 
     @media (max-width:1200px) {
-        margin: 0 40px;
+        flex-direction: column;
+        gap: 40px;
+
     }
+}
+
+.info-basic {
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
 
     .info-tag {
         margin-top: 10px;
         display: flex;
         gap: 20px;
 
-    img {
-        height: 30px; // 統一高度
-        width: auto; // 保持原比例
+        img {
+            height: 30px;
+            width: auto;
+        }
     }
+
+    .info-date {
+        margin-top: 10px;
+
+        img {
+            height: 100px;
+            width: auto;
+        }
     }
+
+
 }
+
+.info-about {
+
+    margin-top: 30px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+
+    .info-icon {
+        display: flex;
+        gap: 10px;
+    }
+
+    .info-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    img {
+        height: 30px;
+        width: auto;
+    }
+
+    .info-price {
+        margin-top: 10px;
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #64503C;
+            margin-bottom: 5px;
+        }
+
+        .price-items {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            p {
+                margin: 0;
+                font-size: 1rem;
+                color: #64503C;
+            }
+
+            .divider {
+                width: 2px;
+                height: 20px;
+                background-color: #64503C;
+            }
+        }
+    }
+
+    .info-time {
+        margin-top: 10px;
+        align-self: flex-start;
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #64503C;
+            margin-bottom: 5px;
+        }
+
+        .time-items {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            p {
+                margin: 0;
+                font-size: 1rem;
+                color: #64503C;
+            }
+
+            .divider-vertical {
+                width: 2px;
+                height: 20px;
+                background-color: #64503C;
+            }
+        }
+    }
+
+}
+
+.info-tabs-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  width: 100%;
+
+  .info-tabs {
+    display: flex;
+    gap: 40px;
+    position: relative;
+  }
+
+  .tab {
+    font-size: 20px;
+    font-weight: 400;
+    color: #64503C;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &.active {
+      font-size: 24px;
+      font-weight: 700;
+    }
+  }
+
+  .tab-line-container {
+    position: relative;
+    width: 100%;
+    height: 2px;
+    margin-top: 5px;
+
+    .tab-line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #e0e0e0;
+    }
+
+    .tab-line-highlight {
+      position: absolute;
+      top: 0; /* 壓在灰色線上 */
+      height: 2px;
+      background-color: #C075E3;
+      z-index: 2;
+      transition: all 0.3s ease;
+    }
+  }
+
+  .tab-contents {
+    margin-top: 20px;
+
+    .tab-content {
+      display: none;
+      font-size: 16px;
+      color: #64503C;
+
+      &.show {
+        display: block;
+      }
+    }
+  }
+}
+
+
