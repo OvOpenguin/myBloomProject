@@ -13,27 +13,49 @@ const tabs = ["活動介紹", "交通資訊", "周邊推薦"];
 const tabContents = [
   <div>這是活動介紹內容，可以放文字或圖片描述活動細節</div>,
   <div>這是交通資訊內容，例如捷運、公車、停車場說明</div>,
-  <div>這是周邊推薦內容，例如附近餐廳、景點、商店介紹</div>,
+   <div className="surrounding-content">
+    <div className="food-section">
+      <h3>美食小點</h3>
+      <ul>
+        <li>甜點店 A</li>
+        <li>咖啡館 B</li>
+        <li>小吃攤 C</li>
+      </ul>
+    </div>
+    <div className="attraction-section">
+      <h3>附近景點</h3>
+      <ul>
+        <li>景點 X</li>
+        <li>景點 Y</li>
+        <li>景點 Z</li>
+      </ul>
+    </div>
+  </div>,
 ];
 
 const Info = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const tabRefs = useRef([]);
+  const lineContainerRef = useRef(null);
   const [lineStyle, setLineStyle] = useState({ width: 0, left: 0 });
 
   useEffect(() => {
-    if (tabRefs.current[activeIndex]) {
+    if (tabRefs.current[activeIndex] && lineContainerRef.current) {
       const tab = tabRefs.current[activeIndex];
-      setLineStyle({ width: tab.offsetWidth, left: tab.offsetLeft });
+      const container = lineContainerRef.current;
+      const left = tab.getBoundingClientRect().left - container.getBoundingClientRect().left;
+      setLineStyle({ width: tab.offsetWidth, left });
     }
   }, [activeIndex]);
 
   return (
     <section>
+      {/* Banner */}
       <div className='info-benner'>
         <img src={活動照片} alt="" />
       </div>
 
+      {/* Info wrapper */}
       <div className='info-wrapper'>
         <div className='info-basic'>
           <p>2025</p>
@@ -92,7 +114,7 @@ const Info = () => {
         </div>
       </div>
 
-      {/* 選單 */}
+      {/* Tabs */}
       <div className="info-tabs-wrapper">
         <div className="info-tabs">
           {tabs.map((tab, index) => (
@@ -106,17 +128,20 @@ const Info = () => {
             </div>
           ))}
         </div>
-        <div className="tab-line">
+
+        {/* 灰色線 + 紫色線 */}
+        <div className="tab-line-container" ref={lineContainerRef}>
+          <div className="tab-line"></div> {/* 灰色線 */}
           <div
             className="tab-line-highlight"
             style={{
               width: `${lineStyle.width}px`,
               transform: `translateX(${lineStyle.left}px)`,
             }}
-          ></div>
+          /> {/* 紫色線 */}
         </div>
 
-        {/* tab 對應內容 */}
+        {/* Tab contents */}
         <div className="tab-contents">
           {tabContents.map((content, index) => (
             <div
