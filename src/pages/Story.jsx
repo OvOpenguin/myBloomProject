@@ -54,7 +54,7 @@ const Story = () => {
           <div className='sflowerName'>
             <div className="tape2"><img src={tape2} alt="" /></div>
             <h2>白玫瑰  Rosa alba</h2>
-            <p>#純潔　#純高貴　 #天真　 #尊敬　 #誠心敬愛</p>
+            <p>#純潔　#純高貴　#天真　#尊敬　#誠心敬愛</p>
             <div className="seasontag">
               <div className="tag1">春</div>
               <div className="tag2">夏</div>
