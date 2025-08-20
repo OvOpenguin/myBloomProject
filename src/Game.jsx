@@ -126,6 +126,8 @@ export default function App() {
     }
   }, [gameStarted, gameOver]);
 
+
+  // 這邊是遊戲區顯示的結構
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-100 to-blue-200 flex flex-col items-center justify-center p-4 font-sans text-gray-800">
       <div className="bg-white p-8 rounded-3xl shadow-xl max-w-lg w-full text-center">
@@ -144,12 +146,16 @@ export default function App() {
               }}
             />
           )}
+
+
           {!gameStarted && !gameOver && (
             <p className="text-xl text-gray-500">點擊「開始遊戲」開始猜花！</p>
           )}
+
           {gameOver && (
             <p className="text-xl text-gray-500">遊戲結束。</p>
           )}
+
         </div>
 
         <div className="options-container grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
@@ -184,6 +190,8 @@ export default function App() {
         </div>
 
         <div className="control-buttons flex flex-col sm:flex-row justify-center gap-4">
+          
+          {/* 邏輯非 (Logical NOT)」運算子：將true變false，false變true */}
           {!gameStarted && (
             <button
               className="px-8 py-3 bg-blue-600 text-white rounded-full font-bold text-xl shadow-lg hover:bg-blue-700 transition-colors duration-200"
@@ -193,6 +201,7 @@ export default function App() {
             </button>
           )}
 
+           {/* 邏輯運算子：如果 && 左邊的條件是 true，程式碼會繼續執行右邊的部分。 */}
           {gameStarted && showRealImage && (
             <button
               className="px-8 py-3 bg-purple-600 text-white rounded-full font-bold text-xl shadow-lg hover:bg-purple-700 transition-colors duration-200"
@@ -202,6 +211,7 @@ export default function App() {
             </button>
           )}
 
+          {/* 邏輯運算子：如果 && 左邊的條件是 true，程式碼會繼續執行右邊的部分。 */}
           {gameStarted && (
             <button
               className="px-8 py-3 bg-red-600 text-white rounded-full font-bold text-xl shadow-lg hover:bg-red-700 transition-colors duration-200"

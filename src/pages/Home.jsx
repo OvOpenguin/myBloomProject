@@ -12,6 +12,8 @@ import 票選3 from '../images/home/首頁-票選3-框.png'
 import 票選4 from '../images/home/首頁-票選4-框.png'
 import 王冠 from '../images/home/王冠.svg'
 import 首頁消息花 from '../images/home/首頁消息-花.svg'
+import { IoIosArrowDropleft } from "react-icons/io";
+import { IoIosArrowDropright } from "react-icons/io";
 
 
 
@@ -27,39 +29,65 @@ const App = () => {
                 </section>
 
                 {/* 近期活動 */}
-                <section className="Indexactivity">
+                <section className="indexActivity">
+                    {/* 主副標 */}
                     <h2>近期活動</h2>
-                    <h3>recent events</h3>
+                    <h3>Recent vents</h3>
+
                     {/* 近期活動切換 */}
                     <div className="gallery">
-                        <div className="icon">left 切換鍵</div>
-
+                        <IoIosArrowDropleft className="eventicon" />
+                        
+                        {/* 圖片放置區 */}
                         <div>
-                            <div></div>
+                            {/* 日期 */}
+                            <div className="eventTime">
+                                2025<br />07.01<br />｜<br />09.23
+                            </div>
+                            {/* 花圖+名稱 */}
                             <img className="f1" src={貼紙花1} alt="花1" />
                             <h4>花季活動名稱</h4>
                         </div>
+
                         <div>
+                            <div className="eventTime">
+                                2025<br />07.01<br />｜<br />09.23
+                            </div>
                             <img className="f2" src={貼紙花1} alt="花1" />
                             <h4>花季活動名稱</h4>
                         </div>
+
                         <div>
+                            <div className="eventTime">
+                                2025<br />07.01<br />｜<br />09.23
+                            </div>
                             <img className="f1" src={貼紙花1} alt="花1" />
                             <h4>花季活動名稱</h4>
                         </div>
 
-                        <div className="icon">right切換鍵</div>
+                        {/* <div>
+                            <div className="eventTime">
+                                2025<br />07.01<br />｜<br />09.23
+                            </div>
+                            <img className="f2" src={貼紙花1} alt="花1" />
+                            <h4>花季活動名稱</h4>
+                        </div> */}
+
+                        <IoIosArrowDropright className="eventicon" />
 
                     </div>
 
+                    {/* 地圖搜尋btn */}
                     <div className="btn">地圖搜尋→</div>
                 </section>
+
+
+
 
                 {/* 最新消息+花卉科普 */}
                 <section>
                     <div className="IndexNsp">
                         {/* 左側-最新消息 */}
-
                         <div className="Inews">
                             <h2>最新消息</h2>
                             <h3>News</h3>
@@ -73,21 +101,27 @@ const App = () => {
                         </div>
 
 
-
-
                         {/* 右側-花卉科普 */}
                         <div className="Isp">
                             <div className="Istory"><a href="#"><img src={花卉介紹} alt="花卉介紹" /></a></div>
                             <div className="Iplay"><a href="#"><img src={花卉遊戲} alt="花卉遊戲" /></a></div>
+                            {/* 花卉科普的標題 */}
+                            <div className="Istoryicon">
+                                <h2>認識花卉</h2>
+                                <h3>Flower Story</h3>
+                                <div className="book"><img src={書} alt="書" /></div>
+                            </div>
+
                         </div>
-                        {/* 花卉科普的標題 */}
-                        <div className="Istoryicon">
-                            <h2>認識花卉</h2>
-                            <h3>Flower Story</h3>
-                            <div className="book"><img src={書} alt="書" /></div>
-                        </div>
+
                     </div>
                 </section>
+
+
+
+
+
+
                 {/* 花牆票選 */}
                 <section className="IndexVote">
                     {/* 左側-標題圖示 */}
