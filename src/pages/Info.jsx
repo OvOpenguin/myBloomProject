@@ -13,22 +13,14 @@ const tabs = ["活動介紹", "交通資訊", "周邊推薦"];
 const tabContents = [
   <div>這是活動介紹內容，可以放文字或圖片描述活動細節</div>,
   <div>這是交通資訊內容，例如捷運、公車、停車場說明</div>,
-   <div className="surrounding-content">
+
+  <div className="surrounding-content">
     <div className="food-section">
       <h3>美食小點</h3>
-      <ul>
-        <li>甜點店 A</li>
-        <li>咖啡館 B</li>
-        <li>小吃攤 C</li>
-      </ul>
     </div>
+
     <div className="attraction-section">
       <h3>附近景點</h3>
-      <ul>
-        <li>景點 X</li>
-        <li>景點 Y</li>
-        <li>景點 Z</li>
-      </ul>
     </div>
   </div>,
 ];
