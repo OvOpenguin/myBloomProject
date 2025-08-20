@@ -1,80 +1,96 @@
 @use 'reset';
 @use './variables/' as *;
 
-* {
-    outline: 1px solid red;
-}
+// * {
+//     outline: 1px solid red;
+// }
 
 .story {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px;
-
+    gap: 50px;
     // height: calc(100vh - 108px); 
-    padding: 50px;
+    padding: 100px 50px;
 
-    @media (max-width:940px) {
+    @media (max-width:960px) {
         display: flex;
         flex-direction: column;
-
     }
 
-
-
-    .sList {
-        position: relative;
-        max-width: 300px;
-        min-width: 200px;
-        padding: 30px;
-        background-image: url(../images/story/story-list-bg-150x200.png);
-        background-size: cover;
-
-        .tape {
-            position: absolute;
-            width: 80px;
-            top: -30px;
-            right: -30px;
-        }
-
-        .sMenu {
-            display: flex;
-            justify-content: space-between;
-
-            ul {
-                background-color: $white;
-
-                li {
-                    a {
-                        color: $brown-100;
-                        display: block;
-                        padding: 10px;
-                    }
-
-                }
-            }
-        }
-
-        .btn-play {
-            color: $brown-100;
-            margin-top: 20px;
-            padding: 8px 32px;
-            border-radius: 8px;
-            font-size: 1.25rem;
-            letter-spacing: 10%;
-
-            &:hover {
-                background-color: $brown-100;
-                color: $white;
-            }
-        }
+    .sleft {
 
         @media (max-width:1200px) {
             display: none;
         }
+
+        .sList {
+            position: relative;
+            max-width: 300px;
+            min-width: 200px;
+            padding: 30px;
+            background-image: url(../images/story/story-list-bg-150x200.png);
+            background-size: cover;
+
+
+            .sbook {
+                position: absolute;
+                top: -200px;
+                left: -10px;
+                width: 150px;
+            }
+
+            .sother {
+                position: absolute;
+                top: -80px;
+                left: 50px;
+            }
+
+            .tape {
+                position: absolute;
+                width: 80px;
+                top: -30px;
+                right: -30px;
+            }
+
+            .sMenu {
+                display: flex;
+                justify-content: space-between;
+
+                ul {
+                    background-color: $white;
+
+                    li {
+                        a {
+                            color: $brown-100;
+                            display: block;
+                            padding: 10px;
+                        }
+
+                    }
+                }
+            }
+
+            .btn-play {
+                color: $brown-100;
+                margin-top: 20px;
+                padding: 8px 32px;
+                border-radius: 8px;
+                font-size: 1.25rem;
+                letter-spacing: 10%;
+
+                &:hover {
+                    background-color: $brown-100;
+                    color: $white;
+                }
+            }
+        }
     }
 
+
+
     .sContent {
+        position: relative;
         max-width: 500px;
         min-width: 500px;
         width: 40%;
@@ -92,6 +108,40 @@
                 left: 30px;
                 transform: rotate(5deg);
             }
+
+            .tag1 {
+                position: absolute;
+                top: -50px;
+                right: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                font-size: 2rem;
+                width: 100px;
+                height: 100px;
+
+                background-image: url(../images/story/spring-bg.svg);
+                background-size: cover;
+            }
+
+            .tag2 {
+                position: absolute;
+                top: 50px;
+                right: -20px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                font-size: 1.5rem;
+                width: 50px;
+                height: 50px;
+
+                background-image: url(../images/story/summer-bg.svg);
+                background-size: cover;
+            }
+
 
             h2 {
                 margin-bottom: 10px;
@@ -135,11 +185,47 @@
                 padding: 10px;
             }
         }
+
+        .sbutterfly {
+            position: absolute;
+            bottom: -40px;
+            left: -10px;
+
+            // @media (max-width:1200px) {
+            //     display: none;
+            // }
+        }
+
+        .sline {
+            position: absolute;
+            bottom: -40px;
+            left: 100px;
+
+            // @media (max-width:1200px) {
+            //     display: none;
+            // }
+        }
+
+
     }
 
     .sImg {
-        width: 40%;
+        position: relative;
+        width: 35%;
         min-width: 400px;
 
+        .circletxt {
+            position: absolute;
+            width: 100%;
+            top: 0px;
+            left: -10px;
+            animation: circle 30s linear infinite;
+        }
     }
+
+}
+
+@keyframes circle {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
