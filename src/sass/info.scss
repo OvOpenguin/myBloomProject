@@ -227,6 +227,7 @@ h3 {
             margin-bottom: 5px;
         }
     .info-container {
+        
         width: 100%;
         // margin: 0 20%; // 跟 info-wrapper 對齊
         display: flex;
@@ -239,23 +240,34 @@ h3 {
         padding-top: 0;
         text-align: left;
     }
+.food-carousel {
+  position: relative; // 箭頭會相對這個容器定位
+  width: 100%;
+  overflow: visible; // 🔹 讓箭頭可以超出照片左右
+}
+.food-groups {
+     margin-top: 50px;
+  display: flex;
+  gap: 50px;
+  overflow-x: visible; // 可水平滑動
+  scroll-behavior: smooth;
 
-    .food-groups {
-        margin-top: 120px; // 標題下方 10px
-        display: flex;
-        flex-direction: row; // 🔹橫向排列
-        justify-content: flex-start; // 左對齊
-        align-items: center; // 垂直置中
-        gap: 5vh; // 每組間隔
-    }
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}}
+
 
     .food-group {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 330px; 
+  
 
-  .bgpink {
+  .foodbgpink
+ {
     width: 330px;
     height: 330px;
     position: absolute;
@@ -265,20 +277,21 @@ h3 {
     z-index: 1;
   }
 
-  .ptopink-wrapper {
+  .foodptopink-wrapper {
     width: 310px;
     height: 310px;
     position: relative;
+    
     z-index: 2;
     transition: all 0.3s ease; // 平滑動畫
 
-    .ptopink {
+    .foodptopink {
       width: 100%;
       height: 100%;
       filter: brightness(0.8);
     }
 
-    .ptopink-overlay {
+    .foodptopink-overlay {
       position: absolute;
       top: 0;
       left: 0;
@@ -298,9 +311,33 @@ h3 {
     }
   }
 
-  &:hover .ptopink-wrapper {
+  &:hover .foodptopink-wrapper {
     width: 330px; // 放大到和 .bgpink 一樣
     height: 330px;
   }
 }
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(255,255,255,0.7);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+
+  &.arrow-left {
+    left: -100px; // 🔹 可往外移，超出父容器
+  }
+
+  &.arrow-right {
+    right: -100px; // 🔹 可往外移，超出父容器
+  }
+
+  img {
+    width: 70px;
+    height: 70px;
+  }
 }
