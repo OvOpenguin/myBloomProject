@@ -250,49 +250,57 @@ h3 {
     }
 
     .food-group {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-
-        .bgpink {
-            width: 330px;
-            height: 330px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1;
-        }
-
-        .ptopink {
-            width: 310px;
-            height: 310px;
-            position: relative;
-            z-index: 2;
-            filter: brightness(0.8);
-        }
-
-        .ptopink-overlay {
+  .bgpink {
+    width: 330px;
+    height: 330px;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; // 高度填滿圖片
-    display: flex;
-    justify-content: center; // 水平置中
-    align-items: center;     // 垂直置中
-    z-index: 3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
 
-    p {
+  .ptopink-wrapper {
+    width: 310px;
+    height: 310px;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease; // 平滑動畫
+
+    .ptopink {
+      width: 100%;
+      height: 100%;
+      filter: brightness(0.8);
+    }
+
+    .ptopink-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 3;
+
+      p {
         color: #fff;
         font-size: 24px;
         font-weight: 700;
         margin: 0;
-        opacity: 1; // 文字不透明
+      }
     }
-}
+  }
 
-    }
+  &:hover .ptopink-wrapper {
+    width: 330px; // 放大到和 .bgpink 一樣
+    height: 330px;
+  }
+}
 }
