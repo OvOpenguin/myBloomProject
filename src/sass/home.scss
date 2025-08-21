@@ -4,9 +4,9 @@
 
 
 // outline check
-// * {
-//     outline: 1px solid red;
-// }
+* {
+    outline: 1px solid red;
+}
 
 
 /* home共用區 */
@@ -24,21 +24,13 @@
 .hero {
     display: flex;
     justify-content: center;
-    padding: 50px 0;
-
-    .heroFlower {
-        width: 50%;
-    }
+    padding-top: 50px;
 
     .name {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        text-align: center;
-
-        img {
-            width: 80%;
-        }
+        align-items: center;
     }
 }
 
@@ -46,8 +38,7 @@
     display: flex;
     flex-direction: column;
     justify-content: end;
-    padding-bottom: 100px;
-    // margin: 0 -100px;
+    // padding-bottom: 100px;
 }
 
 // 近期活動區-排版結構
@@ -68,8 +59,34 @@
 
     .gallery {
         display: flex;
-        justify-content: space-between;
         align-items: center;
+
+        ul {
+            display: flex;
+            align-items: center;
+
+            li {
+
+                // RWD顯示設定
+                @media (max-width:1440px) {
+                    &:last-child {
+                        display: none;
+                    }
+                }
+
+                @media (max-width:1024px) {
+                    &:nth-child(n+3) {
+                        display: none;
+                    }
+                }
+
+                @media (max-width:820px) {
+                    &:nth-child(n+2) {
+                        display: none;
+                    }
+                }
+            }
+        }
 
         .eventicon {
             color: $brown-100;
@@ -126,25 +143,44 @@
     align-items: center;
     gap: 50px;
 
-    @media (max-width:1132px) {
+    @media (max-width:820px) {
         flex-direction: column;
-        gap: 80px;
+        gap: 50px;
     }
 
-
     .Inews {
-        padding: 35px 100px;
-        background: #fff;
+        position: relative;
+        padding: 20px;
         background-image: url(../images/home/home-grass.png);
         background-size: cover;
 
+        .newsF {
+            position: absolute;
+            width: 180px;
+            top: -70px;
+            left: -60px;
+        }
+
         ul {
+            min-width: 450px;
             li {
+                background: #fff;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 gap: 50px;
+                padding: 5px 10px;
                 margin: 10px 0;
+
+                .tag1 {
+                    background-color: $NewTaipeiCity-yellow;
+                    padding: 0 5px;
+                }
+
+                .tag2 {
+                    background-color: $sky-blue;
+                    padding: 0 5px;
+                }
             }
         }
 
@@ -158,38 +194,43 @@
         position: relative;
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        gap: 20px;
 
-        @media (max-width:1132px) {
-            flex-direction: row;
-            gap: 10px;
-            padding-bottom: 20px;
+        .st {
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
 
-        img {
-            width: 300px;
-        }
+        .pb {
+            display: flex;
 
-        .Istoryicon {
-            position: absolute;
-            width: 11vw;
-            right: -80px;
-            top: -120px;
-
-            img {
-                width: 11vw;
+            .Ibook {
+                width: 200px;
             }
-
-            @media (max-width:1132px) {
-                display: flex;
-                align-items: center;
-                gap: 20px;
-                width: 100%;
-                top: -75px;
-                left:0;
-            }
-
         }
+
+
+        // .Istoryicon {
+        //     position: absolute;
+        //     width: 11vw;
+        //     right: -80px;
+        //     top: -120px;
+
+        //     img {
+        //         width: 50%;
+        //     }
+
+        //     @media (max-width:1132px) {
+        //         display: flex;
+        //         align-items: center;
+        //         gap: 20px;
+        //         width: 100%;
+        //         top: -75px;
+        //         left: 0;
+        //     }
+
+        // }
     }
 }
 
@@ -201,7 +242,7 @@
     justify-content: flex-end;
     align-items: center;
     gap: 30px;
-    padding: 50px 0px 50px 100px;
+    padding: 50px 0px 50px 50px;
 
 
     .voteTitle {
@@ -227,6 +268,26 @@
         padding: 30px;
         gap: 20px;
         background: rgb(210, 236, 255, .5);
-    }
 
+        li {
+            @media (max-width:1440px) {
+                &:last-child {
+                    display: none;
+                }
+            }
+
+            @media (max-width:1024px) {
+                &:nth-child(n+3) {
+                    display: none;
+                }
+            }
+
+            @media (max-width:820px) {
+                &:nth-child(n+2) {
+                    display: none;
+                }
+            }
+        }
+
+    }
 }
