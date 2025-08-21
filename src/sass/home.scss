@@ -3,20 +3,20 @@
 
 
 
-//outline check
+// outline check
 // * {
-//        outline: 1px solid red;
+//     outline: 1px solid red;
 // }
 
 
 /* home共用區 */
 .btn {
-    color: brown;
+    color: $brown-100;
     padding: 10px 20px;
-    margin: 20px 0;
-    border: 2px solid #5e0e0e;
+    border: 2px solid $brown-100;
     border-radius: 999px;
     background-color: #fff;
+    margin-top: 30px;
 }
 
 
@@ -24,6 +24,11 @@
 .hero {
     display: flex;
     justify-content: center;
+    padding: 50px 0;
+
+    .heroFlower {
+        width: 50%;
+    }
 
     .name {
         display: flex;
@@ -46,23 +51,53 @@
 }
 
 // 近期活動區-排版結構
-.Indexactivity {
+.indexActivity {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding-bottom: 50px;
 
+    h2 {
+        padding: 10px 0;
+    }
+
+    h3 {
+        margin-bottom: 40px;
+    }
+
     .gallery {
         display: flex;
         justify-content: space-between;
         align-items: center;
 
+        .eventicon {
+            color: $brown-100;
+            font-size: 3em;
+            transition: ease .3s;
+
+            &:hover {
+                color: $grass-green;
+                transition: ease .3s;
+            }
+        }
+
+        // 日期設定
+        .eventTime {
+            width: 5vw;
+            margin-bottom: -120px;
+            padding-left: 270px;
+            font-size: $f-s-xl;
+            font-weight: $f-w-m;
+            color: $brown-100;
+        }
+
+        // img和底圖設計
         img {
             width: 100%;
             background-repeat: no-repeat;
-            background-position: 50%;
-            background-size: 80%;
+            background-position: 45% 90%;
+            background-size: 65%;
         }
 
         .f1 {
@@ -72,23 +107,15 @@
         .f2 {
             background-image: url('../images/home/首頁-近期活動-圖片底色-綠.svg');
         }
+
+        h4 {
+            color: $brown-100;
+            font-size: $f-s-xl;
+            text-align: center;
+        }
     }
 }
 
-// 近期活動區-字體間距
-.IndexActivity {
-    h2 {
-        padding: 10px 0;
-    }
-
-    h3 {
-        margin-bottom: 40px;
-    }
-
-    h4 {
-        padding: 10px 0;
-    }
-}
 
 // 最新消息區+花卉故事
 .IndexNsp {
@@ -97,14 +124,19 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap:100px;
-    padding: 50px 100px;
-    background-color: rgb(237, 255, 249);
+    gap: 50px;
+
+    @media (max-width:1132px) {
+        flex-direction: column;
+        gap: 80px;
+    }
+
 
     .Inews {
-        padding: 50px 100px;
+        padding: 35px 100px;
         background: #fff;
-        border-radius: 16px;
+        background-image: url(../images/home/home-grass.png);
+        background-size: cover;
 
         ul {
             li {
@@ -118,34 +150,45 @@
 
         .btn {
             text-align: center;
-            flex-grow: 0;
+            width: 30%;
         }
-
-
-
     }
 
     .Isp {
-
+        position: relative;
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 30px;
 
-
-        img {
-            width: 100%;
+        @media (max-width:1132px) {
+            flex-direction: row;
+            gap: 10px;
+            padding-bottom: 20px;
         }
 
-    }
+        img {
+            width: 300px;
+        }
 
-    .Istoryicon {
-        position: absolute;
-        width: 200px;
-        right: 30px;
-        top: -100px;
+        .Istoryicon {
+            position: absolute;
+            width: 11vw;
+            right: -80px;
+            top: -120px;
 
-        .book {
-            width: 70%;
+            img {
+                width: 11vw;
+            }
+
+            @media (max-width:1132px) {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                width: 100%;
+                top: -75px;
+                left:0;
+            }
+
         }
     }
 }
