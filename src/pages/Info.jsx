@@ -8,6 +8,8 @@ import icon哺乳室 from "../images/info/icon-哺乳室.svg";
 import icon停車場 from "../images/info/icon-停車場.svg";
 import date from "../images/info/date.svg";
 import weather from "../images/info/weather.svg";
+import bgpink from "../images/info/food-background-pink.svg";
+import ptopink from "../images/info/food-photo-pink.png";
 
 const tabs = ["活動介紹", "交通資訊", "周邊推薦"];
 const tabContents = [
@@ -16,14 +18,48 @@ const tabContents = [
 
   <div className="surrounding-content">
     <div className="food-section">
-      <h3>美食小點</h3>
+      <div className="info-container">
+        <h3>美食小點</h3>
+
+        <div className="food-groups">
+          {[1, 2, 3].map((_, index) => (
+            <div className="food-group" key={index}>
+              <img src={bgpink} alt="背景粉色" className="bgpink" />
+              <div className="ptopink-wrapper">
+                <img src={ptopink} alt="前景粉色" className="ptopink" />
+                <div className="ptopink-overlay">
+                  <p>李記車輪餅</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
 
     <div className="attraction-section">
-      <h3>附近景點</h3>
+      <div className="info-container">
+        <h3>附近景點</h3>
+
+        <div className="food-groups">
+          {[1, 2, 3].map((_, index) => (
+            <div className="food-group" key={index}>
+              <img src={bgpink} alt="背景粉色" className="bgpink" />
+              <div className="ptopink-wrapper">
+                <img src={ptopink} alt="前景粉色" className="ptopink" />
+                <div className="ptopink-overlay">
+                  <p>景點名稱</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   </div>,
 ];
+
+
 
 const Info = () => {
   const [activeIndex, setActiveIndex] = useState(0);
