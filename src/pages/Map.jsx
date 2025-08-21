@@ -78,7 +78,10 @@ const Map = () => {
         </div>
 
         <div className="map-event">
-          <h2>賞花活動 EVENT</h2>
+          <div className="map-e-title">
+
+          <h2 >賞花活動 EVENT</h2>
+          </div>
           <div className="map-cardWarp">
             <a  href="#" className="map-card">
               <p className="map-lable">台北</p>

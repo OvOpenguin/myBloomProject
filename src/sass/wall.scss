@@ -1,11 +1,9 @@
 @use 'reset';
 @use './variables/' as *;
 
-
-
-// * {
-//     // outline: 1px solid red;
-// }
+* {
+    outline: 1px solid red;
+}
 
 .wall-c-inner {
     display: flex;
@@ -50,16 +48,40 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        position: relative;
+        margin: 100px 0;
 
-        figure {
-            width: 80%;
-            /* 用百分比，隨螢幕縮放 */
-            max-width: 500px;
-
-            img {
-                width: 100%;
-            }
+        &::before {
+            content: "";
+            background-image: url(../images/wall/wall-c-de1.png);
+            display: inline-block;
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            top: -90px;
+            left: -100px;
         }
+
+        &::after {
+            content: "";
+            background-image: url(../images/wall/wall-c-de2.png);
+            display: inline-block;
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            top: 80%;
+            left: -100px;
+        }
+        
+        img {
+            width: 80%;
+            padding: 50px 100px;
+        }
+
 
     }
 
@@ -72,6 +94,34 @@
         font-weight: 700;
         text-align: center;
         margin-bottom: 80px;
+        position: relative;
+
+        &::before {
+            content: "";
+            display: inline-block;
+            background-image: url('../images/wall/wall-v-de2.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            width: 50%;
+            height: 65px;
+            right: 25%;
+        }
+
+        &::after {
+            content: "";
+            display: inline-block;
+            background-image: url('../images/wall/wall-v-de1.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            width: 80%;
+            height: 200px;
+            top: -100px;
+            right: -40%;
+
+        }
+
     }
 
     .v-photowarp {
@@ -95,7 +145,7 @@
                     top: 20px;
                     right: 20px;
                     width: 45px;
-                    cursor: pointer;                   
+                    cursor: pointer;
                     transition: transform 0.3s cubic-bezier(0.25, 1.25, 0.5, 1);
 
                     &:hover {
@@ -124,8 +174,8 @@
                     position: absolute;
                     top: 50%;
                     left: 50%;
-                    transform: translate(-50%, -50%) ;
-                    transition: transform 0.3s ease;  
+                    transform: translate(-50%, -50%);
+                    transition: transform 0.3s ease;
                     cursor: pointer;
 
                     &:hover {
