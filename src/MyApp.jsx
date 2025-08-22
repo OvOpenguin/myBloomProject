@@ -10,6 +10,7 @@ import Wall from './pages/Wall'
 import Story from './pages/Story'
 import Member from './pages/Member'
 import Info from './pages/Info'
+import Play from './pages/Play'
 
 
 
@@ -36,6 +37,8 @@ const MyApp = () => {
                 <Route path="/member" element={<Member/>}></Route>
                 {/* 資訊頁 */}
                 <Route path="/info" element={<Info/>}></Route>
+                {/* 遊戲頁 */}
+                 <Route path="/play" element={<Play/>}></Route>
             </Routes>
 
             {/* 頁尾區 */}

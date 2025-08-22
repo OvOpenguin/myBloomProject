@@ -1,12 +1,6 @@
 @use 'reset';
 @use './variables/' as *;
 
-* {
-    // outline: 1px solid red;
-}
-
-
-
 .newsBanner {
     display: flex;
     margin-top: 20px;

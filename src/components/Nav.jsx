@@ -13,6 +13,8 @@ const Nav = () => {
                     <li><Link to="/story">花卉故事</Link></li>
                     <li><Link to="/member">個人中心</Link></li>
                     <li><Link to="/info">資訊頁</Link></li>
+                    <li><Link to="/play">遊戲頁</Link></li>
+
                 </ul>
             </nav>
         </header>

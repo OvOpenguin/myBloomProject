@@ -23,14 +23,13 @@ const Wall = () => {
         </div>
 
         <div className="wall-c-photo">
-          <figure><img src={wall_vote_one} alt="" /></figure>
+          <img src={wall_vote_one} alt="" />
         </div>
       </div>
 
       <section className="wall-v-inner">
         <header className="v-title">
-          <h2>花牆票選</h2>
-          <h2>VOTING</h2>
+          <h2>花牆票選<br/> VOTING</h2>
         </header>
         <div className="v-photowarp">
           <ul className="v-photos">

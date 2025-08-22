@@ -1,143 +1,107 @@
 @use 'reset';
 @use './variables/' as *;
+
 // * {
 //     outline: 1px solid red;
 // }
 
 .playWrap {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    height: 100vh; //由於頁面小於h:1080px,讓高度維持100vh滿版。其他尺寸需讓h:auto
+    justify-content: center;
+    padding-top: 50px;
+    gap: 50px;
 
-    @media (max-width:1440px) {
-        height: auto;
-
+    @media (max-width:620px) {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
     }
 
-    @media (max-width:1024px) {
-        // justify-content: center;
-        justify-content: none;
-
-    }
-    // 1024px 以下的rwd未設定!
-
-
-    // 絕對定位標題(會有動畫)
-    .playH2 {
-        font-size: 2rem;
-        position: absolute;
-        left: 0px;
-        top: 0px;
-        color: chartreuse;
-        font-weight: 700;
-
-        @media (max-width:1440px) {
-            top: 50px;
-        }
-    }
-
+    //規則區
     .playExplain {
         position: relative;
-        // width: 650px; //好像不影響但先留著
-        display: flex;
-        flex-direction: column;
-        gap: 50px;
-        padding-top: 80px; //推開上內距，讓標題有空間做特效和裝飾
 
+        .pButterfly {
+            position: absolute;
+            width: 100px;
+            top: -40px;
+            right: 10px;
+        }
 
-        .playRule {
-            display: flex;
-            justify-content: flex-end;
+        h2,
+        h3,
+        p {
+            padding-left: 30px;
+            margin-bottom: 10px;
         }
 
         .playBtn {
-            display: flex;
-            flex-direction: column;
-            gap: 50px;
-            width: 400px;
+            div {
+                width: 80%;
+                margin-top: 40px;
+                transition: transform 0.3s ease;
+                cursor: pointer;
+
+                &:hover {
+                    transform: rotate(-5deg);
+                }
+            }
+
+
+
+
+
 
             @media (max-width:1440px) {
                 flex-direction: row;
-                width: auto;
             }
-
-        }
-
-
-    }
-
-    // !!背景裝飾區：父層跟著question內的figure 
-    .play-bg {
-        position: absolute;
-        z-index: -1;
-        left: -150px;
-        top: 100px;
-
-        @media (max-width:1024px) {
-            width: 100%;
-            left: -80px;
-        }
-
-    }
-
-    .play-line {
-        position: absolute;
-        z-index: -1;
-        bottom: 100px;
-        left: -300px;
-
-        @media (max-width:1024px) {
-            display: none;
-
         }
     }
 
+    // 圖片+問題區
     .questions {
-        max-width: 850px;
-        display: flex;
         position: relative;
+        display: flex;
+
+        figure {
+            background-image: url(../images/play/bg-o.png);
+            background-size: 90%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
 
         @media (max-width:1440px) {
-            max-width: 700px;
-            margin-left: 300px; // 稍微推出距離讓其視覺維持中間
+            max-width: 600px;
         }
 
         @media (max-width:1024px) {
             max-width: 500px;
-            margin-left: 0;
             flex-direction: column;
         }
 
-        figure {
-            width: 64%;
+        @media (max-width:620px) {
+            max-width: 450px;
         }
 
         .answer {
-            width: 36%;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            gap: 30px;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
 
             @media (max-width:1024px) {
-                width: 100%;
                 flex-direction: row;
                 gap: 10px;
-                // flex-wrap: wrap;
             }
-
-
 
             .a1,
             .a2,
             .a3 {
-                text-align: center;
-                width: 200px;
-                height: 200px;
                 position: relative;
-                line-height: 200px;
+                text-align: center;
+                width: 100px;
+                line-height: 100px;
+                cursor: pointer;
 
                 &::after {
                     content: '';
@@ -162,38 +126,20 @@
                     transform: scaleX(1);
                     /* hover 時再顯示 */
                 }
-
-
             }
-
 
             .next {
                 text-align: center;
-                padding: 30px;
-                background-image: url(../images/play/play-next.svg);
-                background-repeat: no-repeat;
-                // background-position:center center;
-                background-position: 50px center;
-                background-size: contain;
-
-                &:hover {
-                    transform: scale(1.2);
-                }
-
-                // &:active{}還未設定變化
+                width: 100px;
+                line-height: 50px;
+                cursor: pointer;
 
                 @media (max-width:1024px) {
-                    background-image: url(../images/play/play-next-v.svg);
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                    background-position: center 0px;
+                    line-height: 100px;
                 }
-
             }
 
         }
     }
-
-
 
 }

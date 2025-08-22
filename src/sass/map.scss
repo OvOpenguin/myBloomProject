@@ -1,10 +1,6 @@
 @use 'reset';
 @use './variables/' as *;
 
-// * {
-//     outline: 1px solid red;
-// }
-
 .map-inner {
     display: flex;
     padding: 0 100px;
@@ -21,6 +17,7 @@
         text-align: center;
         padding-top: 10px;
         color: #64503C;
+        margin: 30px auto;
     }
 
     .map-search {
@@ -101,6 +98,36 @@
 
     .map-event {
         width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .map-e-title {
+            position: relative;
+
+            &::before {
+                content: "";
+                display: inline-block;
+                background-image: url('../images/map/map-deline2.png'),
+                    url('../images/map/map-deline1.png');
+                background-repeat: no-repeat;
+                position: absolute;
+                background-position: left center, right center;
+                width: 50%;
+                height: 75px;
+                right: 25%;
+                top: 15%;
+
+                @media (max-width:1420px) {
+                    width: 60%;
+                    right: 20%;
+                }
+                @media (max-width:1250px) {
+                    width: 80%;
+                    right: 5%;
+                }
+            }
+
+        }
 
         .map-cardWarp {
             background-image: url('../images/map/map-bgblue.webp');
@@ -115,9 +142,20 @@
             height: 600px;
             overflow: auto;
 
+            &::-webkit-scrollbar {
+                background-color: #bae6ff;
+                width: 12px;
+                border-radius: 999px;
+            }
 
-            @media (max-width:1200px) {
-                max-width: 350px;
+            &::-webkit-scrollbar-thumb {
+                background-color: #FF8457;
+                border-radius: 999px;
+            }
+
+
+            @media (max-width:1380px) {
+                justify-content: center;
             }
 
             @media (max-width:1000px) {
