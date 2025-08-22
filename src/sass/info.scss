@@ -220,14 +220,16 @@ h2 {
     height: 630px;
     display: flex;
     justify-content: center;
-h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #64503C;
-            margin-bottom: 5px;
-        }
+
+    h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #64503C;
+        margin-bottom: 5px;
+    }
+
     .info-container {
-        
+
         width: 100%;
         // margin: 0 20%; // 跟 info-wrapper 對齊
         display: flex;
@@ -240,104 +242,206 @@ h3 {
         padding-top: 0;
         text-align: left;
     }
-.food-carousel {
-  position: relative; // 箭頭會相對這個容器定位
-  width: 100%;
-  overflow: visible; // 🔹 讓箭頭可以超出照片左右
+
+    .food-carousel {
+        position: relative; // 箭頭會相對這個容器定位
+        width: 100%;
+        overflow: visible; // 🔹 讓箭頭可以超出照片左右
+    }
+
+    .food-groups {
+        margin-top: 50px;
+        display: flex;
+        gap: 50px;
+        overflow-x: visible; // 可水平滑動
+        scroll-behavior: smooth;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
 }
-.food-groups {
-     margin-top: 50px;
-  display: flex;
-  gap: 50px;
-  overflow-x: visible; // 可水平滑動
-  scroll-behavior: smooth;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}}
 
 
-    .food-group {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 330px; 
-  
-
-  .foodbgpink
- {
-    width: 330px;
-    height: 330px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-  }
-
-  .foodptopink-wrapper {
-    width: 310px;
-    height: 310px;
+.food-group {
     position: relative;
-    
-    z-index: 2;
-    transition: all 0.3s ease; // 平滑動畫
-
-    .foodptopink {
-      width: 100%;
-      height: 100%;
-      filter: brightness(0.8);
-    }
-
-    .foodptopink-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 3;
-
-      p {
-        color: #fff;
-        font-size: 24px;
-        font-weight: 700;
-        margin: 0;
-      }
-    }
-  }
-
-  &:hover .foodptopink-wrapper {
-    width: 330px; // 放大到和 .bgpink 一樣
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 330px;
-  }
+
+
+    .foodbgpink {
+        width: 330px;
+        height: 330px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+
+    .foodptopink-wrapper {
+        width: 310px;
+        height: 310px;
+        position: relative;
+
+        z-index: 2;
+        transition: all 0.3s ease; // 平滑動畫
+
+        .foodptopink {
+            width: 100%;
+            height: 100%;
+            filter: brightness(0.8);
+        }
+
+        .foodptopink-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 3;
+
+            p {
+                color: #fff;
+                font-size: 24px;
+                font-weight: 700;
+                margin: 0;
+            }
+        }
+    }
+
+    &:hover .foodptopink-wrapper {
+        width: 330px; // 放大到和 .bgpink 一樣
+        height: 330px;
+    }
 }
 
 .arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-  background: rgba(255,255,255,0.7);
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  padding: 5px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
 
-  &.arrow-left {
-    left: -100px; // 🔹 可往外移，超出父容器
-  }
+    &.arrow-left {
+        left: -100px; // 🔹 可往外移，超出父容器
+    }
 
-  &.arrow-right {
-    right: -100px; // 🔹 可往外移，超出父容器
-  }
+    &.arrow-right {
+        right: -100px; // 🔹 可往外移，超出父容器
+    }
 
-  img {
-    width: 70px;
-    height: 70px;
+    img {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+.transport-section {
+    width: 100vw; // 用視窗寬度，而不是父容器寬度
+    margin: 0;
+    padding: 0 5vw; // 左右留白 5% 可自由調整
+    display: flex;
+    justify-content: center;
+}
+
+.transport-container {
+    width: 100%; // 內部容器占滿 transport-section
+    max-width: none; // 取消限制
+    display: flex;
+    gap: 5%; // 左右欄位間距
+}
+
+
+
+.transport-left,
+.transport-right {
+    flex: 1; // 左右等寬
+}
+
+.transport-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; // 內容靠上
+    text-align: left;
+}
+
+.transport-right {
+    display: flex;
+    justify-content: flex-end; // 地圖靠右
+
+    iframe {
+        width: 100%;
+        height: 380px;
+        border-radius: 12px;
+    }
+}
+
+.transport-left {
+  display: flex;
+  flex-direction: column;
+  gap: 50px; // 每組 transport-item 間距
+
+  .transport-item {
+    display: flex;
+    align-items: center; // 與圖標垂直置中
+    gap: 50px;
+
+    img.icon {
+      width: 100%;
+      height: auto;
+      max-width: 90px; // 保持等比例
+      flex-shrink: 0;
+    }
+
+    .item-content {
+      display: flex;
+      align-items: center; // 垂直置中所有文字區塊
+      gap: 10px;
+
+      // 統一所有文字區塊樣式
+      .text-block,
+      .text-block-right,
+      .text-block-extra { // 第三組文字
+        display: flex;
+        flex-direction: column;
+        justify-content: center; // 垂直置中
+        gap: 5px;
+
+        .line1 {
+          font-weight: 700;
+          font-size: 1.25rem; // 20px
+        }
+
+        .line2 {
+          font-size: 1rem;
+        }
+
+        .line3 a {
+          font-size: 1rem;
+          color: #C075E3;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .divider {
+        width: 2px;
+        background-color: #64503C;
+        height: 100%; // 與文字高度一致
+      }
+    }
   }
 }
