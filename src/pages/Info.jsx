@@ -14,55 +14,60 @@ import arrowlf from "../images/info/arrow-left.svg";
 import arrowri from "../images/info/arrow-right.svg";
 import attbgblu from "../images/info/attractions-background-blue.svg";
 import attptoblu from "../images/info/attractions-photo-blue.png";
+import bus from "../images/info/bus.png";
+import mrt from "../images/info/mrt.png";
+import car from "../images/info/car.png";
+import mrtyuanshan from "../images/info/mrt-yuanshan.png";
 
 const tabs = ["活動介紹", "交通資訊", "周邊推薦"];
+
+// Google 地圖元件
+function MapIframe() {
+  return (
+    <iframe
+      title="Google Map"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4298.543421308874!2d121.51861719589644!3d25.04663600089511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a96da144d9f9%3A0xc7aaab18623bf211!2z5Lqs56uZ5pmC5bCa5buj5aC0!5e0!3m2!1szh-TW!2stw!4v1755233965825!5m2!1szh-TW!2stw"
+      style={{ border: 0 }}
+      allowFullScreen=""
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+    ></iframe>
+  );
+}
 
 const Info = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const tabRefs = useRef([]);
   const lineContainerRef = useRef(null);
   const [lineStyle, setLineStyle] = useState({ width: 0, left: 0 });
-
-  // 存放所有 food-groups 的 ref
   const foodGroupsRef = useRef([]);
 
   useEffect(() => {
     if (tabRefs.current[activeIndex] && lineContainerRef.current) {
       const tab = tabRefs.current[activeIndex];
       const container = lineContainerRef.current;
-      const left = tab.getBoundingClientRect().left - container.getBoundingClientRect().left;
+      const left =
+        tab.getBoundingClientRect().left -
+        container.getBoundingClientRect().left;
       setLineStyle({ width: tab.offsetWidth, left });
     }
   }, [activeIndex]);
 
-  // 左右滾動函數
-  const scrollLeft = (index) => {
-    if (foodGroupsRef.current[index]) {
-      foodGroupsRef.current[index].scrollBy({ left: -150, behavior: "smooth" });
-    }
-  };
-
-  const scrollRight = (index) => {
-    if (foodGroupsRef.current[index]) {
-      foodGroupsRef.current[index].scrollBy({ left: 150, behavior: "smooth" });
-    }
-  };
-
   return (
     <section>
       {/* Banner */}
-      <div className='info-benner'>
+      <div className="info-benner">
         <img src={活動照片} alt="" />
       </div>
 
       {/* Info wrapper */}
-      <div className='info-wrapper'>
-        <div className='info-basic'>
+      <div className="info-wrapper">
+        <div className="info-basic">
           <p>2025</p>
           <h2>樟樹步道花海</h2>
           <p>台北市士林區二二路一段123號</p>
-          <div className='info-tag-wrapper'>
-            <div className='info-tag'>
+          <div className="info-tag-wrapper">
+            <div className="info-tag">
               <img src={TagSummer} alt="" />
               <img src={TagTaipeicity} alt="" />
             </div>
@@ -73,7 +78,7 @@ const Info = () => {
         </div>
 
         <div className="info-about">
-          <div className='info-icon'>
+          <div className="info-icon">
             <div className="info-item">
               <img src={icon無障礙} alt="" />
               <p>無障礙設施</p>
@@ -129,44 +134,109 @@ const Info = () => {
           ))}
         </div>
 
-        {/* 灰色線 + 紫色線 */}
         <div className="tab-line-container" ref={lineContainerRef}>
-          <div className="tab-line"></div> {/* 灰色線 */}
+          <div className="tab-line"></div>
           <div
             className="tab-line-highlight"
             style={{
               width: `${lineStyle.width}px`,
               transform: `translateX(${lineStyle.left}px)`,
             }}
-          /> {/* 紫色線 */}
+          />
         </div>
 
-        {/* Tab contents */}
         <div className="tab-contents">
           {activeIndex === 0 && (
             <div>這是活動介紹內容，可以放文字或圖片描述活動細節</div>
           )}
+
           {activeIndex === 1 && (
-            <div>這是交通資訊內容，例如捷運、公車、停車場說明</div>
+            <div className="transport-section">
+              <div className="transport-container">
+                <div className="transport-left">
+                  {[
+                    {
+                      icon: car,
+                      lines: ["汽車圖標文字1", "走路約 3 分鐘", "查看位置 >"],
+                    },
+                    {
+                      icon: mrt,
+                      lines: [
+                        <img src={mrtyuanshan} alt="MRT Yuanshan" />,
+                        "走路約 3 分鐘",
+                        "查看位置 >",
+                      ],
+                    },
+                    {
+                      icon: bus,
+                      lines: ["公車圖標文字1", "走路約 3 分鐘", "查看位置 >"],
+                    },
+                  ].map((item, idx) => (
+                    <div className="transport-item" key={idx}>
+                      <img className="icon" src={item.icon} alt="" />
+                      <div className="item-content">
+                        {/* 原本三組文字 */}
+                        <div className="text-block">
+                          <div className="line1">{item.lines[0]}</div>
+                          <div className="line2">{item.lines[1]}</div>
+                          <div className="line3">
+                            <a href="#">{item.lines[2]}</a>
+                          </div>
+                        </div>
+                        <div className="divider"></div>
+                        <div className="text-block-right">
+                          <div className="line1">{item.lines[0]}</div>
+                          <div className="line2">{item.lines[1]}</div>
+                          <div className="line3">
+                            <a href="#">{item.lines[2]}</a>
+                          </div>
+                        </div>
+                        <div className="divider"></div>
+                        <div className="text-block-extra">
+                          <div className="line1">{item.lines[0]}</div>
+                          <div className="line2">{item.lines[1]}</div>
+                          <div className="line3">
+                            <a href="#">{item.lines[2]}</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="transport-right">
+                  <MapIframe />
+                </div>
+              </div>
+            </div>
           )}
+
           {activeIndex === 2 && (
             <div className="surrounding-content">
-
               {/* 美食小點 */}
               <div className="food-section">
                 <div className="info-container">
                   <h3>美食小點</h3>
-
                   <div className="food-carousel">
-  <button className="arrow arrow-left" onClick={scrollLeft}>
-    <img src={arrowlf} alt="左箭頭" />
-  </button>
-<div className="food-groups" ref={(el) => (foodGroupsRef.current[1] = el)}>
+                    <button className="arrow arrow-left">
+                      <img src={arrowlf} alt="左箭頭" />
+                    </button>
+                    <div
+                      className="food-groups"
+                      ref={(el) => (foodGroupsRef.current[1] = el)}
+                    >
                       {[1, 2, 3].map((_, index) => (
                         <div className="food-group" key={index}>
-                          <img src={foodbgpink} alt="背景粉色" className="foodbgpink" />
+                          <img
+                            src={foodbgpink}
+                            alt="背景粉色"
+                            className="foodbgpink"
+                          />
                           <div className="foodptopink-wrapper">
-                            <img src={foodptopink} alt="前景粉色" className="foodptopink" />
+                            <img
+                              src={foodptopink}
+                              alt="前景粉色"
+                              className="foodptopink"
+                            />
                             <div className="foodptopink-overlay">
                               <p>景點名稱</p>
                             </div>
@@ -174,12 +244,10 @@ const Info = () => {
                         </div>
                       ))}
                     </div>
-                    
-
-                    <button className="arrow arrow-right" onClick={scrollRight}>
-    <img src={arrowri} alt="右箭頭" />
-  </button>
-</div>
+                    <button className="arrow arrow-right">
+                      <img src={arrowri} alt="右箭頭" />
+                    </button>
+                  </div>
                 </div>
               </div>
 
@@ -187,18 +255,27 @@ const Info = () => {
               <div className="attraction-section">
                 <div className="info-container">
                   <h3>附近景點</h3>
-
                   <div className="food-carousel">
-  <button className="arrow arrow-left" onClick={scrollLeft}>
-    <img src={arrowlf} alt="左箭頭" />
-  </button>
-
-                    <div className="food-groups" ref={(el) => (foodGroupsRef.current[0] = el)}>
+                    <button className="arrow arrow-left">
+                      <img src={arrowlf} alt="左箭頭" />
+                    </button>
+                    <div
+                      className="food-groups"
+                      ref={(el) => (foodGroupsRef.current[0] = el)}
+                    >
                       {[1, 2, 3].map((_, index) => (
                         <div className="food-group" key={index}>
-                          <img src={attbgblu} alt="背景粉色" className="foodbgpink" />
+                          <img
+                            src={attbgblu}
+                            alt="背景藍色"
+                            className="foodbgpink"
+                          />
                           <div className="foodptopink-wrapper">
-                            <img src={attptoblu} alt="前景粉色" className="foodptopink" />
+                            <img
+                              src={attptoblu}
+                              alt="前景藍色"
+                              className="foodptopink"
+                            />
                             <div className="foodptopink-overlay">
                               <p>李記車輪餅</p>
                             </div>
@@ -206,14 +283,12 @@ const Info = () => {
                         </div>
                       ))}
                     </div>
-
-                    <button className="arrow arrow-right" onClick={scrollRight}>
-    <img src={arrowri} alt="右箭頭" />
-  </button>
-</div>
+                    <button className="arrow arrow-right">
+                      <img src={arrowri} alt="右箭頭" />
+                    </button>
+                  </div>
                 </div>
               </div>
-
             </div>
           )}
         </div>
