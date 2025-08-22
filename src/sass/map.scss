@@ -5,19 +5,21 @@
     display: flex;
     padding: 0 100px;
     gap: 20px;
-    height: 100vh;
+    // height: 100vh;
 
     @media (max-width:1000px) {
         flex-direction: column;
     }
 
     h2 {
+        position: relative;
         font-size: 1.5rem;
         font-weight: 700;
         text-align: center;
         padding-top: 10px;
         color: #64503C;
         margin: 30px auto;
+        z-index: 2;
     }
 
     .map-search {
@@ -100,6 +102,7 @@
         width: 100%;
         display: flex;
         flex-direction: column;
+
 
         .map-e-title {
             position: relative;

@@ -79,41 +79,40 @@ const Map = () => {
 
         <div className="map-event">
           <div className="map-e-title">
-
-          <h2 >賞花活動 EVENT</h2>
+            <h2 >賞花活動 EVENT</h2>
           </div>
           <div className="map-cardWarp">
-            <a  href="#" className="map-card">
+            <a href="#" className="map-card">
               <p className="map-lable">台北</p>
               <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="map-img" alt="" />
               <div className="map-date">07.01 — 09.23</div>
               <h3 className="map-title">樟樹步道花海</h3>
             </a>
-            <a  href="#" className="map-card">
+            <a href="#" className="map-card">
               <p className="map-lable">台北</p>
               <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="map-img" alt="" />
               <div className="map-date">07.01 — 09.23</div>
               <h3 className="map-title">樟樹步道花海</h3>
             </a>
-            <a  href="#" className="map-card">
+            <a href="#" className="map-card">
               <p className="map-lable">台北</p>
               <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="map-img" alt="" />
               <div className="map-date">07.01 — 09.23</div>
               <h3 className="map-title">樟樹步道花海</h3>
             </a>
-            <a  href="#" className="map-card">
+            <a href="#" className="map-card">
               <p className="map-lable">台北</p>
               <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="map-img" alt="" />
               <div className="map-date">07.01 — 09.23</div>
               <h3 className="map-title">樟樹步道花海</h3>
             </a>
-            <a  href="#" className="map-card">
+            <a href="#" className="map-card">
               <p className="map-lable">台北</p>
               <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="map-img" alt="" />
               <div className="map-date">07.01 — 09.23</div>
               <h3 className="map-title">樟樹步道花海</h3>
             </a>
-            <a  href="#" className="map-card">
+            <a href="#" className="map-card">
               <p className="map-lable">台北</p>
               <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="map-img" alt="" />
               <div className="map-date">07.01 — 09.23</div>

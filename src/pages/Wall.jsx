@@ -8,6 +8,20 @@ import votebotton2 from '../images/wall/wall-votebotton2.svg'
 import abotton from '../images/wall/wall-abotton.svg'
 import flower01 from '../images/wall/wall-flower01.png'
 import flower02 from '../images/wall/wall-flower02.png'
+import flower03 from '../images/wall/wall-f1.webp'
+import flower04 from '../images/wall/wall-f3.webp'
+import flower05 from '../images/wall/wall-f4.webp'
+import flower06 from '../images/wall/wall-f5.webp'
+import flower07 from '../images/wall/wall-f7.webp'
+import flower08 from '../images/wall/wall-f8.webp'
+import flower09 from '../images/wall/wall-f9.webp'
+import flower10 from '../images/wall/wall-f10.webp'
+
+// const arrcard = [
+//   {
+
+//   }
+// ]
 
 const Wall = () => {
   return (
@@ -23,13 +37,16 @@ const Wall = () => {
         </div>
 
         <div className="wall-c-photo">
-          <img src={wall_vote_one} alt="" />
+          <div>
+            <img src={wall_vote_one} alt="" />
+          </div>
         </div>
       </div>
 
       <section className="wall-v-inner">
         <header className="v-title">
-          <h2>花牆票選<br/> VOTING</h2>
+          <h2>花牆票選</h2>
+          <h2>VOTING</h2>
         </header>
         <div className="v-photowarp">
           <ul className="v-photos">
@@ -51,11 +68,60 @@ const Wall = () => {
               <h3>參加賽事</h3>
               <img src={votebotton1} alt="" />
             </li>
+            <li className="v-item">
+              <p>999</p>
+              <img src={flower03} alt="" />
+              <div className="icon-heart">
+                <img src={heart0} alt="" />
+              </div>
+            </li>
+            <li className="v-item">
+              <p>999</p>
+              <img src={flower04} alt="" />
+              <div className="icon-heart">
+                <img src={heart0} alt="" />
+              </div>
+            </li>
+            <li className="v-item">
+              <p>999</p>
+              <img src={flower05} alt="" />
+              <div className="icon-heart">
+                <img src={heart0} alt="" />
+              </div>
+            </li>
+            <li className="v-item">
+              <p>999</p>
+              <img src={flower06} alt="" />
+              <div className="icon-heart">
+                <img src={heart0} alt="" />
+              </div>
+            </li>
           </ul>
           <ul className="v-photos">
             <li className="v-item">
               <p>999</p>
-              <img src={flower01} alt="" />
+              <img src={flower06} alt="" />
+              <div className="icon-heart">
+                <img src={heart0} alt="" />
+              </div>
+            </li>
+            <li className="v-item">
+              <p>999</p>
+              <img src={flower09} alt="" />
+              <div className="icon-heart">
+                <img src={heart0} alt="" />
+              </div>
+            </li>
+            <li className="v-item">
+              <p>999</p>
+              <img src={flower10} alt="" />
+              <div className="icon-heart">
+                <img src={heart0} alt="" />
+              </div>
+            </li>
+            <li className="v-item">
+              <p>999</p>
+              <img src={flower06} alt="" />
               <div className="icon-heart">
                 <img src={heart0} alt="" />
               </div>
@@ -63,6 +129,27 @@ const Wall = () => {
             <li className="v-item">
               <h3>參加賽事</h3>
               <img src={votebotton2} alt="" />
+            </li>
+            <li className="v-item">
+              <p>999</p>
+              <img src={flower07} alt="" />
+              <div className="icon-heart">
+                <img src={heart0} alt="" />
+              </div>
+            </li>
+            <li className="v-item">
+              <p>999</p>
+              <img src={flower08} alt="" />
+              <div className="icon-heart">
+                <img src={heart0} alt="" />
+              </div>
+            </li>
+            <li className="v-item">
+              <p>999</p>
+              <img src={flower01} alt="" />
+              <div className="icon-heart">
+                <img src={heart0} alt="" />
+              </div>
             </li>
             <li className="v-item">
               <p>999</p>
@@ -84,39 +171,51 @@ const Wall = () => {
         <div className="a-cardwarp">
           <a href="#" className="a-card">
             <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" alt="" />
-            <div className='wall-lable'>標籤</div>
-            <p className='wall-date'>2025.07.28</p>
-            <p className='wall-title'>荷與睡蓮誰美？北投公園一次看</p>
+            <div>
+              <p className='wall-lable'>標籤</p>
+              <p className='wall-date'>2025.07.28</p>
+              <p className='wall-title'>荷與睡蓮誰美？北投公園一次看</p>
+            </div>
           </a>
           <a href="#" className="a-card">
             <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" alt="" />
-            <div className='wall-lable'>標籤</div>
-            <p className='wall-date'>2025.07.28</p>
-            <p className='wall-title'>荷與睡蓮誰美？北投公園一次看</p>
+            <div>
+              <p className='wall-lable'>標籤</p>
+              <p className='wall-date'>2025.07.28</p>
+              <p className='wall-title'>荷與睡蓮誰美？北投公園一次看</p>
+            </div>
           </a>
           <a href="#" className="a-card">
             <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" alt="" />
-            <div className='wall-lable'>標籤</div>
-            <p className='wall-date'>2025.07.28</p>
-            <p className='wall-title'>荷與睡蓮誰美？北投公園一次看</p>
+            <div>
+              <p className='wall-lable'>標籤</p>
+              <p className='wall-date'>2025.07.28</p>
+              <p className='wall-title'>荷與睡蓮誰美？北投公園一次看</p>
+            </div>
           </a>
           <a href="#" className="a-card">
             <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" alt="" />
-            <div className='wall-lable'>標籤</div>
-            <p className='wall-date'>2025.07.28</p>
-            <p className='wall-title'>荷與睡蓮誰美？北投公園一次看</p>
+            <div>
+              <p className='wall-lable'>標籤</p>
+              <p className='wall-date'>2025.07.28</p>
+              <p className='wall-title'>荷與睡蓮誰美？北投公園一次看</p>
+            </div>
           </a>
           <a href="#" className="a-card">
             <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" alt="" />
-            <div className='wall-lable'>標籤</div>
-            <p className='wall-date'>2025.07.28</p>
-            <p className='wall-title'>荷與睡蓮誰美？北投公園一次看</p>
+            <div>
+              <p className='wall-lable'>標籤</p>
+              <p className='wall-date'>2025.07.28</p>
+              <p className='wall-title'>荷與睡蓮誰美？北投公園一次看</p>
+            </div>
           </a>
           <a href="#" className="a-card">
             <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" alt="" />
-            <div className='wall-lable'>標籤</div>
-            <p className='wall-date'>2025.07.28</p>
-            <p className='wall-title'>荷與睡蓮誰美？北投公園一次看</p>
+            <div>
+              <p className='wall-lable'>標籤</p>
+              <p className='wall-date'>2025.07.28</p>
+              <p className='wall-title'>荷與睡蓮誰美？北投公園一次看</p>
+            </div>
           </a>
         </div>
         <a href="#" className="a-button">

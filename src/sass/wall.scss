@@ -2,13 +2,14 @@
 @use './variables/' as *;
 
 * {
-    outline: 1px solid red;
+    // outline: 1px solid red;
 }
 
 .wall-c-inner {
     display: flex;
     width: 100%;
-    gap: 50px;
+    gap: 100px;
+    justify-content: flex-end;
 
     .wall-c-title {
         flex: 1;
@@ -19,9 +20,35 @@
         flex-direction: column;
         justify-content: center;
 
+
+        @media (max-width:900px) {
+            padding: 15% 0 6% 6%;
+
+        }
+
+        &::before {
+            content: "";
+            display: inline-block;
+            background-image: url('../images/wall/wall-c-c.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            height: 200px;
+            width: 245px;
+            transform: rotate(-20deg);
+            right: 70%;
+            top: 100px;
+
+            @media (max-width:900px) {
+                top: 30px;
+
+            }
+        }
+
         h2 {
             font-size: 1.5rem;
             font-weight: 700;
+            z-index: 2;
         }
 
         p {
@@ -76,10 +103,17 @@
             top: 80%;
             left: -100px;
         }
-        
-        img {
-            width: 80%;
-            padding: 50px 100px;
+
+        div {
+            padding: 30px 100px;
+
+            @media (max-width:1300px) {
+                padding: 30px 20px;
+            }
+
+            img {
+                width: 100%;
+            }
         }
 
 
@@ -88,13 +122,14 @@
 }
 
 .wall-v-inner {
-    margin: 150px 0;
+    margin: 100px 0;
 
     .v-title {
         font-weight: 700;
         text-align: center;
         margin-bottom: 80px;
         position: relative;
+        z-index: 2;
 
         &::before {
             content: "";
@@ -104,8 +139,10 @@
             background-size: contain;
             position: absolute;
             width: 50%;
-            height: 65px;
-            right: 25%;
+            height: 55px;
+            right: 400px;
+            top: -50px;
+            transform: rotate(-10deg);
         }
 
         &::after {
@@ -115,10 +152,10 @@
             background-repeat: no-repeat;
             background-size: contain;
             position: absolute;
-            width: 80%;
+            width: 20%;
             height: 200px;
             top: -100px;
-            right: -40%;
+            right: 50px;
 
         }
 
@@ -139,6 +176,7 @@
                 position: relative;
                 border-radius: 8px;
                 overflow: hidden;
+                flex-shrink: 0;
 
                 .icon-heart {
                     position: absolute;
@@ -166,6 +204,7 @@
                     position: absolute;
                     bottom: 20px;
                     left: 20px;
+                    font-weight: 600;
                 }
 
                 h3 {
@@ -194,72 +233,139 @@
 }
 
 .wall-a-inner {
-    padding: 0 300px;
+    // padding: 0 300px;
+    padding: 0 clamp(20px, 10vw, 300px);
     text-align: right;
+    position: relative;
 
-    @media (max-width:1470px) {
-        padding: 0 200px;
+    &::before {
+        content: "";
+        background-image: url(../images/wall/wall-a-de2.svg);
+        display: inline-block;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        width: 270px;
+        height: 280px;
+        bottom: -100px;
+        left: 60px;
+        transform: rotate(-20deg);
     }
 
-    @media (max-width:1260px) {
-        padding: 0 100px;
-    }
 
-    @media (max-width: 940px) {
-        padding: 0 60px;
-    }
 
     .a-title {
         font-weight: 700;
         text-align: center;
         margin-bottom: 80px;
+        position: relative;
+        z-index: 3;
+
+        &::before {
+            content: "";
+            display: inline-block;
+            background-image: url('../images/wall/wall-a-t1.svg'),
+                url('../images/wall/wall-a-t2.png');
+            background-repeat: no-repeat;
+            position: absolute;
+            background-position: left center, right center;
+            width: 90%;
+            height: 150px;
+            right: 5%;
+            z-index: -1;
+        }
+
     }
 
     .a-cardwarp {
         background-image: url('../images/wall/wall-a-bg.png');
         // background-repeat: no-repeat;
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
         flex-wrap: wrap;
-        gap: 20px;
-        padding: 100px;
+        gap: 30px;
+        // padding: 100px;
+        padding: 100px clamp(20px, 10vw, 100px);
         text-align: left;
         align-items: center;
 
-        @media (max-width:1050px) {
-            padding: 50px;
+        @media (max-width:1100px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width:700px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        @media (max-width:600px) {
+            padding: 20px clamp(20px, 10vw, 100px);
+        }
+
+        &::before {
+            content: "";
+            background-image: url(../images/wall/wall-a-de1.png);
+            display: inline-block;
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            width: 270px;
+            height: 280px;
+            top: 100px;
+            left: 60px;
+            transform: rotate(-20deg);
+
         }
 
         .a-card {
-            display: block;
+            display: flex;
             flex-direction: column;
-            width: 300px;
+            width: 350px;
             padding: 10px;
+            position: relative;
 
-            @media (max-width: 940px) {
+            @media (max-width: 1440px) {
                 width: 250px;
 
+            }
+
+            @media (max-width:700px) {
+                flex-direction: row;
+                width: 350px;
             }
 
             img {
                 width: 100%;
                 object-fit: cover;
+
+                @media (max-width:700px) {
+                    width: 200px;
+                }
             }
 
-            .wall-lable {
-                display: inline-block;
-                background-color: #69C9A0;
-                border-radius: 99px;
-                color: #fff;
-                width: auto;
-                padding: 1px 16px;
-                margin: 10px 0 20px 5px;
-            }
+            div {
 
-            p {
-                font-weight: 600;
+                @media (max-width:700px) {
+                    width: 100%;
+                    margin-left: 10px;
+                }
+
+                .wall-lable {
+                    display: inline-flex;
+                    background-color: #69C9A0;
+                    border-radius: 99px;
+                    color: #fff;
+                    width: auto;
+                    padding: 1px 16px;
+                    margin: 10px 0 20px 5px;
+                }
+
+                p {
+                    font-weight: 600;
+                }
             }
         }
+
 
 
     }
