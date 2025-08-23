@@ -1,9 +1,9 @@
 @use 'reset';
 @use './variables/' as *;
 
-* {
-    outline: 1px solid red;
-}
+// * {
+//     outline: 1px solid red;
+// }
 
 .playWrap {
     display: flex;
@@ -62,10 +62,10 @@
         display: flex;
 
         figure {
-            background-image: url(../images/play/bg-o.png);
-            background-size: 90%;
+            background-image: url(../images/play/play-bg.svg);
+            background-size: contain;
             background-repeat: no-repeat;
-            background-position: center;
+            background-position: 0px 50px;
         }
 
         @media (max-width:1440px) {
