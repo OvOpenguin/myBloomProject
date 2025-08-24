@@ -19,6 +19,8 @@ import yellow from '../images/home/yellow-p4.png'
 // react icon
 import { IoIosArrowDropleft } from "react-icons/io";
 import { IoIosArrowDropright } from "react-icons/io";
+import { BsArrowUpRightCircleFill } from "react-icons/bs";
+import { Link } from "react-router-dom"
 
 
 
@@ -29,14 +31,16 @@ const App = () => {
                 {/* Hero 區 */}
                 <section >
                     <div className="hero">
-                         <div className="name"><img src={北花冊} alt="北花冊" /><p>Bloomchure</p></div>
-                    <div className="heroFlower"><img src={大花} alt="大花" /></div>
+                        <div className="name"><img src={北花冊} alt="北花冊" /><p>Bloomchure</p></div>
+                        <div className="heroFlower"><img src={大花} alt="大花" /></div>
+
                     </div>
                     <p className="slogan">北區賞花季，一頁收藏所有花事</p>
                 </section>
 
                 {/* 近期活動 */}
                 <section className="indexActivity">
+
                     {/* 主副標 */}
                     <h2>近期活動</h2>
                     <h3>Recent vents</h3>
@@ -75,7 +79,7 @@ const App = () => {
                                 <div className="eventTime">
                                     2025<br />07.01<br />｜<br />09.23
                                 </div>
-                                <img className="f1" src={貼紙花1} alt="花1" />
+                                <img className="f2" src={貼紙花1} alt="花1" />
                                 <h4>花季活動名稱</h4>
                             </li>
 
@@ -85,62 +89,56 @@ const App = () => {
                     </div>
 
                     {/* 地圖搜尋btn */}
-                    <div className="btn">地圖搜尋→</div>
-                </section>
+                    <Link to="./map"><div className="homeBtn">地圖搜尋→</div></Link>
 
+                </section>
 
                 {/* 最新消息+花卉科普 */}
                 <section>
                     <div className="IndexNsp">
-
-                        {/* <div className="p pink"><img src={pink} alt="粉辦" /></div>
-                        <div className="p orange"><img src={orange} alt="橘辦" /></div>
-                        <div className="p purple"><img src={purple} alt="紫辦" /></div>
-                        <div className="p yellow"><img src={yellow} alt="黃中心" /></div> */}
                         {/* 左側-最新消息 */}
                         <div className="Inews">
-                            <div className="newsF"><img src={首頁消息花} alt="裝飾花" /></div>
+
+                            {/* 裝飾花 */}
+                            {/* <div className="newsF"> */}
+                                <div className="iflower">
+                                    <div className="p pink"><img src={pink} alt="粉辦" /></div>
+                                    <div className="p purple"><img src={purple} alt="紫辦" /></div>
+                                    <div className="p orange"><img src={orange} alt="橘辦" /></div>
+                                    <div className="p yellow"><img src={yellow} alt="黃中心" /></div>
+                                    {/* <img src={首頁消息花} alt="" /> */}
+                                </div>
+                            {/* </div> */}
+
+                            {/* 列表標題 */}
                             <h2>最新消息</h2>
                             <h3>News</h3>
+                            {/* 消息列表 */}
                             <ul>
-                                <li><div className="tag1">活動</div><p>我是一大串的活頁消息標題</p><div className="">2025-10-15</div></li>
-                                <li><div className="tag2">優惠</div><p>我是一大串的活頁消息標題</p><div className="">2025-10-15</div></li>
-                                <li><div className="tag1">活動</div><p>我是一大串的活頁消息標題</p><div className="">2025-10-15</div></li>
-                                <li><div className="tag2">活動</div><p>我是一大串的活頁消息標題</p><div className="">2025-10-15</div></li>
+                                <li><div><p><span className="tag1">活動</span>我是一大串的活頁消息標題消我xfkdxhksdhgkjs</p></div><time className="itime">2025-10-15</time></li>
+                                <li><div><p><span className="tag2">活動</span>我是一大串的活頁消息標題消我</p></div><time className="itime">2025-10-15</time></li>
+                                <li><div><p><span className="tag1">活動</span>我是一大串的活頁消息標題消我</p></div><time className="itime">2025-10-15</time></li>
+                                <li><div><p><span className="tag1">活動</span>我是一大串的活頁消息標題消我</p></div><time className="itime">2025-10-15</time></li>
                             </ul>
-                            <div className="btn">更多消息</div>
+                            <Link to="./news"><div className="homeBtn">更多消息</div></Link>
                         </div>
 
 
                         {/* 右側-花卉科普 */}
                         <div className="Isp">
                             <div className="st">
-                                <div className="Istory"><a href="#"><img src={花卉介紹} alt="花卉介紹" /></a></div>
+                                <Link to="./story"><div className="Istory"><a href="./story"><img src={花卉介紹} alt="花卉介紹" /></a></div></Link>
                                 <div className="Istitle"><h2>認識花卉</h2><h3>Flower Story</h3></div>
                             </div>
 
-
                             <div className="pb">
                                 <div className="Ibook"><img src={書} alt="書" /></div>
-                                <div className="Iplay"><a href="#"><img src={花卉遊戲} alt="花卉遊戲" /></a></div>
+                                <Link to="./play"> <div className="Iplay"><a href="#"><img src={花卉遊戲} alt="花卉遊戲" /></a></div></Link>
                             </div>
-
-                            {/* 花卉科普的標題 */}
-                            {/* <div className="Istoryicon">
-                                <h2>認識花卉</h2>
-                                <h3>Flower Story</h3>
-                                <div className="book"><img src={書} alt="書" /></div>
-                            </div> */}
-
                         </div>
 
                     </div>
                 </section>
-
-
-
-
-
 
                 {/* 花牆票選 */}
                 <section className="IndexVote">
@@ -148,7 +146,7 @@ const App = () => {
                     <div className="voteTitle">
                         <h2>花牆票選</h2>
                         <h3>Popularity vote</h3>
-                        <div className="arrow" >按鈕</div>
+                        <Link to='./wall'> <BsArrowUpRightCircleFill className="arrow" /></Link>
                         <div className="crown"><img src={王冠} alt="王冠" /></div>
                     </div>
 
