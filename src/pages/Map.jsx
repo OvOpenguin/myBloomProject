@@ -73,7 +73,6 @@ const Map = () => {
           </div>
           <div className="map-map">
             <MapIframe />
-            {/* <img src={mapby} alt="" /> */}
           </div>
         </div>
 

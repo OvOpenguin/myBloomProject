@@ -25,7 +25,7 @@ const News = () => {
             <section className="news-content">
                 <div className="news-news">
                     <div>
-                        <h2>最新活動 News</h2>
+                        <h2>最新活動 NEWS</h2>
                         <div className="news-select">
                             <select name="" id="" value={selectedlocation} onChange={(e) => { setSelectedLocation(e.target.value); }}>
                                 <option value="" disabled>選擇</option>
