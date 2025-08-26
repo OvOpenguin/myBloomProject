@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer>@copyright 2025 北花冊 Bloomchure.</footer>
+    <footer>copyright &copy; 2025 北花冊 Bloomchure.</footer>
   )
 }
 

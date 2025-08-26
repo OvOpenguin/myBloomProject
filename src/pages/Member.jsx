@@ -1,21 +1,29 @@
 import React, { useState } from "react";
+import arrow from '../images/member/member-arrow-green.svg'
+import heart0 from '../images/wall/wall-icon.svg'
+import votebotton1 from '../images/wall/wall-votebutton1.svg'
+import flower01 from '../images/wall/wall-flower01.png'
+import flower02 from '../images/wall/wall-flower02.png'
+import logo from '../images/home/北花冊.webp'
 import "../sass/member.scss";
 
 // 左側選單
 function SidebarItem({ label, onClick, active = false, danger = false }) {
     return (
-        <div>
+        <div className="sidebar-item">
             <button type="button" onClick={onClick}>
-                {label}
+                <p>{label}</p>
+                <div className="hover">
+                    <img src={arrow} alt="" />
+                </div>
             </button>
         </div>
     );
 }
 
-// 各分頁元件
-
+// 右側面板 => 各分頁元件
 // 我的收藏
-function FavoritesView() {
+function Favorites() {
     return (
         <div className="fav-wrap">
             <div className="fav-tab">
@@ -43,70 +51,146 @@ function FavoritesView() {
 }
 
 // 我的花牆
-function WallView() {
+function Wall() {
     return (
-        <div>
-            <h2>我的花牆</h2>
+
+        <div className="wall-wrap">
+            <div className="wall-tab">
+                <img src="" alt="" />
+            </div>
             <div>
-                <ul className="v-photos">
-                    <li className="v-item">
-                        <p>999</p>
-                        <img src={flower01} alt="" />
-                        <div className="icon-heart">
-                            <img src={heart0} alt="" />
-                        </div>
-                    </li>
-                    <li className="v-item">
-                        <p>999</p>
-                        <img src={flower02} alt="" />
-                        <div className="icon-heart">
-                            <img src={heart0} alt="" />
-                        </div>
-                    </li>
-                    <li className="v-item">
-                        <h3>參加賽事</h3>
-                        <img src={votebotton1} alt="" />
-                    </li>
-                </ul>
+                <h2>我的花牆</h2>
+                <div>
+                    <ul className="v-photos">
+                        <li className="v-item">
+                            <p>999</p>
+                            <img src={flower01} alt="" />
+                            <div className="icon-heart">
+                                <img src={heart0} alt="" />
+                            </div>
+                        </li>
+                        <li className="v-item">
+                            <p>999</p>
+                            <img src={flower02} alt="" />
+                            <div className="icon-heart">
+                                <img src={heart0} alt="" />
+                            </div>
+                        </li>
+                        <li className="v-item">
+                            <h3>參加賽事</h3>
+                            <img src={votebotton1} alt="" />
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
+
     );
 }
 
 // 我的花訊
-function NewsView() {
+function News() {
     return (
-        <div>
-            <h2>我的花訊</h2>
-            <div className="news-Card">
-                <div className="news-labledate">
-                    <div className="news-lable">活動</div>
-                    <p>2025.07.28</p>
-                </div>
-                <p className="news-cardTitle">標題</p>
-                <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="news-img" alt="" />
+        <div className="news-wrap">
+            <div className="news-tab">
+                <img src="" alt="" />
             </div>
-            <div className="news-Card">
-                <div className="news-labledate">
-                    <div className="news-lable">活動</div>
-                    <p>2025.07.28</p>
+            <div>
+            </div><div>
+                <h2>我的花訊</h2>
+                <div className="news-Card">
+                    <div className="news-labledate">
+                        <div className="news-lable">活動</div>
+                        <p>2025.07.28</p>
+                    </div>
+                    <p className="news-cardTitle">標題</p>
+                    <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="news-img" alt="" />
                 </div>
-                <p className="news-cardTitle">標題</p>
-                <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="news-img" alt="" />
+                <div className="news-Card">
+                    <div className="news-labledate">
+                        <div className="news-lable">活動</div>
+                        <p>2025.07.28</p>
+                    </div>
+                    <p className="news-cardTitle">標題</p>
+                    <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="news-img" alt="" />
+                </div>
             </div>
         </div>
     );
 }
 
 // 個人資料
-function ProfileView() {
+function Profile() {
     return (
-        <div>
-            <h2>個人資料</h2>
-            <div>
-                <h4>用戶名稱</h4>
-                <h4>密碼</h4>
+        <div className="prf-wrap">
+            <div className="prf-tab">
+                <img src="" alt="" />
             </div>
+            <div></div>
+            <div>
+                <h2>個人資料</h2>
+                <div>
+                    <form action="" method="post">
+                        {/* 帳號 */}
+                        <label htmlFor="username">帳號</label>
+                        <input type="text" className="username" placeholder="請輸入電子郵件"
+                            onChange={(e) => setUsername(e.target.value)} // 更新狀態
+                            required
+                            autoFocus />
+                        {/* 密碼 */}
+                        <label htmlFor="userid">密碼</label>
+                        <input type="text" className="userid" placeholder="請輸入密碼"
+                            onChange={(e) => setUsername(e.target.value)} // 更新狀態
+                            required
+                            autoFocus />
+                        {/* 登入 */}
+                        <button class="btn-animation" type="submit">
+                            <span>登入</span>
+                        </button>
+                        {/* 註冊/忘記密碼 */}
+                        <button class="btn-animation" type="submit">
+                            <span>註冊/忘記密碼</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+// 登入畫面
+function SignIn() {
+    return (
+        <div className="signin-wrap">
+            <div className="logo">
+                <img src={logo} alt="" />
+            </div>
+            <div>
+                <form action="" method="post">
+                    {/* 帳號 */}
+                    <label htmlFor="username">帳號</label>
+                    <input type="text" className="username" placeholder="請輸入電子郵件"
+                        onChange={(e) => setUsername(e.target.value)} // 更新狀態
+                        required
+                        autoFocus />
+                    {/* 密碼 */}
+                    <label htmlFor="userid">密碼</label>
+                    <input type="text" className="userid" placeholder="請輸入密碼"
+                        onChange={(e) => setUsername(e.target.value)} // 更新狀態
+                        required
+                        autoFocus />
+                    {/* 登入 */}
+                    <button class="btn-animation" type="submit">
+                        <span>登入</span>
+                    </button>
+                    {/* 註冊/忘記密碼 */}
+                    <button class="btn-animation" type="submit">
+                        <span>註冊/忘記密碼</span>
+                    </button>
+                </form>
+
+            </div>
+
         </div>
     );
 }
@@ -114,21 +198,24 @@ function ProfileView() {
 // 切換各分頁的陣列
 export default function MemberCenter() {
     const TABS = [
-        { key: "favorites", label: "我的收藏", view: <FavoritesView /> },
-        { key: "wall", label: "我的花牆", view: <WallView /> },
-        { key: "news", label: "我的花訊", view: <NewsView /> },
-        { key: "profile", label: "會員資料", view: <ProfileView /> },
+        { key: "favorites", label: "我的收藏", view: <Favorites /> },
+        { key: "wall", label: "我的花牆", view: <Wall /> },
+        { key: "news", label: "我的花訊", view: <News /> },
+        { key: "profile", label: "會員資料", view: <Profile /> },
         { key: "logout", label: "登出", danger: true },
     ];
 
-    const [activeKey, setActiveKey] = useState("favorites");
+    // 宣告變數 => 顯示目前分頁
+    const [activeKey, setActiveKey] = useState("logout");
 
+    // 將分頁設定為目前狀態
     const handleSelect = (key) => { setActiveKey(key); };
 
+    // 根據選擇狀態搜尋渲染分頁
     const activeTab = TABS.find((t) => t.key === activeKey);
 
     return (
-        <div className="wrapper">
+        <section className="wrapper">
             {/* 左側選單 */}
             <div className="left-sidebar">
                 {TABS.map((t) => (
@@ -143,10 +230,10 @@ export default function MemberCenter() {
             </div>
 
             {/* 右側面板 */}
-            <section className="right-panel">
-                {activeTab?.view ?? <p>請選擇分頁</p>}
-            </section>
-        </div>
+            <div className="right-panel">
+                {activeTab?.view ?? <SignIn />}
+            </div>
+        </section>
 
 
     )
