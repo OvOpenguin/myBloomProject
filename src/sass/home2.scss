@@ -5,7 +5,7 @@
 
 // outline check
 * {
-    // outline: 1px solid red;
+    outline: 1px solid red;
 }
 
 
@@ -119,12 +119,13 @@
         }
 
         .f1 {
-            background-image: url('../images/home/首頁-近期活動-圖片底色-藍.svg');
+           background-image: url('../images/home/首頁-近期活動-圖片底色-藍.svg');
 
             &:hover {
                 transform: rotate(10deg) scale(1.1);
             }
         }
+
 
         .f2 {
             background-image: url('../images/home/首頁-近期活動-圖片底色-綠.svg');
@@ -150,16 +151,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px;
+    padding: 50px 100px;
     gap: 50px;
-    flex-wrap: wrap;
+    //flex-wrap: wrap;
 
-    @media (max-width:820px) {
+    @media (max-width:1000px) {
         flex-direction: column;
     }
 
+    // @media (max-width:820px) {
+    //     flex-direction: column;
+    // }
+
     @media (max-width:640px) {
         gap: 30px;
+        padding: 50px 20px;
     }
 
     &:hover {
@@ -201,6 +207,7 @@
         left: -50px;
         width: 150px;
         height: 150px;
+
         // background: #000;
         // opacity: .5;
         .p {
@@ -212,18 +219,22 @@
             transition: transform 1s ease;
             /* 動畫 */
         }
+
         // 初始四散狀態
         .pink {
             width: 70px;
             transform: translate(-100%, -100%) rotate(0deg);
         }
+
         .purple {
             transform: translate(300%, 500%) rotate(0deg);
         }
+
         .orange {
 
-            transform: translate(750%, -100%) rotate(0deg);
+            transform: translate(120%, -100%) rotate(0deg);
         }
+
         .yellow {
 
             transform: translate(-80%, 400%) rotate(180deg);
@@ -297,38 +308,89 @@
     }
 
     // 右側花卉故事區
-    .Isp {
-        position: relative;
+    // .Isp {
+    //     position: relative;
+    //     display: flex;
+    //     flex-direction: column;
+    //     gap: 20px;
+    //     max-width: 650px;
+    //     min-width: 420px;
+
+    //     .st {
+    //         display: flex;
+    //         align-items: center;
+    //         gap: 20px;
+    //     }
+
+    //     .pb {
+    //         display: flex;
+    //         justify-content: space-between;
+    //         align-items: center;
+    //         gap: 20px;
+
+
+    //         .Ibook {
+    //             width: 25%;
+    //             animation: floating 2s ease-in-out infinite alternate;
+
+    //             @keyframes floating {
+    //                 from {
+    //                     transform: translateY(0) rotate(10deg);
+    //                 }
+
+    //                 to {
+    //                     transform: translateY(-30px) rotate(-10deg);
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+
+    .home-story {
+        // flex: 1;
         display: flex;
-        flex-direction: column;
-        gap: 20px;
-        max-width: 650px;
-        min-width: 420px;
 
-        .st {
+        .home-s-btn {
             display: flex;
-            align-items: center;
-            gap: 20px;
-        }
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
 
-        .pb {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
+            .home-s-title {
+                text-align: right;
 
+                @media (max-width:1000px) {
+                    text-align: center;
+                }
+            }
 
-            .Ibook {
-                width: 25%;
-                animation: floating 2s ease-in-out infinite alternate;
+            .home-s-img {
+                object-fit: contain;
+                display: flex;
+                flex-direction: column;
 
-                @keyframes floating {
-                    from {
-                        transform: translateY(0) rotate(10deg);
+                @media (max-width:1000px) {
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: row;
+                }
+                @media (max-width:640px) {
+                    flex-direction: column;
+                }
+
+                img {
+                    height: 180px;
+                    padding: 5px;
+                    transition: all .5s;
+                    object-fit: contain;
+
+                    &:hover {
+                        filter: opacity(.6);
                     }
 
-                    to {
-                        transform: translateY(-30px) rotate(-10deg);
+                    @media (max-width:1000px) {
+                        margin-bottom: 0;
+                        padding: 10px;
                     }
                 }
             }

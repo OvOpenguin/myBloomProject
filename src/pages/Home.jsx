@@ -1,9 +1,11 @@
-import "../sass/home.scss"
+import "../sass/home2.scss"
 import 北花冊 from "../images/home/北花冊.webp"
 import 大花 from "../images/home/heroFlower.svg"
 import 貼紙花1 from "../images/home/首頁-貼紙花.webp"
 import 花卉介紹 from "../images/home/homeStory.png"
 import 花卉遊戲 from "../images/home/homeGame.png"
+import 花卉介紹2 from "../images/home/homeStory.svg"
+import 花卉遊戲2 from "../images/home/homeGame2.svg"
 import 書 from "../images/home/書.svg"
 import 票選1 from '../images/home/首頁-票選1-框.png'
 import 票選2 from '../images/home/首頁-票選2-框.png'
@@ -101,13 +103,13 @@ const App = () => {
 
                             {/* 裝飾花 */}
                             {/* <div className="newsF"> */}
-                                <div className="iflower">
-                                    <div className="p pink"><img src={pink} alt="粉辦" /></div>
-                                    <div className="p purple"><img src={purple} alt="紫辦" /></div>
-                                    <div className="p orange"><img src={orange} alt="橘辦" /></div>
-                                    <div className="p yellow"><img src={yellow} alt="黃中心" /></div>
-                                    {/* <img src={首頁消息花} alt="" /> */}
-                                </div>
+                            <div className="iflower">
+                                <div className="p pink"><img src={pink} alt="粉辦" /></div>
+                                <div className="p purple"><img src={purple} alt="紫辦" /></div>
+                                <div className="p orange"><img src={orange} alt="橘辦" /></div>
+                                <div className="p yellow"><img src={yellow} alt="黃中心" /></div>
+                                {/* <img src={首頁消息花} alt="" /> */}
+                            </div>
                             {/* </div> */}
 
                             {/* 列表標題 */}
@@ -125,7 +127,7 @@ const App = () => {
 
 
                         {/* 右側-花卉科普 */}
-                        <div className="Isp">
+                        {/* <div className="Isp">
                             <div className="st">
                                 <Link to="./story"><div className="Istory"><a href="./story"><img src={花卉介紹} alt="花卉介紹" /></a></div></Link>
                                 <div className="Istitle"><h2>認識花卉</h2><h3>Flower Story</h3></div>
@@ -135,7 +137,18 @@ const App = () => {
                                 <div className="Ibook"><img src={書} alt="書" /></div>
                                 <Link to="./play"> <div className="Iplay"><a href="#"><img src={花卉遊戲} alt="花卉遊戲" /></a></div></Link>
                             </div>
+                        </div> */}
+                        <div className="home-story">
+                            <div className="home-s-btn">
+                                <div className="home-s-title"><h2 >認識花卉</h2><h3>Flower Story</h3></div>
+                                <div className="home-s-img">
+                                <Link to="./story"><img className="btnstory" src={花卉介紹2} alt="" /></Link>
+                                <Link to="./play"><img className="btngame" src={花卉遊戲2} alt="" /></Link> 
+                                </div>
+                            </div>
                         </div>
+
+
 
                     </div>
                 </section>

@@ -45,6 +45,11 @@
             display: flex;
             flex-wrap: wrap;
 
+            @media (max-width:1200px) {
+                justify-content: center;
+                
+            }
+
 
             .news-Card {
                 display: block;
