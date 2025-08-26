@@ -4,9 +4,9 @@
 
 
 // outline check
-* {
-    outline: 1px solid red;
-}
+// * {
+//     outline: 1px solid red;
+// }
 
 
 /* home共用區 */
@@ -57,52 +57,67 @@
     }
 
     .gallery {
+        position: relative;
         display: flex;
         align-items: center;
+        overflow: hidden; // ⭐ 必加，否則 translateX 不會產生「裁切」
+        width: 80%;
 
         ul {
             display: flex;
             align-items: center;
+            transition: transform 0.5s ease;
+            width: 100%;
 
             li {
+                flex: 0 0 25%; // 預設一排4個 (1920px)
+                padding: 12px;
+                box-sizing: border-box;
+                text-align: center;
+                max-width: 400px;
 
                 // RWD顯示設定
                 @media (max-width:1440px) {
-                    &:last-child {
-                        display: none;
-                    }
+                    flex: 0 0 33.33%;
                 }
 
                 @media (max-width:1024px) {
-                    &:nth-child(n+3) {
-                        display: none;
-                    }
+                    flex: 0 0 50%;
                 }
 
                 @media (max-width:820px) {
-                    &:nth-child(n+2) {
-                        display: none;
-                    }
+                    flex: 0 0 100%;
                 }
             }
         }
 
         .eventicon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
             color: $brown-100;
             font-size: 3rem;
             transition: ease .3s;
+            z-index: 99;
 
             &:hover {
                 color: $grass-green;
                 transition: ease .3s;
             }
+
+            &.left {
+                left: 10px; // 靠左
+            }
+
+            &.right {
+                right: 10px; // 靠右
+            }
         }
 
         // 日期設定
         .eventTime {
-            width: 5vw;
             margin-bottom: -120px;
-            padding-left: 270px;
+            padding-left: 300px;
             font-size: $f-s-xl;
             font-weight: $f-w-m;
             color: $brown-100;
@@ -119,13 +134,12 @@
         }
 
         .f1 {
-           background-image: url('../images/home/首頁-近期活動-圖片底色-藍.svg');
+            background-image: url('../images/home/首頁-近期活動-圖片底色-藍.svg');
 
             &:hover {
                 transform: rotate(10deg) scale(1.1);
             }
         }
-
 
         .f2 {
             background-image: url('../images/home/首頁-近期活動-圖片底色-綠.svg');
@@ -374,6 +388,7 @@
                     justify-content: center;
                     flex-direction: row;
                 }
+
                 @media (max-width:640px) {
                     flex-direction: column;
                 }

@@ -23,10 +23,85 @@ import { IoIosArrowDropleft } from "react-icons/io";
 import { IoIosArrowDropright } from "react-icons/io";
 import { BsArrowUpRightCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom"
+import { useState } from "react"
 
 
 
 const App = () => {
+
+    // 建立活動陣列資料
+    const events = [
+        {
+            id: 1,
+            title: "花季活動名稱 1",
+            year: "2025",
+            start: "07.01",
+            end: "09.23",
+            image: 貼紙花1,
+        },
+        {
+            id: 2,
+            title: "花季活動名稱 2",
+            year: "2025",
+            start: "07.01",
+            end: "09.23",
+            image: 貼紙花1,
+        },
+        {
+            id: 3,
+            title: "花季活動名稱 3",
+            year: "2025",
+            start: "07.01",
+            end: "09.23",
+            image: 貼紙花1,
+        },
+        {
+            id: 4,
+            title: "花季活動名稱 4",
+            year: "2025",
+            start: "07.01",
+            end: "09.23",
+            image: 貼紙花1,
+        },
+        {
+            id: 5,
+            title: "花季活動名稱 5",
+            year: "2025",
+            start: "07.01",
+            end: "09.23",
+            image: 貼紙花1,
+        },
+        {
+            id: 6,
+            title: "花季活動名稱 6",
+            year: "2025",
+            start: "07.01",
+            end: "09.23",
+            image: 貼紙花1,
+        },
+
+    ];
+
+    // 設定活動的陣列索引
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    // 右鍵設定
+    const nextSlide = () => {
+        if (currentIndex < events.length - 1) {
+            setCurrentIndex(currentIndex + 1);
+        }
+    };
+
+    // 左鍵設定
+    const prevSlide = () => {
+        if (currentIndex > 0) {
+            setCurrentIndex(currentIndex - 1);
+        }
+    };
+
+
+
+
     return (
         <>
             <main>
@@ -49,44 +124,23 @@ const App = () => {
 
                     {/* 近期活動切換 */}
                     <div className="gallery">
-                        <IoIosArrowDropleft className="eventicon" />
-                        <ul>
-                            <li>
-                                {/* 日期 */}
-                                <div className="eventTime">
-                                    2025<br />07.01<br />｜<br />09.23
-                                </div>
-                                {/* 花圖+名稱 */}
-                                <img className="f1" src={貼紙花1} alt="花1" />
-                                <h4>花季活動名稱</h4>
-                            </li>
-
-                            <li>
-                                <div className="eventTime">
-                                    2025<br />07.01<br />｜<br />09.23
-                                </div>
-                                <img className="f2" src={貼紙花1} alt="花1" />
-                                <h4>花季活動名稱</h4>
-                            </li>
-
-                            <li>
-                                <div className="eventTime">
-                                    2025<br />07.01<br />｜<br />09.23
-                                </div>
-                                <img className="f1" src={貼紙花1} alt="花1" />
-                                <h4>花季活動名稱</h4>
-                            </li>
-
-                            <li>
-                                <div className="eventTime">
-                                    2025<br />07.01<br />｜<br />09.23
-                                </div>
-                                <img className="f2" src={貼紙花1} alt="花1" />
-                                <h4>花季活動名稱</h4>
-                            </li>
-
+                        <IoIosArrowDropleft className="eventicon left" onClick={prevSlide} />
+                        <ul style={{ transform: `translateX(-${currentIndex * (100 / 4)}%)` }}>
+                            {
+                                events.map((e) => (
+                                    <li key={e.id}>
+                                        {/* 日期 */}
+                                        <div className="eventTime">
+                                            {e.year}<br />{e.start}<br />｜<br />{e.end}
+                                        </div>
+                                        {/* 花圖+名稱 */}
+                                        <figure><img className="f1" src={e.image} alt={e.title} /></figure>
+                                        <h4>{e.title}</h4>
+                                    </li>
+                                ))
+                            }
                         </ul>
-                        <IoIosArrowDropright className="eventicon" />
+                        <IoIosArrowDropright className="eventicon right" onClick={nextSlide} />
 
                     </div>
 
@@ -142,8 +196,8 @@ const App = () => {
                             <div className="home-s-btn">
                                 <div className="home-s-title"><h2 >認識花卉</h2><h3>Flower Story</h3></div>
                                 <div className="home-s-img">
-                                <Link to="./story"><img className="btnstory" src={花卉介紹2} alt="" /></Link>
-                                <Link to="./play"><img className="btngame" src={花卉遊戲2} alt="" /></Link> 
+                                    <Link to="./story"><img className="btnstory" src={花卉介紹2} alt="" /></Link>
+                                    <Link to="./play"><img className="btngame" src={花卉遊戲2} alt="" /></Link>
                                 </div>
                             </div>
                         </div>
