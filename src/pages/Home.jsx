@@ -23,7 +23,7 @@ import { IoIosArrowDropleft } from "react-icons/io";
 import { IoIosArrowDropright } from "react-icons/io";
 import { BsArrowUpRightCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 
 
@@ -84,10 +84,30 @@ const App = () => {
 
     // 設定活動的陣列索引
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [visibleCount, setVisibleCount] = useState(4); // 預設桌機 4 張
+
+    // 監聽螢幕寬度 → 決定一次顯示幾張
+    useEffect(() => {
+        const updateVisible = () => {
+            if (window.innerWidth <= 820) {
+                setVisibleCount(1);
+            } else if (window.innerWidth <= 1024) {
+                setVisibleCount(2);
+            } else if (window.innerWidth <= 1440) {
+                setVisibleCount(3);
+            } else {
+                setVisibleCount(4);
+            }
+        };
+        updateVisible();
+        window.addEventListener("resize", updateVisible);
+        return () => window.removeEventListener("resize", updateVisible);
+    }, []);
 
     // 右鍵設定
     const nextSlide = () => {
-        if (currentIndex < events.length - 1) {
+        const maxIndex = events.length - visibleCount;
+        if (currentIndex < maxIndex) {
             setCurrentIndex(currentIndex + 1);
         }
     };
@@ -98,8 +118,6 @@ const App = () => {
             setCurrentIndex(currentIndex - 1);
         }
     };
-
-
 
 
     return (
@@ -125,7 +143,7 @@ const App = () => {
                     {/* 近期活動切換 */}
                     <div className="gallery">
                         <IoIosArrowDropleft className="eventicon left" onClick={prevSlide} />
-                        <ul style={{ transform: `translateX(-${currentIndex * (100 / 4)}%)` }}>
+                        <ul style={{ transform: `translateX(-${currentIndex * (100 / visibleCount)}%)` }}>
                             {
                                 events.map((e) => (
                                     <li key={e.id}>
