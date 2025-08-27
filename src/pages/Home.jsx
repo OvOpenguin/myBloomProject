@@ -124,13 +124,20 @@ const App = () => {
         <>
             <main>
                 {/* Hero 區 */}
-                <section >
+                <section>
+                    {/* <div className="name"><img src={北花冊} alt="北花冊" /><p>Bloomchure</p></div> */}
                     <div className="hero">
-                        <div className="name"><img src={北花冊} alt="北花冊" /><p>Bloomchure</p></div>
-                        <div className="heroFlower"><img src={大花} alt="大花" /></div>
+                        <div className="heroFlower">
+                            <img src={大花} alt="大花" className="bigFlower" />
+                            <div className="t t2"><img src="./home/t2.svg" alt="" /></div>
+                            <div className="t t3"><img src="./home/t3.svg" alt="" /></div>
+                            <div className="t t4"><img src="./home/t3.svg" alt="" /></div>
+                            <div className="t t12"><img src="./home/t12.svg" alt="" /></div>
 
+
+                        </div>
                     </div>
-                    <p className="slogan">北區賞花季，一頁收藏所有花事</p>
+
                 </section>
 
                 {/* 近期活動 */}
@@ -141,26 +148,33 @@ const App = () => {
                     <h3>Recent vents</h3>
 
                     {/* 近期活動切換 */}
-                    <div className="gallery">
+                    <div className="galleryWrap">
                         <IoIosArrowDropleft className="eventicon left" onClick={prevSlide} />
-                        <ul style={{ transform: `translateX(-${currentIndex * (100 / visibleCount)}%)` }}>
-                            {
-                                events.map((e) => (
-                                    <li key={e.id}>
-                                        {/* 日期 */}
-                                        <div className="eventTime">
-                                            {e.year}<br />{e.start}<br />｜<br />{e.end}
-                                        </div>
-                                        {/* 花圖+名稱 */}
-                                        <figure><img className="f1" src={e.image} alt={e.title} /></figure>
-                                        <h4>{e.title}</h4>
-                                    </li>
-                                ))
-                            }
-                        </ul>
-                        <IoIosArrowDropright className="eventicon right" onClick={nextSlide} />
 
+                        <div className="gallery">
+                            {/* <IoIosArrowDropleft className="eventicon left" onClick={prevSlide} /> */}
+                            <ul style={{ transform: `translateX(-${currentIndex * (100 / visibleCount)}%)` }}>
+                                {
+                                    events.map((e) => (
+                                        <li key={e.id}>
+                                            {/* 日期 */}
+                                            <div className="eventTime">
+                                                {e.year}<br />{e.start}<br />｜<br />{e.end}
+                                            </div>
+                                            {/* 花圖+名稱 */}
+                                            <figure><img className="f1" src={e.image} alt={e.title} /></figure>
+                                            <h4>{e.title}</h4>
+                                        </li>
+                                    ))
+                                }
+                            </ul>
+                        </div>
+                        <IoIosArrowDropright className="eventicon right" onClick={nextSlide} />
                     </div>
+
+
+
+
 
                     {/* 地圖搜尋btn */}
                     <Link to="./map"><div className="homeBtn">地圖搜尋→</div></Link>
