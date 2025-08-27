@@ -4,9 +4,9 @@
 
 
 // outline check
-// * {
-//     outline: 1px solid red;
-// }
+* {
+    outline: 1px solid red;
+}
 
 
 /* home共用區 */
@@ -23,18 +23,59 @@
 
 /* main主要內容區 */
 // hero區-主視覺
+
+
+
+.name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+}
+
 .hero {
     display: flex;
     justify-content: center;
-    padding-top: 50px;
+    padding: 50px 0;
     height: auto;
 
-    .name {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 20%;
+    .heroFlower {
+        position: relative;
+
+        .bigFlower {
+            opacity: 0.3;
+        }
+
+        .t {
+            position: absolute;
+
+            &.t2 {
+                bottom: 0%;
+                left: 0%;
+                width: 60%;
+                transform: rotate(70deg);
+            }
+
+            &.t3 {
+                bottom: 20%;
+                left: 10%;
+                width: 50%;
+                transform: rotate(160deg);
+            }
+            &.t4 {
+                bottom: 30%;
+                right: 5%;
+                width: 50%;
+                transform: rotate(-10deg);
+            }
+             &.t12 {
+                top: 0%;
+                right: 40%;
+                width: 50%;
+                transform: rotate(50deg);
+            }
+        }
     }
 }
 
@@ -54,6 +95,15 @@
     h3 {
         font-size: $f-s-xl;
         margin-bottom: 30px;
+    }
+
+
+    .galleryWrap {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
     }
 
     .gallery {
@@ -91,28 +141,6 @@
             }
         }
 
-        .eventicon {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            color: $brown-100;
-            font-size: 3rem;
-            transition: ease .3s;
-            z-index: 99;
-
-            &:hover {
-                color: $grass-green;
-                transition: ease .3s;
-            }
-
-            &.left {
-                left: 10px; // 靠左
-            }
-
-            &.right {
-                right: 10px; // 靠右
-            }
-        }
 
         // 日期設定
         .eventTime {
@@ -156,6 +184,31 @@
             cursor: default;
         }
     }
+
+
+    .eventicon {
+        // position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: $brown-100;
+        font-size: 3rem;
+        transition: ease .3s;
+        z-index: 99;
+
+        &:hover {
+            color: $grass-green;
+            transition: ease .3s;
+        }
+
+        &.left {
+            left: 10px; // 靠左
+        }
+
+        &.right {
+            right: 10px; // 靠右
+        }
+    }
+
 }
 
 
@@ -284,7 +337,6 @@
                 flex-wrap: wrap-reverse;
                 gap: 10px;
                 padding: 5px;
-                cursor: pointer;
 
                 p {
                     width: 300px; //這邊的寬度待更改，目前預設300px正常。
@@ -308,7 +360,6 @@
 
                 .itime {
                     color: $brown-100;
-
                 }
 
             }

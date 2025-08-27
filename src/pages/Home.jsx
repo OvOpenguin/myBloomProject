@@ -23,7 +23,7 @@ import { IoIosArrowDropleft } from "react-icons/io";
 import { IoIosArrowDropright } from "react-icons/io";
 import { BsArrowUpRightCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 
 
@@ -84,10 +84,30 @@ const App = () => {
 
     // 設定活動的陣列索引
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [visibleCount, setVisibleCount] = useState(4); // 預設桌機 4 張
+
+    // 監聽螢幕寬度 → 決定一次顯示幾張
+    useEffect(() => {
+        const updateVisible = () => {
+            if (window.innerWidth <= 820) {
+                setVisibleCount(1);
+            } else if (window.innerWidth <= 1024) {
+                setVisibleCount(2);
+            } else if (window.innerWidth <= 1440) {
+                setVisibleCount(3);
+            } else {
+                setVisibleCount(4);
+            }
+        };
+        updateVisible();
+        window.addEventListener("resize", updateVisible);
+        return () => window.removeEventListener("resize", updateVisible);
+    }, []);
 
     // 右鍵設定
     const nextSlide = () => {
-        if (currentIndex < events.length - 1) {
+        const maxIndex = events.length - visibleCount;
+        if (currentIndex < maxIndex) {
             setCurrentIndex(currentIndex + 1);
         }
     };
@@ -100,19 +120,24 @@ const App = () => {
     };
 
 
-
-
     return (
         <>
             <main>
                 {/* Hero 區 */}
-                <section >
+                <section>
+                    {/* <div className="name"><img src={北花冊} alt="北花冊" /><p>Bloomchure</p></div> */}
                     <div className="hero">
-                        <div className="name"><img src={北花冊} alt="北花冊" /><p>Bloomchure</p></div>
-                        <div className="heroFlower"><img src={大花} alt="大花" /></div>
+                        <div className="heroFlower">
+                            <img src={大花} alt="大花" className="bigFlower" />
+                            <div className="t t2"><img src="./home/t2.svg" alt="" /></div>
+                            <div className="t t3"><img src="./home/t3.svg" alt="" /></div>
+                            <div className="t t4"><img src="./home/t3.svg" alt="" /></div>
+                            <div className="t t12"><img src="./home/t12.svg" alt="" /></div>
 
+
+                        </div>
                     </div>
-                    <p className="slogan">北區賞花季，一頁收藏所有花事</p>
+
                 </section>
 
                 {/* 近期活動 */}
@@ -123,26 +148,33 @@ const App = () => {
                     <h3>Recent vents</h3>
 
                     {/* 近期活動切換 */}
-                    <div className="gallery">
+                    <div className="galleryWrap">
                         <IoIosArrowDropleft className="eventicon left" onClick={prevSlide} />
-                        <ul style={{ transform: `translateX(-${currentIndex * (100 / 4)}%)` }}>
-                            {
-                                events.map((e) => (
-                                    <li key={e.id}>
-                                        {/* 日期 */}
-                                        <div className="eventTime">
-                                            {e.year}<br />{e.start}<br />｜<br />{e.end}
-                                        </div>
-                                        {/* 花圖+名稱 */}
-                                        <figure><img className="f1" src={e.image} alt={e.title} /></figure>
-                                        <h4>{e.title}</h4>
-                                    </li>
-                                ))
-                            }
-                        </ul>
-                        <IoIosArrowDropright className="eventicon right" onClick={nextSlide} />
 
+                        <div className="gallery">
+                            {/* <IoIosArrowDropleft className="eventicon left" onClick={prevSlide} /> */}
+                            <ul style={{ transform: `translateX(-${currentIndex * (100 / visibleCount)}%)` }}>
+                                {
+                                    events.map((e) => (
+                                        <li key={e.id}>
+                                            {/* 日期 */}
+                                            <div className="eventTime">
+                                                {e.year}<br />{e.start}<br />｜<br />{e.end}
+                                            </div>
+                                            {/* 花圖+名稱 */}
+                                            <figure><img className="f1" src={e.image} alt={e.title} /></figure>
+                                            <h4>{e.title}</h4>
+                                        </li>
+                                    ))
+                                }
+                            </ul>
+                        </div>
+                        <IoIosArrowDropright className="eventicon right" onClick={nextSlide} />
                     </div>
+
+
+
+
 
                     {/* 地圖搜尋btn */}
                     <Link to="./map"><div className="homeBtn">地圖搜尋→</div></Link>

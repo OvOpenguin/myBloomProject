@@ -1,4 +1,5 @@
 import "../sass/wall.scss"
+import { useEffect, useRef } from "react";
 
 import wall_vote_one from '../images/home/首頁-票選1-框.png'
 import heart0 from '../images/wall/wall-icon.svg'
@@ -17,13 +18,59 @@ import flower08 from '../images/wall/wall-f8.webp'
 import flower09 from '../images/wall/wall-f9.webp'
 import flower10 from '../images/wall/wall-f10.webp'
 
-// const arrcard = [
-//   {
-
-//   }
-// ]
 
 const Wall = () => {
+
+  // 花牆照片物件
+  const flowerwalls = [
+    {
+      id: 1,
+      count: 999,
+      img: flower01,
+      heart: heart0,
+    },
+    {
+      id: 2,
+      count: 999,
+      img: flower02,
+      heart: heart0,
+    },
+    {
+      id: 3,
+      count: 999,
+      img: flower03,
+      heart: heart0,
+    },
+    {
+      id: 4,
+      count: 999,
+      img: flower04,
+      heart: heart0,
+    },
+    {
+      id: 5,
+      count: 999,
+      img: flower05,
+      heart: heart0,
+    },
+  ];
+  // 複製一份作接捕用
+  const fws = [...flowerwalls, ...flowerwalls]
+
+  // 花牆照片元件
+  const Flowerwall = ({ count, img, heart }) => {
+    return (
+      <li className="v-item">
+        <p>{count}</p>
+        <img src={img} alt="fw" />
+        <div className="icon-heart">
+          <img src={heart} alt="heart" />
+        </div>
+      </li>
+    )
+  };
+
+
   return (
     <>
       <div className="wall-c-inner">
@@ -50,7 +97,10 @@ const Wall = () => {
         </header>
         <div className="v-photowarp">
           <ul className="v-photos">
-            <li className="v-item">
+            {fws.map((item) => {
+              return <Flowerwall key={item.id} count={item.count} img={item.img} heart={item.heart} />
+            })}
+            {/* <li className="v-item">
               <p>999</p>
               <img src={flower01} alt="" />
               <div className="icon-heart">
@@ -67,37 +117,11 @@ const Wall = () => {
             <li className="v-item">
               <h3>參加賽事</h3>
               <img src={votebotton1} alt="" />
-            </li>
-            <li className="v-item">
-              <p>999</p>
-              <img src={flower03} alt="" />
-              <div className="icon-heart">
-                <img src={heart0} alt="" />
-              </div>
-            </li>
-            <li className="v-item">
-              <p>999</p>
-              <img src={flower04} alt="" />
-              <div className="icon-heart">
-                <img src={heart0} alt="" />
-              </div>
-            </li>
-            <li className="v-item">
-              <p>999</p>
-              <img src={flower05} alt="" />
-              <div className="icon-heart">
-                <img src={heart0} alt="" />
-              </div>
-            </li>
-            <li className="v-item">
-              <p>999</p>
-              <img src={flower06} alt="" />
-              <div className="icon-heart">
-                <img src={heart0} alt="" />
-              </div>
-            </li>
+            </li> */}
+
+
           </ul>
-          <ul className="v-photos">
+          {/* <ul className="v-photos">
             <li className="v-item">
               <p>999</p>
               <img src={flower06} alt="" />
@@ -159,7 +183,7 @@ const Wall = () => {
               </div>
             </li>
 
-          </ul>
+          </ul> */}
         </div>
       </section>
 

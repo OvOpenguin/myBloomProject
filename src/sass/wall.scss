@@ -162,11 +162,16 @@
     }
 
     .v-photowarp {
+        overflow: hidden;
+        width: 100%;
+
         .v-photos {
             display: flex;
             gap: 20px;
-            overflow: hidden;
+            // overflow: hidden;
             margin-top: 20px;
+            animation: scroll 20s linear infinite;
+
 
             .v-item {
                 height: 280px;
@@ -231,6 +236,19 @@
         }
     }
 }
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-38%);
+    }
+
+    // 跑一半（要複製內容來無縫銜接）
+}
+
 
 .wall-a-inner {
     // padding: 0 300px;
@@ -326,9 +344,9 @@
             left: 60px;
             transform: rotate(-20deg);
 
-                    @media (max-width:700px) {
-            left: -80px;
-        }
+            @media (max-width:700px) {
+                left: -80px;
+            }
 
         }
 
