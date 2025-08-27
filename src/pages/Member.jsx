@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import arrow from '../images/member/member-arrow-green.svg'
+import favtab from '../images/member/member-tab-blue.svg'
+import walltab from '../images/member/member-tab-orange.svg'
+import newstab from '../images/member/member-tab-yellow.svg'
+import prftab from '../images/member/member-tab-green.svg'
 import heart0 from '../images/wall/wall-icon.svg'
 import votebotton1 from '../images/wall/wall-votebutton1.svg'
 import flower01 from '../images/wall/wall-flower01.png'
@@ -26,12 +30,12 @@ function SidebarItem({ label, onClick, active = false, danger = false }) {
 function Favorites() {
     return (
         <div className="fav-wrap">
-            <div className="fav-tab">
-                <img src="" alt="" />
-            </div>
-            <div className="fav-content">
+            <div className="tab">
                 <h2>我的收藏</h2>
-                <div>
+                <img src={favtab} alt="" />
+            </div>
+            <div className="content">
+                <div className="map-cardWrap">
                     <a href="#" className="map-card">
                         <p className="map-lable">台北</p>
                         <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="map-img" alt="" />
@@ -53,13 +57,12 @@ function Favorites() {
 // 我的花牆
 function Wall() {
     return (
-
         <div className="wall-wrap">
-            <div className="wall-tab">
-                <img src="" alt="" />
-            </div>
-            <div>
+            <div className="tab">
                 <h2>我的花牆</h2>
+                <img src={walltab} alt="" />
+            </div>
+            <div className="content">
                 <div>
                     <ul className="v-photos">
                         <li className="v-item">
@@ -92,12 +95,11 @@ function Wall() {
 function News() {
     return (
         <div className="news-wrap">
-            <div className="news-tab">
-                <img src="" alt="" />
-            </div>
-            <div>
-            </div><div>
+            <div className="tab">
                 <h2>我的花訊</h2>
+                <img src={newstab} alt="" />
+            </div>
+            <div className="content">
                 <div className="news-Card">
                     <div className="news-labledate">
                         <div className="news-lable">活動</div>
@@ -123,12 +125,11 @@ function News() {
 function Profile() {
     return (
         <div className="prf-wrap">
-            <div className="prf-tab">
-                <img src="" alt="" />
-            </div>
-            <div></div>
-            <div>
+            <div className="tab">
                 <h2>個人資料</h2>
+                <img src={prftab} alt="" />
+            </div>
+            <div className="content">
                 <div>
                     <form action="" method="post">
                         {/* 帳號 */}
@@ -162,24 +163,27 @@ function Profile() {
 function SignIn() {
     return (
         <div className="signin-wrap">
-            <div className="logo">
-                <img src={logo} alt="" />
-            </div>
-            <div>
-                <form action="" method="post">
-                    {/* 帳號 */}
+            <img src={logo} alt="" />
+            <form action="" method="post">
+                {/* 帳號 */}
+                <div className="name">
                     <label htmlFor="username">帳號</label>
                     <input type="text" className="username" placeholder="請輸入電子郵件"
                         onChange={(e) => setUsername(e.target.value)} // 更新狀態
                         required
                         autoFocus />
-                    {/* 密碼 */}
+                </div>
+
+                {/* 密碼 */}
+                <div className="id">
                     <label htmlFor="userid">密碼</label>
                     <input type="text" className="userid" placeholder="請輸入密碼"
                         onChange={(e) => setUsername(e.target.value)} // 更新狀態
                         required
                         autoFocus />
-                    {/* 登入 */}
+                </div>
+
+                {/* 登入 */}
                     <button class="btn-animation" type="submit">
                         <span>登入</span>
                     </button>
@@ -187,10 +191,7 @@ function SignIn() {
                     <button class="btn-animation" type="submit">
                         <span>註冊/忘記密碼</span>
                     </button>
-                </form>
-
-            </div>
-
+            </form>
         </div>
     );
 }
