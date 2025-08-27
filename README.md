@@ -1,4 +1,4 @@
-# 專題網頁（gh-pages）：
+# 專題網頁（gh-pages）：https://ovopenguin.github.io/myBloomProject/
 ## 俞老師
 - 0814：選單ok
 - 0827：請放上專題網址
