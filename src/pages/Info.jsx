@@ -18,6 +18,24 @@ import bus from "../images/info/bus.png";
 import mrt from "../images/info/mrt.png";
 import car from "../images/info/car.png";
 import mrtyuanshan from "../images/info/mrt-yuanshan.png";
+import flower1 from "../images/info/flower1.png";
+import flowerbg from "../images/info/flower-background.svg";
+import FloralVarieties from "../images/info/FloralVarieties.svg";
+import FlowerGra from "../images/info/FlowerGra.jpg";
+import Point from "../images/info/Point.svg";
+import PointMask from "../images/info/point-mask.svg";
+import flowerg1 from "../images/info/flowerg1.png";
+import flowerg2 from "../images/info/flowerg2.png";
+import flowerg3 from "../images/info/flowerg3.png";
+import flowerg from "../images/info/flowerg.svg";
+import phone from "../images/info/phone.svg";
+import fbicon from "../images/info/fbicon.png";
+import igicon from "../images/info/igicon.png";
+import threadicon from "../images/info/threadicon.png";
+
+
+
+
 
 const tabs = ["活動介紹", "交通資訊", "周邊推薦"];
 
@@ -145,11 +163,136 @@ const Info = () => {
           />
         </div>
 
+{/* 活動介紹 */}
         <div className="tab-contents">
           {activeIndex === 0 && (
-            <div>這是活動介紹內容，可以放文字或圖片描述活動細節</div>
-          )}
+  <div className="activity-intro">
+   {/* 區塊一：花卉種類 */}
+<div className="section-floral">
+  {/* 標題 */}
+  <div className="floral-header">
+    <h3>花卉種類</h3>
+    <img src={FloralVarieties} alt="Floral Varieties" className="floral-icon" />
+  </div>
 
+  {/* 花卉展示區 */}
+  <div className="floral-gallery">
+    {/* 第一組：櫻花 */}
+    <div className="flower-group">
+      <div className="flower-stack">
+        <img src={flowerbg} alt="背景" className="flower-bg" />
+        <img src={flower1} alt="花卉1" className="flower-main" />
+      </div>
+      <p className="flower-text sakura">櫻花</p>
+    </div>
+
+    {/* 第二組：鬱金香 */}
+    <div className="flower-group">
+      <div className="flower-stack">
+        <img src={flowerbg} alt="背景" className="flower-bg" />
+        <img src={flower1} alt="花卉2" className="flower-main" />
+      </div>
+      <p className="flower-text tulip">鬱金香</p>
+    </div>
+
+    {/* 第三組：薰衣草 */}
+    <div className="flower-group">
+      <div className="flower-stack">
+        <img src={flowerbg} alt="背景" className="flower-bg" />
+        <img src={flower1} alt="花卉3" className="flower-main" />
+      </div>
+      <p className="flower-text lavender">薰衣草</p>
+    </div>
+  </div>
+</div>
+
+
+    {/* 區塊二：活動亮點 */}
+<div className="section-highlight">
+  {/* 標題區 */}
+  <div className="highlight-header">
+    <img src={Point} alt="裝飾" className="highlight-icon" />
+    <h3>活動亮點</h3>
+  </div>
+
+  {/* 活動亮點圖組 */}
+  <div className="highlight-gallery">
+    
+
+    {/* 三組活動亮點 */}
+    <div className="highlight-groups">
+  <div className="highlight-group">
+    <img src={flowerg} alt="底層背景" className="highlight-bg" />
+    <img src={flowerg1} alt="活動 1" className="highlight-image" />
+    <p className="highlight-text">攝影比賽</p>
+  </div>
+
+  <div className="highlight-group">
+    <img src={flowerg} alt="底層背景" className="highlight-bg" />
+    <img src={flowerg2} alt="活動 2" className="highlight-image" />
+    <p className="highlight-text">花卉市集</p>
+  </div>
+
+  <div className="highlight-group">
+    <img src={flowerg} alt="底層背景" className="highlight-bg" />
+    <img src={flowerg3} alt="活動 3" className="highlight-image" />
+    <p className="highlight-text">燈光秀</p>
+  </div>
+
+
+      {/* 第二組 */}
+      <div className="highlight-group">
+        <img src={flowerg} alt="底層背景" className="highlight-bg" />
+        <img src={flowerg2} alt="活動二" className="highlight-image" />
+        <p className="highlight-text">花卉市集</p>
+      </div>
+
+      {/* 第三組 */}
+      <div className="highlight-group">
+        <img src={flowerg} alt="底層背景" className="highlight-bg" />
+        <img src={flowerg3} alt="活動三" className="highlight-image" />
+        <p className="highlight-text">燈光秀</p>
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+
+
+    {/* 官方聯絡資訊區塊 */}
+<div className="contact-section">
+  {/* 社群圖示 */}
+  <div className="social-icons">
+    <img src={threadicon} alt="Thread" />
+    <img src={igicon} alt="Instagram" />
+    <img src={fbicon} alt="Facebook" />
+  </div>
+
+  {/* 標題 + phone 圖標 */}
+  <div className="contact-header">
+    <h2>官方聯絡資訊</h2>
+    <img src={phone} alt="Phone" className="phone-icon" />
+  </div>
+
+  {/* 聯絡資訊文字 */}
+  <div className="contact-info">
+    <div className="contact-item">
+      <p className="title">電子郵件</p>
+      <p className="value">1237894@tmu.edu.tw</p>
+    </div>
+
+    <div className="contact-item">
+      <p className="title">連絡電話</p>
+      <p className="value">(02) 2345-1244</p>
+    </div>
+  </div>
+</div>
+</div>
+
+)}
+
+{/* 交通資訊 */}
           {activeIndex === 1 && (
             <div className="transport-section">
               <div className="transport-container">

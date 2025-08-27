@@ -6,18 +6,20 @@
     border: 1px solid red;
   }
 
+  border: 1px solid red;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 100px;
-  gap: 20px;
+  // gap: 20px;
 
+  // 左側選單
   .left-sidebar {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 200px;
-    gap: 10px;
+    gap: 20px;
 
     .sidebar-item {
       width: 100%;
@@ -65,6 +67,10 @@
             padding: 15px 30px;
           }
 
+          // img {
+          //   mask-image: url('../images/member/member-arrow-green.svg');
+          // }
+
         }
       }
     }
@@ -72,14 +78,269 @@
 
   }
 
+  // 右側面板
   .right-panel {
-    background: #eaf6ff;
-    padding: 24px;
-    min-height: 320px;
+    width: 80%;
 
-    h2 {
-      margin: 0 0 12px;
+    // ------------ 共用標籤 ------------
+    .tab {
+      display: flex;
+      justify-content: space-between;
+
+      img {
+        display: inline-flex;
+        margin-left: 10vh;
+        height: auto;
+        width: auto;
+      }
+
+      h2 {
+        color: $brown-100;
+      }
+
     }
+
+    // 我的收藏
+    .fav-wrap {
+
+      .content {
+        background: $bg-blue;
+        padding: 24px;
+
+        .map-card {
+          // display: inline-block;
+          width: 250px;
+          // width: 50%;
+          position: relative;
+
+          @media (max-width:600px) {
+            flex: 0 0 auto;
+            /* 不要縮放，固定寬度 */
+            width: 250px;
+            /* 維持原本寬度 */
+          }
+
+          .map-lable {
+            position: absolute;
+            width: 65px;
+            height: 65px;
+            line-height: 65px;
+            z-index: 2;
+            background-color: #7DC5E4;
+            border-radius: 99px;
+            text-align: center;
+            color: #fff;
+          }
+
+          .map-img {
+            position: relative;
+            height: 225px;
+            padding: 20px;
+            object-fit: cover;
+          }
+
+          .map-date {
+            position: relative;
+            width: 60%;
+            height: 25px;
+            bottom: 60px;
+            z-index: 2;
+            padding: 0 20px;
+            background-color: #69C9A0;
+            color: #fff;
+          }
+
+          .map-title {
+            position: relative;
+            padding: 0 20px;
+            bottom: 40px;
+            color: #64503C;
+            font-size: 1rem;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+    // 我的花牆
+    .wall-wrap {
+
+      .content {
+        background: $autumn-red;
+        padding: 24px;
+
+        .v-photos {
+          display: flex;
+          gap: 20px;
+          overflow: hidden;
+          margin-top: 20px;
+
+          .v-item {
+            height: 280px;
+            width: auto;
+            background-position: center;
+            display: flex;
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            flex-shrink: 0;
+
+            .icon-heart {
+              position: absolute;
+              top: 20px;
+              right: 20px;
+              width: 45px;
+              cursor: pointer;
+              transition: transform 0.3s cubic-bezier(0.25, 1.25, 0.5, 1);
+
+              &:hover {
+                transform: scale(1.2);
+              }
+
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                transition: .5s transform ease-out;
+              }
+            }
+
+            P {
+              color: #fff;
+              position: absolute;
+              bottom: 20px;
+              left: 20px;
+              font-weight: 600;
+            }
+
+            h3 {
+              color: #fff;
+              font-size: 1.25rem;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              transition: transform 0.3s ease;
+              cursor: pointer;
+
+              &:hover {
+                transform: translate(-50%, -50%) scale(1.3);
+              }
+            }
+
+            img {
+              height: 100%;
+              width: auto;
+              object-fit: contain;
+            }
+          }
+        }
+
+      }
+
+    }
+
+    // 我的花訊
+    .news-wrap {
+
+      .content {
+        background: $spring-yellow;
+        padding: 24px;
+        display: flex;
+        justify-content: center;
+
+
+        .news-Card {
+          display: block;
+          flex-direction: column;
+          justify-content: space-between;
+          width: 30%;
+          margin: 10px;
+          padding: 10px 20px;
+          border: 1px solid rgba(85, 85, 85, 0.373);
+          border-radius: 3px;
+          background-color: $white;
+
+          .news-labledate {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+
+            .news-lable {
+              background-color: rgb(248, 198, 133);
+              padding: 1px 15px;
+            }
+          }
+
+          .news-cardTitle {
+            padding-left: 10px;
+          }
+
+          .news-img {
+            width: 100%;
+            padding: 10px;
+          }
+        }
+      }
+
+    }
+
+    // 個人資料
+    .prf-wrap {
+
+      .content {
+        background: $summer-green;
+        padding: 24px;
+
+
+      }
+
+    }
+
+    // 登入畫面
+    .signin-wrap {
+      display: flex;
+      flex-direction: column;
+
+      img {
+        margin: 20px auto;
+        width: 200px;
+      }
+
+      form {
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+
+        .name {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+
+        }
+
+        .id {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        button {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+      }
+    }
+
+
+
+
+
 
   }
 }
