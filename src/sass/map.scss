@@ -67,6 +67,16 @@
             .map-season {
                 display: flex;
 
+                .season-icon,
+                .empty-box {
+                    width: 80px;
+                    height: 80px;
+                }
+
+                .empty-box {
+                    background: transparent; // 空白但保留位置
+                }
+
                 img {
                     width: 80px;
                 }
@@ -75,6 +85,10 @@
                     width: 120px;
                     display: grid;
                     grid-template-columns: repeat(2, 1fr);
+
+                    .empty-slot {
+                        opacity: 0; // 保留位置但看不見
+                    }
 
                     img {
                         width: 100%;
@@ -156,6 +170,7 @@
                     width: 80%;
                     right: 5%;
                 }
+
                 @media (max-width:350px) {
                     width: 95%;
                     right: 2%;

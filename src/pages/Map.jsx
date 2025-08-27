@@ -1,4 +1,5 @@
-import "../sass/map.scss"
+import "../sass/map.scss";
+import FlowerEvent from '../json/FlowerEvent.json';
 import { useState } from "react";
 
 import 春 from "../images/map/花卉地圖-春季標籤-黃.svg"
@@ -27,7 +28,44 @@ const Map = () => {
   const [selectmonth, setSelectMonth] = useState("");
   const opmonth = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
   const [selectedflower, setSelectedFlower] = useState("");
-  const opflower = ['玫瑰'];
+  const opflower = ['玫瑰', '櫻花', '梅花', '木棉花', '茶花'];
+
+  const filtered = FlowerEvent.filter((item) => {
+    return (
+      (selectmonth === "" || item.month === selectmonth) &&
+      (selectedlocation === "" || item.location === selectedlocation) &&
+      (selectedflower === "" || item.flower === selectedflower)
+    );
+  });
+
+  const Mapcard = (({ lable, img, date, title }) => {
+    return (
+      <a href="#" className="map-card">
+        <p className="map-lable">{lable}</p>
+        <img src={img} className="map-img" alt="" />
+        <div className="map-date">{date}</div>
+        <h3 className="map-title">{title}</h3>
+      </a>
+    );
+  });
+
+  const fourseason = [
+    { name: "春", img: 春 },
+    { name: "夏", img: 夏 },
+    { name: "秋", img: 秋 },
+    { name: "冬", img: 冬 },
+  ]
+
+  // 定義月份對應的季節
+  const monthToSeason = (month) => {
+    if (["3月", "4月", "5月"].includes(month)) return "春";
+    if (["6月", "7月", "8月"].includes(month)) return "夏";
+    if (["9月", "10月", "11月"].includes(month)) return "秋";
+    if (["12月", "1月", "2月"].includes(month)) return "冬";
+    return "";
+  };
+
+  const season = monthToSeason(selectmonth);
 
   return (
     <>
@@ -36,17 +74,31 @@ const Map = () => {
           <h2>花卉地圖 MAP</h2>
           <div className="map-selectAll">
             <div className="map-season">
-              <img src={夏} alt="" />
+              {season ? (
+                <img
+                  src={ season === "春" ? 春 :
+                      season === "夏" ? 夏 :
+                        season === "秋" ? 秋 : 冬 }
+                  alt={season} className="season-icon"
+                />
+              ) : (
+                <div className="empty-box"></div> // 先放空的佔位
+              )}
               <div className="map-four">
-                <img src={春} alt="" />
-                <img src={秋} alt="" />
-                <img src={夏} alt="" />
-                <img src={冬} alt="" />
+                {fourseason.map((s) => (
+                  <div key={s.name}>
+                    {season === s.name ? (
+                      <div className="empty-slot" /> // 被選中的季節變空白
+                    ) : (
+                      <img src={s.img} alt={s.name}/>
+                    )}
+                  </div>
+                ))}
               </div>
             </div>
             <div className="map-select">
               <select name="" id="" value={selectmonth} onChange={(e) => { setSelectMonth(e.target.value); }}>
-                <option value="" disabled>選擇</option>
+                <option value="" >月份</option>
                 {
                   opmonth.map((item, index) => {
                     return <option key={item} value={opmonth[index]}>{item}</option>
@@ -54,7 +106,7 @@ const Map = () => {
                 }
               </select>
               <select name="" id="" value={selectedlocation} onChange={(e) => { setSelectedLocation(e.target.value); }}>
-                <option value="" disabled>選擇</option>
+                <option value="">地區</option>
                 {
                   oplocation.map((item, index) => {
                     return <option key={item} value={oplocation[index]}>{item}</option>
@@ -62,7 +114,7 @@ const Map = () => {
                 }
               </select>
               <select name="" id="" value={selectedflower} onChange={(e) => { setSelectedFlower(e.target.value); }}>
-                <option value="" disabled>選擇</option>
+                <option value="">品種</option>
                 {
                   opflower.map((item, index) => {
                     return <option key={item} value={opflower[index]}>{item}</option>
@@ -81,42 +133,16 @@ const Map = () => {
             <h2 >賞花活動 EVENT</h2>
           </div>
           <div className="map-cardWarp">
-            <a href="#" className="map-card">
+            {filtered.map((item, index) => {
+              return <Mapcard key={index} lable={item.lable} img={item.img} date={item.date} title={item.title} />
+            })}
+
+            {/* <a href="#" className="map-card">
               <p className="map-lable">台北</p>
               <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="map-img" alt="" />
               <div className="map-date">07.01 — 09.23</div>
               <h3 className="map-title">樟樹步道花海</h3>
-            </a>
-            <a href="#" className="map-card">
-              <p className="map-lable">台北</p>
-              <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="map-img" alt="" />
-              <div className="map-date">07.01 — 09.23</div>
-              <h3 className="map-title">樟樹步道花海</h3>
-            </a>
-            <a href="#" className="map-card">
-              <p className="map-lable">台北</p>
-              <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="map-img" alt="" />
-              <div className="map-date">07.01 — 09.23</div>
-              <h3 className="map-title">樟樹步道花海</h3>
-            </a>
-            <a href="#" className="map-card">
-              <p className="map-lable">台北</p>
-              <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="map-img" alt="" />
-              <div className="map-date">07.01 — 09.23</div>
-              <h3 className="map-title">樟樹步道花海</h3>
-            </a>
-            <a href="#" className="map-card">
-              <p className="map-lable">台北</p>
-              <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="map-img" alt="" />
-              <div className="map-date">07.01 — 09.23</div>
-              <h3 className="map-title">樟樹步道花海</h3>
-            </a>
-            <a href="#" className="map-card">
-              <p className="map-lable">台北</p>
-              <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="map-img" alt="" />
-              <div className="map-date">07.01 — 09.23</div>
-              <h3 className="map-title">樟樹步道花海</h3>
-            </a>
+            </a> */}
 
           </div>
         </div>
