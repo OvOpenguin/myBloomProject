@@ -170,7 +170,20 @@
             gap: 20px;
             // overflow: hidden;
             margin-top: 20px;
-            animation: scroll 20s linear infinite;
+
+
+            &.left {
+                animation: scroll-left 40s linear infinite;
+            }
+
+            &.right {
+                animation: scroll-right 30s linear infinite;
+            }
+
+            &:hover {
+                animation-play-state: paused;
+            }
+
 
 
             .v-item {
@@ -237,17 +250,26 @@
     }
 }
 
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
+@keyframes scroll-left {
+    from {
+        transform: translate3d(0, 0, 0);
     }
 
-    100% {
-        transform: translateX(-38%);
+    to {
+        transform: translate3d(var(--scrollWidth), 0, 0);
     }
-
-    // 跑一半（要複製內容來無縫銜接）
 }
+
+@keyframes scroll-right {
+    from {
+        transform: translate3d(var(--scrollWidth), 0, 0);
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
 
 
 .wall-a-inner {

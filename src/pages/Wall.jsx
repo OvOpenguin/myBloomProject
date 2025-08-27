@@ -54,8 +54,42 @@ const Wall = () => {
       heart: heart0,
     },
   ];
+  const flowerwalls2 = [
+    {
+      id: 6,
+      count: 999,
+      img: flower06,
+      heart: heart0,
+    },
+    {
+      id: 7,
+      count: 999,
+      img: flower07,
+      heart: heart0,
+    },
+    {
+      id: 8,
+      count: 999,
+      img: flower08,
+      heart: heart0,
+    },
+    {
+      id: 9,
+      count: 999,
+      img: flower09,
+      heart: heart0,
+    },
+    {
+      id: 10,
+      count: 999,
+      img: flower10,
+      heart: heart0,
+    },
+  ];
+
   // 複製一份作接捕用
-  const fws = [...flowerwalls, ...flowerwalls]
+  const fws = [...flowerwalls, { id: "special", type: "special" }, ...flowerwalls]
+  const fws2 = [...flowerwalls2, { id: "special2", type: "special2" }, ...flowerwalls2]
 
   // 花牆照片元件
   const Flowerwall = ({ count, img, heart }) => {
@@ -69,6 +103,85 @@ const Wall = () => {
       </li>
     )
   };
+
+  // 文章物件
+  const articles = [
+    {
+      id: 1,
+      img: flower01,
+      label: '活動',
+      date: '2025.07.28',
+      title: '荷與睡蓮誰美？北投公園一次看',
+    },
+    {
+      id: 2,
+      img: flower01,
+      label: '活動',
+      date: '2025.07.28',
+      title: '荷與睡蓮誰美？北投公園一次看',
+    },
+    {
+      id: 3,
+      img: flower01,
+      label: '活動',
+      date: '2025.07.28',
+      title: '荷與睡蓮誰美？北投公園一次看',
+    },
+    {
+      id: 4,
+      img: flower01,
+      label: '活動',
+      date: '2025.07.28',
+      title: '荷與睡蓮誰美？北投公園一次看',
+    },
+    {
+      id: 5,
+      img: flower01,
+      label: '活動',
+      date: '2025.07.28',
+      title: '荷與睡蓮誰美？北投公園一次看',
+    }
+  ];
+
+  // 文章元件
+  const Article = ({ img, label, date, title }) => {
+    return (
+      <a href="#" className="a-card">
+        <img src={img} alt="" />
+        <div>
+          <p className='wall-lable'>{label}</p>
+          <p className='wall-date'>{date}</p>
+          <p className='wall-title'>{title}</p>
+        </div>
+      </a>
+    )
+  };
+
+  const listRef1 = useRef(null);
+  const listRef2 = useRef(null);
+
+  useEffect(() => {
+    const ul1 = listRef1.current;
+    const ul2 = listRef2.current;
+
+    const setScrollWidth = (ul) => {
+      if (!ul) return;
+      const totalWidth = ul.scrollWidth / 2;
+      ul.style.setProperty("--scrollWidth", `-${totalWidth}px`);
+    };
+
+    setScrollWidth(listRef1.current);
+    setScrollWidth(listRef2.current);
+
+    // if (ul1) {
+    //   const totalWidth = ul1.scrollWidth / 2; // 一份的寬度
+    //   ul1.style.setProperty("--scrollWidth", `-${totalWidth}px`);
+    // }
+    // if (ul2) {
+    //   const totalWidth = ul2.scrollWidth / 2;
+    //   ul2.style.setProperty("--scrollWidth", `-${totalWidth}px`);
+    // }
+  }, []);
 
 
   return (
@@ -96,94 +209,34 @@ const Wall = () => {
           <h2>VOTING</h2>
         </header>
         <div className="v-photowarp">
-          <ul className="v-photos">
-            {fws.map((item) => {
-              return <Flowerwall key={item.id} count={item.count} img={item.img} heart={item.heart} />
+          <ul className="v-photos left" ref={listRef1}>
+            {fws.map((item, index) => {
+              // 參加賽事按鈕
+              if (item.type == 'special') {
+                return (
+                  <li className="v-item" key={`special2-${index}`}>
+                    <h3>參加賽事</h3>
+                    <img src={votebotton1} alt="" />
+                  </li>
+                );
+              }
+              return <Flowerwall key={index} count={item.count} img={item.img} heart={item.heart} />
             })}
-            {/* <li className="v-item">
-              <p>999</p>
-              <img src={flower01} alt="" />
-              <div className="icon-heart">
-                <img src={heart0} alt="" />
-              </div>
-            </li>
-            <li className="v-item">
-              <p>999</p>
-              <img src={flower02} alt="" />
-              <div className="icon-heart">
-                <img src={heart0} alt="" />
-              </div>
-            </li>
-            <li className="v-item">
-              <h3>參加賽事</h3>
-              <img src={votebotton1} alt="" />
-            </li> */}
-
-
           </ul>
-          {/* <ul className="v-photos">
-            <li className="v-item">
-              <p>999</p>
-              <img src={flower06} alt="" />
-              <div className="icon-heart">
-                <img src={heart0} alt="" />
-              </div>
-            </li>
-            <li className="v-item">
-              <p>999</p>
-              <img src={flower09} alt="" />
-              <div className="icon-heart">
-                <img src={heart0} alt="" />
-              </div>
-            </li>
-            <li className="v-item">
-              <p>999</p>
-              <img src={flower10} alt="" />
-              <div className="icon-heart">
-                <img src={heart0} alt="" />
-              </div>
-            </li>
-            <li className="v-item">
-              <p>999</p>
-              <img src={flower06} alt="" />
-              <div className="icon-heart">
-                <img src={heart0} alt="" />
-              </div>
-            </li>
-            <li className="v-item">
-              <h3>參加賽事</h3>
-              <img src={votebotton2} alt="" />
-            </li>
-            <li className="v-item">
-              <p>999</p>
-              <img src={flower07} alt="" />
-              <div className="icon-heart">
-                <img src={heart0} alt="" />
-              </div>
-            </li>
-            <li className="v-item">
-              <p>999</p>
-              <img src={flower08} alt="" />
-              <div className="icon-heart">
-                <img src={heart0} alt="" />
-              </div>
-            </li>
-            <li className="v-item">
-              <p>999</p>
-              <img src={flower01} alt="" />
-              <div className="icon-heart">
-                <img src={heart0} alt="" />
-              </div>
-            </li>
-            <li className="v-item">
-              <p>999</p>
-              <img src={flower02} alt="" />
-              <div className="icon-heart">
-                <img src={heart0} alt="" />
-              </div>
-            </li>
-
-          </ul> */}
+          <ul className="v-photos right" ref={listRef2}>
+            {fws2.map((item, index) => {
+              // 參加賽事按鈕
+              if (item.type == 'special2') {
+                return (
+                  <li className="v-item" key={`special2-${index}`}>
+                    <h3>參加賽事</h3>
+                    <img src={votebotton2} alt="" />
+                  </li>
+                );
+              }
+              return <Flowerwall key={index} count={item.count} img={item.img} heart={item.heart} />
+            })}
+          </ul>
         </div>
       </section>
 
@@ -193,54 +246,9 @@ const Wall = () => {
           <h2>ARTICLES</h2>
         </header>
         <div className="a-cardwarp">
-          <a href="#" className="a-card">
-            <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" alt="" />
-            <div>
-              <p className='wall-lable'>標籤</p>
-              <p className='wall-date'>2025.07.28</p>
-              <p className='wall-title'>荷與睡蓮誰美？北投公園一次看</p>
-            </div>
-          </a>
-          <a href="#" className="a-card">
-            <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" alt="" />
-            <div>
-              <p className='wall-lable'>標籤</p>
-              <p className='wall-date'>2025.07.28</p>
-              <p className='wall-title'>荷與睡蓮誰美？北投公園一次看</p>
-            </div>
-          </a>
-          <a href="#" className="a-card">
-            <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" alt="" />
-            <div>
-              <p className='wall-lable'>標籤</p>
-              <p className='wall-date'>2025.07.28</p>
-              <p className='wall-title'>荷與睡蓮誰美？北投公園一次看</p>
-            </div>
-          </a>
-          <a href="#" className="a-card">
-            <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" alt="" />
-            <div>
-              <p className='wall-lable'>標籤</p>
-              <p className='wall-date'>2025.07.28</p>
-              <p className='wall-title'>荷與睡蓮誰美？北投公園一次看</p>
-            </div>
-          </a>
-          <a href="#" className="a-card">
-            <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" alt="" />
-            <div>
-              <p className='wall-lable'>標籤</p>
-              <p className='wall-date'>2025.07.28</p>
-              <p className='wall-title'>荷與睡蓮誰美？北投公園一次看</p>
-            </div>
-          </a>
-          <a href="#" className="a-card">
-            <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" alt="" />
-            <div>
-              <p className='wall-lable'>標籤</p>
-              <p className='wall-date'>2025.07.28</p>
-              <p className='wall-title'>荷與睡蓮誰美？北投公園一次看</p>
-            </div>
-          </a>
+          {articles.map((item, index) => {
+            return <Article key={index} img={item.img} label={item.label} date={item.date} title={item.title} />
+          })}
         </div>
         <a href="#" className="a-button">
           <p>前往投票</p>
