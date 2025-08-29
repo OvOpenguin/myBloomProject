@@ -121,14 +121,14 @@ const App = () => {
         }
     };
 
-    // 滑鼠滾輪事件(滾一次+15度)
+    // 裝飾花(滑鼠滾輪)
     const [rotated, setRotated] = useState(false);
     useEffect(() => {
         let ticking = false;
         const handleScroll = () => {
-            if (!ticking) {           // 保證只觸發一次
-                setRotated((prev) => prev + 15);
-                ticking= (true);
+            if (!ticking) { 
+                setRotated((prev) => prev + 10);
+                ticking= true;
                 requestAnimationFrame(() => {
           ticking = false;
         });
@@ -137,7 +137,7 @@ const App = () => {
 
         window.addEventListener("wheel", handleScroll);
 
-        return () => window.removeEventListener("swheel", handleScroll);
+        return () => window.removeEventListener("wheel", handleScroll);
     }, []);
 
 
@@ -209,18 +209,6 @@ const App = () => {
                     <div className="IndexNsp">
                         {/* 左側-最新消息 */}
                         <div className="Inews">
-
-                            {/* 裝飾花 */}
-                            {/* <div className="newsF"> */}
-                            {/*
-                            <div className="iflower">
-                                <div className="p pink"><img src={pink} alt="粉辦" /></div>
-                                <div className="p purple"><img src={purple} alt="紫辦" /></div>
-                                <div className="p orange"><img src={orange} alt="橘辦" /></div>
-                                <div className="p yellow"><img src={yellow} alt="黃中心" /></div>
-                                {/* <img src={首頁消息花} alt="" /> 
-                            </div>*/}
-
                             {/* 裝飾花(旋轉) */}
                             <div className="h-n-fw">
                                 <div className="t fw2" style={{ transform: `rotate(${rotated}deg)` }} ><img src={hfw2} alt="" /></div>
@@ -241,19 +229,6 @@ const App = () => {
                             <Link to="./news"><div className="homeBtn">更多消息</div></Link>
                         </div>
 
-
-                        {/* 右側-花卉科普 */}
-                        {/* <div className="Isp">
-                            <div className="st">
-                                <Link to="./story"><div className="Istory"><a href="./story"><img src={花卉介紹} alt="花卉介紹" /></a></div></Link>
-                                <div className="Istitle"><h2>認識花卉</h2><h3>Flower Story</h3></div>
-                            </div>
-
-                            <div className="pb">
-                                <div className="Ibook"><img src={書} alt="書" /></div>
-                                <Link to="./play"> <div className="Iplay"><a href="#"><img src={花卉遊戲} alt="花卉遊戲" /></a></div></Link>
-                            </div>
-                        </div> */}
                         <div className="home-story">
                             <div className="home-s-btn">
                                 <div className="home-s-title"><h2 >認識花卉</h2><h3>Flower Story</h3></div>

@@ -1,21 +1,213 @@
 /* header區 */
 
 header {
-    ul {
+    .nav {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 20px;
+        gap: 50px;
+        font-weight: 800;
+        font-size: 20px;
+        padding: 20px 20px;
 
         li a {
-            padding: 10px 10px;
             color: #64503C;
+        }
 
+        .nav-blue {
+            display: flex;
+            flex-direction: column;
+
+            &:hover {
+                .line {
+                    animation: draw .5s linear forwards;
+                }
+            }
+
+            >* {
+                .t {
+                    color: #7DC5E4;
+                    display: inline;
+                }
+
+                &:hover {
+                    color: #7DC5E4;
+                }
+            }
+
+            // svg線條動畫
+            .line {
+                width: 103px;
+                height: 12px;
+                fill: none;
+                stroke: #69C9A0;
+                stroke-width: 2;
+                stroke-linecap: round;
+                vector-effect: non-scaling-stroke;
+                stroke-dasharray: 1;
+                /* 1 = 線條總長度 */
+                stroke-dashoffset: 1;
+                /* 初始值 = 完全隱藏 */
+            }
+        }
+
+        .nav-pink {
+            display: flex;
+            flex-direction: column;
+
+            &:hover {
+                .line {
+                    animation: draw .5s linear forwards;
+                }
+            }
+
+            >* {
+                .t {
+                    color: #FFA8B5;
+                    display: inline;
+                }
+
+                &:hover {
+                    color: #FFA8B5;
+                }
+            }
+
+            // svg線條動畫
+            .line {
+                width: 103px;
+                height: 12px;
+                fill: none;
+                stroke: #69C9A0;
+                stroke-width: 2;
+                stroke-linecap: round;
+                vector-effect: non-scaling-stroke;
+                stroke-dasharray: 1;
+                /* 1 = 線條總長度 */
+                stroke-dashoffset: 1;
+                /* 初始值 = 完全隱藏 */
+            }
+        }
+
+        .nav-orange {
+            display: flex;
+            flex-direction: column;
+
+            &:hover {
+                .line {
+                    animation: draw .5s linear forwards;
+                }
+            }
+
+            >* {
+                .t {
+                    color: #FF8457;
+                    display: inline;
+                }
+
+                &:hover {
+                    color: #FF8457;
+                }
+            }
+
+            // svg線條動畫
+            .line {
+                width: 103px;
+                height: 12px;
+                fill: none;
+                stroke: #69C9A0;
+                stroke-width: 2;
+                stroke-linecap: round;
+                vector-effect: non-scaling-stroke;
+                stroke-dasharray: 1;
+                /* 1 = 線條總長度 */
+                stroke-dashoffset: 1;
+                /* 初始值 = 完全隱藏 */
+            }
+        }
+
+        .nav-green {
+            display: flex;
+            flex-direction: column;
+
+            &:hover {
+                .line {
+                    animation: draw .5s linear forwards;
+                }
+            }
+
+            >* {
+                .t {
+                    color: #69C9A0;
+                    display: inline;
+                }
+
+                &:hover {
+                    color: #69C9A0;
+                }
+            }
+
+            // svg線條動畫
+            .line {
+                width: 103px;
+                height: 12px;
+                fill: none;
+                stroke: #69C9A0;
+                stroke-width: 2;
+                stroke-linecap: round;
+                vector-effect: non-scaling-stroke;
+                stroke-dasharray: 1;
+                /* 1 = 線條總長度 */
+                stroke-dashoffset: 1;
+                /* 初始值 = 完全隱藏 */
+            }
+        }
+
+        .nav-purple {
+            display: flex;
+            flex-direction: column;
+
+            &:hover {
+                .line {
+                    animation: draw .5s linear forwards;
+                }
+            }
+
+            >* {
+                .t {
+                    color: #C075E3;
+                    display: inline;
+                }
+
+                &:hover {
+                    color: #C075E3;
+                }
+            }
+
+            // svg線條動畫
+            .line {
+                width: 103px;
+                height: 12px;
+                fill: none;
+                stroke: #69C9A0;
+                stroke-width: 2;
+                stroke-linecap: round;
+                vector-effect: non-scaling-stroke;
+                stroke-dasharray: 1;
+                /* 1 = 線條總長度 */
+                stroke-dashoffset: 1;
+                /* 初始值 = 完全隱藏 */
+            }
         }
     }
-
 }
 
+@keyframes draw {
+
+    /* 從隱藏開始 */
+    to {
+        stroke-dashoffset: 0;
+    }
+}
 
 
 /* 頁尾區 */
