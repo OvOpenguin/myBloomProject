@@ -121,6 +121,27 @@ const App = () => {
         }
     };
 
+    // 滑鼠滾輪事件(滾一次+15度)
+    const [rotated, setRotated] = useState(false);
+    useEffect(() => {
+        let ticking = false;
+        const handleScroll = () => {
+            if (!ticking) {           // 保證只觸發一次
+                setRotated((prev) => prev + 15);
+                ticking= (true);
+                requestAnimationFrame(() => {
+          ticking = false;
+        });
+            }
+        };
+
+        window.addEventListener("wheel", handleScroll);
+
+        return () => window.removeEventListener("swheel", handleScroll);
+    }, []);
+
+
+
 
     return (
         <>
@@ -200,9 +221,10 @@ const App = () => {
                                 {/* <img src={首頁消息花} alt="" /> 
                             </div>*/}
 
+                            {/* 裝飾花(旋轉) */}
                             <div className="h-n-fw">
-                                <div className="p fw1"><img src={hfw1} alt="" /></div>
-                                <div className="p fw2"><img src={hfw2} alt="" /></div>
+                                <div className="t fw2" style={{ transform: `rotate(${rotated}deg)` }} ><img src={hfw2} alt="" /></div>
+                                <div className="t fw1"><img src={hfw1} alt="" /></div>
                             </div>
                             {/* </div> */}
 

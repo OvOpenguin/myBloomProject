@@ -89,9 +89,10 @@
 }
 
 @keyframes fade {
- from {
+    from {
         opacity: .8;
     }
+
     to {
         opacity: 1;
     }
@@ -358,45 +359,45 @@
     }
 
     // 這是花框初始位置
-    .iflower {
-        position: absolute;
-        top: -50px;
-        left: -50px;
-        width: 150px;
-        height: 150px;
+    // .iflower {
+    //     position: absolute;
+    //     top: -50px;
+    //     left: -50px;
+    //     width: 150px;
+    //     height: 150px;
 
-        // background: #000;
-        // opacity: .5;
-        .p {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform-origin: center bottom;
-            /* 花瓣旋轉的支點 */
-            transition: transform 1s ease;
-            /* 動畫 */
-        }
+    //     // background: #000;
+    //     // opacity: .5;
+    //     .p {
+    //         position: absolute;
+    //         top: 50%;
+    //         left: 50%;
+    //         transform-origin: center bottom;
+    //         /* 花瓣旋轉的支點 */
+    //         transition: transform 1s ease;
+    //         /* 動畫 */
+    //     }
 
-        // 初始四散狀態
-        .pink {
-            width: 70px;
-            transform: translate(-100%, -100%) rotate(0deg);
-        }
+    //     // 初始四散狀態
+    //     .pink {
+    //         width: 70px;
+    //         transform: translate(-100%, -100%) rotate(0deg);
+    //     }
 
-        .purple {
-            transform: translate(300%, 500%) rotate(0deg);
-        }
+    //     .purple {
+    //         transform: translate(300%, 500%) rotate(0deg);
+    //     }
 
-        .orange {
+    //     .orange {
 
-            transform: translate(120%, -100%) rotate(0deg);
-        }
+    //         transform: translate(120%, -100%) rotate(0deg);
+    //     }
 
-        .yellow {
+    //     .yellow {
 
-            transform: translate(-80%, 400%) rotate(180deg);
-        }
-    }
+    //         transform: translate(-80%, 400%) rotate(180deg);
+    //     }
+    // }
 
     .h-n-fw {
         position: absolute;
@@ -405,246 +406,246 @@
         width: 150px;
         height: 150px;
 
-        .p {
+        .t {
             position: absolute;
-            transform-origin: center bottom;
-        }
+            transform-origin: center;
+            transition: transform 0.5s ease;
 
-        .fw1 {
-            z-index: 1;
-        }
+            .fw1 {
+                z-index: 1;
+            }
 
+        }
     }
 
+        // 左側最新消息區
+        .Inews {
+            flex: 1;
+            position: relative;
+            padding: 50px;
+            padding-bottom: 20px;
+            background-image: url(../images/home/home-grass.png);
+            background-size: cover;
+            max-width: 650px;
+            min-width: 420px; //限定最小寬度，避免在手機板過度壓縮
 
-    // 左側最新消息區
-    .Inews {
-        flex: 1;
-        position: relative;
-        padding: 50px;
-        padding-bottom: 20px;
-        background-image: url(../images/home/home-grass.png);
-        background-size: cover;
-        max-width: 650px;
-        min-width: 420px; //限定最小寬度，避免在手機板過度壓縮
+            // 裝飾花
+            // .newsF {
+            //     // 用來給花框定位
+            //     position: absolute;
+            //     top: -50px;
+            //     left: -30px;
+            // }
 
-        // 裝飾花
-        // .newsF {
-        //     // 用來給花框定位
-        //     position: absolute;
-        //     top: -50px;
-        //     left: -30px;
+            ul {
+                li {
+                    background: #fff;
+                    margin: 10px 0;
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap-reverse;
+                    gap: 10px;
+                    padding: 5px;
+
+                    p {
+                        width: 300px; //這邊的寬度待更改，目前預設300px正常。
+                        text-align: left;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+
+                    .tag1 {
+                        padding: 0 10px;
+                        margin-right: 10px;
+                        background-color: $NewTaipeiCity-yellow;
+                    }
+
+                    .tag2 {
+                        padding: 0 10px;
+                        margin-right: 10px;
+                        background-color: $sky-blue;
+                    }
+
+                    .itime {
+                        color: $brown-100;
+                    }
+
+                }
+            }
+
+            .homeBtn {
+                margin-top: 30px;
+                text-align: center;
+                width: 150px;
+            }
+        }
+
+        // 右側花卉故事區
+        // .Isp {
+        //     position: relative;
+        //     display: flex;
+        //     flex-direction: column;
+        //     gap: 20px;
+        //     max-width: 650px;
+        //     min-width: 420px;
+
+        //     .st {
+        //         display: flex;
+        //         align-items: center;
+        //         gap: 20px;
+        //     }
+
+        //     .pb {
+        //         display: flex;
+        //         justify-content: space-between;
+        //         align-items: center;
+        //         gap: 20px;
+
+
+        //         .Ibook {
+        //             width: 25%;
+        //             animation: floating 2s ease-in-out infinite alternate;
+
+        //             @keyframes floating {
+        //                 from {
+        //                     transform: translateY(0) rotate(10deg);
+        //                 }
+
+        //                 to {
+        //                     transform: translateY(-30px) rotate(-10deg);
+        //                 }
+        //             }
+        //         }
+        //     }
         // }
 
-        ul {
-            li {
-                background: #fff;
-                margin: 10px 0;
-                display: flex;
-                justify-content: space-between;
-                flex-wrap: wrap-reverse;
-                gap: 10px;
-                padding: 5px;
-
-                p {
-                    width: 300px; //這邊的寬度待更改，目前預設300px正常。
-                    text-align: left;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    white-space: nowrap;
-                }
-
-                .tag1 {
-                    padding: 0 10px;
-                    margin-right: 10px;
-                    background-color: $NewTaipeiCity-yellow;
-                }
-
-                .tag2 {
-                    padding: 0 10px;
-                    margin-right: 10px;
-                    background-color: $sky-blue;
-                }
-
-                .itime {
-                    color: $brown-100;
-                }
-
-            }
-        }
-
-        .homeBtn {
-            margin-top: 30px;
-            text-align: center;
-            width: 150px;
-        }
-    }
-
-    // 右側花卉故事區
-    // .Isp {
-    //     position: relative;
-    //     display: flex;
-    //     flex-direction: column;
-    //     gap: 20px;
-    //     max-width: 650px;
-    //     min-width: 420px;
-
-    //     .st {
-    //         display: flex;
-    //         align-items: center;
-    //         gap: 20px;
-    //     }
-
-    //     .pb {
-    //         display: flex;
-    //         justify-content: space-between;
-    //         align-items: center;
-    //         gap: 20px;
-
-
-    //         .Ibook {
-    //             width: 25%;
-    //             animation: floating 2s ease-in-out infinite alternate;
-
-    //             @keyframes floating {
-    //                 from {
-    //                     transform: translateY(0) rotate(10deg);
-    //                 }
-
-    //                 to {
-    //                     transform: translateY(-30px) rotate(-10deg);
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
-
-    .home-story {
-        // flex: 1;
-        display: flex;
-
-        .home-s-btn {
+        .home-story {
+            // flex: 1;
             display: flex;
-            flex-direction: column;
-            width: 100%;
-            height: 100%;
 
-            .home-s-title {
-                text-align: right;
-
-                @media (max-width:1000px) {
-                    text-align: center;
-                }
-            }
-
-            .home-s-img {
-                object-fit: contain;
+            .home-s-btn {
                 display: flex;
                 flex-direction: column;
+                width: 100%;
+                height: 100%;
 
-                @media (max-width:1000px) {
-                    display: flex;
-                    justify-content: center;
-                    flex-direction: row;
-                }
-
-                @media (max-width:640px) {
-                    flex-direction: column;
-                }
-
-                img {
-                    height: 180px;
-                    padding: 5px;
-                    transition: all .5s;
-                    object-fit: contain;
-
-                    &:hover {
-                        filter: opacity(.6);
-                    }
+                .home-s-title {
+                    text-align: right;
 
                     @media (max-width:1000px) {
-                        margin-bottom: 0;
-                        padding: 10px;
+                        text-align: center;
+                    }
+                }
+
+                .home-s-img {
+                    object-fit: contain;
+                    display: flex;
+                    flex-direction: column;
+
+                    @media (max-width:1000px) {
+                        display: flex;
+                        justify-content: center;
+                        flex-direction: row;
+                    }
+
+                    @media (max-width:640px) {
+                        flex-direction: column;
+                    }
+
+                    img {
+                        height: 180px;
+                        padding: 5px;
+                        transition: all .5s;
+                        object-fit: contain;
+
+                        &:hover {
+                            filter: opacity(.6);
+                        }
+
+                        @media (max-width:1000px) {
+                            margin-bottom: 0;
+                            padding: 10px;
+                        }
                     }
                 }
             }
         }
     }
-}
 
 
-// 花牆票選
-.IndexVote {
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 50px 0 0 50px;
-
-
-    .voteTitle {
+    // 花牆票選
+    .IndexVote {
         position: relative;
-        margin-right: 30px;
-
-        .arrow {
-            position: absolute;
-            top: 0;
-            right: -20px;
-            width: 50px;
-            height: 50px;
-            color: $brown-100;
-
-            &:hover {
-                color: $grass-green;
-                animation: scale .3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-            }
-
-            @keyframes scale {
-                0% {
-                    /* 初始狀態：在地面上，未旋轉 */
-                    transform: translateY(0);
-                }
-
-                100% {
-                    /* 回到原位：位移歸零，旋轉完成 */
-                    transform: translateY(0) scale(1.2);
-                }
-            }
-        }
-
-        .crown {
-            width: 70%;
-            transform: rotate(-30deg);
-        }
-    }
-
-    .wall {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
         align-items: center;
-        padding: 30px;
-        gap: 20px;
-        background: rgb(210, 236, 255, .5);
+        padding: 50px 0 0 50px;
 
-        li {
-            @media (max-width:1440px) {
-                &:last-child {
-                    display: none;
+
+        .voteTitle {
+            position: relative;
+            margin-right: 30px;
+
+            .arrow {
+                position: absolute;
+                top: 0;
+                right: -20px;
+                width: 50px;
+                height: 50px;
+                color: $brown-100;
+
+                &:hover {
+                    color: $grass-green;
+                    animation: scale .3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+                }
+
+                @keyframes scale {
+                    0% {
+                        /* 初始狀態：在地面上，未旋轉 */
+                        transform: translateY(0);
+                    }
+
+                    100% {
+                        /* 回到原位：位移歸零，旋轉完成 */
+                        transform: translateY(0) scale(1.2);
+                    }
                 }
             }
 
-            @media (max-width:1024px) {
-                &:nth-child(n+3) {
-                    display: none;
-                }
-            }
-
-            @media (max-width:820px) {
-                &:nth-child(n+2) {
-                    display: none;
-                }
+            .crown {
+                width: 70%;
+                transform: rotate(-30deg);
             }
         }
 
+        .wall {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px;
+            gap: 20px;
+            background: rgb(210, 236, 255, .5);
+
+            li {
+                @media (max-width:1440px) {
+                    &:last-child {
+                        display: none;
+                    }
+                }
+
+                @media (max-width:1024px) {
+                    &:nth-child(n+3) {
+                        display: none;
+                    }
+                }
+
+                @media (max-width:820px) {
+                    &:nth-child(n+2) {
+                        display: none;
+                    }
+                }
+            }
+
+        }
     }
-}
