@@ -1,25 +1,17 @@
 import "../sass/home2.scss"
 import 北花冊 from "../images/home/北花冊.webp"
-import 大花 from "../images/home/heroFlower.svg"
+import 大花定位2 from "../images/home/大花定位2.png"
 import 貼紙花1 from "../images/home/首頁-貼紙花.webp"
-import 花卉介紹 from "../images/home/homeStory.png"
-import 花卉遊戲 from "../images/home/homeGame.png"
 import 花卉介紹2 from "../images/home/homeStory.svg"
 import 花卉遊戲2 from "../images/home/homeGame2.svg"
-import 書 from "../images/home/書.svg"
 import 票選1 from '../images/home/首頁-票選1-框.png'
 import 票選2 from '../images/home/首頁-票選2-框.png'
 import 票選3 from '../images/home/首頁-票選3-框.png'
 import 票選4 from '../images/home/首頁-票選4-框.png'
 import 王冠 from '../images/home/王冠.svg'
-import 首頁消息花 from '../images/home/首頁消息-花.svg'
 // 最新消息-裝飾花
 import hfw1 from '../images/home/homefwro1.svg'
 import hfw2 from '../images/home/homefwro2.svg'
-import pink from '../images/home/pink-p1.png'
-import orange from '../images/home/orange-p2.png'
-import purple from '../images/home/purple-p3.png'
-import yellow from '../images/home/yellow-p4.png'
 // react icon
 import { IoIosArrowDropleft } from "react-icons/io";
 import { IoIosArrowDropright } from "react-icons/io";
@@ -126,12 +118,12 @@ const App = () => {
     useEffect(() => {
         let ticking = false;
         const handleScroll = () => {
-            if (!ticking) { 
+            if (!ticking) {
                 setRotated((prev) => prev + 10);
-                ticking= true;
+                ticking = true;
                 requestAnimationFrame(() => {
-          ticking = false;
-        });
+                    ticking = false;
+                });
             }
         };
 
@@ -150,14 +142,27 @@ const App = () => {
                 <section>
                     {/* <div className="name"><img src={北花冊} alt="北花冊" /><p>Bloomchure</p></div> */}
                     <div className="hero">
+
                         <div className="heroFlower">
-                            <img src={大花} alt="大花" className="bigFlower" />
-                            <div className="t t2"><img src="./home/t2.svg" alt="" /></div>
-                            <div className="t t3"><img src="./home/t3.svg" alt="" /></div>
-                            <div className="t t4"><img src="./home/t3.svg" alt="" /></div>
-                            <div className="t t12"><img src="./home/t12.svg" alt="" /></div>
-
-
+                            {/* 定位用大花 */}
+                            <img src={大花定位2} alt="大花" className="bigFlower" />
+                            <div className="t t11"><img src="./home/t11.svg" alt="藍紫花瓣" /></div>
+                            <div className="t t12"><img src="./home/t12.svg" alt="紫色花瓣" /></div>
+                            <div className="t t2r"><img src="./home/t2.svg" alt="粉色花瓣右" /></div>
+                            <div className="t t6"><img src="./home/t6.svg" alt="藍色花瓣" /></div>
+                            <div className="t t9"><img src="./home/t9.svg" alt="橘色花瓣" /></div>
+                            <div className="t t2l"><img src="./home/t2.svg" alt="粉色花瓣左" /></div>
+                            <div className="t t3l"><img src="./home/t3.svg" alt="黃色花瓣左" /></div>
+                            <div className="t t7"><img src="./home/t7.svg" alt="黃白花瓣" /></div>
+                            <div className="t t10"><img src="./home/t10.svg" alt="藍紅花瓣" /></div>
+                            <div className="t t4u"><img src="./home/t4.svg" alt="淺粉花瓣上" /></div>
+                            <div className="t t3r"><img src="./home/t3.svg" alt="黃色花瓣右" /></div>
+                            <div className="t t4d"><img src="./home/t4.svg" alt="淺粉花瓣下" /></div>
+                            <div className="t t5"><img src="./home/t5.svg" alt="綠黃花瓣" /></div>
+                            <div className="t t8d"><img src="./home/t8.svg" alt="淺黃花瓣下" /></div>
+                            <div className="t t8l"><img src="./home/t8.svg" alt="淺黃花瓣左" /></div>
+                            <div className="t t8u"><img src="./home/t8.svg" alt="淺黃花瓣上" /></div>
+                             <div className="t t8r"><img src="./home/t8.svg" alt="淺黃花瓣右" /></div>
                         </div>
                     </div>
 
@@ -194,10 +199,6 @@ const App = () => {
                         </div>
                         <IoIosArrowDropright className="eventicon right" onClick={nextSlide} />
                     </div>
-
-
-
-
 
                     {/* 地圖搜尋btn */}
                     <Link to="./map"><div className="homeBtn">地圖搜尋→</div></Link>
