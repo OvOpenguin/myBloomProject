@@ -14,6 +14,8 @@ import 票選4 from '../images/home/首頁-票選4-框.png'
 import 王冠 from '../images/home/王冠.svg'
 import 首頁消息花 from '../images/home/首頁消息-花.svg'
 // 最新消息-裝飾花
+import hfw1 from '../images/home/homefwro1.svg'
+import hfw2 from '../images/home/homefwro2.svg'
 import pink from '../images/home/pink-p1.png'
 import orange from '../images/home/orange-p2.png'
 import purple from '../images/home/purple-p3.png'
@@ -189,12 +191,18 @@ const App = () => {
 
                             {/* 裝飾花 */}
                             {/* <div className="newsF"> */}
+                            {/*
                             <div className="iflower">
                                 <div className="p pink"><img src={pink} alt="粉辦" /></div>
                                 <div className="p purple"><img src={purple} alt="紫辦" /></div>
                                 <div className="p orange"><img src={orange} alt="橘辦" /></div>
                                 <div className="p yellow"><img src={yellow} alt="黃中心" /></div>
-                                {/* <img src={首頁消息花} alt="" /> */}
+                                {/* <img src={首頁消息花} alt="" /> 
+                            </div>*/}
+
+                            <div className="h-n-fw">
+                                <div className="p fw1"><img src={hfw1} alt="" /></div>
+                                <div className="p fw2"><img src={hfw2} alt="" /></div>
                             </div>
                             {/* </div> */}
 

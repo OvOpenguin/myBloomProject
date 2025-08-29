@@ -5,9 +5,97 @@
 
 // outline check
 * {
-    outline: 1px solid red;
+    // outline: 1px solid red;
 }
 
+.nav {
+    transition: all 0.5s ease-in-out;
+
+    >* {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        font-weight: 800;
+        font-size: 20px;
+        padding: 10px 10px;
+    }
+
+    .nav-blue {
+        display: flex;
+        flex-direction: column;
+
+        >* {
+            .t {
+                color: $sky-blue;
+                display: inline;
+            }
+
+            &:hover {
+                color: $sky-blue;
+            }
+        }
+    }
+
+    .nav-pink {
+        >* {
+            .t {
+                color: $Hsinchu-pink;
+            }
+
+            &:hover {
+                color: $Hsinchu-pink;
+            }
+        }
+    }
+
+    .nav-orange {
+        >* {
+            .t {
+                color: $HsinchuCity-orange;
+            }
+
+            &:hover {
+                color: $HsinchuCity-orange;
+            }
+        }
+    }
+
+    .nav-green {
+        >* {
+            .t {
+                color: $grass-green;
+            }
+
+            &:hover {
+                color: $grass-green;
+            }
+        }
+    }
+
+    .nav-purple {
+        >* {
+            .t {
+                color: $Keelung-purple;
+            }
+
+            &:hover {
+                color: $Keelung-purple;
+            }
+        }
+    }
+
+
+}
+
+@keyframes fade {
+ from {
+        opacity: .8;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
 /* home共用區 */
 .homeBtn {
@@ -63,13 +151,15 @@
                 width: 50%;
                 transform: rotate(160deg);
             }
+
             &.t4 {
                 bottom: 30%;
                 right: 5%;
                 width: 50%;
                 transform: rotate(-10deg);
             }
-             &.t12 {
+
+            &.t12 {
                 top: 0%;
                 right: 40%;
                 width: 50%;
@@ -306,6 +396,24 @@
 
             transform: translate(-80%, 400%) rotate(180deg);
         }
+    }
+
+    .h-n-fw {
+        position: absolute;
+        top: -50px;
+        left: -80px;
+        width: 150px;
+        height: 150px;
+
+        .p {
+            position: absolute;
+            transform-origin: center bottom;
+        }
+
+        .fw1 {
+            z-index: 1;
+        }
+
     }
 
 
