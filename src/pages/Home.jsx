@@ -1,4 +1,9 @@
+import { Link } from "react-router-dom"
+import { useEffect, useState } from "react"
 import "../sass/home2.scss"
+import $ from "jquery";
+
+// 圖片管理區
 import 北花冊 from "../images/home/北花冊.webp"
 import 大花定位2 from "../images/home/大花定位2.png"
 import 貼紙花1 from "../images/home/首頁-貼紙花.webp"
@@ -16,8 +21,9 @@ import hfw2 from '../images/home/homefwro2.svg'
 import { IoIosArrowDropleft } from "react-icons/io";
 import { IoIosArrowDropright } from "react-icons/io";
 import { BsArrowUpRightCircleFill } from "react-icons/bs";
-import { Link } from "react-router-dom"
-import { useEffect, useState } from "react"
+
+
+
 
 
 
@@ -132,7 +138,12 @@ const App = () => {
         return () => window.removeEventListener("wheel", handleScroll);
     }, []);
 
-
+    //首頁花入場 (邏輯：初始為scatter狀態=> 延遲0.5s後 => 清除scatter狀態 => 變成合成狀態)
+    useEffect(() => {
+        setTimeout(() => {
+            $(".heroFlower .t").removeClass("scatter");
+        }, 500); // 延遲 0.5 秒，避免一開始就瞬間定位
+    }, []);
 
 
     return (
@@ -146,23 +157,23 @@ const App = () => {
                         <div className="heroFlower">
                             {/* 定位用大花 */}
                             <img src={大花定位2} alt="大花" className="bigFlower" />
-                            <div className="t t11"><img src="./home/t11.svg" alt="藍紫花瓣" /></div>
-                            <div className="t t12"><img src="./home/t12.svg" alt="紫色花瓣" /></div>
-                            <div className="t t2r"><img src="./home/t2.svg" alt="粉色花瓣右" /></div>
-                            <div className="t t6"><img src="./home/t6.svg" alt="藍色花瓣" /></div>
-                            <div className="t t9"><img src="./home/t9.svg" alt="橘色花瓣" /></div>
-                            <div className="t t2l"><img src="./home/t2.svg" alt="粉色花瓣左" /></div>
-                            <div className="t t3l"><img src="./home/t3.svg" alt="黃色花瓣左" /></div>
-                            <div className="t t7"><img src="./home/t7.svg" alt="黃白花瓣" /></div>
-                            <div className="t t10"><img src="./home/t10.svg" alt="藍紅花瓣" /></div>
-                            <div className="t t4u"><img src="./home/t4.svg" alt="淺粉花瓣上" /></div>
-                            <div className="t t3r"><img src="./home/t3.svg" alt="黃色花瓣右" /></div>
-                            <div className="t t4d"><img src="./home/t4.svg" alt="淺粉花瓣下" /></div>
-                            <div className="t t5"><img src="./home/t5.svg" alt="綠黃花瓣" /></div>
-                            <div className="t t8d"><img src="./home/t8.svg" alt="淺黃花瓣下" /></div>
-                            <div className="t t8l"><img src="./home/t8.svg" alt="淺黃花瓣左" /></div>
-                            <div className="t t8u"><img src="./home/t8.svg" alt="淺黃花瓣上" /></div>
-                             <div className="t t8r"><img src="./home/t8.svg" alt="淺黃花瓣右" /></div>
+                            <div className="t t11 scatter"><img src="./home/t11.svg" alt="藍紫花瓣" /></div>
+                            <div className="t t12 scatter"><img src="./home/t12.svg" alt="紫色花瓣" /></div>
+                            <div className="t t2r scatter"><img src="./home/t2.svg" alt="粉色花瓣右" /></div>
+                            <div className="t t6 scatter"><img src="./home/t6.svg" alt="藍色花瓣" /></div>
+                            <div className="t t9 scatter"><img src="./home/t9.svg" alt="橘色花瓣" /></div>
+                            <div className="t t2l scatter"><img src="./home/t2.svg" alt="粉色花瓣左" /></div>
+                            <div className="t t3l scatter"><img src="./home/t3.svg" alt="黃色花瓣左" /></div>
+                            <div className="t t7 scatter"><img src="./home/t7.svg" alt="黃白花瓣" /></div>
+                            <div className="t t10 scatter"><img src="./home/t10.svg" alt="藍紅花瓣" /></div>
+                            <div className="t t4u scatter"><img src="./home/t4.svg" alt="淺粉花瓣上" /></div>
+                            <div className="t t3r scatter"><img src="./home/t3.svg" alt="黃色花瓣右" /></div>
+                            <div className="t t4d scatter"><img src="./home/t4.svg" alt="淺粉花瓣下" /></div>
+                            <div className="t t5 scatter"><img src="./home/t5.svg" alt="綠黃花瓣" /></div>
+                            <div className="t t8d scatter"><img src="./home/t8.svg" alt="淺黃花瓣下" /></div>
+                            <div className="t t8l scatter"><img src="./home/t8.svg" alt="淺黃花瓣左" /></div>
+                            <div className="t t8u scatter"><img src="./home/t8.svg" alt="淺黃花瓣上" /></div>
+                            <div className="t t8r scatter"><img src="./home/t8.svg" alt="淺黃花瓣右" /></div>
                         </div>
                     </div>
 
