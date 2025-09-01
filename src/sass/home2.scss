@@ -44,15 +44,21 @@
         width: 50%;
         height: auto;
 
+        svg{
+            width: 100%;
+            height: auto;
+        }
+
         // 花拿會無法撐開空間，所以將花透明度設為0
         .bigFlower {
             opacity: 0;
         }
+
         // 合體版本
         .t {
             position: absolute;
             z-index: -1;
-            transition: all 1.8s ease-out; // 進場動畫設定  
+            transition: all 1.5s ease-out; // 進場動畫設定  
 
             &.t2l {
                 bottom: 3%;
@@ -108,6 +114,7 @@
                 right: 0%;
                 width: 55%;
                 transform: rotate(-5deg);
+                animation: shake2 3s infinite ease-in-out;
             }
 
             &.t10 {
@@ -129,6 +136,7 @@
                 left: 20%;
                 width: 55%;
                 transform: rotate(-1deg);
+                
             }
 
             &.t5 {
@@ -150,6 +158,7 @@
                 left: 22%;
                 width: 30%;
                 transform: rotate(180deg);
+               
             }
 
             &.t8u {
@@ -171,9 +180,67 @@
                 left: -8%;
                 width: 50%;
                 transform: rotate(0deg);
+                 animation: shake2 5s infinite ease-in-out;
+            }
+
+            // 花瓣中心
+            &.tcenter {
+                top: 18%;
+                left: 35%;
+                width: 25%;
+                transform: rotate(10deg);
+                opacity: 1;
+                transition-delay: 2s;
+                animation: shake2 4s infinite ease-in-out;
+            }
+
+            &.tc1 {
+                top: 25%;
+                left: 35%;
+                width: 20%;
+                transform: rotate(0deg);
+                opacity: 1;
+                transition-delay: 2.2s;
+            }
+
+            &.tc2 {
+                top: 15%;
+                left: 40%;
+                width: 20%;
+                transform: rotate(0deg);
+                opacity: 1;
+                transition-delay: 2.4s;
+            }
+
+            &.tc3 {
+                top: 25%;
+                left: 45%;
+                width: 20%;
+                transform: rotate(0deg);
+                opacity: 1;
+                transition-delay: 2.5s;
+            }
+
+            &.tc4 {
+                top: 25%;
+                left: 55%;
+                width: 20%;
+                transform: rotate(0deg);
+                opacity: 1;
+                transition-delay: 2.6s;
+            }
+
+            &.tc5 {
+                top: 35%;
+                left:55%;
+                width: 20%;
+                transform: rotate(0deg);
+                opacity: 1;
+                transition-delay: 2.7s;
             }
 
         }
+
         // 四散版本
         .t {
             &.scatter {
@@ -294,6 +361,30 @@
                     left: -30%;
                     width: 50%;
                     transform: rotate(0deg);
+                }
+
+                &.tcenter {
+                    opacity: 0;
+                }
+
+                &.tc1 {
+                    opacity: 0;
+                }
+
+                &.tc2 {
+                    opacity: 0;
+                }
+
+                &.tc3 {
+                    opacity: 0;
+                }
+
+                &.tc4 {
+                    opacity: 0;
+                }
+
+                &.tc5 {
+                    opacity: 0;
                 }
             }
         }
