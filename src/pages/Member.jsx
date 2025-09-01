@@ -17,8 +17,12 @@ function SidebarItem({ label, onClick, active = false, danger = false }) {
         <div className="sidebar-item">
             <button type="button" onClick={onClick}>
                 <p>{label}</p>
-                <div className="hover">
-                    <img src={arrow} alt="" />
+                <div className="arrow-box">
+                    <svg className="bg"
+                        xmlns="http://www.w3.org/2000/svg" width="63" height="64" viewBox="0 0 63 64" fill="none">
+                        <path d="M42.9996 1.23745C39.1717 0.541481 34.6914 0.62848 32.9514 0.62848C29.2106 0.584982 25.9047 1.36795 22.2943 2.45541C18.336 3.62986 11.1588 7.10973 7.8964 11.7206C4.63402 16.3314 2.80709 21.5077 2.02412 24.7266C1.54564 26.684 1.45863 28.6414 1.19764 30.6423C0.849653 33.7307 0.371187 40.299 1.89363 44.9533C3.41607 49.6076 6.46096 53.218 8.0704 54.3489C11.0718 56.3934 13.8557 58.3073 17.1181 59.8297C18.6405 60.5257 20.1629 61.3087 21.7289 61.8741C23.5993 62.5266 25.5567 62.8746 27.4707 63.3096C32.9515 64.5711 47.6974 61.5697 50.3073 60.3082C52.9172 59.0468 57.267 54.3924 58.224 52.5655C59.5724 49.9556 62.7043 37.4281 62.7478 35.9926C62.7913 33.7742 62.1823 24.6396 61.3994 22.3777C59.3549 16.5054 54.9181 10.0676 53.3522 8.1537C51.8297 6.19627 46.8709 1.93343 42.9996 1.23745Z" fill="#69C9A0" />
+                    </svg>
+
                 </div>
             </button>
         </div>
@@ -80,7 +84,7 @@ function Wall() {
                             </div>
                         </li>
                         <li className="v-item">
-                            <h3>參加賽事</h3>
+                            <h3>上傳</h3>
                             <img src={votebotton1} alt="" />
                         </li>
                     </ul>
@@ -121,38 +125,34 @@ function News() {
     );
 }
 
-// 個人資料
+// 個人中心
 function Profile() {
     return (
         <div className="prf-wrap">
             <div className="tab">
-                <h2>個人資料</h2>
+                <h2>個人中心</h2>
                 <img src={prftab} alt="" />
             </div>
             <div className="content">
-                <div>
-                    <form action="" method="post">
+                <div className="user-wrap">
+                    <div className="username">
                         {/* 帳號 */}
-                        <label htmlFor="username">帳號</label>
-                        <input type="text" className="username" placeholder="請輸入電子郵件"
-                            onChange={(e) => setUsername(e.target.value)} // 更新狀態
-                            required
-                            autoFocus />
+                        <label htmlFor="">帳號</label>
+                        <input type="text" className="inputName" placeholder="123@gmail.com"
+                            disabled />
+                    </div>
+                    <div className="userid">
                         {/* 密碼 */}
-                        <label htmlFor="userid">密碼</label>
-                        <input type="text" className="userid" placeholder="請輸入密碼"
+                        <label htmlFor="">密碼</label>
+                        <input type="text" className="inputId" placeholder="Default"
                             onChange={(e) => setUsername(e.target.value)} // 更新狀態
                             required
                             autoFocus />
-                        {/* 登入 */}
-                        <button class="btn-animation" type="submit">
-                            <span>登入</span>
-                        </button>
-                        {/* 註冊/忘記密碼 */}
-                        <button class="btn-animation" type="submit">
-                            <span>註冊/忘記密碼</span>
-                        </button>
-                    </form>
+                    </div>
+                    {/* 登入 */}
+                    <button class="btn-animation" type="submit">
+                        <span>修改密碼</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -184,13 +184,13 @@ function SignIn() {
                 </div>
 
                 {/* 登入 */}
-                    <button class="btn-animation" type="submit">
-                        <span>登入</span>
-                    </button>
-                    {/* 註冊/忘記密碼 */}
-                    <button class="btn-animation" type="submit">
-                        <span>註冊/忘記密碼</span>
-                    </button>
+                <button class="btn-animation" type="submit">
+                    <span>登入</span>
+                </button>
+                {/* 註冊/忘記密碼 */}
+                <button class="btn-animation" type="submit">
+                    <span>註冊/忘記密碼</span>
+                </button>
             </form>
         </div>
     );

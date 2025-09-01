@@ -88,8 +88,8 @@ const Wall = () => {
   ];
 
   // 複製一份作接捕用
-  const fws = [...flowerwalls, { id: "special", type: "special" }, ...flowerwalls]
-  const fws2 = [...flowerwalls2, { id: "special2", type: "special2" }, ...flowerwalls2]
+  const fws = [...flowerwalls, { id: "special", type: "special" }, ...flowerwalls,{ id: "special", type: "special" }]
+  const fws2 = [...flowerwalls2, { id: "special2", type: "special2" }, ...flowerwalls2,{ id: "special2", type: "special2" }]
 
   // 花牆照片元件
   const Flowerwall = ({ count, img, heart }) => {
