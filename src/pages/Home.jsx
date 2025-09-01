@@ -2,6 +2,9 @@ import { Link } from "react-router-dom"
 import { useEffect, useState } from "react"
 import "../sass/home2.scss"
 import $ from "jquery";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 // 圖片管理區
 import 北花冊 from "../images/home/北花冊.webp"

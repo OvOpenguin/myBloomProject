@@ -44,7 +44,7 @@
         width: 50%;
         height: auto;
 
-        svg{
+        svg {
             width: 100%;
             height: auto;
         }
@@ -136,7 +136,7 @@
                 left: 20%;
                 width: 55%;
                 transform: rotate(-1deg);
-                
+
             }
 
             &.t5 {
@@ -158,7 +158,7 @@
                 left: 22%;
                 width: 30%;
                 transform: rotate(180deg);
-               
+
             }
 
             &.t8u {
@@ -180,7 +180,7 @@
                 left: -8%;
                 width: 50%;
                 transform: rotate(0deg);
-                 animation: shake2 5s infinite ease-in-out;
+                animation: shake2 5s infinite ease-in-out;
             }
 
             // 花瓣中心
@@ -232,7 +232,7 @@
 
             &.tc5 {
                 top: 35%;
-                left:55%;
+                left: 55%;
                 width: 20%;
                 transform: rotate(0deg);
                 opacity: 1;
@@ -438,6 +438,24 @@
                 text-align: center;
                 max-width: 400px;
 
+
+                &::after {
+                    content: "";
+                    display: inline-block;
+                    background-image: url('../images/home/首頁-近期活動-圖片底色-藍.svg');
+                    background-repeat: no-repeat;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: url('底圖.jpg') no-repeat center/cover;
+                    opacity: 0.3;
+                    /* 可調整透明度 */
+                    z-index: -1;
+                    /* 放在 li 背後 */
+                }
+
+
                 // RWD顯示設定
                 @media (max-width:1440px) {
                     flex: 0 0 33.33%;
@@ -461,6 +479,7 @@
             font-size: $f-s-xl;
             font-weight: $f-w-m;
             color: $brown-100;
+            text-align: start;
         }
 
         // img和底圖設計
@@ -471,13 +490,17 @@
             background-size: 85%;
             transition: all 0.5s ease;
             cursor: pointer;
+
+
+
         }
 
+        
         .f1 {
             background-image: url('../images/home/首頁-近期活動-圖片底色-藍.svg');
 
             &:hover {
-                transform: rotate(10deg) scale(1.1);
+              transform: rotate(10deg) scale(1.1);
             }
         }
 
@@ -645,7 +668,7 @@
         position: relative;
         padding: 50px;
         padding-bottom: 20px;
-        background-image: url(../images/home/home-grass.png);
+        background-image: url(../images/home/homenewsbg.svg);
         background-size: cover;
         max-width: 650px;
         min-width: 420px; //限定最小寬度，避免在手機板過度壓縮
@@ -666,7 +689,7 @@
                 justify-content: space-between;
                 flex-wrap: wrap-reverse;
                 gap: 10px;
-                padding: 5px;
+                padding: 5px 10px;
 
                 p {
                     width: 300px; //這邊的寬度待更改，目前預設300px正常。
@@ -815,23 +838,16 @@
             width: 50px;
             height: 50px;
             color: $brown-100;
+            transform: rotate(30deg);
+            transition: all 0.5s cubic-bezier(0.25, 1.25, 0.5, 1);
 
             &:hover {
                 color: $grass-green;
-                animation: scale .3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+                transform: scale(1.3);
+                // animation: scale .3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
             }
 
-            @keyframes scale {
-                0% {
-                    /* 初始狀態：在地面上，未旋轉 */
-                    transform: translateY(0);
-                }
 
-                100% {
-                    /* 回到原位：位移歸零，旋轉完成 */
-                    transform: translateY(0) scale(1.2);
-                }
-            }
         }
 
         .crown {
