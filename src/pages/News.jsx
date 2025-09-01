@@ -1,7 +1,12 @@
 import "../sass/news.scss"
 import { useState } from "react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 import flower10 from '../images/wall/wall-f10.webp'
+import ban1 from '../images/news/newsban2.webp'
 
 
 const News = () => {
@@ -51,7 +56,7 @@ const News = () => {
         },
     ]
 
-    const Newscard = ({lable, date, title, img}) => {
+    const Newscard = ({ lable, date, title, img }) => {
         return (
             <div className="news-Card">
                 <div className="news-labledate">
@@ -71,21 +76,25 @@ const News = () => {
         <>
             {/* 圖片bar */}
             <section className="newsBanner">
-                <div className="news-bannerimg">
-                    <img src="https://www.gotoju.co.jp/wp-content/themes/main/img/main/img_01.jpg" alt="" />
-                </div>
-                <div className="news-bannerimg">
-                    <img src="https://www.gotoju.co.jp/wp-content/themes/main/img/main/img_01.jpg" alt="" />
-                </div>
-                <div className="news-bannerimg">
-                    <img src="https://www.gotoju.co.jp/wp-content/themes/main/img/main/img_01.jpg" alt="" />
-                </div>
-            </section>
+                <div className="bannerswiper">
+                    <Swiper 
+                        modules={[Pagination, Autoplay]}
+                        pagination={{ clickable: true }}
+                        autoplay={{
+                            delay: 10000, 
+                            disableOnInteraction: false, // 滑動後仍繼續自動播
+                        }}
+                        className="mySwiper">
+                        <SwiperSlide> <img src={ban1} alt="" /> </SwiperSlide>
+                        <SwiperSlide> <img src={ban1} alt="" /> </SwiperSlide>
+                    </Swiper>
+                </div >
+            </section >
             {/* 內容 */}
-            <section className="news-content">
+            < section className="news-content" >
                 <div className="news-news">
                     <div>
-                        <h2>最新活動 NEWS</h2>
+                        <h2>最新消息 NEWS</h2>
                         <div className="news-select">
                             <select name="" id="" value={selectedlocation} onChange={(e) => { setSelectedLocation(e.target.value); }}>
                                 <option value="" disabled>選擇</option>
@@ -98,7 +107,7 @@ const News = () => {
                         </div>
                     </div>
                     <div className="news-CardWarp">
-                        {newsinfo.map((item, index)=>{
+                        {newsinfo.map((item, index) => {
                             return <Newscard key={index} lable={item.lable} date={item.date} title={item.title} img={item.img} />
                         })}
                         {/* <div className="news-Card">
@@ -109,7 +118,7 @@ const News = () => {
                             <p className="news-cardTitle">標題</p>
                             <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="news-img" alt="" />
                         </div> */}
-                        
+
                     </div>
                     <div className="news-page"> 頁碼區 </div>
                 </div>
@@ -124,7 +133,7 @@ const News = () => {
                         <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="a-img" alt="" />
                     </div>
                 </div>
-            </section>
+            </section >
 
         </>
     )

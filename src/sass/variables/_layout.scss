@@ -13,10 +13,18 @@ header {
 
         li a {
             color: #64503C;
+
+        }
+
+        svg {
+            display: block;
+            margin-top: -8px;
+            /* 控制 svg 與文字的距離 */
         }
 
         .nav-blue {
-            display: flex;
+            display: inline-block;
+            position: relative;
             flex-direction: column;
 
             &:hover {
@@ -35,6 +43,8 @@ header {
                     color: #7DC5E4;
                 }
             }
+
+
 
             // svg線條動畫
             .line {
