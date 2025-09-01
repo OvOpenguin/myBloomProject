@@ -5,7 +5,7 @@ header {
     .nav {
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         gap: 50px;
         font-weight: 800;
         font-size: 20px;
@@ -223,6 +223,8 @@ header {
 
 /* 頁尾區 */
 footer {
+
     padding: 20px 0;
     text-align: center;
+    color: #64503C;
 }

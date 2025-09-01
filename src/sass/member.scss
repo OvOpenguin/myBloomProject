@@ -2,12 +2,15 @@
 @use './variables/' as *;
 
 .wrapper {
-  border: 1px solid red;
+  * {
+    outline: 1px solid red;
+
+  }
+
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   padding: 100px;
-  // gap: 20px;
+  gap: 20px;
 
   // 左側選單
   .left-sidebar {
@@ -39,11 +42,6 @@
           font-size: $f-s-md;
           background: $bg-green;
           padding: 15px 30px;
-        }
-
-        img {
-          width: 50px;
-          height: 50px;
         }
 
         &.active {
@@ -96,63 +94,73 @@
 
     }
 
+    .content {
+      height: 50vh;
+    }
+
     // 我的收藏
     .fav-wrap {
 
       .content {
-        background: $bg-blue;
-        padding: 24px;
+        background: #d1ecff80;
+        padding: 5% 0 10% 10%;
 
-        .map-card {
-          // display: inline-block;
-          width: 250px;
-          // width: 50%;
-          position: relative;
+        .map-cardWrap {
+          display: flex;
+          justify-content: flex-start;
+          gap: 20px;
 
-          @media (max-width:600px) {
-            flex: 0 0 auto;
-            /* 不要縮放，固定寬度 */
+          .map-card {
+            // display: inline-block;
             width: 250px;
-            /* 維持原本寬度 */
-          }
-
-          .map-lable {
-            position: absolute;
-            width: 65px;
-            height: 65px;
-            line-height: 65px;
-            z-index: 2;
-            background-color: #7DC5E4;
-            border-radius: 99px;
-            text-align: center;
-            color: #fff;
-          }
-
-          .map-img {
+            // width: 50%;
             position: relative;
-            height: 225px;
-            padding: 20px;
-            object-fit: cover;
-          }
 
-          .map-date {
-            position: relative;
-            width: 60%;
-            height: 25px;
-            bottom: 60px;
-            z-index: 2;
-            padding: 0 20px;
-            background-color: #69C9A0;
-            color: #fff;
-          }
+            @media (max-width:600px) {
+              flex: 0 0 auto;
+              /* 不要縮放，固定寬度 */
+              width: 250px;
+              /* 維持原本寬度 */
+            }
 
-          .map-title {
-            position: relative;
-            padding: 0 20px;
-            bottom: 40px;
-            color: #64503C;
-            font-size: 1rem;
-            font-weight: 500;
+            .map-lable {
+              position: absolute;
+              width: 65px;
+              height: 65px;
+              line-height: 65px;
+              z-index: 2;
+              background-color: #7DC5E4;
+              border-radius: 99px;
+              text-align: center;
+              color: #fff;
+            }
+
+            .map-img {
+              position: relative;
+              height: 225px;
+              padding: 20px;
+              object-fit: cover;
+            }
+
+            .map-date {
+              position: relative;
+              width: 60%;
+              height: 25px;
+              bottom: 60px;
+              z-index: 2;
+              padding: 0 20px;
+              background-color: #69C9A0;
+              color: #fff;
+            }
+
+            .map-title {
+              position: relative;
+              padding: 0 20px;
+              bottom: 40px;
+              color: #64503C;
+              font-size: 1rem;
+              font-weight: 500;
+            }
           }
         }
       }
@@ -162,17 +170,19 @@
     .wall-wrap {
 
       .content {
-        background: $autumn-red;
-        padding: 24px;
+        background: #ffe1d180;
+        padding: 5% 10% 10% 10%;
 
         .v-photos {
           display: flex;
+          justify-content: flex-start;
           gap: 20px;
-          overflow: hidden;
-          margin-top: 20px;
+          overflow: scroll;
+          // margin-top: 20px;
+          padding-right: 10%;
 
           .v-item {
-            height: 280px;
+            height: 200px;
             width: auto;
             background-position: center;
             display: flex;
@@ -183,9 +193,9 @@
 
             .icon-heart {
               position: absolute;
-              top: 20px;
-              right: 20px;
-              width: 45px;
+              top: 14px;
+              right: 14px;
+              width: 30px;
               cursor: pointer;
               transition: transform 0.3s cubic-bezier(0.25, 1.25, 0.5, 1);
 
@@ -205,8 +215,8 @@
             P {
               color: #fff;
               position: absolute;
-              bottom: 20px;
-              left: 20px;
+              bottom: 14px;
+              left: 14px;
               font-weight: 600;
             }
 
@@ -241,10 +251,10 @@
     .news-wrap {
 
       .content {
-        background: $spring-yellow;
-        padding: 24px;
+        background: #fff4c980;
+        padding: 5% 0 10% 10%;
         display: flex;
-        justify-content: center;
+        align-items: flex-start;
 
 
         .news-Card {
@@ -286,8 +296,24 @@
     .prf-wrap {
 
       .content {
-        background: $summer-green;
-        padding: 24px;
+        background: #d5f6db80;
+        padding: 5% 0 10% 10%;
+
+        .user-wrap {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 30px;
+
+          label {
+            padding: 10px 20px;
+            margin-right: 20px;
+            background-color: $white;
+            color: $brown-100;
+          }
+
+        }
+
 
 
       }
