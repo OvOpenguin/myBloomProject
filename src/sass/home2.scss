@@ -4,9 +4,86 @@
 
 
 // outline check
-// * {
-//     outline: 1px solid red;
-// }
+* {
+    outline: 1px solid red;
+}
+
+.indexActivity {
+
+    // Swiper 預設樣式
+    .mySwiper {
+        width: 80%;
+        max-width: 1440px;
+        margin: auto;
+        overflow: hidden;
+    }
+
+    .swiper-slide {
+        display: flex;
+        justify-content: center;
+
+        .card {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        // 內部原設定
+        // 日期
+        .eventTime {
+            display: flex;
+            justify-content: end;
+            font-size: $f-s-xl;
+            margin-bottom: -90px;
+            font-weight: $f-w-m;
+            color: $brown-100;
+            text-align: start;
+        }
+
+        // img和底圖設計
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background-repeat: no-repeat;
+            background-position: 45% 90%;
+            background-size: 85%;
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+
+        h4 {
+            color: $brown-100;
+            font-size: $f-s-lg;
+            text-align: center;
+            cursor: default;
+        }
+
+        .f1 {
+            background-image: url('../images/home/首頁-近期活動-圖片底色-藍.svg');
+
+            &:hover {
+                transform: rotate(10deg) scale(1.1);
+            }
+        }
+
+        .f2 {
+            background-image: url('../images/home/首頁-近期活動-圖片底色-綠.svg');
+
+            &:hover {
+                transform: rotate(-10deg) scale(1.1);
+            }
+        }
+    }
+
+
+}
+
+
+
+
+
 
 
 /* home共用區 */
@@ -19,12 +96,11 @@
     margin-top: 20px;
 }
 
-// 字體統整
+
 
 /* main主要內容區 */
+
 // hero區-主視覺
-
-
 .name {
     display: flex;
     flex-direction: column;
@@ -422,7 +498,7 @@
         position: relative;
         display: flex;
         align-items: center;
-        overflow: hidden; // ⭐ 必加，否則 translateX 不會產生「裁切」
+        overflow: hidden; //必加，否則 translateX 不會產生「裁切」
         width: 80%;
 
         ul {
@@ -490,17 +566,14 @@
             background-size: 85%;
             transition: all 0.5s ease;
             cursor: pointer;
-
-
-
         }
 
-        
+
         .f1 {
             background-image: url('../images/home/首頁-近期活動-圖片底色-藍.svg');
 
             &:hover {
-              transform: rotate(10deg) scale(1.1);
+                transform: rotate(10deg) scale(1.1);
             }
         }
 

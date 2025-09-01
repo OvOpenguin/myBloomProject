@@ -1,13 +1,20 @@
 import { Link } from "react-router-dom"
 import { useEffect, useState } from "react"
-import "../sass/home2.scss"
 import $ from "jquery";
+
+// Swiper套件 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
+import { Pagination, Navigation } from 'swiper/modules';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+// My Sass
+import "../sass/home2.scss"
+
+
 
 // 圖片管理區
-import 北花冊 from "../images/home/北花冊.webp"
 import 大花定位2 from "../images/home/大花定位2.png"
 import 貼紙花1 from "../images/home/首頁-貼紙花.webp"
 import 花卉介紹2 from "../images/home/homeStory.svg"
@@ -148,6 +155,9 @@ const App = () => {
         }, 500); // 延遲 0.5 秒，避免一開始就瞬間定位
     }, []);
 
+    // swiper 預設設定
+    const [swiperRef, setSwiperRef] = useState(null);
+
 
     return (
         <>
@@ -206,6 +216,57 @@ const App = () => {
                     {/* 主副標 */}
                     <h2>近期活動</h2>
                     <h3>Recent vents</h3>
+
+
+                    {/* Swiper測試 */}
+                    <Swiper
+                        // 斷點設定
+                        breakpoints={{
+                            0: {       // 手機螢幕
+                                slidesPerView: 1, spaceBetween: 10
+                            },
+                            640: {     // 平板
+                                slidesPerView: 2, spaceBetween: 20
+                            },
+                            820: {     // 平板
+                                slidesPerView: 2, spaceBetween: 30
+                            },
+                            1024: {    // 桌機
+                                slidesPerView: 3, spaceBetween: 30
+                            },
+                            1440: {    // 桌機
+                                slidesPerView: 4, spaceBetween: 30
+                            }
+                        }}
+                        centeredSlides={false}
+                        navigation={{
+                            nextEl: ".custom-next",
+                            prevEl: ".custom-prev",
+                        }}
+
+                        modules={[Pagination, Navigation]}
+                        className="mySwiper"
+                    >
+                        {events.map((e) => (
+                            <SwiperSlide key={e.id}>
+                                <div className="card">
+                                    <div className="eventTime">
+                                        {e.year}<br />{e.start}<br />｜<br />{e.end}
+                                    </div>
+                                    <figure>
+                                        <img className="f1" src={e.image} alt={e.title} />
+                                    </figure>
+                                    <h4>{e.title}</h4>
+
+                                </div>
+                            </SwiperSlide>
+                        ))}
+
+                    </Swiper>
+                    {/* 把按鈕放在 swiper 外層，避免被 hidden */}
+                    <div className="custom-prev">左鍵</div>
+                    <div className="custom-next">右鍵</div>
+
 
                     {/* 近期活動切換 */}
                     <div className="galleryWrap">
