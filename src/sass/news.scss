@@ -26,11 +26,27 @@
             font-size: 1.5rem;
             font-weight: 700;
             padding-top: 10px;
-            padding-left: 10px;
+            padding-left: 80px;
+            position: relative;
+            
+
+            &::before {
+                content: "";
+                background-image: url('../images/news/newsde1.svg');
+                display: inline-block;
+                background-repeat: no-repeat;
+                background-size: contain;
+                position: absolute;
+                width: 85px;
+                height: 80px;
+                top:5px;
+                left:0;
+
+            }
         }
 
         .news-select {
-            padding-left: 10px;
+            padding-left: 80px;
             margin: 5px 0;
 
             select {
@@ -47,7 +63,7 @@
 
             @media (max-width:1200px) {
                 justify-content: center;
-                
+
             }
 
 
