@@ -55,3 +55,21 @@
     90% { transform: translate(0, 0) rotate(0deg); }
     100% { transform: translate(0, 0) rotate(0deg); }
 }
+
+@keyframes shake4 {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+
+    }
+    60% {
+        transform: translate(0, -10px) rotate(1deg); // 超過目標位置
+
+    }
+    80% {
+        transform: translate(0, 10px) rotate(-1deg); // 回彈
+    }
+    100% {
+        transform: translate(0, 0) rotate(0deg); // 最終位置
+
+    }
+}
