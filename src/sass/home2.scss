@@ -9,13 +9,18 @@
 }
 
 .indexActivity {
+    position: relative;
 
-    // Swiper 預設樣式
-    .mySwiper {
+    .swiperwrap {
         width: 80%;
         max-width: 1440px;
         margin: auto;
         overflow: hidden;
+    }
+
+    // Swiper 預設樣式
+    .mySwiper {
+        overflow: visible;
     }
 
     .swiper-slide {
@@ -77,6 +82,12 @@
         }
     }
 
+    // 按鈕設定
+    .swiper-button-prev, .swiper-button-next {
+        width: 30px;
+        height: 30px;
+        
+    }
 
 }
 

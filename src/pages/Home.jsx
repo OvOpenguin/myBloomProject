@@ -219,53 +219,55 @@ const App = () => {
 
 
                     {/* Swiper測試 */}
-                    <Swiper
-                        // 斷點設定
-                        breakpoints={{
-                            0: {       // 手機螢幕
-                                slidesPerView: 1, spaceBetween: 10
-                            },
-                            640: {     // 平板
-                                slidesPerView: 2, spaceBetween: 20
-                            },
-                            820: {     // 平板
-                                slidesPerView: 2, spaceBetween: 30
-                            },
-                            1024: {    // 桌機
-                                slidesPerView: 3, spaceBetween: 30
-                            },
-                            1440: {    // 桌機
-                                slidesPerView: 4, spaceBetween: 30
-                            }
-                        }}
-                        centeredSlides={false}
-                        navigation={{
-                            nextEl: ".custom-next",
-                            prevEl: ".custom-prev",
-                        }}
+                    <div className="swiperwrap">
+                        <Swiper
+                            // 斷點設定
+                            breakpoints={{
+                                0: {       // 手機螢幕
+                                    slidesPerView: 1, spaceBetween: 10
+                                },
+                                640: {     // 平板
+                                    slidesPerView: 2, spaceBetween: 20
+                                },
+                                820: {     // 平板
+                                    slidesPerView: 2, spaceBetween: 30
+                                },
+                                1024: {    // 桌機
+                                    slidesPerView: 3, spaceBetween: 30
+                                },
+                                1440: {    // 桌機
+                                    slidesPerView: 4, spaceBetween: 30
+                                }
+                            }}
+                            centeredSlides={false}
+                            navigation={{
+                                nextEl: ".custom-next",
+                                prevEl: ".custom-prev",
+                            }}
+                            modules={[Pagination, Navigation]}
+                            className="mySwiper"
+                        >
+                            {events.map((e) => (
+                                <SwiperSlide key={e.id}>
+                                    <div className="card">
+                                        <div className="eventTime">
+                                            {e.year}<br />{e.start}<br />｜<br />{e.end}
+                                        </div>
+                                        <figure>
+                                            <img className="f1" src={e.image} alt={e.title} />
+                                        </figure>
+                                        <h4>{e.title}</h4>
 
-                        modules={[Pagination, Navigation]}
-                        className="mySwiper"
-                    >
-                        {events.map((e) => (
-                            <SwiperSlide key={e.id}>
-                                <div className="card">
-                                    <div className="eventTime">
-                                        {e.year}<br />{e.start}<br />｜<br />{e.end}
                                     </div>
-                                    <figure>
-                                        <img className="f1" src={e.image} alt={e.title} />
-                                    </figure>
-                                    <h4>{e.title}</h4>
+                                </SwiperSlide>
+                            ))}
 
-                                </div>
-                            </SwiperSlide>
-                        ))}
+                        </Swiper>
+                        {/* 自訂左右按鈕，不會被裁切 */}
+                        <button className="custom-prev">左鍵</button>
+                        <button className="custom-next">右鍵</button>
+                    </div>
 
-                    </Swiper>
-                    {/* 把按鈕放在 swiper 外層，避免被 hidden */}
-                    <div className="custom-prev">左鍵</div>
-                    <div className="custom-next">右鍵</div>
 
 
                     {/* 近期活動切換 */}
@@ -291,6 +293,7 @@ const App = () => {
                             </ul>
                         </div>
                         <IoIosArrowDropright className="eventicon right" onClick={nextSlide} />
+                    
                     </div>
 
                     {/* 地圖搜尋btn */}
