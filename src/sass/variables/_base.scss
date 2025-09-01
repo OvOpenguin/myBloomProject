@@ -1,6 +1,8 @@
 @use '../variables/color' as *;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 /*統一設定*/
+// 字形設定
 *,
 *::before,
 *::after {
@@ -34,13 +36,16 @@ p {
 }
 
 h2 {
+    font-weight: 700;
     font-size: 2rem;
 }
 
 h3 {
+    font-weight: 600;
     font-size: 1.5rem;
 }
 
 h4 {
+    font-weight: 600;
     font-size: 1rem;
 }

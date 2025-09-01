@@ -6,3 +6,6 @@
 ## 組員
 -0822：初始遊戲更新<br/>
 -0823：更新花卉故事切換模式，新套件請安裝=> npm install framer-motion
+
+- 0901：新套件請安裝 => npm i swiper
+- 0901：請安裝 => npm install @rollup/plugin-commonjs --save-dev
