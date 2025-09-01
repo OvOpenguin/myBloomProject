@@ -517,6 +517,55 @@ h2 {
             height: 10rem;
             width: auto;
         }
+
+        .floral-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+        }
+
+        .floral-line {
+            stroke-dasharray: 200;
+            /* 先大概設值，可以用 path 長度 */
+            stroke-dashoffset: 200;
+            /* 初始隱藏 */
+            animation: draw-line 2s forwards;
+            /* 從0到完整 */
+            filter: url(#hand-drawn);
+            /* 手繪濾鏡效果 */
+            filter: url(#rough);
+            transform: translate(150px, 50px);
+            /* x向右 20px, y向下 10px */
+        }
+
+        /* 線段繪製動畫 */
+        @keyframes draw-line {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .floral-line-right {
+            position: absolute;
+            top: 50%;
+            right: -80px;
+            transform: translateY(-50%);
+        }
+
+        .draw-line {
+            stroke-dasharray: 500; // 這個數值稍微大於 path 長度
+            stroke-dashoffset: 500;
+            animation: draw 4s ease forwards; // 2秒動畫
+        }
+
+        @keyframes draw {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+
     }
 
     /* 花卉圖組 */
@@ -588,6 +637,10 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center; // 水平置中
+    align-items: center; // 垂直置中
+
+
 
     .highlight-header {
         top: -50px;
@@ -608,96 +661,129 @@ h2 {
             height: 10rem;
             width: auto;
         }
+
+        .highlight-line-left {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            top: -4vh; // Point 上方
+            left: -15%; // 可以自由調整左邊距
+
+            .draw-line {
+                stroke-dasharray: 500;
+                stroke-dashoffset: 500;
+                animation: draw 2s ease forwards;
+            }
+        }
+
+        .highlight-line-right {
+            position: absolute;
+            top: -2vh; // Point 上方
+            right: 30%; // 可以自由調整右邊距
+
+            .draw-line {
+                stroke-dasharray: 500;
+                stroke-dashoffset: 500;
+                animation: draw 2s ease forwards;
+            }
+        }
+
+        @keyframes draw {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
     }
 
     .highlight-gallery {
-        flex: 1;
+        overflow: visible; // 保證放大不被裁切
         display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        width: 100%;
-    }
+        gap: 5vw; // 每組之間間距
+        justify-content: flex-start;
 
-    .highlight-groups {
-        display: flex; // 水平排列整組
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 5vh; // 三組間距
-        
     }
 
     .highlight-group {
-        margin-top: 5vh;
-        position: relative;
         width: 320px;
         height: 320px;
+        position: relative;
+        flex-shrink: 0; // 防止被父容器壓縮
         display: flex;
         justify-content: center;
         align-items: center;
+        overflow: visible; // 🔹 保證 hover 放大不被裁切
+        z-index: 1; // 保證在背景之上
+        transition: all 0.3s ease;
 
         .highlight-bg {
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
-        .highlight-image {
-            width: 90%; // 預設比底圖小
-            height: 90%;
-            object-fit: cover;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            z-index: 2;
-            border-radius: 20px;
+            width: 100%; // 跟組大小一致
+            height: 100%;
+            max-height: 100%; // 不超過容器
+            object-fit: cover; // 填滿整個組
+            z-index: 0;
+        }
+
+        .highlight-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%; // 🔹 只限制寬度
+            height: 90%; // 🔹 高度自動保持比例
+            object-fit: contain;
+            z-index: 1;
             transition: all 0.3s ease;
         }
 
         &:hover .highlight-image {
-            width: 100%; // 放大到與底圖同大小
-            height: 100%;
+            width: 100%; // 放大，但保持比例
+            height: auto;
+
         }
 
         .highlight-text {
-            position: absolute;
-            bottom: -3rem;
-            font-size: 20px;
-            font-weight: 700;
+            margin-top: 400px; // 圖片下方文字
+            font-size: 1.2rem;
+            font-weight: 800;
             color: #64503C;
-            z-index: 3;
             text-align: center;
-            width: 100%;
+            z-index: 2;
+            position: relative; // ✅ 文字相對於群組
+        }
+    }
+
+    .highlight-track {
+        display: flex;
+        gap: 5vw;
+        animation: scrollLeft 200s linear infinite;
+    }
+
+    .highlight-gallery:hover .highlight-track {
+        animation-play-state: paused;
+    }
+
+    @keyframes scrollLeft {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-50%); // 跑完一半，剛好接到複製的組
         }
     }
 
 
 
-    .arrow {
-        position: absolute;
-        bottom: 20px;
-        transform: translateY(-50%);
-        background: none;
-        border: none;
-        cursor: pointer;
-        z-index: 10;
 
-        &.arrow-left {
-            left: 10px;
-        }
 
-        &.arrow-right {
-            right: 10px;
-        }
 
-        img {
-            width: 70px;
-            height: 70px;
-        }
-    }
+
 }
+
 
 
 .contact-section {
@@ -749,6 +835,48 @@ h2 {
             height: 10rem;
             width: auto;
         }
+
+        .contact-line-1 {
+            position: absolute;
+            top: 1vh; // Point 上方
+            left: 55%; // 可以自由調整左邊距
+
+            .draw-line {
+                stroke-dasharray: 500;
+                stroke-dashoffset: 500;
+                animation: draw 2s ease forwards;
+            }
+        }
+
+        .contact-line-2 {
+            position: absolute;
+            top:3vh; // Point 上方
+            right: 15%; // 可以自由調整右邊距
+
+            .draw-line {
+                stroke-dasharray: 500;
+                stroke-dashoffset: 500;
+                animation: draw 2s ease forwards;
+            }
+        }
+
+        .contact-line-3 {
+            position: absolute;
+            top: 5vh; // Point 上方
+            left: 70%; // 可以自由調整左邊距
+
+            .draw-line {
+                stroke-dasharray: 500;
+                stroke-dashoffset: 500;
+                animation: draw 2s ease forwards;
+            }
+        }
+
+        @keyframes draw {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
     }
 
     .contact-info {
@@ -781,7 +909,8 @@ h2 {
         }
     }
 }
+
 .arrow[disabled] {
-  opacity: 0.3;
-  cursor: not-allowed;
+    opacity: 0.3;
+    cursor: not-allowed;
 }
