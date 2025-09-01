@@ -83,10 +83,11 @@
     }
 
     // 按鈕設定
-    .swiper-button-prev, .swiper-button-next {
+    .custom-prev, .custom-next {
         width: 30px;
         height: 30px;
-        
+        background-color: aquamarine;
+        top: 25%;
     }
 
 }
