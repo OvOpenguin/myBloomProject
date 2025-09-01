@@ -179,6 +179,8 @@
                 color: $brown-100;
                 background-color: #fff;
                 padding: 10px;
+                // 將/n轉換為換行
+                white-space: pre-wrap;
             }
         }
 
