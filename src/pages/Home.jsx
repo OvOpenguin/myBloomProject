@@ -212,8 +212,8 @@ const App = () => {
                             }}
                             centeredSlides={false}
                             navigation={{
-                                nextEl: ".custom-next",
-                                prevEl: ".custom-prev",
+                                nextEl: ".home-custom-next",
+                                prevEl: ".home-custom-prev",
                             }}
                             modules={[Pagination, Navigation]}
                             className="mySwiper"
@@ -235,8 +235,8 @@ const App = () => {
 
                         </Swiper>
                         {/* 自訂左右按鈕，不會被裁切 */}
-                        <button className="custom-prev">左鍵</button>
-                        <button className="custom-next">右鍵</button>
+                        <button className="home-custom-prev">左鍵</button>
+                        <button className="home-custom-next">右鍵</button>
                     </div>
 
 

@@ -85,16 +85,18 @@
     }
 
     // 按鈕設定
-    .custom-prev, .custom-next {
-        width: 30px;
-        height: 30px;
-        background-color: aquamarine;
+    .home-custom-prev, .home-custom-next {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgb(63, 133, 202);
         top: 50%;
     }
-    .custom-prev{
+    .home-custom-prev{
         left: 10%;
     }
-    .custom-next{
+    .home-custom-next{
         right: 10%;
     }
 
