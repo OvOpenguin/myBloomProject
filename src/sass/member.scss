@@ -43,14 +43,15 @@
         }
 
         .arrow-box {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          .bg{
-            position: relative;
+          position: relative;
+
+          .ard {
+            z-index: -1;
           }
-          .arrow{
-            
+
+          .arh {
+            display: none;
+            z-index: 1;
           }
         }
 
@@ -60,6 +61,14 @@
             color: $white;
             background: $grass-green;
             padding: 15px 30px;
+          }
+
+          .arh {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            z-index: 1;
           }
 
         }
@@ -165,11 +174,11 @@
 
     // 我的花牆
     .wall-wrap {
-      
+
       .content {
         background: #ffe1d180;
         padding: 50px 10% 10% 10%;
-        
+
 
         .v-photos {
           display: flex;
