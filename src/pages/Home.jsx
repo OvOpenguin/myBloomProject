@@ -92,42 +92,6 @@ const App = () => {
 
     ];
 
-    // 設定活動的陣列索引
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [visibleCount, setVisibleCount] = useState(4); // 預設桌機 4 張
-
-    // 監聽螢幕寬度 → 決定一次顯示幾張
-    useEffect(() => {
-        const updateVisible = () => {
-            if (window.innerWidth <= 820) {
-                setVisibleCount(1);
-            } else if (window.innerWidth <= 1024) {
-                setVisibleCount(2);
-            } else if (window.innerWidth <= 1440) {
-                setVisibleCount(3);
-            } else {
-                setVisibleCount(4);
-            }
-        };
-        updateVisible();
-        window.addEventListener("resize", updateVisible);
-        return () => window.removeEventListener("resize", updateVisible);
-    }, []);
-
-    // 右鍵設定
-    const nextSlide = () => {
-        const maxIndex = events.length - visibleCount;
-        if (currentIndex < maxIndex) {
-            setCurrentIndex(currentIndex + 1);
-        }
-    };
-
-    // 左鍵設定
-    const prevSlide = () => {
-        if (currentIndex > 0) {
-            setCurrentIndex(currentIndex - 1);
-        }
-    };
 
     // 裝飾花(滑鼠滾輪)
     const [rotated, setRotated] = useState(false);
@@ -268,33 +232,6 @@ const App = () => {
                         <button className="custom-next">右鍵</button>
                     </div>
 
-
-
-                    {/* 近期活動切換 */}
-                    <div className="galleryWrap">
-                        <IoIosArrowDropleft className="eventicon left" onClick={prevSlide} />
-
-                        <div className="gallery">
-                            {/* <IoIosArrowDropleft className="eventicon left" onClick={prevSlide} /> */}
-                            <ul style={{ transform: `translateX(-${currentIndex * (100 / visibleCount)}%)` }}>
-                                {
-                                    events.map((e) => (
-                                        <li key={e.id}>
-                                            {/* 日期 */}
-                                            <div className="eventTime">
-                                                {e.year}<br />{e.start}<br />｜<br />{e.end}
-                                            </div>
-                                            {/* 花圖+名稱 */}
-                                            <figure><img className="f1" src={e.image} alt={e.title} /></figure>
-                                            <h4>{e.title}</h4>
-                                        </li>
-                                    ))
-                                }
-                            </ul>
-                        </div>
-                        <IoIosArrowDropright className="eventicon right" onClick={nextSlide} />
-                    
-                    </div>
 
                     {/* 地圖搜尋btn */}
                     <Link to="./map"><div className="homeBtn">地圖搜尋→</div></Link>
