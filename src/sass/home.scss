@@ -12,7 +12,7 @@
     position: relative;
 
     .swiperwrap {
-        width: 80%;
+        width: 70%;
         max-width: 1440px;
         margin: auto;
         overflow: hidden;
@@ -39,11 +39,13 @@
         .eventTime {
             display: flex;
             justify-content: end;
-            font-size: $f-s-xl;
+            font-size: 1.4rem;
             margin-bottom: -90px;
             font-weight: $f-w-m;
             color: $brown-100;
-            text-align: start;
+          //  text-align: start;
+            z-index: 5;
+            // line-height: 1.65rem;
         }
 
         // img和底圖設計

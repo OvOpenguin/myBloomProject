@@ -83,44 +83,68 @@ const Info = () => {
       setLineStyle({ width: tab.offsetWidth, left });
     }
   }, [activeIndex]);
+  const slideFood = (index, direction) => {
+    const container = foodGroupsRef.current[index];
+    if (!container) return;
+
+    const cardWidth = container.children[0].offsetWidth + 20; // 20 是 gap
+
+    if (direction === "right") {
+      container.scrollBy({ left: cardWidth, behavior: "smooth" });
+      // 如果滑到底，延遲跳回最前
+      if (container.scrollLeft + container.offsetWidth >= container.scrollWidth) {
+        setTimeout(() => {
+          container.scrollTo({ left: 0, behavior: "smooth" });
+        }, 300);
+      }
+    } else {
+      container.scrollBy({ left: -cardWidth, behavior: "smooth" });
+      // 如果滑到最左，跳回最末
+      if (container.scrollLeft === 0) {
+        setTimeout(() => {
+          container.scrollTo({ left: container.scrollWidth, behavior: "smooth" });
+        }, 300);
+      }
+    }
+  };
 
   return (
     <section>
       {/* Banner */}
       <div className="info-banner">
-  <div className="banner-mask">
-    <img src={BnBg} alt="Banner Background" />
-  </div>
+        <div className="banner-mask">
+          <img src={BnBg} alt="Banner Background" />
+        </div>
 
-  <Swiper
-    slidesPerView={3}
-    centeredSlides={true}
-    spaceBetween={30}
-    pagination={{ type: "bullets", clickable: true }}
-    loop={true}
-    loopFillGroupWithBlank={true}
-    navigation={{
-      prevEl: ".custom-prev",
-      nextEl: ".custom-next",
-    }}
-    modules={[Pagination, Navigation]}
-    className="mySwiper"
-  >
-    {bannerImages.map((img, index) => (
-      <SwiperSlide key={index}>
-        <img src={img} alt={`Banner ${index + 1}`} />
-      </SwiperSlide>
-    ))}
-  </Swiper>
+        <Swiper
+          slidesPerView={3}
+          centeredSlides={true}
+          spaceBetween={30}
+          pagination={{ type: "bullets", clickable: true }}
+          loop={true}
+          loopFillGroupWithBlank={true}
+          navigation={{
+            prevEl: ".custom-prev",
+            nextEl: ".custom-next",
+          }}
+          modules={[Pagination, Navigation]}
+          className="mySwiper"
+        >
+          {bannerImages.map((img, index) => (
+            <SwiperSlide key={index}>
+              <img src={img} alt={`Banner ${index + 1}`} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
-  {/* 自訂箭頭 */}
-  <div className="custom-prev">
-    <IoIosArrowDropleft size={50} />
-  </div>
-  <div className="custom-next">
-    <IoIosArrowDropright size={50} />
-  </div>
-</div>
+        {/* 自訂箭頭 */}
+        <div className="custom-prev">
+          <IoIosArrowDropleft size={50} />
+        </div>
+        <div className="custom-next">
+          <IoIosArrowDropright size={50} />
+        </div>
+      </div>
 
 
 
@@ -554,7 +578,7 @@ const Info = () => {
                 <div className="info-container">
                   <h3>美食小點</h3>
                   <div className="food-carousel">
-                    <button className="arrow arrow-left">
+                    <button className="arrow arrow-left" onClick={() => slideFood(1, "left")}>
                       <img src={arrowlf} alt="左箭頭" />
                     </button>
                     <div
@@ -581,9 +605,9 @@ const Info = () => {
                         </div>
                       ))}
                     </div>
-                    <button className="arrow arrow-right">
-                      <img src={arrowri} alt="右箭頭" />
-                    </button>
+                    <button className="arrow arrow-right" onClick={() => slideFood(1, "right")}>
+  <img src={arrowri} alt="右箭頭" />
+</button>
                   </div>
                 </div>
               </div>
