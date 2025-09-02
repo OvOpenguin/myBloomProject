@@ -91,6 +91,12 @@
         background-color: aquamarine;
         top: 50%;
     }
+    .custom-prev{
+        left: 10%;
+    }
+    .custom-next{
+        right: 10%;
+    }
 
 }
 
@@ -606,31 +612,6 @@
             cursor: default;
         }
     }
-
-
-    .eventicon {
-        // position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        color: $brown-100;
-        font-size: 3rem;
-        transition: ease .3s;
-        z-index: 99;
-
-        &:hover {
-            color: $grass-green;
-            transition: ease .3s;
-        }
-
-        &.left {
-            left: 10px; // 靠左
-        }
-
-        &.right {
-            right: 10px; // 靠右
-        }
-    }
-
 }
 
 
