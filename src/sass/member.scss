@@ -5,16 +5,18 @@
 
   display: flex;
   flex-direction: row;
-  padding: 100px;
+  justify-content: space-between;
+  padding: 10vh 15vw 0 15vw;
   gap: 20px;
 
   // 左側選單
   .left-sidebar {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 200px;
-    gap: 20px;
+    justify-content: space-between;
+    width: 240px;
+    min-width: 200px;
+    height: 400px;
 
     .sidebar-item {
       width: 100%;
@@ -40,13 +42,16 @@
           padding: 15px 30px;
         }
 
-        &.active {
-          background: $grass-green;
-        }
-
-        &.danger {
-          // background: #fff6f6;
-          color: #b24040;
+        .arrow-box {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .bg{
+            position: relative;
+          }
+          .arrow{
+            
+          }
         }
 
         &:hover {
@@ -57,10 +62,6 @@
             padding: 15px 30px;
           }
 
-          // img {
-          //   mask-image: url('../images/member/member-arrow-green.svg');
-          // }
-
         }
       }
     }
@@ -70,7 +71,7 @@
 
   // 右側面板
   .right-panel {
-    width: 80%;
+    width: 70%;
 
     // ------------ 共用標籤 ------------
     .tab {
@@ -99,7 +100,7 @@
 
       .content {
         background: #d1ecff80;
-        padding: 5% 0 10% 10%;
+        padding: 50px 0 10% 10%;
 
         .map-cardWrap {
           display: flex;
@@ -164,10 +165,11 @@
 
     // 我的花牆
     .wall-wrap {
-
+      
       .content {
         background: #ffe1d180;
-        padding: 5% 10% 10% 10%;
+        padding: 50px 10% 10% 10%;
+        
 
         .v-photos {
           display: flex;
@@ -248,7 +250,7 @@
 
       .content {
         background: #fff4c980;
-        padding: 5% 0 10% 10%;
+        padding: 50px 0 10% 10%;
         display: flex;
         align-items: flex-start;
 
@@ -293,7 +295,7 @@
 
       .content {
         background: #d5f6db80;
-        padding: 5% 0 10% 10%;
+        padding: 50px 0 10% 10%;
 
         .user-wrap {
           display: flex;
@@ -354,11 +356,6 @@
 
       }
     }
-
-
-
-
-
 
   }
 }

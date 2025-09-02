@@ -7,13 +7,13 @@ header {
         justify-content: center;
         align-items: flex-start;
         gap: 50px;
-        font-weight: 800;
+        font-weight: 700;
         font-size: 20px;
         padding: 20px 20px;
 
         li a {
             color: #64503C;
-
+            transition: color 0.2s linear;
         }
 
         svg {
@@ -34,6 +34,7 @@ header {
             }
 
             >* {
+
                 .t {
                     color: #7DC5E4;
                     display: inline;
@@ -43,7 +44,6 @@ header {
                     color: #7DC5E4;
                 }
             }
-
 
 
             // svg線條動畫
@@ -223,8 +223,15 @@ header {
 
 /* 頁尾區 */
 footer {
-
-    padding: 20px 0;
-    text-align: center;
+    background-color: #fcfbd0;
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
     color: #64503C;
+    padding: 0 0 20px 0;
+    clip-path: polygon(86% 22%, 100% 66%, 100% 100%, 0 100%, 0 57%);
+
 }
+

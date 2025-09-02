@@ -59,11 +59,13 @@ const News = () => {
     const Newscard = ({ lable, date, title, img }) => {
         return (
             <div className="news-Card">
-                <div className="news-labledate">
-                    <div className="news-lable">{lable}</div>
-                    <p>{date}</p>
+                <div className="txtwrap">
+                    <div className="news-labledate">
+                        <div className="news-lable">{lable}</div>
+                        <p>{date}</p>
+                    </div>
+                    <p className="news-cardTitle">{title}</p>
                 </div>
-                <p className="news-cardTitle">{title}</p>
                 <img src={img} className="news-img" alt="" />
             </div>
         )
@@ -77,11 +79,11 @@ const News = () => {
             {/* 圖片bar */}
             <section className="newsBanner">
                 <div className="bannerswiper">
-                    <Swiper 
+                    <Swiper
                         modules={[Pagination, Autoplay]}
                         pagination={{ clickable: true }}
                         autoplay={{
-                            delay: 10000, 
+                            delay: 10000,
                             disableOnInteraction: false, // 滑動後仍繼續自動播
                         }}
                         className="mySwiper">
@@ -110,15 +112,6 @@ const News = () => {
                         {newsinfo.map((item, index) => {
                             return <Newscard key={index} lable={item.lable} date={item.date} title={item.title} img={item.img} />
                         })}
-                        {/* <div className="news-Card">
-                            <div className="news-labledate">
-                                <div className="news-lable">活動</div>
-                                <p>2025.07.28</p>
-                            </div>
-                            <p className="news-cardTitle">標題</p>
-                            <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="news-img" alt="" />
-                        </div> */}
-
                     </div>
                     <div className="news-page"> 頁碼區 </div>
                 </div>
@@ -126,11 +119,17 @@ const News = () => {
                 <div className="news-discount">
                     <div >
                         <h2>優惠專區</h2>
-                        <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="a-img" alt="" />
-                        <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="a-img" alt="" />
+                        <div className="imgwrap">
+                            <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="a-img" alt="" />
+                            <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="a-img" alt="" />
+                        </div>
+                    </div >
+                    <div>
                         <h2>熱門活動</h2>
-                        <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="a-img" alt="" />
-                        <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="a-img" alt="" />
+                        <div className="imgwrap">
+                            <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="a-img" alt="" />
+                            <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="a-img" alt="" />
+                        </div>
                     </div>
                 </div>
             </section >
