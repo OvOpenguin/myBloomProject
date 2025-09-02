@@ -24,6 +24,13 @@ import 票選2 from '../images/home/首頁-票選2-框.png'
 import 票選3 from '../images/home/首頁-票選3-框.png'
 import 票選4 from '../images/home/首頁-票選4-框.png'
 import 王冠 from '../images/home/王冠.svg'
+import hfwr1 from '../images/home/homewall1.avif'
+import hfwr2 from '../images/home/homewall2.avif'
+import hfwr3 from '../images/home/homewall3.avif'
+import hfwr4 from '../images/home/homewall4.avif'
+import hfwr5 from '../images/home/homewall5.avif'
+import hfwr6 from '../images/home/homewall6.avif'
+import hfwr7 from '../images/home/homewall7.avif'
 // 最新消息-裝飾花
 import hfw1 from '../images/home/homefwro1.svg'
 import hfw2 from '../images/home/homefwro2.svg'
@@ -291,7 +298,7 @@ const App = () => {
                     {/* 右側-花牆切換 */}
 
                     <ul className="wall">
-                        <li><img src={票選1} alt="票選1" /></li>
+                        <li><img src={hfwr1} alt="票選1" /></li>
                         <li><img src={票選2} alt="票選2" /></li>
                         <li><img src={票選3} alt="票選3" /></li>
                         <li><img src={票選4} alt="票選4" /></li>

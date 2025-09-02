@@ -1,9 +1,6 @@
 @use 'reset';
 @use './variables/' as *;
 
-* {
-    // outline: 1px solid red;
-}
 
 .wall-c-inner {
     display: flex;
@@ -282,7 +279,7 @@
         padding: 0 10px;
     }
 
-    &::before {
+    &::after {
         content: "";
         background-image: url(../images/wall/wall-a-de2.svg);
         display: inline-block;
@@ -291,9 +288,9 @@
         position: absolute;
         width: 270px;
         height: 280px;
-        bottom: -100px;
-        left: 60px;
-        transform: rotate(-20deg);
+        bottom: -120px;
+        left: 50px;
+        // transform: rotate(-20deg);
 
         @media (max-width:700px) {
             left: -50px;
