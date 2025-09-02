@@ -16,7 +16,46 @@ h2 {
   justify-content: center;  // 水平置中
   align-items: center;      // 垂直置中
   margin-bottom: 50px;
+.swiper-slide {
+    position: relative; // 讓偽元素參考這個範圍
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+    }
+
+    // 左右圖片加綠色遮罩
+   &.swiper-slide-prev,
+&.swiper-slide-next {
+  transform: scale(0.8);
+  opacity: 0.8;
+
+  &::after {
+     content: "";
+  position: absolute;
+  inset: 0;
+  background: #D6F6DC;
+  opacity: 0.3;
+
+  /* 用 path 當裁切形狀 */
+  clip-path: path("M3.90165 50.1623L0 146.104C0 146.104 4.38935 232.305 4.38935 255.195C4.38935 263.474 4.38935 271.997 4.38935 280.276C4.38935 282.711 3.90165 294.399 3.90165 294.399L128.023 297.078L228.978 300L394.066 291.964L397.236 192.857C397.236 192.857 396.505 85.2273 398.7 75.2435C401.138 64.2857 394.066 3.16558 394.066 3.16558C394.066 3.16558 340.175 0.73052 324.081 0.73052C277.748 0.73052 231.173 0.73052 184.841 0.73052C146.312 0.73052 107.783 0.73052 69.2542 0.73052C59.9878 0.73052 8.77871 0 8.77871 0L3.90165 50.1623Z");
+  z-index: 1;
+  }
+}
+
+    // 中間的圖片正常顯示
+    &.swiper-slide-active {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+  
+  }
   .banner-mask {
     position: absolute;
     inset: 0;               // top/right/bottom/left = 0
@@ -35,9 +74,9 @@ h2 {
   }
 
   .swiper {
-    width: 80%;             // 依需求調整
+    width: 100%;             // 依需求調整
     max-width: 1200px;
-    // height: 500px;          // Banner 高度
+    height: auto;          // Banner 高度
     z-index: 1;             // 在背景圖上面
   }
 
@@ -75,7 +114,7 @@ bottom: 20px; // 調整這個數值，越大越往下
  .custom-prev,
   .custom-next {
     position: absolute;
-    top: 80%;                 // 垂直置中
+    top: 50%;                 // 垂直置中
     transform: translateY(-50%);
     z-index: 20;
     cursor: pointer;
@@ -89,11 +128,11 @@ bottom: 20px; // 調整這個數值，越大越往下
   }
 
   .custom-prev {
-    left:5%;    // 🔹 左邊距可以用 % 或 px 調整
+    left:36%;    // 🔹 左邊距可以用 % 或 px 調整
   }
 
   .custom-next {
-    right: 5%;   // 🔹 右邊距
+    right: 36%;   // 🔹 右邊距
   }
 .custom-prev:hover,
 .custom-next:hover {
@@ -442,7 +481,7 @@ bottom: 20px; // 調整這個數值，越大越往下
 .transport-section {
     width: 100vw; // 用視窗寬度，而不是父容器寬度
     margin: 0;
-    padding: 0 5vw; // 左右留白 5% 可自由調整
+    padding: 0 15vw; // 左右留白 5% 可自由調整
     display: flex;
     justify-content: center;
 }
@@ -622,23 +661,29 @@ bottom: 20px; // 調整這個數值，越大越往下
             stroke-dasharray: 200;
             /* 先大概設值，可以用 path 長度 */
             stroke-dashoffset: 200;
+            
             /* 初始隱藏 */
-            animation: draw-line 2s forwards;
-            /* 從0到完整 */
-            filter: url(#hand-drawn);
+            animation: draw-line 12s linear infinite;
             /* 手繪濾鏡效果 */
             filter: url(#rough);
             transform: translate(150px, 50px);
             /* x向右 20px, y向下 10px */
         }
 
-        /* 線段繪製動畫 */
-        @keyframes draw-line {
-            to {
-                stroke-dashoffset: 0;
-            }
-        }
-
+@keyframes draw-line {
+  0% {
+    stroke-dashoffset: 500; // 初始完全隱藏
+  }
+  40% {
+    stroke-dashoffset: 0;   // 一次完整畫出
+  }
+  80% {
+    stroke-dashoffset: 0;   // 停留
+  }
+  100% {
+    stroke-dashoffset: 500; // 消失
+  }
+}
         .floral-line-right {
             position: absolute;
             top: 50%;
@@ -649,7 +694,7 @@ bottom: 20px; // 調整這個數值，越大越往下
         .draw-line {
             stroke-dasharray: 500; // 這個數值稍微大於 path 長度
             stroke-dashoffset: 500;
-            animation: draw 4s ease forwards; // 2秒動畫
+            animation: draw 4s infinite alternate; // 2秒動畫
         }
 
         @keyframes draw {
@@ -765,7 +810,7 @@ bottom: 20px; // 調整這個數值，越大越往下
             .draw-line {
                 stroke-dasharray: 500;
                 stroke-dashoffset: 500;
-                animation: draw 2s ease forwards;
+                animation: draw 2s infinite alternate;
             }
         }
 
@@ -777,7 +822,7 @@ bottom: 20px; // 調整這個數值，越大越往下
             .draw-line {
                 stroke-dasharray: 500;
                 stroke-dashoffset: 500;
-                animation: draw 2s ease forwards;
+                animation: draw 2s infinite alternate;
             }
         }
 
@@ -937,7 +982,7 @@ bottom: 20px; // 調整這個數值，越大越往下
             .draw-line {
                 stroke-dasharray: 500;
                 stroke-dashoffset: 500;
-                animation: draw 2s ease forwards;
+                animation: draw 2s infinite alternate;
             }
         }
 
@@ -949,7 +994,7 @@ bottom: 20px; // 調整這個數值，越大越往下
             .draw-line {
                 stroke-dasharray: 500;
                 stroke-dashoffset: 500;
-                animation: draw 2s ease forwards;
+                animation: draw 2s infinite alternate;
             }
         }
 
@@ -961,7 +1006,7 @@ bottom: 20px; // 調整這個數值，越大越往下
             .draw-line {
                 stroke-dasharray: 500;
                 stroke-dashoffset: 500;
-                animation: draw 2s ease forwards;
+                animation: draw 2s infinite alternate;
             }
         }
 
