@@ -10,7 +10,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 // My Sass
-import "../sass/home2.scss"
+import "../sass/home.scss"
 
 
 
