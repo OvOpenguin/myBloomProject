@@ -1,11 +1,45 @@
-import { Link } from 'react-router-dom'
-// Link 要在切換選單的jsx檔import
+
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import $ from 'jquery';
+
+
+
+
+
+
+
 
 const Nav = () => {
+
+    useEffect(() => {
+        $('.hamburger').on("click", function () {
+            console.log("click");
+            $(this).toggleClass('is-active');
+            $('.menu').toggleClass('show');
+        });
+
+        // 卸載元件時，移除事件監聽器，避免記憶體洩漏
+        return () => {
+            $('.hamburger').off("click");
+        };
+    }, []);
+
+
+
     return (
         <header>
-            <nav>
-                <ul className='nav'>
+
+            {/* 漢堡按鈕 */}
+            <button className="hamburger">
+                <span className="bar">
+                </span><span className="bar">
+                </span><span className="bar"></span>
+            </button>
+
+            {/* 導覽列 */}
+            <nav className='nav'>
+                <ul className='menu'>
                     <li><Link to="/">首頁</Link></li>
                     <li className='nav-blue'><Link to="/map"><span className='nav-blue t'>花</span>卉地圖
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 103 12">
@@ -24,7 +58,7 @@ const Nav = () => {
                     </li>
                     <li className='nav-green'><Link to="/story"><span className='nav-green t'>花</span>卉故事
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 102 10">
-                            <path className="line" pathLength="1"  d="M1 9C2.52308 8.41473 4.04615 7.82945 10.9231 6.65003C17.8 5.47062 29.9846 3.71479 40.5769 2.61519C51.1692 1.51558 59.8 1.1254 65.7058 1.02194C79.0798 0.787653 82.5346 2.49399 83.1115 3.0837C83.372 3.34997 83.3077 3.67341 82.6096 4.26312C78.3851 7.8318 72.6846 8.5034 68.8981 8.8522C68.0614 8.92927 67.4231 8.60982 67.0327 8.31422C66.6423 8.01863 66.5154 7.62845 66.7673 7.18358C68.0525 4.91415 74.8 3.59064 84.1981 2.06391C89.0269 1.51262 93.9769 1.41508 96.7808 1.4136C99.5846 1.41212 100.092 1.50967 101 1.61017" />
+                            <path className="line" pathLength="1" d="M1 9C2.52308 8.41473 4.04615 7.82945 10.9231 6.65003C17.8 5.47062 29.9846 3.71479 40.5769 2.61519C51.1692 1.51558 59.8 1.1254 65.7058 1.02194C79.0798 0.787653 82.5346 2.49399 83.1115 3.0837C83.372 3.34997 83.3077 3.67341 82.6096 4.26312C78.3851 7.8318 72.6846 8.5034 68.8981 8.8522C68.0614 8.92927 67.4231 8.60982 67.0327 8.31422C66.6423 8.01863 66.5154 7.62845 66.7673 7.18358C68.0525 4.91415 74.8 3.59064 84.1981 2.06391C89.0269 1.51262 93.9769 1.41508 96.7808 1.4136C99.5846 1.41212 100.092 1.50967 101 1.61017" />
                         </svg></Link></li>
                     <li className='nav-purple'><Link to="/member"><span className='nav-purple t'>個</span>人中心
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 102 15">
@@ -35,6 +69,8 @@ const Nav = () => {
 
                 </ul>
             </nav>
+
+
         </header>
     )
 
