@@ -3,7 +3,6 @@ import { useEffect, useState, useRef } from "react";
 
 import wall_vote_one from '../images/home/首頁-票選1-框.png'
 import heart0 from '../images/wall/wall-icon.svg'
-import heart2 from '../images/wall/wall-icon2.svg'
 import votebotton1 from '../images/wall/wall-votebutton1.svg'
 import votebotton2 from '../images/wall/wall-votebotton2.svg'
 import abotton from '../images/wall/wall-abotton.svg'
@@ -28,12 +27,14 @@ const Wall = () => {
       count: 999,
       img: flower01,
       heart: heart0,
+    
     },
     {
       id: 2,
       count: 999,
       img: flower02,
       heart: heart0,
+  
     },
     {
       id: 3,
@@ -52,6 +53,7 @@ const Wall = () => {
       count: 999,
       img: flower05,
       heart: heart0,
+
     },
   ];
   const flowerwalls2 = [
@@ -185,7 +187,7 @@ const Wall = () => {
   }, []);
 
   // 點愛心
-  const Flowerwall = ({ count, img, heart }) => {
+  const Flowerwall = ({ count, img, heart}) => {
     const [likeCount, setLikeCount] = useState(count);
     const [liked, setLiked] = useState(false);
 
@@ -205,7 +207,7 @@ const Wall = () => {
         <p>{likeCount}</p>
         <img src={img} alt="fw" />
         <div className="icon-heart" onClick={handleLike} style={{ cursor: "pointer" }}>
-          <img src={heart} alt="heart" />
+          <img src={liked ? "./wall/wall-icon2.svg" : heart} alt="heart" />
         </div>
       </li>
     );
