@@ -204,9 +204,7 @@
             animation: draw 3s linear forwards;
             transform: scaleX(-1);
             stroke-dasharray: 1;
-            /* 1 = 線條總長度 */
-            stroke-dashoffset: 1;
-            /* 初始值 = 完全隱藏 */
+            stroke-dashoffset: 1; //動畫：變成stroke-dashoffset: 0;
         }
     }
 

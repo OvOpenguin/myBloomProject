@@ -1,5 +1,6 @@
 
 
+// home花瓣晃動
 @keyframes shake1 {
     0% {
         transform: translate(0, 0) rotate(0deg);
@@ -105,6 +106,7 @@
     }
 }
 
+
 // story蝴蝶
 @keyframes fade-in {
     from {
@@ -119,8 +121,6 @@
         bottom: -45px;
     }
 }
-
-
 // story 旋轉動畫
 @keyframes circle {
     0% {
@@ -129,5 +129,13 @@
 
     100% {
         transform: rotate(360deg);
+    }
+}
+
+// 畫筆從無=>有
+@keyframes draw {
+    /* 從隱藏開始 */
+    to {
+        stroke-dashoffset: 0;
     }
 }
