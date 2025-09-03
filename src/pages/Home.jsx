@@ -24,6 +24,7 @@ import 票選2 from '../images/home/首頁-票選2-框.png'
 import 票選3 from '../images/home/首頁-票選3-框.png'
 import 票選4 from '../images/home/首頁-票選4-框.png'
 import 王冠 from '../images/home/王冠.svg'
+// 花牆
 import hfwr1 from '../images/home/homewall1.avif'
 import hfwr2 from '../images/home/homewall2.avif'
 import hfwr3 from '../images/home/homewall3.avif'
@@ -31,6 +32,14 @@ import hfwr4 from '../images/home/homewall4.avif'
 import hfwr5 from '../images/home/homewall5.avif'
 import hfwr6 from '../images/home/homewall6.avif'
 import hfwr7 from '../images/home/homewall7.avif'
+import hwde1 from '../images/home/h-w-de1.svg'
+import hwde2 from '../images/home/h-w-de2.svg'
+import hwde3 from '../images/home/h-w-de3.svg'
+import hwde4 from '../images/home/h-w-de4.svg'
+import hwde5 from '../images/home/h-w-de5.svg'
+import hwde6 from '../images/home/h-w-de6.svg'
+import hwde7 from '../images/home/h-w-de7.svg'
+import hwde8 from '../images/home/h-w-de8.svg'
 // 最新消息-裝飾花
 import hfw1 from '../images/home/homefwro1.svg'
 import hfw2 from '../images/home/homefwro2.svg'
@@ -285,9 +294,9 @@ const App = () => {
                     </div>
                 </section>
 
-                {/* 花牆票選 */}
+                {/* 花牆票選 
                 <section className="IndexVote">
-                    {/* 左側-標題圖示 */}
+                    
                     <div className="voteTitle">
                         <h2>花牆票選</h2>
                         <h3>Popularity vote</h3>
@@ -295,7 +304,7 @@ const App = () => {
                         <div className="crown"><img src={王冠} alt="王冠" /></div>
                     </div>
 
-                    {/* 右側-花牆切換 */}
+                    
 
                     <ul className="wall">
                         <li><img src={hfwr1} alt="票選1" /></li>
@@ -303,6 +312,30 @@ const App = () => {
                         <li><img src={票選3} alt="票選3" /></li>
                         <li><img src={票選4} alt="票選4" /></li>
                     </ul>
+                </section>*/}
+
+                <section className="home-vote">
+                    <div className="home-inner">
+                        <div className="h-v-photos">
+                            <div className="hv t1"><h2>花牆票選</h2></div>
+                            <div className="hv t2"><h3>POPULARITY VOTE</h3></div>
+                            <div className="hv p1"><img src={hfwr1} alt="" /></div>
+                            <div className="hv p2"><img src={hfwr2} alt="" /></div>  
+                            <div className="hv p3"><img src={hfwr3} alt="" /></div>
+                            <div className="hv p4"><img src={hfwr4} alt="" /></div>
+                            <div className="hv p5"><img src={hfwr5} alt="" /></div>
+                            <div className="hv p6"><img src={hfwr6} alt="" /></div>
+                            <div className="hv p7"><img src={hfwr7} alt="" /></div>
+                            <div className="hv d1"><img src={hwde1} alt="" /></div>
+                            <div className="hv d2"><img src={hwde2} alt="" /></div>
+                            <div className="hv d3"><img src={hwde3} alt="" /></div>
+                            <div className="hv d4"><img src={hwde4} alt="" /></div>
+                            <div className="hv d5"><img src={hwde5} alt="" /></div>
+                            <div className="hv d6"><img src={hwde6} alt="" /></div>
+                            <div className="hv d7"><img src={hwde7} alt="" /></div>
+                            <div className="hv d8"><img src={hwde8} alt="" /></div>
+                        </div>
+                    </div>
                 </section>
             </main >
         </>
