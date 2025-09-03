@@ -8,7 +8,6 @@
   justify-content: space-between;
   padding: 10vh 15vw 0 15vw;
   gap: 20px;
-  // position: relative;
 
   // 左側選單
   .left-sidebar {
@@ -338,80 +337,88 @@
 
     }
 
-    // 登入畫面
-    .signin-wrap {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      width: 300px;
-      height: 400px;
-      background-color: #E8F6FF;
-      // position: absolute;
-      z-index: 99;
 
-      img {
-        width: 200px;
-        margin: 10%;
-      }
+  }
 
-      form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 10%;
-        gap: 10px;
+}
 
-        input {
-          border: 0.5px solid $brown-100;
-          color: $brown-100;
-          font-size: $f-s-sm;
-          font-weight: $f-w-n;
-          line-height: 125%;
-        }
+// 登入畫面
+.sign-in {
+  padding: 10vh 15vw;
+  position: relative;
+  display: flex;
+  justify-content: center;
 
-        .sign-name {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 10px;
-          color: $brown-100;
-          font-size: $f-s-md;
-          font-weight: $f-w-m;
-        }
-
-        .sign-id {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 10px;
-          color: $brown-100;
-          font-size: $f-s-md;
-          font-weight: $f-w-m;
-        }
+  .signin-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    height: 400px;
+    background-color: #E8F6FF;
 
 
-        .sign-in {
-          color: $brown-100;
-          font-size: $f-s-sm;
-          line-height: 150%;
-          background-color: #fff;
-          border: 0.5px solid #64503C;
-          border-radius: 99px;
-          width: 50%;
-        }
-
-        .register {
-          color: $brown-100;
-          font-size: $f-s-sm;
-          line-height: 150%;
-          text-align: center;
-          background: none;
-          border: none;
-        }
-
-      }
+    img {
+      width: 200px;
+      margin: 10%;
     }
 
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 10%;
+      gap: 10px;
+
+      input {
+        border: 0.5px solid $brown-100;
+        color: $brown-100;
+        font-size: $f-s-sm;
+        font-weight: $f-w-n;
+        line-height: 125%;
+      }
+
+      .sign-name {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        color: $brown-100;
+        font-size: $f-s-md;
+        font-weight: $f-w-m;
+      }
+
+      .sign-id {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        color: $brown-100;
+        font-size: $f-s-md;
+        font-weight: $f-w-m;
+      }
+
+
+      .sign-in {
+        color: $brown-100;
+        font-size: $f-s-sm;
+        line-height: 150%;
+        background-color: #fff;
+        border: 0.5px solid #64503C;
+        border-radius: 99px;
+        width: 50%;
+      }
+
+      .register {
+        color: $brown-100;
+        font-size: $f-s-sm;
+        line-height: 150%;
+        text-align: center;
+        background: none;
+        border: none;
+      }
+
+    }
   }
 }

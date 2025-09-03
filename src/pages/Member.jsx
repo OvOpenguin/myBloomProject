@@ -264,35 +264,38 @@ export default function MemberCenter() {
         ? TABS.find((t) => t.key === activeKey)
         : null;
 
+    // 檢查是否已登入
+    if (!isLoggedIn) {
+
+        // 未登入 => 渲染登入元件
+        return (
+            <div className="sign-in">
+                <SignIn onLogin={() => setIsLoggedIn(true)} />
+            </div>
+        );
+    }
+
+    // 登入 => 渲染會員中心介面
     return (
         <section className="wrapper">
             {/* 左側選單 */}
             <div className="left-sidebar">
-                {isLoggedIn &&
-
-                    TABS.map((t) => (
-                        <SidebarItem
-                            key={t.key}
-                            label={t.label}
-                            active={activeKey === t.key}
-                            danger={t.danger}
-                            onClick={() => handleSelect(t.key)}
-                        />
-                    ))
-                }
+                {TABS.map((t) => (
+                    <SidebarItem
+                        key={t.key}
+                        label={t.label}
+                        active={activeKey === t.key}
+                        danger={t.danger}
+                        onClick={() => handleSelect(t.key)}
+                    />
+                ))}
             </div>
 
             {/* 右側面板 */}
             <div className="right-panel">
-                {isLoggedIn ? (
-                    activeTab?.view
-                ) : (
-                    <SignIn onLogin={() => setIsLoggedIn(true)} />
-                )}
+                {activeTab?.view}
             </div>
+            
         </section>
-
-
-    )
-
+    );
 }
