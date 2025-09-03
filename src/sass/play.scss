@@ -8,13 +8,22 @@
 .playWrap {
     display: flex;
     justify-content: center;
-    padding-top: 50px;
+    padding: 50px;
     gap: 50px;
+    position: relative;
 
     @media (max-width:620px) {
         flex-direction: column;
         align-items: center;
         gap: 0;
+    }
+
+    // 裝飾花
+    .p{
+        position: absolute;
+        width: 10%;
+        bottom: 0;
+        left: 0;
     }
 
 
@@ -25,8 +34,9 @@
         .pButterfly {
             position: absolute;
             width: 100px;
-            top: -40px;
-            right: 10px;
+            top: -30px;
+            right: -10px;
+            animation: fly .75s both;
         }
 
         h2,
@@ -92,40 +102,6 @@
                 gap: 10px;
             }
 
-            // 前一版本
-            // .a1,
-            // .a2,
-            // .a3 {
-            //     position: relative;
-            //     text-align: center;
-            //     width: 100px;
-            //     line-height: 100px;
-            //     cursor: pointer;
-
-            //     &::after {
-            //         content: '';
-            //         /*一定要有content*/
-            //         position: absolute;
-            //         top: 0px;
-            //         left: -10px;
-            //         width: 100%;
-            //         height: 100%;
-            //         background-image: url('../images/play/play-btn-hover.svg');
-            //         background-repeat: no-repeat;
-            //         background-size: contain;
-            //         background-position: center center;
-            //         z-index: -1;
-            //         transform: scaleX(0);
-            //         /* 初始時隱藏 */
-            //         transform-origin: left;
-            //         transition: transform 0.3s ease;
-            //     }
-
-            //     &:hover::after {
-            //         transform: scaleX(1);
-            //         /* hover 時再顯示 */
-            //     }
-            // }
 
             .option {
                 position: relative;

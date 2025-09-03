@@ -50,6 +50,11 @@ const Play = () => {
         <>
             <div className='playWrap'>
 
+                
+                {/* 裝飾花 */}
+                <div className="p p1"><img src="./home/t5.svg" alt="" /></div>
+
+
                 {/* 說明遊戲 */}
                 <div className="playExplain">
 
