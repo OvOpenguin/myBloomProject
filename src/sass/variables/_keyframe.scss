@@ -1,5 +1,3 @@
-
-
 // home花瓣晃動
 @keyframes shake1 {
     0% {
@@ -121,6 +119,7 @@
         bottom: -45px;
     }
 }
+
 // story 旋轉動畫
 @keyframes circle {
     0% {
@@ -134,8 +133,33 @@
 
 // 畫筆從無=>有
 @keyframes draw {
+
     /* 從隱藏開始 */
     to {
         stroke-dashoffset: 0;
+    }
+}
+
+// hambuger 顯示動畫
+@keyframes show {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+// hambuger 隱藏動畫
+@keyframes hide {
+    from {
+        opacity: 1;
+        display: flex;
+    }
+
+    to {
+        opacity: 0;
+        display: none;
     }
 }
