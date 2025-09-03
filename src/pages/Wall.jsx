@@ -221,6 +221,18 @@ const Wall = () => {
     })
   };
 
+
+  // 回到最上層(待啟用)
+  const gotopRef = useRef(null);
+  function backtop (){
+    window.scrollTo({
+      top:0,
+      behavior: "smooth"
+
+    })
+  }
+
+
   return (
     <>
       <div className="wall-c-inner">
@@ -291,7 +303,6 @@ const Wall = () => {
           <p>前往投票</p>
           <img src={abotton} alt="" />
         </a>
-
 
       </section>
 
