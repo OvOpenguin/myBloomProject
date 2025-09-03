@@ -339,144 +339,8 @@ bottom: 20px; // 調整這個數值，越大越往下
 }
 
 
-.surrounding-content {
-    width: 100%;
-    display: flex;
-    flex-direction: column; // 上下排列
-    gap: 40px; // 區塊間距
-}
-
-.food-section,
-.attraction-section {
-    width: 100%;
-    height: 630px;
-    display: flex;
-    justify-content: center;
-
-    h3 {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: #64503C;
-        margin-bottom: 5px;
-    }
-
-    .info-container {
-
-        width: 100%;
-        // margin: 0 20%; // 跟 info-wrapper 對齊
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start; // 標題左對齊
-    }
-
-    h3 {
-        margin: 0;
-        padding-top: 0;
-        text-align: left;
-    }
-
-    .food-carousel {
-        position: relative; // 箭頭會相對這個容器定位
-        width: 100%;
-        overflow: visible; // 🔹 讓箭頭可以超出照片左右
-    }
-
-    .food-groups {
-        margin-top: 50px;
-        display: flex;
-        gap: 50px;
-        overflow-x: visible; // 可水平滑動
-        scroll-behavior: smooth;
-
-        &::-webkit-scrollbar {
-            display: none;
-        }
-    }
-}
 
 
-.food-group {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 330px;
-
-
-    .foodbgpink {
-        width: 330px;
-        height: 330px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 1;
-    }
-
-    .foodptopink-wrapper {
-        width: 310px;
-        height: 310px;
-        position: relative;
-
-        z-index: 2;
-        transition: all 0.3s ease; // 平滑動畫
-
-        .foodptopink {
-            width: 100%;
-            height: 100%;
-            filter: brightness(0.8);
-        }
-
-        .foodptopink-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 3;
-
-            p {
-                color: #fff;
-                font-size: 24px;
-                font-weight: 700;
-                margin: 0;
-            }
-        }
-    }
-
-    &:hover .foodptopink-wrapper {
-        width: 330px; // 放大到和 .bgpink 一樣
-        height: 330px;
-    }
-}
-
-.arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
-
-    &.arrow-left {
-        left: -100px; // 🔹 可往外移，超出父容器
-    }
-
-    &.arrow-right {
-        right: -100px; // 🔹 可往外移，超出父容器
-    }
-
-    img {
-        width: 70px;
-        height: 70px;
-    }
-}
 
 .transport-section {
     width: 100vw; // 用視窗寬度，而不是父容器寬度
@@ -492,6 +356,119 @@ bottom: 20px; // 調整這個數值，越大越往下
     display: flex;
     gap: 5%; // 左右欄位間距
 }
+.swiper-wrapper-relative {
+  position: relative;
+  width: 100%;
+  overflow: visible; // 允許箭頭超出
+}
+
+.arrow {
+  position: absolute;
+  top: 50%; // 垂直置中
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+/* 美食小點箭頭 */
+.food-prev { left: -25px; }
+.food-next { right: -25px; }
+
+/* 附近景點箭頭 */
+.nearby-prev { left: -25px; }
+.nearby-next { right: -25px; }
+
+
+// /* 左箭頭 */
+// .food-prev,
+// .nearby-prev {
+//   left: -50px; /* 距離 Swiper 左側 20px */
+// }
+
+// /* 右箭頭 */
+// .food-next,
+// .nearby-next {
+//   right: 60px; /* 距離 Swiper 右側 20px */
+// }
+
+/* ------------------ 美食小點 Swiper ------------------ */
+.food-swiper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 50px;
+  .swiper {
+    width: 100%;
+    height: 250px; // 可依需求調整
+  }
+  .swiper-slide {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 250px;  // 可依需求調整
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      filter: brightness(0.8);
+    }
+  }
+  .swiper-pagination {
+    bottom: 10px;
+    .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+      background-color: #ccc;
+      opacity: 0.7;
+    }
+    .swiper-pagination-bullet-active {
+      background-color: #69C9A0;
+      opacity: 1;
+    }
+  }
+  
+}
+
+/* ------------------ 附近景點 Swiper ------------------ */
+.nearby-swiper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 50px;
+  .swiper {
+    width: 100%;
+    height: 250px; // 可依需求調整
+  }
+  .swiper-slide {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 200px;  // 可依需求調整
+      height: 280px;
+      object-fit: cover;
+      border-radius: 10px;
+      filter: brightness(0.8);
+    }
+  }
+  
+  .swiper-pagination {
+    bottom: 10px;
+    .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+      background-color: #ccc;
+      opacity: 0.7;
+    }
+    .swiper-pagination-bullet-active {
+      background-color: #69C9A0;
+      opacity: 1;
+    }
+  }
+}
+
 
 
 

@@ -65,6 +65,25 @@ function MapIframe() {
 }
 
 const Info = () => {
+  const foodSlides = [
+  { img: foodptopink, text: "美食 1" },
+  { img: foodptopink, text: "美食 2" },
+  { img: foodptopink, text: "美食 3" },
+  { img: foodptopink, text: "美食 4" },
+];
+
+const nearbySlides = [
+  { img: attptoblu, text: "景點 A" },
+  { img: attptoblu, text: "景點 B" },
+  { img: attptoblu, text: "景點 C" },
+  { img: attptoblu, text: "景點 D" },
+];
+
+  const foodPrevRef = useRef(null);
+const foodNextRef = useRef(null);
+const nearbyPrevRef = useRef(null);
+const nearbyNextRef = useRef(null);
+
   const [activeIndex, setActiveIndex] = useState(0);
   const tabRefs = useRef([]);
   const lineContainerRef = useRef(null);
@@ -122,7 +141,6 @@ const Info = () => {
           spaceBetween={30}
           pagination={{ type: "bullets", clickable: true }}
           loop={true}
-          loopFillGroupWithBlank={true}
           navigation={{
             prevEl: ".custom-prev",
             nextEl: ".custom-next",
@@ -145,12 +163,7 @@ const Info = () => {
           <IoIosArrowDropright size={50} />
         </div>
       </div>
-
-
-
-
-
-
+      
       {/* Info wrapper */}
       <div className="info-wrapper">
         <div className="info-basic">
@@ -570,88 +583,78 @@ const Info = () => {
               </div>
             </div>
           )}
+{activeIndex === 2 && (
+  <div className="surrounding-content">
 
-          {activeIndex === 2 && (
-            <div className="surrounding-content">
-              {/* 美食小點 */}
-              <div className="food-section">
-                <div className="info-container">
-                  <h3>美食小點</h3>
-                  <div className="food-carousel">
-                    <button className="arrow arrow-left" onClick={() => slideFood(1, "left")}>
-                      <img src={arrowlf} alt="左箭頭" />
-                    </button>
-                    <div
-                      className="food-groups"
-                      ref={(el) => (foodGroupsRef.current[1] = el)}
-                    >
-                      {[1, 2, 3].map((_, index) => (
-                        <div className="food-group" key={index}>
-                          <img
-                            src={foodbgpink}
-                            alt="背景粉色"
-                            className="foodbgpink"
-                          />
-                          <div className="foodptopink-wrapper">
-                            <img
-                              src={foodptopink}
-                              alt="前景粉色"
-                              className="foodptopink"
-                            />
-                            <div className="foodptopink-overlay">
-                              <p>景點名稱</p>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                    <button className="arrow arrow-right" onClick={() => slideFood(1, "right")}>
-  <img src={arrowri} alt="右箭頭" />
-</button>
-                  </div>
-                </div>
-              </div>
+    {/* 美食小點區塊 */}
+<div className="surrounding-section food-section">
+  <h3 className="section-title">美食小點</h3>
+  <div style={{ height: "5vh" }}></div>
 
-              {/* 附近景點 */}
-              <div className="attraction-section">
-                <div className="info-container">
-                  <h3>附近景點</h3>
-                  <div className="food-carousel">
-                    <button className="arrow arrow-left">
-                      <img src={arrowlf} alt="左箭頭" />
-                    </button>
-                    <div
-                      className="food-groups"
-                      ref={(el) => (foodGroupsRef.current[0] = el)}
-                    >
-                      {[1, 2, 3].map((_, index) => (
-                        <div className="food-group" key={index}>
-                          <img
-                            src={attbgblu}
-                            alt="背景藍色"
-                            className="foodbgpink"
-                          />
-                          <div className="foodptopink-wrapper">
-                            <img
-                              src={attptoblu}
-                              alt="前景藍色"
-                              className="foodptopink"
-                            />
-                            <div className="foodptopink-overlay">
-                              <p>李記車輪餅</p>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                    <button className="arrow arrow-right">
-                      <img src={arrowri} alt="右箭頭" />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
+  <div className="swiper-wrapper-relative">
+    <Swiper
+      slidesPerView={4}
+      spaceBetween={0}
+      loop={true}
+      navigation={{
+        prevEl: ".food-prev",
+        nextEl: ".food-next",
+      }}
+      modules={[Navigation, Pagination]}
+      className="food-swiper"
+    >
+      {[foodptopink, foodptopink, foodptopink, foodptopink,foodptopink].map((img, idx) => (
+        <SwiperSlide key={idx}>
+          <img src={img} alt={`Food ${idx + 1}`} />
+        </SwiperSlide>
+      ))}
+    </Swiper>
+
+    {/* 美食小點箭頭 */}
+    <img src={arrowlf} alt="prev" className="arrow food-prev" />
+    <img src={arrowri} alt="next" className="arrow food-next" />
+  </div>
+</div>
+
+
+    {/* 附近景點區塊 */}
+<div className="surrounding-section nearby-section">
+  <h3 className="section-title">附近景點</h3>
+  <div style={{ height: "5vh" }}></div>
+
+  <div className="swiper-wrapper-relative">
+    <Swiper
+      slidesPerView={4}
+      spaceBetween={20}
+      loop={true}
+      navigation={{
+        prevEl: ".nearby-prev",
+        nextEl: ".nearby-next",
+      }}
+      modules={[Navigation, Pagination]}
+      onBeforeInit={(swiper) => {
+        swiper.params.navigation.prevEl = ".nearby-prev";
+        swiper.params.navigation.nextEl = ".nearby-next";
+      }}
+      className="nearby-swiper"
+    >
+      {[attptoblu, attptoblu, attptoblu, attptoblu,attptoblu].map((img, idx) => (
+        <SwiperSlide key={idx}>
+          <img src={img} alt={`Spot ${idx + 1}`} />
+        </SwiperSlide>
+      ))}
+    </Swiper>
+
+    {/* 附近景點箭頭 */}
+    <img src={arrowlf} alt="prev" className="arrow nearby-prev" />
+    <img src={arrowri} alt="next" className="arrow nearby-next" />
+  </div>
+</div>
+
+  </div>
+)}
+
+
         </div>
       </div>
     </section>
