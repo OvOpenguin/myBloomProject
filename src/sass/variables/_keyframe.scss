@@ -1,3 +1,5 @@
+
+
 @keyframes shake1 {
     0% {
         transform: translate(0, 0) rotate(0deg);
@@ -43,17 +45,43 @@
 }
 
 @keyframes shake3 {
-    0% { transform: translate(0, 0) rotate(0deg); }
-    10% { transform: translate(2px, -2px) rotate(1deg); }
-    20% { transform: translate(-2px, 2px) rotate(-1deg); }
-    30% { transform: translate(0, 0) rotate(0deg); }
-    
-    60% { transform: translate(0, 0) rotate(0deg); } /* 停頓 */
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
 
-    70% { transform: translate(-2px, -2px) rotate(-1deg); }
-    80% { transform: translate(2px, 2px) rotate(1deg); }
-    90% { transform: translate(0, 0) rotate(0deg); }
-    100% { transform: translate(0, 0) rotate(0deg); }
+    10% {
+        transform: translate(2px, -2px) rotate(1deg);
+    }
+
+    20% {
+        transform: translate(-2px, 2px) rotate(-1deg);
+    }
+
+    30% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    60% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    /* 停頓 */
+
+    70% {
+        transform: translate(-2px, -2px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(2px, 2px) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
 }
 
 @keyframes shake4 {
@@ -61,15 +89,32 @@
         transform: translate(0, 0) rotate(0deg);
 
     }
+
     60% {
         transform: translate(0, -10px) rotate(1deg); // 超過目標位置
 
     }
+
     80% {
         transform: translate(0, 10px) rotate(-1deg); // 回彈
     }
+
     100% {
         transform: translate(0, 0) rotate(0deg); // 最終位置
 
+    }
+}
+
+// 畫筆動畫
+
+
+// story 旋轉動畫
+@keyframes circle {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
     }
 }
