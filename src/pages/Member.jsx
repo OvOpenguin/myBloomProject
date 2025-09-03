@@ -188,8 +188,6 @@ function Profile() {
     );
 }
 
-
-
 // 登入畫面
 function SignIn({ onLogin }) {
     return (
@@ -203,7 +201,7 @@ function SignIn({ onLogin }) {
                 }}
             >
                 {/* 帳號 */}
-                <div className="name">
+                <div className="sign-name">
                     <label htmlFor="username">帳號</label>
                     <input type="text" className="username" placeholder="請輸入電子郵件"
                         // onChange={(e) => setUsername(e.target.value)} // 更新狀態
@@ -212,7 +210,7 @@ function SignIn({ onLogin }) {
                 </div>
 
                 {/* 密碼 */}
-                <div className="id">
+                <div className="sign-id">
                     <label htmlFor="userid">密碼</label>
                     <input type="text" className="userid" placeholder="請輸入密碼"
                         // onChange={(e) => setUsername(e.target.value)} // 更新狀態
@@ -221,13 +219,14 @@ function SignIn({ onLogin }) {
                 </div>
 
                 {/* 登入 */}
-                <button className="btn-animation" type="submit">
-                    <span>登入</span>
+                <button className="sign" type="submit">
+                    登入
                 </button>
                 {/* 註冊/忘記密碼 */}
-                <button className="btn-animation" type="submit">
-                    <span>註冊/忘記密碼</span>
+                <button className="register" type="submit">
+                    註冊/忘記密碼
                 </button>
+
             </form>
         </div>
     );

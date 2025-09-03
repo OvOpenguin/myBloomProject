@@ -190,20 +190,21 @@
         // 裝飾物品
         .sbutterfly {
             position: absolute;
-            bottom: -40px;
-            left: -5px;
             transform: rotate(20deg);
+            animation: fade-in .75s ease-in forwards;
+            animation-delay: 2.5s;
+            opacity: 0;
+
         }
 
         .sline {
             position: absolute;
             bottom: -45px;
             left: 120px;
-            animation: draw 3s linear infinite;
+            animation: draw 3s linear forwards;
+            transform: scaleX(-1);
             stroke-dasharray: 1;
-            /* 1 = 線條總長度 */
-            stroke-dashoffset: 1;
-            /* 初始值 = 完全隱藏 */
+            stroke-dashoffset: 1; //動畫：變成stroke-dashoffset: 0;
         }
     }
 
@@ -221,14 +222,5 @@
             animation: circle 30s linear infinite;
         }
     }
-
 }
 
-
-@keyframes draw {
-
-    /* 從隱藏開始 */
-    to {
-        stroke-dashoffset: 0;
-    }
-}
