@@ -4,7 +4,6 @@
 
 /* header區 */
 header {
-
     z-index: 2;
     width: 100%;
 
@@ -12,7 +11,7 @@ header {
     .hamburger {
         position: fixed;
         right: 0;
-        z-index: 3;
+        z-index: 5;
         margin: 20px;
         background-color: transparent;
         border: none;
@@ -62,7 +61,7 @@ header {
 
         @media (max-width:831px) {
             position: fixed;
-            z-index: 2;
+            z-index: 4;
             right: 0;
             background-color: $bg-blue;
             flex-direction: column;
