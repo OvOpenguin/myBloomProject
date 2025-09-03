@@ -222,13 +222,11 @@ const Wall = () => {
   };
 
 
-  // 回到最上層(待啟用)
-  const gotopRef = useRef(null);
+  // 回到最上層
   function backtop (){
     window.scrollTo({
       top:0,
       behavior: "smooth"
-
     })
   }
 
@@ -303,6 +301,8 @@ const Wall = () => {
           <p>前往投票</p>
           <img src={abotton} alt="" />
         </a>
+        
+        <button className="gotop" onClick={backtop}></button>
 
       </section>
 
