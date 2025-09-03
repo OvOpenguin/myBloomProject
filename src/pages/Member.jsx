@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import arrowd from '../images/member/member-arrow-lightgreen.svg'
 import arrowh from '../images/member/member-arrow-green.svg'
 import favtab from '../images/member/member-tab-blue.svg'
@@ -19,8 +19,8 @@ function SidebarItem({ label, onClick, active = false, danger = false }) {
             <button type="button" onClick={onClick}>
                 <p>{label}</p>
                 <div className="arrow-box">
-                    <img className="ard" src={arrowd} alt="" srcset="" />
-                    <img className="arh" src={arrowh} alt="" srcset="" />
+                    <img className="ard" src={arrowd} alt="" />
+                    <img className="arh" src={arrowh} alt="" />
                 </div>
             </button>
         </div>
@@ -123,8 +123,26 @@ function News() {
     );
 }
 
+
 // 個人中心
 function Profile() {
+
+    // 建立 ref 綁定密碼
+    const passwordRef = useRef(null);
+    // 設定密碼是否顯示
+    const [show, setShow] = useState(false);
+
+    // 處理點擊事件的函式
+    function togglePassword() {
+
+        // 切換 show 的狀態
+        setShow(prevShow => !prevShow);
+        // 根據 show 的狀態 => 更新 type
+        if (passwordRef.current) {
+            passwordRef.current.type = show ? "text" : "password";
+        }
+    }
+
     return (
         <div className="prf-wrap">
             <div className="tab">
@@ -133,32 +151,47 @@ function Profile() {
             </div>
             <div className="content">
                 <div className="user-wrap">
+
                     <div className="username">
                         {/* 帳號 */}
                         <label htmlFor="">帳號</label>
-                        <input type="text" className="inputName" placeholder="123@gmail.com"
-                            disabled />
+                        <input
+                            type="text"
+                            className="inputName"
+                            placeholder="123@gmail.com"
+                            readonly
+                        />
                     </div>
+
                     <div className="userid">
                         {/* 密碼 */}
-                        <label htmlFor="">密碼</label>
-                        <input type="text" className="inputId" placeholder="Default"
-                            onChange={(e) => setUsername(e.target.value)} // 更新狀態
-                            required
-                            autoFocus />
+                        <label htmlFor="password">密碼</label>
+                        <input
+                            type={show ? 'text' : 'password'}
+                            className="inputId"
+                            placeholder="Default"
+                            ref={passwordRef}
+                            required />
+
+                        {/* 查看密碼 */}
+                        <button
+                            className="show-btn"
+                            type="submit"
+                            onClick={togglePassword}>
+                            {show ? "關閉密碼" : "查看密碼"}
+                        </button>
                     </div>
-                    {/* 登入 */}
-                    <button class="btn-animation" type="submit">
-                        <span>修改密碼</span>
-                    </button>
+
                 </div>
             </div>
         </div>
     );
 }
 
+
+
 // 登入畫面
-function SignIn({onLogin}) {
+function SignIn({ onLogin }) {
     return (
         <div className="signin-wrap">
             <img src={logo} alt="" />
@@ -173,7 +206,7 @@ function SignIn({onLogin}) {
                 <div className="name">
                     <label htmlFor="username">帳號</label>
                     <input type="text" className="username" placeholder="請輸入電子郵件"
-                        onChange={(e) => setUsername(e.target.value)} // 更新狀態
+                        // onChange={(e) => setUsername(e.target.value)} // 更新狀態
                         required
                         autoFocus />
                 </div>
@@ -182,17 +215,17 @@ function SignIn({onLogin}) {
                 <div className="id">
                     <label htmlFor="userid">密碼</label>
                     <input type="text" className="userid" placeholder="請輸入密碼"
-                        onChange={(e) => setUsername(e.target.value)} // 更新狀態
+                        // onChange={(e) => setUsername(e.target.value)} // 更新狀態
                         required
                         autoFocus />
                 </div>
 
                 {/* 登入 */}
-                <button class="btn-animation" type="submit">
+                <button className="btn-animation" type="submit">
                     <span>登入</span>
                 </button>
                 {/* 註冊/忘記密碼 */}
-                <button class="btn-animation" type="submit">
+                <button className="btn-animation" type="submit">
                     <span>註冊/忘記密碼</span>
                 </button>
             </form>
@@ -212,8 +245,8 @@ export default function MemberCenter() {
     const TABS = [
         { key: "favorites", label: "我的收藏", view: <Favorites /> },
         { key: "wall", label: "我的花牆", view: <Wall /> },
-        { key: "news", label: "我的花訊", view: <News/> },
-        { key: "profile", label: "會員資料", view: <Profile/> },
+        { key: "news", label: "我的花訊", view: <News /> },
+        { key: "profile", label: "個人中心", view: <Profile /> },
         { key: "logout", label: "登出", danger: true },
     ];
 

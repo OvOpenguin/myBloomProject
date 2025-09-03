@@ -117,6 +117,7 @@
                 justify-content: center;
                 align-items: center;
 
+                color: $brown-100;
                 font-size: 2rem;
                 width: 100px;
                 height: 100px;
@@ -132,6 +133,7 @@
                 justify-content: center;
                 align-items: center;
 
+                color: $brown-100;
                 font-size: 1.5rem;
                 width: 50px;
                 height: 50px;
@@ -161,6 +163,7 @@
                     justify-content: center;
                     align-items: center;
                     gap: 10px;
+                    color: $brown-100;
 
                     .family,
                     .genus {
@@ -184,28 +187,26 @@
             }
         }
 
+        // 裝飾物品
         .sbutterfly {
             position: absolute;
             bottom: -40px;
-            left: -10px;
-
-            // @media (max-width:1200px) {
-            //     display: none;
-            // }
+            left: -5px;
+            transform: rotate(20deg);
         }
 
         .sline {
             position: absolute;
-            bottom: -40px;
-            left: 100px;
-
-            // @media (max-width:1200px) {
-            //     display: none;
-            // }
+            bottom: -45px;
+            left: 120px;
+            animation: draw 3s linear infinite;
+            stroke-dasharray: 1;
+            /* 1 = 線條總長度 */
+            stroke-dashoffset: 1;
+            /* 初始值 = 完全隱藏 */
         }
-
-
     }
+
 
     .sImg {
         position: relative;
@@ -223,12 +224,11 @@
 
 }
 
-@keyframes circle {
-    0% {
-        transform: rotate(0deg);
-    }
 
-    100% {
-        transform: rotate(360deg);
+@keyframes draw {
+
+    /* 從隱藏開始 */
+    to {
+        stroke-dashoffset: 0;
     }
 }
