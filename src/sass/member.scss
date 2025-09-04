@@ -38,6 +38,7 @@
           cursor: pointer;
           color: $brown-100;
           font-size: $f-s-md;
+          font-weight: $f-w-m;
           background: $bg-green;
           padding: 15px 30px;
         }
@@ -88,14 +89,13 @@
       display: flex;
       justify-content: space-between;
 
-      @media (max-width:1024px) {
+      @media (max-width:1200px) {
         height: 78px;
         ;
       }
 
       img {
         display: inline-flex;
-        margin-left: 10vh;
         height: auto;
         width: auto;
 
@@ -198,6 +198,10 @@
           // margin-top: 20px;
           padding-right: 10%;
 
+          @media (max-width:1024px) {
+            display: none;
+          }
+
           .v-item {
             height: 200px;
             width: auto;
@@ -258,7 +262,29 @@
               object-fit: contain;
             }
           }
+
+          &::-webkit-scrollbar {
+                background-color: #bae6ff;
+                width: 12px;
+                border-radius: 999px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: #FF8457;
+                border-radius: 999px;
+            }
         }
+
+        &::-webkit-scrollbar {
+                background-color: #bae6ff;
+                width: 12px;
+                border-radius: 999px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: #FF8457;
+                border-radius: 999px;
+            }
 
       }
 
@@ -400,7 +426,7 @@
       }
 
 
-      .sign-in {
+      .sign {
         color: $brown-100;
         font-size: $f-s-sm;
         line-height: 150%;
