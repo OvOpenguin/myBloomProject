@@ -1,13 +1,12 @@
 
 import "../sass/play.scss"
-import Nav from '../components/Nav'
-import Footer from '../components/Footer'
 
 // 圖片匯入
 import 開始遊戲 from "../images/play/play-start.svg"
 import 結束遊戲 from "../images/play/play-end.svg"
 import 蝴蝶 from "../images/play/butterfly-og.png"
-
+import 花1 from "../images/play/花1.svg"
+import 花2 from "../images/play/花2.svg"
 
 // 呼叫useState
 import React, { useState } from "react";
@@ -50,16 +49,12 @@ const Play = () => {
         <>
             <div className='playWrap'>
 
-                
-                {/* 裝飾花 */}
-                <div className="p p1"><img src="./home/t5.svg" alt="" /></div>
-
-
                 {/* 說明遊戲 */}
                 <div className="playExplain">
 
                     {/* 裝飾 */}
                     <div className="pButterfly"><img src={蝴蝶} alt="蝴蝶" /></div>
+            
                     <div><h2>看花影 猜花卉</h2></div>
                     <div><h3>Hide & seek</h3></div>
                     <p>花的姿態千變萬化，有些光靠剪影也能辨認。
@@ -70,14 +65,14 @@ const Play = () => {
                     {/* 下方開始/結束按鍵 */}
                     <div className='playBtn'>
 
-                        {!gameStarted 
-                        ? (<div className="start-btn" onClick={() => {
-                            setGameStarted(true);
-                            setCurrentQ(getRandomQuestion());
-                            setShowAnswer(false);
-                            setWrongAnswers([]);
-                        }}><img src={開始遊戲} alt="開始遊戲" /></div>)
-                        : (<div className="end-btn" onClick={() => {
+                        {!gameStarted
+                            ? (<div className="start-btn" onClick={() => {
+                                setGameStarted(true);
+                                setCurrentQ(getRandomQuestion());
+                                setShowAnswer(false);
+                                setWrongAnswers([]);
+                            }}><img src={開始遊戲} alt="開始遊戲" /></div>)
+                            : (<div className="end-btn" onClick={() => {
                                 setGameStarted(false);  // 回到開始畫面
                                 setShowAnswer(false);   // 重置狀態
                                 setWrongAnswers([]);    // 清空錯誤答案
