@@ -75,9 +75,11 @@ const Story = () => {
         <motion.div
           className='sContent'
           initial={{ opacity: 0, rotateY: 90 }}
-          animate={{ opacity: 1, rotateY: 0 }}
-          transition={{ duration: 0.6 }}
+          animate={{ opacity: 1, rotateY:0  }}
+          exit={{ opacity: 0, y:-20 }}
+          transition={{ duration: 0.5 }}
         >
+          {/* 標題 */}
           <div className='sflowerName'>
             <div className="tape2"><img src={tape2} alt="" /></div>
             <h2>
@@ -88,6 +90,7 @@ const Story = () => {
               {/* #純潔　#純高貴　#天真　#尊敬　#誠心敬愛 */}
               {selectedFlower.meaning}
             </p>
+            {/* 季節tag */}
             <div className="seasontag">
               <div
                 className="tag1"
@@ -103,6 +106,8 @@ const Story = () => {
               </div>
             </div>
           </div>
+          
+          {/* 中間介紹 */}
           <div
             className='sflowerIntro'
             style={{ backgroundImage: `url(./story/story-bg-${selectedFlower.season1}-500x400.svg)` }}>

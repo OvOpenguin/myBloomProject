@@ -19,11 +19,6 @@ import 大花定位2 from "../images/home/大花定位2.png"
 import 貼紙花1 from "../images/home/首頁-貼紙花.webp"
 import 花卉介紹2 from "../images/home/homeStory.svg"
 import 花卉遊戲2 from "../images/home/homeGame2.svg"
-import 票選1 from '../images/home/首頁-票選1-框.png'
-import 票選2 from '../images/home/首頁-票選2-框.png'
-import 票選3 from '../images/home/首頁-票選3-框.png'
-import 票選4 from '../images/home/首頁-票選4-框.png'
-import 王冠 from '../images/home/王冠.svg'
 // 花牆
 import hfwr1 from '../images/home/homewall1.avif'
 import hfwr2 from '../images/home/homewall2.avif'
@@ -43,10 +38,7 @@ import hwde8 from '../images/home/h-w-de8.svg'
 // 最新消息-裝飾花
 import hfw1 from '../images/home/homefwro1.svg'
 import hfw2 from '../images/home/homefwro2.svg'
-// react icon
-import { IoIosArrowDropleft } from "react-icons/io";
-import { IoIosArrowDropright } from "react-icons/io";
-import { BsArrowUpRightCircleFill } from "react-icons/bs";
+
 
 
 

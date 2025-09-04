@@ -1,7 +1,5 @@
 
 import "../sass/play.scss"
-import Nav from '../components/Nav'
-import Footer from '../components/Footer'
 
 // 圖片匯入
 import 開始遊戲 from "../images/play/play-start.svg"
