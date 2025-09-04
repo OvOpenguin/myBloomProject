@@ -5,7 +5,7 @@
 
 // outline check
 * {
-   outline: 1px solid red;
+    // outline: 1px solid red;
 }
 
 // swiper 設定
@@ -114,14 +114,259 @@
 
 
 /* home共用區 */
-.homeBtn {
-    color: $brown-100;
-    padding: 10px 20px;
-    border: 2px solid $brown-100;
-    border-radius: 999px;
-    background-color: #fff;
-    margin-top: 20px;
-}
+
+button {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        outline: none;
+        border: 0;
+        vertical-align: middle;
+        text-decoration: none;
+        background: transparent;
+        padding: 0;
+        font-size: inherit;
+        font-family: inherit;
+
+        // 地圖搜尋按鈕
+        &.h-btn-map {
+            width: 10rem;
+            height: auto;
+            margin-top: 30px;
+
+            .circle {
+                transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
+                position: relative;
+                display: block;
+                margin: 0;
+                width: 3rem;
+                height: 3rem;
+                background: #7DC5E4;
+                border-radius: 99px;
+
+                .icon {
+                    transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto;
+                    background: #fff;
+
+                    &.arrow {
+                        transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
+                        left: 0.625rem;
+                        width: 1.125rem;
+                        height: 0.125rem;
+                        background: none;
+
+                        &::before {
+                            position: absolute;
+                            content: '';
+                            top: -0.25rem;
+                            right: 0.0625rem;
+                            width: 0.625rem;
+                            height: 0.625rem;
+                            border-top: 0.125rem solid #fff;
+                            border-right: 0.125rem solid #fff;
+                            transform: rotate(45deg);
+                        }
+                    }
+                }
+            }
+
+            .btn-text {
+                transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
+                position: absolute;
+                top: 0px;
+                left: 0;
+                right: 0;
+                padding: 12px;
+                margin-left: 24px;
+                color: #64503C;
+                font-weight: 400;
+                line-height: 1.6;
+                text-align: center;
+                letter-spacing: 2px;
+                
+            }
+        }
+
+        &:hover {
+            .circle {
+                width: 100%;
+
+                .icon {
+                    &.arrow {
+                        background: #fff;
+                        transform: translate(1rem, 0);
+                    }
+                }
+            }
+            .btn-text {
+                color: #fff;
+            }
+        }
+
+        // 更多消息按鈕
+        &.h-btn-news {
+            width: 10rem;
+            height: auto;
+
+            .circle {
+                transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
+                position: relative;
+                display: block;
+                margin: 0;
+                width: 3rem;
+                height: 3rem;
+                background: #69C9A0;
+                border-radius: 99px;
+
+                .icon {
+                    transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto;
+                    background: #fff;
+
+                    &.arrow {
+                        transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
+                        left: 0.625rem;
+                        width: 1.125rem;
+                        height: 0.125rem;
+                        background: none;
+
+                        &::before {
+                            position: absolute;
+                            content: '';
+                            top: -0.25rem;
+                            right: 0.0625rem;
+                            width: 0.625rem;
+                            height: 0.625rem;
+                            border-top: 0.125rem solid #fff;
+                            border-right: 0.125rem solid #fff;
+                            transform: rotate(45deg);
+                        }
+                    }
+                }
+            }
+
+            .btn-text {
+                transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
+                position: absolute;
+                top: 0px;
+                left: 0;
+                right: 0;
+                padding: 12px;
+                margin-left: 24px;
+                color: #64503C;
+                font-weight: 400;
+                line-height: 1.6;
+                text-align: center;
+                letter-spacing: 2px;
+                
+            }
+        }
+
+        &:hover {
+            .circle {
+                width: 100%;
+
+                .icon {
+                    &.arrow {
+                        background: #fff;
+                        transform: translate(1rem, 0);
+                    }
+                }
+            }
+            .btn-text {
+                color: #fff;
+            }
+        }
+
+        // 花牆按鈕
+        &.h-btn-wall {
+            width: 10rem;
+            height: auto;
+            display: flex;
+            justify-self: flex-end;
+
+            .circle {
+                transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
+                position: relative;
+                display: block;
+                margin: 0;
+                width: 3rem;
+                height: 3rem;
+                background: #C075E3;
+                border-radius: 99px;
+
+                .icon {
+                    transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto;
+                    background: #fff;
+
+                    &.arrow {
+                        transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
+                        left: 0.625rem;
+                        width: 1.125rem;
+                        height: 0.125rem;
+                        background: none;
+
+                        &::before {
+                            position: absolute;
+                            content: '';
+                            top: -0.25rem;
+                            right: 0.0625rem;
+                            width: 0.625rem;
+                            height: 0.625rem;
+                            border-top: 0.125rem solid #fff;
+                            border-right: 0.125rem solid #fff;
+                            transform: rotate(45deg);
+                        }
+                    }
+                }
+            }
+
+            .btn-text {
+                transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
+                position: absolute;
+                top: 0px;
+                left: 0;
+                right: 0;
+                padding: 12px;
+                margin-left: 24px;
+                color: #64503C;
+                font-weight: 400;
+                line-height: 1.6;
+                text-align: center;
+                letter-spacing: 2px;
+                
+            }
+        }
+
+        &:hover {
+            .circle {
+                width: 100%;
+
+                .icon {
+                    &.arrow {
+                        background: #fff;
+                        transform: translate(1rem, 0);
+                    }
+                }
+            }
+            .btn-text {
+                color: #fff;
+            }
+        }
+
+
+    }
 
 
 
@@ -623,6 +868,9 @@
             cursor: default;
         }
     }
+
+    
+
 }
 
 
@@ -971,20 +1219,38 @@
 
     .home-inner {
         width: 100%;
-        overflow: hidden;
         user-select: none; // 反選取
+
+        .h-v-title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            letter-spacing: 5px;
+            margin-bottom: -90px;
+
+            h3 {
+                margin: 30px -500px 0 0;
+                transform: rotate(10deg);
+            }
+        }
 
         .h-v-photos {
             position: relative;
             width: 100%;
             aspect-ratio: 16 / 9;
+            overflow: hidden;
+            z-index: -1;
 
-            /* 比例 */
+            @media (max-width:640px) {
+                aspect-ratio: 3 / 4;
+            }
+
+
             img {
                 position: absolute;
                 object-fit: cover;
-                width: 20%
-                    /* 用百分比大小，隨父層等比縮放 */
+                width: 20%;
             }
 
             .p1 img {
@@ -1039,6 +1305,7 @@
                 top: 26%;
                 left: 25%;
                 width: 13%;
+                animation: shake3 3s infinite ease-in-out;
             }
 
             .d3 img {
@@ -1051,6 +1318,7 @@
                 bottom: 38%;
                 left: 50%;
                 width: 8%;
+                animation: shake2 3s infinite ease-in-out;
             }
 
             .d5 img {
@@ -1076,24 +1344,9 @@
                 right: -6%;
                 width: 20%;
                 transform: rotate(-10deg);
-            }
-
-            .t1 {
-                position: absolute;
-                top:  10%;
-                left: 51%;
-                transform: translate(-50%, -50%) rotate(-10deg);
-                letter-spacing:20px;
-                z-index: 2;
-            }
-            .t2 {
-                position: absolute;
-                top:  13%;
-                left: 70%;
-                transform: translate(-50%, -50%) rotate(14deg);
-                letter-spacing: 5px;
-                z-index: 2;
+                animation: shake1 3s infinite ease-in-out;
             }
         }
+
     }
 }

@@ -47,6 +47,7 @@ import hfw2 from '../images/home/homefwro2.svg'
 import { IoIosArrowDropleft } from "react-icons/io";
 import { IoIosArrowDropright } from "react-icons/io";
 import { BsArrowUpRightCircleFill } from "react-icons/bs";
+import { IoIosArrowForward } from "react-icons/io";
 
 
 
@@ -195,7 +196,7 @@ const App = () => {
 
                     {/* 主副標 */}
                     <h2>近期活動</h2>
-                    <h3>Recent vents</h3>
+                    <h3>Recent Events</h3>
 
 
                     {/* Swiper測試 */}
@@ -250,7 +251,14 @@ const App = () => {
 
 
                     {/* 地圖搜尋btn */}
-                    <Link to="./map"><div className="homeBtn">地圖搜尋→</div></Link>
+                    <Link to="./map">
+                        <button className="h-btn-map">
+                            <span className="circle">
+                                <span className="icon arrow"></span>
+                            </span>
+                            <span className="btn-text">地圖搜尋</span>
+                        </button>
+                    </Link>
 
                 </section>
 
@@ -276,7 +284,16 @@ const App = () => {
                                 <li><div><p><span className="tag1">活動</span>我是一大串的活頁消息標題消我</p></div><time className="itime">2025-10-15</time></li>
                                 <li><div><p><span className="tag1">活動</span>我是一大串的活頁消息標題消我</p></div><time className="itime">2025-10-15</time></li>
                             </ul>
-                            <Link to="./news"><div className="homeBtn">更多消息</div></Link>
+
+                            {/* 更多消息按鈕 */}
+                            <Link to="./news">
+                                <button className="h-btn-news">
+                                    <span className="circle">
+                                        <span className="icon arrow"></span>
+                                    </span>
+                                    <span className="btn-text">更多消息</span>
+                                </button>
+                            </Link>
                         </div>
 
                         <div className="home-story">
@@ -316,11 +333,20 @@ const App = () => {
 
                 <section className="home-vote">
                     <div className="home-inner">
+                        <Link to="./wall">
+                                <button className="h-btn-wall">
+                                    <span className="circle">
+                                        <span className="icon arrow"></span>
+                                    </span>
+                                    <span className="btn-text">前往投票</span>
+                                </button>
+                            </Link>
+                        <div className="h-v-title">
+                            <div className="hv t1"><h2>花牆票選</h2><h3>Popularity Vote</h3></div>
+                        </div>
                         <div className="h-v-photos">
-                            <div className="hv t1"><h2>花牆票選</h2></div>
-                            <div className="hv t2"><h3>POPULARITY VOTE</h3></div>
                             <div className="hv p1"><img src={hfwr1} alt="" /></div>
-                            <div className="hv p2"><img src={hfwr2} alt="" /></div>  
+                            <div className="hv p2"><img src={hfwr2} alt="" /></div>
                             <div className="hv p3"><img src={hfwr3} alt="" /></div>
                             <div className="hv p4"><img src={hfwr4} alt="" /></div>
                             <div className="hv p5"><img src={hfwr5} alt="" /></div>

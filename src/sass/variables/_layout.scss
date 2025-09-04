@@ -63,7 +63,7 @@ header {
             position: fixed;
             z-index: 4;
             right: 0;
-            background-color: $bg-blue;
+            background-color: #FFF4CA;
             flex-direction: column;
             gap: 30px;
             width: 200px;
@@ -87,7 +87,7 @@ header {
 
         svg {
             display: block;
-            margin-top: 0px;
+            margin-top: -10px;
             /* 控制 svg 與文字的距離 */
         }
 
