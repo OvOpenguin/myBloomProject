@@ -1,4 +1,5 @@
-
+import React, { useState } from "react";
+// My sass
 import "../sass/play.scss"
 
 // 圖片匯入
@@ -9,16 +10,11 @@ import 橘線 from "../images/play/play-line-orange.svg"
 import t2 from "../images/play/t2.svg"
 import t7 from "../images/play/t7.svg"
 import t12 from "../images/play/t12.svg"
-import p1 from "../images/home/homewall1.avif"
-import p2 from "../images/home/homewall2.avif"
-import p3 from "../images/home/homewall3.avif"
-import p4 from "../images/home/homewall4.avif"
-import p5 from "../images/home/homewall5.avif"
-import p6 from "../images/home/homewall6.avif"
-import p7 from "../images/home/homewall7.avif"
+import l1 from "../images/play/play-line-1.svg"
+import l2 from "../images/play/play-line-2.svg"
 
-// 呼叫useState
-import React, { useState } from "react";
+
+
 
 
 // 建立題庫陣列物件資料
@@ -57,15 +53,35 @@ const Play = () => {
     return (
         <>
             <div className='playWrap'>
-            
+
+                {/* 裝飾 */}
+                <div className="t l1"><img src={l1} alt="黃線" /></div>
+                <div className="t l2"><img src={l2} alt="紫線" /></div>
+                <div className="t t2"><img src={t2} alt="t2" /></div>
+                <div className="t t7"><img src={t7} alt="t7" /></div>
+                <div className="t t12"><img src={t12} alt="t12" /></div>
+
+
                 {/* 說明遊戲 */}
                 <div className="playExplain">
 
                     {/* 裝飾 */}
                     <div className="pButterfly"><img src={蝴蝶} alt="蝴蝶" /></div>
-                    <div className="t t2"><img src={t2} alt="t2" /></div>
-                    <div className="t t7"><img src={t7} alt="t7" /></div>
-                    <div className="t t12"><img src={t12} alt="t12" /></div>
+                    {/* <div className="pBline"><img src={l3} alt="蝴蝶軌跡" /></div> */}
+                    <svg
+                        className="pBline"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 113 101"
+                        fill="none">
+                        <filter id="rough">
+                            <feTurbulence type="fractalNoise" baseFrequency="0.5" numOctaves="4" result="noise" />
+                            <feDisplacementMap in2="noise" in="SourceGraphic" scale="5" />
+                        </filter>
+                        <path d="M0 2C40 18.5 46.4619 29.1748 56 55.9999C64.1781 78.9999 45.5234 88.9999 28.4998 55.9999C5.02787 10.4999 86 48.5 112.5 101"
+                            stroke="#69C9A0"
+                            stroke-width="5" />
+                    </svg>
+
 
                     <div><h2>看花影 猜花卉</h2></div>
                     <div><h3>Hide & seek</h3></div>
@@ -110,31 +126,43 @@ const Play = () => {
 
                     {/* 選項區 */}
                     {/* 當gameStarted為true時，選項才會出現。 */}
-                    {gameStarted && (<div className="answer">
-                        {!showAnswer &&
-                            questions[currentQ].options.map((opt, i) => (
-                                <div
-                                    key={i}
-                                    className={`option ${wrongAnswers.includes(opt) ? "crayon" : ""}`}
-                                    onClick={() => {
-                                        if (opt === questions[currentQ].answer) {
-                                            setShowAnswer(true);
-                                        } else {
-                                            setWrongAnswers([...wrongAnswers, opt]);
-                                        }
-                                    }}
-                                >
-                                    {opt}
-                                </div>
-                            ))}
+                    <div className="answer">
+                        {gameStarted ? (
+                            <>
+                                {!showAnswer &&
+                                    questions[currentQ].options.map((opt, i) => (
+                                        <div
+                                            key={i}
+                                            className={`option ${wrongAnswers.includes(opt) ? "crayon" : ""}`}
+                                            onClick={() => {
+                                                if (opt === questions[currentQ].answer) {
+                                                    setShowAnswer(true);
+                                                } else {
+                                                    setWrongAnswers([...wrongAnswers, opt]);
+                                                }
+                                            }}
+                                        >
+                                            {opt}
+                                        </div>
+                                    ))}
+                                {showAnswer && (
+                                    <div
+                                        className="next"
+                                        onClick={() => {
+                                            setCurrentQ(getRandomQuestion());
+                                            setShowAnswer(false);
+                                            setWrongAnswers([]);
+                                        }}
+                                    >
+                                        下一題
+                                    </div>
+                                )}
+                            </>
+                        ) : (
+                            <div className="placeholder"></div>)}
+                    </div>
 
-                        {/* 下一題按鈕 */}
-                        {showAnswer && (<div className="next" onClick={() => {
-                            setCurrentQ(getRandomQuestion());
-                            setShowAnswer(false);
-                            setWrongAnswers([]);
-                        }}>下一題</div>)}
-                    </div>)}
+
 
                 </div>
             </div >
