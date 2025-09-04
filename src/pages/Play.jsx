@@ -5,7 +5,8 @@ import "../sass/play.scss"
 import 開始遊戲 from "../images/play/play-start.svg"
 import 結束遊戲 from "../images/play/play-end.svg"
 import 蝴蝶 from "../images/play/butterfly-og.png"
-
+import 花1 from "../images/play/花1.svg"
+import 花2 from "../images/play/花2.svg"
 
 // 呼叫useState
 import React, { useState } from "react";
@@ -48,9 +49,9 @@ const Play = () => {
         <>
             <div className='playWrap'>
 
-                
-                {/* 裝飾花 */}
-                <div className="p p1"><img src="./home/t5.svg" alt="" /></div>
+                {/* 裝飾 */}
+                <div className="f f1"><img src={花1} alt="花1" /></div>
+
 
 
                 {/* 說明遊戲 */}
@@ -68,14 +69,14 @@ const Play = () => {
                     {/* 下方開始/結束按鍵 */}
                     <div className='playBtn'>
 
-                        {!gameStarted 
-                        ? (<div className="start-btn" onClick={() => {
-                            setGameStarted(true);
-                            setCurrentQ(getRandomQuestion());
-                            setShowAnswer(false);
-                            setWrongAnswers([]);
-                        }}><img src={開始遊戲} alt="開始遊戲" /></div>)
-                        : (<div className="end-btn" onClick={() => {
+                        {!gameStarted
+                            ? (<div className="start-btn" onClick={() => {
+                                setGameStarted(true);
+                                setCurrentQ(getRandomQuestion());
+                                setShowAnswer(false);
+                                setWrongAnswers([]);
+                            }}><img src={開始遊戲} alt="開始遊戲" /></div>)
+                            : (<div className="end-btn" onClick={() => {
                                 setGameStarted(false);  // 回到開始畫面
                                 setShowAnswer(false);   // 重置狀態
                                 setWrongAnswers([]);    // 清空錯誤答案

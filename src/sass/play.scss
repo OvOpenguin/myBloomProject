@@ -11,6 +11,8 @@
     padding: 50px;
     gap: 50px;
     position: relative;
+    min-height: 800px; //限制最小高度
+   
 
     @media (max-width:620px) {
         flex-direction: column;
@@ -19,11 +21,13 @@
     }
 
     // 裝飾花
-    .p{
+    .f {
         position: absolute;
-        width: 10%;
-        bottom: 0;
-        left: 0;
+
+        &.f1 {
+            bottom: 0px;
+            left: 100px;
+        }
     }
 
 
@@ -170,4 +174,3 @@
     }
 
 }
-
