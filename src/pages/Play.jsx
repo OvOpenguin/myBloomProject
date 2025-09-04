@@ -49,16 +49,12 @@ const Play = () => {
         <>
             <div className='playWrap'>
 
-                {/* 裝飾 */}
-                <div className="f f1"><img src={花1} alt="花1" /></div>
-
-
-
                 {/* 說明遊戲 */}
                 <div className="playExplain">
 
                     {/* 裝飾 */}
                     <div className="pButterfly"><img src={蝴蝶} alt="蝴蝶" /></div>
+            
                     <div><h2>看花影 猜花卉</h2></div>
                     <div><h3>Hide & seek</h3></div>
                     <p>花的姿態千變萬化，有些光靠剪影也能辨認。
