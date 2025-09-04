@@ -1,5 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 
+import ScrollToTop from './components/ScrollToTop'
+
 import Nav from './components/Nav'
 import Footer from './components/Footer'
 
@@ -18,6 +20,7 @@ const MyApp = () => {
     return (
 
         <div className="wrap">
+            <ScrollToTop/>
             {/* 選單 */}
             <Nav></Nav>
 
