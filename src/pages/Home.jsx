@@ -38,15 +38,6 @@ import hwde8 from '../images/home/h-w-de8.svg'
 // 最新消息-裝飾花
 import hfw1 from '../images/home/homefwro1.svg'
 import hfw2 from '../images/home/homefwro2.svg'
-<<<<<<< HEAD
-// react icon
-import { IoIosArrowDropleft } from "react-icons/io";
-import { IoIosArrowDropright } from "react-icons/io";
-import { BsArrowUpRightCircleFill } from "react-icons/bs";
-import { IoIosArrowForward } from "react-icons/io";
-=======
-
->>>>>>> 08c12e67b1dcd59cd19548df3a18e5ff61ee1048
 
 
 
