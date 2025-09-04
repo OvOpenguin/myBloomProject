@@ -137,16 +137,6 @@ const Play = () => {
                     </div>)}
 
                 </div>
-
-                {/* 右側裝飾 */}
-                <div className="playwall">
-                    <div className="p p1"><img src={p1} alt="p1" /></div>
-                    <div className="p p2"><img src={p2} alt="p2" /></div>
-                    <div className="p p5"><img src={p5} alt="p5" /></div>
-                </div>
-
-
-
             </div >
         </>
 
