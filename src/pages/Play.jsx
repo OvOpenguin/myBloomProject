@@ -5,8 +5,17 @@ import "../sass/play.scss"
 import 開始遊戲 from "../images/play/play-start.svg"
 import 結束遊戲 from "../images/play/play-end.svg"
 import 蝴蝶 from "../images/play/butterfly-og.png"
-import 花1 from "../images/play/花1.svg"
-import 花2 from "../images/play/花2.svg"
+import 橘線 from "../images/play/play-line-orange.svg"
+import t2 from "../images/play/t2.svg"
+import t7 from "../images/play/t7.svg"
+import t12 from "../images/play/t12.svg"
+import p1 from "../images/home/homewall1.avif"
+import p2 from "../images/home/homewall2.avif"
+import p3 from "../images/home/homewall3.avif"
+import p4 from "../images/home/homewall4.avif"
+import p5 from "../images/home/homewall5.avif"
+import p6 from "../images/home/homewall6.avif"
+import p7 from "../images/home/homewall7.avif"
 
 // 呼叫useState
 import React, { useState } from "react";
@@ -48,13 +57,16 @@ const Play = () => {
     return (
         <>
             <div className='playWrap'>
-
+            
                 {/* 說明遊戲 */}
                 <div className="playExplain">
 
                     {/* 裝飾 */}
                     <div className="pButterfly"><img src={蝴蝶} alt="蝴蝶" /></div>
-            
+                    <div className="t t2"><img src={t2} alt="t2" /></div>
+                    <div className="t t7"><img src={t7} alt="t7" /></div>
+                    <div className="t t12"><img src={t12} alt="t12" /></div>
+
                     <div><h2>看花影 猜花卉</h2></div>
                     <div><h3>Hide & seek</h3></div>
                     <p>花的姿態千變萬化，有些光靠剪影也能辨認。
@@ -64,7 +76,6 @@ const Play = () => {
 
                     {/* 下方開始/結束按鍵 */}
                     <div className='playBtn'>
-
                         {!gameStarted
                             ? (<div className="start-btn" onClick={() => {
                                 setGameStarted(true);
@@ -77,7 +88,6 @@ const Play = () => {
                                 setShowAnswer(false);   // 重置狀態
                                 setWrongAnswers([]);    // 清空錯誤答案
                             }}><img src={結束遊戲} alt="結束遊戲" /></div>)}
-
                     </div>
                 </div>
 
@@ -95,6 +105,8 @@ const Play = () => {
                         )}
                     </figure>
 
+                    {/* 裝飾 */}
+                    <div className="p-line-o"><img src={橘線} alt="橘線" /></div>
 
                     {/* 選項區 */}
                     {/* 當gameStarted為true時，選項才會出現。 */}
@@ -125,6 +137,14 @@ const Play = () => {
                     </div>)}
 
                 </div>
+
+                {/* 右側裝飾 */}
+                <div className="playwall">
+                    <div className="p p1"><img src={p1} alt="p1" /></div>
+                    <div className="p p2"><img src={p2} alt="p2" /></div>
+                    <div className="p p5"><img src={p5} alt="p5" /></div>
+                </div>
+
 
 
             </div >

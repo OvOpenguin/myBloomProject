@@ -1,17 +1,23 @@
 @use 'reset';
 @use './variables/' as *;
 
-// * {
-//     outline: 1px solid red;
-// }
+* {
+    // outline: 1px solid red;
+}
 
 .playWrap {
     display: flex;
     justify-content: center;
-    padding: 50px;
+    padding: 50px 0;
     gap: 50px;
     position: relative;
     min-height: 800px; //限制最小高度
+
+    .t {
+        position: absolute;
+        transform: rotate(40deg);
+        left: -100px;
+    }
 
 
     @media (max-width:1024px) {
@@ -24,6 +30,7 @@
     //規則區
     .playExplain {
         position: relative;
+
 
         .pButterfly {
             position: absolute;
@@ -49,13 +56,42 @@
                 position: absolute;
                 background-image: url(../images/home/h-w-de1.svg);
                 background-repeat: no-repeat;
-                background-position: left top;
+                // background-position: left top;
                 width: 80%;
                 height: 100%;
                 top: 80px;
                 left: -150px;
             }
         }
+
+        // 裝飾色塊
+        .t {
+            position: absolute;
+            bottom: 0;
+
+            @media (max-width:1024px) {
+                display: none;
+            }
+
+            &.t2 {
+                left: -200px;
+                bottom: -50px;
+            }
+
+            &.t7 {
+                left: -50px;
+                bottom: 70px;
+                transform: rotate(30deg);
+            }
+
+            &.t12 {
+                width: 20%;
+                left: 0px;
+                bottom: 200px;
+                transform: rotate(30deg);
+            }
+        }
+
     }
 
     .playBtn {
@@ -125,7 +161,52 @@
                 top: -50px;
                 right: 0px;
             }
+
         }
+
+        .p-line-o {
+            position: absolute;
+            left: -150px;
+            bottom: 130px;
+            transform: rotate(30deg);
+        }
+
+        .p {
+            position: absolute;
+
+            &.p1 {
+                width: 30%;
+                top: 0;
+                right: -250px;
+            }
+
+            &.p2 {
+                width: 20%;
+                top: 170px;
+                right: -170px;
+            }
+
+            &.p3 {
+                width: 30%;
+                top: 300px;
+                right: -170px;
+            }
+
+            &.p4 {
+                width: 30%;
+                top: 500px;
+                right: -80px;
+            }
+
+            &.p5 {
+                width: 25%;
+                top: 570px;
+                right: 100px;
+            }
+
+
+        }
+
 
 
 
@@ -231,6 +312,23 @@
                 }
             }
 
+        }
+    }
+
+    .playwall {
+        position: absolute;
+        width: 200px;
+        right: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+
+        .p{
+
+        }
+
+        @media (max-width:1660px) {
+            display: none;
         }
     }
 
