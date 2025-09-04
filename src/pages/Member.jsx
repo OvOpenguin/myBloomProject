@@ -29,7 +29,7 @@ function SidebarItem({ label, onClick, active = false, danger = false }) {
 
 // 右側面板 => 各分頁元件
 // 我的收藏
-function Favorites() {
+const Favorites = () => {
     return (
         <div className="fav-wrap">
             <div className="tab">
@@ -57,7 +57,52 @@ function Favorites() {
 }
 
 // 我的花牆
-function Wall() {
+
+// const Flowerwall = ({ count, img, heart }) => {
+//     const [likeCount, setLikeCount] = useState(count);
+//     const [liked, setLiked] = useState(false);
+
+//     const handleLike = () => {
+//         if (!liked) {
+//             setLikeCount(likeCount + 1);
+//             setLiked(true);
+//         } else {
+
+//             // 如果要允許取消讚，可以加這段
+//             setLikeCount(likeCount - 1);
+//             setLiked(false);
+//         }
+//     };
+
+//     return (
+//         <li className="v-item">
+//             <p>{likeCount}</p>
+//             <img src={img} alt="fw" />
+//             <div className="icon-heart" onClick={handleLike} style={{ cursor: "pointer" }}>
+//                 <img src={liked ? "./wall/wall-icon2.svg" : heart} alt="heart" />
+//             </div>
+//         </li>
+//     );
+// }
+const Wall = () => {
+
+//     const flowerwalls = [
+//     {
+//         id: 1,
+//         count: 999,
+//         img: flower01,
+//         heart: heart0,
+
+//     },
+//     {
+//         id: 2,
+//         count: 999,
+//         img: flower02,
+//         heart: heart0,
+
+//     },
+// ];
+
     return (
         <div className="wall-wrap">
             <div className="tab">
@@ -94,7 +139,7 @@ function Wall() {
 }
 
 // 我的花訊
-function News() {
+const News = () => {
     return (
         <div className="news-wrap">
             <div className="tab">
@@ -125,7 +170,7 @@ function News() {
 
 
 // 個人中心
-function Profile() {
+const Profile = () => {
 
     // 建立 ref 綁定密碼
     const passwordRef = useRef(null);
@@ -295,7 +340,7 @@ export default function MemberCenter() {
             <div className="right-panel">
                 {activeTab?.view}
             </div>
-            
+
         </section>
     );
 }
