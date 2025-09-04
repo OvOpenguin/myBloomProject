@@ -129,6 +129,14 @@ const App = () => {
     // swiper 預設設定
     const [swiperRef, setSwiperRef] = useState(null);
 
+    // 回到最上層
+    function backtop() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        })
+    }
+
 
     return (
         <>
@@ -324,13 +332,13 @@ const App = () => {
                 <section className="home-vote">
                     <div className="home-inner">
                         <Link to="./wall">
-                                <button className="h-btn-wall">
-                                    <span className="circle">
-                                        <span className="icon arrow"></span>
-                                    </span>
-                                    <span className="btn-text">前往投票</span>
-                                </button>
-                            </Link>
+                            <button className="h-btn-wall">
+                                <span className="circle">
+                                    <span className="icon arrow"></span>
+                                </span>
+                                <span className="btn-text">前往投票</span>
+                            </button>
+                        </Link>
                         <div className="h-v-title">
                             <div className="hv t1"><h2>花牆票選</h2><h3>Popularity Vote</h3></div>
                         </div>
@@ -352,6 +360,7 @@ const App = () => {
                             <div className="hv d8"><img src={hwde8} alt="" /></div>
                         </div>
                     </div>
+                    <button className="gotop" onClick={backtop}></button>
                 </section>
             </main >
         </>

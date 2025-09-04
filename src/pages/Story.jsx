@@ -68,15 +68,24 @@ const Story = () => {
             <div className="tape"><img src={tape} alt="膠帶裝飾" /></div>
           </div>
           {/* 放入Link才能切換頁面 */}
-          <Link to="/play" className="btn-play">前往遊戲</Link>
+
+          <Link to="/play">
+            <button className="h-btn-map">
+              <span className="circle">
+                <span className="icon arrow"></span>
+              </span>
+              <span className="btn-text">前往遊戲</span>
+            </button>
+          </Link>
+
         </div>
 
         {/* 中間-內容介紹 */}
         <motion.div
           className='sContent'
           initial={{ opacity: 0, rotateY: 90 }}
-          animate={{ opacity: 1, rotateY:0  }}
-          exit={{ opacity: 0, y:-20 }}
+          animate={{ opacity: 1, rotateY: 0 }}
+          exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.5 }}
         >
           {/* 標題 */}
@@ -106,7 +115,7 @@ const Story = () => {
               </div>
             </div>
           </div>
-          
+
           {/* 中間介紹 */}
           <div
             className='sflowerIntro'
