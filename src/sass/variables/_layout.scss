@@ -11,14 +11,14 @@ header {
     .hamburger {
         position: fixed;
         right: 0;
-        z-index: 5;
+        z-index: 99;
         margin: 20px;
         background-color: transparent;
         border: none;
 
-         @media (min-width:830px) {
+        @media (min-width:830px) {
             display: none;
-         }
+        }
 
         .bar {
             display: block;
@@ -96,24 +96,19 @@ header {
             position: relative;
             flex-direction: column;
 
-            &:hover {
+            .t {
+                color: #7DC5E4;
+                display: inline;
+            }
+
+            &:hover,
+            &.active {
+                color: #7DC5E4;
+
                 .line {
                     animation: draw .5s linear forwards;
                 }
             }
-
-            >* {
-
-                .t {
-                    color: #7DC5E4;
-                    display: inline;
-                }
-
-                &:hover {
-                    color: #7DC5E4;
-                }
-            }
-
 
             // svg線條動畫
             .line {
@@ -132,23 +127,21 @@ header {
         }
 
         .nav-pink {
-            display: flex;
+            display: inline-block;
+            position: relative;
             flex-direction: column;
 
-            &:hover {
-                .line {
-                    animation: draw .5s linear forwards;
-                }
+            .t {
+                color: #FFA8B5;
+                display: inline;
             }
 
-            >* {
-                .t {
-                    color: #FFA8B5;
-                    display: inline;
-                }
+            &:hover,
+            &.active {
+                color: #FFA8B5;
 
-                &:hover {
-                    color: #FFA8B5;
+                .line {
+                    animation: draw .5s linear forwards;
                 }
             }
 
@@ -169,23 +162,21 @@ header {
         }
 
         .nav-orange {
-            display: flex;
+            display: inline-block;
+            position: relative;
             flex-direction: column;
 
-            &:hover {
-                .line {
-                    animation: draw .5s linear forwards;
-                }
+            .t {
+                color: #FF8457;
+                display: inline;
             }
 
-            >* {
-                .t {
-                    color: #FF8457;
-                    display: inline;
-                }
+            &:hover,
+            &.active {
+                color: #FF8457;
 
-                &:hover {
-                    color: #FF8457;
+                .line {
+                    animation: draw .5s linear forwards;
                 }
             }
 
@@ -206,23 +197,21 @@ header {
         }
 
         .nav-green {
-            display: flex;
+            display: inline-block;
+            position: relative;
             flex-direction: column;
 
-            &:hover {
-                .line {
-                    animation: draw .5s linear forwards;
-                }
+            .t {
+                color: #69C9A0;
+                display: inline;
             }
 
-            >* {
-                .t {
-                    color: #69C9A0;
-                    display: inline;
-                }
+            &:hover,
+            &.active {
+                color: #69C9A0;
 
-                &:hover {
-                    color: #69C9A0;
+                .line {
+                    animation: draw .5s linear forwards;
                 }
             }
 
@@ -243,23 +232,21 @@ header {
         }
 
         .nav-purple {
-            display: flex;
+            display: inline-block;
+            position: relative;
             flex-direction: column;
 
-            &:hover {
-                .line {
-                    animation: draw .5s linear forwards;
-                }
+            .t {
+                color: #C075E3;
+                display: inline;
             }
 
-            >* {
-                .t {
-                    color: #C075E3;
-                    display: inline;
-                }
+            &:hover,
+            &.active {
+                color: #C075E3;
 
-                &:hover {
-                    color: #C075E3;
+                .line {
+                    animation: draw .5s linear forwards;
                 }
             }
 

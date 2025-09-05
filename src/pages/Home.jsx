@@ -12,8 +12,6 @@ import "swiper/css/pagination";
 // My Sass
 import "../sass/home.scss"
 
-
-
 // 圖片管理區
 import 大花定位2 from "../images/home/大花定位2.png"
 import 貼紙花1 from "../images/home/首頁-貼紙花.webp"
@@ -38,6 +36,8 @@ import hwde8 from '../images/home/h-w-de8.svg'
 // 最新消息-裝飾花
 import hfw1 from '../images/home/homefwro1.svg'
 import hfw2 from '../images/home/homefwro2.svg'
+// swiper左右按鈕
+import arrow from "../images/home/home-arrow.svg"
 
 
 
@@ -98,7 +98,6 @@ const App = () => {
         },
 
     ];
-
 
     // 裝飾花(滑鼠滾輪)
     const [rotated, setRotated] = useState(false);
@@ -243,8 +242,8 @@ const App = () => {
 
                         </Swiper>
                         {/* 自訂左右按鈕，不會被裁切 */}
-                        <button className="home-custom-prev">左鍵</button>
-                        <button className="home-custom-next">右鍵</button>
+                        <button className="home-custom-prev"><img src={arrow} alt="左鍵" /></button>
+                        <button className="home-custom-next"><img src={arrow} alt="右鍵" /></button>
                     </div>
 
 
@@ -360,7 +359,13 @@ const App = () => {
                             <div className="hv d8"><img src={hwde8} alt="" /></div>
                         </div>
                     </div>
-                    <button className="gotop" onClick={backtop}></button>
+                    {/* <button className="gotop" onClick={backtop}>回到最上面</button> */}
+                    <button className="gotop" onClick={backtop}>
+                        <span className="circle">
+                            <span className="icon arrow"></span>
+                        </span>
+                        <span className="btn-text">TOP</span>
+                    </button>
                 </section>
             </main >
         </>

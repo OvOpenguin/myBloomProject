@@ -5,8 +5,6 @@
     display: flex;
     margin-top: 20px;
 
-
-
     .bannerswiper {
         width: 80%;
         height: 40vh;
@@ -37,20 +35,16 @@
             width: 12px;
             height: 12px;
             margin: 0 6px;
-            border-radius: 50%;
+            border-radius: 6px;
 
             &-active {
                 background: #5cc8f3;
                 /* 當前顏色 */
-                width: 16px;
-                height: 16px;
+                width: 24px;
+                height: 12px;
             }
         }
-
-
-
     }
-
 }
 
 .news-content {
@@ -83,7 +77,6 @@
             padding-left: 80px;
             position: relative;
 
-
             &::before {
                 content: "";
                 background-image: url('../images/news/newsde1.svg');
@@ -95,7 +88,6 @@
                 height: 80px;
                 top: 8px;
                 left: 0;
-
             }
         }
 
@@ -108,7 +100,6 @@
                 border-radius: 5px;
                 text-align: center;
             }
-
         }
 
         .news-CardWarp {
@@ -124,8 +115,6 @@
                 flex-direction: column;
                 width: 100%;
             }
-
-
 
             .news-Card {
                 display: block;
@@ -155,7 +144,6 @@
                         flex-direction: column;
                     }
 
-
                     .news-labledate {
                         display: flex;
                         justify-content: space-between;
@@ -170,7 +158,6 @@
                             padding: 1px 10px;
                             margin-right: 4px;
                         }
-
                     }
 
                     .news-cardTitle {
@@ -184,8 +171,6 @@
                         }
                     }
                 }
-
-
 
                 .news-img {
                     width: 100%;
@@ -215,7 +200,6 @@
             margin: 0;
         }
 
-
         h2 {
             font-size: 1.5rem;
             font-weight: 700;
@@ -230,7 +214,6 @@
             margin: 10px 0;
         }
 
-
         .imgwrap {
             @media (max-width: 650px) {
 
@@ -240,5 +223,4 @@
             }
         }
     }
-
 }
