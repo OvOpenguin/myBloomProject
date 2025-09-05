@@ -23,7 +23,7 @@ h2 {
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: all .7s ease;
+        transition: all 1s ease;
 
         img {
             width: 100%;
@@ -54,7 +54,7 @@ h2 {
 
         // 中間的圖片正常顯示
         &.swiper-slide-active {
-            transform: scale(1.1);
+            // transform: scale(1.1);
             opacity: 1;
         }
 

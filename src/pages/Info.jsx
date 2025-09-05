@@ -141,7 +141,7 @@ const Info = () => {
               slidesPerView: 1, spaceBetween: 10
             },
             640: {     // 平板
-              slidesPerView: 1, spaceBetween: 20
+              slidesPerView: 2, spaceBetween: 20
             },
             820: {     // 平板
               slidesPerView: 2, spaceBetween: 30
