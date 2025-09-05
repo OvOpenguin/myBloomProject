@@ -66,23 +66,23 @@ function MapIframe() {
 
 const Info = () => {
   const foodSlides = [
-  { img: foodptopink, text: "美食 1" },
-  { img: foodptopink, text: "美食 2" },
-  { img: foodptopink, text: "美食 3" },
-  { img: foodptopink, text: "美食 4" },
-];
+    { img: foodptopink, text: "美食 1" },
+    { img: foodptopink, text: "美食 2" },
+    { img: foodptopink, text: "美食 3" },
+    { img: foodptopink, text: "美食 4" },
+  ];
 
-const nearbySlides = [
-  { img: attptoblu, text: "景點 A" },
-  { img: attptoblu, text: "景點 B" },
-  { img: attptoblu, text: "景點 C" },
-  { img: attptoblu, text: "景點 D" },
-];
+  const nearbySlides = [
+    { img: attptoblu, text: "景點 A" },
+    { img: attptoblu, text: "景點 B" },
+    { img: attptoblu, text: "景點 C" },
+    { img: attptoblu, text: "景點 D" },
+  ];
 
   const foodPrevRef = useRef(null);
-const foodNextRef = useRef(null);
-const nearbyPrevRef = useRef(null);
-const nearbyNextRef = useRef(null);
+  const foodNextRef = useRef(null);
+  const nearbyPrevRef = useRef(null);
+  const nearbyNextRef = useRef(null);
 
   const [activeIndex, setActiveIndex] = useState(0);
   const tabRefs = useRef([]);
@@ -136,9 +136,28 @@ const nearbyNextRef = useRef(null);
         </div>
 
         <Swiper
-          slidesPerView={3}
+          breakpoints={{
+            0: {       // 手機螢幕
+              slidesPerView: 1, spaceBetween: 10
+            },
+            640: {     // 平板
+              slidesPerView: 1, spaceBetween: 20
+            },
+            820: {     // 平板
+              slidesPerView: 2, spaceBetween: 30
+            },
+            1024: {    // 桌機
+              slidesPerView: 3, spaceBetween: 30
+            },
+            1440: {    // 桌機
+              slidesPerView: 3, spaceBetween: 30
+            },
+            1920: {    // 桌機
+              slidesPerView: 3, spaceBetween: 30
+            }
+            
+          }}
           centeredSlides={true}
-          spaceBetween={30}
           pagination={{ type: "bullets", clickable: true }}
           loop={true}
           navigation={{
@@ -163,7 +182,7 @@ const nearbyNextRef = useRef(null);
           <IoIosArrowDropright size={50} />
         </div>
       </div>
-      
+
       {/* Info wrapper */}
       <div className="info-wrapper">
         <div className="info-basic">
@@ -583,76 +602,76 @@ const nearbyNextRef = useRef(null);
               </div>
             </div>
           )}
-{activeIndex === 2 && (
-  <div className="surrounding-content">
+          {activeIndex === 2 && (
+            <div className="surrounding-content">
 
-    {/* 美食小點區塊 */}
-<div className="surrounding-section food-section">
-  <h3 className="section-title">美食小點</h3>
-  <div style={{ height: "5vh" }}></div>
+              {/* 美食小點區塊 */}
+              <div className="surrounding-section food-section">
+                <h3 className="section-title">美食小點</h3>
+                <div style={{ height: "5vh" }}></div>
 
-  <div className="swiper-wrapper-relative">
-    <Swiper
-      slidesPerView={4}
-      spaceBetween={0}
-      loop={true}
-      navigation={{
-        prevEl: ".food-prev",
-        nextEl: ".food-next",
-      }}
-      modules={[Navigation, Pagination]}
-      className="food-swiper"
-    >
-      {[foodptopink, foodptopink, foodptopink, foodptopink,foodptopink].map((img, idx) => (
-        <SwiperSlide key={idx}>
-          <img src={img} alt={`Food ${idx + 1}`} />
-        </SwiperSlide>
-      ))}
-    </Swiper>
+                <div className="swiper-wrapper-relative">
+                  <Swiper
+                    slidesPerView={4}
+                    spaceBetween={0}
+                    loop={true}
+                    navigation={{
+                      prevEl: ".food-prev",
+                      nextEl: ".food-next",
+                    }}
+                    modules={[Navigation, Pagination]}
+                    className="food-swiper"
+                  >
+                    {[foodptopink, foodptopink, foodptopink, foodptopink, foodptopink].map((img, idx) => (
+                      <SwiperSlide key={idx}>
+                        <img src={img} alt={`Food ${idx + 1}`} />
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
 
-    {/* 美食小點箭頭 */}
-    <img src={arrowlf} alt="prev" className="arrow food-prev" />
-    <img src={arrowri} alt="next" className="arrow food-next" />
-  </div>
-</div>
+                  {/* 美食小點箭頭 */}
+                  <img src={arrowlf} alt="prev" className="arrow food-prev" />
+                  <img src={arrowri} alt="next" className="arrow food-next" />
+                </div>
+              </div>
 
 
-    {/* 附近景點區塊 */}
-<div className="surrounding-section nearby-section">
-  <h3 className="section-title">附近景點</h3>
-  <div style={{ height: "5vh" }}></div>
+              {/* 附近景點區塊 */}
+              <div className="surrounding-section nearby-section">
+                <h3 className="section-title">附近景點</h3>
+                <div style={{ height: "5vh" }}></div>
 
-  <div className="swiper-wrapper-relative">
-    <Swiper
-      slidesPerView={4}
-      spaceBetween={20}
-      loop={true}
-      navigation={{
-        prevEl: ".nearby-prev",
-        nextEl: ".nearby-next",
-      }}
-      modules={[Navigation, Pagination]}
-      onBeforeInit={(swiper) => {
-        swiper.params.navigation.prevEl = ".nearby-prev";
-        swiper.params.navigation.nextEl = ".nearby-next";
-      }}
-      className="nearby-swiper"
-    >
-      {[attptoblu, attptoblu, attptoblu, attptoblu,attptoblu].map((img, idx) => (
-        <SwiperSlide key={idx}>
-          <img src={img} alt={`Spot ${idx + 1}`} />
-        </SwiperSlide>
-      ))}
-    </Swiper>
+                <div className="swiper-wrapper-relative">
+                  <Swiper
+                    slidesPerView={4}
+                    spaceBetween={20}
+                    loop={true}
+                    navigation={{
+                      prevEl: ".nearby-prev",
+                      nextEl: ".nearby-next",
+                    }}
+                    modules={[Navigation, Pagination]}
+                    onBeforeInit={(swiper) => {
+                      swiper.params.navigation.prevEl = ".nearby-prev";
+                      swiper.params.navigation.nextEl = ".nearby-next";
+                    }}
+                    className="nearby-swiper"
+                  >
+                    {[attptoblu, attptoblu, attptoblu, attptoblu, attptoblu].map((img, idx) => (
+                      <SwiperSlide key={idx}>
+                        <img src={img} alt={`Spot ${idx + 1}`} />
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
 
-    {/* 附近景點箭頭 */}
-    <img src={arrowlf} alt="prev" className="arrow nearby-prev" />
-    <img src={arrowri} alt="next" className="arrow nearby-next" />
-  </div>
-</div>
+                  {/* 附近景點箭頭 */}
+                  <img src={arrowlf} alt="prev" className="arrow nearby-prev" />
+                  <img src={arrowri} alt="next" className="arrow nearby-next" />
+                </div>
+              </div>
 
-  </div>
-)}
+            </div>
+          )}
 
 
         </div>

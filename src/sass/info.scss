@@ -8,113 +8,121 @@ h2 {
     // padding-top: 10px;
     color: #64503C;
 }
-.info-banner {
-  position: relative;
-  width: 100%;
-  height: 50vh;            // 🔹 讓 Banner 滿版
-  display: flex;
-  justify-content: center;  // 水平置中
-  align-items: center;      // 垂直置中
-  margin-bottom: 50px;
-.swiper-slide {
-    position: relative; // 讓偽元素參考這個範圍
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 10px;
-      display: block;
+.info-banner {
+    position: relative;
+    width: 100%;
+    height: 50vh; // 🔹 讓 Banner 滿版
+    display: flex;
+    justify-content: center; // 水平置中
+    align-items: center; // 垂直置中
+    margin-bottom: 50px;
+
+    .swiper-slide {
+        position: relative; // 讓偽元素參考這個範圍
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all .7s ease;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            display: block;
+        }
+
+        // 左右圖片加綠色遮罩
+        &.swiper-slide-prev,
+        &.swiper-slide-next {
+            transform: scale(0.8);
+            opacity: 0.8;
+
+            &::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: #D6F6DC;
+                opacity: 0.3;
+
+                /* 用 path 當裁切形狀 */
+                clip-path: path("M3.90165 50.1623L0 146.104C0 146.104 4.38935 232.305 4.38935 255.195C4.38935 263.474 4.38935 271.997 4.38935 280.276C4.38935 282.711 3.90165 294.399 3.90165 294.399L128.023 297.078L228.978 300L394.066 291.964L397.236 192.857C397.236 192.857 396.505 85.2273 398.7 75.2435C401.138 64.2857 394.066 3.16558 394.066 3.16558C394.066 3.16558 340.175 0.73052 324.081 0.73052C277.748 0.73052 231.173 0.73052 184.841 0.73052C146.312 0.73052 107.783 0.73052 69.2542 0.73052C59.9878 0.73052 8.77871 0 8.77871 0L3.90165 50.1623Z");
+                z-index: 1;
+            }
+        }
+
+        // 中間的圖片正常顯示
+        &.swiper-slide-active {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+
     }
 
-    // 左右圖片加綠色遮罩
-   &.swiper-slide-prev,
-&.swiper-slide-next {
-  transform: scale(0.8);
-  opacity: 0.8;
+    .banner-mask {
+        position: absolute;
+        inset: 0; // top/right/bottom/left = 0
+        overflow: hidden;
+        z-index: 0;
 
-  &::after {
-     content: "";
-  position: absolute;
-  inset: 0;
-  background: #D6F6DC;
-  opacity: 0.3;
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; // 🔹 填滿區塊
+            transform: translate(-50%, -50%);
+        }
+    }
 
-  /* 用 path 當裁切形狀 */
-  clip-path: path("M3.90165 50.1623L0 146.104C0 146.104 4.38935 232.305 4.38935 255.195C4.38935 263.474 4.38935 271.997 4.38935 280.276C4.38935 282.711 3.90165 294.399 3.90165 294.399L128.023 297.078L228.978 300L394.066 291.964L397.236 192.857C397.236 192.857 396.505 85.2273 398.7 75.2435C401.138 64.2857 394.066 3.16558 394.066 3.16558C394.066 3.16558 340.175 0.73052 324.081 0.73052C277.748 0.73052 231.173 0.73052 184.841 0.73052C146.312 0.73052 107.783 0.73052 69.2542 0.73052C59.9878 0.73052 8.77871 0 8.77871 0L3.90165 50.1623Z");
-  z-index: 1;
-  }
+    .swiper {
+        width: 100%; // 依需求調整
+        max-width: 1200px;
+        height: auto; // Banner 高度
+        z-index: 1; // 在背景圖上面
+    }
+
+
+    .swiper-pagination {
+        bottom: 20px; // 調整這個數值，越大越往下
+
+        .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            background-color: #ffffff;
+            opacity: 0.7;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: #69C9A0; // 選中顏色
+            opacity: 1;
+        }
+    }
+
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
 }
 
-    // 中間的圖片正常顯示
-    &.swiper-slide-active {
-      transform: scale(1.2);
-      opacity: 1;
-    }
-  
-  }
-  .banner-mask {
+
+.custom-prev,
+.custom-next {
     position: absolute;
-    inset: 0;               // top/right/bottom/left = 0
-    overflow: hidden;
-    z-index: 0;
-
-    img {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;     // 🔹 填滿區塊
-      transform: translate(-50%, -50%);
-    }
-  }
-
-  .swiper {
-    width: 100%;             // 依需求調整
-    max-width: 1200px;
-    height: auto;          // Banner 高度
-    z-index: 1;             // 在背景圖上面
-  }
-
-
-.swiper-pagination{
-bottom: 20px; // 調整這個數值，越大越往下
-     .swiper-pagination-bullet {
-      width: 12px;
-      height: 12px;
-      background-color: #ffffff;
-      opacity: 0.7;
-    }
-     .swiper-pagination-bullet-active {
-      background-color: #69C9A0; // 選中顏色
-      opacity: 1;
-  }}
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-     z-index: 1;
-
-    img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-  }
-
-  
- .custom-prev,
-  .custom-next {
-    position: absolute;
-    top: 50%;                 // 垂直置中
+    top: 50%; // 垂直置中
     transform: translateY(-50%);
     z-index: 20;
     cursor: pointer;
@@ -124,21 +132,22 @@ bottom: 20px; // 調整這個數值，越大越往下
     border-radius: 50%;
     background-color: #fff;
     color: #64503C;
-     z-index: 2;
-  }
+    z-index: 2;
+}
 
-  .custom-prev {
-    left:36%;    // 🔹 左邊距可以用 % 或 px 調整
-  }
+.custom-prev {
+    left: 36%; // 🔹 左邊距可以用 % 或 px 調整
+}
 
-  .custom-next {
-    right: 36%;   // 🔹 右邊距
-  }
+.custom-next {
+    right: 36%; // 🔹 右邊距
+}
+
 .custom-prev:hover,
 .custom-next:hover {
-  transform: translateY(-50%) scale(1.1); // 放大一點
-  background-color: #64503C;
-  color: #ffffff; // 箭頭顏色改變
+    transform: translateY(-50%) scale(1.1); // 放大一點
+    background-color: #64503C;
+    color: #ffffff; // 箭頭顏色改變
 }
 
 .info-wrapper {
@@ -356,29 +365,40 @@ bottom: 20px; // 調整這個數值，越大越往下
     display: flex;
     gap: 5%; // 左右欄位間距
 }
+
 .swiper-wrapper-relative {
-  position: relative;
-  width: 100%;
-  overflow: visible; // 允許箭頭超出
+    position: relative;
+    width: 100%;
+    overflow: visible; // 允許箭頭超出
 }
 
 .arrow {
-  position: absolute;
-  top: 50%; // 垂直置中
-  transform: translateY(-50%);
-  width: 50px;
-  height: 50px;
-  z-index: 1000;
-  cursor: pointer;
+    position: absolute;
+    top: 50%; // 垂直置中
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    z-index: 1000;
+    cursor: pointer;
 }
 
 /* 美食小點箭頭 */
-.food-prev { left: -25px; }
-.food-next { right: -25px; }
+.food-prev {
+    left: -25px;
+}
+
+.food-next {
+    right: -25px;
+}
 
 /* 附近景點箭頭 */
-.nearby-prev { left: -25px; }
-.nearby-next { right: -25px; }
+.nearby-prev {
+    left: -25px;
+}
+
+.nearby-next {
+    right: -25px;
+}
 
 
 // /* 左箭頭 */
@@ -395,78 +415,89 @@ bottom: 20px; // 調整這個數值，越大越往下
 
 /* ------------------ 美食小點 Swiper ------------------ */
 .food-swiper {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto 50px;
-  .swiper {
     width: 100%;
-    height: 250px; // 可依需求調整
-  }
-  .swiper-slide {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    img {
-      width: 250px;  // 可依需求調整
-      height: 250px;
-      object-fit: cover;
-      border-radius: 10px;
-      filter: brightness(0.8);
+    max-width: 1200px;
+    margin: 0 auto 50px;
+
+    .swiper {
+        width: 100%;
+        height: 250px; // 可依需求調整
     }
-  }
-  .swiper-pagination {
-    bottom: 10px;
-    .swiper-pagination-bullet {
-      width: 10px;
-      height: 10px;
-      background-color: #ccc;
-      opacity: 0.7;
+
+    .swiper-slide {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 250px; // 可依需求調整
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            filter: brightness(0.8);
+        }
     }
-    .swiper-pagination-bullet-active {
-      background-color: #69C9A0;
-      opacity: 1;
+
+    .swiper-pagination {
+        bottom: 10px;
+
+        .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            background-color: #ccc;
+            opacity: 0.7;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: #69C9A0;
+            opacity: 1;
+        }
     }
-  }
-  
+
 }
 
 /* ------------------ 附近景點 Swiper ------------------ */
 .nearby-swiper {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto 50px;
-  .swiper {
     width: 100%;
-    height: 250px; // 可依需求調整
-  }
-  .swiper-slide {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    img {
-      width: 200px;  // 可依需求調整
-      height: 280px;
-      object-fit: cover;
-      border-radius: 10px;
-      filter: brightness(0.8);
+    max-width: 1200px;
+    margin: 0 auto 50px;
+
+    .swiper {
+        width: 100%;
+        height: 250px; // 可依需求調整
     }
-  }
-  
-  .swiper-pagination {
-    bottom: 10px;
-    .swiper-pagination-bullet {
-      width: 10px;
-      height: 10px;
-      background-color: #ccc;
-      opacity: 0.7;
+
+    .swiper-slide {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 200px; // 可依需求調整
+            height: 280px;
+            object-fit: cover;
+            border-radius: 10px;
+            filter: brightness(0.8);
+        }
     }
-    .swiper-pagination-bullet-active {
-      background-color: #69C9A0;
-      opacity: 1;
+
+    .swiper-pagination {
+        bottom: 10px;
+
+        .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            background-color: #ccc;
+            opacity: 0.7;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: #69C9A0;
+            opacity: 1;
+        }
     }
-  }
 }
 
 
@@ -638,7 +669,7 @@ bottom: 20px; // 調整這個數值，越大越往下
             stroke-dasharray: 200;
             /* 先大概設值，可以用 path 長度 */
             stroke-dashoffset: 200;
-            
+
             /* 初始隱藏 */
             animation: draw-line 12s linear infinite;
             /* 手繪濾鏡效果 */
@@ -647,20 +678,24 @@ bottom: 20px; // 調整這個數值，越大越往下
             /* x向右 20px, y向下 10px */
         }
 
-@keyframes draw-line {
-  0% {
-    stroke-dashoffset: 500; // 初始完全隱藏
-  }
-  40% {
-    stroke-dashoffset: 0;   // 一次完整畫出
-  }
-  80% {
-    stroke-dashoffset: 0;   // 停留
-  }
-  100% {
-    stroke-dashoffset: 500; // 消失
-  }
-}
+        @keyframes draw-line {
+            0% {
+                stroke-dashoffset: 500; // 初始完全隱藏
+            }
+
+            40% {
+                stroke-dashoffset: 0; // 一次完整畫出
+            }
+
+            80% {
+                stroke-dashoffset: 0; // 停留
+            }
+
+            100% {
+                stroke-dashoffset: 500; // 消失
+            }
+        }
+
         .floral-line-right {
             position: absolute;
             top: 50%;
@@ -965,7 +1000,7 @@ bottom: 20px; // 調整這個數值，越大越往下
 
         .contact-line-2 {
             position: absolute;
-            top:5vh; // Point 上方
+            top: 5vh; // Point 上方
             right: 15%; // 可以自由調整右邊距
 
             .draw-line {
