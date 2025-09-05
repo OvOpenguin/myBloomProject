@@ -362,7 +362,9 @@ const App = () => {
                             <div className="hv d8"><img src={hwde8} alt="" /></div>
                         </div>
                     </div>
-                    <button className="gotop" onClick={backtop}></button>
+                    <button className="gotop" onClick={backtop}>
+                        Top
+                    </button>
                 </section>
             </main >
         </>

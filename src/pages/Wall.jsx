@@ -304,7 +304,7 @@ const Wall = () => {
           <img src={abotton} alt="" />
         </a>
         
-        <button className="gotop" onClick={backtop}></button>
+        <button className="gotop" onClick={backtop}>Top</button>
 
       </section>
 
