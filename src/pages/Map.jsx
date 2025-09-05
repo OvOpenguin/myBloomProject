@@ -224,6 +224,7 @@ const Mapcard = ({ item, onClick }) => (
 );
 
 const Map = () => {
+
   const [selectedlocation, setSelectedLocation] = useState("");
   const oplocation = ["臺北市", "新北市", "基隆市", "桃園市", "新竹市", "新竹縣", "宜蘭縣"];
   const [selectmonth, setSelectMonth] = useState("");
@@ -234,7 +235,7 @@ const Map = () => {
   const [activeId, setActiveId] = useState(null); // 目前選中的活動 ID
   const markerRefs = useRef({}); // 存放 marker 的 ref
 
-  // 篩選活動
+  // 選單篩選
   const filtered = FlowerEvent.filter((item) => {
     return (
       (selectmonth === "" || item.month === selectmonth) &&
@@ -244,17 +245,17 @@ const Map = () => {
   });
 
   // 當點擊卡片 → zoom 到該 marker & 打開 popup
-  const FlyToMarker = ({ lat, lng, id }) => {
-    const map = useMap();
-    if (lat && lng && id) {
-      map.flyTo([lat, lng], 12, { duration: 1.5 });
-      // 延遲一點打開 popup
-      setTimeout(() => {
-        markerRefs.current[id]?.openPopup();
-      }, 800);
-    }
-    return null;
-  };
+  // const FlyToMarker = ({ lat, lng, id }) => {
+  //   const map = useMap();
+  //   if (lat && lng && id) {
+  //     map.flyTo([lat, lng], 12, { duration: 1.5 });
+  //     // 延遲一點打開 popup
+  //     setTimeout(() => {
+  //       markerRefs.current[id]?.openPopup();
+  //     }, 800);
+  //   }
+  //   return null;
+  // };
 
   const activeItem = FlowerEvent.find((f) => f.id === activeId);
 
@@ -312,7 +313,7 @@ const Map = () => {
               ))}
             </div>
           </div>
-          {/*選擇器  */}
+          {/* 選擇器 */}
           <div className="map-select">
             <select value={selectmonth} onChange={(e) => setSelectMonth(e.target.value)}>
               <option value="">月份</option>
@@ -335,57 +336,36 @@ const Map = () => {
           </div>
         </div>
 
-
-
         {/* 地圖 */}
         <div className="map-map">
-          <MapContainer className="leafmap" center={[23.7, 120.9]} zoom={7}>
-            <TileLayer
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              attribution="&copy; OpenStreetMap contributors"
-            />
-            {filtered.map((item) => (
-              <Marker
-                key={item.id}
-                position={[item.lat, item.lng]}
-                ref={(ref) => { markerRefs.current[item.id] = ref; }}
-              >
-                <Popup>
-                  <div>
-                    <h3>{item.title}</h3>
-                    <p>{item.lable} | {item.date}</p>
-                    <img src={item.img} alt={item.title} width="150" />
-                  </div>
-                </Popup>
-              </Marker>
-            ))}
+          <div className="padmap">
+            <MapContainer className="leafmap" center={[25.0, 121.53]} zoom={13}>
+              <TileLayer
+                url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              />
+              {filtered.map((item) => (
+                <Marker
+                  key={item.id}
+                  position={[item.lat, item.lng]}
+                  ref={(ref) => { markerRefs.current[item.id] = ref; }}
+                >
+                  <Popup>
+                    <div>
+                      <h3>{item.title}</h3>
+                      <p>{item.lable} | {item.date}</p>
+                      <img src={item.img} alt={item.title} width="150" />
+                    </div>
+                  </Popup>
+                </Marker>
+              ))}
 
-            {/* 飛到 & 打開 popup */}
-            {activeItem && <FlyToMarker lat={activeItem.lat} lng={activeItem.lng} id={activeItem.id} />}
-          </MapContainer>
+              {/* 飛到 & 打開 popup */}
+              {/* {activeItem && <FlyToMarker lat={activeItem.lat} lng={activeItem.lng} id={activeItem.id} />} */}
+            </MapContainer>
+          </div>
         </div>
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
       {/*右側活動欄位 */}
