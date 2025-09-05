@@ -36,6 +36,8 @@ import hwde8 from '../images/home/h-w-de8.svg'
 // 最新消息-裝飾花
 import hfw1 from '../images/home/homefwro1.svg'
 import hfw2 from '../images/home/homefwro2.svg'
+// swiper左右按鈕
+import arrow from "../images/home/home-arrow.svg"
 
 
 
@@ -240,8 +242,8 @@ const App = () => {
 
                         </Swiper>
                         {/* 自訂左右按鈕，不會被裁切 */}
-                        <button className="home-custom-prev">左鍵</button>
-                        <button className="home-custom-next">右鍵</button>
+                        <button className="home-custom-prev"><img src={arrow} alt="左鍵" /></button>
+                        <button className="home-custom-next"><img src={arrow} alt="右鍵" /></button>
                     </div>
 
 
