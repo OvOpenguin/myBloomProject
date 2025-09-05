@@ -2,26 +2,33 @@
 @use './variables/' as *;
 
 .wrapper {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) 3fr 8fr minmax(0, 2fr);
+  grid-template-rows: 10vh 50vh 15vh;
+  column-gap: 60px;
 
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 10vh 15vw 0 15vw;
-  gap: 20px;
+  .padding-top {
+    grid-column: 1 / span 4;
+  }
+
+  .padding-bottom {
+    grid-column: 1 / span 4;
+  }
 
   // 左側選單
   .left-sidebar {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 240px;
-    min-width: 200px;
+    max-width: 240px;
+    min-width: 130px;
     height: 400px;
 
     .sidebar-item {
-      width: 100%;
+      min-width: 200px;
 
       button {
+        // 按鈕原生樣式
         appearance: none;
         -webkit-appearance: none;
         background: none;
@@ -30,6 +37,7 @@
 
         cursor: pointer;
         width: 100%;
+        height: 64px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -44,15 +52,16 @@
         }
 
         .arrow-box {
+          display: block;
           position: relative;
-
-          .ard {
-            z-index: -1;
-          }
+          display: 1;
 
           .arh {
             display: none;
-            z-index: 1;
+          }
+
+          @media (max-width:1024px) {
+            display: none;
           }
         }
 
@@ -81,26 +90,23 @@
 
   // 右側面板
   .right-panel {
-    width: 70%;
-    // position: relative;
+    position: relative;
 
     // ------------ 共用標籤 ------------
     .tab {
       display: flex;
       justify-content: space-between;
-
-      @media (max-width:1200px) {
-        height: 78px;
-        ;
-      }
+      height: 77px;
+      overflow: hidden;
 
       img {
         display: inline-flex;
-        height: auto;
+        height: 78px;
         width: auto;
 
         @media (max-width:1024px) {
           display: none;
+
         }
       }
 
@@ -111,20 +117,26 @@
     }
 
     .content {
-      height: 50vh;
+      min-height: 500px;
+      height: 100%;
     }
 
     // 我的收藏
     .fav-wrap {
 
-      .content {
+      >.content {
         background: #d1ecff80;
-        padding: 50px 0 10% 10%;
+        padding: 50px 5% 0 5%;
 
         .map-cardWrap {
           display: flex;
           justify-content: flex-start;
           gap: 20px;
+
+          @media (max-width:1280px) {
+            flex-direction: column;
+            align-items: center;
+          }
 
           .map-card {
             // display: inline-block;
@@ -187,104 +199,120 @@
 
       .content {
         background: #ffe1d180;
-        padding: 50px 10% 10% 10%;
+        padding: 50px 5% 0 5%;
 
+        >div {
+          width: 100%;
+          height: fit-content;
 
-        .v-photos {
-          display: flex;
-          justify-content: flex-start;
-          gap: 20px;
-          overflow: scroll;
-          // margin-top: 20px;
-          padding-right: 10%;
-
-          @media (max-width:1024px) {
-            display: none;
-          }
-
-          .v-item {
-            height: 200px;
-            width: auto;
-            background-position: center;
+          .v-photos {
             display: flex;
-            position: relative;
-            border-radius: 8px;
-            overflow: hidden;
-            flex-shrink: 0;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            gap: 20px;
+            overflow: scroll;
+            padding-bottom: 20px;
 
-            .icon-heart {
-              position: absolute;
-              top: 14px;
-              right: 14px;
-              width: 30px;
-              cursor: pointer;
-              transition: transform 0.3s cubic-bezier(0.25, 1.25, 0.5, 1);
+            .v-item {
+              height: 200px;
+              width: fit-content;
+              background-position: center;
+              display: flex;
+              position: relative;
+              border-radius: 8px;
+              overflow: hidden;
+              flex-shrink: 0;
 
-              &:hover {
-                transform: scale(1.2);
+              .icon-heart {
+                position: absolute;
+                top: 14px;
+                right: 14px;
+                width: 30px;
+                cursor: pointer;
+                transition: transform 0.3s cubic-bezier(0.25, 1.25, 0.5, 1);
+
+                &:hover {
+                  transform: scale(1.2);
+                }
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  object-position: center;
+                  transition: .5s transform ease-out;
+                }
+              }
+
+              P {
+                color: #fff;
+                position: absolute;
+                bottom: 14px;
+                left: 14px;
+                font-weight: 600;
+              }
+
+              h3 {
+                color: #fff;
+                font-size: 1.25rem;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                transition: transform 0.3s ease;
+                cursor: pointer;
+
+                &:hover {
+                  transform: translate(-50%, -50%) scale(1.3);
+                }
               }
 
               img {
-                width: 100%;
                 height: 100%;
-                object-fit: cover;
-                object-position: center;
-                transition: .5s transform ease-out;
+                width: auto;
+                object-fit: contain;
               }
             }
 
-            P {
-              color: #fff;
-              position: absolute;
-              bottom: 14px;
-              left: 14px;
-              font-weight: 600;
-            }
+            &::-webkit-scrollbar {
+              background-color: #bae6ff;
+              width: 12px;
+              border-radius: 999px;
+              overflow-x: hidden;
+              overflow-y: auto;
 
-            h3 {
-              color: #fff;
-              font-size: 1.25rem;
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              transition: transform 0.3s ease;
-              cursor: pointer;
-
-              &:hover {
-                transform: translate(-50%, -50%) scale(1.3);
-              }
-            }
-
-            img {
-              height: 100%;
-              width: auto;
-              object-fit: contain;
-            }
-          }
-
-          &::-webkit-scrollbar {
-                background-color: #bae6ff;
-                width: 12px;
-                border-radius: 999px;
             }
 
             &::-webkit-scrollbar-thumb {
-                background-color: #FF8457;
-                border-radius: 999px;
+              background-color: #FF8457;
+              border-radius: 999px;
             }
+
+            @media(max-width:840px) {
+              flex-direction: column;
+              padding-bottom:0;
+              padding-right:20px;
+
+              .v-item {
+                height: 200px;
+                width: fit-content;
+
+              }
+            }
+
+          }
         }
 
         &::-webkit-scrollbar {
-                background-color: #bae6ff;
-                width: 12px;
-                border-radius: 999px;
-            }
+          background-color: #bae6ff;
+          width: 12px;
+          border-radius: 999px;
+        }
 
-            &::-webkit-scrollbar-thumb {
-                background-color: #FF8457;
-                border-radius: 999px;
-            }
+        &::-webkit-scrollbar-thumb {
+          background-color: #FF8457;
+          border-radius: 999px;
+        }
 
       }
 
@@ -295,7 +323,7 @@
 
       .content {
         background: #fff4c980;
-        padding: 50px 0 10% 10%;
+        padding: 50px 5% 0 5%;
         display: flex;
         align-items: flex-start;
 
@@ -340,7 +368,7 @@
 
       .content {
         background: #d5f6db80;
-        padding: 50px 0 10% 10%;
+        padding: 50px 5% 0 5%;
 
         .user-wrap {
           display: flex;

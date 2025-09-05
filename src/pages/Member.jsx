@@ -57,52 +57,7 @@ const Favorites = () => {
 }
 
 // 我的花牆
-
-// const Flowerwall = ({ count, img, heart }) => {
-//     const [likeCount, setLikeCount] = useState(count);
-//     const [liked, setLiked] = useState(false);
-
-//     const handleLike = () => {
-//         if (!liked) {
-//             setLikeCount(likeCount + 1);
-//             setLiked(true);
-//         } else {
-
-//             // 如果要允許取消讚，可以加這段
-//             setLikeCount(likeCount - 1);
-//             setLiked(false);
-//         }
-//     };
-
-//     return (
-//         <li className="v-item">
-//             <p>{likeCount}</p>
-//             <img src={img} alt="fw" />
-//             <div className="icon-heart" onClick={handleLike} style={{ cursor: "pointer" }}>
-//                 <img src={liked ? "./wall/wall-icon2.svg" : heart} alt="heart" />
-//             </div>
-//         </li>
-//     );
-// }
 const Wall = () => {
-
-//     const flowerwalls = [
-//     {
-//         id: 1,
-//         count: 999,
-//         img: flower01,
-//         heart: heart0,
-
-//     },
-//     {
-//         id: 2,
-//         count: 999,
-//         img: flower02,
-//         heart: heart0,
-
-//     },
-// ];
-
     return (
         <div className="wall-wrap">
             <div className="tab">
@@ -260,7 +215,7 @@ function SignIn({ onLogin }) {
                     <input type="text" className="userid" placeholder="請輸入密碼"
                         // onChange={(e) => setUsername(e.target.value)} // 更新狀態
                         required
-                        autoFocus />
+                         />
                 </div>
 
                 {/* 登入 */}
@@ -323,6 +278,8 @@ export default function MemberCenter() {
     // 登入 => 渲染會員中心介面
     return (
         <section className="wrapper">
+            <div className="padding-top"></div>
+            <div className="padding-left"></div>
             {/* 左側選單 */}
             <div className="left-sidebar">
                 {TABS.map((t) => (
@@ -340,6 +297,9 @@ export default function MemberCenter() {
             <div className="right-panel">
                 {activeTab?.view}
             </div>
+
+            <div className="padding-right"></div>
+            <div className="padding-bottom"></div>
 
         </section>
     );
