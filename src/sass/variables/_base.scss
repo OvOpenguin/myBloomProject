@@ -66,7 +66,7 @@ button {
     font-size: inherit;
     font-family: inherit;
 
-    // 地圖搜尋按鈕
+    // 首頁-地圖搜尋按鈕
     &.h-btn-map {
         width: 10rem;
         height: auto;
@@ -125,28 +125,27 @@ button {
             line-height: 1.6;
             text-align: center;
             letter-spacing: 2px;
-
         }
-    }
 
-    &:hover {
-        .circle {
-            width: 100%;
+        &:hover {
+            .circle {
+                width: 100%;
 
-            .icon {
-                &.arrow {
-                    background: #fff;
-                    transform: translate(1rem, 0);
+                .icon {
+                    &.arrow {
+                        background: #fff;
+                        transform: translate(1rem, 0);
+                    }
                 }
             }
-        }
 
-        .btn-text {
-            color: #fff;
+            .btn-text {
+                color: #fff;
+            }
         }
     }
 
-    // 更多消息按鈕
+    // 首頁-更多消息按鈕
     &.h-btn-news {
         width: 10rem;
         height: auto;
@@ -206,31 +205,33 @@ button {
             letter-spacing: 2px;
 
         }
-    }
 
-    &:hover {
-        .circle {
-            width: 100%;
+        &:hover {
+            .circle {
+                width: 100%;
 
-            .icon {
-                &.arrow {
-                    background: #fff;
-                    transform: translate(1rem, 0);
+                .icon {
+                    &.arrow {
+                        background: #fff;
+                        transform: translate(1rem, 0);
+                    }
                 }
             }
-        }
 
-        .btn-text {
-            color: #fff;
+            .btn-text {
+                color: #fff;
+            }
         }
     }
 
-    // 花牆按鈕
+    // 首頁-花牆按鈕
     &.h-btn-wall {
         width: 10rem;
         height: auto;
         display: flex;
         justify-self: flex-end;
+        margin-right: 20%;
+        margin-bottom: -4%;
 
         .circle {
             transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
@@ -287,24 +288,194 @@ button {
             letter-spacing: 2px;
 
         }
+
+        &:hover {
+            .circle {
+                width: 100%;
+
+                .icon {
+                    &.arrow {
+                        background: #fff;
+                        transform: translate(1rem, 0);
+                    }
+                }
+            }
+
+            .btn-text {
+                color: #fff;
+            }
+        }
     }
 
-    &:hover {
+    // gotop按鈕
+    &.gotop {
+        width: 10rem;
+        height: auto;
+        // margin-top: 30px;
+        transform: rotate(-90deg);
+        display: flex;
+        justify-self: flex-end;
+        z-index: 2;
+
         .circle {
-            width: 100%;
+            transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
+            position: relative;
+            display: block;
+            margin: 0;
+            width: 3rem;
+            height: 3rem;
+            background: #FF8457;
+            border-radius: 99px;
 
             .icon {
+                transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                background: #fff;
+
                 &.arrow {
-                    background: #fff;
-                    transform: translate(1rem, 0);
+                    transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
+                    left: 0.625rem;
+                    width: 1.125rem;
+                    height: 0.125rem;
+                    background: none;
+
+                    &::before {
+                        position: absolute;
+                        content: '';
+                        top: -0.25rem;
+                        right: 0.0625rem;
+                        width: 0.625rem;
+                        height: 0.625rem;
+                        border-top: 0.125rem solid #fff;
+                        border-right: 0.125rem solid #fff;
+                        transform: rotate(45deg);
+                    }
+                }
+            }
+
+        }
+
+        .btn-text {
+            transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 50px;
+            padding: 12px;
+            margin-left: 24px;
+            color: #64503C;
+            font-weight: 400;
+            line-height: 1.6;
+            text-align: center;
+            letter-spacing: 2px;
+            transform: rotate(90deg);
+        }
+
+
+        &:hover {
+            .circle {
+                width: 4rem;
+
+                .icon {
+                    &.arrow {
+                        background: #fff;
+                        transform: translate(1rem, 0);
+                    }
+                }
+            }
+
+            .btn-text {
+                opacity: 0;
+
+            }
+
+        }
+    }
+
+    // 花牆-投票按鈕
+    &.w-btn-vote {
+        width: 10rem;
+        height: auto;
+        margin: 20px 0;
+
+        .circle {
+            transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
+            position: relative;
+            display: block;
+            margin: 0;
+            width: 3rem;
+            height: 3rem;
+            background: #F47EDE;
+            border-radius: 99px;
+
+            .icon {
+                transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                background: #fff;
+
+                &.arrow {
+                    transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
+                    left: 0.625rem;
+                    width: 1.125rem;
+                    height: 0.125rem;
+                    background: none;
+
+                    &::before {
+                        position: absolute;
+                        content: '';
+                        top: -0.25rem;
+                        right: 0.0625rem;
+                        width: 0.625rem;
+                        height: 0.625rem;
+                        border-top: 0.125rem solid #fff;
+                        border-right: 0.125rem solid #fff;
+                        transform: rotate(45deg);
+                    }
                 }
             }
         }
 
         .btn-text {
-            color: #fff;
+            transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
+            position: absolute;
+            top: 0px;
+            left: 0;
+            right: 0;
+            padding: 12px;
+            margin-left: 24px;
+            color: #64503C;
+            font-weight: 400;
+            line-height: 1.6;
+            text-align: center;
+            letter-spacing: 2px;
+
+        }
+
+        &:hover {
+            .circle {
+                width: 100%;
+
+                .icon {
+                    &.arrow {
+                        background: #fff;
+                        transform: translate(1rem, 0);
+                    }
+                }
+            }
+
+            .btn-text {
+                color: #fff;
+            }
         }
     }
+
+
 
 
 }

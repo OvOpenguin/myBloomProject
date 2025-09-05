@@ -27,14 +27,14 @@ const Wall = () => {
       count: 999,
       img: flower01,
       heart: heart0,
-    
+
     },
     {
       id: 2,
       count: 999,
       img: flower02,
       heart: heart0,
-  
+
     },
     {
       id: 3,
@@ -93,20 +93,6 @@ const Wall = () => {
   const fws = [...flowerwalls, { id: "special", type: "special" }, ...flowerwalls]
   const fws2 = [...flowerwalls2, { id: "special2", type: "special2" }, ...flowerwalls2]
 
-  // 花牆照片元件
-  /*
-  const Flowerwall = ({ count, img, heart }) => {
-    return (
-      <li className="v-item">
-        <p>{count}</p>
-        <img src={img} alt="fw" />
-        <div className="icon-heart">
-          <img src={heart} alt="heart" />
-        </div>
-      </li>
-    )
-  };*/
-
   // 文章物件
   const articles = [
     {
@@ -163,6 +149,7 @@ const Wall = () => {
   const listRef1 = useRef(null);
   const listRef2 = useRef(null);
 
+  // 計算輪播長度
   useEffect(() => {
     const ul1 = listRef1.current;
     const ul2 = listRef2.current;
@@ -187,7 +174,7 @@ const Wall = () => {
   }, []);
 
   // 點愛心
-  const Flowerwall = ({ count, img, heart}) => {
+  const Flowerwall = ({ count, img, heart }) => {
     const [likeCount, setLikeCount] = useState(count);
     const [liked, setLiked] = useState(false);
 
@@ -196,8 +183,7 @@ const Wall = () => {
         setLikeCount(likeCount + 1);
         setLiked(true);
       } else {
-        // 如果要允許取消讚，可以加這段
-        setLikeCount(likeCount - 1);
+        setLikeCount(likeCount - 1); //取消讚-1
         setLiked(false);
       }
     };
@@ -213,7 +199,7 @@ const Wall = () => {
     );
   };
 
-  // 前往投票轉場
+  // 前往投票
   const voteRef = useRef(null);
   function gotvote() {
     window.scrollTo({
@@ -225,9 +211,9 @@ const Wall = () => {
 
 
   // 回到最上層
-  function backtop (){
+  function backtop() {
     window.scrollTo({
-      top:0,
+      top: 0,
       behavior: "smooth"
     })
   }
@@ -242,7 +228,12 @@ const Wall = () => {
           <p>
             我們正在尋找北區最耀眼的花卉明星！你的一票至關重要。登入會員，每人一票，用你的選擇為它加冕。
           </p>
-          <button onClick={gotvote}>前往投票</button>
+          <button className="w-btn-vote" onClick={gotvote}>
+            <span className="circle">
+              <span className="icon arrow"></span>
+            </span>
+            <span className="btn-text">前往投票</span>
+          </button>
         </div>
 
         <div className="wall-c-photo">
@@ -303,8 +294,14 @@ const Wall = () => {
           <p>前往投票</p>
           <img src={abotton} alt="" />
         </a>
-        
-        <button className="gotop" onClick={backtop}></button>
+
+        {/* <button className="gotop" onClick={backtop}></button> */}
+        <button className="gotop" onClick={backtop}>
+          <span className="circle">
+            <span className="icon arrow"></span>
+          </span>
+          <span className="btn-text">TOP</span>
+        </button>
 
       </section>
 

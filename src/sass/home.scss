@@ -583,18 +583,18 @@
 
 
         .f1 {
-            background-image: url('../images/home/首頁-近期活動-圖片底色-藍.svg');
+          //  background-image: url('../images/home/首頁-近期活動-圖片底色-藍.svg');
 
             &:hover {
-                transform: rotate(10deg) scale(1.1);
+              //  transform: rotate(10deg) scale(1.1);
             }
         }
 
         .f2 {
-            background-image: url('../images/home/首頁-近期活動-圖片底色-綠.svg');
+           // background-image: url('../images/home/首頁-近期活動-圖片底色-綠.svg');
 
             &:hover {
-                transform: rotate(-10deg) scale(1.1);
+              //  transform: rotate(-10deg) scale(1.1);
             }
         }
 
@@ -605,9 +605,6 @@
             cursor: default;
         }
     }
-
-
-
 }
 
 
@@ -619,15 +616,10 @@
     align-items: center;
     padding: 50px 100px;
     gap: 50px;
-    //flex-wrap: wrap;
 
     @media (max-width:1000px) {
         flex-direction: column;
     }
-
-    // @media (max-width:820px) {
-    //     flex-direction: column;
-    // }
 
     @media (max-width:640px) {
         gap: 30px;
@@ -933,6 +925,7 @@
 
     }
 
+    /*
     .gotop {
         position: absolute;
         bottom: -20px;
@@ -943,5 +936,5 @@
         background-color: $HsinchuCity-orange;
         border: none;
 
-    }
+    }*/
 }
