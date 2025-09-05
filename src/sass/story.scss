@@ -224,6 +224,12 @@
             right: -120%;
             animation: circle 60s linear infinite;
             z-index: -1;
+
+            @media (max-width:960px) {
+                width: 250%;
+                left: -75%;
+                top: 10%;
+            }
         }
     }
 }
