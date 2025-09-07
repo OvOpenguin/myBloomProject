@@ -71,6 +71,10 @@
     .playExplain {
         position: relative;
 
+        @media (max-width:1024px) {
+            padding: 0 20px;
+    }
+
 
         .pButterfly {
             position: absolute;
@@ -95,7 +99,6 @@
             0% {
                 stroke-dashoffset: 500; // 初始完全隱藏
             }
-
             100% {
                 stroke-dashoffset: 0; // 消失
             }
@@ -245,6 +248,7 @@
                 height: 50%;
                 bottom: 0px;
                 left: -50px;
+                transform: rotate(-10deg);
             }
 
 

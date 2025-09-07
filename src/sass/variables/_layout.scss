@@ -18,7 +18,7 @@ header {
         background-color: transparent;
         border: none;
 
-        @media (min-width:830px) {
+        @media (min-width:831px) {
             display: none;
         }
 
@@ -60,7 +60,6 @@ header {
         padding: 20px 20px;
 
 
-
         @media (max-width:830px) {
             position: fixed;
             z-index: 4;
@@ -72,7 +71,7 @@ header {
             height: 100%;
             opacity: 0;
             transform: translateX(100%);
-            transition: all 0.5s ease;
+            transition: opacity 0.5s ease, transform 0.5s ease;
         }
 
 
@@ -80,6 +79,7 @@ header {
             opacity: 1;
             transform: translateX(0);
         }
+
 
         li a {
             color: $brown-100;

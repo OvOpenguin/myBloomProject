@@ -1,5 +1,5 @@
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import $ from 'jquery';
 
@@ -26,7 +26,6 @@ const Nav = () => {
     }, []);
 
 
-
     return (
         <header>
 
@@ -38,7 +37,7 @@ const Nav = () => {
             </button>
 
             {/* 導覽列 */}
-            <nav className='nav'>
+            <nav>
                 <ul className='menu'>
                     <li><Link to="/">首頁</Link></li>
                     <li className='nav-blue'><NavLink to="/map" className={({ isActive }) => isActive ? "nav-blue active" : ""}><span className='nav-blue t'>花</span>卉地圖
