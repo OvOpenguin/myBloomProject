@@ -68,21 +68,15 @@ header {
             gap: 30px;
             width: 200px;
             height: 100%;
-            // 起初不顯示
-            // display: none;
-            // animation: hide 1s both;
-
             opacity: 0;
             transform: translateX(100%);
-            transition: all 0.3 ease, transform 0.3s ease;
+            transition: all 0.5s ease;
         }
 
 
         &.show {
-            // 點選後切換顯示
             opacity: 1;
             transform: translateX(0);
-            // animation: show 1s both;
         }
 
         li a {
