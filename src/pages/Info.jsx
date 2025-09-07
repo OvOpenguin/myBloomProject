@@ -92,6 +92,7 @@ const Info = () => {
   const bannerImages = [
     benner1, benner1, benner1, benner1, benner1, benner1
   ];
+
   useEffect(() => {
     if (tabRefs.current[activeIndex] && lineContainerRef.current) {
       const tab = tabRefs.current[activeIndex];
@@ -128,7 +129,7 @@ const Info = () => {
   };
 
   return (
-    <section>
+    <section id="infopage">
       {/* Banner */}
       <div className="info-banner">
         <div className="banner-mask">
@@ -161,8 +162,8 @@ const Info = () => {
           pagination={{ type: "bullets", clickable: true }}
           loop={true}
           navigation={{
-            prevEl: ".custom-prev",
-            nextEl: ".custom-next",
+            prevEl: ".info-custom-prev",
+            nextEl: ".info-custom-next",
           }}
           modules={[Pagination, Navigation]}
           className="mySwiper"
@@ -175,10 +176,10 @@ const Info = () => {
         </Swiper>
 
         {/* 自訂箭頭 */}
-        <div className="custom-prev">
+        <div className="info-custom-prev">
           <IoIosArrowDropleft size={50} />
         </div>
-        <div className="custom-next">
+        <div className="info-custom-next">
           <IoIosArrowDropright size={50} />
         </div>
       </div>

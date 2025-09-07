@@ -1,12 +1,21 @@
 @use 'reset';
 @use './variables/' as *;
 
+
+* {
+    outline: red 1px solid;
+}
+
 h2 {
     font-size: 1.5rem;
     font-weight: 700;
     // text-align: center;
     // padding-top: 10px;
     color: #64503C;
+}
+
+#infopage{
+    overflow: hidden;
 }
 
 .info-banner {
@@ -119,8 +128,8 @@ h2 {
 }
 
 
-.custom-prev,
-.custom-next {
+.info-custom-prev,
+.info-custom-next {
     position: absolute;
     top: 50%; // 垂直置中
     transform: translateY(-50%);
@@ -135,16 +144,16 @@ h2 {
     z-index: 2;
 }
 
-.custom-prev {
-    left: 36%; // 🔹 左邊距可以用 % 或 px 調整
+.info-custom-prev {
+    left: 10%; // 🔹 左邊距可以用 % 或 px 調整
 }
 
-.custom-next {
-    right: 36%; // 🔹 右邊距
+.info-custom-next {
+    right: 10%; // 🔹 右邊距
 }
 
-.custom-prev:hover,
-.custom-next:hover {
+.info-custom-prev:hover,
+.info-custom-next:hover {
     transform: translateY(-50%) scale(1.1); // 放大一點
     background-color: #64503C;
     color: #ffffff; // 箭頭顏色改變
@@ -152,17 +161,14 @@ h2 {
 
 .info-wrapper {
     display: flex;
-    align-items: flex-start;
-    // gap: 5vh;
-    margin: 0 20%;
-    // padding: 0px 0;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 80%;
 
-
-    @media (max-width:1200px) {
+    @media (max-width:1024px) {
         flex-direction: column;
         gap: 40px;
-
     }
 }
 
@@ -195,12 +201,9 @@ h2 {
 }
 
 .info-about {
-
-    margin-top: 30px;
-    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: start;
     gap: 10px;
 
     .info-icon {
@@ -699,7 +702,7 @@ h2 {
         .floral-line-right {
             position: absolute;
             top: 50%;
-            right: -80px;
+            right: -65px;
             transform: translateY(-50%);
         }
 
@@ -910,6 +913,7 @@ h2 {
         display: flex;
         gap: 5vw;
         animation: scrollLeft 200s linear infinite;
+
     }
 
     .highlight-gallery:hover .highlight-track {
