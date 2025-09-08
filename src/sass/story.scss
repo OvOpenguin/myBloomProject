@@ -21,12 +21,13 @@
         flex-direction: column;
         padding: 30px;
     }
-
+    
+    // 左側 menu
     .sleft {
         text-align: center;
 
         @media (max-width:1200px) {
-            display: none;
+           display: none;
         }
 
         .sList {
@@ -64,6 +65,9 @@
                     justify-content: space-evenly;
                     flex-wrap: wrap;
                     background-color: $white;
+                    cursor: pointer;
+
+
 
                     li {
                         color: $brown-100;
