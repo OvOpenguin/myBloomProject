@@ -33,6 +33,9 @@ import fbicon from "../images/info/fbicon.png";
 import igicon from "../images/info/igicon.png";
 import threadicon from "../images/info/threadicon.png";
 import benner1 from "../images/info/benner1.png";
+import benner2 from "../images/info/benner2.png";
+import benner3 from "../images/info/benner3.png";
+
 import BnBg from "../images/info/BnBg.png";
 
 import { IoIosArrowDropright } from "react-icons/io";
@@ -65,24 +68,6 @@ function MapIframe() {
 }
 
 const Info = () => {
-  const foodSlides = [
-    { img: foodptopink, text: "美食 1" },
-    { img: foodptopink, text: "美食 2" },
-    { img: foodptopink, text: "美食 3" },
-    { img: foodptopink, text: "美食 4" },
-  ];
-
-  const nearbySlides = [
-    { img: attptoblu, text: "景點 A" },
-    { img: attptoblu, text: "景點 B" },
-    { img: attptoblu, text: "景點 C" },
-    { img: attptoblu, text: "景點 D" },
-  ];
-
-  const foodPrevRef = useRef(null);
-  const foodNextRef = useRef(null);
-  const nearbyPrevRef = useRef(null);
-  const nearbyNextRef = useRef(null);
 
   const [activeIndex, setActiveIndex] = useState(0);
   const tabRefs = useRef([]);
@@ -90,7 +75,7 @@ const Info = () => {
   const [lineStyle, setLineStyle] = useState({ width: 0, left: 0 });
   const foodGroupsRef = useRef([]);
   const bannerImages = [
-    benner1, benner1, benner1, benner1, benner1, benner1
+    benner1, benner2, benner3, benner1, benner2, benner3
   ];
 
   useEffect(() => {
