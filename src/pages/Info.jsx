@@ -594,7 +594,7 @@ const Info = () => {
 {/* 美食小點區塊 */}
 <div className="surrounding-section food-section">
   <h3 className="section-title">美食小點</h3>
-  <div style={{ height: "5vh" }}></div>
+
 
   <div className="swiper-wrapper-relative">
     <Swiper
@@ -644,7 +644,6 @@ const Info = () => {
 {/* 附近景點區塊 */}
 <div className="surrounding-section nearby-section">
   <h3 className="section-title">附近景點</h3>
-  <div style={{ height: "5vh" }}></div>
 
   <div className="swiper-wrapper-relative">
     <Swiper

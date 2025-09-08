@@ -459,6 +459,26 @@ h2 {
     right: -55px;
 }
 
+.surrounding-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;     // 水平置中
+  justify-content: center; // 垂直置中
+  min-height: 45vh;        // 撐滿一個畫面高度 (可依需求調整)
+  text-align: center;
+
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #64503C;
+    margin-bottom: 20px; 
+  }
+
+  .swiper-wrapper-relative {
+    width: 100%;
+  }
+}
+
 
 /* ------------------ 美食小點 Swiper ------------------ */
 .food-swiper {
