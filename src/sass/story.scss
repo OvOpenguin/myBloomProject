@@ -94,8 +94,8 @@
 
     .sContent {
         position: relative;
-        // max-width: 500px;
-        min-width: 450px;
+        max-width: 500px;
+        min-width: 420px;
         width: 40%;
 
         .sflowerName {
@@ -193,10 +193,11 @@
         // 裝飾物品
         .sbutterfly {
             position: absolute;
-            transform: rotate(20deg);
+            transform: rotate(30deg);
             animation: fade-in .75s ease-in forwards;
             animation-delay: 2.5s;
             opacity: 0;
+            z-index: 1;
 
         }
 
