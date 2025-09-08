@@ -94,8 +94,8 @@
 
     .sContent {
         position: relative;
-        max-width: 500px;
-        min-width: 500px;
+        // max-width: 500px;
+        min-width: 450px;
         width: 40%;
 
         .sflowerName {
@@ -115,7 +115,7 @@
             .tag1 {
                 position: absolute;
                 top: -50px;
-                right: 0;
+                right: 10%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -130,7 +130,7 @@
             .tag2 {
                 position: absolute;
                 top: 50px;
-                right: -20px;
+                right: 10%;
 
                 display: flex;
                 justify-content: center;
@@ -216,6 +216,10 @@
         position: relative;
         width: 35%;
         min-width: 400px;
+
+        img {
+            clip-path: circle();
+        }
 
         .circletxt {
             position: absolute;
