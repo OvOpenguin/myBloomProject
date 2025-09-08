@@ -301,3 +301,12 @@
 
 
 }
+
+.leaflet-popup-content {
+    img {
+        height: 120px;
+        width: 200px;
+        object-fit: cover;
+        object-position: center;
+    }
+}
