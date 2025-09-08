@@ -412,8 +412,8 @@ h2 {
   .overlay-text {
     position: absolute;
     color: #fff;
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 20px;
+    font-weight: 500;
     text-align: center;
     z-index: 3; // 最上層
     transition: opacity 0.3s ease;
@@ -592,8 +592,8 @@ h2 {
       transform: translate(-50%, -50%);
       z-index: 2;
       color: #fff;
-      font-size: 16px;
-      font-weight: 700;
+      font-size: 20px;
+      font-weight: 500;
       text-align: center;
       pointer-events: none;
       transition: all 0.3s ease;
@@ -1067,7 +1067,7 @@ h2 {
         top: 20%; // 往下調整到畫面中間偏上
         left: 50%;
         transform: translateX(-50%);
-        z-index: 10;
+        z-index: 3;
 
         img {
             width: 40px;
@@ -1083,7 +1083,7 @@ h2 {
         position: absolute;
         right: 5vw; // 靠右
         top: -50px;
-        z-index: 10;
+        z-index:3;
 
         h2 {
             font-size: 1.5rem;
