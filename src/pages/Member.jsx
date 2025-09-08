@@ -1,4 +1,6 @@
 import React, { useRef, useState } from "react";
+
+// 圖片
 import arrowd from '../images/member/member-arrow-lightgreen.svg'
 import arrowh from '../images/member/member-arrow-green.svg'
 import favtab from '../images/member/member-tab-blue.svg'
@@ -10,7 +12,21 @@ import votebotton1 from '../images/wall/wall-votebutton1.svg'
 import flower01 from '../images/wall/wall-flower01.png'
 import flower02 from '../images/wall/wall-flower02.png'
 import logo from '../images/home/北花冊.webp'
-import "../sass/member.scss";
+
+// 裝飾
+import hfwr1 from '../images/home/h-w-de1.svg'
+import hfwr2 from '../images/home/h-w-de2.svg';
+
+// sass
+import "../sass/member.scss"
+
+<defs>
+    <filter id="rough">
+        <feTurbulence type="fractalNoise" baseFrequency="15" numOctaves="2" result="noise" />
+        <feDisplacementMap in2="noise" in="SourceGraphic" scale="10" />
+    </filter>
+</defs>
+
 
 // 左側選單
 function SidebarItem({ label, onClick, active = false, danger = false }) {
@@ -52,6 +68,7 @@ const Favorites = () => {
                     </a>
                 </div>
             </div>
+
         </div>
     );
 }
@@ -102,21 +119,23 @@ const News = () => {
                 <img src={newstab} alt="" />
             </div>
             <div className="content">
-                <div className="news-Card">
-                    <div className="news-labledate">
-                        <div className="news-lable">活動</div>
-                        <p>2025.07.28</p>
+                <div>
+                    <div className="news-Card">
+                        <div className="news-labledate">
+                            <div className="news-lable">活動</div>
+                            <p>2025.07.28</p>
+                        </div>
+                        <p className="news-cardTitle">標題</p>
+                        <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="news-img" alt="" />
                     </div>
-                    <p className="news-cardTitle">標題</p>
-                    <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="news-img" alt="" />
-                </div>
-                <div className="news-Card">
-                    <div className="news-labledate">
-                        <div className="news-lable">活動</div>
-                        <p>2025.07.28</p>
+                    <div className="news-Card">
+                        <div className="news-labledate">
+                            <div className="news-lable">活動</div>
+                            <p>2025.07.28</p>
+                        </div>
+                        <p className="news-cardTitle">標題</p>
+                        <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="news-img" alt="" />
                     </div>
-                    <p className="news-cardTitle">標題</p>
-                    <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="news-img" alt="" />
                 </div>
             </div>
         </div>
@@ -159,7 +178,7 @@ const Profile = () => {
                             type="text"
                             className="inputName"
                             placeholder="123@gmail.com"
-                            readonly
+                            readOnly
                         />
                     </div>
 
@@ -215,7 +234,7 @@ function SignIn({ onLogin }) {
                     <input type="text" className="userid" placeholder="請輸入密碼"
                         // onChange={(e) => setUsername(e.target.value)} // 更新狀態
                         required
-                         />
+                    />
                 </div>
 
                 {/* 登入 */}
@@ -299,7 +318,10 @@ export default function MemberCenter() {
             </div>
 
             <div className="padding-right"></div>
-            <div className="padding-bottom"></div>
+            <div className="padding-bottom">
+                <img className="dc1" src={hfwr1} alt="" srcset="" />
+                <img className="dc2" src={hfwr2} alt="" srcset="" />
+            </div>
 
         </section>
     );
