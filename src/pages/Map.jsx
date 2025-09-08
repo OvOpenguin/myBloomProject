@@ -360,7 +360,7 @@ const Map = () => {
                     <div>
                       <h3>{item.title}</h3>
                       <p>{item.lable} | {item.date}</p>
-                      <img src={item.img} alt={item.title} width="150" />
+                      <a href="https://ovopenguin.github.io/myBloomProject/#/info"><img src={item.img} alt={item.title} width="150" /></a>
                     </div>
                   </Popup>
                 </Marker>
