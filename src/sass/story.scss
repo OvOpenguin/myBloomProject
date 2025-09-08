@@ -21,12 +21,13 @@
         flex-direction: column;
         padding: 30px;
     }
-
+    
+    // 左側 menu
     .sleft {
         text-align: center;
 
         @media (max-width:1200px) {
-            display: none;
+           display: none;
         }
 
         .sList {
@@ -64,6 +65,9 @@
                     justify-content: space-evenly;
                     flex-wrap: wrap;
                     background-color: $white;
+                    cursor: pointer;
+
+
 
                     li {
                         color: $brown-100;
@@ -114,8 +118,9 @@
 
             .tag1 {
                 position: absolute;
-                top: -50px;
-                right: 10%;
+                z-index: -2;
+                top: -30px;
+                right: -10%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -125,12 +130,21 @@
                 width: 100px;
                 height: 100px;
                 background-size: cover;
+
+                @media (max-width:550px) {
+                    z-index: 1;
+                    top: 0px;
+                    right: 5%;
+                }
+
             }
 
             .tag2 {
                 position: absolute;
+                z-index: -1;
                 top: 50px;
-                right: 10%;
+                right: -12%;
+
 
                 display: flex;
                 justify-content: center;
@@ -141,7 +155,14 @@
                 width: 50px;
                 height: 50px;
                 background-size: cover;
+
+                @media (max-width:550px) {
+                    z-index: 1;
+                    top: 90px;
+                    right: 5%;
+                }
             }
+
 
 
             h2 {
