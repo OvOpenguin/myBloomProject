@@ -163,6 +163,7 @@
 // Map.jsx
 import { useState, useRef } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+import FlowerEvent from '../json/FlowerEvent.json';
 import "leaflet/dist/leaflet.css";
 import "../sass/map.scss";
 
@@ -170,48 +171,48 @@ import 春 from "../images/map/花卉地圖-春季標籤-黃.svg"
 import 夏 from "../images/map/花卉地圖-夏季標籤-綠.svg"
 import 秋 from "../images/map/花卉地圖-秋季標籤-橘.svg"
 import 冬 from "../images/map/花卉地圖-冬季標籤-藍.svg"
-
+import locationicon from "../images/map/locationicon.svg"
 
 
 // 假活動資料
-const FlowerEvent = [
-  {
-    id: 1,
-    lable: "台北",
-    month: "3月",
-    location: "臺北市",
-    flower: "櫻花",
-    lat: 25.033,
-    lng: 121.5654,
-    img: "https://placehold.co/200x120",
-    date: "03.01 — 03.31",
-    title: "陽明山櫻花祭",
-  },
-  {
-    id: 2,
-    lable: "新北",
-    month: "4月",
-    location: "新北市",
-    flower: "玫瑰",
-    lat: 25.012,
-    lng: 121.4628,
-    img: "https://placehold.co/200x120",
-    date: "04.01 — 04.30",
-    title: "淡水玫瑰園",
-  },
-  {
-    id: 3,
-    lable: "宜蘭",
-    month: "6月",
-    location: "宜蘭縣",
-    flower: "木棉花",
-    lat: 24.757,
-    lng: 121.754,
-    img: "https://placehold.co/200x120",
-    date: "06.01 — 06.15",
-    title: "羅東木棉花道",
-  },
-];
+// const FlowerEvent = [
+//   {
+//     id: 1,
+//     lable: "台北",
+//     month: "3月",
+//     location: "臺北市",
+//     flower: "櫻花",
+//     lat: 25.033,
+//     lng: 121.5654,
+//     img: "https://placehold.co/200x120",
+//     date: "03.01 — 03.31",
+//     title: "陽明山櫻花祭",
+//   },
+//   {
+//     id: 2,
+//     lable: "新北",
+//     month: "4月",
+//     location: "新北市",
+//     flower: "玫瑰",
+//     lat: 25.012,
+//     lng: 121.4628,
+//     img: "https://placehold.co/200x120",
+//     date: "04.01 — 04.30",
+//     title: "淡水玫瑰園",
+//   },
+//   {
+//     id: 3,
+//     lable: "宜蘭",
+//     month: "6月",
+//     location: "宜蘭縣",
+//     flower: "木棉花",
+//     lat: 24.757,
+//     lng: 121.754,
+//     img: "https://placehold.co/200x120",
+//     date: "06.01 — 06.15",
+//     title: "羅東木棉花道",
+//   },
+// ];
 
 // 活動卡片
 const Mapcard = ({ item, onClick }) => (
@@ -230,18 +231,22 @@ const Map = () => {
   const [selectmonth, setSelectMonth] = useState("");
   const opmonth = ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"];
   const [selectedflower, setSelectedFlower] = useState("");
-  const opflower = ["玫瑰", "櫻花", "梅花", "木棉花", "茶花"];
+  const opflower = ["玫瑰", "鬱金香", "鼠尾草", "大波斯菊", "杜鵑花"];
 
   const [activeId, setActiveId] = useState(null); // 目前選中的活動 ID
   const markerRefs = useRef({}); // 存放 marker 的 ref
 
+  
   // 選單篩選
   const filtered = FlowerEvent.filter((item) => {
+    const months = Array.isArray(item.month) ? item.month : [item.month]; // 轉陣列用includes
+    const flowers = Array.isArray(item.flower) ? item.flower : [item.flower]; // 轉陣列用includes
     return (
-      (selectmonth === "" || item.month === selectmonth) &&
+      (selectmonth === "" || months.includes(selectmonth)) &&
       (selectedlocation === "" || item.location === selectedlocation) &&
-      (selectedflower === "" || item.flower === selectedflower)
+      (selectedflower === "" || flowers.includes(selectedflower))
     );
+
   });
 
   // 當點擊卡片 → zoom 到該 marker & 打開 popup
@@ -257,7 +262,8 @@ const Map = () => {
   //   return null;
   // };
 
-  const activeItem = FlowerEvent.find((f) => f.id === activeId);
+  // const activeItem = FlowerEvent.find((f) => f.id === activeId);
+
 
 
   // 四季更換圖片
