@@ -1,65 +1,175 @@
-
-
-
 [
     {
         "id": 1,
-        "month": "1月",
+        "month": [
+            "3月",
+            "4月"
+        ],
         "location": "臺北市",
-        "flower": "櫻花",
+        "flower": ["玫瑰"],
         "lable": "臺北",
-        "title": "樟樹步道花海",
-        "date": "07.01 — 09.23",
-        "img": "https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg"
+        "title": "臺北玫瑰展",
+        "date": "03.14 — 04.13",
+        "img": "./activity/activity01.avif",
+        "lat": 25.070,
+        "lng": 121.5204
     },
     {
         "id": 2,
-        "month": "11月",
-        "location": "臺北市",
-        "flower": "梅花",
-        "lable": "臺北",
-        "title": "樟樹步道花海",
-        "date": "07.01 — 09.23",
-        "img": "https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg"
+        "month": ["5月"],
+        "location": "新北市",
+        "flower": [
+            "鼠尾草",
+            "大波斯菊"
+        ],
+        "lable": "新北",
+        "title": "新北河濱蝶戀季",
+        "date": "05.10 — 05.25",
+        "img": "./activity/activity02.jpg",
+        "lat": 25.011,
+        "lng": 121.4458
     },
     {
         "id": 3,
-        "month": "2月",
+        "month": [
+            "2月",
+            "3月"
+        ],
         "location": "新北市",
-        "flower": "茶花",
+        "flower": ["杜鵑花"],
         "lable": "新北",
-        "title": "樟樹步道花海",
-        "date": "07.01 — 09.23",
-        "img": "https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg"
+        "title": "萬金杜鵑花展",
+        "date": "02.27 — 03.30",
+        "img": "./activity/activity03.avif",
+        "lat": 25.221,
+        "lng": 121.6404
     },
     {
         "id": 4,
-        "month": "3月",
+        "month": [
+            "11月",
+            "12月"
+        ],
         "location": "桃園市",
-        "flower": "木棉花",
+        "flower": ["仙草花"],
         "lable": "桃園",
-        "title": "樟樹步道花海",
-        "date": "07.01 — 09.23",
-        "img": "https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg"
+        "title": "桃園仙草花節",
+        "date": "11.23 — 12.08",
+        "img": "./activity/activity04.jpg",
+        "lat": 24.913,
+        "lng": 121.092
     },
     {
         "id": 5,
-        "month": "1月",
-        "location": "宜蘭縣",
-        "flower": "梅花",
-        "lable": "宜蘭",
-        "title": "樟樹步道花海",
-        "date": "07.01 — 09.23",
-        "img": "https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg"
+        "month": [
+            "3月",
+            "4月"
+        ],
+        "location": "臺北市",
+        "flower": ["海芋"],
+        "lable": "臺北",
+        "title": "陽明山海芋季",
+        "date": "03.14— 04.27",
+        "img": "./activity/activity05.jpg",
+        "lat": 25.176,
+        "lng": 121.5353
     },
     {
         "id": 6,
-        "month": "8月",
-        "location": "新竹市",
-        "flower": "玫瑰",
-        "lable": "新竹",
-        "title": "樟樹步道花海",
-        "date": "07.01 — 09.23",
-        "img": "https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg"
+        "month": [
+            "8月",
+            "9月"
+        ],
+        "location": "桃園市",
+        "flower": ["韭菜花"],
+        "lable": "桃園",
+        "title": "大溪韭菜花季",
+        "date": "08.30 — 09.30",
+        "img": "./activity/activity06.jpg",
+        "lat": 24.925,
+        "lng": 121.3171
+    },
+    {
+        "id": 7,
+        "month": [
+            "9月",
+            "10月"
+        ],
+        "location": "臺北市",
+        "flower": [
+            "孤挺花",
+            "海芋",
+            "仙丹花",
+            "馬櫻丹",
+            "繡球花"
+        ],
+        "lable": "臺北",
+        "title": "士林官邸孤挺花展",
+        "date": "09.20 — 10.19",
+        "img": "./activity/activity07.jpg",
+        "lat": 25.091,
+        "lng": 121.5309
+    },
+    {
+        "id": 8,
+        "month": [
+            "11月",
+            "12月"
+        ],
+        "location": "臺北市",
+        "flower": [
+            "秋石斛",
+            "天南星科植物",
+            "火鶴花"
+        ],
+        "lable": "臺北",
+        "title": "士林官邸秋石斛與天南星科植物展",
+        "date": "11.29 — 12.15",
+        "img": "./activity/activity08.jpg",
+        "lat": 25.091,
+        "lng": 121.5309
+    },
+    {
+        "id": 9,
+        "month": [
+            "8月",
+            "9月"
+        ],
+        "location": "臺北市",
+        "flower": ["菊花"],
+        "lable": "臺北",
+        "title": "士林官邸菊展",
+        "date": "08.30 — 09.30",
+        "img": "./activity/activity09.jpg",
+        "lat": 25.092,
+        "lng": 121.5315
+    },
+    {
+        "id": 10,
+        "month": ["2月"],
+        "location": "臺北市",
+        "flower": ["鬱金香"],
+        "lable": "臺北",
+        "title": "士林官邸鬱金香展",
+        "date": "02.13 — 02.23",
+        "img": "./activity/activity10.jpg",
+        "lat": 25.092,
+        "lng": 121.5315
+    },
+    {
+        "id": 11,
+        "month": [
+            "6月",
+            "7月",
+            "8月"
+        ],
+        "location": "新北市",
+        "flower": ["荷花"],
+        "lable": "新北",
+        "title": "山佳荷花池",
+        "date": "06 — 08",
+        "img": "./activity/activity11.jpg",
+        "lat": 24.966,
+        "lng": 121.3895
     }
 ]
