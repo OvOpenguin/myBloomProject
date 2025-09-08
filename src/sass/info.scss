@@ -2,9 +2,9 @@
 @use './variables/' as *;
 
 
-* {
-    outline: red 1px solid;
-}
+// * {
+//     outline: red 1px solid;
+// }
 
 h2 {
     font-size: 1.5rem;
@@ -374,6 +374,62 @@ h2 {
     width: 100%;
     overflow: visible; // 允許箭頭超出
 }
+.card {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .bg-icon {
+    position: absolute;
+    width: 105%; // 比主圖大 5%
+    height: 105%;
+    object-fit: contain;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; // 在最底層
+  }
+
+  .main-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.90); // 預設縮小 5%
+    filter: brightness(0.8); // 預設暗化
+    transition: all 0.4s ease;
+    z-index: 2; // 蓋在底圖上面
+  }
+
+  .overlay-text {
+    position: absolute;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    z-index: 3; // 最上層
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover {
+    .main-img {
+      transform: translate(-50%, -50%) scale(1); // 放大到覆蓋底圖
+      filter: brightness(1); // 還原亮度
+    }
+
+    .overlay-text {
+      opacity: 0; // 文字消失
+    }
+  }
+}
 
 .arrow {
     position: absolute;
@@ -387,34 +443,22 @@ h2 {
 
 /* 美食小點箭頭 */
 .food-prev {
-    left: -25px;
+    left: -55px;
 }
 
 .food-next {
-    right: -25px;
+    right: -55px;
 }
 
 /* 附近景點箭頭 */
 .nearby-prev {
-    left: -25px;
+    left: -55px;
 }
 
 .nearby-next {
-    right: -25px;
+    right: -55px;
 }
 
-
-// /* 左箭頭 */
-// .food-prev,
-// .nearby-prev {
-//   left: -50px; /* 距離 Swiper 左側 20px */
-// }
-
-// /* 右箭頭 */
-// .food-next,
-// .nearby-next {
-//   right: 60px; /* 距離 Swiper 右側 20px */
-// }
 
 /* ------------------ 美食小點 Swiper ------------------ */
 .food-swiper {
@@ -503,6 +547,69 @@ h2 {
     }
 }
 
+.nearby-swiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .nearby-card {
+    position: relative;
+    width: 90%; // Slide 寬度
+    padding-top: 120%; // 高度比例 (保持長方形)
+    cursor: pointer;
+    overflow: visible;
+
+    .bg-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 110%; // 比主圖大 5%
+      height: auto;
+      z-index: 0;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .main-img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%; // 預設大小
+      height: auto;
+      z-index: 1;
+      object-fit: cover;
+      border-radius: 10px;
+      filter: brightness(0.8);
+      transition: all 0.3s ease;
+    }
+
+    .overlay-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      text-align: center;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+      .main-img {
+        width: 110%; // 放大到底圖大小
+        filter: brightness(1); // 消失的效果是因為亮度正常
+      }
+      .overlay-text {
+        opacity: 0; // 文字透明
+      }
+    }
+  }
+}
 
 
 
