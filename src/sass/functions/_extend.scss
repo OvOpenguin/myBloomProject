@@ -1,0 +1,30 @@
+%img-cover {
+    // 搭配object-fit:cover時一定要寫寬高100%
+    object-fit: cover;
+    width: 100%; //reset已經設定過，但為保安全可以寫
+    height: 100%;
+}
+
+%img-contain {
+    // 搭配object-fit:contain時一定要寫寬高100%
+    object-fit: contain;
+    width: 100%; //reset已經設定過，但為保安全可以寫
+    height: 100%;
+}
+
+
+
+%simple-line {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+%multiple-lines {
+    // 多行省略: 5個設定
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    // -webkit-line-clamp: 4; //由於每個多行省略的行數顯現不同，故不寫在共用設定裡。
+}
