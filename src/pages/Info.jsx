@@ -606,70 +606,104 @@ const Info = () => {
           {activeIndex === 2 && (
             <div className="surrounding-content">
 
-              {/* 美食小點區塊 */}
-              <div className="surrounding-section food-section">
-                <h3 className="section-title">美食小點</h3>
-                <div style={{ height: "5vh" }}></div>
+{/* 美食小點區塊 */}
+<div className="surrounding-section food-section">
+  <h3 className="section-title">美食小點</h3>
+  <div style={{ height: "5vh" }}></div>
 
-                <div className="swiper-wrapper-relative">
-                  <Swiper
-                    slidesPerView={4}
-                    spaceBetween={0}
-                    loop={true}
-                    navigation={{
-                      prevEl: ".food-prev",
-                      nextEl: ".food-next",
-                    }}
-                    modules={[Navigation, Pagination]}
-                    className="food-swiper"
-                  >
-                    {[foodptopink, foodptopink, foodptopink, foodptopink, foodptopink].map((img, idx) => (
-                      <SwiperSlide key={idx}>
-                        <img src={img} alt={`Food ${idx + 1}`} />
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
+  <div className="swiper-wrapper-relative">
+    <Swiper
+      slidesPerView={4}
+      spaceBetween={0}
+      loop={true}
+      navigation={{
+        prevEl: ".food-prev",
+        nextEl: ".food-next",
+      }}
+      modules={[Navigation, Pagination]}
+      className="food-swiper"
+    >
+      {[
+        { img: foodptopink, text: "王記米粉湯" },
+        { img: foodptopink, text: "阿明滷肉飯" },
+        { img: foodptopink, text: "珍珠奶茶" },
+        { img: foodptopink, text: "蚵仔煎" },
+                { img: foodptopink, text: "王記米粉湯" },
+        { img: foodptopink, text: "阿明滷肉飯" },
+        { img: foodptopink, text: "珍珠奶茶" },
+        { img: foodptopink, text: "蚵仔煎" },
+      ].map((item, idx) => (
+        <SwiperSlide key={idx}>
+          <div className="card food-card">
+            {/* 底圖 */}
+            <img src={foodbgpink} alt="food bg" className="bg-icon" />
 
-                  {/* 美食小點箭頭 */}
-                  <img src={arrowlf} alt="prev" className="arrow food-prev" />
-                  <img src={arrowri} alt="next" className="arrow food-next" />
-                </div>
-              </div>
+            {/* 主圖 */}
+            <img src={item.img} alt={`Food ${idx + 1}`} className="main-img" />
+
+            {/* 文字 */}
+            <p className="overlay-text">{item.text}</p>
+          </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+
+    {/* 美食小點箭頭 */}
+    <img src={arrowlf} alt="prev" className="arrow food-prev" />
+    <img src={arrowri} alt="next" className="arrow food-next" />
+  </div>
+</div>
 
 
-              {/* 附近景點區塊 */}
-              <div className="surrounding-section nearby-section">
-                <h3 className="section-title">附近景點</h3>
-                <div style={{ height: "5vh" }}></div>
 
-                <div className="swiper-wrapper-relative">
-                  <Swiper
-                    slidesPerView={4}
-                    spaceBetween={20}
-                    loop={true}
-                    navigation={{
-                      prevEl: ".nearby-prev",
-                      nextEl: ".nearby-next",
-                    }}
-                    modules={[Navigation, Pagination]}
-                    onBeforeInit={(swiper) => {
-                      swiper.params.navigation.prevEl = ".nearby-prev";
-                      swiper.params.navigation.nextEl = ".nearby-next";
-                    }}
-                    className="nearby-swiper"
-                  >
-                    {[attptoblu, attptoblu, attptoblu, attptoblu, attptoblu].map((img, idx) => (
-                      <SwiperSlide key={idx}>
-                        <img src={img} alt={`Spot ${idx + 1}`} />
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
+{/* 附近景點區塊 */}
+<div className="surrounding-section nearby-section">
+  <h3 className="section-title">附近景點</h3>
+  <div style={{ height: "5vh" }}></div>
 
-                  {/* 附近景點箭頭 */}
-                  <img src={arrowlf} alt="prev" className="arrow nearby-prev" />
-                  <img src={arrowri} alt="next" className="arrow nearby-next" />
-                </div>
-              </div>
+  <div className="swiper-wrapper-relative">
+    <Swiper
+      slidesPerView={4}
+      spaceBetween={20}
+      loop={true}
+      navigation={{
+        prevEl: ".nearby-prev",
+        nextEl: ".nearby-next",
+      }}
+      modules={[Navigation, Pagination]}
+      className="nearby-swiper"
+    >
+      {[
+        { img: attptoblu, text: "中正紀念堂" },
+        { img: attptoblu, text: "西門町" },
+        { img: attptoblu, text: "台北101" },
+        { img: attptoblu, text: "華山文創園區" },
+        { img: attptoblu, text: "華山文創園區" },
+        { img: attptoblu, text: "中正紀念堂" },
+        { img: attptoblu, text: "西門町" },
+        { img: attptoblu, text: "台北101" },
+      ].map((item, idx) => (
+        <SwiperSlide key={idx}>
+          <div className="card nearby-card">
+            {/* 底圖 */}
+            <img src={attbgblu} alt="spot bg" className="bg-icon" />
+
+            {/* 主圖 */}
+            <img src={item.img} alt={`Spot ${idx + 1}`} className="main-img" />
+
+            {/* 文字 */}
+            <p className="overlay-text">{item.text}</p>
+          </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+
+    {/* 附近景點箭頭 */}
+    <img src={arrowlf} alt="prev" className="arrow nearby-prev" />
+    <img src={arrowri} alt="next" className="arrow nearby-next" />
+  </div>
+</div>
+
 
             </div>
           )}

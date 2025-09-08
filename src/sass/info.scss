@@ -2,9 +2,9 @@
 @use './variables/' as *;
 
 
-* {
-    outline: red 1px solid;
-}
+// * {
+//     outline: red 1px solid;
+// }
 
 h2 {
     font-size: 1.5rem;
@@ -374,6 +374,62 @@ h2 {
     width: 100%;
     overflow: visible; // 允許箭頭超出
 }
+.card {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .bg-icon {
+    position: absolute;
+    width: 105%; // 比主圖大 5%
+    height: 105%;
+    object-fit: contain;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; // 在最底層
+  }
+
+  .main-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.90); // 預設縮小 5%
+    filter: brightness(0.8); // 預設暗化
+    transition: all 0.4s ease;
+    z-index: 2; // 蓋在底圖上面
+  }
+
+  .overlay-text {
+    position: absolute;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    z-index: 3; // 最上層
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover {
+    .main-img {
+      transform: translate(-50%, -50%) scale(1); // 放大到覆蓋底圖
+      filter: brightness(1); // 還原亮度
+    }
+
+    .overlay-text {
+      opacity: 0; // 文字消失
+    }
+  }
+}
 
 .arrow {
     position: absolute;
@@ -403,18 +459,6 @@ h2 {
     right: -25px;
 }
 
-
-// /* 左箭頭 */
-// .food-prev,
-// .nearby-prev {
-//   left: -50px; /* 距離 Swiper 左側 20px */
-// }
-
-// /* 右箭頭 */
-// .food-next,
-// .nearby-next {
-//   right: 60px; /* 距離 Swiper 右側 20px */
-// }
 
 /* ------------------ 美食小點 Swiper ------------------ */
 .food-swiper {
