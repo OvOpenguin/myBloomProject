@@ -443,20 +443,20 @@ h2 {
 
 /* 美食小點箭頭 */
 .food-prev {
-    left: -25px;
+    left: -55px;
 }
 
 .food-next {
-    right: -25px;
+    right: -55px;
 }
 
 /* 附近景點箭頭 */
 .nearby-prev {
-    left: -25px;
+    left: -55px;
 }
 
 .nearby-next {
-    right: -25px;
+    right: -55px;
 }
 
 
@@ -547,6 +547,69 @@ h2 {
     }
 }
 
+.nearby-swiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .nearby-card {
+    position: relative;
+    width: 90%; // Slide 寬度
+    padding-top: 120%; // 高度比例 (保持長方形)
+    cursor: pointer;
+    overflow: visible;
+
+    .bg-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 110%; // 比主圖大 5%
+      height: auto;
+      z-index: 0;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .main-img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%; // 預設大小
+      height: auto;
+      z-index: 1;
+      object-fit: cover;
+      border-radius: 10px;
+      filter: brightness(0.8);
+      transition: all 0.3s ease;
+    }
+
+    .overlay-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      text-align: center;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+      .main-img {
+        width: 110%; // 放大到底圖大小
+        filter: brightness(1); // 消失的效果是因為亮度正常
+      }
+      .overlay-text {
+        opacity: 0; // 文字透明
+      }
+    }
+  }
+}
 
 
 

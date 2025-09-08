@@ -671,6 +671,7 @@ const Info = () => {
         nextEl: ".nearby-next",
       }}
       modules={[Navigation, Pagination]}
+
       className="nearby-swiper"
     >
       {[
@@ -678,10 +679,10 @@ const Info = () => {
         { img: attptoblu, text: "西門町" },
         { img: attptoblu, text: "台北101" },
         { img: attptoblu, text: "華山文創園區" },
-        { img: attptoblu, text: "華山文創園區" },
-        { img: attptoblu, text: "中正紀念堂" },
+                { img: attptoblu, text: "中正紀念堂" },
         { img: attptoblu, text: "西門町" },
         { img: attptoblu, text: "台北101" },
+        { img: attptoblu, text: "華山文創園區" },
       ].map((item, idx) => (
         <SwiperSlide key={idx}>
           <div className="card nearby-card">
@@ -703,6 +704,7 @@ const Info = () => {
     <img src={arrowri} alt="next" className="arrow nearby-next" />
   </div>
 </div>
+
 
 
             </div>
