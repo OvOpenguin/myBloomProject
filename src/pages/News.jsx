@@ -4,57 +4,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import FlowerEvent from '../json/FlowerEvent.json';
 
 import flower10 from '../images/wall/wall-f10.webp'
 import ban1 from '../images/news/newsban2.webp'
 
 
 const News = () => {
-
-    const newsinfo = [
-        {
-            id: 1,
-            lable: '活動',
-            date: '2025.07.28',
-            title: '標題',
-            img: flower10,
-        },
-        {
-            id: 2,
-            lable: '活動',
-            date: '2025.07.28',
-            title: '標題',
-            img: flower10,
-        },
-        {
-            id: 3,
-            lable: '活動',
-            date: '2025.07.28',
-            title: '標題',
-            img: flower10,
-        },
-        {
-            id: 4,
-            lable: '活動',
-            date: '2025.07.28',
-            title: '標題',
-            img: flower10,
-        },
-        {
-            id: 5,
-            lable: '活動',
-            date: '2025.07.28',
-            title: '標題',
-            img: flower10,
-        },
-        {
-            id: 6,
-            lable: '活動',
-            date: '2025.07.28',
-            title: '標題',
-            img: flower10,
-        },
-    ]
 
     const Newscard = ({ lable, date, title, img }) => {
         return (
@@ -74,6 +30,13 @@ const News = () => {
     const [selectedlocation, setSelectedLocation] = useState("");
     const oplocation = ['臺北市', '新北市', '基隆市', '桃園市', '新竹市', '新竹縣', '宜蘭縣']
 
+     const filtered = FlowerEvent.filter((item) => {
+    
+        return (
+          (selectedlocation === "" || item.location === selectedlocation)
+        );
+      });
+    
     return (
         <>
             {/* 圖片bar */}
@@ -99,7 +62,7 @@ const News = () => {
                         <h2>最新消息 NEWS</h2>
                         <div className="news-select">
                             <select name="" id="" value={selectedlocation} onChange={(e) => { setSelectedLocation(e.target.value); }}>
-                                <option value="" disabled>選擇</option>
+                                <option value="" >地區</option>
                                 {
                                     oplocation.map((item, index) => {
                                         return <option key={item} value={oplocation[index]}>{item}</option>
@@ -109,7 +72,7 @@ const News = () => {
                         </div>
                     </div>
                     <div className="news-CardWarp">
-                        {newsinfo.map((item, index) => {
+                        {filtered.map((item, index) => {
                             return <Newscard key={index} lable={item.lable} date={item.date} title={item.title} img={item.img} />
                         })}
                     </div>
