@@ -303,10 +303,19 @@
 }
 
 .leaflet-popup-content {
+    margin: 0;
+    padding: 13px 20px;
     img {
         height: 120px;
         width: 200px;
         object-fit: cover;
         object-position: center;
+        border-radius: 6px;
     }
+
+    // h3 {
+    //                     white-space: nowrap;
+    //                     text-overflow: ellipsis;
+    //                     overflow: hidden;
+    // }
 }
