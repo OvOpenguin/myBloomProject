@@ -475,6 +475,88 @@ button {
         }
     }
 
+    // 快訊-more按鈕
+    &.n-btn-more {
+        width: 10rem;
+        height: auto;
+        // margin: 20px 0;
+        display: flex;
+        justify-self: center;
+
+        .circle {
+            transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
+            position: relative;
+            display: block;
+            margin: 0;
+            width: 3rem;
+            height: 3rem;
+            background: #FFA8B5;
+            border-radius: 99px;
+
+            .icon {
+                transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                background: #fff;
+
+                &.arrow {
+                    transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
+                    left: 0.625rem;
+                    width: 1.125rem;
+                    height: 0.125rem;
+                    background: none;
+
+                    &::before {
+                        position: absolute;
+                        content: '';
+                        top: -0.25rem;
+                        right: 0.0625rem;
+                        width: 0.625rem;
+                        height: 0.625rem;
+                        border-top: 0.125rem solid #fff;
+                        border-right: 0.125rem solid #fff;
+                        transform: rotate(45deg);
+                    }
+                }
+            }
+        }
+
+        .btn-text {
+            transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
+            position: absolute;
+            top: 0px;
+            left: 0;
+            right: 0;
+            padding: 12px;
+            margin-left: 24px;
+            color: #64503C;
+            font-weight: 400;
+            line-height: 1.6;
+            text-align: center;
+            letter-spacing: 2px;
+
+        }
+
+        &:hover {
+            .circle {
+                width: 100%;
+
+                .icon {
+                    &.arrow {
+                        background: #fff;
+                        transform: translate(1rem, 0);
+                    }
+                }
+            }
+
+            .btn-text {
+                color: #fff;
+            }
+        }
+    }
+
 
 
 
