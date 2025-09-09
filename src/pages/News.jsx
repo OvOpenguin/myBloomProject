@@ -12,6 +12,9 @@ import ban1 from '../images/news/newsban2.webp'
 
 const News = () => {
 
+    const [visibleCount, setVisibleCount] = useState(6);
+
+    // 卡片元件
     const Newscard = ({ lable, date, title, img }) => {
         return (
             <div className="news-Card">
@@ -27,19 +30,25 @@ const News = () => {
         )
     }
 
+    // 選單
     const [selectedlocation, setSelectedLocation] = useState("");
     const oplocation = ['臺北市', '新北市', '基隆市', '桃園市', '新竹市', '新竹縣', '宜蘭縣']
 
-     const filtered = FlowerEvent.filter((item) => {
-    
+    // 篩選
+    const filtered = FlowerEvent.filter((item) => {
         return (
-          (selectedlocation === "" || item.location === selectedlocation)
+            (selectedlocation === "" || item.location === selectedlocation)
         );
-      });
-    
+    });
+
+    // more按鈕
+    const newsHandlerMore = () => {
+        setVisibleCount((prev) => { prev + 6 }) // 每次最多顯示6張
+    }
+
     return (
         <>
-            {/* 圖片bar */}
+            {/* 圖片banner */}
             <section className="newsBanner">
                 <div className="bannerswiper">
                     <Swiper
@@ -72,11 +81,18 @@ const News = () => {
                         </div>
                     </div>
                     <div className="news-CardWarp">
-                        {filtered.map((item, index) => {
+                        {filtered.slice(0, visibleCount).map((item, index) => {
                             return <Newscard key={index} lable={item.lable} date={item.date} title={item.title} img={item.img} />
                         })}
                     </div>
-                    <div className="news-page"> 頁碼區 </div>
+                    {visibleCount < filtered.length && (
+                        <button className="n-btn-more" onClick={newsHandlerMore}>
+                            <span className="circle">
+                                <span className="icon arrow"></span>
+                            </span>
+                            <span className="btn-text">MORE</span>
+                        </button>
+                    )}
                 </div>
 
                 <div className="news-discount">

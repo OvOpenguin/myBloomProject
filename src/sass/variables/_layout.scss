@@ -92,6 +92,26 @@ header {
             /* 控制 svg 與文字的距離 */
         }
 
+        .nav-logo {
+            position: absolute;
+            left: 10%;
+
+            @media (max-width: 1200px) {
+                left: 3%;
+            }
+
+            @media (max-width: 830px) {
+                left: 25%;
+                top: 7%;
+            }
+
+            img {
+                width: 100px;
+                height: auto;
+                object-fit: cover;
+            }
+        }
+
         .nav-blue {
             display: inline-block;
             position: relative;
@@ -100,6 +120,12 @@ header {
             .t {
                 color: #7DC5E4;
                 display: inline;
+            }
+
+            a {
+                &:hover {
+                    color: #7DC5E4;
+                }    
             }
 
             &:hover,
@@ -136,6 +162,12 @@ header {
                 color: #FFA8B5;
                 display: inline;
             }
+            
+            a {
+                &:hover {
+                    color: #FFA8B5;
+                }    
+            }
 
             &:hover,
             &.active {
@@ -170,6 +202,12 @@ header {
             .t {
                 color: #FF8457;
                 display: inline;
+            }
+            
+            a {
+                &:hover {
+                    color: #FF8457;
+                }    
             }
 
             &:hover,
@@ -206,6 +244,12 @@ header {
                 color: #69C9A0;
                 display: inline;
             }
+            
+            a {
+                &:hover {
+                    color: #69C9A0;
+                }    
+            }
 
             &:hover,
             &.active {
@@ -240,6 +284,12 @@ header {
             .t {
                 color: #C075E3;
                 display: inline;
+            }
+            
+            a {
+                &:hover {
+                    color: #C075E3;
+                }    
             }
 
             &:hover,
