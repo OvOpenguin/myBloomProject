@@ -1,5 +1,6 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Link } from 'react-router-dom'
+import $ from 'jquery'
 // 安裝插建
 import { motion } from "framer-motion";
 // 匯入陣列物件資料
@@ -31,12 +32,29 @@ const Story = () => {
 
   const selectedFlower = flowers[index];
 
+  // 花的清單切換
+  useEffect(() => {
+    $('.sMenuBtn').on("click", function () {
+      $('.sleft').toggleClass('show');
+    });
+
+    // 卸載元件時，移除事件監聽器，避免記憶體洩漏
+    return () => {
+      $('.sMenuBtn').off("click");
+    };
+  }, []);
+
+
+
+
+
+
 
   return (
     <>
       <div className='story'>
 
-        <div className="sleft">
+        <div className="sleft show">
           {/* 其他品種 */}
           <div className="sother">
             <h3>其他花種</h3>
@@ -85,64 +103,67 @@ const Story = () => {
         </div>
 
         {/* 中間-內容介紹 */}
-        <motion.div
-          className='sContent'
-          initial={{ opacity: 0, rotateY: 90 }}
-          animate={{ opacity: 1, rotateY: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.5 }}
-        >
-          {/* 標題 */}
-          <div className='sflowerName'>
-            <div className="tape2"><img src={tape2} alt="" /></div>
-            <h2>
-              {/* 白玫瑰  Rosa alba */}
-              {selectedFlower.name}
-            </h2>
-            <p>
-              {/* #純潔　#純高貴　#天真　#尊敬　#誠心敬愛 */}
-              {selectedFlower.meaning}
-            </p>
-            {/* 季節tag */}
-            <div className="seasontag">
-              <div
-                className="tag1"
-                style={{ backgroundImage: `url(./story/${selectedFlower.season1}-bg.svg)` }}>
-                {/* 春 */}
-                {selectedFlower.season1}
-              </div>
-              <div
-                className="tag2"
-                style={{ backgroundImage: `url(./story/${selectedFlower.season2}-bg.svg)` }}>
-                {/* 夏 */}
-                {selectedFlower.season2}
+        <div className="sContent-wrap">
+          <motion.div
+            className='sContent'
+            key={selectedFlower.description}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            {/* 標題 */}
+            <div className='sflowerName'>
+              <div className="tape2"><img src={tape2} alt="" /></div>
+              <h2>
+                {/* 白玫瑰  Rosa alba */}
+                {selectedFlower.name}
+              </h2>
+              <p>
+                {/* #純潔　#純高貴　#天真　#尊敬　#誠心敬愛 */}
+                {selectedFlower.meaning}
+              </p>
+              {/* 季節tag */}
+              <div className="seasontag">
+                <div
+                  className="tag1"
+                  style={{ backgroundImage: `url(./story/${selectedFlower.season1}-bg.svg)` }}>
+                  {/* 春 */}
+                  {selectedFlower.season1}
+                </div>
+                <div
+                  className="tag2"
+                  style={{ backgroundImage: `url(./story/${selectedFlower.season2}-bg.svg)` }}>
+                  {/* 夏 */}
+                  {selectedFlower.season2}
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* 中間介紹 */}
-          <div
-            className='sflowerIntro' style={{ background: `${selectedFlower.color}` }}>
-            {/* 科屬分類 */}
-            <div className="sclass">
-              <div className="classtxt">
-                <div className="family">科</div><div className="ftxt">
-                  {/* 薔薇科 Rosaceae */}
-                  {selectedFlower.family}
+            {/* 中間介紹 */}
+            <div
+              className='sflowerIntro' style={{ background: `${selectedFlower.color}` }}>
+              {/* 科屬分類 */}
+              <div className="sclass">
+                <div className="classtxt">
+                  <div className="family">科</div><div className="ftxt">
+                    {/* 薔薇科 Rosaceae */}
+                    {selectedFlower.family}
+                  </div>
+                </div>
+                <div className="classtxt">
+                  <div className="genus">屬</div><div className="gtxt">
+                    {/* 薔薇屬 Rosaceae */}
+                    {selectedFlower.genus}
+                  </div>
                 </div>
               </div>
-              <div className="classtxt">
-                <div className="genus">屬</div><div className="gtxt">
-                  {/* 薔薇屬 Rosaceae */}
-                  {selectedFlower.genus}
-                </div>
+              {/* 內文介紹 */}
+              <div className="introtxt">
+                {selectedFlower.description}
               </div>
             </div>
-            {/* 內文介紹 */}
-            <div className="introtxt">
-              {selectedFlower.description}
-            </div>
-          </div>
+          </motion.div>
 
           {/* 蝴蝶裝飾 */}
           <div className="sbutterfly"><img src={butterfly} alt="蝴蝶裝飾" /></div>
@@ -160,7 +181,7 @@ const Story = () => {
               strokeWidth="2" />
           </svg>
 
-        </motion.div>
+        </div>
 
         {/* 右側-主花區 */}
         <div
@@ -172,13 +193,15 @@ const Story = () => {
             key={selectedFlower.image}
             src={selectedFlower.image}
             alt={selectedFlower.name}
-            initial={{ opacity: 0, rotateY: 90 }}
-            animate={{ opacity: 1, rotateY: 0 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0.5, rotate: 0 }}
+            animate={{ opacity: 1, rotate: 0 }}
+            transition={{ duration: 0.8 }}
           />
 
           <img className='circletxt' src={circletxt} alt="底圖txt" />
         </div>
+
+        <button className="sMenuBtn">Click!</button>
 
       </div>
     </>
