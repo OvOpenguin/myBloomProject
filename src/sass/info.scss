@@ -281,6 +281,78 @@ h2 {
         }
     }
 
+.info-weather {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.weather-bg {
+  width: 100%;
+  display: block;
+}
+
+.weather-icon {
+  position: absolute;
+  top: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.weather-info {
+  position: absolute;
+  top: calc(10vh + 5vh + 2rem); /* 天氣icon下面5vh */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem; /* weather-info 左右間距 */
+}
+
+.temp-city {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.temperature {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #64503C;
+  margin-bottom: 1vh;
+}
+
+.city-rain {
+  display: flex;
+  align-items: center;
+  gap: 1vh;
+}
+
+.city, .rain-prob {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #64503C;
+}
+
+.rain-icon {
+  width: 1.5rem;
+  height: auto;
+}
+
+.date-time {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px; /* 可調整間距 */
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #64503C;
+}
+
+
+    
 }
 
 .info-tabs-wrapper {
@@ -357,17 +429,23 @@ h2 {
 .transport-section {
     width: 100vw; // 用視窗寬度，而不是父容器寬度
     margin: 0;
-    padding: 0 15vw; // 左右留白 5% 可自由調整
+    padding: 0 10vw; // 左右留白 5% 可自由調整
     display: flex;
     justify-content: center;
 }
 
 .transport-container {
-    width: 100%; // 內部容器占滿 transport-section
-    max-width: none; // 取消限制
-    display: flex;
-    gap: 5%; // 左右欄位間距
+  width: 100%;
+  max-width: none;  // 確保不被卡住
+  display: flex;
+  gap: 5%;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
+
 
 .swiper-wrapper-relative {
     position: relative;
@@ -643,6 +721,10 @@ h2 {
     flex-direction: column;
     justify-content: flex-start; // 內容靠上
     text-align: left;
+
+    @media (max-width: 1024px) {
+    padding: 20px;
+  }
 }
 
 .transport-right {
@@ -654,6 +736,16 @@ h2 {
         height: 380px;
         border-radius: 12px;
     }
+@media (max-width: 1024px) {
+    justify-content: center;
+    width: 100%;       // ⬅️ 讓右側容器本身可以放大
+    max-width: none;   // ⬅️ 解除限制
+    iframe {
+      width: 85%;      // ⬅️ 比左邊寬一點
+      max-width: 800px;
+      height: 320px;
+    }
+}
 }
 
 .transport-left {
@@ -664,7 +756,7 @@ h2 {
     .transport-item {
         display: flex;
         align-items: center; // 與圖標垂直置中
-        gap: 50px;
+        gap: 20px;
 
         img.icon {
             width: 100%;
@@ -676,44 +768,46 @@ h2 {
         .item-content {
             display: flex;
             align-items: center; // 垂直置中所有文字區塊
-            gap: 10px;
+            gap: 30px;
 
-            // 統一所有文字區塊樣式
-            .text-block,
-            .text-block-right,
-            .text-block-extra {
-                // 第三組文字
-                display: flex;
-                flex-direction: column;
-                justify-content: center; // 垂直置中
-                gap: 5px;
+            .text-block-0,
+   .text-block-0,
+  .text-block-1,
+  .text-block-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; // 🔹 垂直置中
+    align-items: flex-start; // 文字靠左，如果要置中整段文字可改 center
+    gap: 5px;
 
-                .line1 {
-                    font-weight: 700;
-                    font-size: 1.25rem; // 20px
-                }
+    .line1 {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #64503C;
+    }
 
-                .line2 {
-                    font-size: 1rem;
-                }
+    .line2 {
+      font-size: 1rem;
+      color: #64503C;
+    }
 
-                .line3 a {
-                    font-size: 1rem;
-                    color: #C075E3;
-                    text-decoration: none;
+    .line3 a {
+      font-size: 1rem;
+      color: #C075E3;
+      text-decoration: none;
 
-                    &:hover {
-                        text-decoration: underline;
-                    }
-                }
-            }
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 
-            .divider {
-                width: 2px;
-                background-color: #64503C;
-                height: 100%; // 與文字高度一致
-            }
-        }
+  .divider {
+    width: 2px;
+    background-color: #64503C;
+    height: 100%;
+  }
+}
     }
 }
 
@@ -877,10 +971,18 @@ h2 {
                 position: absolute;
                 width: 20rem;
                 height: auto;
+                
 
                 // 🔹 這裡控制 flower1 的位置
                 transform: translate(10px, -20px); // x=右移, y=上移 (自行調整)
+             transition: transform 0.5s ease, filter 0.5s ease;
             }
+            &:hover .flower-main {
+ transform: translateY(-50px) scale(1.05); // 往上移動 10px，並放大 5%
+  filter: brightness(1.1); // 提亮
+  transition: transform 0.5s ease, filter 0.5s ease; // 平滑動畫
+  
+  }
         }
 
         .flower-text {
@@ -984,16 +1086,16 @@ h2 {
     }
 
     .highlight-group {
-        width: 320px;
-        height: 320px;
-        position: relative;
-        flex-shrink: 0; // 防止被父容器壓縮
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: visible; // 🔹 保證 hover 放大不被裁切
-        z-index: 1; // 保證在背景之上
-        transition: all 0.3s ease;
+ width: 320px;
+  height: 320px;
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+  z-index: 1;
+  transition: all 0.3s ease;
 
         .highlight-bg {
             position: absolute;
@@ -1039,7 +1141,7 @@ h2 {
     .highlight-track {
         display: flex;
         gap: 5vw;
-        animation: scrollLeft 200s linear infinite;
+        animation: scrollLeft 250s linear infinite;
 
     }
 
@@ -1053,7 +1155,7 @@ h2 {
         }
 
         to {
-            transform: translateX(-50%); // 跑完一半，剛好接到複製的組
+            transform: translateX(calc(-50% - 2.5vw));
         }
     }
 
