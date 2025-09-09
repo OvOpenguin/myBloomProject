@@ -79,7 +79,7 @@ const Map = () => {
 
   // 自定義地標
   const locationlogo = L.icon({
-  iconUrl: './map/locationlogo.svg',
+  iconUrl: './map/locationlogo2.svg',
   iconSize: [40, 40],
   iconAnchor: [20, 40],
   popupAnchor: [0, -40],
@@ -148,7 +148,7 @@ const Map = () => {
             <MapContainer className="leafmap" center={[25.07, 121.45]} zoom={10}>
               <TileLayer
                 url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                attribution='Positron'
               />
               {filtered.map((item) => (
                 <Marker
