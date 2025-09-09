@@ -92,10 +92,22 @@ header {
             /* 控制 svg 與文字的距離 */
         }
 
+        .nav-logo {
+            position: absolute;
+            left: 10%;
+            
+            img {
+                width: 100px;
+                height: auto;
+                object-fit: cover;
+            }
+        }
+
         .nav-blue {
             display: inline-block;
             position: relative;
             flex-direction: column;
+            transition: color 0.2s linear;
 
             .t {
                 color: #7DC5E4;
