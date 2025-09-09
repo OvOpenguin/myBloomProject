@@ -3,13 +3,30 @@
 
 .wrapper {
   display: grid;
-  grid-template-columns: minmax(0, 2fr) 3fr 8fr minmax(0, 2fr);
+  grid-template-columns: minmax(0, 2fr) 3fr minmax(50%, 8fr) minmax(0, 2fr);
   grid-template-rows: 10vh 600px 10vh;
   column-gap: 60px;
   //overflow: hidden;
 
   .padding-top {
     grid-column: 1 / span 4;
+
+    .dc3 {
+      position: absolute;
+      left: 60%;
+      width: 10%;
+      min-width: 150px;
+      max-height: 200px;
+      animation: shake1 5s infinite ease-in-out;
+      z-index: 1;
+
+      @media (max-width:831px) {
+        position: absolute;
+        left: 70%;
+        z-index: 1;
+      }
+    }
+
   }
 
   .padding-bottom {
@@ -34,6 +51,7 @@
       z-index: 3;
       animation: shake3 5s infinite ease-in-out;
     }
+
   }
 
   // 左側選單
@@ -120,23 +138,6 @@
       height: 77px;
       overflow: hidden;
 
-
-      ::after {
-        content: "";
-        background-image: url(../images/member/member-decoline-line.svg);
-        display: inline-block;
-        background-repeat: no-repeat;
-        background-size: contain;
-        position: absolute;
-        width: 150px;
-        height: 40%;
-        max-height: 200px;
-        top: -15%;
-        left: 0;
-        margin-left: 45%;
-        animation: shake4 5s infinite ease-in-out;
-      }
-
       img {
         display: inline-flex;
         height: 78px;
@@ -154,8 +155,6 @@
 
     }
 
-
-
     .content {
       height: 60vh;
     }
@@ -172,7 +171,9 @@
           justify-content: flex-start;
           gap: 20px;
           height: 500px;
-          overflow: scroll;
+          overflow-y: auto;
+          overflow-x: hidden;
+
 
           @media (max-width:1280px) {
             flex-direction: column;
@@ -184,6 +185,8 @@
             width: 250px;
             // width: 50%;
             position: relative;
+            box-sizing: border-box;
+
 
             @media (max-width:600px) {
               flex: 0 0 auto;
@@ -209,6 +212,7 @@
               height: 225px;
               padding: 20px;
               object-fit: cover;
+
             }
 
             .map-date {
@@ -260,7 +264,8 @@
         >div {
           width: 100%;
           height: 500px;
-          overflow: scroll;
+          overflow-y: auto;
+          overflow-x: hidden;
 
           .v-photos {
             display: flex;
@@ -383,8 +388,8 @@
           flex-wrap: wrap;
           height: 500px;
           width: 100%;
-          overflow: scroll;
-
+          overflow-y: auto;
+          overflow-x: hidden;
 
           .news-Card {
             display: block;
@@ -416,6 +421,12 @@
               width: 100%;
               padding: 10px;
             }
+
+            @media (max-width:830px) {
+              flex-direction: column;
+              align-items: center;
+            }
+
           }
 
           &::-webkit-scrollbar {
@@ -442,7 +453,6 @@
     .prf-wrap {
 
       .content {
-
         background: #d5f6db80;
         padding: 50px 5% 0 5%;
 
@@ -452,16 +462,34 @@
           align-items: flex-start;
           gap: 30px;
 
-          label {
-            padding: 10px 20px;
-            margin-right: 20px;
-            background-color: $white;
-            color: $brown-100;
-          }
+          .user-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
 
-          >.inputName {
-            border-color: none;
-            height: 40px;
+            .label {
+              padding: 10px 20px;
+              background-color: $white;
+              color: $brown-100;
+            }
+
+            input {
+              border: none;
+              // outline: 0.5 solid $sky-blue;
+              outline: none;
+              height: 30px;
+              line-height: 30px;
+
+              &::placeholder {
+                color: $brown-70;
+                font-size: $f-s-sm;
+              }
+
+              &:focus {
+                outline: 0.5 solid $sky-blue;
+              }
+
+            }
           }
 
           .show-btn {
@@ -487,72 +515,175 @@
   position: relative;
   display: flex;
   justify-content: center;
+  width: 100%;
+  height: 80vh;
+
 
   .signin-wrap {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 300px;
-    height: 400px;
+    width: 360px;
+    height: 480px;
     background-color: #E8F6FF;
+    background-image: url(../images/member/member-sign-bg.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
 
 
     img {
       width: 200px;
-      margin: 10%;
+      margin-top: 15%;
+    }
+
+    // &::after {
+    //     content: "";
+    //     background-image: url(../images/member/member-sign-bg.png);
+    //     display:block;
+    //     background-repeat: no-repeat;
+    //     // background-size: contain;
+    //     position: absolute;
+    //     z-index: 9;
+    //     top: 0;
+    //     left: 0;
+    //   }
+
+    button {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      outline: none;
+      border: 0;
+      vertical-align: middle;
+      text-decoration: none;
+      background: transparent;
+      padding: 0;
+      font-size: inherit;
+      font-family: inherit;
+
+      // 個人中心-登入按鈕
+      &.m-btn-sign {
+        width: 10rem;
+        height: auto;
+        margin-top: 5px;
+
+        .circle {
+          transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
+          position: relative;
+          display: block;
+          margin: 0;
+          width: 3rem;
+          height: 3rem;
+          background: $sky-blue;
+          border-radius: 99px;
+
+          .icon {
+            transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background: #fff;
+
+            &.arrow {
+              transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
+              left: 0.625rem;
+              width: 1.125rem;
+              height: 0.125rem;
+              background: none;
+
+              &::before {
+                position: absolute;
+                content: '';
+                top: -0.25rem;
+                right: 0.0625rem;
+                width: 0.625rem;
+                height: 0.625rem;
+                border-top: 0.125rem solid #fff;
+                border-right: 0.125rem solid #fff;
+                transform: rotate(45deg);
+              }
+            }
+          }
+        }
+      }
+
+      .btn-text {
+        transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
+        position: absolute;
+        top: 0px;
+        left: 0;
+        right: 0;
+        padding: 12px;
+        margin-left: 24px;
+        color: $brown-100;
+        font-weight: inherit;
+        line-height: 1.6;
+        text-align: center;
+        letter-spacing: 2px;
+
+      }
+
+      &:hover {
+        .circle {
+          width: 100%;
+
+          .icon {
+            &.arrow {
+              background: $white;
+              transform: translate(1rem, 0);
+            }
+          }
+        }
+
+        .btn-text {
+          color: #fff;
+        }
+      }
+
     }
 
     form {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-bottom: 10%;
-      gap: 10px;
+      margin-bottom: 15%;
+      gap: 20px;
+      color: $brown-100;
+      font-size: $f-s-md;
+      font-weight: $f-w-m;
 
       input {
-        border: 0.5px solid $brown-100;
-        color: $brown-100;
-        font-size: $f-s-sm;
-        font-weight: $f-w-n;
-        line-height: 125%;
+        border: none;
+        // outline: 0.5 solid $sky-blue;
+        outline: none;
+        height: 30px;
+        line-height: 30px;
+
+        &::placeholder {
+          color: $brown-70;
+          font-size: $f-s-sm;
+        }
+
+        &:focus {
+          outline: 0.5 solid $sky-blue;
+        }
+
       }
 
-      .sign-name {
+      .sign-box {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 10px;
-        color: $brown-100;
-        font-size: $f-s-md;
-        font-weight: $f-w-m;
-      }
+        gap: 5px;
 
-      .sign-id {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-        color: $brown-100;
-        font-size: $f-s-md;
-        font-weight: $f-w-m;
-      }
-
-
-      .sign {
-        color: $brown-100;
-        font-size: $f-s-sm;
-        line-height: 150%;
-        background-color: #fff;
-        border: 0.5px solid #64503C;
-        border-radius: 99px;
-        width: 50%;
       }
 
       .register {
         color: $brown-100;
-        font-size: $f-s-sm;
-        line-height: 150%;
+        font-size: $f-s-md;
         text-align: center;
         background: none;
         border: none;

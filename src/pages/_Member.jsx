@@ -13,6 +13,8 @@ import flower01 from '../images/wall/wall-flower01.png'
 import flower02 from '../images/wall/wall-flower02.png'
 import sign1 from '../images/member/member-sign-1.svg'
 import sign2 from '../images/member/member-sign-2.svg'
+import show from '../images/member/member-profile-eyes.svg'
+import hide from '../images/member/member-profile-eyes.svg'
 import logo from '../images/home/北花冊.webp'
 
 // 裝飾
@@ -158,7 +160,7 @@ const News = () => {
 const Profile = () => {
 
     // 建立 ref 綁定密碼
-    const passwordRef = useRef(null);
+    const [passwordIcon, setPasswordIcon] = useState(show);
     // 設定密碼是否顯示
     const [show, setShow] = useState(false);
 
@@ -166,12 +168,10 @@ const Profile = () => {
     function togglePassword() {
 
         // 切換 show 的狀態
-        setShow(prevShow => !prevShow);
-        // 根據 show 的狀態 => 更新 type
-        if (passwordRef.current) {
-            passwordRef.current.type = show ? "text" : "password";
-        }
-    }
+        setShow(!show);
+        setPasswordIcon(show ? show : hide)
+    };
+
 
     return (
         <div className="prf-wrap">
@@ -209,9 +209,14 @@ const Profile = () => {
                         {/* 查看密碼 */}
                         <button
                             className="show-btn"
-                            type="submit"
+                            type="button"
                             onClick={togglePassword}>
-                            {show ? "關閉密碼" : "查看密碼"}
+                            <img
+                                src={passwordIcon}
+                                alt={show
+                                    ? 'showPassword '
+                                    : 'HidePassword'
+                                } />
                         </button>
                     </div>
 
