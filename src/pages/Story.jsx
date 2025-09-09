@@ -43,7 +43,7 @@ const Story = () => {
             <h4>Others</h4>
           </div>
           {/* 左側-選單 */}
-          <div className="sList">
+          <div className="sList" style={{ background: `${selectedFlower.color}` }}>
             {/* 裝飾書 */}
             <div className="sbook">
               <img src={book} alt="book" />
@@ -57,16 +57,20 @@ const Story = () => {
                     <li
                       key={flower.id}
                       onClick={() => setIndex(i)}>
+                      {/* 花名 */}
                       {flower.name}
                     </li>
                   ))
                 }
               </ul>
+              {/* 膠帶 */}
+              <div className="tape"><img src={tape} alt="膠帶裝飾" /></div>
             </div>
-
-            {/* 膠帶 */}
-            <div className="tape"><img src={tape} alt="膠帶裝飾" /></div>
           </div>
+
+
+
+
           {/* 放入Link才能切換頁面 */}
 
           <Link to="/play">
@@ -118,8 +122,7 @@ const Story = () => {
 
           {/* 中間介紹 */}
           <div
-            className='sflowerIntro'
-            style={{ backgroundImage: `url(./story/story-bg-${selectedFlower.season1}-500x400.svg)` }}>
+            className='sflowerIntro' style={{ background: `${selectedFlower.color}` }}>
             {/* 科屬分類 */}
             <div className="sclass">
               <div className="classtxt">

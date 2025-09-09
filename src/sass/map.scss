@@ -62,7 +62,6 @@
                     text-align: center;
                     border: none;
                     background-color: $bg-gray;
-
                 }
 
             }
@@ -272,6 +271,11 @@
                     height: 225px;
                     padding: 20px;
                     object-fit: cover;
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        filter: brightness(0.6);
+                    }
                 }
 
                 .map-date {
@@ -305,12 +309,18 @@
 .leaflet-popup-content {
     margin: 0;
     padding: 13px 20px;
+
     img {
         height: 120px;
         width: 200px;
         object-fit: cover;
         object-position: center;
         border-radius: 6px;
+        transition: all 0.3s ease;
+
+        &:hover {
+            filter: brightness(0.8);
+        }
     }
 
     // h3 {
