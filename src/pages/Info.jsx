@@ -7,7 +7,7 @@ import icon無障礙 from "../images/info/icon-無障礙.svg";
 import icon哺乳室 from "../images/info/icon-哺乳室.svg";
 import icon停車場 from "../images/info/icon-停車場.svg";
 import date from "../images/info/date.svg";
-import weather from "../images/info/weather.svg";
+import weatherbg from "../images/info/weatherbg.svg";
 import foodbgpink from "../images/info/food-background-pink.svg";
 import foodptopink from "../images/info/food-photo-pink.png";
 import arrowlf from "../images/info/arrow-left.svg";
@@ -17,16 +17,27 @@ import attptoblu from "../images/info/attractions-photo-blue.png";
 import bus from "../images/info/bus.png";
 import mrt from "../images/info/mrt.png";
 import car from "../images/info/car.png";
-import mrtyuanshan from "../images/info/mrt-yuanshan.png";
+import mrtyuanshan from "../images/info/mrtyuanshan.svg";
+import mrtminquanwest from "../images/info/mrtminquanwest.svg";
+import mrtzhongshan from "../images/info/mrtzhongshan.svg";
 import flower1 from "../images/info/flower1.png";
 import flowerbg from "../images/info/flower-background.svg";
 import FloralVarieties from "../images/info/FloralVarieties.svg";
 import FlowerGra from "../images/info/FlowerGra.jpg";
 import Point from "../images/info/Point.svg";
 import PointMask from "../images/info/point-mask.svg";
-import flowerg1 from "../images/info/flowerg1.png";
-import flowerg2 from "../images/info/flowerg2.png";
-import flowerg3 from "../images/info/flowerg3.png";
+import highlightcultural from "../images/info/highlightcultural.png";
+import highlightlight from "../images/info/highlightlight.png";
+import highlightmar from "../images/info/highlightmar.png";
+import highlightpho from "../images/info/highlightpho.png";
+import highlightdiy from "../images/info/highlightdiy.png";
+import highlightmusic from "../images/info/highlightmusic.png";
+import highlightchild from "../images/info/highlightchild.png";
+import umbrella  from "../images/info/umbrella.svg";
+import raining  from "../images/info/raining.svg";
+import sunny  from "../images/info/sunny.svg";
+import cloudy  from "../images/info/cloudy.svg";
+
 import flowerg from "../images/info/flowerg.svg";
 import phone from "../images/info/phone.svg";
 import fbicon from "../images/info/fbicon.png";
@@ -47,7 +58,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
 
-
+import jsonData from '../json/weather.json';
 
 
 
@@ -68,6 +79,41 @@ function MapIframe() {
 }
 
 const Info = () => {
+// Info.jsx
+const getWeatherIcon = (data) => {
+  const rainProb = parseInt(
+    data.cwaopendata.dataset.location[0].weatherElement
+      .find(el => el.elementName === "PoP")
+      .time[0].parameter.parameterName
+  );
+
+if (rainProb >= 60) return raining;
+if (rainProb <= 10) return sunny;
+return cloudy;  // 11~79%
+
+};
+
+const getTemperature = (data) => {
+  return data.cwaopendata.dataset.location[0].weatherElement.find(el => el.elementName === "MaxT").time[0].parameter.parameterName;
+};
+
+const getCity = (data) => {
+  return data.cwaopendata.dataset.location[0].locationName;
+};
+
+const getRainProbability = (data) => {
+  return data.cwaopendata.dataset.location[0].weatherElement.find(el => el.elementName === "PoP").time[0].parameter.parameterName;
+};
+
+const getDate = (data) => {
+  const time = data.cwaopendata.dataset.location[0].weatherElement[0].time[0].startTime;
+  return new Date(time).toLocaleDateString("zh-TW", { month: "2-digit", day: "2-digit" });
+};
+
+const getTime = (data) => {
+  const time = data.cwaopendata.dataset.location[0].weatherElement[0].time[0].startTime;
+  return new Date(time).toLocaleTimeString("zh-TW", { hour: "2-digit", minute: "2-digit" });
+};
 
   const [activeIndex, setActiveIndex] = useState(0);
   const tabRefs = useRef([]);
@@ -223,9 +269,33 @@ const Info = () => {
           </div>
         </div>
 
-        <div className="info-weather">
-          <img src={weather} alt="天氣" />
-        </div>
+<div className="info-weather">
+  <img src={weatherbg} alt="天氣背景" className="weather-bg" />
+
+  {/* 天氣 icon */}
+  <div className="weather-icon">
+    <img src={getWeatherIcon(jsonData)} alt="天氣圖示" />
+  </div>
+
+  {/* 溫度、縣市、降雨 */}
+  <div className="weather-info">
+    <div className="temp-city">
+      <div className="temperature">{getTemperature(jsonData)}°C</div>
+      <div className="city-rain">
+        <span className="city">{getCity(jsonData)}</span>
+        <img src={umbrella} alt="降雨圖示" className="rain-icon" />
+        <span className="rain-prob">{getRainProbability(jsonData)}%</span>
+      </div>
+    </div>
+
+    {/* 日期、時間 */}
+    <div className="date-time">
+      <div className="date">{getDate(jsonData)}</div>
+      <div className="time">{getTime(jsonData)}</div>
+    </div>
+  </div>
+</div>
+
       </div>
 
       {/* Tabs */}
@@ -394,29 +464,23 @@ const Info = () => {
                 <div className="highlight-gallery">
                   <div className="highlight-track">
                     {[
-                      { img: flowerg1, text: "攝影比賽" },
-                      { img: flowerg2, text: "花卉市集" },
-                      { img: flowerg3, text: "燈光秀" },
-                      { img: flowerg1, text: "互動體驗" },
-                      { img: flowerg2, text: "DIY 手作" },
-                      { img: flowerg3, text: "音樂演出" },
-                      { img: flowerg1, text: "特色餐飲" },
-                      { img: flowerg2, text: "親子遊樂" },
-                      { img: flowerg3, text: "藝術展覽" },
-                      { img: flowerg1, text: "文創攤位" },
+                      { img: highlightpho, text: "攝影比賽" },
+                      { img: highlightmar, text: "花卉市集" },
+                      { img: highlightlight, text: "燈光秀" },
+                      { img: highlightdiy, text: "DIY 手作" },
+                      { img: highlightmusic, text: "音樂演出" },
+                      { img: highlightchild, text: "親子遊樂" },
+                      { img: highlightcultural, text: "文創攤位" },
                     ]
                       // 為了無限輪播，把這組複製兩次
                       .concat([
-                        { img: flowerg1, text: "攝影比賽" },
-                        { img: flowerg2, text: "花卉市集" },
-                        { img: flowerg3, text: "燈光秀" },
-                        { img: flowerg1, text: "互動體驗" },
-                        { img: flowerg2, text: "DIY 手作" },
-                        { img: flowerg3, text: "音樂演出" },
-                        { img: flowerg1, text: "特色餐飲" },
-                        { img: flowerg2, text: "親子遊樂" },
-                        { img: flowerg3, text: "藝術展覽" },
-                        { img: flowerg1, text: "文創攤位" },
+                        { img: highlightpho, text: "攝影比賽" },
+                        { img: highlightmar, text: "花卉市集" },
+                        { img: highlightlight, text: "燈光秀" },
+                        { img: highlightdiy, text: "DIY 手作" },
+                        { img: highlightmusic, text: "音樂演出" },
+                        { img: highlightchild, text: "親子遊樂" },
+                        { img: highlightcultural, text: "文創攤位" },
                       ])
                       .map((item, i) => (
                         <div className="highlight-group" key={i}>
@@ -529,65 +593,61 @@ const Info = () => {
           )}
 
           {/* 交通資訊 */}
-          {activeIndex === 1 && (
-            <div className="transport-section">
-              <div className="transport-container">
-                <div className="transport-left">
-                  {[
-                    {
-                      icon: car,
-                      lines: ["汽車圖標文字1", "走路約 3 分鐘", "查看位置 >"],
-                    },
-                    {
-                      icon: mrt,
-                      lines: [
-                        <img src={mrtyuanshan} alt="MRT Yuanshan" />,
-                        "走路約 3 分鐘",
-                        "查看位置 >",
-                      ],
-                    },
-                    {
-                      icon: bus,
-                      lines: ["公車圖標文字1", "走路約 3 分鐘", "查看位置 >"],
-                    },
-                  ].map((item, idx) => (
-                    <div className="transport-item" key={idx}>
-                      <img className="icon" src={item.icon} alt="" />
-                      <div className="item-content">
-                        {/* 原本三組文字 */}
-                        <div className="text-block">
-                          <div className="line1">{item.lines[0]}</div>
-                          <div className="line2">{item.lines[1]}</div>
-                          <div className="line3">
-                            <a href="#">{item.lines[2]}</a>
-                          </div>
-                        </div>
-                        <div className="divider"></div>
-                        <div className="text-block-right">
-                          <div className="line1">{item.lines[0]}</div>
-                          <div className="line2">{item.lines[1]}</div>
-                          <div className="line3">
-                            <a href="#">{item.lines[2]}</a>
-                          </div>
-                        </div>
-                        <div className="divider"></div>
-                        <div className="text-block-extra">
-                          <div className="line1">{item.lines[0]}</div>
-                          <div className="line2">{item.lines[1]}</div>
-                          <div className="line3">
-                            <a href="#">{item.lines[2]}</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
+{activeIndex === 1 && (
+  <div className="transport-section">
+    <div className="transport-container">
+      <div className="transport-left">
+        {[
+          {
+            icon: car,
+            blocks: [
+              ["花博公園停車場", "走路約 3 分鐘"],
+              ["美術館停車場", "步行約 5 分鐘"],
+              ["兒育中心停車場", "步行約 7 分鐘"],
+            ],
+          },
+          {
+            icon: mrt,
+            blocks: [
+              [<img src={mrtyuanshan} alt="MRT Yuanshan" />, "走路約 3 分鐘"],
+              [<img src={mrtminquanwest} alt="MRT Yuanshan" />, "步行約 4 分鐘"],
+              [<img src={mrtzhongshan} alt="MRT Yuanshan" />, "步行約 6 分鐘"],
+            ],
+          },
+          {
+            icon: bus,
+            blocks: [
+              ["圓山新城二", "走路約 2 分鐘"],
+              ["通北街口", "步行約 5 分鐘"],
+              ["忠烈祠", "步行約 6 分鐘"],
+            ],
+          },
+        ].map((item, idx) => (
+          <div className="transport-item" key={idx}>
+            <img className="icon" src={item.icon} alt="" />
+            <div className="item-content">
+              {item.blocks.map((block, i) => (
+                <div className={`text-block-${i}`} key={i}>
+                  <div className="line1">{block[0]}</div>
+                  <div className="line2">{block[1]}</div>
+                  <div className="line3">
+                    <a href="#">{block[2]}</a>
+                  </div>
                 </div>
-                <div className="transport-right">
-                  <MapIframe />
-                </div>
-              </div>
+              ))}
             </div>
-          )}
+          </div>
+        ))}
+      </div>
+      <div className="transport-right">
+        <MapIframe />
+      </div>
+    </div>
+  </div>
+)}
+
+
+          {/* 周邊推薦 */}
           {activeIndex === 2 && (
             <div className="surrounding-content">
 
