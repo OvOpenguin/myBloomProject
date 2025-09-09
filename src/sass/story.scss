@@ -1,9 +1,9 @@
 @use 'reset';
 @use './variables/' as *;
 
-// * {
-//     outline: 1px solid red;
-// }
+* {
+    outline: 1px solid red;
+}
 
 
 
@@ -21,13 +21,13 @@
         flex-direction: column;
         padding: 30px;
     }
-    
+
     // 左側 menu
     .sleft {
         text-align: center;
 
         @media (max-width:1200px) {
-           display: none;
+            display: none;
         }
 
         .sList {
@@ -35,10 +35,9 @@
             max-width: 200px;
             min-width: 200px;
             padding: 30px;
-            background-image: url(../images/story/story-list-bg-150x200.png);
-            background-size: cover;
-
-
+            background: $spring-yellow;
+            clip-path: polygon(8% 0, 88% 0, 100% 10%, 100% 95%, 90% 100%, 8% 100%, 0% 95%, 0 10%);
+           
             .sbook {
                 position: absolute;
                 top: -200px;
@@ -52,30 +51,35 @@
                 left: 50px;
             }
 
-            .tape {
-                position: absolute;
-                width: 80px;
-                top: -30px;
-                right: -30px;
-            }
-
             .sMenu {
                 ul {
                     display: flex;
-                    justify-content: space-evenly;
+                    justify-content: space-between;
                     flex-wrap: wrap;
                     background-color: $white;
-                    cursor: pointer;
-
-
 
                     li {
                         color: $brown-100;
                         display: block;
                         padding: 10px;
+                        cursor: pointer;
+                        z-index: 1;
+                        transition: color 0.3s ease;
+
+                        &:hover, &:active{
+                            color:$grass-green;
+                        }
                     }
                 }
+
             }
+        }
+
+        .tape {
+            position: absolute;
+            width: 60px;
+            top: 5px;
+            right: 0px;
         }
 
         .btn-play {
@@ -171,10 +175,13 @@
         }
 
         .sflowerIntro {
-            padding: 40px;
-            // 底圖
-            background-image: url(../images/story/story-bg-y-500x400.png);
-            background-size: cover;
+            padding: 20px 30px 30px;
+            background: $spring-yellow;
+            clip-path: polygon(8% 0, 88% 0, 100% 10%, 100% 95%, 90% 100%, 8% 100%, 0% 95%, 0 10%);
+            // // 底圖
+            // background-image: url(../images/story/story-bg-y-500x400.png);
+            // background-size: cover;
+            //  // backgroundImage: `url(./story/story-bg-${selectedFlower.season1}-500x400.svg)`
 
 
             .sclass {
