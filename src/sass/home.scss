@@ -5,7 +5,7 @@
 
 // outline check
 // * {
-//     // outline: 1px solid red;
+//     outline: 1px solid red;
 // }
 
 // swiper 設定
@@ -52,8 +52,7 @@
         // 內部原設定
         // 日期
         .eventTime {
-            display: flex;
-            justify-content: end;
+            margin-left: 150px;
             font-size: 1.4rem;
             margin-bottom: -90px;
             font-weight: $f-w-m;
@@ -823,7 +822,8 @@
             margin-bottom: -90px;
 
             h3 {
-                margin: 30px -500px 0 0;
+                width: 300px;
+                margin: 40px -500px 0 0;
                 transform: rotate(10deg);
             }
         }
