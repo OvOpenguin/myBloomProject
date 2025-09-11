@@ -280,80 +280,121 @@ h2 {
             }
         }
     }
-
-.info-weather {
-  position: relative;
-  width: 100%;
-  height: auto;
-}
-
-.weather-bg {
-  width: 100%;
-  display: block;
-}
-
-.weather-icon {
-  position: absolute;
-  top: 10vh;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.weather-info {
-  position: absolute;
-  top: calc(10vh + 5vh + 2rem); /* 天氣icon下面5vh */
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 2rem; /* weather-info 左右間距 */
-}
-
-.temp-city {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.temperature {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #64503C;
-  margin-bottom: 1vh;
-}
-
-.city-rain {
-  display: flex;
-  align-items: center;
-  gap: 1vh;
-}
-
-.city, .rain-prob {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #64503C;
-}
-
-.rain-icon {
-  width: 1.5rem;
-  height: auto;
-}
-
-.date-time {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px; /* 可調整間距 */
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #64503C;
-}
-
-
     
 }
+.info-weather {
+  position: relative;
+  width: 228px;
+  margin-top: 2rem;
+
+  .weather-bg {
+    width: 120%;
+    height: auto;
+    display: block;
+  }
+
+  /* 天氣 icon */
+  .weather-icon {
+    position: absolute;
+    top: -8vh; // 從 info-weather top 開始
+    left: 45%;
+    transform: translateX(-50%);
+    width: clamp(80px, 10vw, 120px);
+    @media (max-width: 640px) {
+    left: 45%;  
+}
+
+    img {
+      width: 150%;
+      height: auto;
+      display: block;
+                     @media (max-width: 640px) {
+width: 180%;  }
+    }
+  }
+
+  /* 左右資訊容器 */
+  .weather-info {
+    position: absolute;
+    top:35%;
+    left: 15%;
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+
+    /* 左側溫度 + 縣市 + 降雨 */
+    .temp-city {
+      display: flex;
+      flex-direction: column;
+      
+               @media (max-width: 640px) {
+width: clamp(140px, 40vw, 110px); // 最小 180px，最大 300px，響應式自動調整
+  }
+
+      .temperature {
+        font-weight: 700;
+        font-size: clamp(2rem, 5vw, 3rem); // 48px
+        color: #64503C;
+         @media (max-width: 640px) {
+font-size: clamp(2rem, 10vw, 3rem); // 48px
+  }
+      }
+
+      .city-rain {
+        display: flex;
+        align-items: baseline;
+        margin-top: 1vh;
+
+        .city {
+          font-weight: 700;
+          font-size: clamp(1rem, 3vw, 1rem); // 16px
+          color: #64503C;
+        }
+
+        .rain-icon {
+          width: clamp(16px, 2vw, 16px);
+          height: auto;
+        //   margin-left: 1vh;
+transform: translate(5px, 2px); // X 往右 5px, Y 往上 2px
+
+        }
+
+        .rain-prob {
+          font-weight: 700;
+          font-size: clamp(1rem, 3vw, 1rem); // 16px
+          color: #64503C;
+          margin-left: 1vh;
+        }
+      }
+
+      .right-text {
+        font-size: clamp(1rem, 3vw, 1rem);
+        font-weight: 700;
+        color: #64503C;
+        margin-top: 1vh;
+      }
+    }
+
+    /* 右側日期時間 */
+    .date-time {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+
+      .date,
+      .time {
+        font-weight: 700;
+        font-size: clamp(1.5rem, 4vw, 1.5rem); // 24px
+        color: #64503C;
+      }
+
+      .time {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}
+
 
 .info-tabs-wrapper {
     display: flex;
