@@ -47,8 +47,8 @@ const questions = [
         options: ["杜鵑", "桃花", "梅花"],
         answer: "梅花",
     },
-     {
-        id: 3,
+    {
+        id: 5,
         silhouette: "./play/雛菊shadow.png",
         image: "./play/雛菊real.png",
         options: ["雛菊", "國蘭", "菊花"],
@@ -56,10 +56,13 @@ const questions = [
     },
 ];
 
-// 隨機抽題亂數
-const getRandomQuestion = () => {
-    const index = Math.floor(Math.random() * questions.length);
-    return index;
+// 隨機抽題函式，避免選到同一題
+const getRandomQuestion = (previousIndex) => {
+    let newIndex;
+    do {
+        newIndex = Math.floor(Math.random() * questions.length);
+    } while (newIndex === previousIndex); // 只要新索引和上一題的索引相同，就繼續產生
+    return newIndex;
 };
 
 
@@ -67,9 +70,34 @@ const getRandomQuestion = () => {
 const Play = () => {
 
     const [gameStarted, setGameStarted] = useState(false);
-    const [currentQ, setCurrentQ] = useState(getRandomQuestion());
+    const [currentQ, setCurrentQ] = useState(0);
     const [showAnswer, setShowAnswer] = useState(false);
     const [wrongAnswers, setWrongAnswers] = useState([]);
+
+    // 處理遊戲開始的邏輯
+    const startGame = () => {
+        const initialIndex = getRandomQuestion(-1); // 第一次開始時，傳入一個不可能的索引，例如 -1
+        setGameStarted(true);
+        setCurrentQ(initialIndex);
+        setShowAnswer(false);
+        setWrongAnswers([]);
+    };
+
+    // 處理下一題的邏輯
+    const nextQuestion = () => {
+        const newIndex = getRandomQuestion(currentQ); // 傳入目前題目的索引，讓函式避開它
+        setCurrentQ(newIndex);
+        setShowAnswer(false);
+        setWrongAnswers([]);
+    };
+
+    // 處理結束遊戲的邏輯
+    const endGame = () => {
+        setGameStarted(false);
+        setShowAnswer(false);
+        setWrongAnswers([]);
+    };
+
 
     return (
         <>
@@ -88,7 +116,6 @@ const Play = () => {
 
                     {/* 裝飾 */}
                     <div className="pButterfly"><img src={蝴蝶} alt="蝴蝶" /></div>
-                    {/* <div className="pBline"><img src={l3} alt="蝴蝶軌跡" /></div> */}
                     <svg
                         className="pBline"
                         xmlns="http://www.w3.org/2000/svg"
@@ -114,17 +141,8 @@ const Play = () => {
                     {/* 下方開始/結束按鍵 */}
                     <div className='playBtn'>
                         {!gameStarted
-                            ? (<div className="start-btn" onClick={() => {
-                                setGameStarted(true);
-                                setCurrentQ(getRandomQuestion());
-                                setShowAnswer(false);
-                                setWrongAnswers([]);
-                            }}><img src={開始遊戲} alt="開始遊戲" /></div>)
-                            : (<div className="end-btn" onClick={() => {
-                                setGameStarted(false);  // 回到開始畫面
-                                setShowAnswer(false);   // 重置狀態
-                                setWrongAnswers([]);    // 清空錯誤答案
-                            }}><img src={結束遊戲} alt="結束遊戲" /></div>)}
+                            ? (<div className="start-btn" onClick={startGame}><img src={開始遊戲} alt="開始遊戲" /></div>)
+                            : (<div className="end-btn" onClick={endGame}><img src={結束遊戲} alt="結束遊戲" /></div>)}
                     </div>
                 </div>
 
@@ -169,11 +187,7 @@ const Play = () => {
                                 {showAnswer && (
                                     <div
                                         className="next"
-                                        onClick={() => {
-                                            setCurrentQ(getRandomQuestion());
-                                            setShowAnswer(false);
-                                            setWrongAnswers([]);
-                                        }}
+                                        onClick={nextQuestion}
                                     >
                                         下一題
                                     </div>
