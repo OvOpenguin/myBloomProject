@@ -79,6 +79,7 @@ function MapIframe() {
 }
 
 const Info = () => {
+  
 // Info.jsx
 const getWeatherIcon = (data) => {
   const rainProb = parseInt(
