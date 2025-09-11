@@ -58,6 +58,7 @@
             font-weight: $f-w-m;
             color: $brown-100;
             z-index: 5;
+            text-align: right;
         }
 
         // img和底圖設計
@@ -580,12 +581,12 @@
 
         // 日期設定
         .eventTime {
+            text-align: right;
             margin-bottom: -120px;
             padding-left: 300px;
             font-size: $f-s-xl;
             font-weight: $f-w-m;
             color: $brown-100;
-            text-align: start;
         }
 
         // img和底圖設計
@@ -600,18 +601,18 @@
 
 
         .f1 {
-          //  background-image: url('../images/home/首頁-近期活動-圖片底色-藍.svg');
+            //  background-image: url('../images/home/首頁-近期活動-圖片底色-藍.svg');
 
             &:hover {
-              //  transform: rotate(10deg) scale(1.1);
+                //  transform: rotate(10deg) scale(1.1);
             }
         }
 
         .f2 {
-           // background-image: url('../images/home/首頁-近期活動-圖片底色-綠.svg');
+            // background-image: url('../images/home/首頁-近期活動-圖片底色-綠.svg');
 
             &:hover {
-              //  transform: rotate(-10deg) scale(1.1);
+                //  transform: rotate(-10deg) scale(1.1);
             }
         }
 

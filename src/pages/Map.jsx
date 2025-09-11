@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+
 import FlowerEvent from '../json/FlowerEvent.json';
 import "leaflet/dist/leaflet.css";
 import "../sass/map.scss";
@@ -9,6 +10,7 @@ import 夏 from "../images/map/花卉地圖-夏季標籤-綠.svg"
 import 秋 from "../images/map/花卉地圖-秋季標籤-橘.svg"
 import 冬 from "../images/map/花卉地圖-冬季標籤-藍.svg"
 import location from '../images/map/locationlogo.svg'
+import { Link } from "react-router-dom";
 
 // 活動卡片
 const Mapcard = ({ item, onClick }) => (
@@ -161,7 +163,7 @@ const Map = () => {
                     <div>
                       <h3>{item.title}</h3>
                       <p>{item.lable} | {item.date}</p>
-                      <a href="https://ovopenguin.github.io/myBloomProject/#/info"><img src={item.img} alt={item.title} width="150" /></a>
+                      <Link to='/info'><img src={item.img} alt={item.title} width="150" /></Link>
                     </div>
                   </Popup>
                 </Marker>
