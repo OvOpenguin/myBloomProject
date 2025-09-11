@@ -9,11 +9,29 @@ import icon停車場 from "../images/info/icon-停車場.svg";
 import date from "../images/info/date.svg";
 import weatherbg from "../images/info/weatherbg.svg";
 import foodbgpink from "../images/info/food-background-pink.svg";
-import foodptopink from "../images/info/food-photo-pink.png";
+import bgpin from "../images/info/bgpin.svg";
+import bgor from "../images/info/bgor.svg";
+import bgblu from "../images/info/bgblu.svg";
+import bgyel from "../images/info/bgyel.svg";
+
+import attbgpin from "../images/info/attbgpin.svg";
+import attbgor from "../images/info/attbgor.svg";
+import attbgblu from "../images/info/attbgblu.svg";
+import attbgyel from "../images/info/attbgyel.svg";
+
+import coffeeshop1 from "../images/info/coffeeshop1.png";
+import coffeeshop2 from "../images/info/coffeeshop2.png";
+import coffeeshop3 from "../images/info/coffeeshop3.png";
+import coffeeshop4 from "../images/info/coffeeshop4.png";
+
 import arrowlf from "../images/info/arrow-left.svg";
 import arrowri from "../images/info/arrow-right.svg";
-import attbgblu from "../images/info/attractions-background-blue.svg";
 import attptoblu from "../images/info/attractions-photo-blue.png";
+import attpto1 from "../images/info/attpto1.png";
+import attpto2 from "../images/info/attpto2.png";
+import attpto3 from "../images/info/attpto3.png";
+import attpto4 from "../images/info/attpto4.png";
+
 import bus from "../images/info/bus.png";
 import mrt from "../images/info/mrt.png";
 import car from "../images/info/car.png";
@@ -654,8 +672,7 @@ const getTime = (data) => {
 
 {/* 美食小點區塊 */}
 <div className="surrounding-section food-section">
-  <h3 className="section-title">美食小點</h3>
-
+  <h3 className="section-title">咖啡廳</h3>
 
   <div className="swiper-wrapper-relative">
     <Swiper
@@ -670,19 +687,19 @@ const getTime = (data) => {
       className="food-swiper"
     >
       {[
-        { img: foodptopink, text: "王記米粉湯" },
-        { img: foodptopink, text: "阿明滷肉飯" },
-        { img: foodptopink, text: "珍珠奶茶" },
-        { img: foodptopink, text: "蚵仔煎" },
-                { img: foodptopink, text: "王記米粉湯" },
-        { img: foodptopink, text: "阿明滷肉飯" },
-        { img: foodptopink, text: "珍珠奶茶" },
-        { img: foodptopink, text: "蚵仔煎" },
+        { img: coffeeshop1, text: "貴賓咖啡廳", bg: bgpin },
+        { img: coffeeshop2, text: "DW Café", bg: bgor },
+        { img: coffeeshop3, text: "王吉 Cafe", bg: bgblu },
+        { img: coffeeshop4, text: "英一咖啡", bg: bgyel },
+                { img: coffeeshop1, text: "貴賓咖啡廳", bg: bgpin },
+        { img: coffeeshop2, text: "DW Café", bg: bgor },
+        { img: coffeeshop3, text: "王吉 Cafe", bg: bgblu },
+        { img: coffeeshop4, text: "英一咖啡", bg: bgyel },
       ].map((item, idx) => (
         <SwiperSlide key={idx}>
           <div className="card food-card">
-            {/* 底圖 */}
-            <img src={foodbgpink} alt="food bg" className="bg-icon" />
+            {/* 底圖 (每張不一樣) */}
+            <img src={item.bg} alt="food bg" className="bg-icon" />
 
             {/* 主圖 */}
             <img src={item.img} alt={`Food ${idx + 1}`} className="main-img" />
@@ -700,8 +717,6 @@ const getTime = (data) => {
   </div>
 </div>
 
-
-
 {/* 附近景點區塊 */}
 <div className="surrounding-section nearby-section">
   <h3 className="section-title">附近景點</h3>
@@ -716,23 +731,22 @@ const getTime = (data) => {
         nextEl: ".nearby-next",
       }}
       modules={[Navigation, Pagination]}
-
       className="nearby-swiper"
     >
       {[
-        { img: attptoblu, text: "中正紀念堂" },
-        { img: attptoblu, text: "西門町" },
-        { img: attptoblu, text: "台北101" },
-        { img: attptoblu, text: "華山文創園區" },
-                { img: attptoblu, text: "中正紀念堂" },
-        { img: attptoblu, text: "西門町" },
-        { img: attptoblu, text: "台北101" },
-        { img: attptoblu, text: "華山文創園區" },
+        { img: attpto1, text: "圓山自然景觀公園", bg:attbgpin },
+        { img: attpto2, text: "圓山水神社", bg: attbgor },
+        { img: attpto3, text: "花博公園", bg: attbgblu },
+        { img: attpto4, text: "台北市立美術館", bg: attbgyel },
+                { img: attpto1, text: "圓山自然景觀公園", bg:attbgpin },
+        { img: attpto2, text: "圓山水神社", bg: attbgor },
+        { img: attpto3, text: "花博公園", bg: attbgblu },
+        { img: attpto4, text: "台北市立美術館", bg: attbgyel },
       ].map((item, idx) => (
         <SwiperSlide key={idx}>
           <div className="card nearby-card">
-            {/* 底圖 */}
-            <img src={attbgblu} alt="spot bg" className="bg-icon" />
+            {/* 底圖 (每張不一樣) */}
+            <img src={item.bg} alt="spot bg" className="bg-icon" />
 
             {/* 主圖 */}
             <img src={item.img} alt={`Spot ${idx + 1}`} className="main-img" />
@@ -749,6 +763,7 @@ const getTime = (data) => {
     <img src={arrowri} alt="next" className="arrow nearby-next" />
   </div>
 </div>
+
 
 
 
