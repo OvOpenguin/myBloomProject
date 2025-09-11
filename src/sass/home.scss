@@ -76,6 +76,7 @@
                 transform: rotate(-2deg) scale(1.2);
                 transform-origin: bottom center; // 底部為基準
             }
+
         }
 
         h4 {
@@ -673,9 +674,7 @@
                 transform: translate(-50%, -200%) rotate(180deg);
             }
         }
-
     }
-
 
     .h-n-fw {
         position: absolute;
@@ -683,6 +682,11 @@
         left: -80px;
         width: 150px;
         height: 150px;
+
+        @media (max-width:560px) {
+            left: 50%;
+            ;
+        }
 
         .t {
             position: absolute;
@@ -692,7 +696,6 @@
             .fw1 {
                 z-index: 1;
             }
-
         }
     }
 
@@ -706,6 +709,7 @@
         background-size: cover;
         max-width: 650px;
         min-width: 420px; //限定最小寬度，避免在手機板過度壓縮
+        
 
         ul {
             li {
@@ -740,7 +744,6 @@
                 .itime {
                     color: $brown-100;
                 }
-
             }
         }
 
@@ -813,6 +816,8 @@
     .home-inner {
         width: 100%;
         user-select: none; // 反選取
+        position: relative;
+
 
         .h-v-title {
             display: flex;
@@ -820,12 +825,13 @@
             align-items: center;
             text-align: center;
             letter-spacing: 5px;
-            margin-bottom: -90px;
+            // margin-bottom: -90px;
+            margin-top: 30px;
 
             h3 {
                 width: 300px;
-                margin: 40px -500px 0 0;
-                transform: rotate(10deg);
+                margin: 5px 0;
+                // transform: rotate(10deg);
             }
         }
 
@@ -835,6 +841,7 @@
             aspect-ratio: 16 / 9;
             overflow: hidden;
             z-index: -1;
+
 
             @media (max-width:640px) {
                 aspect-ratio: 3 / 4;

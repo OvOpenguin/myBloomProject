@@ -51,8 +51,17 @@
             top: 100px;
             z-index: -5;
 
-            @media (max-width:900px) {
-                top: 30px;
+            @media (max-width:830px) {
+                right: 70%;
+                top: -50px;
+                transform: rotate(-20deg);
+            }
+
+            @media (max-width:420px) {
+                height: 160px;
+                left: 50%;
+                top: -3px;
+                transform: rotate(10deg);
             }
         }
 
@@ -64,7 +73,7 @@
 
         p {
             text-align: justify;
-            margin-top: 20px;
+            margin: 20px 0;
         }
     }
 

@@ -226,7 +226,7 @@ const Wall = () => {
           <h2>上季冠軍</h2>
           <h2>CHAMPION</h2>
           <p>
-            我們正在尋找北區最耀眼的花卉明星！你的一票至關重要。登入會員，每人一票，用你的選擇為它加冕。
+            我們正在尋找北區最耀眼的花卉明星！你的一票至關重要。<br/>登入會員，每人一票，用你的選擇為它加冕。
           </p>
           <button className="w-btn-vote" onClick={gotvote}>
             <span className="circle">
