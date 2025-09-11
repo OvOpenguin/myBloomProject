@@ -125,7 +125,7 @@ header {
             a {
                 &:hover {
                     color: #7DC5E4;
-                }    
+                }
             }
 
             &:hover,
@@ -162,11 +162,11 @@ header {
                 color: #FFA8B5;
                 display: inline;
             }
-            
+
             a {
                 &:hover {
                     color: #FFA8B5;
-                }    
+                }
             }
 
             &:hover,
@@ -203,11 +203,11 @@ header {
                 color: #FF8457;
                 display: inline;
             }
-            
+
             a {
                 &:hover {
                     color: #FF8457;
-                }    
+                }
             }
 
             &:hover,
@@ -244,11 +244,11 @@ header {
                 color: #69C9A0;
                 display: inline;
             }
-            
+
             a {
                 &:hover {
                     color: #69C9A0;
-                }    
+                }
             }
 
             &:hover,
@@ -285,11 +285,11 @@ header {
                 color: #C075E3;
                 display: inline;
             }
-            
+
             a {
                 &:hover {
                     color: #C075E3;
-                }    
+                }
             }
 
             &:hover,
@@ -333,14 +333,28 @@ header {
 
 /* 頁尾區 */
 footer {
-    background-color: #fcfbd0;
+    // background-color: #fcfbd0;
     width: 100%;
-    height: 15vh;
+    height: 12vh;
     display: flex;
     justify-content: center;
     align-items: flex-end;
     color: #64503C;
     padding: 0 0 20px 0;
-    clip-path: polygon(86% 22%, 100% 66%, 100% 100%, 0 100%, 0 57%);
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        // background-image: url('../images/map/map-bc-y.svg');
+        z-index: -3;
+        pointer-events: none;
+        clip-path: polygon(86% 22%, 100% 66%, 100% 100%, 0 100%, 0 57%);
+        background-color: #FFF4CA;
+    }
 
 }
