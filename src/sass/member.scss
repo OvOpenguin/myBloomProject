@@ -6,7 +6,6 @@
   grid-template-columns: minmax(0, 2fr) 3fr minmax(50%, 8fr) minmax(0, 2fr);
   grid-template-rows: 10vh 600px 10vh;
   column-gap: 60px;
-  //overflow: hidden;
 
   .padding-top {
     grid-column: 1 / span 4;
@@ -34,7 +33,7 @@
 
     .dc1 {
       position: absolute;
-      top: 60%;
+      top: 70%;
       left: 10%;
       width: 10%;
       min-width: 150px;
@@ -44,13 +43,15 @@
 
     .dc2 {
       position: absolute;
-      top: 70%;
+      top: 80%;
       left: 20%;
       width: 10%;
       min-width: 150px;
       z-index: 3;
       animation: shake3 5s infinite ease-in-out;
     }
+
+
 
   }
 
@@ -155,16 +156,12 @@
 
     }
 
-    .content {
-      height: 60vh;
-    }
-
     // 我的收藏
     .fav-wrap {
 
       >.content {
         background: #d1ecff80;
-        padding: 50px 5% 0 5%;
+        padding: 50px 5%;
 
         .map-cardWrap {
           display: flex;
@@ -259,7 +256,7 @@
 
       .content {
         background: #ffe1d180;
-        padding: 50px 5% 0 5%;
+        padding: 50px 5%;
 
         >div {
           width: 100%;
@@ -378,7 +375,7 @@
 
       .content {
         background: #fff4c980;
-        padding: 50px 5% 0 5%;
+        padding: 50px 5% ;
         display: flex;
         align-items: flex-start;
 
@@ -467,13 +464,14 @@
 
       .content {
         background: #d5f6db80;
-        padding: 50px 5% 0 5%;
+        padding: 50px 5%;
 
         .user-wrap {
           display: flex;
           flex-direction: column;
           align-items: flex-start;
           gap: 30px;
+          height: 500px;
 
           .user-box {
             display: flex;

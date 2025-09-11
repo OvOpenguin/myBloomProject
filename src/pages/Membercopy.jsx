@@ -1,10 +1,6 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import { VscEye } from "react-icons/vsc";
 import { VscEyeClosed } from "react-icons/vsc";
-
-
-// Json
-import FlowerEvent from '../json/FlowerEvent.json';
 
 // 圖片
 import arrowd from '../images/member/member-arrow-lightgreen.svg'
@@ -17,8 +13,6 @@ import heart0 from '../images/wall/wall-icon.svg'
 import votebotton1 from '../images/wall/wall-votebutton1.svg'
 import flower01 from '../images/wall/wall-flower01.png'
 import flower02 from '../images/wall/wall-flower02.png'
-import sign1 from '../images/member/member-sign-1.svg'
-import sign2 from '../images/member/member-sign-2.svg'
 import logo from '../images/home/北花冊.webp'
 
 
@@ -311,13 +305,6 @@ export default function MemberCenter() {
     // 登入
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    // 檢查 localStorage 是否有登入紀錄
-    useEffect(() => {
-        const savedLogin = localStorage.getItem("isLoggedIn");
-        if (savedLogin === "true") {
-            setIsLoggedIn(true);
-        }
-    }, []);
     // 由 SignIn 帶回的登入資訊
     const [credentials, setCredentials] = useState({
         username: '',
@@ -351,7 +338,6 @@ export default function MemberCenter() {
         if (key === "logout") {
             setIsLoggedIn(false); // 登出
             setActiveKey("favorites"); // 重置 activeKey
-            localStorage.removeItem("isLoggedIn"); //清除登入紀錄
             setCredentials({ username: '', userid: '' });
         } else {
             setActiveKey(key);
@@ -369,10 +355,6 @@ export default function MemberCenter() {
         // 未登入 => 渲染登入元件
         return (
             <div className="sign-in">
-                <SignIn onLogin={() => {
-                    setIsLoggedIn(true)
-                    localStorage.setItem("isLoggedIn", "true"); // 登入成功存入
-                }} />
                 <SignIn onLogin={handleLogin} />
             </div>
         );
