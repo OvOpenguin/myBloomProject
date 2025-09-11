@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { VscEye } from "react-icons/vsc";
 import { VscEyeClosed } from "react-icons/vsc";
 
@@ -311,6 +311,14 @@ export default function MemberCenter() {
     // 登入
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+    // 檢查 localStorage 是否有登入紀錄
+    useEffect(() => {
+        const savedLogin = localStorage.getItem("isLoggedIn");
+        if (savedLogin === "true") {
+            setIsLoggedIn(true);
+        }
+    }, []);
+
     // 宣告變數 => 顯示目前分頁
     const [activeKey, setActiveKey] = useState("favorites");
 
@@ -327,6 +335,7 @@ export default function MemberCenter() {
         if (key === "logout") {
             setIsLoggedIn(false); // 登出
             setActiveKey("favorites"); // 重置 activeKey
+            localStorage.removeItem("isLoggedIn"); //清除登入紀錄
         } else {
             setActiveKey(key);
         }
@@ -343,7 +352,10 @@ export default function MemberCenter() {
         // 未登入 => 渲染登入元件
         return (
             <div className="sign-in">
-                <SignIn onLogin={() => setIsLoggedIn(true)} />
+                <SignIn onLogin={() => {
+                    setIsLoggedIn(true)
+                    localStorage.setItem("isLoggedIn", "true"); // 登入成功存入
+                }} />
             </div>
         );
     }
