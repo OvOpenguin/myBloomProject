@@ -1,4 +1,10 @@
 import React, { useRef, useState } from "react";
+import { VscEye } from "react-icons/vsc";
+import { VscEyeClosed } from "react-icons/vsc";
+
+
+// Json
+import FlowerEvent from '../json/FlowerEvent.json';
 
 // 圖片
 import arrowd from '../images/member/member-arrow-lightgreen.svg'
@@ -14,6 +20,7 @@ import flower02 from '../images/wall/wall-flower02.png'
 import sign1 from '../images/member/member-sign-1.svg'
 import sign2 from '../images/member/member-sign-2.svg'
 import logo from '../images/home/北花冊.webp'
+
 
 // 裝飾
 import hfwr1 from '../images/home/h-w-de1.svg'
@@ -115,6 +122,8 @@ const Wall = () => {
 
 // 我的花訊
 const News = () => {
+
+
     return (
         <div className="news-wrap">
             <div className="tab">
@@ -124,29 +133,35 @@ const News = () => {
             <div className="content">
                 <div>
                     <div className="news-Card">
-                        <div className="news-labledate">
-                            <div className="news-lable">活動</div>
-                            <p>2025.07.28</p>
+                        <div className="txtwrap">
+                            <div className="news-labledate">
+                                <div className="news-lable">活動</div>
+                                <p>2025.07.28</p>
+                            </div>
+                            <p className="news-cardTitle">標題</p>
                         </div>
-                        <p className="news-cardTitle">標題</p>
                         <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="news-img" alt="" />
                     </div>
                     <div className="news-Card">
-                        <div className="news-labledate">
-                            <div className="news-lable">活動</div>
-                            <p>2025.07.28</p>
+                        <div className="txtwrap">
+                            <div className="news-labledate">
+                                <div className="news-lable">活動</div>
+                                <p>2025.07.28</p>
+                            </div>
+                            <p className="news-cardTitle">標題</p>
                         </div>
-                        <p className="news-cardTitle">標題</p>
+                        <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="news-img" alt="" />
+                    </div><div className="news-Card">
+                        <div className="txtwrap">
+                            <div className="news-labledate">
+                                <div className="news-lable">活動</div>
+                                <p>2025.07.28</p>
+                            </div>
+                            <p className="news-cardTitle">標題</p>
+                        </div>
                         <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="news-img" alt="" />
                     </div>
-                    <div className="news-Card">
-                        <div className="news-labledate">
-                            <div className="news-lable">活動</div>
-                            <p>2025.07.28</p>
-                        </div>
-                        <p className="news-cardTitle">標題</p>
-                        <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="news-img" alt="" />
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -155,7 +170,7 @@ const News = () => {
 
 
 // 個人中心
-const Profile = () => {
+const Profile = ({ username }) => {
 
     // 建立 ref 綁定密碼
     const passwordRef = useRef(null);
@@ -187,11 +202,13 @@ const Profile = () => {
                         <div className="label">
                             <label htmlFor="text">帳號</label>
                         </div>
-                        <input
-                            type="text"
-                            placeholder="123@gmail.com"
-                            readOnly
-                        />
+                        <div>
+                            {username ? (
+                                <p>{username}</p>
+                            ) : (
+                                <p>{username}</p>
+                            )}
+                        </div>
                     </div>
 
                     {/* 密碼 */}
@@ -209,9 +226,13 @@ const Profile = () => {
                         {/* 查看密碼 */}
                         <button
                             className="show-btn"
-                            type="submit"
+                            type="button"
                             onClick={togglePassword}>
-                            {show ? "關閉密碼" : "查看密碼"}
+                            {show ? <VscEye />
+
+                                : <VscEyeClosed />
+                            }
+
                         </button>
                     </div>
 
@@ -223,6 +244,21 @@ const Profile = () => {
 
 // 登入畫面
 function SignIn({ onLogin }) {
+
+    // 輸入帳號&密碼
+    const [username, setUsername] = useState('');
+
+    // 追蹤 input 資料
+    const handleInputChange = (e) => {
+        setUsername(e.target.value);
+    };
+
+    const handleLoginClick = () => {
+        if (username.trim() !== '') {
+            onLogin(username);
+        }
+    }
+
     return (
         <div className="signin-wrap">
             <img src={logo} alt="" />
@@ -237,15 +273,16 @@ function SignIn({ onLogin }) {
                 <div className="sign-box">
                     <label htmlFor="username">帳號</label>
                     <input type="text" className="username" placeholder="請輸入電子郵件"
-                        // onChange={(e) => setUsername(e.target.value)} // 更新狀態
                         required
-                        autoFocus />
+                        autoFocus
+                        value={username}
+                        onChange={handleInputChange} />
                 </div>
 
                 {/* 密碼 */}
                 <div className="sign-box">
                     <label htmlFor="userid">密碼</label>
-                    <input type="text" className="userid" placeholder="請輸入密碼"
+                    <input type="password" className="userid" placeholder="請輸入密碼"
                         // onChange={(e) => setUsername(e.target.value)} // 更新狀態
                         required
                     />
@@ -339,8 +376,8 @@ export default function MemberCenter() {
 
             <div className="padding-right"></div>
             <div className="padding-bottom">
-                <img className="dc1" src={hfwr1} alt="" srcset="" />
-                <img className="dc2" src={hfwr2} alt="" srcset="" />
+                <img className="dc1" src={hfwr1} alt="" />
+                <img className="dc2" src={hfwr2} alt="" />
             </div>
 
         </section>
