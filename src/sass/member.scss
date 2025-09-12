@@ -547,29 +547,42 @@
     height: 480px;
     margin: 10vh 15vw;
     background-color: #E8F6FF;
-    background-image: url(../images/member/member-sign-bg.png);
+    // background-image: url(../images/member/member-sign-bg.png);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+    position: relative;
+
+    // up
+    &::before {
+      content: "";
+      display: inline-block;
+      background: url(../images/member/member-sign-1.svg) no-repeat center /contain;
+      position: absolute;
+      z-index: 1;
+      height: 100%;
+      width: 100%;
+      animation: shake1 5s infinite ease-in-out;
+    }
+
+    // down
+    &::after {
+      content: "";
+      display: inline-block;
+      background: url(../images/member/member-sign-2.svg) no-repeat bottom /contain;
+      position: absolute;
+      z-index: 1;
+      height: 150%;
+      width: 150%;
+      animation: shake4 5s infinite ease-in-out;
+
+    }
 
 
     img {
       width: 200px;
       margin-top: 15%;
     }
-
-    // &::after {
-    //     content: "";
-    //     background-image: url(../images/member/member-sign-bg.png);
-    //     display:block;
-    //     background-repeat: no-repeat;
-    //     // background-size: contain;
-    //     position: absolute;
-    //     z-index: 9;
-    //     top: 0;
-    //     left: 0;
-    //   }
-
 
     form {
       display: flex;
@@ -616,5 +629,10 @@
       }
 
     }
+
+
+
   }
+
+
 }
