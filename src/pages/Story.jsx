@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import $ from 'jquery'
 // 安裝插建
 import { motion } from "framer-motion";
+import Nav from '../components/Nav'
 // 匯入陣列物件資料
 import flowers from '../json/StoryInfo.json';
 // 匯入sass
@@ -52,6 +53,7 @@ const Story = () => {
 
   return (
     <>
+    <Nav></Nav>
       <div className='story'>
 
         <div className="sleft show">

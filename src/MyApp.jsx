@@ -31,7 +31,7 @@ const MyApp = () => {
         <div className="wrap">
             <ScrollToTop />
             {/* 選單 */}
-            <Nav></Nav>
+            {/* <Nav></Nav> */}
 
             {/* 內容區：通過Routes和Route連結，這裡的path="/"和 Link to="/"(Nav.jsx)的引號內需相同，否則抓不到。*/}
             <Routes>

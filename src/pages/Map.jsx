@@ -4,6 +4,7 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import FlowerEvent from '../json/FlowerEvent.json';
 import "leaflet/dist/leaflet.css";
 import "../sass/map.scss";
+import Nav from '../components/Nav'
 
 import 春 from "../images/map/花卉地圖-春季標籤-黃.svg"
 import 夏 from "../images/map/花卉地圖-夏季標籤-綠.svg"
@@ -90,6 +91,8 @@ const Map = () => {
 
   // 主結構
   return (
+    <>
+ <Nav></Nav>   
     <section className="map-inner">
 
       {/* 左側活動欄位 */}
@@ -188,6 +191,7 @@ const Map = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

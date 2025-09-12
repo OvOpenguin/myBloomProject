@@ -1,5 +1,6 @@
 import "../sass/wall.scss"
 import { useEffect, useState, useRef } from "react";
+import Nav from '../components/Nav'
 
 import wall_vote_one from '../images/home/首頁-票選1-框.png'
 import heart0 from '../images/wall/wall-icon.svg'
@@ -221,6 +222,7 @@ const Wall = () => {
 
   return (
     <>
+    <Nav></Nav>
       <div className="wall-c-inner">
         <div className="wall-c-title">
           <h2>上季冠軍</h2>

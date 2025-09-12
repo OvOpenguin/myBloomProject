@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Nav from '../components/Nav'
 // My sass
 import "../sass/play.scss"
 
@@ -101,6 +102,7 @@ const Play = () => {
 
     return (
         <>
+        <Nav></Nav>
             <div className='playWrap'>
 
                 {/* 裝飾 */}

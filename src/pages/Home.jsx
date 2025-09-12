@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import { useEffect, useState } from "react"
 import $ from "jquery";
+import Nav from '../components/Nav'
 
 // Swiper套件 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -38,9 +39,6 @@ import hfw1 from '../images/home/homefwro1.svg'
 import hfw2 from '../images/home/homefwro2.svg'
 // swiper左右按鈕
 import arrow from "../images/home/home-arrow.svg"
-
-
-
 
 
 
@@ -180,6 +178,7 @@ const App = () => {
 
                 </section>
 
+<Nav></Nav>
                 {/* 近期活動 */}
                 <section className="indexActivity">
 

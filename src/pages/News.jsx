@@ -2,6 +2,7 @@ import "../sass/news.scss"
 import { useState } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
+import Nav from '../components/Nav'
 import 'swiper/css';
 import 'swiper/css/pagination';
 import FlowerEvent from '../json/FlowerEvent.json';
@@ -48,6 +49,7 @@ const News = () => {
 
     return (
         <>
+        <Nav></Nav>
             {/* 圖片banner */}
             <section className="newsBanner">
                 <div className="bannerswiper">

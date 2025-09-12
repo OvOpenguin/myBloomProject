@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import "../sass/info.scss";
+import Nav from '../components/Nav'
 import 活動照片 from "../images/info/活動照片.jpg";
 import TagSummer from "../images/info/tag-summer.svg";
 import TagTaipeicity from "../images/info/tag-taipeicity.svg";
@@ -179,6 +180,8 @@ const getTime = (data) => {
   };
 
   return (
+    <>
+    <Nav></Nav>
     <section id="infopage">
       {/* Banner */}
       <div className="info-banner">
@@ -774,6 +777,7 @@ const getTime = (data) => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 
