@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+import { Link } from "react-router-dom";
 
 import FlowerEvent from '../json/FlowerEvent.json';
 import "leaflet/dist/leaflet.css";
@@ -10,7 +11,7 @@ import 春 from "../images/map/花卉地圖-春季標籤-黃.svg"
 import 夏 from "../images/map/花卉地圖-夏季標籤-綠.svg"
 import 秋 from "../images/map/花卉地圖-秋季標籤-橘.svg"
 import 冬 from "../images/map/花卉地圖-冬季標籤-藍.svg"
-import { Link } from "react-router-dom";
+
 import L from "leaflet";
 
 
@@ -170,10 +171,11 @@ const Map = () => {
                     ref={(ref) => { markerRefs.current[item.id] = ref; }}
                   >
                     <Popup>
+
                       <div>
                         <h3>{item.title}</h3>
                         <p>{item.lable} | {item.date}</p>
-                        <Link to='/info'><img src={item.img} alt={item.title} width="150" /></Link>
+                        <Link to={`/info/${item.id}`} key={item.id}><img src={item.img} alt={item.title} width="150" /></Link>
                       </div>
                     </Popup>
                   </Marker>
