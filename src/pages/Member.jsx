@@ -60,16 +60,16 @@ const Favorites = () => {
             <div className="content">
                 <div className="map-cardWrap">
                     <a href="#" className="map-card">
-                        <p className="map-lable">台北</p>
-                        <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="map-img" alt="" />
-                        <div className="map-date">07.01 — 09.23</div>
-                        <h3 className="map-title">樟樹步道花海</h3>
+                        <p className="map-lable">臺北</p>
+                        <img src="./activity/activity10.jpg" className="map-img" alt="" />
+                        <div className="map-date">02.13 — 02.23</div>
+                        <h3 className="map-title">士林官邸鬱金香展</h3>
                     </a>
                     <a href="#" className="map-card">
-                        <p className="map-lable">台北</p>
-                        <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="map-img" alt="" />
-                        <div className="map-date">07.01 — 09.23</div>
-                        <h3 className="map-title">樟樹步道花海</h3>
+                        <p className="map-lable">新北</p>
+                        <img src="./activity/activity03.avif" className="map-img" alt="" />
+                        <div className="map-date">02.27 — 03.30</div>
+                        <h3 className="map-title">萬金杜鵑花展</h3>
                     </a>
                 </div>
             </div>
@@ -80,6 +80,33 @@ const Favorites = () => {
 
 // 我的花牆
 const Wall = () => {
+
+    // // 愛心
+    // const Flowerwall = ({ count, img, heart }) => {
+    //     const [likeCount, setLikeCount] = useState(count);
+    //     const [liked, setLiked] = useState(false);
+
+    //     const handleLike = () => {
+    //         if (!liked) {
+    //             setLikeCount(likeCount + 1);
+    //             setLiked(true);
+    //         } else {
+    //             setLikeCount(likeCount - 1); //取消讚-1
+    //             setLiked(false);
+    //         }
+    //     };
+
+    //     return (
+    //         <li className="v-item">
+    //             <p>{likeCount}</p>
+    //             <img src={img} alt="fw" />
+    //             <div className="icon-heart" onClick={handleLike} style={{ cursor: "pointer" }}>
+    //                 <img src={liked ? "./wall/wall-icon2.svg" : heart} alt="heart" />
+    //             </div>
+    //         </li>
+    //     );
+    // };
+
     return (
         <div className="wall-wrap">
             <div className="tab">
@@ -118,7 +145,6 @@ const Wall = () => {
 // 我的花訊
 const News = () => {
 
-
     return (
         <div className="news-wrap">
             <div className="tab">
@@ -130,31 +156,31 @@ const News = () => {
                     <div className="news-Card">
                         <div className="txtwrap">
                             <div className="news-labledate">
-                                <div className="news-lable">活動</div>
-                                <p>2025.07.28</p>
+                                <div className="news-lable">新北</div>
+                                <p>05.10 — 05.25</p>
                             </div>
-                            <p className="news-cardTitle">標題</p>
+                            <p className="news-cardTitle">新北河濱蝶戀季</p>
                         </div>
-                        <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="news-img" alt="" />
+                        <img src="./activity/activity02.jpg" className="news-img" alt="" />
                     </div>
                     <div className="news-Card">
                         <div className="txtwrap">
                             <div className="news-labledate">
-                                <div className="news-lable">活動</div>
-                                <p>2025.07.28</p>
+                                <div className="news-lable">桃園</div>
+                                <p>11.23 — 12.08</p>
                             </div>
-                            <p className="news-cardTitle">標題</p>
+                            <p className="news-cardTitle">桃園仙草花節</p>
                         </div>
-                        <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="news-img" alt="" />
+                        <img src="./activity/activity04.jpg" className="news-img" alt="" />
                     </div><div className="news-Card">
                         <div className="txtwrap">
                             <div className="news-labledate">
-                                <div className="news-lable">活動</div>
-                                <p>2025.07.28</p>
+                                <div className="news-lable">桃園</div>
+                                <p>08.30 — 09.30</p>
                             </div>
-                            <p className="news-cardTitle">標題</p>
+                            <p className="news-cardTitle">大溪韭菜花季</p>
                         </div>
-                        <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="news-img" alt="" />
+                        <img src="./activity/activity06.jpg" className="news-img" alt="" />
                     </div>
 
                 </div>
@@ -184,40 +210,45 @@ const Profile = ({ username, userid }) => {
                 <img src={prftab} alt="" />
             </div>
             <div className="content">
-                <div className="user-wrap">
+                <form className="user-wrap">
 
                     {/* 帳號 */}
                     <div className="user-box">
                         <div className="label">
                             <p>帳號</p>
                         </div>
-                        <p style={{ fontSize: '1rem', backgroundColor: '#fff', lineHeight: '30px', padding: '0 10px' }}>{username || ''}</p>
+                        <div className="inputId" style={{ fontSize: '1rem', backgroundColor: '#fff', lineHeight: '30px', padding: '0 10px' }}>
+                            {username || ''}
+                        </div>
                     </div>
 
                     {/* 密碼 */}
                     <div className="user-box">
-                        <div className="label">
-                            <label htmlFor="password">密碼</label>
-                        </div>
+                        <label htmlFor="inputId" className="label">
+                            <p>密碼</p>
+                        </label>
                         <input
-                            type={show ? 'text' : 'password'}
+                            id="inputId"
                             className="inputId"
+                            type={show ? 'text' : 'password'}
                             placeholder="Default"
                             ref={passwordRef}
                             value={userid || ''}
                             required
-                            readOnly />
+                            readOnly
+                            style={{ width: '50%' }}
+                        />
 
                         {/* 查看密碼 */}
                         <button
                             className="show-btn"
                             type="button"
                             onClick={togglePassword}>
-                            {show ? <VscEye /> : <VscEyeClosed />}
+                            {show ? <VscEye size={24} /> : <VscEyeClosed size={24} />}
                         </button>
                     </div>
 
-                </div>
+                </form>
             </div>
         </div>
     );
@@ -248,13 +279,12 @@ const SignIn = ({ onLogin }) => {
         }
     };
 
-
     return (
         <>
             <Nav />
             <div className="signin-wrap">
                 <img src={logo} alt="" />
-                <form onSubmit={handleLoginClick}>
+                <form className='form' onSubmit={handleLoginClick}>
 
                     {/* 帳號 */}
                     <div className="sign-box">
@@ -364,6 +394,8 @@ export default function MemberCenter() {
         );
     }
 
+    
+
     // 登入 => 渲染會員中心介面
     return (
         <>    <Nav></Nav>
@@ -383,8 +415,6 @@ export default function MemberCenter() {
                             onClick={() => handleSelect(t.key)}
                         />
                     ))}
-                    <img className="dc1" src={hfwr1} alt="" />
-                    <img className="dc2" src={hfwr2} alt="" />
                 </div>
 
                 {/* 右側面板 */}
@@ -393,7 +423,10 @@ export default function MemberCenter() {
                 </div>
 
                 <div className="padding-right"></div>
-                <div className="padding-bottom"></div>
+                <div className="padding-bottom">
+                    <img className="dc1" src={hfwr1} alt="" />
+                    <img className="dc2" src={hfwr2} alt="" />
+                </div>
 
             </section>
         </>
