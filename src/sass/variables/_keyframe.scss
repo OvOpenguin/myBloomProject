@@ -205,3 +205,13 @@
   from { opacity: 0;}
   to { opacity: 1;}
 }
+
+// 首頁scroll彈跳
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px); /* 向上移動 */
+  }
+}

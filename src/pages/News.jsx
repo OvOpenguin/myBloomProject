@@ -9,6 +9,7 @@ import FlowerEvent from '../json/FlowerEvent.json';
 
 import flower10 from '../images/wall/wall-f10.webp'
 import ban1 from '../images/news/newsban2.webp'
+import hscroll from '../images/home/homescroll.svg'
 import { Link } from "react-router-dom";
 
 
@@ -91,12 +92,13 @@ const News = () => {
                         })}
                     </div>
                     {visibleCount < filtered.length && (
-                        <button className="n-btn-more" onClick={newsHandlerMore}>
-                            <span className="circle">
-                                <span className="icon arrow"></span>
-                            </span>
-                            <span className="btn-text">MORE</span>
-                        </button>
+                        // <button className="n-btn-more" onClick={newsHandlerMore}>
+                        //     <span className="circle">
+                        //         <span className="icon arrow"></span>
+                        //     </span>
+                        //     <span className="btn-text">MORE</span>
+                        // </button>
+                        <div className="news-more" onClick={newsHandlerMore}> more <img src={hscroll} alt="" /></div>
                     )}
                 </div>
 

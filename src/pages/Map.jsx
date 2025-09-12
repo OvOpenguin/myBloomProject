@@ -10,8 +10,8 @@ import 春 from "../images/map/花卉地圖-春季標籤-黃.svg"
 import 夏 from "../images/map/花卉地圖-夏季標籤-綠.svg"
 import 秋 from "../images/map/花卉地圖-秋季標籤-橘.svg"
 import 冬 from "../images/map/花卉地圖-冬季標籤-藍.svg"
-import location from '../images/map/locationlogo.svg'
 import { Link } from "react-router-dom";
+import L from "leaflet";
 
 
 
@@ -90,6 +90,9 @@ const Map = () => {
     iconSize: [40, 40],
     iconAnchor: [20, 40],
     popupAnchor: [0, -40],
+    shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+    shadowSize: [41, 41],
+    shadowAnchor: [12, 43]
   });
 
 

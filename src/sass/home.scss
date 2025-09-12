@@ -151,11 +151,11 @@
 }
 
 .hero {
-
     display: flex;
     justify-content: center;
     padding: 50px 0;
     height: auto;
+    position: relative;
 
     .herologo {
         position: absolute;
@@ -528,6 +528,16 @@
                 }
             }
         }
+    }
+    .hero-txt {
+        color: #64503C;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        bottom: 5%;
+        animation: bounce 1.2s infinite ease-in-out;
     }
 }
 
