@@ -106,7 +106,7 @@ const Story = () => {
 
         {/* 中間-內容介紹 */}
         <div className="sContent-wrap">
-          <motion.div
+          <div
             className='sContent'
             key={selectedFlower.description}
             initial={{ opacity: 0 }}
@@ -165,7 +165,7 @@ const Story = () => {
                 {selectedFlower.description}
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* 蝴蝶裝飾 */}
           <div className="sbutterfly"><img src={butterfly} alt="蝴蝶裝飾" /></div>
