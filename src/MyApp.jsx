@@ -19,13 +19,13 @@ import Play from './pages/Play'
 
 
 const MyApp = () => {
-    const [loading, setLoading] = useState(true);
-    useEffect(() => {
-        const timer = setTimeout(() => setLoading(false), 3000);
-        return () => clearTimeout(timer);
-    }, []);
+    // const [loading, setLoading] = useState(true);
+    // useEffect(() => {
+    //     const timer = setTimeout(() => setLoading(false), 3000);
+    //     return () => clearTimeout(timer);
+    // }, []);
 
-    if (loading) return <Loading />;
+    // if (loading) return <Loading />;
     return (
 
         <div className="wrap">
