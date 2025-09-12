@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import { useEffect, useState } from "react"
 import $ from "jquery";
+import gsap from "gsap";
 import Nav from '../components/Nav'
 
 // Swiper套件 
@@ -18,6 +19,7 @@ import 大花定位2 from "../images/home/大花定位2.png"
 import 貼紙花1 from "../images/home/首頁-貼紙花.webp"
 import 花卉介紹2 from "../images/home/homeStory.svg"
 import 花卉遊戲2 from "../images/home/homeGame2.svg"
+import logo from '../images/home/logo.png'
 // 花牆
 import hfwr1 from '../images/home/homewall1.avif'
 import hfwr2 from '../images/home/homewall2.avif'
@@ -126,6 +128,19 @@ const App = () => {
         })
     }
 
+    // 標題淡出
+    useEffect(() => {
+    gsap.fromTo(".herologo",
+      { opacity: 0 }, // 初始隱藏
+      {
+        opacity: 1,
+        duration: 0.6,
+        delay: 2,
+        ease: "power1.out"
+      }
+    );
+  }, []);
+
 
     return (
         <>
@@ -134,7 +149,7 @@ const App = () => {
                 <section>
                     {/* <div className="name"><img src={北花冊} alt="北花冊" /><p>Bloomchure</p></div> */}
                     <div className="hero">
-
+                        <div className="herologo"><img src={logo} alt="" /></div>
                         <div className="heroFlower">
                             {/* 定位用大花 */}
                             <img src={大花定位2} alt="大花" className="bigFlower" />
@@ -178,7 +193,9 @@ const App = () => {
 
                 </section>
 
-                <Nav></Nav>
+                <section className="h-nav">
+                    <Nav></Nav>
+                </section>
                 {/* 近期活動 */}
                 <section className="indexActivity">
 
@@ -300,17 +317,13 @@ const App = () => {
                 </section>
 
                 {/* 花牆票選 
-                <section className="IndexVote">
-                    
+                <section className="IndexVote"> 
                     <div className="voteTitle">
                         <h2>花牆票選</h2>
                         <h3>Popularity vote</h3>
                         <Link to='./wall'> <BsArrowUpRightCircleFill className="arrow" /></Link>
                         <div className="crown"><img src={王冠} alt="王冠" /></div>
                     </div>
-
-                    
-
                     <ul className="wall">
                         <li><img src={hfwr1} alt="票選1" /></li>
                         <li><img src={票選2} alt="票選2" /></li>
@@ -350,7 +363,6 @@ const App = () => {
                             <div className="hv d8"><img src={hwde8} alt="" /></div>
                         </div>
                     </div>
-                    {/* <button className="gotop" onClick={backtop}>回到最上面</button> */}
                     <button className="gotop" onClick={backtop}>
                         <span className="circle">
                             <span className="icon arrow"></span>

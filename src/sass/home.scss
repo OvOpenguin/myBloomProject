@@ -12,6 +12,7 @@
 .indexActivity {
     position: relative;
 
+
     .swiperwrap {
         width: 70%;
         max-width: 1440px;
@@ -22,6 +23,9 @@
     // Swiper 預設樣式
     .mySwiper {
         overflow: visible;
+                animation: happear linear both;
+        animation-timeline: view();
+        animation-range: entry 0;
     }
 
     .swiper-slide {
@@ -138,10 +142,25 @@
 }
 
 .hero {
+
     display: flex;
     justify-content: center;
     padding: 50px 0;
     height: auto;
+
+    .herologo {
+        position: absolute;
+        left: 6%;
+        bottom: 40%;
+        width: 13%;
+        opacity: 0;
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: rotate(-6deg);
+            transform-origin: bottom left;
+        }
+    }
 
     .heroFlower {
         position: relative;
@@ -499,6 +518,24 @@
     }
 }
 
+.h-nav {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 10px;
+
+    nav {
+        display: inline-flex;
+        background-color: rgba(255, 255, 255);
+        border-radius: 40px;
+        padding: 0 10px;
+    }
+}
+
 // 近期活動區-排版結構
 .indexActivity {
     display: flex;
@@ -600,23 +637,6 @@
             cursor: pointer;
         }
 
-
-        .f1 {
-            //  background-image: url('../images/home/首頁-近期活動-圖片底色-藍.svg');
-
-            &:hover {
-                //  transform: rotate(10deg) scale(1.1);
-            }
-        }
-
-        .f2 {
-            // background-image: url('../images/home/首頁-近期活動-圖片底色-綠.svg');
-
-            &:hover {
-                //  transform: rotate(-10deg) scale(1.1);
-            }
-        }
-
         h4 {
             color: $brown-100;
             font-size: $f-s-lg;
@@ -625,7 +645,6 @@
         }
     }
 }
-
 
 // 最新消息區+花卉故事
 .IndexNsp {
@@ -709,7 +728,7 @@
         background-size: cover;
         max-width: 650px;
         min-width: 420px; //限定最小寬度，避免在手機板過度壓縮
-        
+
 
         ul {
             li {
@@ -803,11 +822,17 @@
                         padding: 10px;
                     }
                 }
+
+                .btnstory,
+                .btngame {
+                    animation: hmove linear both;
+                    animation-timeline: view();
+                    animation-range: entry 0;
+                }
             }
         }
     }
 }
-
 
 // 花牆票選
 .home-vote {
@@ -815,17 +840,14 @@
 
     .home-inner {
         width: 100%;
-        user-select: none; // 反選取
         position: relative;
-
 
         .h-v-title {
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
-            letter-spacing: 5px;
-            // margin-bottom: -90px;
+            // letter-spacing: 5px;
             margin-top: 30px;
 
             h3 {
@@ -842,11 +864,9 @@
             overflow: hidden;
             z-index: -1;
 
-
             @media (max-width:640px) {
                 aspect-ratio: 3 / 4;
             }
-
 
             img {
                 position: absolute;

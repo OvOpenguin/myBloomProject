@@ -25,33 +25,33 @@ const Wall = () => {
   const flowerwalls = [
     {
       id: 1,
-      count: 999,
+      count: 111,
       img: flower01,
       heart: heart0,
 
     },
     {
       id: 2,
-      count: 999,
+      count: 464,
       img: flower02,
       heart: heart0,
 
     },
     {
       id: 3,
-      count: 999,
+      count: 56,
       img: flower03,
       heart: heart0,
     },
     {
       id: 4,
-      count: 999,
+      count: 379,
       img: flower04,
       heart: heart0,
     },
     {
       id: 5,
-      count: 999,
+      count: 807,
       img: flower05,
       heart: heart0,
 
@@ -60,31 +60,31 @@ const Wall = () => {
   const flowerwalls2 = [
     {
       id: 6,
-      count: 999,
+      count: 567,
       img: flower06,
       heart: heart0,
     },
     {
       id: 7,
-      count: 999,
+      count: 365,
       img: flower07,
       heart: heart0,
     },
     {
       id: 8,
-      count: 999,
+      count: 206,
       img: flower08,
       heart: heart0,
     },
     {
       id: 9,
-      count: 999,
+      count: 704,
       img: flower09,
       heart: heart0,
     },
     {
       id: 10,
-      count: 999,
+      count: 88,
       img: flower10,
       heart: heart0,
     },

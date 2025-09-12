@@ -59,7 +59,6 @@ header {
         font-size: 20px;
         padding: 20px 20px;
 
-
         @media (max-width:830px) {
             position: fixed;
             z-index: 4;
@@ -74,12 +73,10 @@ header {
             transition: opacity 0.5s ease, transform 0.5s ease;
         }
 
-
         &.show {
             opacity: 1;
             transform: translateX(0);
         }
-
 
         li a {
             color: $brown-100;
