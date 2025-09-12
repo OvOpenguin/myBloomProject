@@ -59,6 +59,11 @@
             color: $brown-100;
             z-index: 5;
             text-align: right;
+
+            @media (max-width:500px) {
+                 margin-left: 250px;
+            }
+
         }
 
         // img和底圖設計
