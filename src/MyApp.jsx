@@ -49,7 +49,7 @@ const MyApp = () => {
                 <Route path="/member" element={<Member
                  />}></Route>
                 {/* 資訊頁 */}
-                <Route path="/info" element={<Info />}></Route>
+                <Route path="/info/:id" element={<Info />}></Route>
                 {/* 遊戲頁 */}
                 <Route path="/play" element={<Play />}></Route>
             </Routes>
