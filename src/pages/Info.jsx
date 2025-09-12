@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import "../sass/info.scss";
 import Nav from '../components/Nav'
-import 活動照片 from "../images/info/活動照片.jpg";
 import TagSummer from "../images/info/tag-summer.svg";
 import TagTaipeicity from "../images/info/tag-taipeicity.svg";
 import icon無障礙 from "../images/info/icon-無障礙.svg";
@@ -9,7 +8,6 @@ import icon哺乳室 from "../images/info/icon-哺乳室.svg";
 import icon停車場 from "../images/info/icon-停車場.svg";
 import date from "../images/info/date.svg";
 import weatherbg from "../images/info/weatherbg.svg";
-import foodbgpink from "../images/info/food-background-pink.svg";
 import bgpin from "../images/info/bgpin.svg";
 import bgor from "../images/info/bgor.svg";
 import bgblu from "../images/info/bgblu.svg";
@@ -27,7 +25,6 @@ import coffeeshop4 from "../images/info/coffeeshop4.png";
 
 import arrowlf from "../images/info/arrow-left.svg";
 import arrowri from "../images/info/arrow-right.svg";
-import attptoblu from "../images/info/attractions-photo-blue.png";
 import attpto1 from "../images/info/attpto1.png";
 import attpto2 from "../images/info/attpto2.png";
 import attpto3 from "../images/info/attpto3.png";
@@ -42,9 +39,7 @@ import mrtzhongshan from "../images/info/mrtzhongshan.svg";
 import flower1 from "../images/info/flower1.png";
 import flowerbg from "../images/info/flower-background.svg";
 import FloralVarieties from "../images/info/FloralVarieties.svg";
-import FlowerGra from "../images/info/FlowerGra.jpg";
 import Point from "../images/info/Point.svg";
-import PointMask from "../images/info/point-mask.svg";
 import highlightcultural from "../images/info/highlightcultural.png";
 import highlightlight from "../images/info/highlightlight.png";
 import highlightmar from "../images/info/highlightmar.png";
@@ -675,8 +670,46 @@ const getTime = (data) => {
 
 {/* 美食小點區塊 */}
 <div className="surrounding-section food-section">
-  <h3 className="section-title">咖啡廳</h3>
 
+  <h3 className="section-title">
+ {/* 左邊線條 */}
+  <svg
+    className="title-line left-line"
+    xmlns="http://www.w3.org/2000/svg"
+    width="510"
+    height="39"
+    viewBox="0 0 510 39"
+    fill="none"
+  >
+    <filter id="rough">
+      <feTurbulence type="fractalNoise" baseFrequency="0.5" numOctaves="4" result="noise" />
+      <feDisplacementMap in2="noise" in="SourceGraphic" scale="4" />
+    </filter>
+    <path className="line-path1"
+      d="M509.277 16.5356C469.766 33.3299 397.778 51.428 393.24 21.9952C389.014 -5.41389 424.126 5.21915 416.029 21.7065C399.681 54.998 329.074 19.6808 327.24 18.9985C299.803 8.78678 235.06 -7.12786 196.83 7.00513C149.043 24.6714 111.988 22.4173 107.767 13.2884C103.546 4.15941 146.597 -5.77915 130.245 13.9723C117.164 29.7734 69.1885 24.1103 46.836 19.3035L0.755716 17.8978"
+      stroke="black"
+      strokeWidth="2"
+      filter="url(#rough)"
+    />
+  </svg>
+  咖啡廳
+    {/* 右邊線條 */}
+  <svg
+    className="title-line right-line"
+    xmlns="http://www.w3.org/2000/svg"
+    width="509"
+    height="39"
+    viewBox="0 0 509 39"
+    fill="none"
+  >
+    <path className="line-path1"
+      d="M0.184501 16.778C39.7591 33.4213 111.816 51.2443 116.241 21.7943C120.363 -5.63074 85.2919 5.13638 93.4512 21.5927C109.927 54.8214 180.399 19.2348 182.229 18.5455C209.627 8.22901 274.309 -7.93288 312.592 6.05396C360.447 23.5375 397.493 21.1419 401.679 11.9969C405.865 2.85186 362.776 -6.92214 379.203 12.7667C392.345 28.5177 440.299 22.6713 462.633 17.7792L508.707 16.1975"
+      stroke="black"
+      strokeWidth="2"
+      filter="url(#rough)"
+    />
+  </svg>
+  </h3>
   <div className="swiper-wrapper-relative">
     <Swiper
       slidesPerView={4}
@@ -717,12 +750,51 @@ const getTime = (data) => {
     {/* 美食小點箭頭 */}
     <img src={arrowlf} alt="prev" className="arrow food-prev" />
     <img src={arrowri} alt="next" className="arrow food-next" />
+    
   </div>
 </div>
 
 {/* 附近景點區塊 */}
 <div className="surrounding-section nearby-section">
-  <h3 className="section-title">附近景點</h3>
+  <h3 className="section-title">
+     {/* 左邊線條 */}
+  <svg
+    className="title-line left-line"
+    xmlns="http://www.w3.org/2000/svg"
+    width="510"
+    height="39"
+    viewBox="0 0 510 39"
+    fill="none"
+  >
+    <filter id="rough">
+      <feTurbulence type="fractalNoise" baseFrequency="0.5" numOctaves="4" result="noise" />
+      <feDisplacementMap in2="noise" in="SourceGraphic" scale="4" />
+    </filter>
+    <path className="line-path2"
+      d="M509.277 16.5356C469.766 33.3299 397.778 51.428 393.24 21.9952C389.014 -5.41389 424.126 5.21915 416.029 21.7065C399.681 54.998 329.074 19.6808 327.24 18.9985C299.803 8.78678 235.06 -7.12786 196.83 7.00513C149.043 24.6714 111.988 22.4173 107.767 13.2884C103.546 4.15941 146.597 -5.77915 130.245 13.9723C117.164 29.7734 69.1885 24.1103 46.836 19.3035L0.755716 17.8978"
+      stroke="black"
+      strokeWidth="2"
+      filter="url(#rough)"
+    />
+  </svg>
+    附近景點
+      {/* 右邊線條 */}
+  <svg
+    className="title-line right-line"
+    xmlns="http://www.w3.org/2000/svg"
+    width="509"
+    height="39"
+    viewBox="0 0 509 39"
+    fill="none"
+  >
+    <path className="line-path2"
+      d="M0.184501 16.778C39.7591 33.4213 111.816 51.2443 116.241 21.7943C120.363 -5.63074 85.2919 5.13638 93.4512 21.5927C109.927 54.8214 180.399 19.2348 182.229 18.5455C209.627 8.22901 274.309 -7.93288 312.592 6.05396C360.447 23.5375 397.493 21.1419 401.679 11.9969C405.865 2.85186 362.776 -6.92214 379.203 12.7667C392.345 28.5177 440.299 22.6713 462.633 17.7792L508.707 16.1975"
+      stroke="black"
+      strokeWidth="2"
+      filter="url(#rough)"
+    />
+  </svg>
+    </h3>
 
   <div className="swiper-wrapper-relative">
     <Swiper

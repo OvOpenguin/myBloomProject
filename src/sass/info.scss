@@ -495,60 +495,101 @@ transform: translate(5px, 2px); // X 往右 5px, Y 往上 2px
 }
 .card {
   position: relative;
-  width: 250px;
-  height: 250px;
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
+  // 背景圖
   .bg-icon {
     position: absolute;
-    width: 105%; // 比主圖大 5%
-    height: 105%;
-    object-fit: contain;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1; // 在最底層
-  }
-
-  .main-img {
-    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.90); // 預設縮小 5%
-    filter: brightness(0.8); // 預設暗化
-    transition: all 0.4s ease;
-    z-index: 2; // 蓋在底圖上面
+    z-index: 1;
+    filter: none; // 🔹 背景永遠乾淨
   }
 
-  .overlay-text {
-    position: absolute;
-    color: #fff;
-    font-size: 20px;
-    font-weight: 500;
-    text-align: center;
-    z-index: 3; // 最上層
-    transition: opacity 0.3s ease;
+  // 主圖
+  .main-img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2;
+    filter: brightness(0.7); // 🔹 預設暗濾鏡
+    transition: filter 0.4s ease, transform 0.4s ease;
+    transform: scale(0.9);
   }
 
   &:hover {
     .main-img {
-      transform: translate(-50%, -50%) scale(1); // 放大到覆蓋底圖
-      filter: brightness(1); // 還原亮度
-    }
-
-    .overlay-text {
-      opacity: 0; // 文字消失
+      filter: brightness(1); // 🔹 hover 變亮
+      transform: scale(1);   // 🔹 hover 放大
     }
   }
+
+
 }
+
+.card,
+.nearby-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+
+  /* 背景圖 - 永遠乾淨 */
+  .bg-icon {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    filter: none !important; // 強制背景不要被影響
+  }
+
+  /* 主圖 - 預設暗一點 */
+  .main-img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2;
+    filter: brightness(0.7); // 預設濾鏡
+    transition: filter 0.4s ease, transform 0.4s ease;
+    transform: scale(0.9);
+  }
+
+  /* hover 時主圖恢復正常 */
+  &:hover {
+    .main-img {
+      filter: brightness(1);
+      transform: scale(1);
+    }
+  }
+    // 文字層
+  .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+
+  &:hover .overlay-text {
+    opacity: 0; // hover 時文字淡出
+  }
+}
+
+
 
 .arrow {
     position: absolute;
@@ -556,7 +597,7 @@ transform: translate(5px, 2px); // X 往右 5px, Y 往上 2px
     transform: translateY(-50%);
     width: 50px;
     height: 50px;
-    z-index: 1000;
+    // z-index: 1000;
     cursor: pointer;
 }
 
@@ -591,11 +632,32 @@ transform: translate(5px, 2px); // X 往右 5px, Y 往上 2px
     font-weight: 700;
     color: #64503C;
     margin-bottom: 20px; 
+    
   }
 
   .swiper-wrapper-relative {
     width: 100%;
   }
+
+  .left-line {
+    margin-right: 15px;   // 控制和文字的間距
+    transform: translateY(10px); // 上下微調
+  }
+
+
+  .right-line {
+    margin-left: 15px;
+    transform: translateY(10px);
+  }
+  .line-path1 {
+  stroke: #7DC5E4;   // 線條顏色 (橘色)
+  stroke-width: 3;   // 粗細
+}
+  .line-path2{
+  stroke: #69C9A0;   // 線條顏色 (橘色)
+  stroke-width: 3;   // 粗細
+}
+
 }
 
 
@@ -1230,7 +1292,7 @@ transform: translate(5px, 2px); // X 往右 5px, Y 往上 2px
         top: 20%; // 往下調整到畫面中間偏上
         left: 50%;
         transform: translateX(-50%);
-        z-index: 3;
+        // z-index: 3;
 
         img {
             width: 40px;
@@ -1246,7 +1308,7 @@ transform: translate(5px, 2px); // X 往右 5px, Y 往上 2px
         position: absolute;
         right: 5vw; // 靠右
         top: -50px;
-        z-index:3;
+        // z-index:3;
 
         h2 {
             font-size: 1.5rem;
