@@ -1,10 +1,7 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import { VscEye } from "react-icons/vsc";
 import { VscEyeClosed } from "react-icons/vsc";
-
-
-// Json
-import FlowerEvent from '../json/FlowerEvent.json';
+import Nav from '../components/Nav'
 
 // 圖片
 import arrowd from '../images/member/member-arrow-lightgreen.svg'
@@ -17,8 +14,6 @@ import heart0 from '../images/wall/wall-icon.svg'
 import votebotton1 from '../images/wall/wall-votebutton1.svg'
 import flower01 from '../images/wall/wall-flower01.png'
 import flower02 from '../images/wall/wall-flower02.png'
-import sign1 from '../images/member/member-sign-1.svg'
-import sign2 from '../images/member/member-sign-2.svg'
 import logo from '../images/home/北花冊.webp'
 
 
@@ -196,7 +191,7 @@ const Profile = ({ username, userid }) => {
                         <div className="label">
                             <p>帳號</p>
                         </div>
-                        <p>{username || ''}</p>
+                        <p style={{ fontSize: '1rem', backgroundColor: '#fff', lineHeight: '30px', padding: '0 10px' }}>{username || ''}</p>
                     </div>
 
                     {/* 密碼 */}
@@ -255,53 +250,56 @@ const SignIn = ({ onLogin }) => {
 
 
     return (
-        <div className="signin-wrap">
-            <img src={logo} alt="" />
-            <form onSubmit={handleLoginClick}>
+        <>
+            <Nav />
+            <div className="signin-wrap">
+                <img src={logo} alt="" />
+                <form onSubmit={handleLoginClick}>
 
-                {/* 帳號 */}
-                <div className="sign-box">
-                    <label htmlFor="username">帳號</label>
-                    <input
-                        id="username"
-                        type="text"
-                        className="username"
-                        placeholder="請輸入電子郵件"
-                        required
-                        autoFocus
-                        value={username}
-                        onChange={handleNameChange} />
-                </div>
+                    {/* 帳號 */}
+                    <div className="sign-box">
+                        <label htmlFor="username">帳號</label>
+                        <input
+                            id="username"
+                            type="text"
+                            className="username"
+                            placeholder="請輸入電子郵件"
+                            required
+                            autoFocus
+                            value={username}
+                            onChange={handleNameChange} />
+                    </div>
 
-                {/* 密碼 */}
-                <div className="sign-box">
-                    <label htmlFor="userid">密碼</label>
-                    <input
-                        id="userid"
-                        type="password"
-                        className="userid"
-                        placeholder="請輸入密碼"
-                        required
-                        value={userid}
-                        onChange={handleIdChange} 
+                    {/* 密碼 */}
+                    <div className="sign-box">
+                        <label htmlFor="userid">密碼</label>
+                        <input
+                            id="userid"
+                            type="password"
+                            className="userid"
+                            placeholder="請輸入密碼"
+                            required
+                            value={userid}
+                            onChange={handleIdChange}
                         />
-                </div>
+                    </div>
 
-                {/* 登入 */}
-                <button className="m-btn-sign"
-                    type="submit">
-                    <span className="circle">
-                        <span className="icon arrow"></span>
-                    </span>
-                    <span className="btn-text">登入</span>
-                </button>
-                {/* 註冊/忘記密碼 */}
-                <button className="register" type="button">
-                    註冊/忘記密碼
-                </button>
+                    {/* 登入 */}
+                    <button className="m-btn-sign"
+                        type="submit">
+                        <span className="circle">
+                            <span className="icon arrow"></span>
+                        </span>
+                        <span className="btn-text">登入</span>
+                    </button>
+                    {/* 註冊/忘記密碼 */}
+                    <button className="register" type="button">
+                        註冊/忘記密碼
+                    </button>
 
-            </form>
-        </div>
+                </form>
+            </div>
+        </>
     );
 }
 
@@ -311,13 +309,6 @@ export default function MemberCenter() {
     // 登入
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    // 檢查 localStorage 是否有登入紀錄
-    useEffect(() => {
-        const savedLogin = localStorage.getItem("isLoggedIn");
-        if (savedLogin === "true") {
-            setIsLoggedIn(true);
-        }
-    }, []);
     // 由 SignIn 帶回的登入資訊
     const [credentials, setCredentials] = useState({
         username: '',
@@ -351,7 +342,6 @@ export default function MemberCenter() {
         if (key === "logout") {
             setIsLoggedIn(false); // 登出
             setActiveKey("favorites"); // 重置 activeKey
-            localStorage.removeItem("isLoggedIn"); //清除登入紀錄
             setCredentials({ username: '', userid: '' });
         } else {
             setActiveKey(key);
@@ -369,10 +359,6 @@ export default function MemberCenter() {
         // 未登入 => 渲染登入元件
         return (
             <div className="sign-in">
-                <SignIn onLogin={() => {
-                    setIsLoggedIn(true)
-                    localStorage.setItem("isLoggedIn", "true"); // 登入成功存入
-                }} />
                 <SignIn onLogin={handleLogin} />
             </div>
         );
@@ -380,36 +366,36 @@ export default function MemberCenter() {
 
     // 登入 => 渲染會員中心介面
     return (
-        <section className="wrapper">
-            <div className="padding-top">
-                <img className="dc3" src={hfwr3} alt="" />
+        <>    <Nav></Nav>
+            <section className="wrapper">
+                <div className="padding-top">
+                    <img className="dc3" src={hfwr3} alt="" />
+                </div>
+                <div className="padding-left"></div>
+                {/* 左側選單 */}
+                <div className="left-sidebar">
+                    {TABS.map((t) => (
+                        <SidebarItem
+                            key={t.key}
+                            label={t.label}
+                            active={activeKey === t.key}
+                            danger={t.danger}
+                            onClick={() => handleSelect(t.key)}
+                        />
+                    ))}
+                    <img className="dc1" src={hfwr1} alt="" />
+                    <img className="dc2" src={hfwr2} alt="" />
+                </div>
 
-            </div>
-            <div className="padding-left"></div>
-            {/* 左側選單 */}
-            <div className="left-sidebar">
-                {TABS.map((t) => (
-                    <SidebarItem
-                        key={t.key}
-                        label={t.label}
-                        active={activeKey === t.key}
-                        danger={t.danger}
-                        onClick={() => handleSelect(t.key)}
-                    />
-                ))}
-            </div>
+                {/* 右側面板 */}
+                <div className="right-panel">
+                    {activeTab?.view}
+                </div>
 
-            {/* 右側面板 */}
-            <div className="right-panel">
-                {activeTab?.view}
-            </div>
+                <div className="padding-right"></div>
+                <div className="padding-bottom"></div>
 
-            <div className="padding-right"></div>
-            <div className="padding-bottom">
-                <img className="dc1" src={hfwr1} alt="" />
-                <img className="dc2" src={hfwr2} alt="" />
-            </div>
-
-        </section>
+            </section>
+        </>
     );
 }
