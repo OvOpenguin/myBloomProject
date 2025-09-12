@@ -190,3 +190,28 @@
 //         display: none;
 //     }
 // }
+
+@keyframes happear {
+  from { opacity: 0; scale: 0.5;}
+  to { opacity: 1; scale:1;}
+}
+
+@keyframes hmove {
+  from { opacity: 0; transform: translateX(100px);}
+  to { opacity: 1; transform: translateX(0px);}
+}
+
+@keyframes hfadein {
+  from { opacity: 0;}
+  to { opacity: 1;}
+}
+
+// 首頁scroll彈跳
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px); /* 向上移動 */
+  }
+}

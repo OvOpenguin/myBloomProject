@@ -141,6 +141,14 @@
                     position: relative;
                     border-radius: 5px;
                     clip-path: polygon(12% 0, 88% 0, 100% 12%, 100% 88%, 88% 100%, 12% 100%, 0 88%, 0 12%);
+                    .leaflet-top {
+                        top:10%;
+                    }
+
+                    .leaflet-marker-shadow{
+                        opacity: 0.5;
+                        
+                    }
 
                     @media (max-width: 600px) {
                         margin: 20px 10px;
@@ -318,9 +326,4 @@
         }
     }
 
-    // h3 {
-    //                     white-space: nowrap;
-    //                     text-overflow: ellipsis;
-    //                     overflow: hidden;
-    // }
 }

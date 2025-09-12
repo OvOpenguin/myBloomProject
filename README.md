@@ -10,3 +10,4 @@
 - 0901：新套件請安裝 => npm i swiper
 - 0901：請安裝 => npm install @rollup/plugin-commonjs --save-dev
 - 0905：請安裝(地圖套件) => npm i react-leaflet
+- 0912：請安裝 => npm i gsap

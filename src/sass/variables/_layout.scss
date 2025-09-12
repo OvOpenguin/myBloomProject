@@ -2,7 +2,9 @@
 @use './keyframe' as *;
 
 
-
+*{
+    // outline: 1px red solid;
+}
 
 /* header區 */
 header {
@@ -11,7 +13,8 @@ header {
 
 
     .hamburger {
-        position: fixed;
+        position:fixed;
+        top: 0;
         right: 0;
         z-index: 99;
         margin: 20px;
@@ -59,10 +62,10 @@ header {
         font-size: 20px;
         padding: 20px 20px;
 
-
         @media (max-width:830px) {
             position: fixed;
             z-index: 4;
+            top: 0;
             right: 0;
             background-color: #FFF4CA;
             flex-direction: column;
@@ -74,12 +77,10 @@ header {
             transition: opacity 0.5s ease, transform 0.5s ease;
         }
 
-
         &.show {
             opacity: 1;
             transform: translateX(0);
         }
-
 
         li a {
             color: $brown-100;
@@ -335,13 +336,16 @@ header {
 footer {
     // background-color: #fcfbd0;
     width: 100%;
-    height: 12vh;
     display: flex;
+    height: 5rem;
     justify-content: center;
     align-items: flex-end;
     color: #64503C;
-    padding: 0 0 20px 0;
     position: relative;
+
+    .txt {
+        padding-bottom: 0.5rem;
+    }
 
     &::before {
         content: '';

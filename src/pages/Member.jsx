@@ -1,10 +1,7 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import { VscEye } from "react-icons/vsc";
 import { VscEyeClosed } from "react-icons/vsc";
-
-
-// Json
-import FlowerEvent from '../json/FlowerEvent.json';
+import Nav from '../components/Nav'
 
 // 圖片
 import arrowd from '../images/member/member-arrow-lightgreen.svg'
@@ -17,8 +14,6 @@ import heart0 from '../images/wall/wall-icon.svg'
 import votebotton1 from '../images/wall/wall-votebutton1.svg'
 import flower01 from '../images/wall/wall-flower01.png'
 import flower02 from '../images/wall/wall-flower02.png'
-import sign1 from '../images/member/member-sign-1.svg'
-import sign2 from '../images/member/member-sign-2.svg'
 import logo from '../images/home/北花冊.webp'
 
 
@@ -65,16 +60,16 @@ const Favorites = () => {
             <div className="content">
                 <div className="map-cardWrap">
                     <a href="#" className="map-card">
-                        <p className="map-lable">台北</p>
-                        <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="map-img" alt="" />
-                        <div className="map-date">07.01 — 09.23</div>
-                        <h3 className="map-title">樟樹步道花海</h3>
+                        <p className="map-lable">臺北</p>
+                        <img src="./activity/activity10.jpg" className="map-img" alt="" />
+                        <div className="map-date">02.13 — 02.23</div>
+                        <h3 className="map-title">士林官邸鬱金香展</h3>
                     </a>
                     <a href="#" className="map-card">
-                        <p className="map-lable">台北</p>
-                        <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="map-img" alt="" />
-                        <div className="map-date">07.01 — 09.23</div>
-                        <h3 className="map-title">樟樹步道花海</h3>
+                        <p className="map-lable">新北</p>
+                        <img src="./activity/activity03.avif" className="map-img" alt="" />
+                        <div className="map-date">02.27 — 03.30</div>
+                        <h3 className="map-title">萬金杜鵑花展</h3>
                     </a>
                 </div>
             </div>
@@ -85,6 +80,33 @@ const Favorites = () => {
 
 // 我的花牆
 const Wall = () => {
+
+    // // 愛心
+    // const Flowerwall = ({ count, img, heart }) => {
+    //     const [likeCount, setLikeCount] = useState(count);
+    //     const [liked, setLiked] = useState(false);
+
+    //     const handleLike = () => {
+    //         if (!liked) {
+    //             setLikeCount(likeCount + 1);
+    //             setLiked(true);
+    //         } else {
+    //             setLikeCount(likeCount - 1); //取消讚-1
+    //             setLiked(false);
+    //         }
+    //     };
+
+    //     return (
+    //         <li className="v-item">
+    //             <p>{likeCount}</p>
+    //             <img src={img} alt="fw" />
+    //             <div className="icon-heart" onClick={handleLike} style={{ cursor: "pointer" }}>
+    //                 <img src={liked ? "./wall/wall-icon2.svg" : heart} alt="heart" />
+    //             </div>
+    //         </li>
+    //     );
+    // };
+
     return (
         <div className="wall-wrap">
             <div className="tab">
@@ -123,7 +145,6 @@ const Wall = () => {
 // 我的花訊
 const News = () => {
 
-
     return (
         <div className="news-wrap">
             <div className="tab">
@@ -135,31 +156,31 @@ const News = () => {
                     <div className="news-Card">
                         <div className="txtwrap">
                             <div className="news-labledate">
-                                <div className="news-lable">活動</div>
-                                <p>2025.07.28</p>
+                                <div className="news-lable">新北</div>
+                                <p>05.10 — 05.25</p>
                             </div>
-                            <p className="news-cardTitle">標題</p>
+                            <p className="news-cardTitle">新北河濱蝶戀季</p>
                         </div>
-                        <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="news-img" alt="" />
+                        <img src="./activity/activity02.jpg" className="news-img" alt="" />
                     </div>
                     <div className="news-Card">
                         <div className="txtwrap">
                             <div className="news-labledate">
-                                <div className="news-lable">活動</div>
-                                <p>2025.07.28</p>
+                                <div className="news-lable">桃園</div>
+                                <p>11.23 — 12.08</p>
                             </div>
-                            <p className="news-cardTitle">標題</p>
+                            <p className="news-cardTitle">桃園仙草花節</p>
                         </div>
-                        <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="news-img" alt="" />
+                        <img src="./activity/activity04.jpg" className="news-img" alt="" />
                     </div><div className="news-Card">
                         <div className="txtwrap">
                             <div className="news-labledate">
-                                <div className="news-lable">活動</div>
-                                <p>2025.07.28</p>
+                                <div className="news-lable">桃園</div>
+                                <p>08.30 — 09.30</p>
                             </div>
-                            <p className="news-cardTitle">標題</p>
+                            <p className="news-cardTitle">大溪韭菜花季</p>
                         </div>
-                        <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="news-img" alt="" />
+                        <img src="./activity/activity06.jpg" className="news-img" alt="" />
                     </div>
 
                 </div>
@@ -189,40 +210,45 @@ const Profile = ({ username, userid }) => {
                 <img src={prftab} alt="" />
             </div>
             <div className="content">
-                <div className="user-wrap">
+                <form className="user-wrap">
 
                     {/* 帳號 */}
                     <div className="user-box">
                         <div className="label">
                             <p>帳號</p>
                         </div>
-                        <p>{username || ''}</p>
+                        <div className="inputId" style={{ fontSize: '1rem', backgroundColor: '#fff', lineHeight: '30px', padding: '0 10px' }}>
+                            {username || ''}
+                        </div>
                     </div>
 
                     {/* 密碼 */}
                     <div className="user-box">
-                        <div className="label">
-                            <label htmlFor="password">密碼</label>
-                        </div>
+                        <label htmlFor="inputId" className="label">
+                            <p>密碼</p>
+                        </label>
                         <input
-                            type={show ? 'text' : 'password'}
+                            id="inputId"
                             className="inputId"
+                            type={show ? 'text' : 'password'}
                             placeholder="Default"
                             ref={passwordRef}
                             value={userid || ''}
                             required
-                            readOnly />
+                            readOnly
+                            style={{ width: '50%' }}
+                        />
 
                         {/* 查看密碼 */}
                         <button
                             className="show-btn"
                             type="button"
                             onClick={togglePassword}>
-                            {show ? <VscEye /> : <VscEyeClosed />}
+                            {show ? <VscEye size={24} /> : <VscEyeClosed size={24} />}
                         </button>
                     </div>
 
-                </div>
+                </form>
             </div>
         </div>
     );
@@ -253,55 +279,57 @@ const SignIn = ({ onLogin }) => {
         }
     };
 
-
     return (
-        <div className="signin-wrap">
-            <img src={logo} alt="" />
-            <form onSubmit={handleLoginClick}>
+        <>
+            <Nav />
+            <div className="signin-wrap">
+                <img src={logo} alt="" />
+                <form className='form' onSubmit={handleLoginClick}>
 
-                {/* 帳號 */}
-                <div className="sign-box">
-                    <label htmlFor="username">帳號</label>
-                    <input
-                        id="username"
-                        type="text"
-                        className="username"
-                        placeholder="請輸入電子郵件"
-                        required
-                        autoFocus
-                        value={username}
-                        onChange={handleNameChange} />
-                </div>
+                    {/* 帳號 */}
+                    <div className="sign-box">
+                        <label htmlFor="username">帳號</label>
+                        <input
+                            id="username"
+                            type="text"
+                            className="username"
+                            placeholder="請輸入電子郵件"
+                            required
+                            autoFocus
+                            value={username}
+                            onChange={handleNameChange} />
+                    </div>
 
-                {/* 密碼 */}
-                <div className="sign-box">
-                    <label htmlFor="userid">密碼</label>
-                    <input
-                        id="userid"
-                        type="password"
-                        className="userid"
-                        placeholder="請輸入密碼"
-                        required
-                        value={userid}
-                        onChange={handleIdChange} 
+                    {/* 密碼 */}
+                    <div className="sign-box">
+                        <label htmlFor="userid">密碼</label>
+                        <input
+                            id="userid"
+                            type="password"
+                            className="userid"
+                            placeholder="請輸入密碼"
+                            required
+                            value={userid}
+                            onChange={handleIdChange}
                         />
-                </div>
+                    </div>
 
-                {/* 登入 */}
-                <button className="m-btn-sign"
-                    type="submit">
-                    <span className="circle">
-                        <span className="icon arrow"></span>
-                    </span>
-                    <span className="btn-text">登入</span>
-                </button>
-                {/* 註冊/忘記密碼 */}
-                <button className="register" type="button">
-                    註冊/忘記密碼
-                </button>
+                    {/* 登入 */}
+                    <button className="m-btn-sign"
+                        type="submit">
+                        <span className="circle">
+                            <span className="icon arrow"></span>
+                        </span>
+                        <span className="btn-text">登入</span>
+                    </button>
+                    {/* 註冊/忘記密碼 */}
+                    <button className="register" type="button">
+                        註冊/忘記密碼
+                    </button>
 
-            </form>
-        </div>
+                </form>
+            </div>
+        </>
     );
 }
 
@@ -311,13 +339,6 @@ export default function MemberCenter() {
     // 登入
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    // 檢查 localStorage 是否有登入紀錄
-    useEffect(() => {
-        const savedLogin = localStorage.getItem("isLoggedIn");
-        if (savedLogin === "true") {
-            setIsLoggedIn(true);
-        }
-    }, []);
     // 由 SignIn 帶回的登入資訊
     const [credentials, setCredentials] = useState({
         username: '',
@@ -351,7 +372,6 @@ export default function MemberCenter() {
         if (key === "logout") {
             setIsLoggedIn(false); // 登出
             setActiveKey("favorites"); // 重置 activeKey
-            localStorage.removeItem("isLoggedIn"); //清除登入紀錄
             setCredentials({ username: '', userid: '' });
         } else {
             setActiveKey(key);
@@ -369,47 +389,46 @@ export default function MemberCenter() {
         // 未登入 => 渲染登入元件
         return (
             <div className="sign-in">
-                <SignIn onLogin={() => {
-                    setIsLoggedIn(true)
-                    localStorage.setItem("isLoggedIn", "true"); // 登入成功存入
-                }} />
                 <SignIn onLogin={handleLogin} />
             </div>
         );
     }
 
+    
+
     // 登入 => 渲染會員中心介面
     return (
-        <section className="wrapper">
-            <div className="padding-top">
-                <img className="dc3" src={hfwr3} alt="" />
+        <>    <Nav></Nav>
+            <section className="wrapper">
+                <div className="padding-top">
+                    <img className="dc3" src={hfwr3} alt="" />
+                </div>
+                <div className="padding-left"></div>
+                {/* 左側選單 */}
+                <div className="left-sidebar">
+                    {TABS.map((t) => (
+                        <SidebarItem
+                            key={t.key}
+                            label={t.label}
+                            active={activeKey === t.key}
+                            danger={t.danger}
+                            onClick={() => handleSelect(t.key)}
+                        />
+                    ))}
+                </div>
 
-            </div>
-            <div className="padding-left"></div>
-            {/* 左側選單 */}
-            <div className="left-sidebar">
-                {TABS.map((t) => (
-                    <SidebarItem
-                        key={t.key}
-                        label={t.label}
-                        active={activeKey === t.key}
-                        danger={t.danger}
-                        onClick={() => handleSelect(t.key)}
-                    />
-                ))}
-            </div>
+                {/* 右側面板 */}
+                <div className="right-panel">
+                    {activeTab?.view}
+                </div>
 
-            {/* 右側面板 */}
-            <div className="right-panel">
-                {activeTab?.view}
-            </div>
+                <div className="padding-right"></div>
+                <div className="padding-bottom">
+                    <img className="dc1" src={hfwr1} alt="" />
+                    <img className="dc2" src={hfwr2} alt="" />
+                </div>
 
-            <div className="padding-right"></div>
-            <div className="padding-bottom">
-                <img className="dc1" src={hfwr1} alt="" />
-                <img className="dc2" src={hfwr2} alt="" />
-            </div>
-
-        </section>
+            </section>
+        </>
     );
 }
