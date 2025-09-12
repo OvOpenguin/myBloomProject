@@ -9,6 +9,9 @@ import FlowerEvent from '../json/FlowerEvent.json';
 
 import flower10 from '../images/wall/wall-f10.webp'
 import ban1 from '../images/news/newsban2.webp'
+import { Link } from "react-router-dom";
+
+
 
 
 const News = () => {
@@ -16,9 +19,9 @@ const News = () => {
     const [visibleCount, setVisibleCount] = useState(6);
 
     // 卡片元件
-    const Newscard = ({ lable, date, title, img }) => {
+    const Newscard = ({ id, lable, date, title, img }) => {
         return (
-            <div className="news-Card">
+            <Link to={`/info/${id}`} className="news-Card">
                 <div className="txtwrap">
                     <div className="news-labledate">
                         <div className="news-lable">{lable}</div>
@@ -27,7 +30,7 @@ const News = () => {
                     <p className="news-cardTitle">{title}</p>
                 </div>
                 <img src={img} className="news-img" alt="" />
-            </div>
+            </Link>
         )
     }
 
@@ -49,7 +52,7 @@ const News = () => {
 
     return (
         <>
-        <Nav></Nav>
+            <Nav></Nav>
             {/* 圖片banner */}
             <section className="newsBanner">
                 <div className="bannerswiper">
@@ -83,8 +86,8 @@ const News = () => {
                         </div>
                     </div>
                     <div className="news-CardWarp">
-                        {filtered.slice(0, visibleCount).map((item, index) => {
-                            return <Newscard key={index} lable={item.lable} date={item.date} title={item.title} img={item.img} />
+                        {filtered.slice(0, visibleCount).map((item) => {
+                            return <Newscard key={item.id} id={item.id} lable={item.lable} date={item.date} title={item.title} img={item.img} />
                         })}
                     </div>
                     {visibleCount < filtered.length && (

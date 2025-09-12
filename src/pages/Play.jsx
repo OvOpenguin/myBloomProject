@@ -22,14 +22,14 @@ import l2 from "../images/play/play-line-2.svg"
 const questions = [
     {
         id: 1,
-        silhouette: "./play/桃花shadow.svg",
+        silhouette: "./play/桃花shadow.png",
         image: "./play/桃花real.svg",
         options: ["桃花", "杜鵑", "山櫻花"],
         answer: "桃花",
     },
     {
         id: 2,
-        silhouette: "./play/茶花shadow.svg",
+        silhouette: "./play/茶花shadow.png",
         image: "./play/茶花real.svg",
         options: ["鬱金香", "茶花", "灰塵精靈"],
         answer: "茶花",
@@ -54,6 +54,41 @@ const questions = [
         image: "./play/雛菊real.png",
         options: ["雛菊", "國蘭", "菊花"],
         answer: "雛菊",
+    },
+    {
+        id: 6,
+        silhouette: "./play/梅花shadow.svg",
+        image: "./play/梅花real.svg",
+        options: ["雛菊", "國蘭", "梅花"],
+        answer: "梅花",
+    },
+    {
+        id: 7,
+        silhouette: "./play/向日葵shadow.png",
+        image: "./play/向日葵real.svg",
+        options: ["向日葵", "國蘭", "菊花"],
+        answer: "向日葵",
+    },
+    {
+        id: 8,
+        silhouette: "./play/百變怪shadow.svg",
+        image: "./play/百變怪real.svg",
+        options: ["桃花", "杜鵑", "百O怪"],
+        answer: "百O怪",
+    },
+    {
+        id: 9,
+        silhouette: "./play/茶花shadow.png",
+        image: "./play/茶花real.svg",
+        options: ["茶花", "國蘭", "菊花"],
+        answer: "茶花",
+    },
+    {
+        id: 10,
+        silhouette: "./play/羽扇豆shadow.svg",
+        image: "./play/羽扇豆real.svg",
+        options: ["雛菊", "國蘭", "羽扇豆"],
+        answer: "羽扇豆",
     },
 ];
 

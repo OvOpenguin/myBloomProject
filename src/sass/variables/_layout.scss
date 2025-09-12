@@ -2,7 +2,9 @@
 @use './keyframe' as *;
 
 
-
+*{
+    outline: 1px red solid;
+}
 
 /* header區 */
 header {
@@ -11,7 +13,8 @@ header {
 
 
     .hamburger {
-        position: fixed;
+        position:fixed;
+        top: 0;
         right: 0;
         z-index: 99;
         margin: 20px;
@@ -62,6 +65,7 @@ header {
         @media (max-width:830px) {
             position: fixed;
             z-index: 4;
+            top: 0;
             right: 0;
             background-color: #FFF4CA;
             flex-direction: column;
