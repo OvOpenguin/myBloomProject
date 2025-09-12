@@ -18,25 +18,29 @@
         max-width: 1440px;
         margin: auto;
         overflow: hidden;
+
     }
 
     // Swiper 預設樣式
     .mySwiper {
         overflow: visible;
-                animation: happear linear both;
+        animation: hfadein linear both;
         animation-timeline: view();
         animation-range: entry 0;
+
     }
 
     .swiper-slide {
         display: flex;
         justify-content: center;
 
+
         .card {
             width: 100%;
             height: auto;
             display: flex;
             flex-direction: column;
+
 
             &::before {
                 content: "";
@@ -65,7 +69,7 @@
             text-align: right;
 
             @media (max-width:500px) {
-                 margin-left: 250px;
+                margin-left: 250px;
             }
 
         }
@@ -530,7 +534,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    text-align: center;
+    text-align: right;
     padding-top: 10px;
 
     nav {

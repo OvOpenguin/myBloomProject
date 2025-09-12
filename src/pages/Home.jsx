@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import $ from "jquery";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Nav from '../components/Nav'
 
 // Swiper套件 
@@ -42,7 +43,7 @@ import hfw2 from '../images/home/homefwro2.svg'
 // swiper左右按鈕
 import arrow from "../images/home/home-arrow.svg"
 
-
+gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
 
@@ -102,7 +103,7 @@ const App = () => {
                 requestAnimationFrame(() => {
                     ticking = false;
                 });
-            }
+            } 
         };
 
         window.addEventListener("wheel", handleScroll);
@@ -128,18 +129,40 @@ const App = () => {
         })
     }
 
-    // 標題淡出
+    // logo淡入
     useEffect(() => {
-    gsap.fromTo(".herologo",
-      { opacity: 0 }, // 初始隱藏
-      {
-        opacity: 1,
-        duration: 0.6,
-        delay: 2,
-        ease: "power1.out"
-      }
-    );
-  }, []);
+        gsap.fromTo(".herologo",
+            { opacity: 0 }, // 初始隱藏
+            {
+                opacity: 1,
+                duration: 0.6,
+                delay: 2,
+                ease: "power1.out"
+            }
+        );
+    }, []);
+
+    // 花牆淡入
+    const containerRef = useRef(null);
+    useEffect(() => {
+        const container = containerRef.current;
+        const items = container.querySelectorAll(".hv"); 
+
+        // 初始透明度為 0
+        gsap.set(items, { opacity: 0 });
+
+        // 滾動觸發動畫
+        gsap.to(items, {
+            opacity: 1,
+            duration: 1,
+            stagger: 0.1, // 每個元素間隔淡入
+            scrollTrigger: {
+                trigger: container,
+                start: "top 50%", // 當容器到視窗觸發
+                toggleActions: "play none none reverse",
+            },
+        });
+    }, []);
 
 
     return (
@@ -345,7 +368,7 @@ const App = () => {
                         <div className="h-v-title">
                             <div className="hv t1"><h2>花牆票選</h2><h3>Popularity Vote</h3></div>
                         </div>
-                        <div className="h-v-photos">
+                        <div className="h-v-photos" ref={containerRef}>
                             <div className="hv p1"><img src={hfwr1} alt="" /></div>
                             <div className="hv p2"><img src={hfwr2} alt="" /></div>
                             <div className="hv p3"><img src={hfwr3} alt="" /></div>
