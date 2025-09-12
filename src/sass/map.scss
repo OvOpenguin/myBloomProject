@@ -61,9 +61,14 @@
                     border-radius: 5px;
                     text-align: center;
                     border: none;
-                    background-color: $bg-gray;
+                    background-color: $spring-yellow;
+                    color: $brown-100;
+                    font-size: 1rem;
                 }
 
+                option:checked {
+                    background-color: $winter-blue;
+                }
             }
 
             .map-season {
@@ -141,13 +146,14 @@
                     position: relative;
                     border-radius: 5px;
                     clip-path: polygon(12% 0, 88% 0, 100% 12%, 100% 88%, 88% 100%, 12% 100%, 0 88%, 0 12%);
+
                     .leaflet-top {
-                        top:10%;
+                        top: 10%;
                     }
 
-                    .leaflet-marker-shadow{
+                    .leaflet-marker-shadow {
                         opacity: 0.5;
-                        
+
                     }
 
                     @media (max-width: 600px) {
