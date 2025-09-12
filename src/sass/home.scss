@@ -544,7 +544,7 @@
     nav {
         display: inline-flex;
         background-color: rgba(255, 255, 255);
-        border-radius: 40px;
+        border-radius: 40px 0 0 40px;
         padding: 0 10px;
     }
 }
@@ -991,7 +991,7 @@
             }
 
             .d3 img {
-                top: 10%;
+                top: 3%;
                 left: 33%;
                 width: 12%;
                 @media (max-width:640px){

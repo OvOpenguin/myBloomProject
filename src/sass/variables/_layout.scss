@@ -336,13 +336,16 @@ header {
 footer {
     // background-color: #fcfbd0;
     width: 100%;
-    height: 12vh;
     display: flex;
+    height: 5rem;
     justify-content: center;
     align-items: flex-end;
     color: #64503C;
-    padding: 0 0 20px 0;
     position: relative;
+
+    .txt {
+        padding-bottom: 0.5rem;
+    }
 
     &::before {
         content: '';

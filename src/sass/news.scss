@@ -110,6 +110,10 @@
             display: flex;
             flex-wrap: wrap;
 
+            a {
+                color: #64503C;
+            }
+
             @media (max-width:1200px) {
                 justify-content: center;
             }

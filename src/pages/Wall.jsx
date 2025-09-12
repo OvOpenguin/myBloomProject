@@ -293,7 +293,7 @@ const Wall = () => {
           })}
         </div>
         <a href="#" className="a-button">
-          <p>前往投票</p>
+          <p>前往投搞</p>
           <img src={abotton} alt="" />
         </a>
 
