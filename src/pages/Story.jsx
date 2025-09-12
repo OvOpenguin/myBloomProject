@@ -56,7 +56,7 @@ const Story = () => {
     <Nav></Nav>
       <div className='story'>
 
-        <div className="sleft show">
+        <div className="sleft">
           {/* 其他品種 */}
           <div className="sother">
             <h3>其他花種</h3>
