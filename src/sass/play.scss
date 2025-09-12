@@ -5,13 +5,13 @@
 //     outline: 1px solid red;
 // }
 
-.playWrap {
+#playWrap {
     display: flex;
     justify-content: center;
     padding: 50px 0;
     gap: 50px;
     position: relative;
-    min-height: 800px; //限制最小高度
+    min-height: 760px; //限制最小高度
 
     .t {
         position: absolute;

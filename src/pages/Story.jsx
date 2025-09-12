@@ -54,7 +54,7 @@ const Story = () => {
   return (
     <>
     <Nav></Nav>
-      <div className='story'>
+      <div id='story'>
 
         <div className="sleft">
           {/* 其他品種 */}

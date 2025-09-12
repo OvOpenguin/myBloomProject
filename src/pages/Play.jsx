@@ -138,7 +138,7 @@ const Play = () => {
     return (
         <>
         <Nav></Nav>
-            <div className='playWrap'>
+            <div id='playWrap'>
 
                 {/* 裝飾 */}
                 <div className="t l1"><img src={l1} alt="黃線" /></div>
