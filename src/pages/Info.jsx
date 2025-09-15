@@ -98,6 +98,13 @@ function MapIframe() {
 const Info = () => {
 
 
+  // 回到最上層
+  function backtop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    })
+  }
   // 路由設定
   const { id } = useParams();
   const event = FlowerEvent.find(item => item.id.toString() === id);
@@ -228,7 +235,7 @@ const Info = () => {
             modules={[Pagination, Navigation]}
             className="mySwiper"
           >
-            {bannerImages.map((img, index) => (
+            {event.banner.map((img, index) => (
               <SwiperSlide key={index}>
                 <img src={img} alt={`Banner ${index + 1}`} />
               </SwiperSlide>
@@ -856,10 +863,10 @@ const Info = () => {
 
               </div>
             )}
-
-
           </div>
+
         </div>
+
       </section>
     </>
   );

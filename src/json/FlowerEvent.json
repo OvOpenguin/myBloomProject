@@ -14,7 +14,8 @@
         "date": "03.14 — 04.13",
         "img": "./activity/activity01.avif",
         "lat": 25.070,
-        "lng": 121.5204
+        "lng": 121.5204,
+        "banner": ["./activity/activity01.avif", "./activity/activity01.avif"]
     },
     {
         "id": 2,
@@ -31,7 +32,8 @@
         "date": "05.10 — 05.25",
         "img": "./activity/activity02.jpg",
         "lat": 25.011,
-        "lng": 121.4458
+        "lng": 121.4458,
+        "banner": ["./activity/activity02.jpg", "./activity/activity02.jpg"]
     },
     {
         "id": 3,
@@ -48,7 +50,8 @@
         "date": "02.27 — 03.30",
         "img": "./activity/activity03.avif",
         "lat": 25.221,
-        "lng": 121.6404
+        "lng": 121.6404,
+        "banner": ["./activity/activity01.avif", "./activity/activity01.avif"]
     },
     {
         "id": 4,
@@ -65,7 +68,8 @@
         "date": "11.23 — 12.08",
         "img": "./activity/activity04.jpg",
         "lat": 24.913,
-        "lng": 121.092
+        "lng": 121.092,
+        "banner": ["./activity/activity01.avif", "./activity/activity01.avif"]
     },
     {
         "id": 5,
@@ -82,7 +86,8 @@
         "date": "03.14— 04.27",
         "img": "./activity/activity05.jpg",
         "lat": 25.176,
-        "lng": 121.5353
+        "lng": 121.5353,
+        "banner": ["./activity/activity01.avif", "./activity/activity01.avif"]
     },
     {
         "id": 6,
@@ -99,7 +104,8 @@
         "date": "08.30 — 09.30",
         "img": "./activity/activity06.jpg",
         "lat": 24.925,
-        "lng": 121.3171
+        "lng": 121.3171,
+        "banner": ["./activity/activity01.avif", "./activity/activity01.avif"]
     },
     {
         "id": 7,
@@ -120,7 +126,8 @@
         "date": "09.20 — 10.19",
         "img": "./activity/activity07.jpg",
         "lat": 25.091,
-        "lng": 121.5309
+        "lng": 121.5309,
+        "banner": ["./activity/activity01.avif", "./activity/activity01.avif"]
     },
     {
         "id": 8,
@@ -139,7 +146,8 @@
         "date": "11.29 — 12.15",
         "img": "./activity/activity08.jpg",
         "lat": 25.091,
-        "lng": 121.5309
+        "lng": 121.5309,
+        "banner": ["./activity/activity01.avif", "./activity/activity01.avif"]
     },
     {
         "id": 9,
@@ -156,7 +164,8 @@
         "date": "08.30 — 09.30",
         "img": "./activity/activity09.jpg",
         "lat": 25.092,
-        "lng": 121.5315
+        "lng": 121.5315,
+        "banner": ["./activity/activity01.avif", "./activity/activity01.avif"]
     },
     {
         "id": 10,
@@ -172,7 +181,8 @@
         "date": "02.13 — 02.23",
         "img": "./activity/activity10.jpg",
         "lat": 25.092,
-        "lng": 121.5315
+        "lng": 121.5315,
+        "banner": ["./activity/activity01.avif", "./activity/activity01.avif"]
     },
     {
         "id": 11,
@@ -190,6 +200,7 @@
         "date": "06 — 08",
         "img": "./activity/activity11.jpg",
         "lat": 24.966,
-        "lng": 121.3895
+        "lng": 121.3895,
+        "banner": ["./activity/activity01.avif", "./activity/activity01.avif"]
     }
 ]
