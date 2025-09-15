@@ -15,7 +15,11 @@
         "img": "./activity/activity01.avif",
         "lat": 25.070,
         "lng": 121.5204,
-        "banner": ["./activity/activity01.avif", "./activity/activity01.avif", "./activity/activity01.avif"]
+        "banner": [
+            "./activity/activity01.avif",
+            "./activity/activity01.avif",
+            "./activity/activity01.avif"
+        ]
     },
     {
         "id": 2,
@@ -33,7 +37,11 @@
         "img": "./activity/activity02.jpg",
         "lat": 25.011,
         "lng": 121.4458,
-        "banner": ["./activity/activity02.jpg", "./activity/activity02.jpg", "./activity/activity02.jpg"]
+        "banner": [
+            "./activity/activity02.jpg",
+            "./activity/activity02.jpg",
+            "./activity/activity02.jpg"
+        ]
     },
     {
         "id": 3,
@@ -51,7 +59,11 @@
         "img": "./activity/activity03.avif",
         "lat": 25.221,
         "lng": 121.6404,
-        "banner": ["./activity/activity03.avif", "./activity/activity03.avif", "./activity/activity03.avif"]
+        "banner": [
+            "./activity/activity03.avif",
+            "./activity/activity03.avif",
+            "./activity/activity03.avif"
+        ]
     },
     {
         "id": 4,
@@ -69,7 +81,11 @@
         "img": "./activity/activity04.jpg",
         "lat": 24.913,
         "lng": 121.092,
-        "banner": ["./activity/activity04.jpg", "./activity/activity04.jpg", "./activity/activity04.jpg"]
+        "banner": [
+            "./activity/activity04.jpg",
+            "./activity/activity04.jpg",
+            "./activity/activity04.jpg"
+        ]
     },
     {
         "id": 5,
@@ -87,7 +103,11 @@
         "img": "./activity/activity05.jpg",
         "lat": 25.176,
         "lng": 121.5353,
-        "banner": ["./activity/activity05.jpg", "./activity/activity05.jpg", "./activity/activity05.jpg"]
+        "banner": [
+            "./activity/activity05.jpg",
+            "./activity/activity05.jpg",
+            "./activity/activity05.jpg"
+        ]
     },
     {
         "id": 6,
@@ -105,7 +125,16 @@
         "img": "./activity/activity06.jpg",
         "lat": 24.925,
         "lng": 121.3171,
-        "banner": ["./activity/activity06.jpg", "./activity/activity06.jpg", "./activity/activity06.jpg"]
+        "banner": [
+            "./activity/activity06.jpg",
+            "./activity/activity06.jpg",
+            "./activity/activity06.jpg"
+        ],
+        "homeTitle": "九月雪-大溪韭菜花季",
+        "homeImg": "./home/韭菜花.png",
+        "homeYear": 2025,
+        "homeStart": "9月",
+        "homeEnd": "10月"
     },
     {
         "id": 7,
@@ -127,7 +156,11 @@
         "img": "./activity/activity07.jpg",
         "lat": 25.091,
         "lng": 121.5309,
-        "banner": ["./activity/activity07.jpg", "./activity/activity07.jpg", "./activity/activity07.jpg"]
+        "banner": [
+            "./activity/activity07.jpg",
+            "./activity/activity07.jpg",
+            "./activity/activity07.jpg"
+        ]
     },
     {
         "id": 8,
@@ -147,7 +180,11 @@
         "img": "./activity/activity08.jpg",
         "lat": 25.091,
         "lng": 121.5309,
-        "banner": ["./activity/activity08.jpg", "./activity/activity08.jpg", "./activity/activity08.jpg"]
+        "banner": [
+            "./activity/activity08.jpg",
+            "./activity/activity08.jpg",
+            "./activity/activity08.jpg"
+        ]
     },
     {
         "id": 9,
@@ -165,7 +202,11 @@
         "img": "./activity/activity09.jpg",
         "lat": 25.092,
         "lng": 121.5315,
-        "banner": ["./activity/activity09.jpg", "./activity/activity09.jpg", "./activity/activity09.jpg"]
+        "banner": [
+            "./activity/activity09.jpg",
+            "./activity/activity09.jpg",
+            "./activity/activity09.jpg"
+        ]
     },
     {
         "id": 10,
@@ -182,7 +223,11 @@
         "img": "./activity/activity10.jpg",
         "lat": 25.092,
         "lng": 121.5315,
-        "banner": ["./activity/activity10.jpg", "./activity/activity10.jpg", "./activity/activity10.jpg"]
+        "banner": [
+            "./activity/activity10.jpg",
+            "./activity/activity10.jpg",
+            "./activity/activity10.jpg"
+        ]
     },
     {
         "id": 11,
@@ -201,6 +246,118 @@
         "img": "./activity/activity11.jpg",
         "lat": 24.966,
         "lng": 121.3895,
-        "banner": ["./activity/activity11.jpg", "./activity/activity11.jpg", "./activity/activity11.jpg"]
+        "banner": [
+            "./activity/activity11.jpg",
+            "./activity/activity11.jpg",
+            "./activity/activity11.jpg"
+        ]
+    },
+    {
+        "id": 12,
+        "month": [
+            "8月",
+            "9月"
+        ],
+        "location": "桃園市",
+        "flower": [
+            "金針花"
+        ],
+        "lable": "台北",
+        "title": "台北陽明山竹子湖",
+        "date": "08.30 — 09.30",
+        "img": "./activity/activity06.jpg",
+        "lat": 24.925,
+        "lng": 121.3171,
+        "banner": [
+            "./activity/activity06.jpg",
+            "./activity/activity06.jpg",
+            "./activity/activity06.jpg"
+        ],
+        "homeTitle": "金針花-台北陽明山竹子湖",
+        "homeImg": "./home/金針花.png",
+        "homeYear": 2025,
+        "homeStart": "08月",
+        "homeEnd": "09月"
+    },
+    {
+        "id": 13,
+        "month": [
+            "9月",
+            "10月"
+        ],
+        "location": "台北市",
+        "flower": [
+            "向日葵"
+        ],
+        "lable": "台北",
+        "title": "向日葵-大佳河濱花海",
+        "date": "09.01 — 10.31",
+        "img": "./activity/activity06.jpg",
+        "lat": 24.925,
+        "lng": 121.3171,
+        "banner": [
+            "./activity/activity06.jpg",
+            "./activity/activity06.jpg",
+            "./activity/activity06.jpg"
+        ],
+        "homeTitle": "向日葵-大佳河濱花海",
+        "homeImg": "./home/向日葵.png",
+        "homeYear": 2025,
+        "homeStart": "09月",
+        "homeEnd": "10月"
+    },
+    {
+        "id": 14,
+        "month": [
+            "9月",
+            "10月"
+        ],
+        "location": "台北市",
+        "flower": [
+            "向日葵"
+        ],
+        "lable": "台北",
+        "title": "士林官邸菊展",
+        "date": "09.01 — 10.31",
+        "img": "./activity/activity06.jpg",
+        "lat": 24.925,
+        "lng": 121.3171,
+        "banner": [
+            "./activity/activity06.jpg",
+            "./activity/activity06.jpg",
+            "./activity/activity06.jpg"
+        ],
+        "homeTitle": "菊花-士林官邸菊展",
+        "homeImg": "./home/菊花.png",
+        "homeYear": 2025,
+        "homeStart": "09月",
+        "homeEnd": "10月"
+    },
+    {
+        "id": 15,
+        "month": [
+            "9月",
+            "10月"
+        ],
+        "location": "台北市",
+        "flower": [
+            "羽扇豆"
+        ],
+        "lable": "台北",
+        "title": "樟樹步道花海",
+        "date": "09.01 — 10.31",
+        "img": "./activity/activity06.jpg",
+        "lat": 24.925,
+        "lng": 121.3171,
+        "banner": [
+            "./activity/activity06.jpg",
+            "./activity/activity06.jpg",
+            "./activity/activity06.jpg"
+        ],
+        "homeTitle": "羽扇豆-樟樹步道花海",
+        "homeImg": "./home/魯冰花.png",
+        "homeYear": 2025,
+        "homeStart": "09月",
+        "homeEnd": "10月"
     }
 ]

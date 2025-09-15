@@ -4,6 +4,7 @@ import $ from "jquery";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Nav from '../components/Nav'
+import FlowerEvent from '../json/FlowerEvent.json';
 
 // Swiper套件 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -17,7 +18,6 @@ import "../sass/home.scss"
 
 // 圖片管理區
 import 大花定位2 from "../images/home/大花定位2.png"
-import 貼紙花1 from "../images/home/首頁-貼紙花.webp"
 import 花卉介紹2 from "../images/home/homeStory.svg"
 import 花卉遊戲2 from "../images/home/homeGame2.svg"
 import logo from '../images/home/logo.png'
@@ -49,49 +49,52 @@ gsap.registerPlugin(ScrollTrigger);
 const App = () => {
 
     // 建立活動陣列資料
-    const events = [
-        {
-            id: 1,
-            title: "九月雪-桃園大溪區",
-            year: "2025",
-            start: "9月",
-            end: "10月",
-            image: './home/韭菜花.png',
-        },
-        {
-            id: 2,
-            title: "金針花-台北陽明山竹子湖",
-            year: "2025",
-            start: "08月",
-            end: "09月",
-            image: './home/金針花.png',
-        },
-        {
-            id: 3,
-            title: "向日葵-大佳河濱花海",
-            year: "2025",
-            start: "09月",
-            end: "10月",
-            image: './home/向日葵.png',
-        },
-        {
-            id: 4,
-            title: "菊花-士林官邸菊展",
-            year: "2025",
-            start: "09月",
-            end: "10月",
-            image: './home/菊花.png',
-        },
-        {
-            id: 5,
-            title: "羽扇豆-樟樹步道花海",
-            year: "2025",
-            start: "09月",
-            end: "10月",
-            image: './home/魯冰花.png',
-        },
+    // const events = [
+    //     {
+    //         id: 1,
+    //         title: "九月雪-桃園大溪區",
+    //         year: "2025",
+    //         start: "9月",
+    //         end: "10月",
+    //         image: './home/韭菜花.png',
+    //     },
+    //     {
+    //         id: 2,
+    //         title: "金針花-台北陽明山竹子湖",
+    //         year: "2025",
+    //         start: "08月",
+    //         end: "09月",
+    //         image: './home/金針花.png',
+    //     },
+    //     {
+    //         id: 3,
+    //         title: "向日葵-大佳河濱花海",
+    //         year: "2025",
+    //         start: "09月",
+    //         end: "10月",
+    //         image: './home/向日葵.png',
+    //     },
+    //     {
+    //         id: 4,
+    //         title: "菊花-士林官邸菊展",
+    //         year: "2025",
+    //         start: "09月",
+    //         end: "10月",
+    //         image: './home/菊花.png',
+    //     },
+    //     {
+    //         id: 5,
+    //         title: "羽扇豆-樟樹步道花海",
+    //         year: "2025",
+    //         start: "09月",
+    //         end: "10月",
+    //         image: './home/魯冰花.png',
+    //     },
 
-    ];
+    // ];
+
+    // 指定資料
+    const events = FlowerEvent.filter(act => [6,12,13,14,15].includes(act.id));
 
     // 裝飾花(滑鼠滾輪)
     const [rotated, setRotated] = useState(false);
@@ -174,7 +177,7 @@ const App = () => {
         );
     }, []);
 
-   
+
 
     return (
         <>
@@ -231,6 +234,7 @@ const App = () => {
                 <section className="h-nav">
                     <Nav></Nav>
                 </section>
+
                 {/* 近期活動 */}
                 <section className="indexActivity">
                     {/* 主副標 */}
@@ -268,16 +272,19 @@ const App = () => {
                         >
                             {events.map((e) => (
                                 <SwiperSlide key={e.id}>
-                                    <div className="card">
-                                        <div className="eventTime">
-                                            {e.year}<br />{e.start}<br />｜<br />{e.end}
-                                        </div>
-                                        <figure>
-                                            <img className="f1" src={e.image} alt={e.title} />
-                                        </figure>
-                                        <h4>{e.title}</h4>
 
-                                    </div>
+                                    <Link to={`/info/${e.id}`}>
+                                        <div className="card">
+                                            <div className="eventTime">
+                                                {e.homeYear}<br />{e.homeStart}<br />｜<br />{e.homeEnd}
+                                            </div>
+                                            <figure>
+                                                <img className="f1" src={e.homeImg} alt={e.title} />
+                                            </figure>
+                                            <h4>{e.homeTitle}</h4>
+                                        </div>
+                                    </Link>
+
                                 </SwiperSlide>
                             ))}
 
