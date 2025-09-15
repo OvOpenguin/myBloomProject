@@ -228,7 +228,8 @@ const Info = () => {
             }}
             centeredSlides={true}
             pagination={{ type: "bullets", clickable: true }}
-            loop={true}
+            loop={false}
+            initialSlide={1}
             navigation={{
               prevEl: ".info-custom-prev",
               nextEl: ".info-custom-next",
@@ -236,6 +237,14 @@ const Info = () => {
             modules={[Pagination, Navigation]}
             className="mySwiper"
           >
+            {/* 自訂箭頭 */}
+            <div className="info-custom-prev">
+              <IoIosArrowDropleft size={50} />
+            </div>
+            <div className="info-custom-next">
+              <IoIosArrowDropright size={50} />
+            </div>
+
             {event.banner.map((img, index) => (
               <SwiperSlide key={index}>
                 <img src={img} alt={`Banner ${index + 1}`} />
@@ -243,13 +252,6 @@ const Info = () => {
             ))}
           </Swiper>
 
-          {/* 自訂箭頭 */}
-          <div className="info-custom-prev">
-            <IoIosArrowDropleft size={50} />
-          </div>
-          <div className="info-custom-next">
-            <IoIosArrowDropright size={50} />
-          </div>
         </div>
 
         {/* Info wrapper */}
