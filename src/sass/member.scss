@@ -557,12 +557,13 @@
     &::before {
       content: "";
       display: inline-block;
-      background: url(../images/member/member-sign-1.svg) no-repeat center /contain;
+      background: url(../images/member/member-sign-1.svg) no-repeat top /contain;
       position: absolute;
       z-index: 1;
-      height: 100%;
-      width: 100%;
-      animation: shake1 5s infinite ease-in-out;
+      height: 50%;
+      width: 150%;
+      top: -20%;
+      animation: shake2 5s infinite ease-in-out;
     }
 
     // down
@@ -572,8 +573,9 @@
       background: url(../images/member/member-sign-2.svg) no-repeat bottom /contain;
       position: absolute;
       z-index: 1;
-      height: 150%;
+      height: 70%;
       width: 150%;
+      top: 50%;
       animation: shake4 5s infinite ease-in-out;
 
     }
