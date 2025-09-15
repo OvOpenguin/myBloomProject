@@ -16,10 +16,10 @@
     overflow: hidden;
     position: relative;
     // height: calc(100vh - 5rem);
-    min-height: 760px;
+    min-height: 770px;
 
      @media (max-width:1024px) {
-        min-height: 600px;
+        min-height: 620px;
      }
 
     @media (max-width:820px) {
@@ -27,6 +27,7 @@
         flex-direction: column;
         align-items: center;
         height: auto;
+        padding: 30px 0;
     }
 
     // 左側 menu
