@@ -198,6 +198,7 @@ const Info = () => {
       <Nav></Nav>
       <section id="infopage">
         {/* Banner */}
+
         <div className="info-banner">
           <div className="banner-mask">
             <img src={BnBg} alt="Banner Background" />
@@ -867,6 +868,13 @@ const Info = () => {
 
         </div>
 
+        {/* gotop */}
+        <button className="gotop infotop" onClick={backtop}>
+          <span className="circle">
+            <span className="icon arrow"></span>
+          </span>
+          <span className="btn-text">TOP</span>
+        </button>
       </section>
     </>
   );
