@@ -174,6 +174,8 @@ const App = () => {
         );
     }, []);
 
+   
+
     return (
         <>
             <main>
@@ -231,11 +233,9 @@ const App = () => {
                 </section>
                 {/* 近期活動 */}
                 <section className="indexActivity">
-
                     {/* 主副標 */}
-                    <h2>近期活動</h2>
+                    <h2 className="tit"><span>近</span><span>期</span><span>活</span><span>動</span></h2>
                     <h3>Recent Events</h3>
-
 
                     {/* Swiper測試 */}
                     <div className="swiperwrap">

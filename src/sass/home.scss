@@ -541,6 +541,7 @@
     }
 }
 
+// 導覽列
 .h-nav {
     position: sticky;
     top: 0;
@@ -548,14 +549,18 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    text-align: right;
-    padding-top: 10px;
+    text-align: center;
 
     nav {
         display: inline-flex;
-        background-color: rgba(255, 255, 255);
-        border-radius: 40px 0 0 40px;
+        background-color: rgba(255, 255, 255, 0.6);
+        // border-radius: 40px 0 0 40px;
+        border-radius:  40px;
         padding: 0 10px;
+
+        .nav-logo {
+            display: none;
+        }
     }
 }
 
@@ -849,7 +854,7 @@
                 .btnstory,
                 .btngame {
                     animation: hmove linear both;
-                    animation-timeline: view();
+                    animation-timeline: view(15% 30%);
                     animation-range: entry 0;
                 }
             }
