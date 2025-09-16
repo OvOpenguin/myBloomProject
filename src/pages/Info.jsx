@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { useParams } from 'react-router-dom';
+import { motion } from "framer-motion";
 
 import "../sass/info.scss";
 import Nav from '../components/Nav'
@@ -64,7 +65,9 @@ import SulphurCosmos from "../images/info/SulphurCosmos.png";
 import Zinnia from "../images/info/Zinnia.png";
 import Daylily from "../images/info/Daylily.png";
 
-
+import TabGreen from "../images/info/tabsgreen.svg";
+import TabBlue from "../images/info/tabsblue.svg";
+import TabPink from "../images/info/tabsipnk.svg";
 
 import BnBg from "../images/info/BnBg.png";
 
@@ -81,6 +84,7 @@ import jsonData from '../json/weather.json';
 import FlowerEvent from '../json/FlowerEvent.json';
 
 
+const tabIcons = [TabGreen, TabBlue, TabPink];
 
 const tabs = ["活動介紹", "交通資訊", "周邊推薦"];
 
@@ -341,29 +345,34 @@ const Info = () => {
 
         {/* Tabs */}
         <div className="info-tabs-wrapper">
-          <div className="info-tabs">
-            {tabs.map((tab, index) => (
-              <div
-                key={index}
-                ref={(el) => (tabRefs.current[index] = el)}
-                className={`tab ${activeIndex === index ? "active" : ""}`}
-                onClick={() => setActiveIndex(index)}
-              >
-                {tab}
-              </div>
-            ))}
-          </div>
+<div className="info-tabs">
+  {tabs.map((tab, index) => (
+    <div
+      key={index}
+      ref={(el) => (tabRefs.current[index] = el)}
+      className={`tab ${activeIndex === index ? "active" : ""}`}
+      onClick={() => setActiveIndex(index)}
+      style={{ display: "flex", alignItems: "center", gap: "8px" }}
+    >
+      {/* SVG 動畫 */}
+      {activeIndex === index && (
+        <motion.img
+          src={tabIcons[index]}
+          alt={`${tab} icon`}
+          initial={{ rotate: 0, opacity: 0 }}
+          animate={{ rotate: 100, opacity: 1 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="tab-icon"
+        />
+      )}
 
-          <div className="tab-line-container" ref={lineContainerRef}>
-            <div className="tab-line"></div>
-            <div
-              className="tab-line-highlight"
-              style={{
-                width: `${lineStyle.width}px`,
-                transform: `translateX(${lineStyle.left}px)`,
-              }}
-            />
-          </div>
+      {/* Tab 文字 */}
+      <span>{tab}</span>
+    </div>
+  ))}
+</div>
+
+
 
           {/* 活動介紹 */}
           <div className="tab-contents">

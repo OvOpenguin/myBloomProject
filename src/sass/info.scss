@@ -175,8 +175,7 @@ h2 {
 .info-banner {
     .swiper-slide {
         img {
-            clip-path: polygon(12% 0, 88% 0, 100% 12%, 100% 88%, 88% 100%, 12% 100%, 0 88%, 0 12%);
-            ;
+clip-path:  polygon(2% 0,95% 0, 99% 14%, 100% 50%, 98% 100%, 55% 100%, 0 98%, 0 22%);;
         }
     }
 }
@@ -484,6 +483,7 @@ h2 {
     }
 
     .tab {
+  padding: 5px 20px;
         font-size: 20px;
         font-weight: 400;
         color: #64503C;
@@ -493,7 +493,14 @@ h2 {
         &.active {
             font-size: 24px;
             font-weight: 700;
+             color: #64503C;
+  border-bottom: 3px solid #b69f88;
         }
+        .tab-icon {
+  width:24px;
+  height: 24px;
+}
+
     }
 
     .tab-line-container {
@@ -721,20 +728,30 @@ h2 {
     }
 
 
-    .right-line {
-        margin-left: 15px;
-        transform: translateY(10px);
-    }
+  .right-line {
+    margin-left: 15px;
+    transform: translateY(10px);
+  }
+  .line-path1 {
+  stroke: #7DC5E4;   // 線條顏色 (橘色)
+  stroke-width: 3;   // 粗細
+}
+  .line-path2{
+  stroke: #69C9A0;   // 線條顏色 (橘色)
+  stroke-width: 3;   // 粗細
+}
+/* 針對左右線條的 path 設定 */
+.line-path1, .line-path2 {
+  stroke-dasharray: 1000; /* 總長度，需比你的 path 長度大，確保整條線可以完整呈現 */
+  stroke-dashoffset: 1000; /* 初始完全隱藏 */
+  animation: drawLine 2s forwards; /* 動畫 2 秒，可自行調整 */
+}
 
-    .line-path1 {
-        stroke: #7DC5E4; // 線條顏色 (橘色)
-        stroke-width: 3; // 粗細
-    }
-
-    .line-path2 {
-        stroke: #69C9A0; // 線條顏色 (橘色)
-        stroke-width: 3; // 粗細
-    }
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0; /* 畫出線條 */
+  }
+}
 
 }
 
