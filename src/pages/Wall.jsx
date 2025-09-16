@@ -1,5 +1,7 @@
 import "../sass/wall.scss"
 import { useEffect, useState, useRef } from "react";
+import { Link, useLocation } from "react-router-dom";
+
 import Nav from '../components/Nav'
 
 import wall_vote_one from '../images/home/首頁-票選1-框.png'
@@ -17,6 +19,7 @@ import flower07 from '../images/wall/wall-f7.webp'
 import flower08 from '../images/wall/wall-f8.webp'
 import flower09 from '../images/wall/wall-f9.webp'
 import flower10 from '../images/wall/wall-f10.webp'
+
 
 
 const Wall = () => {
@@ -100,8 +103,8 @@ const Wall = () => {
       id: 1,
       img: flower01,
       label: '活動',
-      date: '2025.07.28',
-      title: '荷與睡蓮誰美？北投公園一次看',
+      date: '2025.09.16',
+      title: '四季花語：與自然共舞的美好時光',
     },
     {
       id: 2,
@@ -219,16 +222,31 @@ const Wall = () => {
     })
   }
 
+  //滑到文章列表 
+  const location = useLocation();
+
+  useEffect(() => {
+    // 檢查 URL 中是否有錨點 (hash)
+    if (location.hash) {
+      setTimeout(() => {
+        const targetElement = document.getElementById(location.hash.substring(1));
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100); 
+    }
+  }, [location.hash]);
+
 
   return (
     <>
-    <Nav></Nav>
+      <Nav></Nav>
       <div className="wall-c-inner">
         <div className="wall-c-title">
           <h2>上季冠軍</h2>
           <h2>CHAMPION</h2>
           <p>
-            我們正在尋找北區最耀眼的花卉明星！你的一票至關重要。<br/>登入會員，每人一票，用你的選擇為它加冕。
+            我們正在尋找北區最耀眼的花卉明星！你的一票至關重要。<br />登入會員，每人一票，用你的選擇為它加冕。
           </p>
           <button className="w-btn-vote" onClick={gotvote}>
             <span className="circle">
@@ -282,16 +300,19 @@ const Wall = () => {
         </div>
       </section>
 
-      <section className="wall-a-inner">
+      <section id="alink" className="wall-a-inner">
         <header className="a-title">
           <h2>文章列表</h2>
           <h2>ARTICLES</h2>
         </header>
-        <div className="a-cardwarp">
-          {articles.map((item, index) => {
-            return <Article key={index} img={item.img} label={item.label} date={item.date} title={item.title} />
-          })}
-        </div>
+        <Link to="/article">
+          <div className="a-cardwarp">
+            {articles.map((item, index) => {
+              return <Article key={index} img={item.img} label={item.label} date={item.date} title={item.title} />
+            })}
+          </div>
+        </Link>
+
         <a href="#" className="a-button">
           <p>前往投搞</p>
           <img src={abotton} alt="" />
