@@ -171,6 +171,13 @@ h2 {
         gap: 40px;
     }
 }
+.info-banner {
+    .swiper-slide {
+        img {
+clip-path:  polygon(12% 0, 88% 0, 100% 12%, 100% 88%, 88% 100%, 12% 100%, 0 88%, 0 12%);;
+        }
+}
+}
 
 .info-basic {
     max-width: 250px;
@@ -1046,28 +1053,41 @@ transform: translate(5px, 2px); // X 往右 5px, Y 往上 2px
     }
 
     /* 花卉圖組 */
+
+
     .floral-gallery {
+
         flex: 1;
         display: flex;
         justify-content: center;
         align-items: center; // 🔹 垂直置中
     }
+    
+
+
+
+
 
     .flower-group {
         display: flex;
         flex-direction: column;
-        align-items: center;
         position: relative;
+
+                        transform: translate(0,20px); // x=右移, y=上移 (自行調整)
+
 
         .flower-stack {
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
+  min-height: 25rem; // 根據花背景圖高度調整
 
             .flower-bg {
                 width: 20rem;
                 height: auto;
+                    display: block; // 避免 inline-img 導致高度問題
+
             }
 
             .flower-main {
@@ -1077,7 +1097,7 @@ transform: translate(5px, 2px); // X 往右 5px, Y 往上 2px
                 
 
                 // 🔹 這裡控制 flower1 的位置
-                transform: translate(10px, -20px); // x=右移, y=上移 (自行調整)
+                transform: translate(10px, -10px); // x=右移, y=上移 (自行調整)
              transition: transform 0.5s ease, filter 0.5s ease;
             }
             &:hover .flower-main {
@@ -1090,23 +1110,26 @@ transform: translate(5px, 2px); // X 往右 5px, Y 往上 2px
 
         .flower-text {
             position: absolute; // 🔹 疊在 flower-bg 上
-            top: 105%; // 垂直置中
+            top: 90%; // 垂直置中
             left: 55%;
             transform: translate(-50%, -50%); // 完美置中
 
             font-size: 1.5rem;
             font-weight: 700;
 
-            &.sakura {
+            &.a {
                 color: #FF8457;
             }
 
-            &.tulip {
+            &.b {
                 color: #69C9A0;
             }
 
-            &.lavender {
+            &.c {
                 color: #FF61B0;
+            }
+            &.d {
+                color: #9D47B9;
             }
         }
     }

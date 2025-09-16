@@ -59,9 +59,12 @@ import phone from "../images/info/phone.svg";
 import fbicon from "../images/info/fbicon.png";
 import igicon from "../images/info/igicon.png";
 import threadicon from "../images/info/threadicon.png";
-import benner1 from "../images/info/benner1.png";
-import benner2 from "../images/info/benner2.png";
-import benner3 from "../images/info/benner3.png";
+import sunflower from "../images/info/sunflower.png";
+import SulphurCosmos from "../images/info/SulphurCosmos.png";
+import Zinnia from "../images/info/Zinnia.png";
+import Daylily from "../images/info/Daylily.png";
+
+
 
 import BnBg from "../images/info/BnBg.png";
 
@@ -154,9 +157,7 @@ const Info = () => {
   const lineContainerRef = useRef(null);
   const [lineStyle, setLineStyle] = useState({ width: 0, left: 0 });
   const foodGroupsRef = useRef([]);
-  const bannerImages = [
-    benner1, benner2, benner3, benner1, benner2, benner3
-  ];
+
 
   useEffect(() => {
     if (tabRefs.current[activeIndex] && lineContainerRef.current) {
@@ -228,7 +229,7 @@ const Info = () => {
             }}
             centeredSlides={true}
             pagination={{ type: "bullets", clickable: true }}
-            loop={false}
+            loop={true}
             initialSlide={1}
             navigation={{
               prevEl: ".info-custom-prev",
@@ -414,35 +415,82 @@ const Info = () => {
                     </svg>
                   </div>
 
-                  {/* 花卉展示區 */}
-                  <div className="floral-gallery">
-                    {/* 第一組：櫻花 */}
-                    <div className="flower-group">
-                      <div className="flower-stack">
-                        <img src={flowerbg} alt="背景" className="flower-bg" />
-                        <img src={flower1} alt="花卉1" className="flower-main" />
-                      </div>
-                      <p className="flower-text sakura">櫻花</p>
-                    </div>
 
-                    {/* 第二組：鬱金香 */}
-                    <div className="flower-group">
-                      <div className="flower-stack">
-                        <img src={flowerbg} alt="背景" className="flower-bg" />
-                        <img src={flower1} alt="花卉2" className="flower-main" />
-                      </div>
-                      <p className="flower-text tulip">鬱金香</p>
-                    </div>
+{/* 花卉展示區 */}
+<div className="floral-gallery">
+  <Swiper
+    modules={[Pagination]}
+    pagination={{ 
+      clickable: true 
+    }}
+      autoHeight={true}   // 🔹 Swiper 自動根據每個 slide 的內容高度調整
 
-                    {/* 第三組：薰衣草 */}
-                    <div className="flower-group">
-                      <div className="flower-stack">
-                        <img src={flowerbg} alt="背景" className="flower-bg" />
-                        <img src={flower1} alt="花卉3" className="flower-main" />
-                      </div>
-                      <p className="flower-text lavender">薰衣草</p>
-                    </div>
-                  </div>
+    breakpoints={{
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 5,
+      },
+      640: {
+        slidesPerView: 1,
+        spaceBetween: 5,
+      },
+      820: {
+        slidesPerView: 2,
+        spaceBetween: 10,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      1440: {
+        slidesPerView: 4, // 🔹 全部顯示
+        spaceBetween: 20,
+      },
+    }}
+    className="floral-swiper"
+  >
+    <SwiperSlide>
+      <div className="flower-group">
+        <div className="flower-stack">
+          <img src={flowerbg} alt="背景" className="flower-bg" />
+          <img src={sunflower} alt="花卉1" className="flower-main" />
+        </div>
+        <p className="flower-text a">葵花</p>
+      </div>
+    </SwiperSlide>
+
+    <SwiperSlide>
+      <div className="flower-group">
+        <div className="flower-stack">
+          <img src={flowerbg} alt="背景" className="flower-bg" />
+          <img src={SulphurCosmos} alt="花卉2" className="flower-main" />
+        </div>
+        <p className="flower-text b">黃秋英</p>
+      </div>
+    </SwiperSlide>
+
+    <SwiperSlide>
+      <div className="flower-group">
+        <div className="flower-stack">
+          <img src={flowerbg} alt="背景" className="flower-bg" />
+          <img src={Zinnia} alt="花卉3" className="flower-main" />
+        </div>
+        <p className="flower-text c">百日菊</p>
+      </div>
+    </SwiperSlide>
+
+    <SwiperSlide>
+      <div className="flower-group">
+        <div className="flower-stack">
+          <img src={flowerbg} alt="背景" className="flower-bg" />
+          <img src={Daylily} alt="花卉4" className="flower-main" />
+        </div>
+        <p className="flower-text d">萱草</p>
+      </div>
+    </SwiperSlide>
+  </Swiper>
+</div>
+
                 </div>
 
 
