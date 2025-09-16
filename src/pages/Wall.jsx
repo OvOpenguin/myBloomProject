@@ -101,14 +101,14 @@ const Wall = () => {
   const articles = [
     {
       id: 1,
-      img: flower01,
+      img: "./news/newss02.jpg",
       label: '活動',
       date: '2025.09.16',
       title: '四季花語：與自然共舞的美好時光',
     },
     {
       id: 2,
-      img: flower01,
+      img: "./news/newss02.jpg",
       label: '活動',
       date: '2025.07.28',
       title: '荷與睡蓮誰美？北投公園一次看',
@@ -139,14 +139,14 @@ const Wall = () => {
   // 文章元件
   const Article = ({ img, label, date, title }) => {
     return (
-      <a href="#" className="a-card">
-        <img src={img} alt="" />
-        <div>
+      <Link to="/article" className="a-card">
+        <div className="a-img-box"><img src={img} alt="圖卡" /></div>
+        <div className="wall-content">
           <p className='wall-lable'>{label}</p>
           <p className='wall-date'>{date}</p>
-          <p className='wall-title'>{title}</p>
+          {title}
         </div>
-      </a>
+      </Link>
     )
   };
 
@@ -233,7 +233,7 @@ const Wall = () => {
         if (targetElement) {
           targetElement.scrollIntoView({ behavior: 'smooth' });
         }
-      }, 100); 
+      }, 100);
     }
   }, [location.hash]);
 
@@ -305,13 +305,15 @@ const Wall = () => {
           <h2>文章列表</h2>
           <h2>ARTICLES</h2>
         </header>
-        <Link to="/article">
-          <div className="a-cardwarp">
-            {articles.map((item, index) => {
-              return <Article key={index} img={item.img} label={item.label} date={item.date} title={item.title} />
-            })}
-          </div>
-        </Link>
+
+        <div className="a-cardwarp">
+
+          {articles.map((item, index) => {
+            return <Article key={index} img={item.img} label={item.label} date={item.date} title={item.title} />
+          })}
+
+        </div>
+
 
         <a href="#" className="a-button">
           <p>前往投搞</p>

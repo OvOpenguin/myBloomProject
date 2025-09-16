@@ -8,7 +8,7 @@ const Article = () => {
         <>
             <Nav></Nav>
             <section id='article'>
-                <div className="apic"><img src="./story/茶花1.png" alt="圖" /></div>
+                <div className="apic"><img src="./news/newss02.jpg" alt="圖" /></div>
 
                 {/* 標題 */}
                 <div className="aWrap">
