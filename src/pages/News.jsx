@@ -5,7 +5,7 @@ import { Pagination, Autoplay } from 'swiper/modules';
 import Nav from '../components/Nav'
 import 'swiper/css';
 import 'swiper/css/pagination';
-import FlowerEvent from '../json/FlowerEvent.json';
+import fornews from '../json/fornews.json';
 
 import flower10 from '../images/wall/wall-f10.webp'
 import ban1 from '../images/news/newsban2.webp'
@@ -33,7 +33,7 @@ const News = () => {
                 </div>
                 <div className="news-imgwrap">
 
-                <img src={img} className="news-img" alt="" />
+                    <img src={img} className="news-img" alt="" />
                 </div>
             </Link>
         )
@@ -43,8 +43,17 @@ const News = () => {
     const [selectedlocation, setSelectedLocation] = useState("");
     const oplocation = ['臺北市', '新北市', '基隆市', '桃園市', '新竹市', '新竹縣', '宜蘭縣']
 
-    // 篩選
-    const filtered = FlowerEvent.filter((item) => {
+    // 解析 start 字串成 Date
+    function parseStartDate(startStr) {
+        const [month, day] = startStr.split('.').map(Number);
+        return new Date(2025, month - 1, day); // 假設年份固定
+    }
+    // 先排序
+    const sortedNews = [...fornews].sort(
+        (a, b) => parseStartDate(a.start) - parseStartDate(b.start)
+    );
+    // 再篩選
+    const filtered = sortedNews.filter((item) => {
         return (
             (selectedlocation === "" || item.location === selectedlocation)
         );

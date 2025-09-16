@@ -279,10 +279,10 @@ const App = () => {
                             <h3>News</h3>
                             {/* 消息列表 */}
                             <ul>
-                                <li><div><p><span className="tag1">活動</span>我是一大串的活頁消息標題消我xfkdxhksdhgkjs</p></div><time className="itime">2025-10-15</time></li>
-                                <li><div><p><span className="tag2">活動</span>我是一大串的活頁消息標題消我</p></div><time className="itime">2025-10-15</time></li>
-                                <li><div><p><span className="tag1">活動</span>我是一大串的活頁消息標題消我</p></div><time className="itime">2025-10-15</time></li>
-                                <li><div><p><span className="tag1">活動</span>我是一大串的活頁消息標題消我</p></div><time className="itime">2025-10-15</time></li>
+                                <li><div><p><span className="tag1">展覽</span>春日花藝展：與花共舞的午後時光</p></div><time className="itime">2025-10-15</time></li>
+                                <li><div><p><span className="tag2">活動</span>浪漫花季野餐：芬芳四溢的戶外時光</p></div><time className="itime">2025-10-22</time></li>
+                                <li><div><p><span className="tag2">活動</span>花卉攝影巡禮：捕捉春天的每一抹色彩</p></div><time className="itime">2025-11-07</time></li>
+                                <li><div><p><span className="tag1">展覽</span>城市花市盛會：探索彩色花卉的秘密</p></div><time className="itime">2025-11-25</time></li>
                             </ul>
 
                             {/* 更多消息按鈕 */}
