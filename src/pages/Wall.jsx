@@ -115,7 +115,7 @@ const Wall = () => {
     },
     {
       id: 3,
-      img: flower01,
+      img: "./news/newss02.jpg",
       label: '活動',
       date: '2025.07.28',
       title: '荷與睡蓮誰美？北投公園一次看',
@@ -314,11 +314,9 @@ const Wall = () => {
 
         </div>
 
-
-        <a href="#" className="a-button">
-          <p>前往投搞</p>
-          <img src={abotton} alt="" />
-        </a>
+        <Link to="/member" className="a-button"><p>前往投搞</p>
+          <img src={abotton} alt="button" />
+        </Link>
 
         {/* <button className="gotop" onClick={backtop}></button> */}
         <button className="gotop" onClick={backtop}>

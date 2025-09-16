@@ -18,8 +18,6 @@ const Article = () => {
                         <p>作者：Charlie<time datetime="2025/09/16">2025/09/16</time></p>
                     </header>
 
-
-
                     <div className="acard">
                         <h3>春之序章：新生的希望</h3>
                         <h4>櫻花 - 短暫而永恆的美麗</h4>
