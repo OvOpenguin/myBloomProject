@@ -17,10 +17,10 @@
         "lat": 25.070,
         "lng": 121.5204,
         "banner": [
-            "./activity/benner1.png",
-            "./activity/benner2.png",
-            "./activity/benner3.png",
-            "./activity/benner1.png"
+            "./activity/activity01.avif",
+            "./activity/activity02.jpg",
+            "./activity/activity03.avif",
+            "./activity/activity02.jpg"
         ]
     },
     {
