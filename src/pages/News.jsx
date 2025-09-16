@@ -21,6 +21,7 @@ const News = () => {
     const [visibleCount, setVisibleCount] = useState(6);
 
     // 卡片元件
+    /*
     const Newscard = ({ id, lable, date, title, img }) => {
         return (
             <Link to={`/info/${id}`} className="news-Card">
@@ -37,7 +38,34 @@ const News = () => {
                 </div>
             </Link>
         )
-    }
+    }*/
+
+    const Newscard = ({ id, lable, date, title, img }) => {
+        const CardContent = (
+            <>
+                <div className="txtwrap">
+                    <div className="news-labledate">
+                        <div className="news-lable">{lable}</div>
+                        <p>{date}</p>
+                    </div>
+                    <p className="news-cardTitle">{title}</p>
+                </div>
+                <div className="news-imgwrap">
+                    <img src={img} className="news-img" alt="" />
+                </div>
+            </>
+        );
+
+        return lable === '活動' ? (
+            <Link to={`/info/${id}`} className="news-Card">
+                {CardContent}
+            </Link>
+        ) : (
+            <div className="news-Card">
+                {CardContent}
+            </div>
+        );
+    };
 
     // 選單
     const [selectedlocation, setSelectedLocation] = useState("");

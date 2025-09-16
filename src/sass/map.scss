@@ -3,10 +3,13 @@
 
 .map-inner {
     display: flex;
-    padding: 0 100px;
+    padding: 0 5%;
     gap: 20px;
     min-height: calc(100vh - 5rem - 72px);
 
+    @media (max-width:1380px) {
+        //padding: 0 100px;
+    }
     @media (max-width:1000px) {
         flex-direction: column;
     }

@@ -263,11 +263,12 @@ const Info = () => {
             <p>台北市士林區二二路一段123號</p>
             <div className="info-tag-wrapper">
               <div className="info-tag">
-                <img src={TagSummer} alt="" />
-                <img src={TagTaipeicity} alt="" />
+                <div className="tags season">夏</div><div className="tags location">台北市</div>
               </div>
               <div className="info-date">
-                <img src={date} alt="日期" />
+                <div className="start"><p className="month">8</p><div className="date"><span className="day">31</span><span className="week">(一)</span></div></div>
+                <div className="arr"></div>
+                <div className="end"><p className="month">9</p><div className="date"><span className="day">17</span><span className="week">(日)</span></div></div>
               </div>
             </div>
           </div>
