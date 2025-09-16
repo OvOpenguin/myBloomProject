@@ -566,8 +566,8 @@
       background: url(../images/member/member-sign-1.svg) no-repeat top /contain;
       position: absolute;
       z-index: 1;
-      height: 50%;
-      width: 150%;
+      height:45%;
+      width: 130%;
       top: -20%;
       animation: shake2 5s infinite ease-in-out;
     }
@@ -579,15 +579,16 @@
       background: url(../images/member/member-sign-2.svg) no-repeat bottom /contain;
       position: absolute;
       z-index: 1;
-      height: 70%;
-      width: 150%;
+      height: 55%;
+      width: 50%;
       top: 50%;
+      left: -35%;
       animation: shake4 5s infinite ease-in-out;
 
     }
 
 
-    img {
+    .form-logo {
       width: 200px;
       margin-top: 15%;
     }
@@ -636,6 +637,17 @@
         border: none;
       }
 
+    }
+
+    .sign-dc{
+      display: inline-block;
+      position: absolute;
+      z-index: 1;
+      height:50%;
+      width: 80%;
+      top: 50%;
+      left: 80%;
+      animation: shake4 5s infinite ease-in-out;
     }
 
 

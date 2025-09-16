@@ -21,6 +21,7 @@ import logo from '../images/home/北花冊.webp'
 import hfwr1 from '../images/home/h-w-de1.svg'
 import hfwr2 from '../images/home/h-w-de2.svg';
 import hfwr3 from '../images/member/member-decoline-line.svg';
+import dc1 from '../images/member/member-sign-3.svg';
 
 // sass
 import "../sass/member.scss"
@@ -283,7 +284,7 @@ const SignIn = ({ onLogin }) => {
         <>
             <Nav />
             <div className="signin-wrap">
-                <img src={logo} alt="" />
+                <img className="form-logo" src={logo} alt="" />
                 <form className='form' onSubmit={handleLoginClick}>
 
                     {/* 帳號 */}
@@ -328,6 +329,9 @@ const SignIn = ({ onLogin }) => {
                     </button>
 
                 </form>
+                <div>
+                    <img className="sign-dc" src={dc1} alt="" />
+                </div>
             </div>
         </>
     );
