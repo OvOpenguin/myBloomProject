@@ -175,7 +175,8 @@ h2 {
 .info-banner {
     .swiper-slide {
         img {
-clip-path:  polygon(2% 0,95% 0, 99% 14%, 100% 50%, 98% 100%, 55% 100%, 0 98%, 0 22%);;
+            clip-path: polygon(2% 0, 95% 0, 99% 14%, 100% 50%, 98% 100%, 55% 100%, 0 98%, 0 22%);
+            ;
         }
     }
 }
@@ -187,6 +188,7 @@ clip-path:  polygon(2% 0,95% 0, 99% 14%, 100% 50%, 98% 100%, 55% 100%, 0 98%, 0 
 
     .info-tag {
         margin: 10px 0;
+
         .tags {
             font-size: 1.2rem;
             padding: 0 1rem;
@@ -389,13 +391,15 @@ clip-path:  polygon(2% 0,95% 0, 99% 14%, 100% 50%, 98% 100%, 55% 100%, 0 98%, 0 
     .weather-info {
         position: absolute;
         top: 35%;
-        left: 15%;
+        left: 25%;
         display: flex;
         align-items: flex-start;
         gap: 2rem;
 
         /* 左側溫度 + 縣市 + 降雨 */
         .temp-city {
+            position: relative; // 如果需要絕對定位也可以
+            left: 20px; // 往右移動 20px；負值則往左
             display: flex;
             flex-direction: column;
 
@@ -450,21 +454,21 @@ clip-path:  polygon(2% 0,95% 0, 99% 14%, 100% 50%, 98% 100%, 55% 100%, 0 98%, 0 
 
         /* 右側日期時間 */
         .date-time {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
+            position: relative; // 父元素定位
 
-            .date,
-            .time {
+            .date {
                 font-weight: 700;
-                font-size: clamp(1.5rem, 4vw, 1.5rem); // 24px
+                font-size: clamp(1.5rem, 4vw, 1.5rem);
                 color: #64503C;
-            }
 
-            .time {
-                margin-top: 0.5rem;
+                position: absolute;
+                top: -30px;
+                left: -20px;
+                transform: rotate(5deg);
+                transform-origin: left top;
             }
         }
+
     }
 }
 
@@ -483,7 +487,7 @@ clip-path:  polygon(2% 0,95% 0, 99% 14%, 100% 50%, 98% 100%, 55% 100%, 0 98%, 0 
     }
 
     .tab {
-  padding: 5px 20px;
+        padding: 5px 20px;
         font-size: 20px;
         font-weight: 400;
         color: #64503C;
@@ -493,13 +497,14 @@ clip-path:  polygon(2% 0,95% 0, 99% 14%, 100% 50%, 98% 100%, 55% 100%, 0 98%, 0 
         &.active {
             font-size: 24px;
             font-weight: 700;
-             color: #64503C;
-  border-bottom: 3px solid #b69f88;
+            color: #64503C;
+            border-bottom: 3px solid #b69f88;
         }
+
         .tab-icon {
-  width:24px;
-  height: 24px;
-}
+            width: 24px;
+            height: 24px;
+        }
 
     }
 
@@ -567,7 +572,6 @@ clip-path:  polygon(2% 0,95% 0, 99% 14%, 100% 50%, 98% 100%, 55% 100%, 0 98%, 0 
         align-items: center;
     }
 }
-
 
 .swiper-wrapper-relative {
     position: relative;
@@ -728,30 +732,38 @@ clip-path:  polygon(2% 0,95% 0, 99% 14%, 100% 50%, 98% 100%, 55% 100%, 0 98%, 0 
     }
 
 
-  .right-line {
-    margin-left: 15px;
-    transform: translateY(10px);
-  }
-  .line-path1 {
-  stroke: #7DC5E4;   // 線條顏色 (橘色)
-  stroke-width: 3;   // 粗細
-}
-  .line-path2{
-  stroke: #69C9A0;   // 線條顏色 (橘色)
-  stroke-width: 3;   // 粗細
-}
-/* 針對左右線條的 path 設定 */
-.line-path1, .line-path2 {
-  stroke-dasharray: 1000; /* 總長度，需比你的 path 長度大，確保整條線可以完整呈現 */
-  stroke-dashoffset: 1000; /* 初始完全隱藏 */
-  animation: drawLine 2s forwards; /* 動畫 2 秒，可自行調整 */
-}
+    .right-line {
+        margin-left: 15px;
+        transform: translateY(10px);
+    }
 
-@keyframes drawLine {
-  to {
-    stroke-dashoffset: 0; /* 畫出線條 */
-  }
-}
+    .line-path1 {
+        stroke: #7DC5E4; // 線條顏色 (橘色)
+        stroke-width: 3; // 粗細
+    }
+
+    .line-path2 {
+        stroke: #69C9A0; // 線條顏色 (橘色)
+        stroke-width: 3; // 粗細
+    }
+
+    /* 針對左右線條的 path 設定 */
+    .line-path1,
+    .line-path2 {
+        stroke-dasharray: 1000;
+        /* 總長度，需比你的 path 長度大，確保整條線可以完整呈現 */
+        stroke-dashoffset: 1000;
+        /* 初始完全隱藏 */
+        animation: drawLine 2s forwards;
+        /* 動畫 2 秒，可自行調整 */
+    }
+
+    @keyframes drawLine {
+        to {
+            stroke-dashoffset: 0;
+            /* 畫出線條 */
+        }
+    }
 
 }
 
@@ -1148,10 +1160,10 @@ clip-path:  polygon(2% 0,95% 0, 99% 14%, 100% 50%, 98% 100%, 55% 100%, 0 98%, 0 
 
     .floral-gallery {
 
-        flex: 1;
+        // flex: 1;
         display: flex;
         justify-content: center;
-        align-items: center; // 🔹 垂直置中
+        align-items: center;
     }
 
 
@@ -1163,8 +1175,7 @@ clip-path:  polygon(2% 0,95% 0, 99% 14%, 100% 50%, 98% 100%, 55% 100%, 0 98%, 0 
         display: flex;
         flex-direction: column;
         position: relative;
-
-        transform: translate(0, 20px); // x=右移, y=上移 (自行調整)
+        transform: translate(0, 20px);
 
 
         .flower-stack {
@@ -1369,13 +1380,15 @@ clip-path:  polygon(2% 0,95% 0, 99% 14%, 100% 50%, 98% 100%, 55% 100%, 0 98%, 0 
     }
 
     @keyframes scrollLeft {
-        from {
+        0% {
             transform: translateX(0);
         }
 
-        to {
-            transform: translateX(calc(-50% - 2.5vw));
+        100% {
+            transform: translateX(-50%);
         }
+
+        // 依實際內容長度調整
     }
 
 
@@ -1492,8 +1505,9 @@ clip-path:  polygon(2% 0,95% 0, 99% 14%, 100% 50%, 98% 100%, 55% 100%, 0 98%, 0 
         .contact-item {
             display: flex;
             flex-direction: column;
-            justify-content: center; // 垂直置中 title + value
-            height: 100%; // 讓 title + value 可以垂直置中
+            justify-content: center; // 垂直置中
+            align-items: center; // 水平置中
+            height: 100%;
             gap: 5px;
 
             .title {
@@ -1509,6 +1523,7 @@ clip-path:  polygon(2% 0,95% 0, 99% 14%, 100% 50%, 98% 100%, 55% 100%, 0 98%, 0 
                 margin: 0;
             }
         }
+
     }
 }
 
