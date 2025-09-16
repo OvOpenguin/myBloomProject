@@ -21,7 +21,14 @@
             "./activity/activity02.jpg",
             "./activity/activity03.avif",
             "./activity/activity02.jpg"
-        ]
+        ],
+        "startMonth": "3",
+        "endMonth": "4",
+        "startDate": "14",
+        "endDate": "13",
+        "startWeek": "五",
+        "endWeek": "一",
+        "season": "春"
     },
     {
         "id": 2,
@@ -44,7 +51,14 @@
             "./activity/activity02.jpg",
             "./activity/activity02.jpg",
             "./activity/activity02.jpg"
-        ]
+        ],
+        "startMonth": "5",
+        "endMonth": "5",
+        "startDate": "10",
+        "endDate": "25",
+        "startWeek": "六",
+        "endWeek": "日",
+        "season": "春"
     },
     {
         "id": 3,
@@ -67,7 +81,14 @@
             "./activity/activity03.avif",
             "./activity/activity03.avif",
             "./activity/activity03.avif"
-        ]
+        ],
+        "startMonth": "2",
+        "endMonth": "3",
+        "startDate": "27",
+        "endDate": "30",
+        "startWeek": "四",
+        "endWeek": "日",
+        "season": "春"
     },
     {
         "id": 4,
@@ -90,7 +111,14 @@
             "./activity/activity04.jpg",
             "./activity/activity04.jpg",
             "./activity/activity04.jpg"
-        ]
+        ],
+        "startMonth": "11",
+        "endMonth": "12",
+        "startDate": "23",
+        "endDate": "08",
+        "startWeek": "日",
+        "endWeek": "一",
+        "season": "冬"
     },
     {
         "id": 5,
@@ -113,7 +141,14 @@
             "./activity/activity05.jpg",
             "./activity/activity05.jpg",
             "./activity/activity05.jpg"
-        ]
+        ],
+        "startMonth": "3",
+        "endMonth": "4",
+        "startDate": "14",
+        "endDate": "27",
+        "startWeek": "五",
+        "endWeek": "日",
+        "season": "春"
     },
     {
         "id": 6,
@@ -140,8 +175,13 @@
         "homeTitle": "九月雪-大溪韭菜花季",
         "homeImg": "./home/韭菜花.png",
         "homeYear": 2025,
-        "homeStart": "9月",
-        "homeEnd": "10月"
+        "startMonth": "8",
+        "endMonth": "9",
+        "startDate": "30",
+        "endDate": "30",
+        "startWeek": "六",
+        "endWeek": "二",
+        "season": "夏"
     },
     {
         "id": 7,
@@ -168,7 +208,14 @@
             "./activity/activity07.jpg",
             "./activity/activity07.jpg",
             "./activity/activity07.jpg"
-        ]
+        ],
+        "startMonth": "9",
+        "endMonth": "10",
+        "startDate": "20",
+        "endDate": "19",
+        "startWeek": "六",
+        "endWeek": "日",
+        "season": "秋"
     },
     {
         "id": 8,
@@ -193,7 +240,15 @@
             "./activity/activity08.jpg",
             "./activity/activity08.jpg",
             "./activity/activity08.jpg"
-        ]
+        ],
+        "startMonth": "11",
+        "endMonth": "12",
+        "startDate": "29",
+        "endDate": "15",
+        "startWeek": "六",
+        "endWeek": "一",
+        "season": "冬"
+        
     },
     {
         "id": 9,
@@ -220,8 +275,13 @@
         "homeTitle": "菊花-士林官邸菊展",
         "homeImg": "./home/菊花.png",
         "homeYear": 2025,
-        "homeStart": "09月",
-        "homeEnd": "10月"
+        "startMonth": "8",
+        "endMonth": "9",
+        "startDate": "30",
+        "endDate": "30",
+        "startWeek": "六",
+        "endWeek": "二",
+        "season": "夏"
     },
     {
         "id": 10,
@@ -243,7 +303,14 @@
             "./activity/activity10.jpg",
             "./activity/activity10.jpg",
             "./activity/activity10.jpg"
-        ]
+        ],
+        "startMonth": "2",
+        "endMonth": "2",
+        "startDate": "13",
+        "endDate": "23",
+        "startWeek": "四",
+        "endWeek": "日",
+        "season": "春"
     },
     {
         "id": 11,
@@ -267,7 +334,14 @@
             "./activity/activity11.jpg",
             "./activity/activity11.jpg",
             "./activity/activity11.jpg"
-        ]
+        ],
+        "startMonth": "6",
+        "endMonth": "8",
+        "startDate": "",
+        "endDate": "",
+        "startWeek": "",
+        "endWeek": "",
+        "season": "夏"
     },
     {
         "id": 12,
@@ -294,8 +368,13 @@
         "homeTitle": "金針花-台北陽明山竹子湖",
         "homeImg": "./home/金針花.png",
         "homeYear": 2025,
-        "homeStart": "08月",
-        "homeEnd": "09月"
+        "startMonth": "8",
+        "endMonth": "9",
+        "startDate": "30",
+        "endDate": "30",
+        "startWeek": "六",
+        "endWeek": "二",
+        "season": "夏"
     },
     {
         "id": 13,
@@ -322,8 +401,13 @@
         "homeTitle": "芒草-陽明山竹子湖",
         "homeImg": "./home/芒草.png",
         "homeYear": 2025,
-        "homeStart": "10月",
-        "homeEnd": "11月"
+        "startMonth": "9",
+        "endMonth": "11",
+        "startDate": "15",
+        "endDate": "30",
+        "startWeek": "四",
+        "endWeek": "日",
+        "season": "秋"
     },
     {
         "id": 14,
@@ -350,8 +434,13 @@
         "homeTitle": "菊花-台北市士林官邸",
         "homeImg": "./home/菊花.png",
         "homeYear": 2025,
-        "homeStart": "11月",
-        "homeEnd": "12月"
+        "startMonth": "11",
+        "endMonth": "12",
+        "startDate": "28",
+        "endDate": "14",
+        "startWeek": "五",
+        "endWeek": "六",
+        "season": "冬"
     },
     {
         "id": 15,

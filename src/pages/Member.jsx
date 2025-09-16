@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { Link } from "react-router-dom"
 import { VscEye } from "react-icons/vsc";
 import { VscEyeClosed } from "react-icons/vsc";
 import Nav from '../components/Nav'
@@ -60,18 +61,22 @@ const Favorites = () => {
             </div>
             <div className="content">
                 <div className="map-cardWrap">
-                    <a href="#" className="map-card">
-                        <p className="map-lable">臺北</p>
-                        <img src="./activity/activity10.jpg" className="map-img" alt="" />
-                        <div className="map-date">02.13 — 02.23</div>
-                        <h3 className="map-title">士林官邸鬱金香展</h3>
-                    </a>
-                    <a href="#" className="map-card">
-                        <p className="map-lable">新北</p>
-                        <img src="./activity/activity03.avif" className="map-img" alt="" />
-                        <div className="map-date">02.27 — 03.30</div>
-                        <h3 className="map-title">萬金杜鵑花展</h3>
-                    </a>
+                    <Link to={`/info/10`}>
+                        <div className="map-card">
+                            <p className="map-lable">臺北</p>
+                            <img src="./activity/activity10.jpg" className="map-img" alt="" />
+                            <div className="map-date">02.13 — 02.23</div>
+                            <h3 className="map-title">士林官邸鬱金香展</h3>
+                        </div>
+                    </Link>
+                    <Link to={`/info/3`}>
+                        <div className="map-card">
+                            <p className="map-lable">新北</p>
+                            <img src="./activity/activity03.avif" className="map-img" alt="" />
+                            <div className="map-date">02.27 — 03.30</div>
+                            <h3 className="map-title">萬金杜鵑花展</h3>
+                        </div>
+                    </Link>
                 </div>
             </div>
 
@@ -82,31 +87,38 @@ const Favorites = () => {
 // 我的花牆
 const Wall = () => {
 
-    // // 愛心
-    // const Flowerwall = ({ count, img, heart }) => {
-    //     const [likeCount, setLikeCount] = useState(count);
-    //     const [liked, setLiked] = useState(false);
+    // 用來儲存圖片預覽的 URL
+    const [previewUrls, setPreviewUrls] = useState([]);
 
-    //     const handleLike = () => {
-    //         if (!liked) {
-    //             setLikeCount(likeCount + 1);
-    //             setLiked(true);
-    //         } else {
-    //             setLikeCount(likeCount - 1); //取消讚-1
-    //             setLiked(false);
-    //         }
-    //     };
+    const handleUpload = (e) => {
+        const files = Array.from(e.target.files);
 
-    //     return (
-    //         <li className="v-item">
-    //             <p>{likeCount}</p>
-    //             <img src={img} alt="fw" />
-    //             <div className="icon-heart" onClick={handleLike} style={{ cursor: "pointer" }}>
-    //                 <img src={liked ? "./wall/wall-icon2.svg" : heart} alt="heart" />
-    //             </div>
-    //         </li>
-    //     );
-    // };
+        // 檢查是否有選取檔案 => // 建立新的 Promise 陣列
+        if (files.length > 0) {
+            const promises = files.map(file => {
+                return new Promise((resolve, reject) => {
+                    const reader = new FileReader();
+                    reader.onloadend = () => {
+                        resolve(reader.result);
+                    };
+
+                    reader.onerror = reject;
+                    reader.readAsDataURL(file);
+                });
+            });
+
+            // 當所有的 Promise 都完成後，更新 state
+            Promise.all(promises)
+                .then(urls => {
+                    // 將新的 URL 陣列合併到舊的陣列中
+                    setPreviewUrls(prevUrls => [...prevUrls, ...urls]);
+                })
+                .catch(error => {
+                    console.error("檔案讀取失敗", error);
+                });
+        }
+    };
+
 
     return (
         <div className="wall-wrap">
@@ -120,21 +132,46 @@ const Wall = () => {
                         <li className="v-item">
                             <p>999</p>
                             <img src={flower01} alt="" />
-                            <div className="icon-heart">
-                                <img src={heart0} alt="" />
-                            </div>
+
                         </li>
                         <li className="v-item">
                             <p>999</p>
                             <img src={flower02} alt="" />
-                            <div className="icon-heart">
-                                <img src={heart0} alt="" />
-                            </div>
+
                         </li>
+
+                        {/* 當 previewUrls 陣列有內容時才顯示 */}
+                        {previewUrls.map((url, index) => (
+                            <li key={index} className="v-item">
+                                <p>0</p>
+                                <img
+
+                                    src={url}
+                                    alt={`上傳圖片 ${index + 1}`}
+                                />
+
+                            </li>
+                        ))}
+
                         <li className="v-item">
-                            <h3>上傳</h3>
-                            <img src={votebotton1} alt="" />
+                            <label
+                                htmlFor="upload"
+                                className="upload-btn">
+                                <h3>作品上傳</h3>
+                                <img src={votebotton1} alt="" />
+                            </label>
+                            <input
+                                type="file"
+                                className="upload-input"
+                                id="upload"
+                                accept="image/*"
+                                onChange={handleUpload}
+                                multiple
+                            />
+
                         </li>
+
+
                     </ul>
                 </div>
             </div>
@@ -142,6 +179,7 @@ const Wall = () => {
 
     );
 }
+
 
 // 我的花訊
 const News = () => {
@@ -398,7 +436,7 @@ export default function MemberCenter() {
         );
     }
 
-    
+
 
     // 登入 => 渲染會員中心介面
     return (
