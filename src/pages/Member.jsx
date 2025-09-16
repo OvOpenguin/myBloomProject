@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom"
 import { VscEye } from "react-icons/vsc";
 import { VscEyeClosed } from "react-icons/vsc";
@@ -381,6 +381,18 @@ export default function MemberCenter() {
     // 登入
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+    // 檢查 localStorage 是否有登入紀錄
+    useEffect(() => {
+        const savedLogin = localStorage.getItem("isLoggedIn");
+        if (savedLogin === "true") {
+            const savedUser = localStorage.getItem("credentials");
+            if (savedUser) {
+                setCredentials(JSON.parse(savedUser));
+            }
+            setIsLoggedIn(true);
+        }
+    }, []);
+
     // 由 SignIn 帶回的登入資訊
     const [credentials, setCredentials] = useState({
         username: '',
@@ -389,8 +401,11 @@ export default function MemberCenter() {
 
     const handleLogin = (username, userid) => {
         // 登入成功後，更新狀態為使用者名稱
+        const userData = { username, userid };
         setCredentials({ username, userid });
         setIsLoggedIn(true);
+        localStorage.setItem("isLoggedIn", "true");
+        localStorage.setItem("credentials", JSON.stringify(userData));
     };
 
     // 宣告變數 => 顯示目前分頁
@@ -415,6 +430,8 @@ export default function MemberCenter() {
             setIsLoggedIn(false); // 登出
             setActiveKey("favorites"); // 重置 activeKey
             setCredentials({ username: '', userid: '' });
+            localStorage.removeItem("isLoggedIn");
+            localStorage.removeItem("credentials");
         } else {
             setActiveKey(key);
         }
