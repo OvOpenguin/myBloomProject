@@ -48,53 +48,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
 
-    // 建立活動陣列資料
-    // const events = [
-    //     {
-    //         id: 1,
-    //         title: "九月雪-桃園大溪區",
-    //         year: "2025",
-    //         start: "9月",
-    //         end: "10月",
-    //         image: './home/韭菜花.png',
-    //     },
-    //     {
-    //         id: 2,
-    //         title: "金針花-台北陽明山竹子湖",
-    //         year: "2025",
-    //         start: "08月",
-    //         end: "09月",
-    //         image: './home/金針花.png',
-    //     },
-    //     {
-    //         id: 3,
-    //         title: "向日葵-大佳河濱花海",
-    //         year: "2025",
-    //         start: "09月",
-    //         end: "10月",
-    //         image: './home/向日葵.png',
-    //     },
-    //     {
-    //         id: 4,
-    //         title: "菊花-士林官邸菊展",
-    //         year: "2025",
-    //         start: "09月",
-    //         end: "10月",
-    //         image: './home/菊花.png',
-    //     },
-    //     {
-    //         id: 5,
-    //         title: "羽扇豆-樟樹步道花海",
-    //         year: "2025",
-    //         start: "09月",
-    //         end: "10月",
-    //         image: './home/魯冰花.png',
-    //     },
-
-    // ];
-
     // 指定資料
-    const events = FlowerEvent.filter(act => [6,12,13,14,15].includes(act.id));
+    const events = FlowerEvent.filter(act => [6,12,13,9,15].includes(act.id));
 
     // 裝飾花(滑鼠滾輪)
     const [rotated, setRotated] = useState(false);
@@ -324,10 +279,10 @@ const App = () => {
                             <h3>News</h3>
                             {/* 消息列表 */}
                             <ul>
-                                <li><div><p><span className="tag1">活動</span>我是一大串的活頁消息標題消我xfkdxhksdhgkjs</p></div><time className="itime">2025-10-15</time></li>
-                                <li><div><p><span className="tag2">活動</span>我是一大串的活頁消息標題消我</p></div><time className="itime">2025-10-15</time></li>
-                                <li><div><p><span className="tag1">活動</span>我是一大串的活頁消息標題消我</p></div><time className="itime">2025-10-15</time></li>
-                                <li><div><p><span className="tag1">活動</span>我是一大串的活頁消息標題消我</p></div><time className="itime">2025-10-15</time></li>
+                                <li><div><p><span className="tag1">展覽</span>春日花藝展：與花共舞的午後時光</p></div><time className="itime">2025-10-15</time></li>
+                                <li><div><p><span className="tag2">活動</span>浪漫花季野餐：芬芳四溢的戶外時光</p></div><time className="itime">2025-10-22</time></li>
+                                <li><div><p><span className="tag2">活動</span>花卉攝影巡禮：捕捉春天的每一抹色彩</p></div><time className="itime">2025-11-07</time></li>
+                                <li><div><p><span className="tag1">展覽</span>城市花市盛會：探索彩色花卉的秘密</p></div><time className="itime">2025-11-25</time></li>
                             </ul>
 
                             {/* 更多消息按鈕 */}

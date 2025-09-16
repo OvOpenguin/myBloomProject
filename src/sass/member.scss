@@ -4,17 +4,18 @@
 .wrapper {
   display: grid;
   grid-template-columns: minmax(0, 2fr) 3fr minmax(50%, 8fr) minmax(0, 2fr);
-  grid-template-rows: 10vh 650px 10vh;
-  column-gap: 60px;
+  grid-template-rows: 10vh min(680px) 10vh;
+  column-gap: 40px;
 
   .padding-top {
     grid-column: 1 / span 4;
 
+    // 右上裝飾色塊
     .dc3 {
       position: absolute;
       left: 60%;
       width: 10%;
-      min-width: 150px;
+      min-width: 130px;
       max-height: 200px;
       animation: shake1 5s infinite ease-in-out;
       z-index: 1;
@@ -31,7 +32,7 @@
   .padding-bottom {
     grid-column: 1 / span 4;
 
-    // 裝飾色塊
+    // 左下裝飾色塊
     .dc1 {
       position: absolute;
       top: 70%;
@@ -52,8 +53,6 @@
       animation: shake3 5s infinite ease-in-out;
     }
 
-
-
   }
 
   // 左側選單
@@ -62,7 +61,7 @@
     flex-direction: column;
     justify-content: space-between;
     max-width: 240px;
-    min-width: 130px;
+    min-width: 110px;
     height: 400px;
 
     .sidebar-item {
@@ -169,7 +168,7 @@
           display: flex;
           justify-content: flex-start;
           gap: 20px;
-          height: 500px;
+          height: 450px;
           overflow-y: auto;
           overflow-x: hidden;
 
@@ -261,7 +260,7 @@
 
         >div {
           width: 100%;
-          height: 500px;
+          height: 450px;
           overflow-y: auto;
           overflow-x: hidden;
 
@@ -384,7 +383,7 @@
           display: flex;
           gap: 20px;
           flex-wrap: wrap;
-          height: 500px;
+          height: 450px;
           width: 100%;
           overflow-y: auto;
           overflow-x: hidden;
@@ -479,12 +478,17 @@
           flex-direction: column;
           align-items: flex-start;
           gap: 30px;
-          height: 500px;
+          height: 450px;
 
           .user-box {
             display: flex;
             align-items: center;
             gap: 10px;
+            
+            @media (max-width:830px) {
+              flex-direction: column;
+              align-items: flex-start;
+            }
 
             .label {
               padding: 10px 20px;
@@ -510,6 +514,8 @@
             svg {
               width: 150%;
             }
+
+            
           }
 
           .show-btn {

@@ -170,11 +170,10 @@ const Map = () => {
                     icon={locationlogo}
                     ref={(ref) => { markerRefs.current[item.id] = ref; }}
                   >
-                    <Popup>
-
+                    <Popup style={{ width: "250px" }}>
                       <div>
                         <h3>{item.title}</h3>
-                        <p>{item.lable} | {item.date}</p>
+                        <p>{item.date}<br/>{item.address}</p>
                         <Link to={`/info/${item.id}`} key={item.id}><img src={item.img} alt={item.title} width="150" /></Link>
                       </div>
                     </Popup>

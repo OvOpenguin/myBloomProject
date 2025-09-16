@@ -5,10 +5,11 @@ import { Pagination, Autoplay } from 'swiper/modules';
 import Nav from '../components/Nav'
 import 'swiper/css';
 import 'swiper/css/pagination';
-import FlowerEvent from '../json/FlowerEvent.json';
+import fornews from '../json/fornews.json';
 
 import flower10 from '../images/wall/wall-f10.webp'
 import ban1 from '../images/news/newsban2.webp'
+import ban2 from '../images/news/newsban3.png'
 import hscroll from '../images/home/homescroll.svg'
 import { Link } from "react-router-dom";
 
@@ -30,7 +31,10 @@ const News = () => {
                     </div>
                     <p className="news-cardTitle">{title}</p>
                 </div>
-                <img src={img} className="news-img" alt="" />
+                <div className="news-imgwrap">
+
+                    <img src={img} className="news-img" alt="" />
+                </div>
             </Link>
         )
     }
@@ -39,8 +43,17 @@ const News = () => {
     const [selectedlocation, setSelectedLocation] = useState("");
     const oplocation = ['臺北市', '新北市', '基隆市', '桃園市', '新竹市', '新竹縣', '宜蘭縣']
 
-    // 篩選
-    const filtered = FlowerEvent.filter((item) => {
+    // 解析 start 字串成 Date
+    function parseStartDate(startStr) {
+        const [month, day] = startStr.split('.').map(Number);
+        return new Date(2025, month - 1, day); // 假設年份固定
+    }
+    // 先排序
+    const sortedNews = [...fornews].sort(
+        (a, b) => parseStartDate(a.start) - parseStartDate(b.start)
+    );
+    // 再篩選
+    const filtered = sortedNews.filter((item) => {
         return (
             (selectedlocation === "" || item.location === selectedlocation)
         );
@@ -48,7 +61,7 @@ const News = () => {
 
     // more按鈕
     const newsHandlerMore = () => {
-        setVisibleCount((prev) => { prev + 6 }) // 每次最多顯示6張
+        setVisibleCount((prev) => { return prev + 6 }) // 每次最多顯示6張
     }
 
     return (
@@ -66,14 +79,14 @@ const News = () => {
                         }}
                         className="mySwiper">
                         <SwiperSlide> <img src={ban1} alt="" /> </SwiperSlide>
-                        <SwiperSlide> <img src={ban1} alt="" /> </SwiperSlide>
+                        <SwiperSlide> <img src={ban2} alt="" /> </SwiperSlide>
                     </Swiper>
                 </div >
             </section >
             {/* 內容 */}
             < section className="news-content" >
                 <div className="news-news">
-                    <div>
+                    <div className="news-ts">
                         <h2>最新消息 NEWS</h2>
                         <div className="news-select">
                             <select name="" id="" value={selectedlocation} onChange={(e) => { setSelectedLocation(e.target.value); }}>
@@ -92,12 +105,6 @@ const News = () => {
                         })}
                     </div>
                     {visibleCount < filtered.length && (
-                        // <button className="n-btn-more" onClick={newsHandlerMore}>
-                        //     <span className="circle">
-                        //         <span className="icon arrow"></span>
-                        //     </span>
-                        //     <span className="btn-text">MORE</span>
-                        // </button>
                         <div className="news-more" onClick={newsHandlerMore}> more <img src={hscroll} alt="" /></div>
                     )}
                 </div>

@@ -5,7 +5,7 @@
     display: flex;
     padding: 0 100px;
     gap: 20px;
-    // height: 100vh;
+    min-height: calc(100vh - 5rem - 72px);
 
     @media (max-width:1000px) {
         flex-direction: column;
@@ -61,7 +61,7 @@
                     border-radius: 5px;
                     text-align: center;
                     border: none;
-                    background-color: $spring-yellow;
+                    background-color: $bg-gray;
                     color: $brown-100;
                     font-size: 1rem;
                 }
@@ -314,10 +314,18 @@
         }
     }
 }
-
+.leaflet-popup {
+    // width: 250px;
+    
+}
 .leaflet-popup-content {
     margin: 0;
     padding: 13px 20px;
+
+    p {
+        font-size: 0.9rem;
+        margin: 1rem 0;
+    }
 
     img {
         height: 120px;
