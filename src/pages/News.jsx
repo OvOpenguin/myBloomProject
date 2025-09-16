@@ -9,6 +9,7 @@ import FlowerEvent from '../json/FlowerEvent.json';
 
 import flower10 from '../images/wall/wall-f10.webp'
 import ban1 from '../images/news/newsban2.webp'
+import ban2 from '../images/news/newsban3.png'
 import hscroll from '../images/home/homescroll.svg'
 import { Link } from "react-router-dom";
 
@@ -30,7 +31,10 @@ const News = () => {
                     </div>
                     <p className="news-cardTitle">{title}</p>
                 </div>
+                <div className="news-imgwrap">
+
                 <img src={img} className="news-img" alt="" />
+                </div>
             </Link>
         )
     }
@@ -48,7 +52,7 @@ const News = () => {
 
     // more按鈕
     const newsHandlerMore = () => {
-        setVisibleCount((prev) => { prev + 6 }) // 每次最多顯示6張
+        setVisibleCount((prev) => { return prev + 6 }) // 每次最多顯示6張
     }
 
     return (
@@ -66,14 +70,14 @@ const News = () => {
                         }}
                         className="mySwiper">
                         <SwiperSlide> <img src={ban1} alt="" /> </SwiperSlide>
-                        <SwiperSlide> <img src={ban1} alt="" /> </SwiperSlide>
+                        <SwiperSlide> <img src={ban2} alt="" /> </SwiperSlide>
                     </Swiper>
                 </div >
             </section >
             {/* 內容 */}
             < section className="news-content" >
                 <div className="news-news">
-                    <div>
+                    <div className="news-ts">
                         <h2>最新消息 NEWS</h2>
                         <div className="news-select">
                             <select name="" id="" value={selectedlocation} onChange={(e) => { setSelectedLocation(e.target.value); }}>
@@ -92,12 +96,6 @@ const News = () => {
                         })}
                     </div>
                     {visibleCount < filtered.length && (
-                        // <button className="n-btn-more" onClick={newsHandlerMore}>
-                        //     <span className="circle">
-                        //         <span className="icon arrow"></span>
-                        //     </span>
-                        //     <span className="btn-text">MORE</span>
-                        // </button>
                         <div className="news-more" onClick={newsHandlerMore}> more <img src={hscroll} alt="" /></div>
                     )}
                 </div>

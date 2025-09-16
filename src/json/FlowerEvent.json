@@ -13,6 +13,7 @@
         "title": "臺北玫瑰展",
         "date": "03.14 — 04.13",
         "img": "./activity/activity01.avif",
+        "address": "台北市中山區新生北路三段105號",
         "lat": 25.070,
         "lng": 121.5204,
         "banner": [
@@ -35,6 +36,7 @@
         "title": "新北河濱蝶戀季",
         "date": "05.10 — 05.25",
         "img": "./activity/activity02.jpg",
+        "address": "新北市板橋區環河西路四段18號",
         "lat": 25.011,
         "lng": 121.4458,
         "banner": [
@@ -57,8 +59,9 @@
         "title": "萬金杜鵑花展",
         "date": "02.27 — 03.30",
         "img": "./activity/activity03.avif",
-        "lat": 25.221,
-        "lng": 121.6404,
+        "address": "新北市萬里區萬里觀光公園",
+        "lat": 25.173,
+        "lng": 121.6831,
         "banner": [
             "./activity/activity03.avif",
             "./activity/activity03.avif",
@@ -79,6 +82,7 @@
         "title": "桃園仙草花節",
         "date": "11.23 — 12.08",
         "img": "./activity/activity04.jpg",
+        "address": "桃園市楊梅區楊湖路三段135號",
         "lat": 24.913,
         "lng": 121.092,
         "banner": [
@@ -101,8 +105,9 @@
         "title": "陽明山海芋季",
         "date": "03.14— 04.27",
         "img": "./activity/activity05.jpg",
-        "lat": 25.176,
-        "lng": 121.5353,
+        "address": "台北市北投區竹子湖海芋園",
+        "lat": 25.177,
+        "lng": 121.5348,
         "banner": [
             "./activity/activity05.jpg",
             "./activity/activity05.jpg",
@@ -123,8 +128,9 @@
         "title": "大溪韭菜花季",
         "date": "08.30 — 09.30",
         "img": "./activity/activity06.jpg",
-        "lat": 24.925,
-        "lng": 121.3171,
+        "address": "桃園市大溪區大鶯路407號",
+        "lat": 24.905,
+        "lng": 121.2943,
         "banner": [
             "./activity/activity06.jpg",
             "./activity/activity06.jpg",
@@ -154,8 +160,9 @@
         "title": "士林官邸孤挺花展",
         "date": "09.20 — 10.19",
         "img": "./activity/activity07.jpg",
+        "address": "台北市士林區中山北路五段460巷4號",
         "lat": 25.091,
-        "lng": 121.5309,
+        "lng": 121.5306,
         "banner": [
             "./activity/activity07.jpg",
             "./activity/activity07.jpg",
@@ -178,6 +185,7 @@
         "title": "士林官邸秋石斛與天南星科植物展",
         "date": "11.29 — 12.15",
         "img": "./activity/activity08.jpg",
+        "address": "台北市士林區中山北路五段460巷4號",
         "lat": 25.091,
         "lng": 121.5309,
         "banner": [
@@ -200,13 +208,19 @@
         "title": "士林官邸菊展",
         "date": "08.30 — 09.30",
         "img": "./activity/activity09.jpg",
+        "address": "台北市士林區福林路60號",
         "lat": 25.092,
         "lng": 121.5315,
         "banner": [
             "./activity/activity09.jpg",
             "./activity/activity09.jpg",
             "./activity/activity09.jpg"
-        ]
+        ],
+        "homeTitle": "菊花-士林官邸菊展",
+        "homeImg": "./home/菊花.png",
+        "homeYear": 2025,
+        "homeStart": "09月",
+        "homeEnd": "10月"
     },
     {
         "id": 10,
@@ -221,8 +235,9 @@
         "title": "士林官邸鬱金香展",
         "date": "02.13 — 02.23",
         "img": "./activity/activity10.jpg",
-        "lat": 25.092,
-        "lng": 121.5315,
+        "address": "台北市士林區中山北路五段451號",
+        "lat": 25.094,
+        "lng": 121.5304,
         "banner": [
             "./activity/activity10.jpg",
             "./activity/activity10.jpg",
@@ -244,6 +259,7 @@
         "title": "山佳荷花池",
         "date": "06 — 08",
         "img": "./activity/activity11.jpg",
+        "address": "新北市樹林區山佳荷花池",
         "lat": 24.966,
         "lng": 121.3895,
         "banner": [
@@ -266,8 +282,9 @@
         "title": "台北陽明山竹子湖",
         "date": "08.30 — 09.30",
         "img": "./activity/activity06.jpg",
-        "lat": 24.925,
-        "lng": 121.3171,
+        "address": "台北市北投區核心區 陽明山國家公園",
+        "lat": 25.172,
+        "lng": 121.5331,
         "banner": [
             "./activity/activity06.jpg",
             "./activity/activity06.jpg",
@@ -293,8 +310,9 @@
         "title": "向日葵-大佳河濱花海",
         "date": "09.01 — 10.31",
         "img": "./activity/activity06.jpg",
-        "lat": 24.925,
-        "lng": 121.3171,
+        "address": "台北市中山區大佳河濱公園太陽花造景花園",
+        "lat": 25.074,
+        "lng": 121.5381,
         "banner": [
             "./activity/activity06.jpg",
             "./activity/activity06.jpg",
@@ -314,41 +332,16 @@
         ],
         "location": "台北市",
         "flower": [
-            "向日葵"
-        ],
-        "lable": "台北",
-        "title": "士林官邸菊展",
-        "date": "09.01 — 10.31",
-        "img": "./activity/activity06.jpg",
-        "lat": 24.925,
-        "lng": 121.3171,
-        "banner": [
-            "./activity/activity06.jpg",
-            "./activity/activity06.jpg",
-            "./activity/activity06.jpg"
-        ],
-        "homeTitle": "菊花-士林官邸菊展",
-        "homeImg": "./home/菊花.png",
-        "homeYear": 2025,
-        "homeStart": "09月",
-        "homeEnd": "10月"
-    },
-    {
-        "id": 15,
-        "month": [
-            "9月",
-            "10月"
-        ],
-        "location": "台北市",
-        "flower": [
-            "羽扇豆"
+            "羽扇豆",
+            "魯冰花"
         ],
         "lable": "台北",
         "title": "樟樹步道花海",
         "date": "09.01 — 10.31",
         "img": "./activity/activity06.jpg",
-        "lat": 24.925,
-        "lng": 121.3171,
+        "address": "台北市文山區魯冰花海",
+        "lat": 24.967,
+        "lng": 121.5856,
         "banner": [
             "./activity/activity06.jpg",
             "./activity/activity06.jpg",
