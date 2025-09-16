@@ -278,17 +278,17 @@
         "flower": [
             "金針花"
         ],
-        "lable": "台北",
+        "lable": "桃園",
         "title": "台北陽明山竹子湖",
         "date": "08.30 — 09.30",
-        "img": "./activity/activity06.jpg",
-        "address": "台北市北投區核心區 陽明山國家公園",
+        "img": "./activity/activity13.jpg",
+        "address": "台北市北投區 陽明山國家公園",
         "lat": 25.172,
         "lng": 121.5331,
         "banner": [
-            "./activity/activity06.jpg",
-            "./activity/activity06.jpg",
-            "./activity/activity06.jpg"
+            "./activity/activity13.jpg",
+            "./activity/activity13.jpg",
+            "./activity/activity13.jpg"
         ],
         "homeTitle": "金針花-台北陽明山竹子湖",
         "homeImg": "./home/金針花.png",
@@ -299,58 +299,85 @@
     {
         "id": 13,
         "month": [
-            "9月",
-            "10月"
+            "10月",
+            "11月"
         ],
         "location": "台北市",
         "flower": [
-            "向日葵"
+            "芒草"
         ],
         "lable": "台北",
-        "title": "向日葵-大佳河濱花海",
-        "date": "09.01 — 10.31",
+        "title": "芒草-陽明山竹子湖",
+        "date": "09.15 — 11.30",
         "img": "./activity/activity06.jpg",
-        "address": "台北市中山區大佳河濱公園太陽花造景花園",
-        "lat": 25.074,
-        "lng": 121.5381,
+        "address": "台北市士林區竹子湖路1-20號",
+        "lat": 25.1558, 
+        "lng": 121.5476,
         "banner": [
-            "./activity/activity06.jpg",
-            "./activity/activity06.jpg",
-            "./activity/activity06.jpg"
+            "./activity/activity13.jpg",
+            "./activity/activity13.jpg",
+            "./activity/activity13.jpg"
         ],
-        "homeTitle": "向日葵-大佳河濱花海",
-        "homeImg": "./home/向日葵.png",
+        "homeTitle": "芒草-陽明山竹子湖",
+        "homeImg": "./home/芒草.png",
         "homeYear": 2025,
-        "homeStart": "09月",
-        "homeEnd": "10月"
+        "homeStart": "10月",
+        "homeEnd": "11月"
     },
     {
         "id": 14,
         "month": [
-            "9月",
-            "10月"
+            "11月",
+            "12月"
         ],
         "location": "台北市",
         "flower": [
-            "羽扇豆",
-            "魯冰花"
+            "菊花"
         ],
         "lable": "台北",
-        "title": "樟樹步道花海",
-        "date": "09.01 — 10.31",
-        "img": "./activity/activity06.jpg",
-        "address": "台北市文山區魯冰花海",
-        "lat": 24.967,
-        "lng": 121.5856,
+        "title": "士林官邸菊展",
+        "date": "11.28 — 12.14",
+        "img": "./activity/activity14.jpg",
+        "address": "台北市士林官邸菊展",
+        "lat": 25.0916,
+        "lng": 121.5291,
         "banner": [
-            "./activity/activity06.jpg",
-            "./activity/activity06.jpg",
-            "./activity/activity06.jpg"
+            "./activity/activity14.jpg",
+            "./activity/activity14.jpg",
+            "./activity/activity14.jpg"
         ],
-        "homeTitle": "羽扇豆-樟樹步道花海",
-        "homeImg": "./home/魯冰花.png",
+        "homeTitle": "菊花-台北市士林官邸",
+        "homeImg": "./home/菊花.png",
         "homeYear": 2025,
-        "homeStart": "09月",
-        "homeEnd": "10月"
+        "homeStart": "11月",
+        "homeEnd": "12月"
+    },
+    {
+        "id": 15,
+        "month": [
+            "9月",
+            "11月"
+        ],
+        "location": "新竹市",
+        "flower": [
+            "甜根子草"
+        ],
+        "lable": "新竹",
+        "title": "頭前溪豆腐岩–甜根子草",
+        "date": "09 — 11 月",
+        "img": "./activity/activity15.jpg",
+        "address": "新竹縣竹北市頭前溪",
+        "lat": 25.0916,
+        "lng": 121.5291,
+        "banner": [
+            "./activity/activity15.jpg",
+            "./activity/activity15.jpg",
+            "./activity/activity15.jpg"
+        ],
+        "homeTitle": "甜根子草-頭前溪豆腐岩",
+        "homeImg": "./home/甜根子草.png",
+        "homeYear": 2025,
+        "homeStart": "11月",
+        "homeEnd": "12月"
     }
 ]
