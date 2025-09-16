@@ -90,7 +90,7 @@
                     position: absolute;
                     width: 95px;
                     height: 90px;
-                    top: -28px;
+                    top: -33px;
                     left: -5px;
                 }
             }
@@ -152,6 +152,7 @@
                 }
 
                 .txtwrap {
+                    flex: 1;
                     @media (max-width:650px) {
                         display: flex;
                         flex-direction: column;
@@ -164,6 +165,7 @@
 
                         @media (max-width:650px) {
                             order: 1;
+                            justify-content: unset;
                         }
 
                         .news-lable {
@@ -196,6 +198,7 @@
                     height: 130px;
                     margin: 10px 0;
                     overflow: hidden;
+                    flex: 1;
                     
 
                     @media (max-width:650px) {
@@ -212,7 +215,6 @@
                         }
                     }
                 }
-
 
                 img {
                     object-fit: cover;
