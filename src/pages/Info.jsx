@@ -93,7 +93,7 @@ function MapIframe() {
   return (
     <iframe
       title="Google Map"
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4298.543421308874!2d121.51861719589644!3d25.04663600089511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a96da144d9f9%3A0xc7aaab18623bf211!2z5Lqs56uZ5pmC5bCa5buj5aC0!5e0!3m2!1szh-TW!2stw!4v1755233965825!5m2!1szh-TW!2stw"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1806.8980727789026!2d121.53579949152474!3d25.074897607626365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a95490469cfb%3A0x92031888eea032b5!2z6Iqx5Y2a5aSn5L2z5rKz5r-x5YWs5ZyS5Y2A!5e0!3m2!1szh-TW!2stw!4v1758009010848!5m2!1szh-TW!2stw"
       style={{ border: 0 }}
       allowFullScreen=""
       loading="lazy"
@@ -262,9 +262,11 @@ const Info = () => {
         {/* Info wrapper */}
         <div className="info-wrapper">
           <div className="info-basic">
+            <div>
             <p>2025</p>
             <h2>{event.title}</h2>
-            <p>台北市士林區二二路一段123號</p>
+            <p>{event.address}</p>
+            </div>
             <div className="info-tag-wrapper">
               <div className="info-tag">
                 <div className="tags season">夏</div><div className="tags location">台北市</div>
@@ -336,7 +338,6 @@ const Info = () => {
               {/* 日期、時間 */}
               <div className="date-time">
                 <div className="date">{getDate(jsonData)}</div>
-                <div className="time">{getTime(jsonData)}</div>
               </div>
             </div>
           </div>
@@ -428,33 +429,29 @@ const Info = () => {
 
 {/* 花卉展示區 */}
 <div className="floral-gallery">
-  <Swiper
-    modules={[Pagination]}
-    pagination={{ 
-      clickable: true 
-    }}
+  <Swiper 
+    // modules={[Pagination]}
+    // pagination={{ 
+    //   clickable: true 
+    // }}
       autoHeight={true}   // 🔹 Swiper 自動根據每個 slide 的內容高度調整
 
     breakpoints={{
       0: {
-        slidesPerView: 1,
-        spaceBetween: 5,
+        slidesPerView: 1,        
       },
       640: {
         slidesPerView: 1,
-        spaceBetween: 5,
       },
       820: {
         slidesPerView: 2,
-        spaceBetween: 10,
       },
-      1024: {
+      1000: {
         slidesPerView: 3,
-        spaceBetween: 20,
       },
       1440: {
         slidesPerView: 4, // 🔹 全部顯示
-        spaceBetween: 20,
+
       },
     }}
     className="floral-swiper"
@@ -495,7 +492,7 @@ const Info = () => {
           <img src={flowerbg} alt="背景" className="flower-bg" />
           <img src={Daylily} alt="花卉4" className="flower-main" />
         </div>
-        <p className="flower-text d">萱草</p>
+        <p className="flower-text d">金針花</p>
       </div>
     </SwiperSlide>
   </Swiper>
