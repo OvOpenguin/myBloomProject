@@ -1,9 +1,14 @@
+import React from 'react';
 import { Link } from "react-router-dom"
 import { useEffect, useState, useRef } from "react"
 import $ from "jquery";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Nav from '../components/Nav'
+import AnimatedText from "../components/AnimationText";
+import Title from "../components/Title";
+
+// 匯入資料集
 import FlowerEvent from '../json/FlowerEvent.json';
 
 // Swiper套件 
@@ -49,7 +54,7 @@ gsap.registerPlugin(ScrollTrigger);
 const App = () => {
 
     // 指定資料
-    const events = FlowerEvent.filter(act => [6,12,13,9,15].includes(act.id));
+    const events = FlowerEvent.filter(act => [6, 12, 13, 9, 15].includes(act.id));
 
     // 裝飾花(滑鼠滾輪)
     const [rotated, setRotated] = useState(false);
@@ -193,9 +198,9 @@ const App = () => {
                 {/* 近期活動 */}
                 <section className="indexActivity">
                     {/* 主副標 */}
-                    <h2 className="tit"><span>近</span><span>期</span><span>活</span><span>動</span></h2>
-                    <h3>Recent Events</h3>
 
+                    <Title text="近期活動" tag="h2" className="h2-style" />
+                    <Title text="Recent Events" tag="h3" className="h3-style" />
                     {/* Swiper測試 */}
                     <div className="swiperwrap">
                         <Swiper
@@ -275,8 +280,8 @@ const App = () => {
                             {/* </div> */}
 
                             {/* 列表標題 */}
-                            <h2>最新消息</h2>
-                            <h3>News</h3>
+                            <Title text="最新消息" tag="h2" className="h2-style" />
+                            <Title text="News" tag="h3" className="h3-style" />
                             {/* 消息列表 */}
                             <ul>
                                 <li><div><p><span className="tag1">展覽</span>春日花藝展：與花共舞的午後時光</p></div><time className="itime">2025-10-15</time></li>
@@ -298,7 +303,10 @@ const App = () => {
 
                         <div className="home-story">
                             <div className="home-s-btn">
-                                <div className="home-s-title"><h2 >認識花卉</h2><h3>Flower Story</h3></div>
+                                <div className="home-s-title">
+                                    <Title text="認識花卉" tag="h2" className="h2-style" />
+                                    <Title text="Flower Story" tag="h3" className="h3-style" />
+                                </div>
                                 <div className="home-s-img">
                                     <Link to="./story"><img className="btnstory" src={花卉介紹2} alt="" /></Link>
                                     <Link to="./play"><img className="btngame" src={花卉遊戲2} alt="" /></Link>
@@ -338,7 +346,10 @@ const App = () => {
                             </button>
                         </Link>
                         <div className="h-v-title">
-                            <div className="hv t1"><h2>花牆票選</h2><h3>Popularity Vote</h3></div>
+                            <div className="hv t1">
+                                <Title text="花牆票選" tag="h2" className="h2-style" />
+                                <Title text="Popularity Vote" tag="h3" className="h3-style" />
+                            </div>
                         </div>
                         <div className="h-v-photos" ref={containerRef}>
                             <div className="hv p1"><img src={hfwr1} alt="" /></div>
@@ -370,4 +381,4 @@ const App = () => {
     )
 }
 
-export default App
+export default App;

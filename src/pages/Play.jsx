@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Nav from '../components/Nav'
+import AnimatedText from "../components/AnimationText";
+
 // My sass
 import "../sass/play.scss"
 
@@ -137,7 +139,7 @@ const Play = () => {
 
     return (
         <>
-        <Nav></Nav>
+            <Nav></Nav>
             <div id='playWrap'>
 
                 {/* 裝飾 */}
@@ -167,9 +169,8 @@ const Play = () => {
                             stroke-width="5" />
                     </svg>
 
-
-                    <div><h2>看花影 猜花卉</h2></div>
-                    <div><h3>Hide & seek</h3></div>
+                    <AnimatedText text="看花影 猜花卉" />
+                    <AnimatedText text="Hide & seek" as="h3" />
                     <p>花的姿態千變萬化，有些光靠剪影也能辨認。
                         <br />透過這個互動遊戲，挑戰你的植物觀察力！
                         <br />仔細看花瓣形狀、葉序特徵，
