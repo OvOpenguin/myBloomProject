@@ -231,7 +231,7 @@ const App = () => {
                                     <Link to={`/info/${e.id}`}>
                                         <div className="card">
                                             <div className="eventTime">
-                                                {e.homeYear}<br />{e.homeStart}<br />｜<br />{e.homeEnd}
+                                                {e.homeYear}<br />{e.startMonth}月<br />｜<br />{e.endMonth}月
                                             </div>
                                             <figure>
                                                 <img className="f1" src={e.homeImg} alt={e.title} />
