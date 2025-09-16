@@ -15,6 +15,7 @@ import Story from './pages/Story'
 import Member from './pages/Member'
 import Info from './pages/Info'
 import Play from './pages/Play'
+import Article from './pages/Article';
 
 
 
@@ -46,12 +47,13 @@ const MyApp = () => {
                 {/* 花卉故事 */}
                 <Route path="/story" element={<Story />}></Route>
                 {/* 個人中心 */}
-                <Route path="/member" element={<Member
-                 />}></Route>
+                <Route path="/member" element={<Member/>}></Route>
                 {/* 資訊頁 */}
                 <Route path="/info/:id" element={<Info />}></Route>
                 {/* 遊戲頁 */}
                 <Route path="/play" element={<Play />}></Route>
+                {/* 文章頁 */}
+                <Route path="/article" element={<Article />}></Route>
             </Routes>
 
             {/* 頁尾區 */}
