@@ -244,7 +244,7 @@ const Wall = () => {
       <div className="wall-c-inner">
         <div className="wall-c-title">
           <h2>上季冠軍</h2>
-          <h2>CHAMPION</h2>
+          <h3>CHAMPION</h3>
           <p>
             我們正在尋找北區最耀眼的花卉明星！你的一票至關重要。<br />登入會員，每人一票，用你的選擇為它加冕。
           </p>
@@ -266,7 +266,7 @@ const Wall = () => {
       <section className="wall-v-inner">
         <header className="v-title" ref={voteRef}>
           <h2>花牆票選</h2>
-          <h2>VOTING</h2>
+          <h3>VOTING</h3>
         </header>
         <div className="v-photowarp">
           <ul className="v-photos left" ref={listRef1}>
@@ -275,7 +275,9 @@ const Wall = () => {
               if (item.type == 'special') {
                 return (
                   <li className="v-item" key={`special2-${index}`}>
-                    <h3>參加賽事</h3>
+                    <Link to={"/member"}>
+                      <h3>參加賽事</h3>
+                    </Link>
                     <img src={votebotton1} alt="" />
                   </li>
                 );
@@ -289,7 +291,9 @@ const Wall = () => {
               if (item.type == 'special2') {
                 return (
                   <li className="v-item" key={`special2-${index}`}>
-                    <h3>參加賽事</h3>
+                    <Link to={"/member"}>
+                      <h3>參加賽事</h3>
+                    </Link>
                     <img src={votebotton2} alt="" />
                   </li>
                 );
@@ -303,7 +307,7 @@ const Wall = () => {
       <section id="alink" className="wall-a-inner">
         <header className="a-title">
           <h2>文章列表</h2>
-          <h2>ARTICLES</h2>
+          <h3>ARTICLES</h3>
         </header>
 
         <div className="a-cardwarp">
