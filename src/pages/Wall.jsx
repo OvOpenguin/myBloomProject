@@ -237,6 +237,24 @@ const Wall = () => {
     }
   }, [location.hash]);
 
+  const [isOpen, setIsOpen] = useState(false);
+  const openBtnRef = useRef(null); // 開啟按鈕的 ref
+  const closeBtnRef = useRef(null); // 關閉按鈕的 ref
+
+  const openPopup = () => {
+    setIsOpen(true);
+    setTimeout(() => {
+      closeBtnRef.current?.focus(); // 聚焦到關閉按鈕
+    }, 0);
+  };
+
+  const closePopup = () => {
+    setIsOpen(false);
+    setTimeout(() => {
+      openBtnRef.current?.focus(); // 聚焦回開啟按鈕
+    }, 0);
+  };
+
 
   return (
     <>
@@ -322,9 +340,71 @@ const Wall = () => {
 
         </div>
 
-        <Link to="/member" className="a-button"><p>前往投搞</p>
+        <div
+          id="openMyPopup"
+          ref={openBtnRef}
+          onClick={openPopup}
+          aria-controls="myPopup"
+          aria-label="Open popup"
+          className="a-button"
+        >
+          <p>前往投搞</p>
           <img src={abotton} alt="button" />
-        </Link>
+        </div>
+
+        {isOpen && (
+          <div
+            className="popup"
+            id="myPopup"
+            aria-hidden={!isOpen}
+            onClick={(e) => {
+              if (e.target === e.currentTarget) closePopup(); // 點背景關閉
+            }}
+          >
+            <div
+              className="wrapper"
+              aria-labelledby="popupTitle"
+              aria-describedby="popupText"
+              aria-modal="true"
+            >
+              <h2 id="popupTitle">🌸尋找最美的花海故事：徵文活動開跑！🌸</h2>
+              <p id="popupText">
+                春天是花的季節，百花齊放的景象總是令人心曠神怡。<br />
+                你是否也曾沉浸在盛開的花海中，感受那份浪漫與美好？<br />
+                無論是令人讚嘆的花展、一望無際的花海，還是巷弄中不經意發現的小花園，都值得被記錄下來。<br />
+                我們現在向所有熱愛花卉、喜歡拍照、善於分享的你，發出最誠摯的邀請！<br />
+                快來分享你的賞花體驗吧！<br />
+              </p>
+              <h3>徵稿主題與內容</h3>
+              <p>
+                只要是與花展或賞花體驗相關的內容，我們都歡迎！你可以分享：<br />
+                ．行程分享：介紹你的賞花路線、交通方式、必訪景點、周邊美食。<br />
+                ．教戰守則：提供實用的賞花小技巧，例如如何避開人潮、最佳拍照時機、穿搭建議等。<br />
+                ．心得分享：記錄你與花海之間的獨特故事，可以是感動、驚喜，或是與家人朋友的美好回憶。<br />
+              </p>
+              <h3>投稿規範</h3>
+              <p>
+                1. 文章內容：主題需與花展或花海體驗相關，文體不拘。<br />
+                2. 圖片要求：每篇投稿需附上<span>至少2張</span>與文章內容相關的清晰照片。<br />
+                3. 投稿方式：請將文章內容及照片寄至 Flower@gmail.com，信件主旨請註明<span>「花海徵文：[你的文章標題]」</span> 。<br />
+                4. 活動截止日期：2025/10/01<br />
+              </p>
+              <h3>投稿小提醒</h3>
+              <p>
+                為了讓更多人能感受到你的花海故事，請務必在投稿中附上詳細的文字描述與美麗的圖片。<br />
+                文字內容 <span>300-1000 字</span> 為佳，但我們更重視您的真心分享，字數不嚴格限制。<br />
+                期待看到你的分享，一起讓這個春天更加繽紛多彩！<br />
+              </p>
+              <button
+                id="closePopup"
+                ref={closeBtnRef}
+                onClick={closePopup}
+              >
+                關閉
+              </button>
+            </div>
+          </div>
+        )}
 
         {/* <button className="gotop" onClick={backtop}></button> */}
         <button className="gotop" onClick={backtop}>
