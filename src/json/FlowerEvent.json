@@ -492,9 +492,11 @@
         "lat": 25.0749,
         "lng": 121.5371,
         "banner": [
-            "./activity/activity15.jpg",
-            "./activity/activity15.jpg",
-            "./activity/activity15.jpg"
+            "./activity/activity19.jpg",
+            "./activity/activity20.jpg",
+            "./activity/activity18.jpg",
+            "./activity/activity17.jpg",
+            "./activity/activity21.jpg"
         ],
         "startMonth": "9",
         "endMonth": "10",
