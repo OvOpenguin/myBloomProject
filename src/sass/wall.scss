@@ -4,7 +4,7 @@
 
 
 * {
-    // outline: 1px red solid;
+    outline: 1px red solid;
 }
 
 
@@ -333,14 +333,14 @@
             display: flex;
             flex-direction: column;
             color: $brown-100;
-            // border: 2px solid $winter-blue;
             border-radius: 8px;
             overflow: hidden;
-            background: $autumn-red;
-
+            background: #fff;
             width: 100%;
             padding: 0px;
             position: relative;
+
+
 
             @media (max-width: 1440px) {
                 width: 250px;
@@ -357,15 +357,6 @@
 
                 img {
                     @extend %img-cover;
-                    // border-top-left-radius: 8px;
-                    // border-top-right-radius: 8px;
-
-
-                    @media (max-width:700px) {
-                        width: 140px;
-                        // border-bottom-left-radius: 8px;
-                        // border-top-right-radius: 0px;
-                    }
                 }
             }
 
@@ -420,7 +411,7 @@
         height: 100px;
         transform: rotate(10deg);
         transition: transform 0.3s ease;
-        z-index: 2;
+        z-index: 3;
         cursor: pointer;
 
         &:hover {
