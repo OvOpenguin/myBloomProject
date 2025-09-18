@@ -3,9 +3,9 @@
 @use "./functions/" as *;
 
 
-// * {
-//     outline: 1px red solid;
-// }
+* {
+    outline: 1px red solid;
+}
 
 
 // 冠軍區
@@ -339,6 +339,14 @@
             width: 100%;
             padding: 0px;
             position: relative;
+            transition: all 0.3s ease;
+
+            &:hover {
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+                transform: translateY(-5px);
+                color: $grass-green;
+            }
+
 
 
 
@@ -391,8 +399,6 @@
                         font-size: 0.8rem;
                         padding: 2px 10px;
                     }
-
-
                 }
 
                 p {
@@ -474,8 +480,6 @@
     justify-content: center;
     align-items: center;
     z-index: 4;
-
-
 
     .wrapper {
         background: #F5F5F5;

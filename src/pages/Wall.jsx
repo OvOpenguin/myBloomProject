@@ -110,28 +110,28 @@ const Wall = () => {
       id: 2,
       img: "./wall/wall02-sm.jpg",
       label: '活動',
-      date: '2025.07.28',
+      date: '2025.09.09',
       title: '櫻之舞：春日限定的粉色浪漫',
     },
     {
       id: 3,
       img: "./wall/wall04-sm.jpg",
       label: '園藝',
-      date: '2025.07.28',
+      date: '2025.09.09',
       title: '5種花卉打造你的陽台小花園',
     },
     {
       id: 4,
       img: "./wall/wall05-sm.jpg",
       label: '活動',
-      date: '2025.07.28',
+      date: '2025.08.28',
       title: '陽光盛宴：充滿活力的黃色花卉',
     },
     {
       id: 5,
       img: "./wall/wall06-sm.jpg",
       label: '園藝',
-      date: '2025.07.28',
+      date: '2025.08.25',
       title: '輕鬆上手的園藝入門指南',
     }
   ];
@@ -259,6 +259,8 @@ const Wall = () => {
   return (
     <>
       <Nav></Nav>
+
+      {/* 冠軍區 */}
       <section className="wall-c-inner">
         <div className="wall-c-title">
 
@@ -282,14 +284,15 @@ const Wall = () => {
         </div>
       </section>
 
+      {/* 點讚投票區 */}
       <section className="wall-v-inner">
-        <header className="v-title" ref={voteRef}>
+        <header className="v-title">
           <Title text="花牆票選" tag="h2" className="h2-style" />
           <Title text="VOTING" tag="h3" className="h3-style" />
 
         </header>
-        <div className="v-photowarp">
-          <ul className="v-photos left" ref={listRef1}>
+        <div className="v-photowarp" ref={voteRef}>
+          <ul className="v-photos left" ref={listRef1} >
             {fws.map((item, index) => {
               // 參加賽事按鈕
               if (item.type == 'special') {
@@ -323,7 +326,7 @@ const Wall = () => {
           </ul>
         </div>
       </section>
-
+      {/* 文章列表區 */}
       <section id="alink" className="wall-a-inner">
         <header className="a-title">
 
