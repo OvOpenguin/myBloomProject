@@ -2,9 +2,9 @@ import "../sass/wall.scss"
 import { useEffect, useState, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 
+import Title from "../components/Title";
 import Nav from '../components/Nav'
 
-import wall_vote_one from '../images/home/首頁-票選1-框.png'
 import heart0 from '../images/wall/wall-icon.svg'
 import votebotton1 from '../images/wall/wall-votebutton1.svg'
 import votebotton2 from '../images/wall/wall-votebotton2.svg'
@@ -241,10 +241,13 @@ const Wall = () => {
   return (
     <>
       <Nav></Nav>
-      <div className="wall-c-inner">
+      <section className="wall-c-inner">
         <div className="wall-c-title">
-          <h2>上季冠軍</h2>
-          <h3>CHAMPION</h3>
+
+          <div className="wcrown"><img src="../wall/wall-c-c.png" alt="王冠" /></div>
+          <Title text="上季冠軍" tag="h2" className="h2-style" />
+          <Title text="CHAMPION" tag="h3" className="h3-style" />
+
           <p>
             我們正在尋找北區最耀眼的花卉明星！你的一票至關重要。<br />登入會員，每人一票，用你的選擇為它加冕。
           </p>
@@ -257,16 +260,15 @@ const Wall = () => {
         </div>
 
         <div className="wall-c-photo">
-          <div>
-            <img src={wall_vote_one} alt="" />
-          </div>
+          <img src="./wall/wall3.jpg" alt="冠軍圖片" />
         </div>
-      </div>
+      </section>
 
       <section className="wall-v-inner">
         <header className="v-title" ref={voteRef}>
-          <h2>花牆票選</h2>
-          <h3>VOTING</h3>
+          <Title text="花牆票選" tag="h2" className="h2-style" />
+          <Title text="VOTING" tag="h3" className="h3-style" />
+
         </header>
         <div className="v-photowarp">
           <ul className="v-photos left" ref={listRef1}>
@@ -306,8 +308,10 @@ const Wall = () => {
 
       <section id="alink" className="wall-a-inner">
         <header className="a-title">
-          <h2>文章列表</h2>
-          <h3>ARTICLES</h3>
+
+          <Title text="文章列表" tag="h2" className="h2-style" />
+          <Title text="ARTICLES" tag="h3" className="h3-style" />
+
         </header>
 
         <div className="a-cardwarp">

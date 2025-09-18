@@ -2,139 +2,74 @@
 @use './variables/' as *;
 
 
+* {
+    outline: 1px red solid;
+}
+
+
 // 冠軍區
 .wall-c-inner {
     display: flex;
-    width: 100%;
-    gap: 80px;
-    justify-content: flex-end;
+    justify-content: space-around;
+    align-items: center;
+    padding: 150px 50px;
+    margin-bottom: 50px;
+    gap: 50px;
+    background-image: url(./wall/wall-bg.svg);
+    background-size: cover;
+    background-position: center;
 
-    @media (max-width:650px) {
+    @media (max-width:1024px) {
         gap: 20px;
+        padding: 100px 20px;
     }
 
-    @media (max-width:420px) {
-        gap: 20px;
-        display: flex;
+    @media (max-width:718px) {
         flex-direction: column;
+        align-items: center;
+        gap: 50px;
     }
 
     .wall-c-title {
         flex: 1;
-        width: 100%;
-        max-width: 700px;
-        padding: 15% 0 6% 25%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        padding-left: 10%;
 
-
-        @media (max-width:900px) {
-            padding: 15% 0 6% 6%;
+        @media (max-width:1024px) {
+            padding-left: 0%;
         }
 
-        @media (max-width:420px) {
-            padding: 15% 6% 0 6%;
+        .wcrown {
+            width: 25%;
+            margin-bottom: 20px;
+            animation: bounce 0.6s ease-in-out infinite;
         }
 
-        &::before {
-            content: "";
-            display: inline-block;
-            background-image: url('../images/wall/wall-c-c.png');
-            background-repeat: no-repeat;
-            background-size: contain;
-            position: absolute;
-            height: 200px;
-            width: 245px;
-            transform: rotate(-20deg);
-            right: 70%;
-            top: 100px;
-            z-index: -5;
-
-            @media (max-width:830px) {
-                right: 70%;
-                top: -50px;
-                transform: rotate(-20deg);
-            }
-
-            @media (max-width:420px) {
-                height: 160px;
-                left: 50%;
-                top: -3px;
-                transform: rotate(10deg);
-            }
+        h3{
+            margin-bottom: 20px;
         }
 
-        h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            z-index: 2;
-        }
 
-        p {
-            text-align: justify;
-            margin: 20px 0;
-        }
     }
 
     .wall-c-photo {
-        flex: 2;
-        background-image: url("../images/wall/wall-c-bg.png");
-        background-size: cover;
-        background-position: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        margin: 100px 0;
+        flex: 1;
 
-        @media (max-width:420px) {
-            margin: 0;
-        }
-
-        &::before {
-            content: "";
-            background-image: url(../images/wall/wall-c-de1.png);
-            display: inline-block;
-            background-repeat: no-repeat;
-            background-size: contain;
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            top: -90px;
-            left: -100px;
-        }
-
-        &::after {
-            content: "";
-            background-image: url(../images/wall/wall-c-de2.png);
-            display: inline-block;
-            background-repeat: no-repeat;
-            background-size: contain;
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            top: 80%;
-            left: -100px;
-        }
-
-        div {
-            padding: 0 100px;
-
-            @media (max-width:1300px) {
-                padding: 0 20px;
-            }
-
-            img {
-                width: 100%;
-            }
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            clip-path: polygon(0% 3%, 0% 100%, 100% 100%, 95% 0);
         }
     }
 }
 
+
+
+
 // 照片區
 .wall-v-inner {
-    margin: 100px 0;
+    position: relative;
+    margin-bottom: 100px;
 
     .v-title {
         font-weight: 700;
@@ -294,7 +229,6 @@
 
 // 文章區
 .wall-a-inner {
-    // padding: 0 300px;
     padding: 0 clamp(20px, 10vw, 300px);
     text-align: right;
     position: relative;
@@ -398,8 +332,8 @@
             display: flex;
             flex-direction: column;
 
-            color:$brown-100;
-            
+            color: $brown-100;
+
             width: 100%;
             padding: 10px;
             position: relative;
@@ -416,6 +350,7 @@
             img {
                 width: 100%;
                 object-fit: cover;
+
                 @media (max-width:700px) {
                     width: 140px;
                 }
