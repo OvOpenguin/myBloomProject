@@ -457,7 +457,7 @@
 
     .wrapper {
         background: #F5F5F5;
-        padding: 2rem;
+        padding: 3rem;
         border-radius: 10px;
         min-width: 600px;
         text-align: center;
@@ -465,7 +465,7 @@
         flex-direction: column;
 
         h2 {
-           margin-bottom: 1rem;
+            margin-bottom: 1rem;
         }
 
         h3 {
@@ -473,12 +473,44 @@
             font-size: 1.2rem;
             font-weight: 700;
         }
+
         p {
             text-align: left;
             margin-bottom: 1rem;
         }
+
         span {
             color: #FF61B0;
+        }
+
+        button {
+            top: 0;
+            right: 0;
+            z-index: 5;
+            margin: 20px;
+            border: none;
+
+            .bar {
+                display: block;
+                width: 24px;
+                height: 3px;
+                background-color: $brown-100;
+                margin: 5px auto;
+
+                &:nth-child(1) {
+                    transform: rotate(45deg) translate(3px, 2px);
+                }
+
+                &:nth-child(2) {
+                    transform: rotate(-45deg) translate(4px, -3px);
+                }
+            }
+
+            &:hover {
+                .bar {
+                    background-color: #FF61B0;
+                }
+            }
         }
     }
 }
