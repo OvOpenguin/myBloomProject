@@ -1,10 +1,11 @@
 @use 'reset';
 @use './variables/' as *;
+@use "./functions/" as *;
 
 
-// * {
-//     outline: 1px red solid;
-// }
+* {
+    // outline: 1px red solid;
+}
 
 
 // 冠軍區
@@ -57,9 +58,7 @@
         flex: 1;
 
         img {
-            object-fit: cover;
-            width: 100%;
-            height: 100%;
+            @extend %img-cover;
             clip-path: polygon(0% 3%, 0% 100%, 100% 100%, 95% 0);
         }
     }
@@ -166,10 +165,8 @@
                     }
 
                     img {
-                        width: 100%;
-                        height: 100%;
+                        @extend %img-cover;
                         display: inline-block;
-                        object-fit: cover;
                         object-position: center;
                         transition: .5s transform ease-out;
                     }
@@ -200,9 +197,7 @@
                 }
 
                 img {
-                    height: 100%;
-                    width: auto;
-                    object-fit: contain;
+                    @extend %img-contain;
                 }
             }
         }
@@ -294,13 +289,11 @@
 
     .a-cardwarp {
         background-image: url('../images/wall/wall-a-bg.png');
-        // background-repeat: no-repeat;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         justify-content: center;
         flex-wrap: wrap;
         gap: 30px;
-        // padding: 100px;
         padding: 100px clamp(20px, 10vw, 100px);
         text-align: left;
         align-items: center;
@@ -340,9 +333,13 @@
             display: flex;
             flex-direction: column;
             color: $brown-100;
+            // border: 2px solid $winter-blue;
+            border-radius: 8px;
+            overflow: hidden;
+            background: $autumn-red;
 
             width: 100%;
-            padding: 10px;
+            padding: 0px;
             position: relative;
 
             @media (max-width: 1440px) {
@@ -354,14 +351,29 @@
                 width: 350px;
             }
 
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
+            .a-img-box {
+                margin: 0;
+                padding: 0;
 
-                @media (max-width:700px) {
-                    width: 140px;
+                img {
+                    @extend %img-cover;
+                    // border-top-left-radius: 8px;
+                    // border-top-right-radius: 8px;
+
+
+                    @media (max-width:700px) {
+                        width: 140px;
+                        // border-bottom-left-radius: 8px;
+                        // border-top-right-radius: 0px;
+                    }
                 }
+            }
+
+
+
+            .wall-content {
+                margin-top: 10px;
+                padding: 0 10px 10px;
             }
 
             div {
@@ -377,10 +389,19 @@
                     border-radius: 99px;
                     color: #fff;
                     width: auto;
-                    padding: 1px 16px;
+                    padding: 2px 14px;
                     position: absolute;
-                    top: 1rem;
-                    left: 2rem;
+                    top: 10px;
+                    left: 10px;
+                    font-size: 1rem;
+                    font-weight: normal;
+
+                    @media (max-width:500px) {
+                        font-size: 0.8rem;
+                        padding: 2px 10px;
+                    }
+
+
                 }
 
                 p {
