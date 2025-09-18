@@ -101,35 +101,35 @@ const Wall = () => {
   const articles = [
     {
       id: 1,
-      img: "./news/newss02.jpg",
+      img: "./wall/wall01-sm.jpg",
       label: '活動',
       date: '2025.09.16',
       title: '四季花語：與自然共舞的美好時光',
     },
     {
       id: 2,
-      img: "./news/newss02.jpg",
+      img: "./wall/wall02-sm.jpg",
       label: '活動',
       date: '2025.07.28',
-      title: '荷與睡蓮誰美？北投公園一次看',
+      title: '新手也能輕鬆上手的園藝入門指南',
     },
     {
       id: 3,
-      img: "./news/newss02.jpg",
+      img: "./wall/wall04-sm.jpg",
       label: '活動',
       date: '2025.07.28',
       title: '荷與睡蓮誰美？北投公園一次看',
     },
     {
       id: 4,
-      img: flower01,
+      img: "./wall/wall05-sm.jpg",
       label: '活動',
       date: '2025.07.28',
       title: '荷與睡蓮誰美？北投公園一次看',
     },
     {
       id: 5,
-      img: flower01,
+      img: "./wall/wall06-sm.jpg",
       label: '活動',
       date: '2025.07.28',
       title: '荷與睡蓮誰美？北投公園一次看',
@@ -278,7 +278,7 @@ const Wall = () => {
         </div>
 
         <div className="wall-c-photo">
-          <img src="./wall/wall3.jpg" alt="冠軍圖片" />
+          <img src="./wall/wall3-sm.jpg" alt="冠軍圖片" />
         </div>
       </section>
 
@@ -341,7 +341,7 @@ const Wall = () => {
         </div>
 
         <div
-          id="openMyPopup"
+          // id="openMyPopup"
           ref={openBtnRef}
           onClick={openPopup}
           aria-controls="myPopup"
@@ -355,7 +355,7 @@ const Wall = () => {
         {isOpen && (
           <div
             className="popup"
-            id="myPopup"
+            // id="myPopup"
             aria-hidden={!isOpen}
             onClick={(e) => {
               if (e.target === e.currentTarget) closePopup(); // 點背景關閉
@@ -367,8 +367,8 @@ const Wall = () => {
               aria-describedby="popupText"
               aria-modal="true"
             >
-              <h2 id="popupTitle">🌸尋找最美的花海故事：徵文活動開跑！🌸</h2>
-              <p id="popupText">
+              <h2>🌸尋找最美的花海故事：徵文活動開跑！🌸</h2>
+              <p>
                 春天是花的季節，百花齊放的景象總是令人心曠神怡。<br />
                 你是否也曾沉浸在盛開的花海中，感受那份浪漫與美好？<br />
                 無論是令人讚嘆的花展、一望無際的花海，還是巷弄中不經意發現的小花園，都值得被記錄下來。<br />
@@ -386,7 +386,7 @@ const Wall = () => {
               <p>
                 1. 文章內容：主題需與花展或花海體驗相關，文體不拘。<br />
                 2. 圖片要求：每篇投稿需附上<span>至少2張</span>與文章內容相關的清晰照片。<br />
-                3. 投稿方式：請將文章內容及照片寄至 Flower@gmail.com，信件主旨請註明<span>「花海徵文：[你的文章標題]」</span> 。<br />
+                3. 投稿方式：請將文章內容及照片寄至 Flower@gmail.com，信件主旨請註明<span>「花海徵文：【你的文章標題】」</span> 。<br />
                 4. 活動截止日期：2025/10/01<br />
               </p>
               <h3>投稿小提醒</h3>
@@ -395,12 +395,9 @@ const Wall = () => {
                 文字內容 <span>300-1000 字</span> 為佳，但我們更重視您的真心分享，字數不嚴格限制。<br />
                 期待看到你的分享，一起讓這個春天更加繽紛多彩！<br />
               </p>
-              <button
-                id="closePopup"
-                ref={closeBtnRef}
-                onClick={closePopup}
-              >
-                關閉
+              <button className="closePopup" ref={closeBtnRef} onClick={closePopup}>
+                <span className="bar"></span>
+                <span className="bar"></span>
               </button>
             </div>
           </div>
