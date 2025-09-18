@@ -735,9 +735,8 @@
         width: 150px;
         height: 150px;
 
-        @media (max-width:560px) {
+        @media (max-width:640px) {
             left: 50%;
-            ;
         }
 
         .t {
@@ -780,6 +779,7 @@
                     overflow: hidden;
                     text-overflow: ellipsis;
                     white-space: nowrap;
+
                 }
 
                 .tag1 {

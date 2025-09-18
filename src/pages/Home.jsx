@@ -62,7 +62,7 @@ const App = () => {
         let ticking = false;
         const handleScroll = () => {
             if (!ticking) {
-                setRotated((prev) => prev + 10);
+                setRotated((prev) => prev + 20);
                 ticking = true;
                 requestAnimationFrame(() => {
                     ticking = false;
