@@ -381,7 +381,77 @@
 
         }
 
+        // 彈窗
+        .popup {
+          position: fixed;
+          inset: 0;
+          /* top:0; right:0; bottom:0; left:0 */
+          background: rgba(0, 0, 0, 0.5);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 4;
 
+          .wrapper {
+            background: #F5F5F5;
+            padding: 2rem;
+            border-radius: 10px;
+            width: 50%;
+            min-width: 400px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+
+            h2 {
+              margin-bottom: 1rem;
+            }
+
+            h3 {
+              text-align: left;
+              font-size: 1.2rem;
+              font-weight: 700;
+            }
+
+            p {
+              text-align: left;
+              margin-bottom: 1rem;
+            }
+
+            span {
+              color: $HsinchuCity-orange;
+            }
+
+            button {
+              bottom: 0;
+              right: 0;
+              z-index: 5;
+              margin: 20px 20px 0;
+              border: none;
+
+              .bar {
+                display: block;
+                width: 24px;
+                height: 3px;
+                background-color: $brown-100;
+                margin: 5px auto;
+
+                &:nth-child(1) {
+                  transform: rotate(45deg) translate(3px, 2px);
+                }
+
+                &:nth-child(2) {
+                  transform: rotate(-45deg) translate(4px, -3px);
+                }
+              }
+
+              &:hover {
+                .bar {
+                  background-color: $HsinchuCity-orange;
+                }
+              }
+            }
+          }
+        }
       }
 
     }
@@ -527,7 +597,7 @@
               outline: none;
               height: 30px;
               line-height: 30px;
-              padding-left:10px;
+              padding-left: 10px;
               background-color: $white;
 
               font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
