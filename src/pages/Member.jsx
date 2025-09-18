@@ -158,8 +158,8 @@ const Wall = () => {
                                 htmlFor="upload"
                                 className="upload-btn">
                                 <h3>作品上傳</h3>
-                                <img src={votebotton1} alt="" />
                             </label>
+                            <img src={votebotton1} alt="" />
                             <input
                                 type="file"
                                 className="upload-input"
@@ -179,7 +179,6 @@ const Wall = () => {
 
     );
 }
-
 
 // 我的花訊
 const News = () => {
@@ -283,7 +282,7 @@ const Profile = ({ username, userid }) => {
                             className="show-btn"
                             type="button"
                             onClick={togglePassword}>
-                            {show ? <VscEye size={24} /> : <VscEyeClosed size={24} />}
+                            {show ? <VscEye size={24}/> : <VscEyeClosed size={24} />}
                         </button>
                     </div>
 

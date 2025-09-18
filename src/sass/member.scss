@@ -501,22 +501,25 @@
             align-items: center;
             gap: 10px;
 
-            @media (max-width:830px) {
-              flex-direction: column;
-              align-items: flex-start;
-            }
+            // @media (max-width:830px) {
+            //   flex-direction: column;
+            //   align-items: flex-start;
+            // }
 
             .label {
-              padding: 20px 20px;
+              aspect-ratio: 1 / 1;
+              height: 65px;
+              text-align: center;
+              line-height: 65px;
               background-color: #69C9A0;
               border-radius: 50%;
               text-wrap: nowrap;
 
               p {
                 color: $white;
-                font-weight: 400;
-
+                font-weight: 600;
               }
+
             }
 
             .inputId {
@@ -524,7 +527,7 @@
               outline: none;
               height: 30px;
               line-height: 30px;
-              padding: 0 10px;
+              padding-left:10px;
               background-color: $white;
 
               font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
@@ -532,11 +535,6 @@
               font-weight: 500;
               color: $brown-100;
             }
-
-            svg {
-              width: 150%;
-            }
-
 
           }
 

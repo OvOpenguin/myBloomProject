@@ -200,7 +200,7 @@ const App = () => {
                     {/* 主副標 */}
 
                     <Title text="近期活動" tag="h2" className="h2-style" />
-                    <Title text="Recent Events" tag="h3" className="h3-style" />
+                    <Title text="RECENT　EVENT" tag="h3" className="h3-style" />
                     {/* Swiper測試 */}
                     <div className="swiperwrap">
                         <Swiper
@@ -281,7 +281,7 @@ const App = () => {
 
                             {/* 列表標題 */}
                             <Title text="最新消息" tag="h2" className="h2-style" />
-                            <Title text="News" tag="h3" className="h3-style" />
+                            <Title text="NEWS" tag="h3" className="h3-style" />
                             {/* 消息列表 */}
                             <ul>
                                 <li><div><p><span className="tag1">展覽</span>春日花藝展：與花共舞的午後時光</p></div><time className="itime">2025-10-15</time></li>
@@ -305,7 +305,7 @@ const App = () => {
                             <div className="home-s-btn">
                                 <div className="home-s-title">
                                     <Title text="認識花卉" tag="h2" className="h2-style" />
-                                    <Title text="Flower Story" tag="h3" className="h3-style" />
+                                    <Title text="FLOWER　STORY" tag="h3" className="h3-style" />
                                 </div>
                                 <div className="home-s-img">
                                     <Link to="./story"><img className="btnstory" src={花卉介紹2} alt="" /></Link>
@@ -348,7 +348,7 @@ const App = () => {
                         <div className="h-v-title">
                             <div className="hv t1">
                                 <Title text="花牆票選" tag="h2" className="h2-style" />
-                                <Title text="Popularity Vote" tag="h3" className="h3-style" />
+                                <Title text="POPULARITY　VOTE" tag="h3" className="h3-style" />
                             </div>
                         </div>
                         <div className="h-v-photos" ref={containerRef}>
