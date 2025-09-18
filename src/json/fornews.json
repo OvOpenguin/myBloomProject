@@ -228,5 +228,29 @@
         "date": "02.03",
         "img": "./news/newss04.jpg",
         "start": "02.03"
+    },
+    {
+        "id": 19,
+        "month":
+            "10月",
+        "location": "台北市",
+        "lable": "台北",
+        "title": "2025陽明山古道秋芒之旅",
+        "date": "10.19 — 10.22",
+        "img": "./activity/activity06.jpg",
+        "start": "10.19"
+    },
+    {
+        "id": 20,
+        "month": [
+            "9月",
+            "11月"
+        ],
+        "location": "新竹市",
+        "lable": "新竹",
+        "title": "季節限定–新竹甜根子草銀白海浪",
+        "date": "09 — 11 月",
+        "img": "./activity/activity15.jpg"
+        
     }
 ]
