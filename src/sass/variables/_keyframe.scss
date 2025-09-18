@@ -105,14 +105,16 @@
 }
 
 @keyframes shake5 {
-    0%{
+    0% {
         transform: translateY(0) rotate(0);
     }
-    50%{
+
+    50% {
         transform: translateY(-10px) rotate(10deg);
     }
-    100%{
-       transform: translateY(0) rotate(0);
+
+    100% {
+        transform: translateY(0) rotate(0);
     }
 }
 
@@ -192,26 +194,61 @@
 // }
 
 @keyframes happear {
-  from { opacity: 0; scale: 0.5;}
-  to { opacity: 1; scale:1;}
+    from {
+        opacity: 0;
+        scale: 0.5;
+    }
+
+    to {
+        opacity: 1;
+        scale: 1;
+    }
 }
 
 @keyframes hmove {
-  from { opacity: 0; transform: translateX(100px);}
-  to { opacity: 1; transform: translateX(0px);}
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
 }
 
 @keyframes hfadein {
-  from { opacity: 0;}
-  to { opacity: 1;}
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 // 首頁scroll彈跳
 @keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px); /* 向上移動 */
-  }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+        /* 向上移動 */
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
 }
