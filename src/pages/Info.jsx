@@ -269,12 +269,12 @@ const Info = () => {
             </div>
             <div className="info-tag-wrapper">
               <div className="info-tag">
-                <div className="tags season">夏</div><div className="tags location">台北市</div>
+                <div className="tags season">{event.season}</div><div className="tags location">{event.location}</div>
               </div>
               <div className="info-date">
-                <div className="start"><p className="month">8</p><div className="date"><span className="day">31</span><span className="week">(一)</span></div></div>
+                <div className="start"><p className="month">{event.startMonth}</p><div className="date"><span className="day">{event.startDate}</span><span className="week">{event.startWeek}</span></div></div>
                 <div className="arr"></div>
-                <div className="end"><p className="month">9</p><div className="date"><span className="day">17</span><span className="week">(日)</span></div></div>
+                <div className="end"><p className="month">{event.endMonth}</p><div className="date"><span className="day">{event.endDate}</span><span className="week">{event.endWeek}</span></div></div>
               </div>
             </div>
           </div>
