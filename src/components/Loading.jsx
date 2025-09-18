@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import $ from "jquery";
-import 大花定位2 from "../images/home/大花定位2.png"
+import position from "../images/home/position.png"
 import "../sass/home.scss"
 const Loading = () => {
 
@@ -17,7 +17,7 @@ const Loading = () => {
                 <div className="hero">
                     <div className="heroFlower">
                         {/* 定位用大花 */}
-                        <img src={大花定位2} alt="大花" className="bigFlower" />
+                        <img src={position} alt="大花" className="bigFlower" />
                         <div className="t t11 scatter"><img src="./home/t11.svg" alt="藍紫花瓣" /></div>
                         <div className="t t12 scatter"><img src="./home/t12.svg" alt="紫色花瓣" /></div>
                         <div className="t t2r scatter"><img src="./home/t2.svg" alt="粉色花瓣右" /></div>

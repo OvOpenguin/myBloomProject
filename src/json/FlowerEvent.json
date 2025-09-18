@@ -20,7 +20,7 @@
             "./activity/activity01.avif",
             "./activity/activity02.jpg",
             "./activity/activity03.avif",
-                        "./activity/activity03.avif",
+            "./activity/activity03.avif",
             "./activity/activity02.jpg"
         ],
         "startMonth": "3",
@@ -51,7 +51,7 @@
         "banner": [
             "./activity/activity02.jpg",
             "./activity/activity02.jpg",
-                        "./activity/activity02.jpg",
+            "./activity/activity02.jpg",
             "./activity/activity02.jpg",
             "./activity/activity02.jpg"
         ],
@@ -83,7 +83,7 @@
         "banner": [
             "./activity/activity03.avif",
             "./activity/activity03.avif",
-                        "./activity/activity03.avif",
+            "./activity/activity03.avif",
             "./activity/activity03.avif",
             "./activity/activity03.avif"
         ],
@@ -115,7 +115,7 @@
         "banner": [
             "./activity/activity04.jpg",
             "./activity/activity04.jpg",
-                        "./activity/activity04.jpg",
+            "./activity/activity04.jpg",
             "./activity/activity04.jpg",
             "./activity/activity04.jpg"
         ],
@@ -147,7 +147,7 @@
         "banner": [
             "./activity/activity05.jpg",
             "./activity/activity05.jpg",
-                        "./activity/activity05.jpg",
+            "./activity/activity05.jpg",
             "./activity/activity05.jpg",
             "./activity/activity05.jpg"
         ],
@@ -179,12 +179,12 @@
         "banner": [
             "./activity/activity06.jpg",
             "./activity/activity06.jpg",
-                        "./activity/activity06.jpg",
+            "./activity/activity06.jpg",
             "./activity/activity06.jpg",
             "./activity/activity06.jpg"
         ],
         "homeTitle": "九月雪-大溪韭菜花季",
-        "homeImg": "./home/韭菜花.png",
+        "homeImg": "./home/h1.png",
         "homeYear": 2025,
         "startMonth": "8",
         "endMonth": "9",
@@ -218,7 +218,7 @@
         "banner": [
             "./activity/activity07.jpg",
             "./activity/activity07.jpg",
-                        "./activity/activity07.jpg",
+            "./activity/activity07.jpg",
             "./activity/activity07.jpg",
             "./activity/activity07.jpg"
         ],
@@ -252,7 +252,7 @@
         "banner": [
             "./activity/activity08.jpg",
             "./activity/activity08.jpg",
-                        "./activity/activity08.jpg",
+            "./activity/activity08.jpg",
             "./activity/activity08.jpg",
             "./activity/activity08.jpg"
         ],
@@ -284,12 +284,12 @@
         "banner": [
             "./activity/activity09.jpg",
             "./activity/activity09.jpg",
-                        "./activity/activity09.jpg",
+            "./activity/activity09.jpg",
             "./activity/activity09.jpg",
             "./activity/activity09.jpg"
         ],
         "homeTitle": "菊花-士林官邸菊展",
-        "homeImg": "./home/菊花.png",
+        "homeImg": "./home/h2.png",
         "homeYear": 2025,
         "startMonth": "8",
         "endMonth": "9",
@@ -318,7 +318,7 @@
         "banner": [
             "./activity/activity10.jpg",
             "./activity/activity10.jpg",
-                        "./activity/activity10.jpg",
+            "./activity/activity10.jpg",
             "./activity/activity10.jpg",
             "./activity/activity10.jpg"
         ],
@@ -351,7 +351,7 @@
         "banner": [
             "./activity/activity11.jpg",
             "./activity/activity11.jpg",
-                        "./activity/activity11.jpg",
+            "./activity/activity11.jpg",
             "./activity/activity11.jpg",
             "./activity/activity11.jpg"
         ],
@@ -383,12 +383,12 @@
         "banner": [
             "./activity/activity13.jpg",
             "./activity/activity13.jpg",
-                        "./activity/activity13.jpg",
+            "./activity/activity13.jpg",
             "./activity/activity13.jpg",
             "./activity/activity13.jpg"
         ],
         "homeTitle": "金針花-台北陽明山竹子湖",
-        "homeImg": "./home/金針花.png",
+        "homeImg": "./home/h3.png",
         "homeYear": 2025,
         "startMonth": "8",
         "endMonth": "9",
@@ -418,12 +418,12 @@
         "banner": [
             "./activity/activity13.jpg",
             "./activity/activity13.jpg",
-                        "./activity/activity13.jpg",
+            "./activity/activity13.jpg",
             "./activity/activity13.jpg",
             "./activity/activity13.jpg"
         ],
         "homeTitle": "芒草-陽明山竹子湖",
-        "homeImg": "./home/芒草.png",
+        "homeImg": "./home/h4.png",
         "homeYear": 2025,
         "startMonth": "9",
         "endMonth": "11",
@@ -453,12 +453,12 @@
         "banner": [
             "./activity/activity14.jpg",
             "./activity/activity14.jpg",
-                        "./activity/activity14.jpg",
+            "./activity/activity14.jpg",
             "./activity/activity14.jpg",
             "./activity/activity14.jpg"
         ],
         "homeTitle": "菊花-台北市士林官邸",
-        "homeImg": "./home/菊花.png",
+        "homeImg": "./home/h2.png",
         "homeYear": 2025,
         "startMonth": "11",
         "endMonth": "12",
@@ -488,12 +488,12 @@
         "banner": [
             "./activity/activity15.jpg",
             "./activity/activity15.jpg",
-            "./activity/activity15.jpg",           
-             "./activity/activity15.jpg",
+            "./activity/activity15.jpg",
+            "./activity/activity15.jpg",
             "./activity/activity15.jpg"
         ],
         "homeTitle": "甜根子草-頭前溪豆腐岩",
-        "homeImg": "./home/甜根子草.png",
+        "homeImg": "./home/h5.png",
         "homeYear": 2025,
         "startMonth": "9",
         "endMonth": "11",

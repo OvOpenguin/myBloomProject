@@ -15,7 +15,7 @@ import heart0 from '../images/wall/wall-icon.svg'
 import votebotton1 from '../images/wall/wall-votebutton1.svg'
 import flower01 from '../images/wall/wall-flower01.png'
 import flower02 from '../images/wall/wall-flower02.png'
-import logo from '../images/home/北花冊.webp'
+import logo from '../images/home/logo.png'
 
 
 // 裝飾

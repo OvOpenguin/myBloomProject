@@ -1,11 +1,11 @@
-import React from 'react';
 import { Link } from "react-router-dom"
 import { useEffect, useState, useRef } from "react"
+
 import $ from "jquery";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import Nav from '../components/Nav'
-import AnimatedText from "../components/AnimationText";
 import Title from "../components/Title";
 
 // 匯入資料集
@@ -22,9 +22,9 @@ import "swiper/css/pagination";
 import "../sass/home.scss"
 
 // 圖片管理區
-import 大花定位2 from "../images/home/大花定位2.png"
-import 花卉介紹2 from "../images/home/homeStory.svg"
-import 花卉遊戲2 from "../images/home/homeGame2.svg"
+import position from "../images/home/position.png"
+import homeStory from "../images/home/homeStory.svg"
+import homePlay from "../images/home/homeGame2.svg"
 import logo from '../images/home/logo.png'
 import hscroll from '../images/home/homescroll.svg'
 // 花牆
@@ -149,7 +149,7 @@ const App = () => {
                         <div className="herologo"><img src={logo} alt="" /></div>
                         <div className="heroFlower">
                             {/* 定位用大花 */}
-                            <img src={大花定位2} alt="大花" className="bigFlower" />
+                            <img src={position} alt="定位花" className="bigFlower" />
                             <div className="t t11 scatter"><img src="./home/t11.svg" alt="藍紫花瓣" /></div>
                             <div className="t t12 scatter"><img src="./home/t12.svg" alt="紫色花瓣" /></div>
                             <div className="t t2r scatter"><img src="./home/t2.svg" alt="粉色花瓣右" /></div>
@@ -308,8 +308,8 @@ const App = () => {
                                     <Title text="FLOWER　STORY" tag="h3" className="h3-style" />
                                 </div>
                                 <div className="home-s-img">
-                                    <Link to="./story"><img className="btnstory" src={花卉介紹2} alt="" /></Link>
-                                    <Link to="./play"><img className="btngame" src={花卉遊戲2} alt="" /></Link>
+                                    <Link to="./story"><img className="btnstory" src={homeStory} alt="花卉科普" /></Link>
+                                    <Link to="./play"><img className="btngame" src={homePlay} alt="花卉遊戲" /></Link>
                                 </div>
                             </div>
                         </div>
