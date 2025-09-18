@@ -260,7 +260,7 @@ const Wall = () => {
         </div>
 
         <div className="wall-c-photo">
-          <img src="./wall/wall3.jpg" alt="冠軍圖片" />
+          <img src="./wall/wall3-sm.jpg" alt="冠軍圖片" />
         </div>
       </section>
 
