@@ -12,6 +12,10 @@ import ban1 from '../images/news/newsban2.webp'
 import ban2 from '../images/news/newsban3.png'
 import hscroll from '../images/home/homescroll.svg'
 import { Link } from "react-router-dom";
+import cban01 from '../images/news/newscb01.png'
+import cban02 from '../images/news/newscb02.png'
+import cban03 from '../images/news/newscb03.webp'
+import cban04 from '../images/news/newscb04.webp'
 
 
 
@@ -141,15 +145,15 @@ const News = () => {
                     <div >
                         <h2>優惠專區</h2>
                         <div className="imgwrap">
-                            <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="a-img" alt="" />
-                            <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="a-img" alt="" />
+                            <img src={cban03} className="a-img" alt="" />
+                            <img src={cban04} className="a-img" alt="" />
                         </div>
                     </div >
                     <div>
                         <h2>熱門活動</h2>
                         <div className="imgwrap">
-                            <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="a-img" alt="" />
-                            <img src="https://cdn.pixabay.com/photo/2020/04/14/03/57/pear-5040797_1280.jpg" className="a-img" alt="" />
+                            <img src={cban01} className="a-img" alt="" />
+                            <img src={cban02} className="a-img" alt="" />
                         </div>
                     </div>
                 </div>
