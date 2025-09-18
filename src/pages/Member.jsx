@@ -112,11 +112,31 @@ const Wall = () => {
                 .then(urls => {
                     // 將新的 URL 陣列合併到舊的陣列中
                     setPreviewUrls(prevUrls => [...prevUrls, ...urls]);
+                    { openPopup() }
                 })
                 .catch(error => {
                     console.error("檔案讀取失敗", error);
                 });
         }
+    };
+
+    // 上傳彈出視窗
+    const [isOpen, setIsOpen] = useState(false);
+    const openBtnRef = useRef(null); // 開啟按鈕的 ref
+    const closeBtnRef = useRef(null); // 關閉按鈕的 ref
+
+    const openPopup = () => {
+        setIsOpen(true);
+        setTimeout(() => {
+            closeBtnRef.current?.focus(); // 聚焦到關閉按鈕
+        }, 0);
+    };
+
+    const closePopup = () => {
+        setIsOpen(false);
+        setTimeout(() => {
+            openBtnRef.current?.focus(); // 聚焦回開啟按鈕
+        }, 0);
     };
 
 
@@ -173,6 +193,33 @@ const Wall = () => {
 
 
                     </ul>
+
+                    {/* 上傳成功彈出視窗 */}
+                    {isOpen && (
+                        <div
+                            className="popup"
+                            // id="myPopup"
+                            aria-hidden={!isOpen}
+                            onClick={(e) => {
+                                if (e.target === e.currentTarget) closePopup(); // 點背景關閉
+                            }}
+                        >
+                            <div
+                                className="wrapper"
+                                aria-labelledby="popupTitle"
+                                aria-describedby="popupText"
+                                aria-modal="true"
+                            >
+                                <h2>上傳成功！<br />
+                                    快來看看你的曠世巨作！</h2>
+
+                                <button className="closePopup" ref={closeBtnRef} onClick={closePopup}>
+                                    <span className="bar"></span>
+                                    <span className="bar"></span>
+                                </button>
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>
@@ -282,7 +329,7 @@ const Profile = ({ username, userid }) => {
                             className="show-btn"
                             type="button"
                             onClick={togglePassword}>
-                            {show ? <VscEye size={24}/> : <VscEyeClosed size={24} />}
+                            {show ? <VscEye size={24} /> : <VscEyeClosed size={24} />}
                         </button>
                     </div>
 
