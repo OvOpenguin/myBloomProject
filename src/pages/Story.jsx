@@ -46,11 +46,6 @@ const Story = () => {
   }, []);
 
 
-
-
-
-
-
   return (
     <>
     <Nav></Nav>
@@ -129,13 +124,13 @@ const Story = () => {
               <div className="seasontag">
                 <div
                   className="tag1"
-                  style={{ backgroundImage: `url(./story/${selectedFlower.season1}-bg.svg)` }}>
+                  style={{ backgroundImage: `url(./story/${selectedFlower.season3}-bg.svg)` }}>
                   {/* 春 */}
                   {selectedFlower.season1}
                 </div>
                 <div
                   className="tag2"
-                  style={{ backgroundImage: `url(./story/${selectedFlower.season2}-bg.svg)` }}>
+                  style={{ backgroundImage: `url(./story/${selectedFlower.season4}-bg.svg)` }}>
                   {/* 夏 */}
                   {selectedFlower.season2}
                 </div>

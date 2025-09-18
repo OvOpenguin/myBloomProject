@@ -35,8 +35,8 @@ const questions = [
         id: 2,
         silhouette: "./play/ps2.png",
         image: "./play/pr2.png",
-        options: ["洛神花", "朱槿", "阿勒勃"],
-        answer: "朱槿",
+        options: ["洛神", "扶桑", "阿勒勃"],
+        answer: "扶桑",
     },
     {
         id: 3,
