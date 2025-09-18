@@ -20,6 +20,7 @@
             "./activity/activity01.avif",
             "./activity/activity02.jpg",
             "./activity/activity03.avif",
+                        "./activity/activity03.avif",
             "./activity/activity02.jpg"
         ],
         "startMonth": "3",
@@ -49,6 +50,8 @@
         "lng": 121.4458,
         "banner": [
             "./activity/activity02.jpg",
+            "./activity/activity02.jpg",
+                        "./activity/activity02.jpg",
             "./activity/activity02.jpg",
             "./activity/activity02.jpg"
         ],
@@ -80,6 +83,8 @@
         "banner": [
             "./activity/activity03.avif",
             "./activity/activity03.avif",
+                        "./activity/activity03.avif",
+            "./activity/activity03.avif",
             "./activity/activity03.avif"
         ],
         "startMonth": "2",
@@ -109,6 +114,8 @@
         "lng": 121.092,
         "banner": [
             "./activity/activity04.jpg",
+            "./activity/activity04.jpg",
+                        "./activity/activity04.jpg",
             "./activity/activity04.jpg",
             "./activity/activity04.jpg"
         ],
@@ -140,6 +147,8 @@
         "banner": [
             "./activity/activity05.jpg",
             "./activity/activity05.jpg",
+                        "./activity/activity05.jpg",
+            "./activity/activity05.jpg",
             "./activity/activity05.jpg"
         ],
         "startMonth": "3",
@@ -169,6 +178,8 @@
         "lng": 121.2943,
         "banner": [
             "./activity/activity06.jpg",
+            "./activity/activity06.jpg",
+                        "./activity/activity06.jpg",
             "./activity/activity06.jpg",
             "./activity/activity06.jpg"
         ],
@@ -207,6 +218,8 @@
         "banner": [
             "./activity/activity07.jpg",
             "./activity/activity07.jpg",
+                        "./activity/activity07.jpg",
+            "./activity/activity07.jpg",
             "./activity/activity07.jpg"
         ],
         "startMonth": "9",
@@ -239,6 +252,8 @@
         "banner": [
             "./activity/activity08.jpg",
             "./activity/activity08.jpg",
+                        "./activity/activity08.jpg",
+            "./activity/activity08.jpg",
             "./activity/activity08.jpg"
         ],
         "startMonth": "11",
@@ -268,6 +283,8 @@
         "lng": 121.5315,
         "banner": [
             "./activity/activity09.jpg",
+            "./activity/activity09.jpg",
+                        "./activity/activity09.jpg",
             "./activity/activity09.jpg",
             "./activity/activity09.jpg"
         ],
@@ -301,6 +318,8 @@
         "banner": [
             "./activity/activity10.jpg",
             "./activity/activity10.jpg",
+                        "./activity/activity10.jpg",
+            "./activity/activity10.jpg",
             "./activity/activity10.jpg"
         ],
         "startMonth": "2",
@@ -332,6 +351,8 @@
         "banner": [
             "./activity/activity11.jpg",
             "./activity/activity11.jpg",
+                        "./activity/activity11.jpg",
+            "./activity/activity11.jpg",
             "./activity/activity11.jpg"
         ],
         "startMonth": "6",
@@ -362,6 +383,8 @@
         "banner": [
             "./activity/activity13.jpg",
             "./activity/activity13.jpg",
+                        "./activity/activity13.jpg",
+            "./activity/activity13.jpg",
             "./activity/activity13.jpg"
         ],
         "homeTitle": "金針花-台北陽明山竹子湖",
@@ -381,11 +404,11 @@
             "10月",
             "11月"
         ],
-        "location": "台北市",
+        "location": "臺北市",
         "flower": [
             "芒草"
         ],
-        "lable": "台北",
+        "lable": "臺北",
         "title": "芒草-陽明山竹子湖",
         "date": "09.15 — 11.30",
         "img": "./activity/activity06.jpg",
@@ -394,6 +417,8 @@
         "lng": 121.5476,
         "banner": [
             "./activity/activity13.jpg",
+            "./activity/activity13.jpg",
+                        "./activity/activity13.jpg",
             "./activity/activity13.jpg",
             "./activity/activity13.jpg"
         ],
@@ -414,11 +439,11 @@
             "11月",
             "12月"
         ],
-        "location": "台北市",
+        "location": "臺北市",
         "flower": [
             "菊花"
         ],
-        "lable": "台北",
+        "lable": "臺北",
         "title": "士林官邸菊展",
         "date": "11.28 — 12.14",
         "img": "./activity/activity14.jpg",
@@ -427,6 +452,8 @@
         "lng": 121.5291,
         "banner": [
             "./activity/activity14.jpg",
+            "./activity/activity14.jpg",
+                        "./activity/activity14.jpg",
             "./activity/activity14.jpg",
             "./activity/activity14.jpg"
         ],
@@ -461,6 +488,8 @@
         "banner": [
             "./activity/activity15.jpg",
             "./activity/activity15.jpg",
+            "./activity/activity15.jpg",           
+             "./activity/activity15.jpg",
             "./activity/activity15.jpg"
         ],
         "homeTitle": "甜根子草-頭前溪豆腐岩",
@@ -480,11 +509,11 @@
             "9月",
             "10月"
         ],
-        "location": "台北市",
+        "location": "臺北市",
         "flower": [
             "向日葵"
         ],
-        "lable": "活動",
+        "lable": "臺北",
         "title": "向日葵大佳河濱花海",
         "date": "09.01 — 10.31",
         "img": "./activity/activity16.webp",
