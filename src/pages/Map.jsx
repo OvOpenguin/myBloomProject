@@ -7,10 +7,10 @@ import "leaflet/dist/leaflet.css";
 import "../sass/map.scss";
 import Nav from '../components/Nav'
 
-import 春 from "../images/map/花卉地圖-春季標籤-黃.svg"
-import 夏 from "../images/map/花卉地圖-夏季標籤-綠.svg"
-import 秋 from "../images/map/花卉地圖-秋季標籤-橘.svg"
-import 冬 from "../images/map/花卉地圖-冬季標籤-藍.svg"
+import 春 from "../images/map/map-s-spring.svg"
+import 夏 from "../images/map/map-s-summer.svg"
+import 秋 from "../images/map/map-s-aut.svg"
+import 冬 from "../images/map/map-s-winter.svg"
 
 import L from "leaflet";
 
