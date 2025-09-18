@@ -2,9 +2,9 @@
 @use './variables/' as *;
 
 
-* {
-    outline: 1px red solid;
-}
+// * {
+//     outline: 1px red solid;
+// }
 
 
 // 冠軍區
@@ -379,8 +379,8 @@
                     width: auto;
                     padding: 1px 16px;
                     position: absolute;
-                    top: 1.5rem;
-                    left: 1.5rem;
+                    top: 1rem;
+                    left: 2rem;
                 }
 
                 p {
@@ -463,14 +463,44 @@
     align-items: center;
     z-index: 4;
 
+
+
     .wrapper {
         background: #F5F5F5;
-        padding: 3rem;
-        border-radius: 10px;
-        min-width: 600px;
+        padding: 2.5rem;
+        border-radius: 8px;
         text-align: center;
         display: flex;
         flex-direction: column;
+
+
+        &::-webkit-scrollbar {
+            background-color: #bae6ff;
+            width: 12px;
+            border-radius: 999px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #F47EDE;
+            border-radius: 999px;
+        }
+
+        @media (max-width:940px) {
+            width: 800px;
+            height: 800px;
+        }
+
+        @media (max-width:820px) {
+            overflow-y: scroll;
+            width: 600px;
+            height: 800px;
+        }
+
+        @media (max-width:640px) {
+            overflow-y: scroll;
+            width: 420px;
+            height: 500px;
+        }
 
         h2 {
             margin-bottom: 1rem;
