@@ -101,38 +101,38 @@ const Wall = () => {
   const articles = [
     {
       id: 1,
-      img: "./news/newss02.jpg",
-      label: '活動',
+      img: "./wall/wall01-sm.jpg",
+      label: '花語',
       date: '2025.09.16',
-      title: '四季花語：與自然共舞的美好時光',
+      title: '與四季共舞的美好時光',
     },
     {
       id: 2,
-      img: "./news/newss02.jpg",
+      img: "./wall/wall02-sm.jpg",
       label: '活動',
       date: '2025.07.28',
-      title: '荷與睡蓮誰美？北投公園一次看',
+      title: '櫻之舞：春日限定的粉色浪漫',
     },
     {
       id: 3,
-      img: "./news/newss02.jpg",
-      label: '活動',
+      img: "./wall/wall04-sm.jpg",
+      label: '園藝',
       date: '2025.07.28',
-      title: '荷與睡蓮誰美？北投公園一次看',
+      title: '5種花卉打造你的陽台小花園',
     },
     {
       id: 4,
-      img: flower01,
+      img: "./wall/wall05-sm.jpg",
       label: '活動',
       date: '2025.07.28',
-      title: '荷與睡蓮誰美？北投公園一次看',
+      title: '陽光盛宴：充滿活力的黃色花卉',
     },
     {
       id: 5,
-      img: flower01,
-      label: '活動',
+      img: "./wall/wall06-sm.jpg",
+      label: '園藝',
       date: '2025.07.28',
-      title: '荷與睡蓮誰美？北投公園一次看',
+      title: '輕鬆上手的園藝入門指南',
     }
   ];
 
