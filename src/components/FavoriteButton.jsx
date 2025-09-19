@@ -21,7 +21,7 @@ const FavoriteButton = ({ card }) => {
 
         if (isFavorite) {
             updated = arr.filter(item => item.id !== card.id);
-            setTipText("已取消！");
+            setTipText("我等你！");
         } else {
             updated = [...arr, card];
             setTipText("已收藏！");
