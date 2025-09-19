@@ -101,14 +101,14 @@ const Wall = () => {
   const articles = [
     {
       id: 1,
-      img: "./wall/wall01-sm.jpg",
+      img: "./wall/wall02-sm.jpg",
       label: '花語',
       date: '2025.09.16',
       title: '與四季共舞的美好時光',
     },
     {
       id: 2,
-      img: "./wall/wall02-sm.jpg",
+      img: "./wall/wall07-sm.jpg",
       label: '活動',
       date: '2025.09.09',
       title: '櫻之舞：春日限定的粉色浪漫',

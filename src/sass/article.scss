@@ -21,8 +21,12 @@
     }
 
     .aWrap {
-        width: 80%;
+        width: 60%;
         margin: 0 auto;
+
+        @media (max-width:820px) {
+            width: 90%;
+        }
 
         header {
             h2 {
