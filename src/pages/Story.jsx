@@ -48,7 +48,7 @@ const Story = () => {
 
   return (
     <>
-    <Nav></Nav>
+      <Nav></Nav>
       <div id='story'>
 
         <div className="sleft">
@@ -71,6 +71,7 @@ const Story = () => {
                   flowers.map((flower, i) => (
                     <li
                       key={flower.id}
+                      className={i === index ? 'selected' : ''}
                       onClick={() => setIndex(i)}>
                       {/* 花名 */}
                       {flower.name}
