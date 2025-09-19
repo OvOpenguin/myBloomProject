@@ -206,12 +206,11 @@ const Wall = () => {
   // 前往投票
   const voteRef = useRef(null);
   function gotvote() {
-    window.scrollTo({
-      top: voteRef.current.offsetTop,
-      // 轉場
-      behavior: 'smooth'
-    })
-  };
+    voteRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  }
 
 
   // 回到最上層
