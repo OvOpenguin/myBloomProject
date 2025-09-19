@@ -29,11 +29,15 @@ const AnimatedTitle = ({ text, tag, className }) => {
         };
     }, []);
 
-    const spans = text.split('').map((char, index) => (
-        <span key={index} style={{ animationDelay: `${index * 0.1}s` }}>
-            {char}
-        </span>
-    ));
+    const spans = text.split('').map((char, index) => {
+        // 如果字元是空白，則替換為不換行空白字元 `\u00A0`
+        const content = char === ' ' ? '\u00A0' : char;
+        return (
+            <span key={index} style={{ animationDelay: `${index * 0.1}s` }}>
+                {content}
+            </span>
+        );
+    });
 
     return (
         <Tag ref={titleRef} className={`animated-title ${className || ''}`}>

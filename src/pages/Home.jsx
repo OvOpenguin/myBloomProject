@@ -200,7 +200,7 @@ const App = () => {
                     {/* 主副標 */}
 
                     <Title text="近期活動" tag="h2" className="h2-style" />
-                    <Title text="RECENT　EVENT" tag="h3" className="h3-style" />
+                    <Title text="RECENT  EVENT" tag="h3" className="h3-style" />
                     {/* Swiper測試 */}
                     <div className="swiperwrap">
                         <Swiper
@@ -305,7 +305,7 @@ const App = () => {
                             <div className="home-s-btn">
                                 <div className="home-s-title">
                                     <Title text="認識花卉" tag="h2" className="h2-style" />
-                                    <Title text="FLOWER　STORY" tag="h3" className="h3-style" />
+                                    <Title text="FLOWER  STORY" tag="h3" className="h3-style" />
                                 </div>
                                 <div className="home-s-img">
                                     <Link to="./story"><img className="btnstory" src={homeStory} alt="花卉科普" /></Link>
@@ -333,7 +333,7 @@ const App = () => {
                         <div className="h-v-title">
                             <div className="hv t1">
                                 <Title text="花牆票選" tag="h2" className="h2-style" />
-                                <Title text="POPULARITY　VOTE" tag="h3" className="h3-style" />
+                                <Title text="POPULARITY  VOTE" tag="h3" className="h3-style" />
                             </div>
                         </div>
                         <div className="h-v-photos" ref={containerRef}>
