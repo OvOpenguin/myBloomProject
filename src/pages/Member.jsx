@@ -42,8 +42,8 @@ function SidebarItem({ label, onClick, active = false, danger = false }) {
             <button type="button" onClick={onClick}>
                 <p>{label}</p>
                 <div className="arrow-box">
-                    <img className="ard" src={arrowd} alt="" />
-                    <img className="arh" src={arrowh} alt="" />
+                    <img className="ard" src={arrowd} alt="按鈕" />
+                    <img className="arh" src={arrowh} alt="hover按鈕" />
                 </div>
             </button>
         </div>
@@ -71,8 +71,15 @@ const Favorites = () => {
     if (favorites.length === 0) {
         return (
             <div className="fav-wrap">
-                <h2>我的收藏</h2>
-                <p>尚未收藏任何活動</p>
+                <div className="tab">
+                    <h2>我的收藏</h2>
+                    <img src={favtab} alt="tab裝飾" />
+                </div>
+
+                <div className="content">
+                    <p>尚未收藏任何活動</p>
+                </div>
+
             </div>
         );
     }
@@ -83,7 +90,7 @@ const Favorites = () => {
         <div className="fav-wrap">
             <div className="tab">
                 <h2>我的收藏</h2>
-                <img src={favtab} alt="" />
+                <img src={favtab} alt="tab裝飾" />
             </div>
             <div className="content">
                 <div className="map-cardWrap">
@@ -525,10 +532,11 @@ export default function MemberCenter() {
     return (
         <>    <Nav></Nav>
             <section className="wrapper">
-                <div className="padding-top">
+                {/* <div className="padding-top">
                     <img className="dc3" src={hfwr3} alt="" />
                 </div>
-                <div className="padding-left"></div>
+                <div className="padding-left"></div> */}
+
                 {/* 左側選單 */}
                 <div className="left-sidebar">
                     {TABS.map((t) => (
@@ -547,11 +555,11 @@ export default function MemberCenter() {
                     {activeTab?.view}
                 </div>
 
-                <div className="padding-right"></div>
+                {/* <div className="padding-right"></div>
                 <div className="padding-bottom">
                     <img className="dc1" src={hfwr1} alt="" />
                     <img className="dc2" src={hfwr2} alt="" />
-                </div>
+                </div> */}
 
             </section>
         </>
