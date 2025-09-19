@@ -97,22 +97,6 @@ const Favorites = () => {
                             </div>
                         </Link>
                     ))}
-                    <Link to={`/info/10`}>
-                        <div className="map-card">
-                            <p className="map-lable">臺北</p>
-                            <img src="./activity/activity10.jpg" className="map-img" alt="" />
-                            <div className="map-date">02.13 — 02.23</div>
-                            <h3 className="map-title">士林官邸鬱金香展</h3>
-                        </div>
-                    </Link>
-                    <Link to={`/info/3`}>
-                        <div className="map-card">
-                            <p className="map-lable">新北</p>
-                            <img src="./activity/activity03.avif" className="map-img" alt="" />
-                            <div className="map-date">02.27 — 03.30</div>
-                            <h3 className="map-title">萬金杜鵑花展</h3>
-                        </div>
-                    </Link>
                 </div>
             </div>
 

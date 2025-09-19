@@ -172,7 +172,7 @@
           gap: 20px;
           height: 450px;
           overflow-y: auto;
-          overflow-x: hidden;
+          // overflow-x: hidden;
 
 
           @media (max-width:1280px) {
@@ -180,8 +180,14 @@
             align-items: center;
           }
 
+          a{
+            display: block;
+            height: 250px;
+          }
+
           .map-card {
             width: 250px;
+            height: auto;
             position: relative;
             box-sizing: border-box;
 
