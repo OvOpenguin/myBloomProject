@@ -1,6 +1,10 @@
 @use 'reset';
 @use './variables/' as *;
 
+*{
+    outline: 1px red solid;
+}
+
 .map-inner {
     display: flex;
     padding: 0 5%;
@@ -10,6 +14,7 @@
     @media (max-width:1380px) {
         //padding: 0 100px;
     }
+
     @media (max-width:1000px) {
         flex-direction: column;
     }
@@ -315,12 +320,15 @@
                 }
             }
         }
+
+        .no-result-text {
+            margin-bottom: 20px;
+        }
     }
 }
-.leaflet-popup {
-    // width: 250px;
-    
-}
+
+
+
 .leaflet-popup-content {
     margin: 0;
     padding: 13px 20px;

@@ -49,8 +49,13 @@ const Map = () => {
       (selectedlocation === "" || item.location === selectedlocation) &&
       (selectedflower === "" || flowers.includes(selectedflower))
     );
-
   });
+
+
+  // 固定的推薦活動 ID 列表
+  // 請在這裡填入您希望固定推薦的活動 ID
+  const recommendedEventIds = [16];
+  const recommendedEvents = FlowerEvent.filter(item => recommendedEventIds.includes(item.id));
 
   // 當點擊卡片 → zoom 到該 marker & 打開 popup
   // const FlyToMarker = ({ lat, lng, id }) => {
@@ -68,6 +73,8 @@ const Map = () => {
   // const activeItem = FlowerEvent.find((f) => f.id === activeId);
 
   // 四季更換圖片
+  
+  
   const fourseason = [
     { name: "春", img: 春 },
     { name: "夏", img: 夏 },
@@ -163,22 +170,43 @@ const Map = () => {
                   url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
                   attribution='Positron'
                 />
-                {filtered.map((item) => (
-                  <Marker
-                    key={item.id}
-                    position={[item.lat, item.lng]}
-                    icon={locationlogo}
-                    ref={(ref) => { markerRefs.current[item.id] = ref; }}
-                  >
-                    <Popup style={{ width: "250px" }}>
-                      <div>
-                        <h3>{item.title}</h3>
-                        <p>{item.date}<br/>{item.address}</p>
-                        <Link to={`/info/${item.id}`} key={item.id}><img src={item.img} alt={item.title} width="150" /></Link>
-                      </div>
-                    </Popup>
-                  </Marker>
-                ))}
+                {/* 根據篩選結果顯示地圖標記 */}
+                {filtered.length > 0 ? (
+                  filtered.map((item) => (
+                    <Marker
+                      key={item.id}
+                      position={[item.lat, item.lng]}
+                      icon={locationlogo}
+                      ref={(ref) => { markerRefs.current[item.id] = ref; }}
+                    >
+                      <Popup style={{ width: "250px" }}>
+                        <div>
+                          <h3>{item.title}</h3>
+                          <p>{item.date}<br />{item.address}</p>
+                          <Link to={`/info/${item.id}`} key={item.id}><img src={item.img} alt={item.title} width="150" /></Link>
+                        </div>
+                      </Popup>
+                    </Marker>
+                  ))
+                ) : (
+                  // 沒有篩選結果時，顯示推薦活動的地圖標記
+                  recommendedEvents.map((item) => (
+                    <Marker
+                      key={item.id}
+                      position={[item.lat, item.lng]}
+                      icon={locationlogo}
+                      ref={(ref) => { markerRefs.current[item.id] = ref; }}
+                    >
+                      <Popup style={{ width: "250px" }}>
+                        <div>
+                          <h3>{item.title}</h3>
+                          <p>{item.date}<br />{item.address}</p>
+                          <Link to={`/info/${item.id}`} key={item.id}><img src={item.img} alt={item.title} width="150" /></Link>
+                        </div>
+                      </Popup>
+                    </Marker>
+                  ))
+                )}
 
                 {/* 飛到 & 打開 popup */}
                 {/* {activeItem && <FlyToMarker lat={activeItem.lat} lng={activeItem.lng} id={activeItem.id} />} */}
@@ -189,16 +217,26 @@ const Map = () => {
 
         {/*右側活動欄位 */}
         <div className="map-event">
+          
           <div className="map-e-title">
             <h2>賞花活動 EVENT</h2>
           </div>
+          
           <div className="map-cardWarp">
-            {filtered.map((item) => (
-
-              <Mapcard key={item.id} item={item} onClick={(id) => setActiveId(id)} />
-
-            ))}
+            {filtered.length > 0 ? (
+              filtered.map((item) => (
+                <Mapcard key={item.id} item={item} onClick={(id) => setActiveId(id)} />
+              ))
+            ) : (
+              <>
+                <p className="no-result-text">您喜歡的花正在休眠，要不要看看其他的花?</p>
+                {recommendedEvents.map((item) => (
+                  <Mapcard key={item.id} item={item} onClick={(id) => setActiveId(id)} />
+                ))}
+              </>
+            )}
           </div>
+
         </div>
       </section>
     </>
