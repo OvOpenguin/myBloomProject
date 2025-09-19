@@ -16,6 +16,8 @@ import cban01 from '../images/news/newscb01.png'
 import cban02 from '../images/news/newscb02.png'
 import cban03 from '../images/news/newscb03.webp'
 import cban04 from '../images/news/newscb04.webp'
+import heart from '../images/wall/wall-icon.svg'
+import heart01 from '../images/wall/wall-icon2.svg'
 
 
 
@@ -24,27 +26,31 @@ const News = () => {
 
     const [visibleCount, setVisibleCount] = useState(6);
 
-    // 卡片元件
-    /*
-    const Newscard = ({ id, lable, date, title, img }) => {
-        return (
-            <Link to={`/info/${id}`} className="news-Card">
-                <div className="txtwrap">
-                    <div className="news-labledate">
-                        <div className="news-lable">{lable}</div>
-                        <p>{date}</p>
-                    </div>
-                    <p className="news-cardTitle">{title}</p>
-                </div>
-                <div className="news-imgwrap">
+    const [favorites, setFavorites] = useState(() => {
+        const saved = localStorage.getItem("favorites");
+        return saved ? JSON.parse(saved) : [];
+    });
 
-                    <img src={img} className="news-img" alt="" />
-                </div>
-            </Link>
-        )
-    }*/
+    const toggleFavorite = (card) => {
+        const exists = favorites.some((item) => item.id === card.id);
+        let updated;
+        if (exists) {
+            updated = favorites.filter((item) => item.id !== card.id);
+        } else {
+            updated = [...favorites, card];
+        }
+        setFavorites(updated);
+        localStorage.setItem("favorites", JSON.stringify(updated));
 
-    const Newscard = ({ id, lable, date, title, img }) => {
+        // 🔔 手動觸發 storage 事件
+        window.dispatchEvent(new Event("storage"));
+    };
+
+    const isFavorite = (id) => favorites.some((item) => item.id === id);
+
+
+
+    const Newscard = ({ id, lable, date, title, img, onToggleFavorite, isFavorite }) => {
         const CardContent = (
             <>
                 <div className="txtwrap">
@@ -56,6 +62,17 @@ const News = () => {
                 </div>
                 <div className="news-imgwrap">
                     <img src={img} className="news-img" alt="" />
+                    {/* 收藏按鈕 */}
+                    <button
+                        className={`fav-btn ${isFavorite ? 'active' : ''}`}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            e.preventDefault();
+                            onToggleFavorite({ id, lable, date, title, img });
+                        }}
+                    >
+                        <img src={isFavorite ? heart01 : heart} alt="收藏" />
+                    </button>
                 </div>
             </>
         );
@@ -133,7 +150,10 @@ const News = () => {
                     </div>
                     <div className="news-CardWarp">
                         {filtered.slice(0, visibleCount).map((item) => {
-                            return <Newscard key={item.id} id={item.id} lable={item.lable} date={item.date} title={item.title} img={item.img} />
+                            return <Newscard
+                                key={item.id} id={item.id} lable={item.lable} date={item.date} title={item.title} img={item.img}
+                                onToggleFavorite={toggleFavorite}
+                                isFavorite={isFavorite(item.id)} />
                         })}
                     </div>
                     {visibleCount < filtered.length && (

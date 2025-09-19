@@ -53,6 +53,32 @@ function SidebarItem({ label, onClick, active = false, danger = false }) {
 // 右側面板 => 各分頁元件
 // 我的收藏
 const Favorites = () => {
+
+    const [favorites, setFavorites] = useState(() => {
+        const saved = localStorage.getItem("favorites");
+        return saved ? JSON.parse(saved) : [];
+    });
+
+    useEffect(() => {
+        const handleStorageChange = () => {
+            const saved = localStorage.getItem("favorites");
+            setFavorites(saved ? JSON.parse(saved) : []);
+        };
+        window.addEventListener("storage", handleStorageChange);
+        return () => window.removeEventListener("storage", handleStorageChange);
+    }, []);
+
+    if (favorites.length === 0) {
+        return (
+            <div className="fav-wrap">
+                <h2>我的收藏</h2>
+                <p>尚未收藏任何活動</p>
+            </div>
+        );
+    }
+
+
+
     return (
         <div className="fav-wrap">
             <div className="tab">
@@ -61,6 +87,16 @@ const Favorites = () => {
             </div>
             <div className="content">
                 <div className="map-cardWrap">
+                    {favorites.map((item) => (
+                        <Link key={item.id} to={`/info/${item.id}`}>
+                            <div className="map-card">
+                                <p className="map-lable">{item.lable}</p>
+                                <img src={item.img} className="map-img" alt={item.title} />
+                                <div className="map-date">{item.date}</div>
+                                <h3 className="map-title">{item.title}</h3>
+                            </div>
+                        </Link>
+                    ))}
                     <Link to={`/info/10`}>
                         <div className="map-card">
                             <p className="map-lable">臺北</p>
