@@ -1,0 +1,41 @@
+@use 'reset';
+@use './variables/' as *;
+@use "./functions/" as *;
+
+.fav-tip {
+    position: absolute;
+    z-index: 6;
+    top: 10px;
+    right: 10px;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    animation: favfadeUp 1.2s ease forwards;
+}
+
+@keyframes favfadeUp {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 0);
+    }
+
+    20% {
+        opacity: 1;
+        transform: translate(-50%, -5px);
+    }
+
+    80% {
+        opacity: 1;
+        transform: translate(-50%, -5px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -15px);
+    }
+}
