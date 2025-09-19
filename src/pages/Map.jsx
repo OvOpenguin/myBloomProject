@@ -20,8 +20,8 @@ import L from "leaflet";
 const Mapcard = ({ item, onClick }) => (
   <Link to={`/info/${item.id}`} key={item.id}>
     <button className="map-card" onClick={() => onClick(item.id)}>
-      <p className="map-lable">{item.lable}</p>
-      <img src={item.img} className="map-img" alt="" />
+      <p className="map-label">{item.lable}</p>
+      <img src={item.img} className="map-img" alt="活動圖片" />
       <div className="map-date">{item.date}</div>
       <h3 className="map-title">{item.title}</h3>
     </button>
@@ -73,8 +73,8 @@ const Map = () => {
   // const activeItem = FlowerEvent.find((f) => f.id === activeId);
 
   // 四季更換圖片
-  
-  
+
+
   const fourseason = [
     { name: "春", img: 春 },
     { name: "夏", img: 夏 },
@@ -217,11 +217,11 @@ const Map = () => {
 
         {/*右側活動欄位 */}
         <div className="map-event">
-          
+
           <div className="map-e-title">
             <h2>賞花活動 EVENT</h2>
           </div>
-          
+
           <div className="map-cardWarp">
             {filtered.length > 0 ? (
               filtered.map((item) => (
