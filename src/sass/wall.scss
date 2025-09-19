@@ -3,6 +3,8 @@
 @use "./functions/" as *;
 
 
+
+
 // * {
 //     outline: 1px red solid;
 // }
@@ -16,9 +18,10 @@
     padding: 150px 50px;
     margin-bottom: 50px;
     gap: 50px;
-    background-image: url(./wall/wall-bg.svg);
+    background-image: url(/wall/wallbg02.jpg);
     background-size: cover;
     background-position: center;
+
 
     @media (max-width:1024px) {
         gap: 20px;

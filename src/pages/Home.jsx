@@ -319,22 +319,7 @@ const App = () => {
                     </div>
                 </section>
 
-                {/* 花牆票選 
-                <section className="IndexVote"> 
-                    <div className="voteTitle">
-                        <h2>花牆票選</h2>
-                        <h3>Popularity vote</h3>
-                        <Link to='./wall'> <BsArrowUpRightCircleFill className="arrow" /></Link>
-                        <div className="crown"><img src={王冠} alt="王冠" /></div>
-                    </div>
-                    <ul className="wall">
-                        <li><img src={hfwr1} alt="票選1" /></li>
-                        <li><img src={票選2} alt="票選2" /></li>
-                        <li><img src={票選3} alt="票選3" /></li>
-                        <li><img src={票選4} alt="票選4" /></li>
-                    </ul>
-                </section>*/}
-
+                {/* 花牆展示 */}
                 <section className="home-vote">
                     <div className="home-inner">
                         <Link to="./wall">

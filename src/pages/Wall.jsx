@@ -264,7 +264,7 @@ const Wall = () => {
       <section className="wall-c-inner">
         <div className="wall-c-title">
 
-          <div className="wcrown"><img src="../wall/wall-c-c.png" alt="王冠" /></div>
+          <div className="wcrown"><img src="./wall/wall-c-c.png" alt="王冠" /></div>
           <Title text="上季冠軍" tag="h2" className="h2-style" />
           <Title text="CHAMPION" tag="h3" className="h3-style" />
 
