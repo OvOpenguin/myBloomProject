@@ -214,7 +214,7 @@ const Play = () => {
                     </svg>
 
                     <Title text="看花影 猜花卉" tag="h2" className="h2-style" />
-                    <Title text="Hide & seek" tag="h3" className="h3-style" />
+                    <Title text="HIDE & SEEK" tag="h3" className="h3-style" />
                     <p>花的姿態千變萬化，有些光靠剪影也能辨認。
                         <br />透過這個互動遊戲，挑戰你的植物觀察力！
                         <br />仔細看花瓣形狀、葉序特徵，

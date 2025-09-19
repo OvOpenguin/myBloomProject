@@ -6,6 +6,7 @@
 // }
 
 #playWrap {
+    overflow: hidden;
     display: flex;
     justify-content: center;
     padding: 50px 0;
@@ -82,6 +83,10 @@
             top: -30px;
             left: 300px;
             animation: fly .75s both, shake4 6s infinite ease-in-out;
+
+            @media (max-width:500px) {
+                left: 250px;
+            }
         }
 
         .pBline {
@@ -93,6 +98,10 @@
             stroke-dashoffset: 500;
             animation: draw-line 2.5s linear forwards;
             filter: url(#rough);
+
+            @media (max-width:500px) {
+                left: 320px;
+            }
         }
 
         @keyframes draw-line {
@@ -173,9 +182,14 @@
         .start-btn,
         .end-btn {
             width: 70%;
+            margin: 0 auto;
             margin-top: 40px;
             transition: transform 0.3s ease;
             cursor: pointer;
+
+            @media (max-width:500px) {
+                margin: 0 auto;
+            }
 
             &:hover {
                 transform: rotate(-5deg);
@@ -241,7 +255,7 @@
             flex-direction: column;
             justify-content: space-evenly;
             flex-wrap: wrap;
-            color:$brown-100;
+            color: $brown-100;
             font-size: 1.2rem;
 
             // 裝飾
