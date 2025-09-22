@@ -70,7 +70,6 @@
 
             p {
                 line-height: 1.2;
-                color: #D05A2E;
             }
         }
 
@@ -555,6 +554,7 @@
     display: flex;
     justify-content: center;
     text-align: center;
+    flex-direction: column;
 
     nav {
         display: inline-flex;
@@ -575,7 +575,7 @@
     justify-content: center;
     align-items: center;
     padding-bottom: 50px;
-    margin-top: 10vh;
+    margin-top: 5vh;
 
     h2 {
         font-size: $f-s-xxxl;
@@ -788,37 +788,43 @@
             li {
                 background: #fff;
                 margin: 10px 0;
-                display: flex;
-                justify-content: space-between;
                 flex-wrap: wrap-reverse;
                 gap: 10px;
                 padding: 5px 10px;
+                cursor: pointer;
+                overflow: hidden;
 
-                p {
-                    //width: 300px; //這邊的寬度待更改，目前預設300px正常。
-                    min-width: 300px;
-                    text-align: left;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    white-space: nowrap;
+                a {
+                    display: flex;
+                    justify-content: space-between;
 
+                    p {
+                        //width: 300px; //這邊的寬度待更改，目前預設300px正常。
+                        // min-width: 300px;
+                        text-align: left;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        cursor: pointer;
+
+                        .tag1 {
+                            padding: 0 10px;
+                            margin-right: 10px;
+                            background-color: $autumn-red;
+                        }
+
+                        .tag2 {
+                            padding: 0 10px;
+                            margin-right: 10px;
+                            background-color: $winter-blue;
+                        }
+                    }
+
+                    .itime {
+                        color: $brown-100;
+                    }
                 }
 
-                .tag1 {
-                    padding: 0 10px;
-                    margin-right: 10px;
-                    background-color: $autumn-red;
-                }
-
-                .tag2 {
-                    padding: 0 10px;
-                    margin-right: 10px;
-                    background-color: $winter-blue;
-                }
-
-                .itime {
-                    color: $brown-100;
-                }
             }
         }
 
@@ -884,6 +890,10 @@
                     animation: hmove linear both;
                     animation-timeline: view(2% 10%);
                     animation-range: entry 0;
+
+                    @media (max-width:640px){
+                        animation: none;
+                    }
                 }
             }
         }

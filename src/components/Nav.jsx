@@ -65,7 +65,7 @@ const Nav = () => {
                     </li>
 
                     <li className='nav-orange'>
-                        <NavLink to="/wall" className={({ isActive }) => isActive ? "nav-orange active" : ""}><span className='nav-orange t'>花</span>牆分享
+                        <NavLink to="/wall" className={({ isActive }) => isActive ? "nav-orange active" : ""}><span className='nav-orange t'>花</span>牆票選
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 102 15">
                                 <path className="line" pathLength="1" d="M1 7.71279C1.26613 9.92801 1.93548 11.5726 3.14113 12.5872C3.77885 13.1238 4.6129 13.6017 5.95565 13.8611C9.0794 14.4645 15.6048 13.0128 22.7258 11.2339C25.8925 10.4429 26.8024 10.0531 27.6069 9.95089C30.6761 9.56088 35.9234 12.8969 42.744 13.0525C47.3045 13.1566 54.0887 12.3019 60.4456 11.4369C66.8024 10.5718 72.5242 9.46421 77.1351 8.44051C85.0726 6.51059 89.9637 4.97275 93.5121 3.60426C95.5968 2.83991 98.2581 1.93369 101 1" />
                             </svg>
@@ -94,7 +94,7 @@ const Nav = () => {
                         </NavLink>
                     </li>
                     {/* <li><Link to="/info">資訊頁</Link></li> */}
-                    {/* <li><Link to="/play">遊戲頁</Link></li> */}
+                    <li><Link to="/play">花卉遊戲</Link></li>
 
                 </ul>
             </nav>

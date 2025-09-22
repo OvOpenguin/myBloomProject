@@ -31,6 +31,7 @@ const Wall = () => {
       count: 111,
       img: flower01,
       heart: heart0,
+      state: '花開見喜',
 
     },
     {
@@ -38,26 +39,28 @@ const Wall = () => {
       count: 464,
       img: flower02,
       heart: heart0,
-
+      state: '花語綻放',
     },
     {
       id: 3,
       count: 56,
       img: flower03,
       heart: heart0,
+      state: '春日花語',
     },
     {
       id: 4,
       count: 379,
       img: flower04,
       heart: heart0,
+      state: '花香盈路',
     },
     {
       id: 5,
       count: 807,
       img: flower05,
       heart: heart0,
-
+      state: "花落有詩",
     },
   ];
   const flowerwalls2 = [
@@ -66,30 +69,35 @@ const Wall = () => {
       count: 567,
       img: flower06,
       heart: heart0,
+      state: '花落有詩',
     },
     {
       id: 7,
       count: 365,
       img: flower07,
       heart: heart0,
+      state: '花開如夢',
     },
     {
       id: 8,
       count: 206,
       img: flower08,
       heart: heart0,
+      state: '花開見喜',
     },
     {
       id: 9,
       count: 704,
       img: flower09,
       heart: heart0,
+      state: '心隨花舞',
     },
     {
       id: 10,
       count: 88,
       img: flower10,
       heart: heart0,
+      state: '花香盈路',
     },
   ];
 
@@ -178,7 +186,7 @@ const Wall = () => {
   }, []);
 
   // 點愛心
-  const Flowerwall = ({ count, img, heart }) => {
+  const Flowerwall = ({ count, img, heart, state }) => {
     const [likeCount, setLikeCount] = useState(count);
     const [liked, setLiked] = useState(false);
 
@@ -194,8 +202,11 @@ const Wall = () => {
 
     return (
       <li className="v-item">
-        <p>{likeCount}</p>
-        <img src={img} alt="fw" />
+        <p className="v-count">{likeCount}</p>
+        <div className="v-img-wrap">
+          <img className="v-item-img" src={img} alt="fw" />
+          <div className="v-item-de"><p>{state}</p></div>
+        </div>
         <div className="icon-heart" onClick={handleLike} style={{ cursor: "pointer" }}>
           <img src={liked ? "./wall/wall-icon2.svg" : heart} alt="heart" />
         </div>
@@ -211,7 +222,6 @@ const Wall = () => {
       block: "start"
     });
   }
-
 
   // 回到最上層
   function backtop() {
@@ -304,7 +314,7 @@ const Wall = () => {
                   </li>
                 );
               }
-              return <Flowerwall key={index} count={item.count} img={item.img} heart={item.heart} />
+              return <Flowerwall key={index} count={item.count} img={item.img} heart={item.heart} state={item.state} />
             })}
           </ul>
           <ul className="v-photos right" ref={listRef2}>
@@ -320,7 +330,7 @@ const Wall = () => {
                   </li>
                 );
               }
-              return <Flowerwall key={index} count={item.count} img={item.img} heart={item.heart} />
+              return <Flowerwall key={index} count={item.count} img={item.img} heart={item.heart} state={item.state}/>
             })}
           </ul>
         </div>
