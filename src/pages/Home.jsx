@@ -43,6 +43,7 @@ import hwde5 from '../images/home/h-w-de5.svg'
 import hwde6 from '../images/home/h-w-de6.svg'
 import hwde7 from '../images/home/h-w-de7.svg'
 import hwde8 from '../images/home/h-w-de8.svg'
+import deco1 from '../images/home/homedeco.svg'
 // 最新消息-裝飾花
 import hfw1 from '../images/home/homefwro1.svg'
 import hfw2 from '../images/home/homefwro2.svg'
@@ -201,6 +202,9 @@ const App = () => {
 
                 <section className="h-nav">
                     <Nav></Nav>
+                    <div>
+                    {/* <img src={deco1} alt="" /> */}
+                    </div>
                 </section>
 
                 {/* 近期活動 */}
@@ -244,7 +248,7 @@ const App = () => {
                                     <Link to={`/info/${e.id}`}>
                                         <div className="card">
                                             <div className="eventTime">
-                                               <p><span>{e.homeYear}<br /></span>{e.startMonth}月<br />｜<br />{e.endMonth}月</p>
+                                                <p><span>{e.homeYear}<br /></span>{e.startMonth}月<br />｜<br />{e.endMonth}月</p>
                                             </div>
                                             <figure>
                                                 <img className="f1" src={e.homeImg} alt={e.title} />
@@ -288,14 +292,14 @@ const App = () => {
                             {/* </div> */}
 
                             {/* 列表標題 */}
-                            <Title text="最新消息" tag="h2" className="h2-style" />
+                            <Title text="賞花快訊" tag="h2" className="h2-style" />
                             <Title text="NEWS" tag="h3" className="h3-style" />
                             {/* 消息列表 */}
                             <ul>
-                                <li><div><p><span className="tag1">展覽</span>春日花藝展：與花共舞的午後時光</p></div><time className="itime">2025-10-15</time></li>
-                                <li><div><p><span className="tag2">活動</span>浪漫花季野餐：芬芳四溢的戶外時光</p></div><time className="itime">2025-10-22</time></li>
-                                <li><div><p><span className="tag2">活動</span>花卉攝影巡禮：捕捉春天的每一抹色彩</p></div><time className="itime">2025-11-07</time></li>
-                                <li><div><p><span className="tag1">展覽</span>城市花市盛會：探索彩色花卉的秘密</p></div><time className="itime">2025-11-25</time></li>
+                                <li><a href="https://ovopenguin.github.io/myBloomProject/#/info/12"><div><p><span className="tag1">活動</span>芒草：陽明山竹子湖</p></div><time className="itime">2025-09-15</time></a></li>
+                                <li><a href="https://ovopenguin.github.io/myBloomProject/#/info/9"><div><p><span className="tag1">活動</span>菊花：士林官邸菊展</p></div><time className="itime">2025-08-30</time></a></li>
+                                <li><a href="https://ovopenguin.github.io/myBloomProject/#/info/6"><div><p><span className="tag1">活動</span>九月雪：大溪韭菜花季</p></div><time className="itime">2025-08-30</time></a></li>
+                                <li><a href="#"><div><p><span className="tag2">消息</span>花卉攝影巡禮：捕捉春天的每一抹色彩</p></div><time className="itime">2025-07-22</time></a></li>
                             </ul>
 
                             {/* 更多消息按鈕 */}
@@ -312,7 +316,7 @@ const App = () => {
                         <div className="home-story">
                             <div className="home-s-btn">
                                 <div className="home-s-title">
-                                    <Title text="認識花卉" tag="h2" className="h2-style" />
+                                    <Title text="花卉科普" tag="h2" className="h2-style" />
                                     <Title text="FLOWER  STORY" tag="h3" className="h3-style" />
                                 </div>
                                 <div className="home-s-img">
@@ -353,7 +357,7 @@ const App = () => {
                             <div className="hv d7"><img src={hwde7} alt="" /></div>
                             <div className="hv d8"><img src={hwde8} alt="" /></div>
                         </div>
-                         <Link to="./wall">
+                        <Link to="./wall">
                             <button className="h-btn-wall">
                                 <span className="circle">
                                     <span className="icon arrow"></span>
