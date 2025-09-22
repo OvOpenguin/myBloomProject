@@ -25,22 +25,17 @@
     .mySwiper {
         overflow: visible;
         animation: hfadein linear both;
-        animation-timeline: view();
-        animation-range: entry 0;
-
     }
 
     .swiper-slide {
         display: flex;
         justify-content: center;
 
-
         .card {
             width: 100%;
             height: auto;
             display: flex;
             flex-direction: column;
-
 
             &::before {
                 content: "";
@@ -73,6 +68,10 @@
                 margin-left: 200px;
             }
 
+            p {
+                line-height: 1.2;
+                color: #D05A2E;
+            }
         }
 
         // img和底圖設計
@@ -543,12 +542,13 @@
         position: absolute;
         bottom: 5%;
         animation: bounce 1.2s infinite ease-in-out;
+        cursor: pointer;
     }
 }
 
 // 導覽列
 .h-nav {
-    position: sticky;
+    // position: sticky;
     top: 0;
     z-index: 999;
     width: 100%;
@@ -575,11 +575,34 @@
     justify-content: center;
     align-items: center;
     padding-bottom: 50px;
-
+    margin-top: 10vh;
 
     h2 {
         font-size: $f-s-xxxl;
-        margin: 10px 0;
+        // margin: 10px 0;
+        position: relative;
+
+        &::before {
+            content: '';
+            width: 15px;
+            height: 15px;
+            background-color: #69C9A0;
+            position: absolute;
+            clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+            top: 40%;
+            left: -20%;
+        }
+
+        &::after {
+            content: '';
+            width: 15px;
+            height: 15px;
+            background-color: #69C9A0;
+            position: absolute;
+            clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+            top: 40%;
+            right: -20%;
+        }
     }
 
     h3 {
@@ -761,7 +784,6 @@
         max-width: 650px;
         min-width: 420px; //限定最小寬度，避免在手機板過度壓縮
 
-
         ul {
             li {
                 background: #fff;
@@ -860,7 +882,7 @@
                 .btnstory,
                 .btngame {
                     animation: hmove linear both;
-                    animation-timeline: view(15% 30%);
+                    animation-timeline: view(2% 10%);
                     animation-range: entry 0;
                 }
             }

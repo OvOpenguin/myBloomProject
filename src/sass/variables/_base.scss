@@ -230,10 +230,8 @@ button {
         width: 10rem;
         height: auto;
         display: flex;
-        justify-self: flex-end;
-        position: absolute;
-        right: 12%;
-        top: 8%;
+        justify-self: center;
+        margin-top: 5vh;
 
         @media (max-width:820px) {
             right: 3%;

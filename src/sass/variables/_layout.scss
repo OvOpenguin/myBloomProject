@@ -9,13 +9,15 @@ header {
 
 
     .hamburger {
-        position:fixed;
+        position: fixed;
         top: 0;
         right: 0;
         z-index: 99;
         margin: 20px;
-        background-color: transparent;
+        background-color: #FFF4CA;
         border: none;
+        padding: 10px ;
+        clip-path: polygon(67% 0, 100% 29%, 91% 81%, 75% 100%, 27% 88%, 0% 60%, 19% 10%);
 
         @media (min-width:831px) {
             display: none;
@@ -25,9 +27,17 @@ header {
             display: block;
             width: 24px;
             height: 3px;
-            background-color: $brown-100;
-            margin: 5px auto;
+            background-color: #FF61B0;
+            margin: 5px 0 5px auto;
             transition: 0.35s;
+
+            &:nth-child(2) {
+                width: 20px;
+            }
+
+            &:nth-child(3) {
+                width: 16px;
+            }
         }
 
         &.is-active {
@@ -42,6 +52,7 @@ header {
 
                 &:nth-child(3) {
                     transform: rotate(-45deg) translate(5px, -6px);
+                    width: 24px;
                 }
             }
         }
