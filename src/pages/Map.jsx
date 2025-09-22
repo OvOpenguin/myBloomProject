@@ -5,7 +5,9 @@ import { Link } from "react-router-dom";
 import FlowerEvent from '../json/FlowerEvent.json';
 import "leaflet/dist/leaflet.css";
 import "../sass/map.scss";
+
 import Nav from '../components/Nav'
+import FavoriteButton from "../components/FavoriteButton";
 
 import 春 from "../images/map/map-s-spring.svg"
 import 夏 from "../images/map/map-s-summer.svg"
@@ -17,13 +19,14 @@ import L from "leaflet";
 
 
 // 活動卡片
-const Mapcard = ({ item, onClick }) => (
+const Mapcard = ({ item, onClick, id, lable, date, title, img }) => (
   <Link to={`/info/${item.id}`} key={item.id}>
     <button className="map-card" onClick={() => onClick(item.id)}>
       <p className="map-label">{item.lable}</p>
       <img src={item.img} className="map-img" alt="活動圖片" />
       <div className="map-date">{item.date}</div>
       <h3 className="map-title">{item.title}</h3>
+      <FavoriteButton card={{ id, lable, date, title, img }} />
     </button>
   </Link>
 );
@@ -225,13 +228,13 @@ const Map = () => {
           <div className="map-cardWarp">
             {filtered.length > 0 ? (
               filtered.map((item) => (
-                <Mapcard key={item.id} item={item} onClick={(id) => setActiveId(id)} />
+                <Mapcard key={item.id} id={item.id} lable={item.lable} date={item.date} title={item.title} img={item.img} item={item} onClick={(id) => setActiveId(id)} />
               ))
             ) : (
               <>
                 <p className="no-result-text">您喜歡的花正在休眠，要不要看看其他的花?</p>
                 {recommendedEvents.map((item) => (
-                  <Mapcard key={item.id} item={item} onClick={(id) => setActiveId(id)} />
+                  <Mapcard key={item.id} id={item.id} lable={item.lable} date={item.date} title={item.title} img={item.img} item={item} onClick={(id) => setActiveId(id)} />
                 ))}
               </>
             )}
