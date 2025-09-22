@@ -8,10 +8,10 @@ import Title from "../components/Title";
 import "../sass/play.scss"
 
 // 圖片匯入
-import 開始遊戲 from "../images/play/play-start.svg"
-import 結束遊戲 from "../images/play/play-end.svg"
-import 蝴蝶 from "../images/play/butterfly-og.png"
-import 橘線 from "../images/play/play-line-orange.svg"
+import playStart from "../images/play/play-start.svg"
+import playEnd from "../images/play/play-end.svg"
+import playbutterfly from "../images/play/butterfly-og.png"
+import orangeline from "../images/play/play-line-orange.svg"
 import t2 from "../images/play/t2.svg"
 import t7 from "../images/play/t7.svg"
 import t12 from "../images/play/t12.svg"
@@ -173,7 +173,7 @@ const Play = () => {
         setWrongAnswers([]);
     };
 
-    // 處理結束遊戲的邏輯
+    // 處理playEnd的邏輯
     const endGame = () => {
         setGameStarted(false);
         setShowAnswer(false);
@@ -188,7 +188,7 @@ const Play = () => {
 
                 {/* 裝飾 */}
                 <div className="t l1"><img src={l1} alt="黃線" /></div>
-                <div className="t l2"><img src={l2} alt="紫線" /></div>
+                {/* <div className="t l2"><img src={l2} alt="紫線" /></div> */}
                 <div className="t t2"><img src={t2} alt="t2" /></div>
                 <div className="t t7"><img src={t7} alt="t7" /></div>
                 <div className="t t12"><img src={t12} alt="t12" /></div>
@@ -198,7 +198,7 @@ const Play = () => {
                 <div className="playExplain">
 
                     {/* 裝飾 */}
-                    <div className="pButterfly"><img src={蝴蝶} alt="蝴蝶" /></div>
+                    <div className="pButterfly"><img src={playbutterfly} alt="playbutterfly" /></div>
                     <svg
                         className="pBline"
                         xmlns="http://www.w3.org/2000/svg"
@@ -223,8 +223,8 @@ const Play = () => {
                     {/* 下方開始/結束按鍵 */}
                     <div className='playBtn'>
                         {!gameStarted
-                            ? (<div className="start-btn" onClick={startGame}><img src={開始遊戲} alt="開始遊戲" /></div>)
-                            : (<div className="end-btn" onClick={endGame}><img src={結束遊戲} alt="結束遊戲" /></div>)}
+                            ? (<div className="start-btn" onClick={startGame}><img src={playStart} alt="playStart" /></div>)
+                            : (<div className="end-btn" onClick={endGame}><img src={playEnd} alt="playEnd" /></div>)}
                     </div>
                 </div>
 
@@ -238,12 +238,17 @@ const Play = () => {
                         {!showAnswer ? (
                             <img src={questions[currentQ].silhouette} alt="剪影" />
                         ) : (
-                            <img src={questions[currentQ].image} alt="真實花" />
+                            <>
+                                <img src={questions[currentQ].image} alt="真實花" />
+                                <figcaption className="correct-answer">
+                                    正確答案：{questions[currentQ].answer}
+                                </figcaption>
+                            </>
                         )}
                     </figure>
 
                     {/* 裝飾 */}
-                    <div className="p-line-o"><img src={橘線} alt="橘線" /></div>
+                    <div className="p-line-o"><img src={orangeline} alt="orangeline" /></div>
 
                     {/* 選項區 */}
                     {/* 當gameStarted為true時，選項才會出現。 */}

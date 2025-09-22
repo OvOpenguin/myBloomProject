@@ -16,7 +16,7 @@ header {
         margin: 20px;
         background-color: #FFF4CA;
         border: none;
-        padding: 10px ;
+        padding: 10px;
         clip-path: polygon(67% 0, 100% 29%, 91% 81%, 75% 100%, 27% 88%, 0% 60%, 19% 10%);
 
         @media (min-width:831px) {
@@ -326,8 +326,41 @@ header {
         }
     }
 
+    /* 父選單要定位，讓子選單能依附它 */
+    .has-submenu {
+        position: relative;
 
+        /* hover 主選單時顯示子選單 */
+        &:hover .submenu {
+            display: block;
+        }
 
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            padding: 10px 0;
+            margin: 0px;
+            min-width: 100px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            border-radius: 4px;
+            z-index: 999;
+
+            li {
+                padding: 8px 15px;
+                white-space: nowrap;
+                cursor: pointer;
+                color:$brown-100;
+
+                &:hover {
+                    background:$bg-gray;
+                    color: $grass-green;
+                }
+            }
+        }
+    }
 }
 
 @keyframes draw {

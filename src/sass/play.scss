@@ -100,7 +100,7 @@
             filter: url(#rough);
 
             @media (max-width:500px) {
-                left: 320px;
+                display: none;
             }
         }
 
@@ -217,6 +217,13 @@
     .questions {
         position: relative;
         display: flex;
+
+        .correct-answer {
+            margin: 10px;
+            font-size: 1.2rem;
+            color: $brown-100;
+            text-align: center;
+        }
 
         figure {
             background-image: url(../images/play/play-bg.svg);
