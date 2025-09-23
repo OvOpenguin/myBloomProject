@@ -16,6 +16,7 @@ import Member from './pages/Member'
 import Info from './pages/Info'
 import Play from './pages/Play'
 import Article from './pages/Article';
+import ButterflyCursor from './components/ButterflyCursor';
 
 
 
@@ -30,6 +31,7 @@ const MyApp = () => {
     return (
 
         <div className="wrap">
+            <ButterflyCursor />
             <ScrollToTop />
             {/* 選單 */}
             {/* <Nav></Nav> */}
@@ -47,7 +49,7 @@ const MyApp = () => {
                 {/* 花卉故事 */}
                 <Route path="/story" element={<Story />}></Route>
                 {/* 個人中心 */}
-                <Route path="/member" element={<Member/>}></Route>
+                <Route path="/member" element={<Member />}></Route>
                 {/* 資訊頁 */}
                 <Route path="/info/:id" element={<Info />}></Route>
                 {/* 遊戲頁 */}
