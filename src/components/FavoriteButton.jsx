@@ -30,11 +30,10 @@ const FavoriteButton = ({ card }) => {
         localStorage.setItem("favorites", JSON.stringify(updated));
         setIsFavorite(!isFavorite);
 
-        // 顯示提示文字
         setShowTip(true);
         setTimeout(() => setShowTip(false), 1500);
 
-        // 🔔 觸發 storage 事件同步其他頁面
+        // 觸發 storage 事件同步其他頁面
         window.dispatchEvent(new Event("storage"));
     };
 

@@ -134,15 +134,15 @@ const News = () => {
                     <div >
                         <h2>優惠專區</h2>
                         <div className="imgwrap">
-                            <img src={cban03} className="a-img" alt="" />
-                            <img src={cban04} className="a-img" alt="" />
+                            <img src={cban03} className="a-img" alt="優惠專區1" />
+                            <img src={cban04} className="a-img" alt="優惠專區2" />
                         </div>
                     </div >
                     <div>
                         <h2>熱門活動</h2>
                         <div className="imgwrap">
-                            <img src={cban01} className="a-img" alt="" />
-                            <img src={cban02} className="a-img" alt="" />
+                            <img src={cban01} className="a-img" alt="熱門活動1" />
+                            <img src={cban02} className="a-img" alt="熱門活動2" />
                         </div>
                     </div>
                 </div>

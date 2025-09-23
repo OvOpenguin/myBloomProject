@@ -339,14 +339,17 @@
 
                 }
 
-                .map-title {
-                    font-size: 1rem;
-                    padding: 5px 0;
-                    cursor: pointer;
+                .map-img {
+                    width: 100%;
+                    height: 180px;
                     transition: all 0.3s ease;
 
                     &:hover {
-                        color: $grass-green;
+                        filter: brightness(0.8);
+                    }
+
+                    img {
+                        @extend %img-cover;
                     }
                 }
 
@@ -361,18 +364,25 @@
                     color: #fff;
                 }
 
-                .map-img {
-                    width: 100%;
-                    height: 150px;
+                .map-title {
+                    font-size: 1rem;
+                    padding: 5px 0;
+                    cursor: pointer;
                     transition: all 0.3s ease;
-
                     &:hover {
-                        filter: brightness(0.8);
+                        color: $grass-green;
                     }
+                }
 
-                    img {
-                        @extend %img-cover;
-                    }
+                .fav-btn {
+                    position: absolute;
+                    z-index: 2;
+                    top: 30px;
+                    right: 20px;
+                    width: 30px;
+                    height: 30px;
+                    border: none;
+                    cursor: pointer;
                 }
             }
 
