@@ -78,10 +78,12 @@ header {
             flex-direction: column;
             gap: 30px;
             width: 200px;
-            height: 100%;
+            height: 60vh;
             opacity: 0;
             transform: translateX(100%);
+            clip-path: polygon(19% 3%, 100% 0, 100% 89%, 46% 95%, 6% 84%, 0 22%);
             transition: opacity 0.5s ease, transform 0.5s ease;
+            padding-left: 10%;
         }
 
         &.show {
@@ -191,7 +193,7 @@ header {
                 width: 102px;
                 height: 16px;
                 fill: none;
-                stroke: #7DC5E4;
+                stroke: #FF8457;
                 stroke-width: 2;
                 stroke-linecap: round;
                 vector-effect: non-scaling-stroke;
@@ -284,6 +286,47 @@ header {
             }
         }
 
+        .nav-peach {
+            display: inline-block;
+            position: relative;
+            flex-direction: column;
+
+            .t {
+                color: #FF61B0;
+                display: inline;
+            }
+
+            a {
+                &:hover {
+                    color: #FF61B0;
+                }
+            }
+
+            &:hover,
+            &.active {
+                color: #FF61B0;
+
+                .line {
+                    animation: draw .5s linear forwards;
+                }
+            }
+
+            // svg線條動畫
+            .line {
+                width: 103px;
+                height: 15px;
+                fill: none;
+                stroke: #7DC5E4;
+                stroke-width: 2;
+                stroke-linecap: round;
+                vector-effect: non-scaling-stroke;
+                stroke-dasharray: 1;
+                /* 1 = 線條總長度 */
+                stroke-dashoffset: 1;
+                /* 初始值 = 完全隱藏 */
+            }
+        }
+
         .nav-purple {
             display: inline-block;
             position: relative;
@@ -352,10 +395,10 @@ header {
                 padding: 8px 15px;
                 white-space: nowrap;
                 cursor: pointer;
-                color:$brown-100;
+                color: $brown-100;
 
                 &:hover {
-                    background:$bg-gray;
+                    background: $bg-gray;
                     color: $grass-green;
                 }
             }

@@ -6,6 +6,7 @@ import FlowerEvent from '../json/FlowerEvent.json';
 import "leaflet/dist/leaflet.css";
 import "../sass/map.scss";
 
+import LocateButton from "../components/LocateButton";
 import Nav from '../components/Nav'
 import FavoriteButton from "../components/FavoriteButton";
 
@@ -21,13 +22,13 @@ import L from "leaflet";
 // 活動卡片
 const Mapcard = ({ item, onClick, id, lable, date, title, img }) => (
   <Link to={`/info/${item.id}`} key={item.id}>
-    <button className="map-card" onClick={() => onClick(item.id)}>
+    <div className="map-card" onClick={() => onClick(item.id)}>
       <p className="map-label">{item.lable}</p>
       <img src={item.img} className="map-img" alt="活動圖片" />
       <div className="map-date">{item.date}</div>
       <h3 className="map-title">{item.title}</h3>
       <FavoriteButton card={{ id, lable, date, title, img }} />
-    </button>
+    </div>
   </Link>
 );
 
@@ -106,6 +107,17 @@ const Map = () => {
     shadowAnchor: [12, 43]
   });
 
+  // 測試地標(代改)
+  const [userPosition, setUserPosition] = useState(null);
+  /*
+  const userIcon = L.icon({
+    iconUrl: '/map/locationlogo2.svg', // 你的定位圖示
+    iconSize: [30, 40],
+    iconAnchor: [16, 16],
+    popupAnchor: [0, -16]
+  });*/
+  const userIcon = new L.Icon.Default();
+
 
   // 主結構
   return (
@@ -173,6 +185,13 @@ const Map = () => {
                   url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
                   attribution='Positron'
                 />
+                {/* <LocateButton setUserPosition={setUserPosition} />
+
+                {userPosition && (
+                  <Marker position={userPosition}>
+                    <Popup>你在這裡</Popup>
+                  </Marker>
+                )} */}
                 {/* 根據篩選結果顯示地圖標記 */}
                 {filtered.length > 0 ? (
                   filtered.map((item) => (

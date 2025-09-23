@@ -223,6 +223,9 @@
             font-size: 1.2rem;
             color: $brown-100;
             text-align: center;
+            background-color: #FFF4CA;
+            padding: 1rem 3rem;
+            clip-path: polygon(10% 0, 100% 14%, 100% 80%, 38% 100%, 0 76%);
         }
 
         figure {
