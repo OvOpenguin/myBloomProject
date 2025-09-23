@@ -203,7 +203,7 @@ const App = () => {
                 <section className="h-nav">
                     <Nav></Nav>
                     <div>
-                    {/* <img src={deco1} alt="" /> */}
+                        {/* <img src={deco1} alt="" /> */}
                     </div>
                 </section>
 
@@ -296,10 +296,10 @@ const App = () => {
                             <Title text="NEWS" tag="h3" className="h3-style" />
                             {/* 消息列表 */}
                             <ul>
-                                <li><a href="https://ovopenguin.github.io/myBloomProject/#/info/12"><div><p><span className="tag1">活動</span>芒草：陽明山竹子湖</p></div><time className="itime">2025-09-15</time></a></li>
-                                <li><a href="https://ovopenguin.github.io/myBloomProject/#/info/9"><div><p><span className="tag1">活動</span>菊花：士林官邸菊展</p></div><time className="itime">2025-08-30</time></a></li>
-                                <li><a href="https://ovopenguin.github.io/myBloomProject/#/info/6"><div><p><span className="tag1">活動</span>九月雪：大溪韭菜花季</p></div><time className="itime">2025-08-30</time></a></li>
-                                <li><a href="#"><div><p><span className="tag2">消息</span>花卉攝影巡禮：捕捉春天的每一抹色彩</p></div><time className="itime">2025-07-22</time></a></li>
+                                <li><a href="https://ovopenguin.github.io/myBloomProject/#/info/12"><p><span className="tag1">活動</span>芒草：陽明山竹子湖</p><time className="itime">2025-09-15</time></a></li>
+                                <li><a href="https://ovopenguin.github.io/myBloomProject/#/info/9"><p><span className="tag1">活動</span>菊花：士林官邸菊展</p><time className="itime">2025-08-30</time></a></li>
+                                <li><a href="https://ovopenguin.github.io/myBloomProject/#/info/6"><p><span className="tag1">活動</span>九月雪：大溪韭菜花季</p><time className="itime">2025-08-30</time></a></li>
+                                <li><a href="#"><p><span className="tag2">消息</span>花卉攝影巡禮：捕捉春天的每一抹色彩</p><time className="itime">2025-07-22</time></a></li>
                             </ul>
 
                             {/* 更多消息按鈕 */}
@@ -313,6 +313,8 @@ const App = () => {
                             </Link>
                         </div>
 
+
+                        {/* 右側花卉科普 */}
                         <div className="home-story">
                             <div className="home-s-btn">
                                 <div className="home-s-title">
@@ -325,9 +327,6 @@ const App = () => {
                                 </div>
                             </div>
                         </div>
-
-
-
                     </div>
                 </section>
 

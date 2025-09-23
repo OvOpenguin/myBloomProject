@@ -1,5 +1,6 @@
 @use 'reset';
 @use './variables/' as *;
+@use "./functions/" as *;
 
 
 
@@ -783,11 +784,11 @@
         background-image: url(../images/home/homenewsbg.svg);
         background-size: cover;
         max-width: 650px;
-        // min-width: 300px; //限定最小寬度，避免在手機板過度壓縮
+        // min-width: 300px;   
+        //限定最小寬度，避免在手機板過度壓縮
 
         @media (max-width:500px) {
-            padding: 0px;
-            padding-bottom: 20px;
+            padding: 20px 10px;
         }
 
         ul {
@@ -798,7 +799,7 @@
                 gap: 10px;
                 padding: 5px 10px;
                 cursor: pointer;
-                overflow: hidden;
+                // overflow: hidden; //不確定有甚麼效果???
 
                 @media (max-width:500px) {
                     padding: 0px;
@@ -809,13 +810,21 @@
                     justify-content: space-between;
 
                     p {
-                        //width: 300px; //這邊的寬度待更改，目前預設300px正常。
+                        // width: 250px; 
+                        //這邊的寬度待更改，目前預設300px正常。
                         // min-width: 300px;
                         text-align: left;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        white-space: nowrap;
+                        @extend %simple-line;
                         cursor: pointer;
+
+                        @media (max-width:500px) {
+                            width: 250px;
+                        }
+
+                        &:hover {
+                            color: $HsinchuCity-orange;
+                        }
+
 
                         .tag1 {
                             padding: 0 10px;
@@ -828,10 +837,16 @@
                             margin-right: 10px;
                             background-color: $winter-blue;
                         }
+
+
                     }
+
+
 
                     .itime {
                         color: $brown-100;
+                        min-width: 90px;
+                        text-align: center;
                     }
                 }
 
