@@ -4,9 +4,9 @@
 
 
 // outline check
-// * {
-//     outline: 1px solid red;
-// }
+* {
+    outline: 1px solid red;
+}
 
 // swiper 設定
 .indexActivity {
@@ -782,7 +782,12 @@
         background-image: url(../images/home/homenewsbg.svg);
         background-size: cover;
         max-width: 650px;
-        min-width: 420px; //限定最小寬度，避免在手機板過度壓縮
+        // min-width: 300px; //限定最小寬度，避免在手機板過度壓縮
+
+        @media (max-width:500px) {
+            padding: 0px;
+            padding-bottom: 20px;
+        }
 
         ul {
             li {
@@ -793,6 +798,10 @@
                 padding: 5px 10px;
                 cursor: pointer;
                 overflow: hidden;
+
+                @media (max-width:500px) {
+                    padding: 0px;
+                }
 
                 a {
                     display: flex;
@@ -891,7 +900,7 @@
                     animation-timeline: view(2% 10%);
                     animation-range: entry 0;
 
-                    @media (max-width:640px){
+                    @media (max-width:640px) {
                         animation: none;
                     }
                 }
