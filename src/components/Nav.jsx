@@ -45,7 +45,7 @@ const Nav = () => {
             <nav>
                 <ul className='menu'>
                     <li className='nav-logo'>
-                        <Link to="/"><img src={logo} alt="" /></Link>
+                        <Link to="/"><img src={logo} alt="logo" /></Link>
                     </li>
 
                     <li className='nav-blue'>

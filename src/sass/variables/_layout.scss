@@ -64,7 +64,7 @@ header {
         flex-direction: row;
         justify-content: center;
         align-items: flex-start;
-        gap: 30px;
+        gap: 20px;
         font-weight: 700;
         font-size: 20px;
         padding: 20px 20px;
@@ -76,7 +76,7 @@ header {
             right: 0;
             background-color: #FFF4CA;
             flex-direction: column;
-            gap: 30px;
+            gap: 20px;
             width: 200px;
             height: 60vh;
             opacity: 0;
@@ -123,6 +123,7 @@ header {
         }
 
         .nav-blue {
+
             display: inline-block;
             position: relative;
             flex-direction: column;
@@ -369,41 +370,6 @@ header {
         }
     }
 
-    /* 父選單要定位，讓子選單能依附它 */
-    .has-submenu {
-        position: relative;
-
-        /* hover 主選單時顯示子選單 */
-        &:hover .submenu {
-            display: block;
-        }
-
-        .submenu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: #fff;
-            padding: 10px 0;
-            margin: 0px;
-            min-width: 100px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-            border-radius: 4px;
-            z-index: 999;
-
-            li {
-                padding: 8px 15px;
-                white-space: nowrap;
-                cursor: pointer;
-                color: $brown-100;
-
-                &:hover {
-                    background: $bg-gray;
-                    color: $grass-green;
-                }
-            }
-        }
-    }
 }
 
 @keyframes draw {
