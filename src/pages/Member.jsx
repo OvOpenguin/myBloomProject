@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import { VscEye } from "react-icons/vsc";
 import { VscEyeClosed } from "react-icons/vsc";
 import Nav from '../components/Nav'
+import FavoriteButton from "../components/FavoriteButton";
 
 // 圖片
 import arrowd from '../images/member/member-arrow-lightgreen.svg'
@@ -11,7 +12,6 @@ import favtab from '../images/member/member-tab-blue.svg'
 import walltab from '../images/member/member-tab-orange.svg'
 import newstab from '../images/member/member-tab-yellow.svg'
 import prftab from '../images/member/member-tab-green.svg'
-import heart0 from '../images/wall/wall-icon.svg'
 import votebotton1 from '../images/wall/wall-votebutton1.svg'
 import flower01 from '../images/wall/wall-flower01.png'
 import flower02 from '../images/wall/wall-flower02.png'
@@ -93,16 +93,32 @@ const Favorites = () => {
                 <img src={favtab} alt="tab裝飾" />
             </div>
             <div className="content">
+                {/* 收藏卡片 */}
+
+
+
+
+
+
                 <div className="map-cardWrap">
                     {favorites.map((item) => (
-                        <Link key={item.id} to={`/info/${item.id}`}>
-                            <div className="map-card">
-                                <p className="map-lable">{item.lable}</p>
-                                <img src={item.img} className="map-img" alt={item.title} />
+                        <Link to={`/info/${item.id}`} key={item.id}>
+                            <div className="map-card" onClick={() => onClick(item.id)}>
+                                <p className="map-label">{item.lable}</p>
+                                <img src={item.img} className="map-img" alt="活動圖片" />
                                 <div className="map-date">{item.date}</div>
                                 <h3 className="map-title">{item.title}</h3>
+                                {/* <FavoriteButton /> */}
                             </div>
                         </Link>
+                        // <Link key={item.id} to={`/info/${item.id}`}>
+                        //     <div className="map-card">
+                        //         <p className="map-lable">{item.lable}</p>
+                        //         <img src={item.img} className="map-img" alt={item.title} />
+                        //         <div className="map-date">{item.date}</div>
+                        //         <h3 className="map-title">{item.title}</h3>
+                        //     </div>
+                        // </Link>
                     ))}
                 </div>
             </div>
