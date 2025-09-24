@@ -8,34 +8,35 @@
     top: 10px;
     right: 10px;
     transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.75);
-    color: #fff;
-    padding: 4px 8px;
-    border-radius: 6px;
+    background: #FFE2D2;
+    color: #64503C;
+    padding: .2rem .8rem;
+    // border-radius: 6px;
     font-size: 0.8rem;
     white-space: nowrap;
     opacity: 0;
+    clip-path: polygon(6% 0, 89% 9%, 100% 47%, 79% 100%, 2% 95%);
     animation: favfadeUp 1.2s ease forwards;
 }
 
 @keyframes favfadeUp {
     0% {
         opacity: 0;
-        transform: translate(-50%, 0);
+        transform: translate(-20%, 0);
     }
 
     20% {
         opacity: 1;
-        transform: translate(-50%, -5px);
+        transform: translate(-50%, 0);
     }
 
     80% {
         opacity: 1;
-        transform: translate(-50%, -5px);
+        transform: translate(-50%, 0px);
     }
 
     100% {
         opacity: 0;
-        transform: translate(-50%, -15px);
+        transform: translate(-20%, 0);
     }
 }
