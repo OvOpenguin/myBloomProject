@@ -172,14 +172,24 @@
 
                         @media (max-width:650px) {
                             order: 1;
-                            justify-content: unset;
+                            display: inline-block;
+                            margin-left: 5px;
+
                         }
 
                         .news-lable {
                             background-color:$Keelung-purple;
                             padding: 1px 10px;
                             margin-right: 4px;
+<<<<<<< HEAD
                             color:$bg-blue;
+=======
+                            color: #64503C;
+
+                            @media (max-width:650px) {
+                                display: inline-block;
+                            }
+>>>>>>> a72dff4ce0164445242481849e12a90b8fd42600
                         }
                     }
 

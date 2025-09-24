@@ -186,7 +186,7 @@
             "3月"
         ],
         "location": "台北市",
-        "lable": "展覽",
+        "lable": "消息",
         "title": "春日花藝展：與花共舞的午後時光",
         "date": "03.14",
         "img": "./news/newss01.jpg",
@@ -198,7 +198,7 @@
             "6月"
         ],
         "location": "新北市",
-        "lable": "展覽",
+        "lable": "消息",
         "title": "浪漫花季野餐：芬芳四溢的戶外時光",
         "date": "06.18",
         "img": "./news/newss03.jpg",
@@ -211,7 +211,7 @@
             "10月"
         ],
         "location": "桃園市",
-        "lable": "展覽",
+        "lable": "消息",
         "title": "手作花藝日：從花瓣到心靈的創意旅程",
         "date": "09.01 — 10.31",
         "img": "./news/newss02.jpg",
@@ -223,7 +223,7 @@
             "2月"
         ],
         "location": "台北市",
-        "lable": "展覽",
+        "lable": "消息",
         "title": "花卉攝影巡禮：捕捉春天的每一抹色彩",
         "date": "02.03",
         "img": "./news/newss04.jpg",

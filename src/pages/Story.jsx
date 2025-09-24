@@ -51,14 +51,15 @@ const Story = () => {
       <Nav></Nav>
       <div id='story'>
 
-        <div className="sleft">
+        <div className="sleft" style={{ "--bgColor": selectedFlower.color }}>
           {/* 其他品種 */}
           <div className="sother">
             <h3>其他花種</h3>
             <h4>Others</h4>
           </div>
           {/* 左側-選單 */}
-          <div className="sList" style={{ background: `${selectedFlower.color}` }}>
+          {/* <div className="sList" style={{ background: `${selectedFlower.color}` }}> */}
+          <div className="sList" style={{ "--bgColor": selectedFlower.color }}>
             {/* 裝飾書 */}
             <div className="sbook">
               <img src={book} alt="book" />
@@ -83,9 +84,6 @@ const Story = () => {
               <div className="tape"><img src={tape} alt="膠帶裝飾" /></div>
             </div>
           </div>
-
-
-
 
           {/* 放入Link才能切換頁面 */}
 
