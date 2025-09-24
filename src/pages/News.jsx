@@ -17,9 +17,6 @@ import cban02 from '../images/news/newscb02.png'
 import cban03 from '../images/news/newscb03.webp'
 import cban04 from '../images/news/newscb04.webp'
 
-import heart from '../images/wall/wall-icon.svg'
-import heart01 from '../images/wall/wall-icon2.svg'
-
 import FavoriteButton from '../components/FavoriteButton';
 
 
@@ -32,6 +29,7 @@ const News = () => {
     const Newscard = ({ id, lable, date, title, img }) => {
         const CardContent = (
             <>
+                {/* 文字 */}
                 <div className="txtwrap">
                     <div className="news-labledate">
                         <div className="news-lable">{lable}</div>
@@ -39,10 +37,15 @@ const News = () => {
                     </div>
                     <p className="news-cardTitle">{title}</p>
                 </div>
+
+                {/* 圖片 */}
                 <div className="news-imgwrap">
-                    <img src={img} className="news-img" alt="" />
-                    {/* 收藏按鈕 */}
-                    <FavoriteButton card={{ id, lable, date, title, img }} />
+                    <figure className="news-img">
+                        <img src={img} alt="活動圖片" />
+                    </figure>
+
+                    {/* 收藏按鈕-取消 */}
+                    {/* <FavoriteButton card={{ id, lable, date, title, img }} /> */}
                 </div>
             </>
         );
