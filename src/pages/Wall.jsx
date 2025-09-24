@@ -1,9 +1,10 @@
-import "../sass/wall.scss"
+
 import { useEffect, useState, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import Title from "../components/Title";
-import Nav from '../components/Nav'
+import Nav from '../components/Nav';
+import CardFlip from '../components/CardFlip';
 
 import heart0 from '../images/wall/wall-icon.svg'
 import votebotton1 from '../images/wall/wall-votebutton1.svg'
@@ -19,6 +20,8 @@ import flower07 from '../images/wall/wall-f7.webp'
 import flower08 from '../images/wall/wall-f8.webp'
 import flower09 from '../images/wall/wall-f9.webp'
 import flower10 from '../images/wall/wall-f10.webp'
+
+import "../sass/wall.scss"
 
 
 
@@ -289,7 +292,7 @@ const Wall = () => {
         </div>
 
         <div className="wall-c-photo">
-          <img src="./wall/wall3-sm.jpg" alt="冠軍圖片" />
+          <CardFlip/>
         </div>
       </section>
 
