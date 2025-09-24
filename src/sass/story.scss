@@ -1,9 +1,9 @@
 @use 'reset';
 @use './variables/' as *;
 
-// * {
-//     outline: 1px solid red;
-// }
+* {
+    outline: 1px solid red;
+}
 
 
 
@@ -34,18 +34,23 @@
     .sleft {
         text-align: center;
 
+        .h-btn-map{
+            margin: 0;
+        }
+
         @media (max-width:1200px) {
             position: fixed;
             z-index: 5;
             top: 150px;
             left: 0;
             background-color: var(--bgColor);
-            border-radius: 32px;
+            border-radius: 8px;
             padding: 20px 10px 20px 0;
             opacity: 0;
             transform: translateX(-100%);
             transition: opacity 0.5s ease, transform 0.5s ease;
-            clip-path: polygon(85% 1%, 97% 16%, 90% 97%, 21% 99%, 0 94%, 0 0);
+            // clip-path: polygon(85% 1%, 97% 16%, 90% 97%, 21% 99%, 0 94%, 0 0);
+            box-shadow: 1px 1px 10px $brown-70;
 
         }
 
@@ -212,12 +217,7 @@
                 padding: 20px 30px 30px;
                 background: $spring-yellow;
                 clip-path: polygon(8% 0, 88% 0, 100% 10%, 100% 95%, 90% 100%, 8% 100%, 0% 95%, 0 10%);
-                // // 底圖
-                // background-image: url(../images/story/story-bg-y-500x400.png);
-                // background-size: cover;
-                //  // backgroundImage: `url(./story/story-bg-${selectedFlower.season1}-500x400.svg)`
-
-
+    
                 .sclass {
                     display: flex;
                     gap: 30px;
@@ -314,7 +314,7 @@
         color: #fff;
         left: -8px;
         top: 100px;
-        transition: all .5s ease;
+        transition: all .3s ease;
         clip-path: polygon(0% 0%, 100% 0, 87% 50%, 100% 100%, 0% 100%);
 
         &:hover {
