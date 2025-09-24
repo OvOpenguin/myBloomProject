@@ -83,6 +83,13 @@ const News = () => {
         setVisibleCount((prev) => { return prev + 6 }) // 每次最多顯示6張
     }
 
+    // 回到最上層
+    function backtop() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        })
+    }
     return (
         <>
             <Nav></Nav>
@@ -147,6 +154,12 @@ const News = () => {
                     </div>
                 </div>
             </section >
+            <button className="gotop" onClick={backtop}>
+                <span className="circle">
+                    <span className="icon arrow"></span>
+                </span>
+                <span className="btn-text">TOP</span>
+            </button>
 
         </>
     )
