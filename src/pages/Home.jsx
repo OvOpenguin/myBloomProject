@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Nav from '../components/Nav'
 import Title from "../components/Title";
+import GotopBtn from '../components/GotopBtn'
 
 // 匯入資料集
 import FlowerEvent from '../json/FlowerEvent.json';
@@ -86,13 +87,6 @@ const App = () => {
     // swiper 預設設定
     const [swiperRef, setSwiperRef] = useState(null);
 
-    // 回到最上層
-    function backtop() {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        })
-    }
     // 首頁scroll滾到活動
     const eventRef = useRef(null);
     function goevent() {
@@ -365,12 +359,7 @@ const App = () => {
                             </button>
                         </Link>
                     </div>
-                    <button className="gotop" onClick={backtop}>
-                        <span className="circle">
-                            <span className="icon arrow"></span>
-                        </span>
-                        <span className="btn-text">TOP</span>
-                    </button>
+                    <GotopBtn></GotopBtn>
                 </section>
             </main >
         </>

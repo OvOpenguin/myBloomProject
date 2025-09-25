@@ -5,6 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 import Title from "../components/Title";
 import Nav from '../components/Nav';
 import CardFlip from '../components/CardFlip';
+import GotopBtn from '../components/GotopBtn'
 
 import heart0 from '../images/wall/wall-icon.svg'
 import votebotton1 from '../images/wall/wall-votebutton1.svg'
@@ -226,14 +227,6 @@ const Wall = () => {
     });
   }
 
-  // 回到最上層
-  function backtop() {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    })
-  }
-
   //滑到文章列表 
   const location = useLocation();
 
@@ -418,13 +411,13 @@ const Wall = () => {
           </div>
         )}
 
-        {/* <button className="gotop" onClick={backtop}></button> */}
-        <button className="gotop" onClick={backtop}>
+        {/* <button className="gotop" onClick={backtop}>
           <span className="circle">
             <span className="icon arrow"></span>
           </span>
           <span className="btn-text">TOP</span>
-        </button>
+        </button> */}
+        <GotopBtn></GotopBtn>
 
       </section>
 

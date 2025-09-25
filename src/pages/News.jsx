@@ -16,6 +16,7 @@ import cban01 from '../images/news/newscb01.png'
 import cban02 from '../images/news/newscb02.png'
 import cban03 from '../images/news/newscb03.webp'
 import cban04 from '../images/news/newscb04.webp'
+import GotopBtn from '../components/GotopBtn'
 
 import FavoriteButton from '../components/FavoriteButton';
 
@@ -86,13 +87,6 @@ const News = () => {
         setVisibleCount((prev) => { return prev + 6 }) // 每次最多顯示6張
     }
 
-    // 回到最上層
-    function backtop() {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        })
-    }
     return (
         <>
             <Nav></Nav>
@@ -157,12 +151,13 @@ const News = () => {
                     </div>
                 </div>
             </section >
-            <button className="gotop" onClick={backtop}>
+            {/* <button className="gotop" onClick={backtop}>
                 <span className="circle">
                     <span className="icon arrow"></span>
                 </span>
                 <span className="btn-text">TOP</span>
-            </button>
+            </button> */}
+            <GotopBtn></GotopBtn>
 
         </>
     )

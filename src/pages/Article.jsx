@@ -9,6 +9,7 @@ import Chrysanthemum from '../images/article/Chrysanthemum.png';
 import Plum from '../images/article/Plum.png';
 import share from '../images/article/share.svg';
 import shareHover from '../images/article/shareHover.svg';
+import GotopBtn from '../components/GotopBtn'
 
 const Article = () => {
   const [showToast, setShowToast] = useState(false);
@@ -207,6 +208,7 @@ const Article = () => {
             <a href="http://localhost:5173/#/info/4" className="sidebar-link">冬季 | 桃園楊梅 | 桃園仙草花節</a>
           </div>
         </div>
+        <GotopBtn></GotopBtn>
       </section>
     </>
   );
