@@ -189,7 +189,6 @@ const Article = () => {
         </div>
 
         <div className="a-btn-box">
-          <br />
           <Link to="/wall#alink">
             {/* <button>回到列表</button> */}
             <button className="h-btn-news">

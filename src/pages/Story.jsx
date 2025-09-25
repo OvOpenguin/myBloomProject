@@ -88,7 +88,7 @@ const Story = () => {
           {/* 放入Link才能切換頁面 */}
 
           <Link to="/play">
-            <button className="h-btn-map">
+            <button className="h-btn-news">
               <span className="circle">
                 <span className="icon arrow"></span>
               </span>

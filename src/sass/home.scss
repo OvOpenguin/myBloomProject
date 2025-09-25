@@ -612,7 +612,6 @@
         margin-bottom: 30px;
     }
 
-
     .galleryWrap {
         position: relative;
         display: flex;
@@ -700,6 +699,13 @@
             font-size: $f-s-lg;
             text-align: center;
             cursor: default;
+        }
+    }
+
+    .h-ebtn {
+        margin-top: 30px;
+        .circle {
+            background: #7DC5E4;
         }
     }
 }
@@ -1149,6 +1155,16 @@
                     right: -20%;
                 }
             }
+        }
+
+        .h-wbtn{
+            display: flex;
+        justify-self: center;
+        margin-top: 5vh;
+
+        .circle{
+            background: #C075E3;
+        }
         }
 
     }

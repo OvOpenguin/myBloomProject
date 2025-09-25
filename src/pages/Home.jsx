@@ -260,16 +260,18 @@ const App = () => {
                         <button className="home-custom-next"><img src={arrow} alt="右鍵" /></button>
                     </div>
 
-
                     {/* 地圖搜尋btn */}
-                    <Link to="./map">
-                        <button className="h-btn-map">
-                            <span className="circle">
-                                <span className="icon arrow"></span>
-                            </span>
-                            <span className="btn-text">地圖搜尋</span>
-                        </button>
-                    </Link>
+                    <div className="h-ebtn">
+                        <Link to="./map">
+                            <button className="h-btn-news">
+                                <span className="circle">
+                                    <span className="icon arrow"></span>
+                                </span>
+                                <span className="btn-text">地圖搜尋</span>
+                            </button>
+                        </Link>
+                    </div>
+
 
                 </section>
 
@@ -350,14 +352,17 @@ const App = () => {
                             <div className="hv d7"><img src={hwde7} alt="" /></div>
                             <div className="hv d8"><img src={hwde8} alt="" /></div>
                         </div>
-                        <Link to="./wall">
-                            <button className="h-btn-wall">
-                                <span className="circle">
-                                    <span className="icon arrow"></span>
-                                </span>
-                                <span className="btn-text">前往投票</span>
-                            </button>
-                        </Link>
+                        <div className="h-wbtn">
+                            <Link to="./wall">
+                                <button className="h-btn-news">
+                                    <span className="circle">
+                                        <span className="icon arrow"></span>
+                                    </span>
+                                    <span className="btn-text">前往投票</span>
+                                </button>
+                            </Link>
+                        </div>
+
                     </div>
                     <GotopBtn></GotopBtn>
                 </section>

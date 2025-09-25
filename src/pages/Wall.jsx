@@ -276,12 +276,15 @@ const Wall = () => {
           <p>
             我們正在尋找北區最耀眼的花卉明星！你的一票至關重要。<br />登入會員，每人一票，用你的選擇為它加冕。
           </p>
-          <button className="w-btn-vote" onClick={gotvote}>
+          <div className="w-vbtn">
+            <button className="h-btn-news" onClick={gotvote}>
             <span className="circle">
               <span className="icon arrow"></span>
             </span>
             <span className="btn-text">前往投票</span>
           </button>
+          </div>
+          
         </div>
 
         <div className="wall-c-photo">
