@@ -114,14 +114,6 @@ useEffect(() => {
   }
 }, [event]);
 
-
-  // 回到最上層
-  function backtop() {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    })
-  }
   // 路由設定
 
   if (!event) {
@@ -168,7 +160,13 @@ const getDate = (data) => {
   return new Date(time).toLocaleDateString("zh-TW", { month: "2-digit", day: "2-digit" });
 };
 
-
+  // 回到最上層
+  function backtop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    })
+  }
   const [activeIndex, setActiveIndex] = useState(0);
   const tabRefs = useRef([]);
   const lineContainerRef = useRef(null);
