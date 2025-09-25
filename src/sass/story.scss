@@ -34,8 +34,15 @@
     .sleft {
         text-align: center;
 
-        .h-btn-map{
-            margin: 0;
+        .h-btn-news {
+            margin-top: 30px;
+            .circle {
+                background: $sky-blue;
+            }
+
+            @media (max-width:1200px) {
+                margin: 0;
+            }
         }
 
         @media (max-width:1200px) {
@@ -217,7 +224,7 @@
                 padding: 20px 30px 30px;
                 background: $spring-yellow;
                 clip-path: polygon(8% 0, 88% 0, 100% 10%, 100% 95%, 90% 100%, 8% 100%, 0% 95%, 0 10%);
-    
+
                 .sclass {
                     display: flex;
                     gap: 30px;

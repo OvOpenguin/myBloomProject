@@ -794,6 +794,14 @@
 
       }
 
+      .me-sbtn{
+        margin-top: 5px;
+
+        .circle{
+          background: $sky-blue;
+        }
+      }
+
       .register {
         color: $brown-100;
         font-size: $f-s-md;

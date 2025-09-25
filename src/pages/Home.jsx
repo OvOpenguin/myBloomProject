@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Nav from '../components/Nav'
 import Title from "../components/Title";
+import GotopBtn from '../components/GotopBtn'
 
 // 匯入資料集
 import FlowerEvent from '../json/FlowerEvent.json';
@@ -86,13 +87,6 @@ const App = () => {
     // swiper 預設設定
     const [swiperRef, setSwiperRef] = useState(null);
 
-    // 回到最上層
-    function backtop() {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        })
-    }
     // 首頁scroll滾到活動
     const eventRef = useRef(null);
     function goevent() {
@@ -266,16 +260,18 @@ const App = () => {
                         <button className="home-custom-next"><img src={arrow} alt="右鍵" /></button>
                     </div>
 
-
                     {/* 地圖搜尋btn */}
-                    <Link to="./map">
-                        <button className="h-btn-map">
-                            <span className="circle">
-                                <span className="icon arrow"></span>
-                            </span>
-                            <span className="btn-text">地圖搜尋</span>
-                        </button>
-                    </Link>
+                    <div className="h-ebtn">
+                        <Link to="./map">
+                            <button className="h-btn-news">
+                                <span className="circle">
+                                    <span className="icon arrow"></span>
+                                </span>
+                                <span className="btn-text">地圖搜尋</span>
+                            </button>
+                        </Link>
+                    </div>
+
 
                 </section>
 
@@ -356,21 +352,19 @@ const App = () => {
                             <div className="hv d7"><img src={hwde7} alt="" /></div>
                             <div className="hv d8"><img src={hwde8} alt="" /></div>
                         </div>
-                        <Link to="./wall">
-                            <button className="h-btn-wall">
-                                <span className="circle">
-                                    <span className="icon arrow"></span>
-                                </span>
-                                <span className="btn-text">前往投票</span>
-                            </button>
-                        </Link>
+                        <div className="h-wbtn">
+                            <Link to="./wall">
+                                <button className="h-btn-news">
+                                    <span className="circle">
+                                        <span className="icon arrow"></span>
+                                    </span>
+                                    <span className="btn-text">前往投票</span>
+                                </button>
+                            </Link>
+                        </div>
+
                     </div>
-                    <button className="gotop" onClick={backtop}>
-                        <span className="circle">
-                            <span className="icon arrow"></span>
-                        </span>
-                        <span className="btn-text">TOP</span>
-                    </button>
+                    <GotopBtn></GotopBtn>
                 </section>
             </main >
         </>

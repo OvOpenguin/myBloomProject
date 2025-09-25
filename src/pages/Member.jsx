@@ -429,13 +429,16 @@ const SignIn = ({ onLogin }) => {
                     </div>
 
                     {/* 登入 */}
-                    <button className="m-btn-sign"
+                    <div className="me-sbtn">
+                        <button className="h-btn-news"
                         type="submit">
                         <span className="circle">
                             <span className="icon arrow"></span>
                         </span>
                         <span className="btn-text">登入</span>
                     </button>
+                    </div>
+                    
                     {/* 註冊/忘記密碼 */}
                     <button className="register" type="button">
                         註冊/忘記密碼

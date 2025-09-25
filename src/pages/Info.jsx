@@ -82,6 +82,7 @@ import { Pagination, Navigation } from "swiper/modules";
 
 import { fetchWeather } from "../api/weather.js";
 import FlowerEvent from '../json/FlowerEvent.json';
+import GotopBtn from '../components/GotopBtn'
 
 
 const tabIcons = [TabGreen, TabBlue, TabPink];
@@ -160,13 +161,6 @@ const getDate = (data) => {
   return new Date(time).toLocaleDateString("zh-TW", { month: "2-digit", day: "2-digit" });
 };
 
-  // 回到最上層
-  function backtop() {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    })
-  }
   const [activeIndex, setActiveIndex] = useState(0);
   const tabRefs = useRef([]);
   const lineContainerRef = useRef(null);
@@ -577,6 +571,13 @@ const getDate = (data) => {
                         { img: highlightmusic, text: "音樂演出" },
                         { img: highlightchild, text: "親子遊樂" },
                         { img: highlightcultural, text: "文創攤位" },
+                        { img: highlightpho, text: "攝影比賽" },
+                        { img: highlightmar, text: "花卉市集" },
+                        { img: highlightlight, text: "燈光秀" },
+                        { img: highlightdiy, text: "DIY 手作" },
+                        { img: highlightmusic, text: "音樂演出" },
+                        { img: highlightchild, text: "親子遊樂" },
+                        { img: highlightcultural, text: "文創攤位" },
                       ]
                         // 為了無限輪播，把這組複製兩次
                         .concat([
@@ -937,13 +938,7 @@ const getDate = (data) => {
 
         </div>
 
-        {/* gotop */}
-        <button className="gotop infotop" onClick={backtop}>
-          <span className="circle">
-            <span className="icon arrow"></span>
-          </span>
-          <span className="btn-text">TOP</span>
-        </button>
+        <GotopBtn></GotopBtn>
       </section>
     </>
   );

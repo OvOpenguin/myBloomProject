@@ -5,6 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 import Title from "../components/Title";
 import Nav from '../components/Nav';
 import CardFlip from '../components/CardFlip';
+import GotopBtn from '../components/GotopBtn'
 
 import heart0 from '../images/wall/wall-icon.svg'
 import votebotton1 from '../images/wall/wall-votebutton1.svg'
@@ -226,14 +227,6 @@ const Wall = () => {
     });
   }
 
-  // 回到最上層
-  function backtop() {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    })
-  }
-
   //滑到文章列表 
   const location = useLocation();
 
@@ -283,12 +276,15 @@ const Wall = () => {
           <p>
             我們正在尋找北區最耀眼的花卉明星！你的一票至關重要。<br />登入會員，每人一票，用你的選擇為它加冕。
           </p>
-          <button className="w-btn-vote" onClick={gotvote}>
+          <div className="w-vbtn">
+            <button className="h-btn-news" onClick={gotvote}>
             <span className="circle">
               <span className="icon arrow"></span>
             </span>
             <span className="btn-text">前往投票</span>
           </button>
+          </div>
+          
         </div>
 
         <div className="wall-c-photo">
@@ -417,15 +413,7 @@ const Wall = () => {
             </div>
           </div>
         )}
-
-        {/* <button className="gotop" onClick={backtop}></button> */}
-        <button className="gotop" onClick={backtop}>
-          <span className="circle">
-            <span className="icon arrow"></span>
-          </span>
-          <span className="btn-text">TOP</span>
-        </button>
-
+        <GotopBtn></GotopBtn>
       </section>
 
     </>
