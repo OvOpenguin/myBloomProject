@@ -22,8 +22,8 @@ function ButterflyCursor() {
     useEffect(() => {
         const animate = () => {
             setButterflyPos(prev => {
-                const targetX = mousePos.x + 15;
-                const targetY = mousePos.y + 15;
+                const targetX = mousePos.x + 30;
+                const targetY = mousePos.y - 30;
 
                 return {
                     x: prev.x + (targetX - prev.x) * 0.08,
