@@ -26,48 +26,8 @@ $trail-fade-duration: 1.2s;
     filter: brightness(1.2) drop-shadow(0 0 8px $click-glow-color);
     animation: butterfly-flap $animation-duration ease-in-out;
   }
-
-  // 懸浮在連結上
-  &.over-link {
-    transform: translate(-50%, -50%) scale(1.1);
-    filter: drop-shadow(0 0 6px $click-glow-color) drop-shadow(0 2px 4px $butterfly-shadow);
-  }
-
-  // 懸浮在按鈕上
-  &.over-button {
-    transform: translate(-50%, -50%) scale(1.15) rotate(3deg);
-    filter: drop-shadow(0 0 8px $click-glow-color) drop-shadow(0 2px 4px $butterfly-shadow);
-  }
 }
 
-// 軌跡點樣式
-.trail-dot {
-  position: fixed;
-  width: $trail-size;
-  height: $trail-size;
-  background: $trail-color;
-  border-radius: 50%;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  z-index: 998;
-  animation: trail-fade $trail-fade-duration ease-out forwards;
-
-  // 不同類型的軌跡
-  &.trail-link {
-    background: rgba(231, 76, 60, 0.8);
-  }
-
-  &.trail-button {
-    width: 5px;
-    height: 5px;
-    background: rgba(231, 76, 60, 1);
-    box-shadow: 0 0 8px rgba(231, 76, 60, 0.4);
-  }
-
-  &.trail-input {
-    background: rgba(100, 150, 200, 0.8);
-  }
-}
 
 // 蝴蝶煽動動畫
 @keyframes butterfly-flap {
@@ -82,59 +42,5 @@ $trail-fade-duration: 1.2s;
   }
   75% {
     transform: translate(-50%, -50%) scale(0.95) rotate(3deg);
-  }
-}
-
-// 軌跡淡出動畫
-@keyframes trail-fade {
-  0% {
-    opacity: 0.6;
-    transform: translate(-50%, -50%) scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.3);
-  }
-}
-
-// 響應式設計
-@media (max-width: 768px) {
-  .butterfly-cursor {
-    width: #{$butterfly-size * 0.8};
-    height: #{$butterfly-size * 0.8};
-  }
-
-  .trail-dot {
-    width: #{$trail-size * 0.8};
-    height: #{$trail-size * 0.8};
-  }
-}
-
-// 深色模式支援
-@media (prefers-color-scheme: dark) {
-  .trail-dot {
-    background: rgba(255, 182, 193, 0.6);
-    
-    &.trail-link {
-      background: rgba(255, 182, 193, 0.8);
-    }
-    
-    &.trail-button {
-      background: rgba(255, 182, 193, 1);
-      box-shadow: 0 0 8px rgba(255, 182, 193, 0.4);
-    }
-  }
-}
-
-// 減少動畫的無障礙選項
-@media (prefers-reduced-motion: reduce) {
-  .butterfly-cursor {
-    transition: none;
-    animation: none;
-  }
-
-  .trail-dot {
-    animation: none;
-    opacity: 0.3;
   }
 }
