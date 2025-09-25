@@ -201,11 +201,11 @@ const Article = () => {
             <div className="sidebar-line"></div>
           </div>
           <div className="sidebar-content">
-            <a href="http://localhost:5173/#/info/5" className="sidebar-link">春季 | 台北北投 | 陽明山海芋季</a>
-            <a href="http://localhost:5173/#/info/11" className="sidebar-link">夏季 | 新北樹林 | 山佳荷花池</a>
-            <a href="http://localhost:5173/#/info/12" className="sidebar-link">秋季 | 台北中山 | 向日葵大佳河濱花海</a>
-            <a href="http://localhost:5173/#/info/4" className="sidebar-link">冬季 | 桃園楊梅 | 桃園仙草花節</a>
-          </div>
+             <Link to="/info/5" className="sidebar-link">春季 | 台北北投 | 陽明山海芋季</Link>
+            <Link to="/info/11" className="sidebar-link">夏季 | 新北樹林 | 山佳荷花池</Link>
+            <Link to="/info/12" className="sidebar-link">秋季 | 台北中山 | 向日葵大佳河濱花海</Link>
+            <Link to="/info/4" className="sidebar-link">冬季 | 桃園楊梅 | 桃園仙草花節</Link>
+            </div>
         </div>
       </section>
     </>
