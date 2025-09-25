@@ -137,7 +137,7 @@
         "location": "新北市",
         "lable": "活動",
         "title": "山佳荷花池",
-        "date": "06 — 08",
+        "date": "06.30 — 08.31",
         "img": "./activity/activity11.jpg",
         "start": "06"
     },
@@ -234,7 +234,7 @@
         "month":
             "10月",
         "location": "台北市",
-        "lable": "台北",
+        "lable": "消息",
         "title": "2025陽明山古道秋芒之旅",
         "date": "10.19 — 10.22",
         "img": "./activity/activity13.jpg",
@@ -247,9 +247,9 @@
             "11月"
         ],
         "location": "新竹市",
-        "lable": "新竹",
+        "lable": "活動",
         "title": "季節限定–新竹甜根子草銀白海浪",
-        "date": "09 — 11 月",
+        "date": "09.30 — 11.30",
         "img": "./activity/activity15.jpg",
         "start": "9月"
         
