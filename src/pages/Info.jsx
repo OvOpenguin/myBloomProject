@@ -80,7 +80,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
 
-import jsonData from '../json/weather.json';
+import { fetchWeather } from "../api/weather.js";
 import FlowerEvent from '../json/FlowerEvent.json';
 
 
@@ -103,7 +103,62 @@ function MapIframe() {
 }
 
 const Info = () => {
+  const { id } = useParams();
+const event = FlowerEvent.find(item => item.id.toString() === id);
 
+const [weatherData, setWeatherData] = useState(null);
+
+useEffect(() => {
+  if (event && event.location) {
+    fetchWeather(event.location).then((data) => setWeatherData(data));
+  }
+}, [event]);
+
+  // 路由設定
+
+  if (!event) {
+    return <div>找不到該活動。</div>;
+  }
+
+  // Info.jsx
+const getWeatherIcon = (data) => {
+  if (!data) return cloudy;
+
+  const rainProb = parseInt(
+    data.records.location[0].weatherElement
+      .find(el => el.elementName === "PoP")
+      .time[0].parameter.parameterName
+  );
+
+  if (rainProb >= 60) return raining;
+  if (rainProb <= 10) return sunny;
+  return cloudy;
+};
+
+const getTemperature = (data) => {
+  if (!data) return "-";
+  return data.records.location[0].weatherElement
+    .find(el => el.elementName === "MaxT")
+    .time[0].parameter.parameterName;
+};
+
+const getCity = (data) => {
+  if (!data) return "-";
+  return data.records.location[0].locationName;
+};
+
+const getRainProbability = (data) => {
+  if (!data) return "-";
+  return data.records.location[0].weatherElement
+    .find(el => el.elementName === "PoP")
+    .time[0].parameter.parameterName;
+};
+
+const getDate = (data) => {
+  if (!data) return "-";
+  const time = data.records.location[0].weatherElement[0].time[0].startTime;
+  return new Date(time).toLocaleDateString("zh-TW", { month: "2-digit", day: "2-digit" });
+};
 
   // 回到最上層
   function backtop() {
@@ -112,50 +167,6 @@ const Info = () => {
       behavior: "smooth"
     })
   }
-  // 路由設定
-  const { id } = useParams();
-  const event = FlowerEvent.find(item => item.id.toString() === id);
-
-  if (!event) {
-    return <div>找不到該活動。</div>;
-  }
-
-  // Info.jsx
-  const getWeatherIcon = (data) => {
-    const rainProb = parseInt(
-      data.cwaopendata.dataset.location[0].weatherElement
-        .find(el => el.elementName === "PoP")
-        .time[0].parameter.parameterName
-    );
-
-    if (rainProb >= 60) return raining;
-    if (rainProb <= 10) return sunny;
-    return cloudy;  // 11~79%
-
-  };
-
-  const getTemperature = (data) => {
-    return data.cwaopendata.dataset.location[0].weatherElement.find(el => el.elementName === "MaxT").time[0].parameter.parameterName;
-  };
-
-  const getCity = (data) => {
-    return data.cwaopendata.dataset.location[0].locationName;
-  };
-
-  const getRainProbability = (data) => {
-    return data.cwaopendata.dataset.location[0].weatherElement.find(el => el.elementName === "PoP").time[0].parameter.parameterName;
-  };
-
-  const getDate = (data) => {
-    const time = data.cwaopendata.dataset.location[0].weatherElement[0].time[0].startTime;
-    return new Date(time).toLocaleDateString("zh-TW", { month: "2-digit", day: "2-digit" });
-  };
-
-  const getTime = (data) => {
-    const time = data.cwaopendata.dataset.location[0].weatherElement[0].time[0].startTime;
-    return new Date(time).toLocaleTimeString("zh-TW", { hour: "2-digit", minute: "2-digit" });
-  };
-
   const [activeIndex, setActiveIndex] = useState(0);
   const tabRefs = useRef([]);
   const lineContainerRef = useRef(null);
@@ -316,31 +327,32 @@ const Info = () => {
             </div>
           </div>
 
-          <div className="info-weather">
-            <img src={weatherbg} alt="天氣背景" className="weather-bg" />
+<div className="info-weather">
+  <img src={weatherbg} alt="天氣背景" className="weather-bg" />
 
-            {/* 天氣 icon */}
-            <div className="weather-icon">
-              <img src={getWeatherIcon(jsonData)} alt="天氣圖示" />
-            </div>
+  {/* 天氣 icon */}
+  <div className="weather-icon">
+    <img src={getWeatherIcon(weatherData)} alt="天氣圖示" />
+  </div>
 
-            {/* 溫度、縣市、降雨 */}
-            <div className="weather-info">
-              <div className="temp-city">
-                <div className="temperature">{getTemperature(jsonData)}°C</div>
-                <div className="city-rain">
-                  <span className="city">{getCity(jsonData)}</span>
-                  <img src={umbrella} alt="降雨圖示" className="rain-icon" />
-                  <span className="rain-prob">{getRainProbability(jsonData)}%</span>
-                </div>
-              </div>
+  {/* 溫度、縣市、降雨 */}
+  <div className="weather-info">
+    <div className="temp-city">
+      <div className="temperature">{getTemperature(weatherData)}°C</div>
+      <div className="city-rain">
+        <span className="city">{getCity(weatherData)}</span>
+        <img src={umbrella} alt="降雨圖示" className="rain-icon" />
+        <span className="rain-prob">{getRainProbability(weatherData)}%</span>
+      </div>
+    </div>
 
-              {/* 日期、時間 */}
-              <div className="date-time">
-                <div className="date">{getDate(jsonData)}</div>
-              </div>
-            </div>
-          </div>
+    {/* 日期 */}
+    <div className="date-time">
+      <div className="date">{getDate(weatherData)}</div>
+    </div>
+  </div>
+</div>
+
 
         </div>
 
