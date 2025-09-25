@@ -120,7 +120,7 @@
         .news-CardWarp {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: flex-start;
 
             a {
                 color: #64503C;
@@ -173,8 +173,6 @@
                         @media (max-width:650px) {
                             order: 1;
                             display: inline-block;
-                            margin-left: 5px;
-
                         }
 
                         .news-lable {
@@ -183,6 +181,7 @@
                             font-weight: normal;
                             padding: 1px 10px;
                             margin-right: 4px;
+                            margin-bottom: 5px;
 
                             @media (max-width:650px) {
                                 display: inline-block;
