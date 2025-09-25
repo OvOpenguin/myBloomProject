@@ -1,46 +1,13 @@
-// ButterflyCursor.scss
+@use 'reset';
+@use './variables/' as *;
 
-// 變數定義
-$butterfly-size: 40px;
-$trail-size: 4px;
-$trail-color: rgba(231, 76, 60, 0.6);
-$butterfly-shadow: rgba(0, 0, 0, 0.2);
-$click-glow-color: rgba(231, 76, 60, 0.5);
-$animation-duration: 0.4s;
-$trail-fade-duration: 1.2s;
-
-// 蝴蝶主體樣式
 .butterfly-cursor {
   position: fixed;
-  width: $butterfly-size;
-  height: $butterfly-size;
+  width: 50px;
+  height: 50px;
   pointer-events: none;
   transform: translate(-50%, -50%);
   z-index: 999;
-  filter: drop-shadow(0 2px 4px $butterfly-shadow);
+  filter: drop-shadow(0 2px 4px $winter-blue);
   transition: transform 0.2s ease, filter 0.2s ease;
-
-  // 點擊狀態
-  &.clicking {
-    transform: translate(-50%, -50%) scale(0.9);
-    filter: brightness(1.2) drop-shadow(0 0 8px $click-glow-color);
-    animation: butterfly-flap $animation-duration ease-in-out;
-  }
-}
-
-
-// 蝴蝶煽動動畫
-@keyframes butterfly-flap {
-  0%, 100% {
-    transform: translate(-50%, -50%) scale(1) rotate(0deg);
-  }
-  25% {
-    transform: translate(-50%, -50%) scale(0.95) rotate(-3deg);
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(0.9) rotate(0deg);
-  }
-  75% {
-    transform: translate(-50%, -50%) scale(0.95) rotate(3deg);
-  }
 }
