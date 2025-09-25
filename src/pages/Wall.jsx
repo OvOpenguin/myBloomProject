@@ -410,15 +410,7 @@ const Wall = () => {
             </div>
           </div>
         )}
-
-        {/* <button className="gotop" onClick={backtop}>
-          <span className="circle">
-            <span className="icon arrow"></span>
-          </span>
-          <span className="btn-text">TOP</span>
-        </button> */}
         <GotopBtn></GotopBtn>
-
       </section>
 
     </>

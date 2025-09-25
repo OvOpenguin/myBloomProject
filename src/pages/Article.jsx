@@ -1,4 +1,4 @@
-import "../sass/article.scss"; 
+import "../sass/article.scss";
 import React, { useState, useEffect, useRef } from 'react';
 
 import Nav from '../components/Nav';
@@ -14,10 +14,10 @@ import GotopBtn from '../components/GotopBtn'
 const Article = () => {
   const [showToast, setShowToast] = useState(false);
   const [hover, setHover] = useState(false);
-  
+
   // 右側推薦區塊狀態 - 簡化版本
   const [sidebarVisible, setSidebarVisible] = useState(false);
-  
+
   const articleRef = useRef(null);
   const activitySectionRef = useRef(null);
 
@@ -32,10 +32,10 @@ const Article = () => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       const windowHeight = window.innerHeight;
-      
+
       // 簡化觸發條件 - 滾動 300px 後顯示，直接固定在右下角
       const triggerPosition = 300;
-      
+
       // 當滾動超過觸發位置時顯示側邊欄
       if (scrollPosition > triggerPosition) {
         setSidebarVisible(true);
@@ -43,12 +43,12 @@ const Article = () => {
         setSidebarVisible(false);
         return;
       }
-      
+
       // 檢查活動推薦區域是否進入視窗
       if (activitySectionRef.current) {
         const activityTop = activitySectionRef.current.offsetTop;
         const activityInView = scrollPosition + windowHeight > activityTop - 100;
-        
+
         if (activityInView) {
           setSidebarVisible(false);
         }
@@ -56,10 +56,10 @@ const Article = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    
+
     // 初始執行一次
     handleScroll();
-    
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -190,11 +190,19 @@ const Article = () => {
 
         <div className="a-btn-box">
           <br />
-          <Link to="/wall#alink"><button>回到列表</button></Link>
+          <Link to="/wall#alink">
+            {/* <button>回到列表</button> */}
+            <button className="h-btn-news">
+              <span className="circle">
+                <span className="icon arrow"></span>
+              </span>
+              <span className="btn-text">回到列表</span>
+            </button>
+          </Link>
         </div>
 
         {/* 右側固定推薦區塊 - 簡化版本 */}
-        <div 
+        <div
           className={`sidebar-recommendations ${sidebarVisible ? 'visible' : ''}`}
         >
           <div className="sidebar-header">
@@ -202,11 +210,11 @@ const Article = () => {
             <div className="sidebar-line"></div>
           </div>
           <div className="sidebar-content">
-             <Link to="/info/5" className="sidebar-link">春季 | 台北北投 | 陽明山海芋季</Link>
+            <Link to="/info/5" className="sidebar-link">春季 | 台北北投 | 陽明山海芋季</Link>
             <Link to="/info/11" className="sidebar-link">夏季 | 新北樹林 | 山佳荷花池</Link>
             <Link to="/info/12" className="sidebar-link">秋季 | 台北中山 | 向日葵大佳河濱花海</Link>
             <Link to="/info/4" className="sidebar-link">冬季 | 桃園楊梅 | 桃園仙草花節</Link>
-            </div>
+          </div>
         </div>
         <GotopBtn></GotopBtn>
       </section>
