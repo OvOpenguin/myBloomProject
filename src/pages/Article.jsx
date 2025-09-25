@@ -1,88 +1,168 @@
 import "../sass/article.scss";
+import React, { useState } from 'react';
 
 import Nav from '../components/Nav';
 import { Link } from "react-router-dom";
+import CherryArticle from '../images/article/CherryArticle.png';
+import Lotus from '../images/article/Lotus.png';
+import Chrysanthemum from '../images/article/Chrysanthemum.png';
+import Plum from '../images/article/Plum.png';
+import share from '../images/article/share.svg';
+import shareHover from '../images/article/shareHover.svg';
+
 
 const Article = () => {
+  const [showToast, setShowToast] = useState(false);
+  const [hover, setHover] = useState(false); // hover 狀態
+
+  const handleShare = () => {
+    navigator.clipboard.writeText(window.location.href);
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 2000);
+  };
+
     return (
         <>
-            <Nav></Nav>
+            <Nav />
             <section id='article'>
-                <div className="apic"><img src="./wall/wall02-lg.jpg" alt="圖" /></div>
+                <div className="apic">
+                    <img src="./wall/wall02-lg.jpg" alt="圖" />
+                </div>
 
-                {/* 標題 */}
                 <div className="aWrap">
+  <header className="article-header">
+      <h2>四季花語：與自然共舞的美好時光</h2>
+      <div className="share-container">
+        <button
+          className="share-btn"
+          onClick={handleShare}
+          onMouseEnter={() => setHover(true)}
+          onMouseLeave={() => setHover(false)}
+        >
+          <img src={hover ? shareHover : share} alt="share" width={20} height={20} />
+        </button>
+        <div className={`toast ${showToast ? "show" : ""}`}>
+          複製連結成功
+        </div>
+      </div>
+    </header>
 
-                    <header>
-                        <h2>四季花語：與自然共舞的美好時光</h2>
-                        <p>作者：Charlie<time datetime="2025/09/16">2025/09/16</time></p>
-                    </header>
 
+
+                    {/* 春 */}
                     <div className="acard">
+                        <p className="first">
+                            花卉與生活的哲學<br />
+                            花卉不僅僅是裝飾，更是生活的老師。從花開花落的循環中，我們學會了時間的珍貴；從花朵的堅韌中，我們領悟了生命的力量；從花香的飄散中，我們體會分享的美好。<br />
+                            每一朵花都有它的故事，每個季節都有它的主角。讓我們在忙碌中，記得停下來聞聞花香，感受大自然的禮物。
+                        </p>
+                        <p className="first-author">作者：Charlie <time dateTime="2025/09/16">2025/09/16</time></p>
+
+                        <br />
                         <h3>春之序章：新生的希望</h3>
                         <h4>櫻花 - 短暫而永恆的美麗</h4>
-                        <br />春天的腳步總是由櫻花來宣告。粉嫩的花瓣如雪花般飄落，日本人稱之為「花吹雪」。櫻花的花期雖然短暫，通常只有一到兩週，但正是這種稍縱即逝的美，讓人更加珍惜當下的每一個瞬間。
+                        <p>春天的腳步總是由櫻花來宣告。粉嫩的花瓣如雪花般飄落，日本人稱之為「花吹雪」。櫻花的花期雖然短暫，通常只有一到兩週，但正是這種稍縱即逝的美，讓人更加珍惜當下的每一個瞬間。</p>
                         <br />
-                        <br />櫻花觀賞指南：
-                        <br />最佳觀賞時間：清晨或傍晚，光線柔和
-                        <br />攝影技巧：逆光拍攝能捕捉花瓣的透明感
-                        <br />文化體驗：準備野餐墊，體驗日式賞花文化
+                        <h5>櫻花觀賞指南</h5>
+                        <ul>
+                            <li><span className="highlight">最佳觀賞時間：</span>清晨或傍晚，光線柔和</li>
+                            <li><span className="highlight">攝影技巧：</span>逆光拍攝能捕捉花瓣的透明感</li>
+                            <li><span className="highlight">文化體驗：</span>準備野餐墊，體驗日式賞花文化</li>
+                        </ul>
+                        <img src={CherryArticle} alt="櫻花文章插圖" />
+                        <p>圖片來源:freepik</p>
+
                     </div>
+
+                    {/* 夏 */}
                     <div className="acard">
                         <h3>夏之熱情：燦爛的生命力</h3>
                         <h4>荷花 - 出淤泥而不染</h4>
-                        <br />「蓮花出淤泥而不染，濯清漣而不妖」，荷花在佛教文化中象徵純淨和智慧。夏日的荷塘，粉色的花瓣在綠葉的襯托下顯得格外清雅脫俗。
+                        <p>「蓮花出淤泥而不染，濯清漣而不妖」，荷花在佛教文化中象徵純淨和智慧。夏日的荷塘，粉色的花瓣在綠葉的襯托下格外清雅脫俗。</p>
                         <br />
-                        <br />荷花觀賞指南：
-                        <br />最佳時間：清晨 6-8 點，花朵最為飽滿
-                        <br />最佳地點：古典園林或公園荷花池
-                        <br />攝影要點：利用荷葉作為前景或背景
+                        <h5>荷花觀賞指南</h5>
+                        <ul>
+                            <li><span className="highlight">最佳時間：</span>清晨 6-8 點，花朵最為飽滿</li>
+                            <li><span className="highlight">最佳地點：</span>古典園林或公園荷花池</li>
+                            <li><span className="highlight">攝影要點：</span>利用荷葉作為前景或背景</li>
+                        </ul>
+                        <img src={Lotus} alt="荷花文章插圖" />
+                        <p>圖片來源:freepik</p>
                     </div>
+
+                    {/* 秋 */}
                     <div className="acard">
                         <h3>秋之韻味：成熟的優雅</h3>
                         <h4>菊花 - 高潔的品格</h4>
-                        <br />菊花是秋天的象徵，也是中國傳統文化中「四君子」之一。它們在寒風中依然綻放，展現出堅韌不拔的品格。黃色的菊花代表高貴，白色象徵純潔，紫色則代表深沉的愛。
+                        <p>菊花是秋天的象徵，也是中國傳統文化中「四君子」之一。它們在寒風中依然綻放，展現出堅韌不拔的品格。黃色的菊花代表高貴，白色象徵純潔，紫色則代表深沉的愛。</p>
                         <br />
-                        <br />菊花觀賞指南：
-                        <br />最佳時間：秋季的10月至11月
-                        <br />最佳地點：菊花展或花卉園、社區綠地
-                        <br />攝影要點：利用清晨或傍晚的逆光，可以讓菊花的花瓣呈現出透明感，拍出如夢似幻的效果。
+                        <h5>菊花觀賞指南</h5>
+                        <ul>
+                            <li><span className="highlight">最佳時間：</span>秋季的10月至11月</li>
+                            <li><span className="highlight">最佳地點：</span>菊花展或花卉園、社區綠地</li>
+                            <li><span className="highlight">攝影要點：</span>利用清晨或傍晚的逆光，可以讓菊花的花瓣呈現透明感，拍出如夢似幻的效果。</li>
+                        </ul>
+                        <img src={Chrysanthemum} alt="荷花文章插圖" />
+                        <p>圖片來源:unsplash</p>
                     </div>
+
+                    {/* 冬 */}
                     <div className="acard">
                         <h3>冬之堅韌：不屈的精神</h3>
                         <h4>梅花 - 傲雪凌霜</h4>
-                        <br />「梅花香自苦寒來」，梅花在嚴寒中綻放，是堅強意志的象徵。它的花朵雖然素雅，但那股傲然挺立的氣質，讓人肅然起敬。
+                        <p>「梅花香自苦寒來」，梅花在嚴寒中綻放，是堅強意志的象徵。它的花朵雖然素雅，但那股傲然挺立的氣質，讓人肅然起敬。</p>
                         <br />
-                        <br /> 梅花觀賞指南：
-                        <br />最佳時間：1月至2月是梅花盛開的主要時期，建議在晴朗的早晨前往，此時光線柔和，梅花上的露珠還未蒸發，晶瑩剔透，別有一番韻味。
-                        <br />最佳地點：古寺廟或園林，梅花與古樸的建築相互映襯，增添了幾分禪意與詩意。
-                        <br />攝影要點：梅花的美在於其清雅與孤傲。在拍攝時，可以透過留白的構圖方式，突顯梅花的主體，讓畫面更具意境。
-                        <p className="end">
-                            花卉與生活的哲學
-                            花卉不僅僅是裝飾，更是生活的老師。從花開花落的循環中，我們學會了時間的珍貴；從花朵的堅韌中，我們領悟了生命的力量；從花香的飄散中，我們體會了分享的美好。
-                            每一朵花都有它的故事，每一個季節都有它的主角。讓我們在忙碌的生活中，記得停下來聞聞花香，感受大自然賜予我們的這份禮物。
-                        </p>
+                        <h5>梅花觀賞指南</h5>
+                        <ul>
+                            <li><span className="highlight">最佳時間：</span>1月至2月是梅花盛開的主要時期，建議在晴朗的早晨前往，此時光線柔和，梅花上的露珠還未蒸發，晶瑩剔透。</li>
+                            <li><span className="highlight">最佳地點：</span>古寺廟或園林，梅花與古樸的建築相互映襯，增添禪意與詩意。</li>
+                            <li><span className="highlight">攝影要點：</span>梅花的美在於清雅與孤傲，透過留白構圖突出主體，更具意境。</li>
+                        </ul>
+                        <img src={Plum} alt="梅花文章插圖" />
+                        <p>圖片來源:freepik</p>
+
+                        <br />
                     </div>
 
+                    {/* 結語 */}
                     <div className="acard">
-                        <h3>結語</h3>
-                        生活需要儀式感，而花朵就是最好的儀式感。
-                        無論是在家中擺放一束鮮花，還是在花園中種植幾株花卉，都能讓我們的生活變得更加美好。讓花卉成為我們生活的一部分，用它們的美麗來裝點我們的世界，用它們的香氣來療癒我們的心靈。
-                        在這個充滿挑戰的時代，願我們都能像花朵一樣，在各自的季節裡綻放出最美的光彩。
+                        <h3>2025年活動推薦</h3>
+<p className="activity-single">
+                            <a href="http://localhost:5173/#/info/5">
+                                春季 | 台北北投 | 陽明山海芋季
+                            </a>
+                        </p>
+                        <p className="activity-single">
+                            <a href="http://localhost:5173/#/info/11">
+                                夏季 | 新北樹林 | 山佳荷花池
+                            </a>
+                        </p>
 
-                        <p className="end">
-                            作者後記：每當我看到花朵綻放，總是會想起生命的美好與短暫。希望這篇文章能帶給你一些溫暖和靈感，讓我們一起在生活中發現更多美好的瞬間。
+                        <p className="activity-single">
+                            <a href="http://localhost:5173/#/info/12">
+                                秋季 | 台北中山 | 向日葵大佳河濱花海
+                            </a>
+                        </p>
+
+                        <p className="activity-single">
+                            <a href="http://localhost:5173/#/info/4">
+                                冬季 | 桃園楊梅 | 桃園仙草花節
+                            </a>
                         </p>
                     </div>
+
+
 
                 </div>
 
                 <div className="a-btn-box">
+                    <br />
                     <Link to="/wall#alink"><button>回到列表</button></Link>
                 </div>
+                
             </section>
         </>
-    )
+    );
 }
 
-export default Article
+export default Article;
