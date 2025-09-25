@@ -571,6 +571,13 @@ const getDate = (data) => {
                         { img: highlightmusic, text: "音樂演出" },
                         { img: highlightchild, text: "親子遊樂" },
                         { img: highlightcultural, text: "文創攤位" },
+                        { img: highlightpho, text: "攝影比賽" },
+                        { img: highlightmar, text: "花卉市集" },
+                        { img: highlightlight, text: "燈光秀" },
+                        { img: highlightdiy, text: "DIY 手作" },
+                        { img: highlightmusic, text: "音樂演出" },
+                        { img: highlightchild, text: "親子遊樂" },
+                        { img: highlightcultural, text: "文創攤位" },
                       ]
                         // 為了無限輪播，把這組複製兩次
                         .concat([
