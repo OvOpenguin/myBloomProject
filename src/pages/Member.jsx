@@ -77,7 +77,7 @@ const Favorites = () => {
                 </div>
 
                 <div className="content">
-                    <p>尚未收藏任何活動</p>
+                    <p>尚未收藏任何活動，快去<Link to='/map'>「花卉地圖」</Link>逛逛吧！</p>
                 </div>
 
             </div>
@@ -94,31 +94,17 @@ const Favorites = () => {
             </div>
             <div className="content">
                 {/* 收藏卡片 */}
-
-
-
-
-
-
                 <div className="map-cardWrap">
                     {favorites.map((item) => (
                         <Link to={`/info/${item.id}`} key={item.id}>
-                            <div className="map-card" onClick={() => onClick(item.id)}>
+                            <div className="map-card">
                                 <p className="map-label">{item.lable}</p>
                                 <img src={item.img} className="map-img" alt="活動圖片" />
                                 <div className="map-date">{item.date}</div>
                                 <h3 className="map-title">{item.title}</h3>
-                                {/* <FavoriteButton /> */}
+                                <FavoriteButton card={item} />
                             </div>
                         </Link>
-                        // <Link key={item.id} to={`/info/${item.id}`}>
-                        //     <div className="map-card">
-                        //         <p className="map-lable">{item.lable}</p>
-                        //         <img src={item.img} className="map-img" alt={item.title} />
-                        //         <div className="map-date">{item.date}</div>
-                        //         <h3 className="map-title">{item.title}</h3>
-                        //     </div>
-                        // </Link>
                     ))}
                 </div>
             </div>
