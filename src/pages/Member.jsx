@@ -118,41 +118,48 @@ const Wall = () => {
 
     // 用來儲存圖片預覽的 URL
     const [previewUrls, setPreviewUrls] = useState([]);
-
-    const handleUpload = (e) => {
-        const files = Array.from(e.target.files);
-
-        // 檢查是否有選取檔案 => // 建立新的 Promise 陣列
-        if (files.length > 0) {
-            const promises = files.map(file => {
-                return new Promise((resolve, reject) => {
-                    const reader = new FileReader();
-                    reader.onloadend = () => {
-                        resolve(reader.result);
-                    };
-
-                    reader.onerror = reject;
-                    reader.readAsDataURL(file);
-                });
-            });
-
-            // 當所有的 Promise 都完成後，更新 state
-            Promise.all(promises)
-                .then(urls => {
-                    // 將新的 URL 陣列合併到舊的陣列中
-                    setPreviewUrls(prevUrls => [...prevUrls, ...urls]);
-                    { openPopup() }
-                })
-                .catch(error => {
-                    console.error("檔案讀取失敗", error);
-                });
-        }
-    };
+    // 用來儲存使用者選擇的檔案
+    const [selectedFiles, setSelectedFiles] = useState([]);
 
     // 上傳彈出視窗
     const [isOpen, setIsOpen] = useState(false);
     const openBtnRef = useRef(null); // 開啟按鈕的 ref
     const closeBtnRef = useRef(null); // 關閉按鈕的 ref
+
+    // 儲存使用者檔案
+    const fileInputRef = useRef(null);
+
+    const handleUpload = (e) => {
+        const files = Array.from(e.target.files);
+
+        // 檢查是否有選取檔案 => // 建立新的 Promise 陣列
+        // if (files.length > 0) {
+        setSelectedFiles(files);
+
+        const promises = files.map(file => {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onloadend = () => {
+                    resolve(reader.result);
+                };
+
+                reader.onerror = reject;
+                reader.readAsDataURL(file);
+            });
+        });
+
+        // 當所有的 Promise 都完成後，更新 state
+        Promise.all(promises)
+            .then(urls => {
+                // 將新的 URL 陣列合併到舊的陣列中
+                setPreviewUrls(prevUrls => [...prevUrls, ...urls]);
+                { openPopup() }
+            })
+            .catch(error => {
+                console.error("檔案讀取失敗", error);
+            });
+    }
+
 
     const openPopup = () => {
         setIsOpen(true);
@@ -166,6 +173,17 @@ const Wall = () => {
         setTimeout(() => {
             openBtnRef.current?.focus(); // 聚焦回開啟按鈕
         }, 0);
+    };
+
+    // 處理表單提交
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // 在這裡可以加入將圖片與表單資料發送到後端的邏輯
+        console.log("表單提交成功！");
+        console.log("上傳的檔案：", selectedFiles);
+
+        // 提交後關閉彈窗
+        closePopup();
     };
 
 
@@ -194,33 +212,25 @@ const Wall = () => {
                             <li key={index} className="v-item">
                                 <p>0</p>
                                 <img
-
                                     src={url}
                                     alt={`上傳圖片 ${index + 1}`}
                                 />
-
                             </li>
                         ))}
 
+                        {/* 上傳按鈕 */}
                         <li className="v-item">
-                            <label
-                                htmlFor="upload"
-                                className="upload-btn">
+                            <div
+                                ref={openBtnRef}
+                                onClick={openPopup}
+                                aria-controls="myPopup"
+                                aria-label="Open popup"
+                                className="a-button">
+
                                 <h3>作品上傳</h3>
-                            </label>
-                            <img src={votebotton1} alt="" />
-                            <input
-                                type="file"
-                                className="upload-input"
-                                id="upload"
-                                accept="image/*"
-                                onChange={handleUpload}
-                                multiple
-                            />
-
+                                <img src={votebotton1} alt="button" />
+                            </div>
                         </li>
-
-
                     </ul>
 
                     {/* 上傳成功彈出視窗 */}
@@ -239,13 +249,64 @@ const Wall = () => {
                                 aria-describedby="popupText"
                                 aria-modal="true"
                             >
-                                <h2>上傳成功！<br />
-                                    快來看看你的曠世巨作！</h2>
+                                <h2>上傳作品</h2>
+                                <form name="uploadform" id="uploadform" onSubmit={handleSubmit}>
 
-                                <button className="closePopup" ref={closeBtnRef} onClick={closePopup}>
-                                    <span className="bar"></span>
-                                    <span className="bar"></span>
-                                </button>
+                                    <div>
+                                        <label htmlFor="picname"><h3>作品名稱</h3></label>
+                                        <input className="picname" type="text" name="username" id="username" title="作品名稱" placeholder="請輸入作品名稱" required autoFocus></input>
+                                    </div>
+
+                                    <div>
+                                        <label htmlFor="picdesc"><h3>作品說明</h3></label>
+                                        <textarea id="picdesc" rows="3" placeholder="請向我們介紹您的攝影作品！"></textarea>
+                                    </div>
+
+                                    <div className="upload">
+
+                                        <div className="btn-box">
+                                            <label
+                                                htmlFor="upload-input"
+                                                className="upload-btn">
+
+                                                <h3>上傳檔案</h3>
+                                                <img className="upload-bg" src={votebotton1} alt="button" />
+
+                                            </label>
+                                        </div>
+                                        <input
+                                            type="file"
+                                            id="upload-input"
+                                            accept="image/*"
+                                            onChange={handleUpload}
+                                            multiple
+                                            ref={fileInputRef}
+                                        />
+                                        {previewUrls.length > 0 && (
+                                            <div className="mt-2 flex space-x-2 overflow-x-auto">
+                                                {previewUrls.map((url, index) => (
+                                                    <img key={index} src={url} alt={`預覽圖 ${index + 1}`} className="w-20 h-20 object-cover rounded-md" />
+                                                ))}
+                                            </div>
+                                        )}
+                                    </div>
+
+                                    <div>
+                                        {/* <input type="reset" value="重新填寫"/> */}
+                                        <button className="submit" type="submit" value="提交表單" >
+                                            <h3>提交</h3>
+
+                                        </button>
+                                        <button className="closePopup" ref={closeBtnRef} onClick={closePopup}>
+                                            <span className="bar"></span>
+                                            <span className="bar"></span>
+                                        </button>
+                                    </div>
+
+
+
+                                </form>
+
                             </div>
                         </div>
                     )}
@@ -253,53 +314,6 @@ const Wall = () => {
             </div>
         </div>
 
-    );
-}
-
-// 我的花訊
-const News = () => {
-
-    return (
-        <div className="news-wrap">
-            <div className="tab">
-                <h2>我的花訊</h2>
-                <img src={newstab} alt="" />
-            </div>
-            <div className="content">
-                <div>
-                    <div className="news-Card">
-                        <div className="txtwrap">
-                            <div className="news-labledate">
-                                <div className="news-lable">新北</div>
-                                <p>05.10 — 05.25</p>
-                            </div>
-                            <p className="news-cardTitle">新北河濱蝶戀季</p>
-                        </div>
-                        <img src="./activity/activity02.jpg" className="news-img" alt="" />
-                    </div>
-                    <div className="news-Card">
-                        <div className="txtwrap">
-                            <div className="news-labledate">
-                                <div className="news-lable">桃園</div>
-                                <p>11.23 — 12.08</p>
-                            </div>
-                            <p className="news-cardTitle">桃園仙草花節</p>
-                        </div>
-                        <img src="./activity/activity04.jpg" className="news-img" alt="" />
-                    </div><div className="news-Card">
-                        <div className="txtwrap">
-                            <div className="news-labledate">
-                                <div className="news-lable">桃園</div>
-                                <p>08.30 — 09.30</p>
-                            </div>
-                            <p className="news-cardTitle">大溪韭菜花季</p>
-                        </div>
-                        <img src="./activity/activity06.jpg" className="news-img" alt="" />
-                    </div>
-
-                </div>
-            </div>
-        </div>
     );
 }
 
@@ -494,7 +508,6 @@ export default function MemberCenter() {
     const TABS = [
         { key: "favorites", label: "我的收藏", view: <Favorites /> },
         { key: "wall", label: "我的花牆", view: <Wall /> },
-        { key: "news", label: "我的花訊", view: <News /> },
         {
             key: "profile", label: "個人中心", view: (
                 <Profile
