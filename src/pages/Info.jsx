@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 
 import "../sass/info.scss";
 import Nav from '../components/Nav'
+
+import locationlogo from '/map/locationlogo2.svg'
 import TagSummer from "../images/info/tag-summer.svg";
 import TagTaipeicity from "../images/info/tag-taipeicity.svg";
 import icon無障礙 from "../images/info/icon-無障礙.svg";
@@ -83,6 +85,7 @@ import { Pagination, Navigation } from "swiper/modules";
 import { fetchWeather } from "../api/weather.js";
 import FlowerEvent from '../json/FlowerEvent.json';
 import GotopBtn from '../components/GotopBtn'
+import { Link } from "react-router-dom";
 
 
 const tabIcons = [TabGreen, TabBlue, TabPink];
@@ -105,15 +108,15 @@ function MapIframe() {
 
 const Info = () => {
   const { id } = useParams();
-const event = FlowerEvent.find(item => item.id.toString() === id);
+  const event = FlowerEvent.find(item => item.id.toString() === id);
 
-const [weatherData, setWeatherData] = useState(null);
+  const [weatherData, setWeatherData] = useState(null);
 
-useEffect(() => {
-  if (event && event.location) {
-    fetchWeather(event.location).then((data) => setWeatherData(data));
-  }
-}, [event]);
+  useEffect(() => {
+    if (event && event.location) {
+      fetchWeather(event.location).then((data) => setWeatherData(data));
+    }
+  }, [event]);
 
   // 路由設定
 
@@ -122,44 +125,44 @@ useEffect(() => {
   }
 
   // Info.jsx
-const getWeatherIcon = (data) => {
-  if (!data) return cloudy;
+  const getWeatherIcon = (data) => {
+    if (!data) return cloudy;
 
-  const rainProb = parseInt(
-    data.records.location[0].weatherElement
+    const rainProb = parseInt(
+      data.records.location[0].weatherElement
+        .find(el => el.elementName === "PoP")
+        .time[0].parameter.parameterName
+    );
+
+    if (rainProb >= 60) return raining;
+    if (rainProb <= 10) return sunny;
+    return cloudy;
+  };
+
+  const getTemperature = (data) => {
+    if (!data) return "-";
+    return data.records.location[0].weatherElement
+      .find(el => el.elementName === "MaxT")
+      .time[0].parameter.parameterName;
+  };
+
+  const getCity = (data) => {
+    if (!data) return "-";
+    return data.records.location[0].locationName;
+  };
+
+  const getRainProbability = (data) => {
+    if (!data) return "-";
+    return data.records.location[0].weatherElement
       .find(el => el.elementName === "PoP")
-      .time[0].parameter.parameterName
-  );
+      .time[0].parameter.parameterName;
+  };
 
-  if (rainProb >= 60) return raining;
-  if (rainProb <= 10) return sunny;
-  return cloudy;
-};
-
-const getTemperature = (data) => {
-  if (!data) return "-";
-  return data.records.location[0].weatherElement
-    .find(el => el.elementName === "MaxT")
-    .time[0].parameter.parameterName;
-};
-
-const getCity = (data) => {
-  if (!data) return "-";
-  return data.records.location[0].locationName;
-};
-
-const getRainProbability = (data) => {
-  if (!data) return "-";
-  return data.records.location[0].weatherElement
-    .find(el => el.elementName === "PoP")
-    .time[0].parameter.parameterName;
-};
-
-const getDate = (data) => {
-  if (!data) return "-";
-  const time = data.records.location[0].weatherElement[0].time[0].startTime;
-  return new Date(time).toLocaleDateString("zh-TW", { month: "2-digit", day: "2-digit" });
-};
+  const getDate = (data) => {
+    if (!data) return "-";
+    const time = data.records.location[0].weatherElement[0].time[0].startTime;
+    return new Date(time).toLocaleDateString("zh-TW", { month: "2-digit", day: "2-digit" });
+  };
 
   const [activeIndex, setActiveIndex] = useState(0);
   const tabRefs = useRef([]);
@@ -213,7 +216,6 @@ const getDate = (data) => {
           <div className="banner-mask">
             <img src={BnBg} alt="Banner Background" />
           </div>
-
           <Swiper
             breakpoints={{
               0: {       // 手機螢幕
@@ -257,20 +259,25 @@ const getDate = (data) => {
 
             {event.banner.map((img, index) => (
               <SwiperSlide key={index}>
-                <img src={img} alt={`Banner ${index + 1}`} />
+                <figure><img src={img} alt={`Banner ${index + 1}`} /></figure>
               </SwiperSlide>
             ))}
           </Swiper>
-
         </div>
+
+
 
         {/* Info wrapper */}
         <div className="info-wrapper">
+
           <div className="info-basic">
+            <div className="info-bread">
+              <img src={locationlogo} alt="locationlogo" /><Link to="/map">花卉地圖</Link> \ {event.title}
+            </div>
             <div>
-            <p>2025</p>
-            <h2>{event.title}</h2>
-            <p>{event.address}</p>
+              <p>2025</p>
+              <h2>{event.title}</h2>
+              <p>{event.address}</p>
             </div>
             <div className="info-tag-wrapper">
               <div className="info-tag">
@@ -321,63 +328,63 @@ const getDate = (data) => {
             </div>
           </div>
 
-<div className="info-weather">
-  <img src={weatherbg} alt="天氣背景" className="weather-bg" />
+          <div className="info-weather">
+            <img src={weatherbg} alt="天氣背景" className="weather-bg" />
 
-  {/* 天氣 icon */}
-  <div className="weather-icon">
-    <img src={getWeatherIcon(weatherData)} alt="天氣圖示" />
-  </div>
+            {/* 天氣 icon */}
+            <div className="weather-icon">
+              <img src={getWeatherIcon(weatherData)} alt="天氣圖示" />
+            </div>
 
-  {/* 溫度、縣市、降雨 */}
-  <div className="weather-info">
-    <div className="temp-city">
-      <div className="temperature">{getTemperature(weatherData)}°C</div>
-      <div className="city-rain">
-        <span className="city">{getCity(weatherData)}</span>
-        <img src={umbrella} alt="降雨圖示" className="rain-icon" />
-        <span className="rain-prob">{getRainProbability(weatherData)}%</span>
-      </div>
-    </div>
+            {/* 溫度、縣市、降雨 */}
+            <div className="weather-info">
+              <div className="temp-city">
+                <div className="temperature">{getTemperature(weatherData)}°C</div>
+                <div className="city-rain">
+                  <span className="city">{getCity(weatherData)}</span>
+                  <img src={umbrella} alt="降雨圖示" className="rain-icon" />
+                  <span className="rain-prob">{getRainProbability(weatherData)}%</span>
+                </div>
+              </div>
 
-    {/* 日期 */}
-    <div className="date-time">
-      <div className="date">{getDate(weatherData)}</div>
-    </div>
-  </div>
-</div>
+              {/* 日期 */}
+              <div className="date-time">
+                <div className="date">{getDate(weatherData)}</div>
+              </div>
+            </div>
+          </div>
 
 
         </div>
 
         {/* Tabs */}
         <div className="info-tabs-wrapper">
-<div className="info-tabs">
-  {tabs.map((tab, index) => (
-    <div
-      key={index}
-      ref={(el) => (tabRefs.current[index] = el)}
-      className={`tab ${activeIndex === index ? "active" : ""}`}
-      onClick={() => setActiveIndex(index)}
-      style={{ display: "flex", alignItems: "center", gap: "8px" }}
-    >
-      {/* SVG 動畫 */}
-      {activeIndex === index && (
-        <motion.img
-          src={tabIcons[index]}
-          alt={`${tab} icon`}
-          initial={{ rotate: 0, opacity: 0 }}
-          animate={{ rotate: 100, opacity: 1 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="tab-icon"
-        />
-      )}
+          <div className="info-tabs">
+            {tabs.map((tab, index) => (
+              <div
+                key={index}
+                ref={(el) => (tabRefs.current[index] = el)}
+                className={`tab ${activeIndex === index ? "active" : ""}`}
+                onClick={() => setActiveIndex(index)}
+                style={{ display: "flex", alignItems: "center", gap: "8px" }}
+              >
+                {/* SVG 動畫 */}
+                {activeIndex === index && (
+                  <motion.img
+                    src={tabIcons[index]}
+                    alt={`${tab} icon`}
+                    initial={{ rotate: 0, opacity: 0 }}
+                    animate={{ rotate: 100, opacity: 1 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                    className="tab-icon"
+                  />
+                )}
 
-      {/* Tab 文字 */}
-      <span>{tab}</span>
-    </div>
-  ))}
-</div>
+                {/* Tab 文字 */}
+                <span>{tab}</span>
+              </div>
+            ))}
+          </div>
 
 
 
@@ -433,76 +440,76 @@ const getDate = (data) => {
                   </div>
 
 
-{/* 花卉展示區 */}
-<div className="floral-gallery">
-  <Swiper 
-    // modules={[Pagination]}
-    // pagination={{ 
-    //   clickable: true 
-    // }}
-      autoHeight={true}   // 🔹 Swiper 自動根據每個 slide 的內容高度調整
+                  {/* 花卉展示區 */}
+                  <div className="floral-gallery">
+                    <Swiper
+                      // modules={[Pagination]}
+                      // pagination={{ 
+                      //   clickable: true 
+                      // }}
+                      autoHeight={true}   // 🔹 Swiper 自動根據每個 slide 的內容高度調整
 
-    breakpoints={{
-      0: {
-        slidesPerView: 1,        
-      },
-      640: {
-        slidesPerView: 1,
-      },
-      820: {
-        slidesPerView: 2,
-      },
-      1000: {
-        slidesPerView: 3,
-      },
-      1440: {
-        slidesPerView: 4, // 🔹 全部顯示
+                      breakpoints={{
+                        0: {
+                          slidesPerView: 1,
+                        },
+                        640: {
+                          slidesPerView: 1,
+                        },
+                        820: {
+                          slidesPerView: 2,
+                        },
+                        1000: {
+                          slidesPerView: 3,
+                        },
+                        1440: {
+                          slidesPerView: 4, // 🔹 全部顯示
 
-      },
-    }}
-    className="floral-swiper"
-  >
-    <SwiperSlide>
-      <div className="flower-group">
-        <div className="flower-stack">
-          <img src={flowerbg} alt="背景" className="flower-bg" />
-          <img src={sunflower} alt="花卉1" className="flower-main" />
-        </div>
-        <p className="flower-text a">葵花</p>
-      </div>
-    </SwiperSlide>
+                        },
+                      }}
+                      className="floral-swiper"
+                    >
+                      <SwiperSlide>
+                        <div className="flower-group">
+                          <div className="flower-stack">
+                            <img src={flowerbg} alt="背景" className="flower-bg" />
+                            <img src={sunflower} alt="花卉1" className="flower-main" />
+                          </div>
+                          <p className="flower-text a">葵花</p>
+                        </div>
+                      </SwiperSlide>
 
-    <SwiperSlide>
-      <div className="flower-group">
-        <div className="flower-stack">
-          <img src={flowerbg} alt="背景" className="flower-bg" />
-          <img src={SulphurCosmos} alt="花卉2" className="flower-main" />
-        </div>
-        <p className="flower-text b">黃秋英</p>
-      </div>
-    </SwiperSlide>
+                      <SwiperSlide>
+                        <div className="flower-group">
+                          <div className="flower-stack">
+                            <img src={flowerbg} alt="背景" className="flower-bg" />
+                            <img src={SulphurCosmos} alt="花卉2" className="flower-main" />
+                          </div>
+                          <p className="flower-text b">黃秋英</p>
+                        </div>
+                      </SwiperSlide>
 
-    <SwiperSlide>
-      <div className="flower-group">
-        <div className="flower-stack">
-          <img src={flowerbg} alt="背景" className="flower-bg" />
-          <img src={Zinnia} alt="花卉3" className="flower-main" />
-        </div>
-        <p className="flower-text c">百日菊</p>
-      </div>
-    </SwiperSlide>
+                      <SwiperSlide>
+                        <div className="flower-group">
+                          <div className="flower-stack">
+                            <img src={flowerbg} alt="背景" className="flower-bg" />
+                            <img src={Zinnia} alt="花卉3" className="flower-main" />
+                          </div>
+                          <p className="flower-text c">百日菊</p>
+                        </div>
+                      </SwiperSlide>
 
-    <SwiperSlide>
-      <div className="flower-group">
-        <div className="flower-stack">
-          <img src={flowerbg} alt="背景" className="flower-bg" />
-          <img src={Daylily} alt="花卉4" className="flower-main" />
-        </div>
-        <p className="flower-text d">金針花</p>
-      </div>
-    </SwiperSlide>
-  </Swiper>
-</div>
+                      <SwiperSlide>
+                        <div className="flower-group">
+                          <div className="flower-stack">
+                            <img src={flowerbg} alt="背景" className="flower-bg" />
+                            <img src={Daylily} alt="花卉4" className="flower-main" />
+                          </div>
+                          <p className="flower-text d">金針花</p>
+                        </div>
+                      </SwiperSlide>
+                    </Swiper>
+                  </div>
 
                 </div>
 
