@@ -304,18 +304,7 @@ const News = () => {
 }
 
 // 個人中心
-const Profile = ({ username, userid }) => {
-
-    // 建立 ref 綁定密碼
-    const passwordRef = useRef(null);
-    // 設定密碼是否顯示
-    const [show, setShow] = useState(false);
-
-    // 處理點擊事件的函式
-    function togglePassword() {
-        setShow(prevShow => !prevShow);  // 切換 show 的狀態
-
-    }
+const Profile = ({ username }) => {
 
     return (
         <div className="prf-wrap">
@@ -336,31 +325,49 @@ const Profile = ({ username, userid }) => {
                         </div>
                     </div>
 
-                    {/* 密碼 */}
+                    {/* 信箱 */}
                     <div className="user-box">
-                        <label htmlFor="inputId" className="label">
-                            <p>密碼</p>
-                        </label>
-                        <input
-                            id="inputId"
-                            className="inputId"
-                            type={show ? 'text' : 'password'}
-                            placeholder="Default"
-                            ref={passwordRef}
-                            value={userid || ''}
-                            required
-                            readOnly
-                            style={{ width: '50%' }}
-                        />
+                        <div className="label">
+                            <p>信箱</p>
+                        </div>
+                        <input className="inputId" type="email" name="email" id="email" title="E-mail欄位" required multiple placeholder="請輸入E-mail" />
 
-                        {/* 查看密碼 */}
-                        <button
-                            className="show-btn"
-                            type="button"
-                            onClick={togglePassword}>
-                            {show ? <VscEye size={24} /> : <VscEyeClosed size={24} />}
-                        </button>
                     </div>
+
+                    {/* 主題 */}
+                    <div className="user-box">
+                        <fieldset>
+                            <div className="prompt">
+                                <div className="label">
+                                    <legend><p>主題</p></legend>
+                                </div>
+                                <span>請選擇感興趣的主題，讓我們推薦合適的內容給您（可複選）</span>
+                            </div>
+                            <input type="checkbox" className="select" name="theme" id="theme-A" />
+                            <label className="s-label" for="theme-A">室內展場</label>
+
+                            <input type="checkbox" className="select" name="theme" id="theme-B" />
+                            <label className="s-label" for="theme-B">戶外展區</label>
+
+                            <input type="checkbox" className="select" name="theme" id="theme-C" />
+                            <label className="s-label" for="theme-C">熱門展覽</label>
+
+                            <input type="checkbox" className="select" name="theme" id="theme-D" />
+                            <label className="s-label" for="theme-D">攝影技巧</label>
+
+                            <input type="checkbox" className="select" name="theme" id="theme-E" />
+                            <label className="s-label" for="theme-E">懶人包＆攻略</label>
+                        </fieldset>
+                    </div>
+
+                    {/* 儲存 */}
+                    <button className="h-btn-news m-submit"
+                        type="submit">
+                        <span className="circle">
+                            <span className="icon arrow"></span>
+                        </span>
+                        <span className="btn-text">儲存</span>
+                    </button>
 
                 </form>
             </div>
@@ -373,21 +380,17 @@ const SignIn = ({ onLogin }) => {
 
     // 輸入帳號
     const [username, setUserName] = useState('');
-    const [userid, setUserId] = useState('');
 
     // 追蹤 Name & Id 資料
     const handleNameChange = (e) => {
         setUserName(e.target.value);
-    };
-    const handleIdChange = (e) => {
-        setUserId(e.target.value);
     };
 
     // 檢查輸入條件
     const handleLoginClick = (e) => {
         e.preventDefault();
         if (username.trim() !== '' && userid.trim() !== '') {
-            onLogin(username, userid);  // 回傳父層的參數
+            onLogin(username);  // 回傳父層的參數
         } else {
             alert('使用者名稱和密碼為必填！');
         }
@@ -423,22 +426,21 @@ const SignIn = ({ onLogin }) => {
                             className="userid"
                             placeholder="請輸入密碼"
                             required
-                            value={userid}
-                            onChange={handleIdChange}
+
                         />
                     </div>
 
                     {/* 登入 */}
                     <div className="me-sbtn">
                         <button className="h-btn-news"
-                        type="submit">
-                        <span className="circle">
-                            <span className="icon arrow"></span>
-                        </span>
-                        <span className="btn-text">登入</span>
-                    </button>
+                            type="submit">
+                            <span className="circle">
+                                <span className="icon arrow"></span>
+                            </span>
+                            <span className="btn-text">登入</span>
+                        </button>
                     </div>
-                    
+
                     {/* 註冊/忘記密碼 */}
                     <button className="register" type="button">
                         註冊/忘記密碼
