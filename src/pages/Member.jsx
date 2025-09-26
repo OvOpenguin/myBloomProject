@@ -358,19 +358,19 @@ const Profile = ({ username }) => {
                                 <span>請選擇感興趣的主題，讓我們推薦合適的內容給您（可複選）</span>
                             </div>
                             <input type="checkbox" className="select" name="theme" id="theme-A" />
-                            <label className="s-label" for="theme-A">室內展場</label>
+                            <label className="s-label" htmlFor="theme-A">室內展場</label>
 
                             <input type="checkbox" className="select" name="theme" id="theme-B" />
-                            <label className="s-label" for="theme-B">戶外展區</label>
+                            <label className="s-label" htmlFor="theme-B">戶外展區</label>
 
                             <input type="checkbox" className="select" name="theme" id="theme-C" />
-                            <label className="s-label" for="theme-C">熱門展覽</label>
+                            <label className="s-label" htmlFor="theme-C">熱門展覽</label>
 
                             <input type="checkbox" className="select" name="theme" id="theme-D" />
-                            <label className="s-label" for="theme-D">攝影技巧</label>
+                            <label className="s-label" htmlFor="theme-D">攝影技巧</label>
 
                             <input type="checkbox" className="select" name="theme" id="theme-E" />
-                            <label className="s-label" for="theme-E">懶人包＆攻略</label>
+                            <label className="s-label" htmlFor="theme-E">懶人包＆攻略</label>
                         </fieldset>
                     </div>
 
@@ -394,17 +394,19 @@ const SignIn = ({ onLogin }) => {
 
     // 輸入帳號
     const [username, setUserName] = useState('');
+    const [userid, setUserId] = useState('');
 
     // 追蹤 Name & Id 資料
     const handleNameChange = (e) => {
         setUserName(e.target.value);
     };
+    const handleIdChange = (e) => setUserId(e.target.value);
 
     // 檢查輸入條件
     const handleLoginClick = (e) => {
         e.preventDefault();
         if (username.trim() !== '' && userid.trim() !== '') {
-            onLogin(username);  // 回傳父層的參數
+            onLogin(username, userid);  // 回傳父層的參數
         } else {
             alert('使用者名稱和密碼為必填！');
         }
@@ -440,7 +442,8 @@ const SignIn = ({ onLogin }) => {
                             className="userid"
                             placeholder="請輸入密碼"
                             required
-
+                            value={userid}
+                            onChange={handleIdChange}
                         />
                     </div>
 
@@ -469,8 +472,18 @@ const SignIn = ({ onLogin }) => {
     );
 }
 
+
+
+
+
 // 切換各分頁的陣列
 export default function MemberCenter() {
+
+    // 由 SignIn 帶回的登入資訊
+    const [credentials, setCredentials] = useState({
+        username: '',
+        userid: ''
+    });
 
     // 登入
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -487,11 +500,7 @@ export default function MemberCenter() {
         }
     }, []);
 
-    // 由 SignIn 帶回的登入資訊
-    const [credentials, setCredentials] = useState({
-        username: '',
-        userid: ''
-    });
+
 
     const handleLogin = (username, userid) => {
         // 登入成功後，更新狀態為使用者名稱

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../sass/card.scss';
+import imgCrown from '../images/wall/wall3-sm.jpg';
 
 const Card = () => {
     const [isFlipped, setIsFlipped] = useState(false);
@@ -14,7 +15,7 @@ const Card = () => {
             onClick={handleFlip}
         >
             <div className="card-inner">
-                <div className="card-front"><img src="/wall/wall3-sm.jpg" alt="冠軍圖片" /></div>
+                <div className="card-front"><img src={imgCrown} alt="冠軍圖片" /></div>
                 <div className="card-back">
                     <h3>陽光下的金色詩篇</h3>
                     <p>
