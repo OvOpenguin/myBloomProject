@@ -130,23 +130,19 @@ const Wall = () => {
     const fileInputRef = useRef(null);
 
     const handleUpload = (e) => {
-        const files = Array.from(e.target.files);
 
-        // 檢查是否有選取檔案 => // 建立新的 Promise 陣列
-        // if (files.length > 0) {
-        setSelectedFiles(files);
+        const file = e.target.files[0]; // 只取第一個
+        if (!file) return;
 
-        const promises = files.map(file => {
-            return new Promise((resolve, reject) => {
-                const reader = new FileReader();
-                reader.onloadend = () => {
-                    resolve(reader.result);
-                };
+        setSelectedFiles([file]);
 
-                reader.onerror = reject;
-                reader.readAsDataURL(file);
-            });
-        });
+        const reader = new FileReader();
+        reader.onloadend = () => {
+            setPreviewUrls([reader.result]); // 覆蓋舊的，只保留一張
+            openPopup();
+        };
+        reader.readAsDataURL(file);
+
 
         // 當所有的 Promise 都完成後，更新 state
         Promise.all(promises)
@@ -279,7 +275,6 @@ const Wall = () => {
                                             id="upload-input"
                                             accept="image/*"
                                             onChange={handleUpload}
-                                            multiple
                                             ref={fileInputRef}
                                         />
                                         {previewUrls.length > 0 && (
