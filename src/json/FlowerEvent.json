@@ -17,11 +17,11 @@
         "lat": 25.070,
         "lng": 121.5204,
         "banner": [
+            "./activity/activity10.jpg",
+            "./activity/activity21.jpg",
             "./activity/activity01.avif",
-            "./activity/activity02.jpg",
-            "./activity/activity03.avif",
-            "./activity/activity03.avif",
-            "./activity/activity02.jpg"
+            "./activity/activity15.jpg",
+            "./activity/activity11.jpg"
         ],
         "startMonth": "3",
         "endMonth": "4",
@@ -49,11 +49,11 @@
         "lat": 25.011,
         "lng": 121.4458,
         "banner": [
-            "./activity/activity02.jpg",
-            "./activity/activity02.jpg",
-            "./activity/activity02.jpg",
-            "./activity/activity02.jpg",
-            "./activity/activity02.jpg"
+            "./activity/activity18.jpg",
+            "./activity/activity19.jpg",
+            "./activity/activity11.jpg",
+            "./activity/activity22.webp",
+            "./activity/activity17.jpg"
         ],
         "startMonth": "5",
         "endMonth": "5",
@@ -81,11 +81,11 @@
         "lat": 25.173,
         "lng": 121.6831,
         "banner": [
-            "./activity/activity03.avif",
-            "./activity/activity03.avif",
-            "./activity/activity03.avif",
-            "./activity/activity03.avif",
-            "./activity/activity03.avif"
+            "./activity/activity04.jpg",
+            "./activity/activity09.jpg",
+            "./activity/activity05.jpg",
+            "./activity/activity13.jpg",
+            "./activity/activity21.jpg"
         ],
         "startMonth": "2",
         "endMonth": "3",
@@ -114,10 +114,10 @@
         "lng": 121.092,
         "banner": [
             "./activity/activity04.jpg",
-            "./activity/activity04.jpg",
-            "./activity/activity04.jpg",
-            "./activity/activity04.jpg",
-            "./activity/activity04.jpg"
+            "./activity/activity01.avif",
+            "./activity/activity14.jpg",
+            "./activity/activity11.jpg",
+            "./activity/activity13.jpg"
         ],
         "startMonth": "11",
         "endMonth": "12",
@@ -146,10 +146,10 @@
         "lng": 121.5348,
         "banner": [
             "./activity/activity05.jpg",
-            "./activity/activity05.jpg",
-            "./activity/activity05.jpg",
-            "./activity/activity05.jpg",
-            "./activity/activity05.jpg"
+            "./activity/activity15.jpg",
+            "./activity/activity08.jpg",
+            "./activity/activity20.jpg",
+            "./activity/activity12.jpg"
         ],
         "startMonth": "3",
         "endMonth": "4",
@@ -178,10 +178,10 @@
         "lng": 121.2943,
         "banner": [
             "./activity/activity06.jpg",
-            "./activity/activity06.jpg",
-            "./activity/activity06.jpg",
-            "./activity/activity06.jpg",
-            "./activity/activity06.jpg"
+            "./activity/activity14.jpg",
+            "./activity/activity11.jpg",
+            "./activity/benner3.png",
+            "./activity/activity23.jpg"
         ],
         "homeTitle": "九月雪-大溪韭菜花季",
         "homeImg": "./home/h1.png",
@@ -217,10 +217,10 @@
         "lng": 121.5306,
         "banner": [
             "./activity/activity07.jpg",
-            "./activity/activity07.jpg",
-            "./activity/activity07.jpg",
-            "./activity/activity07.jpg",
-            "./activity/activity07.jpg"
+            "./activity/activity06.jpg",
+            "./activity/benner2.png",
+            "./activity/activity14.jpg",
+            "./activity/activity18.jpg"
         ],
         "startMonth": "9",
         "endMonth": "10",
@@ -250,11 +250,11 @@
         "lat": 25.091,
         "lng": 121.5309,
         "banner": [
-            "./activity/activity08.jpg",
-            "./activity/activity08.jpg",
-            "./activity/activity08.jpg",
-            "./activity/activity08.jpg",
-            "./activity/activity08.jpg"
+            "./activity/activity20.jpg",
+            "./activity/activity04.jpg",
+            "./activity/benner3.png",
+            "./activity/activity19.jpg",
+            "./activity/activity11.jpg"
         ],
         "startMonth": "11",
         "endMonth": "12",
@@ -283,10 +283,10 @@
         "lng": 121.5315,
         "banner": [
             "./activity/activity09.jpg",
-            "./activity/activity09.jpg",
-            "./activity/activity09.jpg",
-            "./activity/activity09.jpg",
-            "./activity/activity09.jpg"
+            "./activity/activity01.avif",
+            "./activity/activity11.jpg",
+            "./activity/activity05.jpg",
+            "./activity/activity20.jpg"
         ],
         "homeTitle": "菊花-士林官邸菊展",
         "homeImg": "./home/h2.png",
@@ -317,10 +317,10 @@
         "lng": 121.5304,
         "banner": [
             "./activity/activity10.jpg",
-            "./activity/activity10.jpg",
-            "./activity/activity10.jpg",
-            "./activity/activity10.jpg",
-            "./activity/activity10.jpg"
+            "./activity/benner2.png",
+            "./activity/activity23.jpg",
+            "./activity/activity13.jpg",
+            "./activity/activity05.jpg"
         ],
         "startMonth": "2",
         "endMonth": "2",
@@ -350,10 +350,10 @@
         "lng": 121.3895,
         "banner": [
             "./activity/activity11.jpg",
-            "./activity/activity11.jpg",
-            "./activity/activity11.jpg",
-            "./activity/activity11.jpg",
-            "./activity/activity11.jpg"
+            "./activity/benner1.png",
+            "./activity/activity09.jpg",
+            "./activity/activity07.jpg",
+            "./activity/activity21.jpg"
         ],
         "startMonth": "6",
         "endMonth": "8",
@@ -369,11 +369,11 @@
             "8月",
             "9月"
         ],
-        "location": "台北市",
+        "location": "臺北市",
         "flower": [
             "金針花"
         ],
-        "lable": "桃園",
+        "lable": "臺北",
         "title": "台北陽明山竹子湖",
         "date": "08.30 — 09.30",
         "img": "./activity/activity13.jpg",
@@ -382,10 +382,10 @@
         "lng": 121.5331,
         "banner": [
             "./activity/activity13.jpg",
-            "./activity/activity13.jpg",
-            "./activity/activity13.jpg",
-            "./activity/activity13.jpg",
-            "./activity/activity13.jpg"
+            "./activity/activity21.jpg",
+            "./activity/activity04.jpg",
+            "./activity/activity16.webp",
+            "./activity/activity14.jpg"
         ],
         "homeTitle": "金針花-台北陽明山竹子湖",
         "homeImg": "./home/h3.png",
@@ -416,10 +416,10 @@
         "lat": 25.1558,
         "lng": 121.5476,
         "banner": [
-            "./activity/activity13.jpg",
-            "./activity/activity13.jpg",
-            "./activity/activity13.jpg",
-            "./activity/activity13.jpg",
+            "./activity/activity22.webp",
+            "./activity/activity07.jpg",
+            "./activity/activity12.jpg",
+            "./activity/activity21.jpg",
             "./activity/activity13.jpg"
         ],
         "homeTitle": "芒草-陽明山竹子湖",
@@ -447,17 +447,17 @@
         "title": "士林官邸菊展",
         "date": "11.28 — 12.14",
         "img": "./activity/activity14.jpg",
-        "address": "台北市士林官邸菊展",
+        "address": "臺北市士林官邸菊展",
         "lat": 25.0916,
         "lng": 121.5291,
         "banner": [
             "./activity/activity14.jpg",
-            "./activity/activity14.jpg",
-            "./activity/activity14.jpg",
-            "./activity/activity14.jpg",
-            "./activity/activity14.jpg"
+            "./activity/activity18.jpg",
+            "./activity/activity15.jpg",
+            "./activity/activity23.jpg",
+            "./activity/activity04.jpg"
         ],
-        "homeTitle": "菊花-台北市士林官邸",
+        "homeTitle": "菊花-臺北市士林官邸",
         "homeImg": "./home/h2.png",
         "homeYear": 2025,
         "startMonth": "11",
@@ -487,10 +487,10 @@
         "lng": 121.5291,
         "banner": [
             "./activity/activity15.jpg",
-            "./activity/activity15.jpg",
-            "./activity/activity15.jpg",
-            "./activity/activity15.jpg",
-            "./activity/activity15.jpg"
+            "./activity/activity19.jpg",
+            "./activity/activity22.webp",
+            "./activity/activity05.jpg",
+            "./activity/activity12.jpg"
         ],
         "homeTitle": "甜根子草-頭前溪豆腐岩",
         "homeImg": "./home/h5.png",
@@ -554,10 +554,10 @@
         "lng": 121.67346203934419,
         "banner": [
             "./activity/activity23.jpg",
-            "./activity/activity23.jpg",
-            "./activity/activity23.jpg",
-            "./activity/activity23.jpg",
-            "./activity/activity23.jpg"
+            "./activity/activity21.jpg",
+            "./activity/activity12.jpg",
+            "./activity/activity07.jpg",
+            "./activity/activity18.jpg"
         ],
         "startMonth": "4",
         "endMonth": "5",
