@@ -283,8 +283,8 @@ const App = () => {
                         <div className="Inews">
                             {/* 裝飾花(旋轉) */}
                             <div className="h-n-fw">
-                                <div className="t fw2" style={{ transform: `rotate(${rotated}deg)` }} ><img src={hfw2} alt="" /></div>
-                                <div className="t fw1"><img src={hfw1} alt="" /></div>
+                                <div className="t fw2" style={{ transform: `rotate(${rotated}deg)` }} ><img src={hfw2} alt="花瓣" /></div>
+                                <div className="t fw1"><img src={hfw1} alt="花蕊" /></div>
                             </div>
                             {/* </div> */}
 
