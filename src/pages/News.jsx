@@ -33,7 +33,7 @@ const News = () => {
                 {/* 文字 */}
                 <div className="txtwrap">
                     <div className="news-labledate">
-                        <div className="news-lable">{lable}</div>
+                        <div className={`news-lable ${lable === "消息" ? "yellow" : ""}`}>{lable}</div>
                         <p>{date}</p>
                     </div>
                     <p className="news-cardTitle">{title}</p>
@@ -44,9 +44,6 @@ const News = () => {
                     <figure className="news-img">
                         <img src={img} alt="活動圖片" />
                     </figure>
-
-                    {/* 收藏按鈕-取消 */}
-                    {/* <FavoriteButton card={{ id, lable, date, title, img }} /> */}
                 </div>
             </>
         );

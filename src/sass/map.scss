@@ -258,68 +258,20 @@
                 justify-content: flex-start;
             }
 
-            //原始設定參考，先不刪除!!!
-            /*
+
             .map-card {
                 width: 250px;
                 position: relative;
 
-                @media (max-width:600px) {
-                    flex: 0 0 auto;
-                    width: 250px;
-                }
+                &:hover {
+                    .map-title {
+                        color: $grass-green;
+                    }
 
-                .map-lable {
-                    position: absolute;
-                    width: 65px;
-                    height: 65px;
-                    line-height: 65px;
-                    z-index: 2;
-                    background-color: #7DC5E4;
-                    border-radius: 99px;
-                    text-align: center;
-                    color: #fff;
-                    font-size: 1.1rem;
-                    font-weight: 400;
-                }
-
-                .map-img {
-                    position: relative;
-                    height: 225px;
-                    padding: 20px;
-                    object-fit: cover;
-                    transition: all 0.3s ease;
-
-                    &:hover {
-                        filter: brightness(0.6);
+                    .map-img {
+                        filter: brightness(0.8);
                     }
                 }
-
-                .map-date {
-                    position: relative;
-                    width: 60%;
-                    height: 25px;
-                    bottom: 60px;
-                    z-index: 2;
-                    padding: 0 20px;
-                    background-color: #69C9A0;
-                    color: #fff;
-                }
-
-                .map-title {
-                    position: relative;
-                    padding: 0 20px;
-                    bottom: 40px;
-                    color: #64503C;
-                    font-size: 1rem;
-                    font-weight: 500;
-                    text-align: center;
-                }
-            }*/
-
-            .map-card {
-                width: 250px;
-                position: relative;
 
                 .map-label {
                     position: relative;
@@ -343,10 +295,6 @@
                     height: 180px;
                     transition: all 0.3s ease;
 
-                    &:hover {
-                        filter: brightness(0.8);
-                    }
-
                     img {
                         @extend %img-cover;
                     }
@@ -368,9 +316,6 @@
                     padding: 5px 0;
                     cursor: pointer;
                     transition: all 0.3s ease;
-                    &:hover {
-                        color: $grass-green;
-                    }
                 }
 
                 .fav-btn {
