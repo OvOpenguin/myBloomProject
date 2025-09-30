@@ -33,9 +33,23 @@
     // 左側 menu
     .sleft {
         text-align: center;
+        position: relative;
+
+        .sbook {
+            position: absolute;
+            top: -120px;
+            left: 0px;
+            width: 150px;
+
+            @media (max-width:1200px) {
+                top: -95px;
+                left: 35px;
+            }
+        }
 
         .h-btn-news {
             margin-top: 30px;
+
             .circle {
                 background: $sky-blue;
             }
@@ -75,12 +89,6 @@
             clip-path: polygon(8% 0, 88% 0, 100% 10%, 100% 95%, 90% 100%, 8% 100%, 0% 95%, 0 10%);
             background-color: var(--bgColor);
 
-            .sbook {
-                position: absolute;
-                top: -200px;
-                left: -10px;
-                width: 150px;
-            }
 
             .sother {
                 position: absolute;

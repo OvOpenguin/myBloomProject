@@ -53,6 +53,9 @@ const Story = () => {
 
         <div className="sleft" style={{ "--bgColor": selectedFlower.color }}>
           {/* 其他品種 */}
+          <div className="sbook">
+            <img src={book} alt="book" />
+          </div>
           <div className="sother">
             <h3>其他花種</h3>
             <h4>Others</h4>
@@ -61,9 +64,7 @@ const Story = () => {
           {/* <div className="sList" style={{ background: `${selectedFlower.color}` }}> */}
           <div className="sList" style={{ "--bgColor": selectedFlower.color }}>
             {/* 裝飾書 */}
-            <div className="sbook">
-              <img src={book} alt="book" />
-            </div>
+
             {/* menu */}
             <div className='sMenu'>
               <ul>

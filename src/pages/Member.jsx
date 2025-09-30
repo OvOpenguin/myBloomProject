@@ -13,8 +13,8 @@ import walltab from '../images/member/member-tab-orange.svg'
 import newstab from '../images/member/member-tab-yellow.svg'
 import prftab from '../images/member/member-tab-green.svg'
 import votebotton1 from '../images/wall/wall-votebutton1.svg'
-import flower01 from '../images/wall/wall-flower01.png'
-import flower02 from '../images/wall/wall-flower02.png'
+import flower01 from '../images/wall/wall-flower01.jpg'
+import flower02 from '../images/wall/wall-flower02.jpg'
 import logo from '../images/home/logo.png'
 
 
