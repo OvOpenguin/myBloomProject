@@ -6,12 +6,9 @@ import "../sass/info.scss";
 import Nav from '../components/Nav'
 
 import locationlogo from '/map/locationlogo2.svg'
-import TagSummer from "../images/info/tag-summer.svg";
-import TagTaipeicity from "../images/info/tag-taipeicity.svg";
 import icon無障礙 from "../images/info/icon-03.svg";
 import icon哺乳室 from "../images/info/icon-01.svg";
 import icon停車場 from "../images/info/icon-02.svg";
-import date from "../images/info/date.svg";
 import weatherbg from "../images/info/weatherbg.svg";
 import bgpin from "../images/info/bgpin.svg";
 import bgor from "../images/info/bgor.svg";
@@ -41,7 +38,6 @@ import car from "../images/info/car.png";
 import mrtyuanshan from "../images/info/mrtyuanshan.svg";
 import mrtminquanwest from "../images/info/mrtminquanwest.svg";
 import mrtzhongshan from "../images/info/mrtzhongshan.svg";
-import flower1 from "../images/info/flower1.png";
 import flowerbg from "../images/info/flower-background.svg";
 import FloralVarieties from "../images/info/FloralVarieties.svg";
 import Point from "../images/info/Point.svg";
