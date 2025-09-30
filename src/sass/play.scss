@@ -268,6 +268,7 @@
             color: $brown-100;
             font-size: 1.2rem;
 
+
             // 裝飾
             &::before {
                 content: "";
@@ -298,9 +299,13 @@
                 line-height: 100px;
                 cursor: pointer;
 
+                &:hover {
+                    color: $Taoyuan-pink;
+                    transform: scale(1.5);
+                }
+
                 &::after {
                     content: '';
-                    /*一定要有content*/
                     position: absolute;
                     top: 0px;
                     left: -10px;
@@ -312,7 +317,6 @@
                     background-position: center center;
                     z-index: -1;
                     transform: scaleX(0);
-                    /* 初始時隱藏 */
                     transform-origin: left;
                     transition: transform 0.3s ease;
                 }
@@ -347,7 +351,12 @@
                 text-align: center;
                 width: 100px;
                 line-height: 50px;
+                color: $Taoyuan-pink;
                 cursor: pointer;
+
+                &:hover {
+                    transform: scale(1.5);
+                }
 
                 @media (max-width:1024px) {
                     line-height: 100px;
