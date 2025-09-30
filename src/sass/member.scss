@@ -14,9 +14,15 @@
   column-gap: 20px;
   height: auto;
 
+  @media (max-width:831px) {
+    height: calc(100vh - 80px);
+  }
+
   @media (max-width:640px) {
     grid-template-columns: minmax(0, 0.1fr) 1fr minmax(50%, 8fr) minmax(0, 0.1fr);
-    grid-template-rows: 100px 1fr 5fr 40px;
+    grid-template-rows: 100px 1fr 4fr 40px;
+
+    height: auto;
 
     column-gap: 10px;
   }
@@ -38,6 +44,10 @@
         position: absolute;
         left: 70%;
         z-index: 1;
+      }
+
+      @media (max-width:640px){
+        display: none;
       }
     }
 
@@ -67,11 +77,15 @@
       animation: shake3 5s infinite ease-in-out;
     }
 
+    @media (max-width:640px){
+        display: none;
+      }
+
   }
 
   // 左側選單
   .left-sidebar {
-    padding-top: 100px;
+    padding-top: 127px;
 
     grid-column: 2/3;
     grid-row: 2/3;
@@ -79,7 +93,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 20px;
+    gap: 30px;
     max-width: 240px;
     min-width: 90px;
     // height: 400px;
@@ -177,6 +191,7 @@
     grid-column: 3/4;
     padding-top: 50px;
 
+
     @media (max-width:640px) {
       padding: 0 10%;
       grid-column: 2 / 4;
@@ -214,6 +229,7 @@
         background: #d1ecff80;
         padding: 50px 5%;
         height: 550px;
+
         @media (max-width:640px) {
           padding: 30px 5%;
         }
@@ -350,6 +366,7 @@
         background: #ffe1d180;
         padding: 50px 5%;
         height: 550px;
+
         @media (max-width:640px) {
           padding: 30px 5%;
         }
@@ -677,6 +694,11 @@
               font-size: $f-s-md;
               font-weight: 500;
               color: $brown-100;
+
+              @media (max-width:640px){
+                width: 170px;
+              }
+              
             }
 
             fieldset {
@@ -812,7 +834,6 @@
 
       input {
         border: none;
-        // outline: 0.5 solid $sky-blue;
         outline: none;
         height: 30px;
         line-height: 30px;
