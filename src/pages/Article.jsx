@@ -246,22 +246,22 @@ const Article = () => {
                     <div className="acard" ref={activitySectionRef}>
                         <h3>2025年活動推薦</h3>
                         <p className="activity-single">
-                            <a href="http://localhost:5173/#/info/5">
+                            <a href="https://ovopenguin.github.io/myBloomProject/#/info/5">
                                 春季 | 台北北投 | 陽明山海芋季
                             </a>
                         </p>
                         <p className="activity-single">
-                            <a href="http://localhost:5173/#/info/11">
+                            <a href="https://ovopenguin.github.io/myBloomProject/#/info/11">
                                 夏季 | 新北樹林 | 山佳荷花池
                             </a>
                         </p>
                         <p className="activity-single">
-                            <a href="http://localhost:5173/#/info/12">
+                            <a href="https://ovopenguin.github.io/myBloomProject/#/info/16">
                                 秋季 | 台北中山 | 向日葵大佳河濱花海
                             </a>
                         </p>
                         <p className="activity-single">
-                            <a href="http://localhost:5173/#/info/4">
+                            <a href="https://ovopenguin.github.io/myBloomProject/#/info/4">
                                 冬季 | 桃園楊梅 | 桃園仙草花節
                             </a>
                         </p>
@@ -291,7 +291,7 @@ const Article = () => {
                     <div className="sidebar-content">
                         <Link to="/info/5" className="sidebar-link">春季 | 台北北投 | 陽明山海芋季</Link>
                         <Link to="/info/11" className="sidebar-link">夏季 | 新北樹林 | 山佳荷花池</Link>
-                        <Link to="/info/12" className="sidebar-link">秋季 | 台北中山 | 向日葵大佳河濱花海</Link>
+                        <Link to="/info/16" className="sidebar-link">秋季 | 台北中山 | 向日葵大佳河濱花海</Link>
                         <Link to="/info/4" className="sidebar-link">冬季 | 桃園楊梅 | 桃園仙草花節</Link>
                     </div>
                 </div>
