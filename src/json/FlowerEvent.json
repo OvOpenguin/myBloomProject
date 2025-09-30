@@ -436,37 +436,37 @@
     {
         "id": 14,
         "month": [
-            "11月",
-            "12月"
+            "9月",
+            "10月"
         ],
         "location": "臺北市",
         "flower": [
-            "菊花"
+            "羽扇豆"
         ],
         "lable": "臺北",
-        "title": "士林官邸菊展",
-        "date": "11.28 — 12.14",
-        "img": "./activity/activity14.jpg",
-        "address": "臺北市士林官邸菊展",
-        "lat": 25.0916,
-        "lng": 121.5291,
+        "title": "樟樹步道花海",
+        "date": "09.01 — 10.31",
+        "img": "./activity/activity12.jpg",
+        "address": "樟樹步道花海",
+        "lat": 24.967823561410892,
+        "lng": 121.58554538898927,
         "banner": [
-            "./activity/activity14.jpg",
+            "./activity/activity12.jpg",
             "./activity/activity18.jpg",
             "./activity/activity15.jpg",
             "./activity/activity23.jpg",
             "./activity/activity04.jpg"
         ],
-        "homeTitle": "菊花-臺北市士林官邸",
+        "homeTitle": "樟樹步道花海",
         "homeImg": "./home/h2.png",
         "homeYear": 2025,
-        "startMonth": "11",
-        "endMonth": "12",
-        "startDate": "28",
-        "endDate": "14",
+        "startMonth": "9",
+        "endMonth": "10",
+        "startDate": "01",
+        "endDate": "31",
         "startWeek": "(五)",
         "endWeek": "(六)",
-        "season": "冬"
+        "season": "秋"
     },
     {
         "id": 15,
@@ -554,10 +554,10 @@
         "lng": 121.67346203934419,
         "banner": [
             "./activity/activity23.jpg",
-            "./activity/activity21.jpg",
-            "./activity/activity12.jpg",
-            "./activity/activity07.jpg",
-            "./activity/activity18.jpg"
+            "./activity/activity23.jpg",
+            "./activity/activity23.jpg",
+            "./activity/activity23.jpg",
+            "./activity/activity23.jpg"
         ],
         "startMonth": "4",
         "endMonth": "5",
@@ -581,7 +581,7 @@
         "title": "金車礁溪蘭花園",
         "date": "04.01 — 05.31",
         "img": "./activity/activity24.jpg",
-        "address": "262宜蘭縣礁溪鄉奇立丹路103-1號",
+        "address": "宜蘭縣礁溪鄉奇立丹路103-1號",
         "lat": 24.820996731127238,
         "lng": 121.78424998281052,
         "banner": [
@@ -612,7 +612,7 @@
         "title": "金雙甡花卉農場",
         "date": "06.01 — 06.30",
         "img": "./activity/activity25.jpg",
-        "address": "264宜蘭縣員山鄉枕山路一段68號",
+        "address": "宜蘭縣員山鄉枕山路一段68號",
         "lat": 24.765279682189842,
         "lng": 121.71585998835407,
         "banner": [
@@ -627,6 +627,70 @@
         "startDate": "01",
         "endDate": "30",
         "startWeek": "(日)",
+        "endWeek": "(一)",
+        "season": "春"
+    },
+    {
+        "id": 20,
+        "month": [
+            "2月",
+            "3月"
+        ],
+        "location": "新竹縣",
+        "flower": [
+            "風鈴木"
+        ],
+        "lable": "新竹",
+        "title": "新埔詹家黃金風鈴木",
+        "date": "02.01 — 03.31",
+        "img": "./activity/activity26.jpg",
+        "address": "新竹縣新埔鎮上樟路一段451巷5號",
+        "lat": 24.837304743304287,
+        "lng": 121.08371456760595,
+        "banner": [
+            "./activity/activity26.jpg",
+            "./activity/activity26.jpg",
+            "./activity/activity26.jpg",
+            "./activity/activity26.jpg",
+            "./activity/activity26.jpg"
+        ],
+        "startMonth": "2",
+        "endMonth": "3",
+        "startDate": "01",
+        "endDate": "31",
+        "startWeek": "(六)",
+        "endWeek": "(一)",
+        "season": "春"
+    },
+     {
+        "id": 21,
+        "month": [
+            "2月",
+            "3月"
+        ],
+        "location": "新竹縣",
+        "flower": [
+            "櫻花"
+        ],
+        "lable": "新竹",
+        "title": "霞喀羅櫻花谷",
+        "date": "02.01 — 03.31",
+        "img": "./activity/activity27.jpg",
+        "address": "新竹縣尖石鄉",
+        "lat":  24.604503706781884,
+        "lng": 121.24849671878454,
+        "banner": [
+            "./activity/activity27.jpg",
+            "./activity/activity27.jpg",
+            "./activity/activity27.jpg",
+            "./activity/activity27.jpg",
+            "./activity/activity27.jpg"
+        ],
+        "startMonth": "2",
+        "endMonth": "3",
+        "startDate": "01",
+        "endDate": "31",
+        "startWeek": "(六)",
         "endWeek": "(一)",
         "season": "春"
     }

@@ -146,7 +146,7 @@ const Wall = () => {
 
         // 當所有的 Promise 都完成後，更新 state
         Promise.all(promises)
-            .then(urls => {
+            .then(newUurls => {
                 // 將新的 URL 陣列合併到舊的陣列中
                 setPreviewUrls(prevUrls => [...prevUrls, ...urls]);
                 { openPopup() }
@@ -180,6 +180,18 @@ const Wall = () => {
 
         // 提交後關閉彈窗
         closePopup();
+    };
+
+    // 取消上傳
+    const handleReset = () => {
+        // 1. 清除 React State (清除圖片預覽)
+        setPreviewUrls([]);
+        setSelectedFiles([]);
+
+        // 2. 清除原生 input type="file" 的值 (關鍵步驟！)
+        if (fileInputRef.current) {
+            fileInputRef.current.value = '';
+        }
     };
 
 
@@ -246,7 +258,12 @@ const Wall = () => {
                                 aria-modal="true"
                             >
                                 <h2>上傳作品</h2>
-                                <form name="uploadform" id="uploadform" onSubmit={handleSubmit}>
+                                <form
+                                    className="uploadform"
+                                    id="uploadform"
+                                    onSubmit={handleSubmit}
+                                    onReset={handleReset}
+                                >
 
                                     <div>
                                         <label htmlFor="picname"><h3>作品名稱</h3></label>
@@ -265,8 +282,7 @@ const Wall = () => {
                                                 htmlFor="upload-input"
                                                 className="upload-btn">
 
-                                                <h3>上傳檔案</h3>
-                                                {/* <img className="upload-bg" src={votebotton1} alt="button" /> */}
+                                                <h4>上傳檔案</h4>
 
                                             </label>
                                         </div>
@@ -286,7 +302,10 @@ const Wall = () => {
                                         )}
                                     </div>
 
-                                    {/* <input type="reset" value="重新填寫"/> */}
+                                    <button className="reset" type="reset" value="提交表單"  onReset={handleReset} >
+                                        重新上傳
+                                    </button>
+
                                     <button className="submit" type="submit" value="提交表單" >
                                         提交
                                     </button>
@@ -552,10 +571,10 @@ export default function MemberCenter() {
     return (
         <>    <Nav></Nav>
             <section className="wrapper">
-                {/* <div className="padding-top">
+                <div className="padding-top">
                     <img className="dc3" src={hfwr3} alt="" />
                 </div>
-                <div className="padding-left"></div> */}
+                <div className="padding-left"></div>
 
                 {/* 左側選單 */}
                 <div className="left-sidebar">
@@ -575,11 +594,11 @@ export default function MemberCenter() {
                     {activeTab?.view}
                 </div>
 
-                {/* <div className="padding-right"></div>
+                <div className="padding-right"></div>
                 <div className="padding-bottom">
                     <img className="dc1" src={hfwr1} alt="" />
                     <img className="dc2" src={hfwr2} alt="" />
-                </div> */}
+                </div>
 
             </section>
         </>

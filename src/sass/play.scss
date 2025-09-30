@@ -12,7 +12,8 @@
     padding: 50px 0;
     gap: 50px;
     position: relative;
-    min-height: 770px; //限制最小高度
+    min-height: 805px; //限制最小高度
+
 
     .t {
         position: absolute;
@@ -195,6 +196,35 @@
                 transform: rotate(-5deg);
             }
         }
+
+
+        .start-btn {
+            position: relative;
+            overflow: visible;
+            animation: shakeX 2s infinite;
+            animation-delay: 1s;
+            @keyframes shakeX {
+                0%,
+                90%,
+                100% {
+                    transform: rotate(0deg);
+                }
+
+                93% {
+                     transform: rotate(-3deg);
+                }
+
+                96% {
+                     transform: rotate(3deg);
+                }
+
+                98% {
+                    transform: rotate(-3deg);
+                }
+            }
+        }
+
+
 
         //背景裝飾
         &::before {

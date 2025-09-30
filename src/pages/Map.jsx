@@ -15,6 +15,7 @@ import 夏 from "../images/map/map-s-summer.svg"
 import 秋 from "../images/map/map-s-aut.svg"
 import 冬 from "../images/map/map-s-winter.svg"
 
+
 import L from "leaflet";
 
 
@@ -39,7 +40,7 @@ const Map = () => {
   const [selectmonth, setSelectMonth] = useState("");
   const opmonth = ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"];
   const [selectedflower, setSelectedFlower] = useState("");
-  const opflower = ["玫瑰", "鬱金香", "鼠尾草", "大波斯菊", "杜鵑花", "仙草花", "海芋", "韭菜花", "孤挺花", "天南星科植物", "秋石斛", "繡球花", "菊花", "荷花", "蘭花"];
+  const opflower = ["玫瑰", "鬱金香", "鼠尾草", "大波斯菊", "杜鵑花", "仙草花", "海芋", "韭菜花", "孤挺花", "天南星科植物", "秋石斛", "繡球花", "菊花", "荷花", "蘭花", "羽扇豆"];
 
   const [activeId, setActiveId] = useState(null); // 目前選中的活動 ID
   const markerRefs = useRef({}); // 存放 marker 的 ref
@@ -108,15 +109,15 @@ const Map = () => {
   });
 
   // 測試地標(代改)
-  const [userPosition, setUserPosition] = useState(null);
-  /*
-  const userIcon = L.icon({
-    iconUrl: '/map/locationlogo2.svg', // 你的定位圖示
-    iconSize: [30, 40],
-    iconAnchor: [16, 16],
-    popupAnchor: [0, -16]
-  });*/
-  const userIcon = new L.Icon.Default();
+  // const [userPosition, setUserPosition] = useState(null);
+
+  // const userIcon = L.icon({
+  //   iconUrl: 春, // 你的定位圖示
+  //   iconSize: [30, 40],
+  //   iconAnchor: [16, 16],
+  //   popupAnchor: [0, -16]
+  // });
+  // const userIcon = new L.Icon.Default();
 
 
   // 主結構
@@ -188,7 +189,9 @@ const Map = () => {
                 {/* <LocateButton setUserPosition={setUserPosition} />
 
                 {userPosition && (
-                  <Marker position={userPosition}>
+                  <Marker
+                    position={userPosition}
+                    icon={userIcon}>
                     <Popup>你在這裡</Popup>
                   </Marker>
                 )} */}

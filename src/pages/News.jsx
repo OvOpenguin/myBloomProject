@@ -8,8 +8,9 @@ import 'swiper/css/pagination';
 import fornews from '../json/fornews.json';
 
 import flower10 from '../images/wall/wall-f10.webp'
-import ban1 from '../images/news/newsban2.webp'
-import ban2 from '../images/news/newsban3.png'
+import ban2 from '../images/news/newsban2.webp'
+import ban3 from '../images/news/newsban3.png'
+import ban1 from '../images/news/newsban1.jpg'
 import hscroll from '../images/home/homescroll.svg'
 import { Link } from "react-router-dom";
 import cban01 from '../images/news/newscb01.png'
@@ -17,6 +18,7 @@ import cban02 from '../images/news/newscb02.png'
 import cban03 from '../images/news/newscb03.webp'
 import cban04 from '../images/news/newscb04.webp'
 import GotopBtn from '../components/GotopBtn'
+
 
 import FavoriteButton from '../components/FavoriteButton';
 
@@ -33,7 +35,7 @@ const News = () => {
                 {/* 文字 */}
                 <div className="txtwrap">
                     <div className="news-labledate">
-                        <div className="news-lable">{lable}</div>
+                        <div className={`news-lable ${lable === "消息" ? "yellow" : ""}`}>{lable}</div>
                         <p>{date}</p>
                     </div>
                     <p className="news-cardTitle">{title}</p>
@@ -44,9 +46,6 @@ const News = () => {
                     <figure className="news-img">
                         <img src={img} alt="活動圖片" />
                     </figure>
-
-                    {/* 收藏按鈕-取消 */}
-                    {/* <FavoriteButton card={{ id, lable, date, title, img }} /> */}
                 </div>
             </>
         );
@@ -56,9 +55,9 @@ const News = () => {
                 {CardContent}
             </Link>
         ) : (
-            <div className="news-Card">
+            <Link to="/article" className="news-Card">
                 {CardContent}
-            </div>
+            </Link>
         );
     };
 
@@ -98,11 +97,13 @@ const News = () => {
                         pagination={{ clickable: true }}
                         autoplay={{
                             delay: 10000,
-                            disableOnInteraction: false, // 滑動後仍繼續自動播
+                            disableOnInteraction: false,
                         }}
+                        slidesPerView={1} 
                         className="mySwiper">
-                        <SwiperSlide> <img src={ban1} alt="" /> </SwiperSlide>
-                        <SwiperSlide> <img src={ban2} alt="" /> </SwiperSlide>
+                        <SwiperSlide> <img src={ban2} alt="banner1" /> </SwiperSlide>
+                        <SwiperSlide> <img src={ban1} alt="banner2" /> </SwiperSlide>
+                        <SwiperSlide> <img src={ban3} alt="banner3" /> </SwiperSlide>
                     </Swiper>
                 </div >
             </section >
