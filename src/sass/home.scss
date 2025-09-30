@@ -3,12 +3,6 @@
 @use "./functions/" as *;
 
 
-
-// outline check
-// * {
-//     outline: 1px solid red;
-// }
-
 // swiper 設定
 .indexActivity {
     position: relative;
@@ -32,12 +26,17 @@
         display: flex;
         justify-content: center;
 
+        .nearby-card {
+            overflow: visible;
+        }
+
         .card {
             width: 100%;
             height: auto;
             display: flex;
             flex-direction: column;
             padding-top: 10%;
+            overflow: visible;
 
             &::before {
                 content: "";
@@ -709,6 +708,7 @@
 
     .h-ebtn {
         margin-top: 30px;
+
         .circle {
             background: #7DC5E4;
         }
@@ -821,9 +821,7 @@
                     justify-content: space-between;
 
                     p {
-                        // width: 250px; 
-                        //這邊的寬度待更改，目前預設300px正常。
-                        // min-width: 300px;
+                        transition: all 0.3s ease;
                         text-align: left;
                         @extend %simple-line;
                         cursor: pointer;
@@ -836,17 +834,21 @@
                             color: $HsinchuCity-orange;
                         }
 
-
-                        .tag1 {
+                        span {
                             padding: 0 10px;
                             margin-right: 10px;
-                            background-color: $autumn-red;
+                            color: #fff;
+                            font-weight: normal;
+
+                        }
+
+
+                        .tag1 {
+                            background-color: $sky-blue;
                         }
 
                         .tag2 {
-                            padding: 0 10px;
-                            margin-right: 10px;
-                            background-color: $winter-blue;
+                            background-color: $NewTaipeiCity-yellow;
                         }
 
 
@@ -1162,14 +1164,14 @@
             }
         }
 
-        .h-wbtn{
+        .h-wbtn {
             display: flex;
-        justify-self: center;
-        margin-top: 5vh;
+            justify-self: center;
+            margin-top: 5vh;
 
-        .circle{
-            background: #C075E3;
-        }
+            .circle {
+                background: #C075E3;
+            }
         }
 
     }

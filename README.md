@@ -11,3 +11,4 @@
 - 0901：請安裝 => npm install @rollup/plugin-commonjs --save-dev
 - 0905：請安裝(地圖套件) => npm i react-leaflet
 - 0912：請安裝 => npm i gsap
+- 0930 : npm i -D vite-plugin-singlefile
