@@ -149,7 +149,7 @@
         ],
         "location": "臺北市",
         "lable": "活動",
-        "title": "臺北陽明山竹子湖",
+        "title": "金針花-台北陽明山竹子湖",
         "date": "08.30 — 09.30",
         "img": "./activity/activity21.jpg",
         "start": "08.30"
@@ -157,15 +157,15 @@
     {
         "id": 13,
         "month": [
-            "9月",
-            "10月"
+            "10月",
+            "11月"
         ],
         "location": "臺北市",
         "lable": "活動",
-        "title": "向日葵-大佳河濱花海",
-        "date": "09.01 — 10.31",
-        "img": "./activity/activity18.jpg",
-        "start": "09.01"
+        "title": "芒草-陽明山竹子湖",
+        "date": "09.15 — 11.30",
+        "img": "./activity/activity22.webp",
+        "start": "09.15"
     },
     {
         "id": 14,
@@ -180,8 +180,100 @@
         "img": "./activity/activity12.jpg",
         "start": "09.01"
     },
-        {
+    {
         "id": 15,
+        "month": [
+            "9月",
+            "11月"
+        ],
+        "location": "新竹市",
+        "lable": "活動",
+        "title": "季節限定–新竹甜根子草銀白海浪",
+        "date": "09.30 — 11.30",
+        "img": "./activity/activity15.jpg",
+        "start": "9月"
+    },
+    {
+        "id": 16,
+        "month": [
+            "9月",
+            "10月"
+        ],
+        "location": "臺北市",
+        "lable": "活動",
+        "title": "向日葵-大佳河濱花海",
+        "date": "09.01 — 10.31",
+        "img": "./activity/activity18.jpg",
+        "start": "09.01"
+    },
+    {
+        "id": 17,
+        "month": [
+            "4月",
+            "5月"
+        ],
+        "location": "基隆市",
+        "lable": "活動",
+        "title": "富民親水公園",
+        "date": "04.01 — 05.31",
+        "img": "./activity/activity23.jpg",
+        "start": "4月"
+    },
+    {
+        "id": 18,
+        "month": [
+            "4月",
+            "5月"
+        ],
+        "location": "宜蘭縣",
+        "lable": "活動",
+        "title": "金車礁溪蘭花園",
+        "date": "04.01 — 05.31",
+        "img": "./activity/activity24.jpg",
+        "start": "4月"
+    },
+    {
+        "id": 19,
+        "month": [
+            "6月"
+        ],
+        "location": "宜蘭縣",
+        "lable": "活動",
+        "title": "金雙甡花卉農場",
+        "date": "06.01 — 06.30",
+        "img": "./activity/activity25.jpg",
+        "start": "6月"
+    },
+    {
+        "id": 20,
+        "month": [
+            "2月",
+            "3月"
+        ],
+        "location": "新竹縣",
+        "lable": "活動",
+        "title": "新埔詹家黃金風鈴木",
+        "date": "02.01 — 03.31",
+        "img": "./activity/activity26.jpg",
+        "start": "2月"
+    },
+    {
+        "id": 21,
+        "month": [
+            "2月",
+            "3月"
+        ],
+        "location": "新竹縣",
+        "lable": "活動",
+        "title": "霞喀羅櫻花谷",
+        "date": "02.01 — 03.31",
+        "img": "./activity/activity27.jpg",
+        "start": "2月"
+    },
+
+
+    
+    {
         "month": [
             "3月"
         ],
@@ -192,8 +284,7 @@
         "img": "./news/newss01.jpg",
         "start": "03.14"
     },
-        {
-        "id": 16,
+    {
         "month": [
             "6月"
         ],
@@ -204,8 +295,7 @@
         "img": "./news/newss03.jpg",
         "start": "06.18"
     },
-        {
-        "id": 17,
+    {
         "month": [
             "9月",
             "10月"
@@ -217,8 +307,7 @@
         "img": "./news/newss02.jpg",
         "start": "09.01"
     },
-        {
-        "id": 18,
+    {
         "month": [
             "2月"
         ],
@@ -230,28 +319,12 @@
         "start": "02.03"
     },
     {
-        "id": 19,
-        "month":
-            "10月",
+        "month": "10月",
         "location": "臺北市",
         "lable": "消息",
         "title": "2025陽明山古道秋芒之旅",
         "date": "10.19 — 10.22",
         "img": "./activity/activity13.jpg",
         "start": "10.19"
-    },
-    {
-        "id": 20,
-        "month": [
-            "9月",
-            "11月"
-        ],
-        "location": "新竹市",
-        "lable": "活動",
-        "title": "季節限定–新竹甜根子草銀白海浪",
-        "date": "09.30 — 11.30",
-        "img": "./activity/activity15.jpg",
-        "start": "9月"
-        
     }
 ]

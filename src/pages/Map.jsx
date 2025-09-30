@@ -39,7 +39,7 @@ const Map = () => {
   const [selectmonth, setSelectMonth] = useState("");
   const opmonth = ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"];
   const [selectedflower, setSelectedFlower] = useState("");
-  const opflower = ["玫瑰", "鬱金香", "鼠尾草", "大波斯菊", "杜鵑花", "仙草花", "海芋", "韭菜花", "孤挺花", "天南星科植物", "秋石斛", "繡球花", "菊花", "荷花", "蘭花"];
+  const opflower = ["玫瑰", "鬱金香", "鼠尾草", "大波斯菊", "杜鵑花", "仙草花", "海芋", "韭菜花", "孤挺花", "天南星科植物", "秋石斛", "繡球花", "菊花", "荷花", "蘭花","羽扇豆"];
 
   const [activeId, setActiveId] = useState(null); // 目前選中的活動 ID
   const markerRefs = useRef({}); // 存放 marker 的 ref
