@@ -3,10 +3,14 @@
 @use './functions/' as *;
 
 
+// * {
+//   outline: 1px solid red;
+// }
+
 .wrapper {
   display: grid;
   grid-template-columns: minmax(0, 0.5fr) 2.5fr minmax(50%, 8fr) minmax(0, 0.5fr);
-  grid-template-rows: 40px min(680px) 40px;
+  grid-template-rows: 40px min(685px) 40px;
   column-gap: 20px;
   height: auto;
 
@@ -484,7 +488,8 @@
             h3 {
               text-align: left;
               font-size: 1.2rem;
-              font-weight: 700;
+              font-weight: 600;
+              margin: 15px 0 10px;
             }
 
             p {
@@ -533,32 +538,22 @@
               }
 
               .btn-box {
-                position: relative;
-                height: 15vh;
-                width: auto;
-
                 h3 {
-                  position: absolute;
-                  z-index: 1;
-                  top: 39%;
-                  width: 100%;
-                  color: $white;
-                  font-weight: $f-w-n;
-                  text-align:center ;
+                  width: 125px;
+                  color: $brown-100;
+                  text-align: center;
+                  padding: 10px;
+                  border: 2px solid $brown-100;
+                  border-radius: 999px;
+                  transition: all 0.2s ease;
+                  cursor: pointer;
 
                   &:hover {
-                    transform: scale(1.2);
+                    background: $HsinchuCity-orange;
+                    color: $white;
+                    border: 2px solid $HsinchuCity-orange;
                   }
                 }
-
-                .upload-bg {
-                  height: 15vh;
-                  width: 100%;
-                  object-fit: contain;
-                }
-
-
-
 
               }
 
@@ -573,44 +568,43 @@
                 flex-shrink: 0;
                 margin: 10px 0;
               }
-
-
             }
 
+
             .submit {
+              margin: 20px;
+              border: none;
               cursor: pointer;
+              color: $brown-100;
+              font-weight: $f-w-m ;
 
-              button {
-                bottom: 0;
-                right: 0;
-                z-index: 5;
-                margin: 20px 20px 0;
-                border: none;
+              &:hover {
+                color: $HsinchuCity-orange;
+              }
 
+              .bar {
+                display: block;
+                width: 24px;
+                height: 3px;
+                background-color: $brown-100;
+                margin: 5px auto;
 
-                .bar {
-                  display: block;
-                  width: 24px;
-                  height: 3px;
-                  background-color: $brown-100;
-                  margin: 5px auto;
+                &:nth-child(1) {
+                  transform: rotate(45deg) translate(3px, 2px);
+                }
 
-                  &:nth-child(1) {
-                    transform: rotate(45deg) translate(3px, 2px);
-                  }
-
-                  &:nth-child(2) {
-                    transform: rotate(-45deg) translate(4px, -3px);
-                  }
+                &:nth-child(2) {
+                  transform: rotate(-45deg) translate(4px, -3px);
                 }
 
                 &:hover {
-                  .bar {
-                    background-color: $HsinchuCity-orange;
-                  }
+                  background-color: $HsinchuCity-orange;
                 }
               }
+
+
             }
+
           }
         }
       }

@@ -270,7 +270,7 @@ const Wall = () => {
                                                 className="upload-btn">
 
                                                 <h3>上傳檔案</h3>
-                                                <img className="upload-bg" src={votebotton1} alt="button" />
+                                                {/* <img className="upload-bg" src={votebotton1} alt="button" /> */}
 
                                             </label>
                                         </div>
@@ -291,19 +291,15 @@ const Wall = () => {
                                         )}
                                     </div>
 
-                                    <div>
-                                        {/* <input type="reset" value="重新填寫"/> */}
-                                        <button className="submit" type="submit" value="提交表單" >
-                                            <h3>提交</h3>
+                                    {/* <input type="reset" value="重新填寫"/> */}
+                                    <button className="submit" type="submit" value="提交表單" >
+                                        提交
+                                    </button>
 
-                                        </button>
-                                        <button className="closePopup" ref={closeBtnRef} onClick={closePopup}>
-                                            <span className="bar"></span>
-                                            <span className="bar"></span>
-                                        </button>
-                                    </div>
-
-
+                                    <button className="closePopup" ref={closeBtnRef} onClick={closePopup}>
+                                        <span className="bar"></span>
+                                        <span className="bar"></span>
+                                    </button>
 
                                 </form>
 
