@@ -552,10 +552,10 @@ export default function MemberCenter() {
     return (
         <>    <Nav></Nav>
             <section className="wrapper">
-                {/* <div className="padding-top">
+                <div className="padding-top">
                     <img className="dc3" src={hfwr3} alt="" />
                 </div>
-                <div className="padding-left"></div> */}
+                <div className="padding-left"></div>
 
                 {/* 左側選單 */}
                 <div className="left-sidebar">
@@ -575,11 +575,11 @@ export default function MemberCenter() {
                     {activeTab?.view}
                 </div>
 
-                {/* <div className="padding-right"></div>
+                <div className="padding-right"></div>
                 <div className="padding-bottom">
                     <img className="dc1" src={hfwr1} alt="" />
                     <img className="dc2" src={hfwr2} alt="" />
-                </div> */}
+                </div>
 
             </section>
         </>
