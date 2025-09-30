@@ -53,9 +53,9 @@ const News = () => {
                 {CardContent}
             </Link>
         ) : (
-            <div className="news-Card">
+            <Link to="/article" className="news-Card">
                 {CardContent}
-            </div>
+            </Link>
         );
     };
 
