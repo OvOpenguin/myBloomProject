@@ -10,17 +10,15 @@
 .wrapper {
   display: grid;
   grid-template-columns: minmax(0, 0.5fr) 2.5fr minmax(50%, 8fr) minmax(0, 0.5fr);
-  grid-template-rows: 40px min(685px) 40px;
+  grid-template-rows: 40px min(725px) 40px;
   column-gap: 20px;
   height: auto;
 
   @media (max-width:640px) {
     grid-template-columns: minmax(0, 0.1fr) 1fr minmax(50%, 8fr) minmax(0, 0.1fr);
-    column-gap: 10px;
-  }
+    grid-template-rows: 100px 1fr 5fr 40px;
 
-  @media (max-width:500px) {
-    grid-template-rows: 100px min(680px) 100px;
+    column-gap: 10px;
   }
 
   .padding-top {
@@ -85,6 +83,19 @@
     max-width: 240px;
     min-width: 90px;
     // height: 400px;
+
+    @media (max-width:640px) {
+      padding: 0 10%;
+
+      flex-direction: row;
+      justify-content: flex-start;
+
+      max-width: 100%;
+
+      grid-column: 2 / 4;
+      grid-row: 2 / 3;
+      column-gap: 20px;
+    }
 
 
     .sidebar-item {
@@ -166,8 +177,10 @@
     grid-column: 3/4;
     padding-top: 50px;
 
-    @media(max-width:500px) {
-      grid-row: 2/3;
+    @media (max-width:640px) {
+      padding: 0 10%;
+      grid-column: 2 / 4;
+      grid-row: 3 / 4;
     }
 
     // ------------ 共用標籤 ------------
@@ -197,10 +210,13 @@
     // 我的收藏
     .fav-wrap {
 
-      >.content {
+      .content {
         background: #d1ecff80;
         padding: 50px 5%;
         height: 550px;
+        @media (max-width:640px) {
+          padding: 30px 5%;
+        }
 
         a {
           display: inline;
@@ -220,12 +236,7 @@
           overflow-y: auto;
           overflow-x: hidden;
 
-
-          @media (max-width:1280px) {
-            align-items: center;
-          }
-
-          @media (max-width:500px) {
+          @media (max-width:640px) {
             justify-content: center;
           }
 
@@ -236,12 +247,8 @@
           }
 
           .map-card {
-            width: 250px;
+            width: 230px;
             position: relative;
-
-            @media (max-width:500px) {
-              width: 190px;
-            }
 
             .map-label {
               position: relative;
@@ -283,6 +290,8 @@
               padding: 0 20px;
               background-color: $grass-green;
               color: #fff;
+              text-wrap: nowrap;
+
             }
 
             .map-title {
@@ -336,9 +345,14 @@
     // 我的花牆
     .wall-wrap {
 
+
       .content {
         background: #ffe1d180;
         padding: 50px 5%;
+        height: 550px;
+        @media (max-width:640px) {
+          padding: 30px 5%;
+        }
 
         >div {
           width: 100%;
@@ -617,12 +631,17 @@
       .content {
         background: #d5f6db80;
         padding: 50px 5%;
+        height: 550px;
+
+        @media (max-width:640px) {
+          padding: 30px 5%;
+        }
 
         .user-wrap {
           display: flex;
           flex-direction: column;
           align-items: flex-start;
-          gap: 30px;
+          gap: 20px;
           height: 450px;
 
           .user-box {
@@ -692,7 +711,7 @@
                 text-wrap: nowrap;
                 cursor: pointer;
                 transition: all 0.3s ease;
-                margin: 10px 20px 0 0;
+                margin: 15px 20px 0 0;
                 color: $brown-70;
               }
 
@@ -701,7 +720,7 @@
                 border-color: none;
                 color: $brown-100;
                 transform: translateY(-5px);
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 5px 15px $brown-10;
               }
 
               .s-label:hover {

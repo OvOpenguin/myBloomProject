@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Nav from '../components/Nav'
-
 import Title from "../components/Title";
 
 
@@ -16,7 +15,6 @@ import t2 from "../images/play/t2.svg"
 import t7 from "../images/play/t7.svg"
 import t12 from "../images/play/t12.svg"
 import l1 from "../images/play/play-line-1.svg"
-import l2 from "../images/play/play-line-2.svg"
 
 
 
