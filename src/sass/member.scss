@@ -473,6 +473,20 @@
 
 
           }
+          &::-webkit-scrollbar {
+            background-color: #bae6ff;
+            width: 12px;
+            height: 12px;
+            border-radius: 999px;
+            overflow-y: visible;
+            overflow-x: hidden;
+
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background-color: #FF8457;
+            border-radius: 999px;
+          }
 
 
         }
@@ -659,22 +673,11 @@
 
           }
 
-          &::-webkit-scrollbar {
-            background-color: #bae6ff;
-            width: 12px;
-            height: 12px;
-            border-radius: 999px;
-            overflow-y: visible;
-            overflow-x: hidden;
-
-          }
-
-          &::-webkit-scrollbar-thumb {
-            background-color: #FF8457;
-            border-radius: 999px;
-          }
+          
         }
       }
+
+      
 
     }
 
