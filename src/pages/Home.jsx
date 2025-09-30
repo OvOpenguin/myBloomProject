@@ -44,7 +44,7 @@ import hwde5 from '../images/home/h-w-de5.svg'
 import hwde6 from '../images/home/h-w-de6.svg'
 import hwde7 from '../images/home/h-w-de7.svg'
 import hwde8 from '../images/home/h-w-de8.svg'
-import deco1 from '../images/home/homedeco.svg'
+
 // 最新消息-裝飾花
 import hfw1 from '../images/home/homefwro1.svg'
 import hfw2 from '../images/home/homefwro2.svg'
@@ -296,7 +296,7 @@ const App = () => {
                                 <li><a href="https://ovopenguin.github.io/myBloomProject/#/info/13"><p><span className="tag1">活動</span>芒草：陽明山竹子湖</p><time className="itime">2025-09-15</time></a></li>
                                 <li><a href="https://ovopenguin.github.io/myBloomProject/#/info/9"><p><span className="tag1">活動</span>菊花：士林官邸菊展</p><time className="itime">2025-08-30</time></a></li>
                                 <li><a href="https://ovopenguin.github.io/myBloomProject/#/info/6"><p><span className="tag1">活動</span>九月雪：大溪韭菜花季</p><time className="itime">2025-08-30</time></a></li>
-                                <li><a href="#"><p><span className="tag2">消息</span>花卉攝影巡禮：捕捉春天的每一抹色彩</p><time className="itime">2025-07-22</time></a></li>
+                                <li><Link to="/article"><p><span className="tag2">消息</span>花卉攝影巡禮：捕捉春天的每一抹色彩</p><time className="itime">2025-07-22</time></Link></li>
                             </ul>
 
                             {/* 更多消息按鈕 */}
