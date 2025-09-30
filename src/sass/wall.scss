@@ -49,6 +49,7 @@
     .wall-c-photo {
         flex: 1;
         position: relative;
+        cursor: pointer;
 
         &::before {
             content: '';
@@ -61,8 +62,6 @@
             top: 0px;
             left: -10px;
             z-index: 3;
-
-
         }
     }
 }
