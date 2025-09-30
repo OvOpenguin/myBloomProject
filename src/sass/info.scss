@@ -10,8 +10,7 @@
 h2 {
     font-size: 1.5rem;
     font-weight: 700;
-    // text-align: center;
-    // padding-top: 10px;
+
     color: #64503C;
 }
 
@@ -22,14 +21,14 @@ h2 {
 .info-banner {
     position: relative;
     width: 100%;
-    height: 50vh; // 🔹 讓 Banner 滿版
+    height: 50vh; 
     display: flex;
-    justify-content: center; // 水平置中
-    align-items: center; // 垂直置中
+    justify-content: center; 
+    align-items: center;
     margin-bottom: 50px;
 
     .swiper-slide {
-        position: relative; // 讓偽元素參考這個範圍
+        position: relative; 
         display: flex;
         justify-content: center;
         align-items: center;
@@ -46,7 +45,6 @@ h2 {
             display: block;
         }
 
-        // 左右圖片加綠色遮罩
         &.swiper-slide-prev,
         &.swiper-slide-next {
             transform: scale(0.8);
@@ -59,15 +57,12 @@ h2 {
                 background: #D6F6DC;
                 opacity: 0.3;
 
-                /* 用 path 當裁切形狀 */
                 clip-path: path("M3.90165 50.1623L0 146.104C0 146.104 4.38935 232.305 4.38935 255.195C4.38935 263.474 4.38935 271.997 4.38935 280.276C4.38935 282.711 3.90165 294.399 3.90165 294.399L128.023 297.078L228.978 300L394.066 291.964L397.236 192.857C397.236 192.857 396.505 85.2273 398.7 75.2435C401.138 64.2857 394.066 3.16558 394.066 3.16558C394.066 3.16558 340.175 0.73052 324.081 0.73052C277.748 0.73052 231.173 0.73052 184.841 0.73052C146.312 0.73052 107.783 0.73052 69.2542 0.73052C59.9878 0.73052 8.77871 0 8.77871 0L3.90165 50.1623Z");
                 z-index: 1;
             }
         }
 
-        // 中間的圖片正常顯示
         &.swiper-slide-active {
-            // transform: scale(1.1);
             opacity: 1;
         }
 
@@ -75,7 +70,7 @@ h2 {
 
     .banner-mask {
         position: absolute;
-        inset: 0; // top/right/bottom/left = 0
+        inset: 0;
         overflow: hidden;
         z-index: 0;
 
@@ -85,21 +80,21 @@ h2 {
             left: 50%;
             width: 100%;
             height: 100%;
-            object-fit: cover; // 🔹 填滿區塊
+            object-fit: cover; 
             transform: translate(-50%, -50%);
         }
     }
 
     .swiper {
-        width: 100%; // 依需求調整
+        width: 100%; 
         max-width: 1200px;
-        height: auto; // Banner 高度
-        z-index: 1; // 在背景圖上面
+        height: auto;
+        z-index: 1; 
     }
 
 
     .swiper-pagination {
-        bottom: 20px; // 調整這個數值，越大越往下
+        bottom: 20px; 
 
         .swiper-pagination-bullet {
             width: 12px;
@@ -109,7 +104,7 @@ h2 {
         }
 
         .swiper-pagination-bullet-active {
-            background-color: #69C9A0; // 選中顏色
+            background-color: #69C9A0; 
             opacity: 1;
         }
     }
@@ -154,7 +149,7 @@ h2 {
 .info-custom-prev,
 .info-custom-next {
     position: absolute;
-    top: 50%; // 垂直置中
+    top: 50%; 
     transform: translateY(-50%);
     z-index: 20;
     cursor: pointer;
@@ -168,18 +163,18 @@ h2 {
 }
 
 .info-custom-prev {
-    left: 10%; // 🔹 左邊距可以用 % 或 px 調整
+    left: 10%;
 }
 
 .info-custom-next {
-    right: 10%; // 🔹 右邊距
+    right: 10%; 
 }
 
 .info-custom-prev:hover,
 .info-custom-next:hover {
-    transform: translateY(-50%) scale(1.1); // 放大一點
+    transform: translateY(-50%) scale(1.1); 
     background-color: #64503C;
-    color: #ffffff; // 箭頭顏色改變
+    color: #ffffff;
 }
 
 .info-wrapper {
@@ -390,7 +385,7 @@ h2 {
     /* 天氣 icon */
     .weather-icon {
         position: absolute;
-        top: -8vh; // 從 info-weather top 開始
+        top: -8vh; 
         left: 45%;
         transform: translateX(-50%);
         width: clamp(80px, 10vw, 120px);
@@ -421,22 +416,22 @@ h2 {
 
         /* 左側溫度 + 縣市 + 降雨 */
         .temp-city {
-            position: relative; // 如果需要絕對定位也可以
-            left: 20px; // 往右移動 20px；負值則往左
+            position: relative;
+            left: 20px;
             display: flex;
             flex-direction: column;
 
             @media (max-width: 640px) {
-                width: clamp(140px, 40vw, 110px); // 最小 180px，最大 300px，響應式自動調整
+                width: clamp(140px, 40vw, 110px); 
             }
 
             .temperature {
                 font-weight: 700;
-                font-size: clamp(2rem, 5vw, 3rem); // 48px
+                font-size: clamp(2rem, 5vw, 3rem); 
                 color: #64503C;
 
                 @media (max-width: 640px) {
-                    font-size: clamp(2rem, 10vw, 3rem); // 48px
+                    font-size: clamp(2rem, 10vw, 3rem); 
                 }
             }
 
@@ -447,21 +442,20 @@ h2 {
 
                 .city {
                     font-weight: 700;
-                    font-size: clamp(1rem, 3vw, 1rem); // 16px
+                    font-size: clamp(1rem, 3vw, 1rem);
                     color: #64503C;
                 }
 
                 .rain-icon {
                     width: clamp(16px, 2vw, 16px);
                     height: auto;
-                    //   margin-left: 1vh;
-                    transform: translate(5px, 2px); // X 往右 5px, Y 往上 2px
+                    transform: translate(5px, 2px); 
 
                 }
 
                 .rain-prob {
                     font-weight: 700;
-                    font-size: clamp(1rem, 3vw, 1rem); // 16px
+                    font-size: clamp(1rem, 3vw, 1rem);
                     color: #64503C;
                     margin-left: 1vh;
                 }
@@ -477,7 +471,7 @@ h2 {
 
         /* 右側日期時間 */
         .date-time {
-            position: relative; // 父元素定位
+            position: relative; 
 
             .date {
                 font-weight: 700;
@@ -531,31 +525,6 @@ h2 {
 
     }
 
-    .tab-line-container {
-        position: relative;
-        width: 100%;
-        height: 2px;
-        margin-top: 5px;
-
-        .tab-line {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: #e0e0e0;
-        }
-
-        .tab-line-highlight {
-            position: absolute;
-            top: 0;
-            /* 壓在灰色線上 */
-            height: 2px;
-            background-color: #C075E3;
-            z-index: 2;
-            transition: all 0.3s ease;
-        }
-    }
 
     .tab-contents {
         margin-top: 20px;
@@ -577,16 +546,16 @@ h2 {
 
 
 .transport-section {
-    width: 100vw; // 用視窗寬度，而不是父容器寬度
+    width: 100vw; 
     margin: 0;
-    padding: 0 10vw; // 左右留白 5% 可自由調整
+    padding: 0 10vw; 
     display: flex;
     justify-content: center;
 }
 
 .transport-container {
     width: 100%;
-    max-width: none; // 確保不被卡住
+    max-width: none; 
     display: flex;
     gap: 5%;
 
@@ -599,7 +568,7 @@ h2 {
 .swiper-wrapper-relative {
     position: relative;
     width: 100%;
-    overflow: visible; // 允許箭頭超出
+    overflow: visible; 
 }
 
 .card {
@@ -608,7 +577,7 @@ h2 {
     overflow: hidden;
     cursor: pointer;
 
-    // 背景圖
+    
     .bg-icon {
         position: absolute;
         inset: 0;
@@ -616,7 +585,7 @@ h2 {
         height: 100%;
         object-fit: cover;
         z-index: 1;
-        filter: none; // 🔹 背景永遠乾淨
+        filter: none; 
     }
 
     // 主圖
@@ -626,15 +595,15 @@ h2 {
         height: 100%;
         object-fit: cover;
         z-index: 2;
-        filter: brightness(0.7); // 🔹 預設暗濾鏡
+        filter: brightness(0.7); 
         transition: filter 0.4s ease, transform 0.4s ease;
         transform: scale(0.9);
     }
 
     &:hover {
         .main-img {
-            filter: brightness(1); // 🔹 hover 變亮
-            transform: scale(1); // 🔹 hover 放大
+            filter: brightness(1);
+            transform: scale(1); 
         }
     }
 
@@ -648,7 +617,6 @@ h2 {
     overflow: hidden;
     cursor: pointer;
 
-    /* 背景圖 - 永遠乾淨 */
     .bg-icon {
         position: absolute;
         inset: 0;
@@ -656,22 +624,20 @@ h2 {
         height: 100%;
         object-fit: cover;
         z-index: 1;
-        filter: none !important; // 強制背景不要被影響
+        filter: none !important; 
     }
 
-    /* 主圖 - 預設暗一點 */
     .main-img {
         position: relative;
         width: 100%;
         height: 100%;
         object-fit: cover;
         z-index: 2;
-        filter: brightness(0.7); // 預設濾鏡
+        filter: brightness(0.7);
         transition: filter 0.4s ease, transform 0.4s ease;
         transform: scale(0.9);
     }
 
-    /* hover 時主圖恢復正常 */
     &:hover {
         .main-img {
             filter: brightness(1);
@@ -695,7 +661,7 @@ h2 {
     }
 
     &:hover .overlay-text {
-        opacity: 0; // hover 時文字淡出
+        opacity: 0; 
     }
 }
 
@@ -703,11 +669,10 @@ h2 {
 
 .arrow {
     position: absolute;
-    top: 50%; // 垂直置中
+    top: 50%; 
     transform: translateY(-50%);
     width: 50px;
     height: 50px;
-    // z-index: 1000;
     cursor: pointer;
 }
 
@@ -732,9 +697,9 @@ h2 {
 .surrounding-section {
     display: flex;
     flex-direction: column;
-    align-items: center; // 水平置中
-    justify-content: center; // 垂直置中
-    min-height: 45vh; // 撐滿一個畫面高度 (可依需求調整)
+    align-items: center;
+    justify-content: center; 
+    min-height: 45vh; 
     text-align: center;
 
     .section-title {
@@ -750,8 +715,8 @@ h2 {
     }
 
     .left-line {
-        margin-right: 15px; // 控制和文字的間距
-        transform: translateY(10px); // 上下微調
+        margin-right: 15px;
+        transform: translateY(10px); 
     }
 
 
@@ -761,24 +726,22 @@ h2 {
     }
 
     .line-path1 {
-        stroke: #7DC5E4; // 線條顏色 (橘色)
-        stroke-width: 3; // 粗細
+        stroke: #7DC5E4;
+        stroke-width: 3; 
     }
 
     .line-path2 {
-        stroke: #69C9A0; // 線條顏色 (橘色)
-        stroke-width: 3; // 粗細
+        stroke: #69C9A0;
+        stroke-width: 3; 
     }
 
     /* 針對左右線條的 path 設定 */
     .line-path1,
     .line-path2 {
         stroke-dasharray: 1000;
-        /* 總長度，需比你的 path 長度大，確保整條線可以完整呈現 */
         stroke-dashoffset: 1000;
         /* 初始完全隱藏 */
         animation: drawLine 2s forwards;
-        /* 動畫 2 秒，可自行調整 */
     }
 
     @keyframes drawLine {
@@ -799,7 +762,7 @@ h2 {
 
     .swiper {
         width: 100%;
-        height: 250px; // 可依需求調整
+        height: 250px; 
     }
 
     .swiper-slide {
@@ -809,7 +772,7 @@ h2 {
         align-items: center;
 
         img {
-            width: 250px; // 可依需求調整
+            width: 250px; 
             height: 250px;
             object-fit: cover;
             border-radius: 10px;
@@ -843,7 +806,7 @@ h2 {
 
     .swiper {
         width: 100%;
-        height: 250px; // 可依需求調整
+        height: 250px; 
     }
 
     .swiper-slide {
@@ -853,7 +816,7 @@ h2 {
         align-items: center;
 
         img {
-            width: 200px; // 可依需求調整
+            width: 200px; 
             height: 280px;
             object-fit: cover;
             border-radius: 10px;
@@ -932,8 +895,8 @@ h2 {
 
         &:hover {
             .main-img {
-                width: 110%; // 放大到底圖大小
-                filter: brightness(1); // 消失的效果是因為亮度正常
+                width: 110%;
+                filter: brightness(1); 
             }
 
             .overlay-text {
@@ -973,11 +936,11 @@ h2 {
 
     @media (max-width: 1024px) {
         justify-content: center;
-        width: 100%; // ⬅️ 讓右側容器本身可以放大
-        max-width: none; // ⬅️ 解除限制
+        width: 100%;
+        max-width: none; 
 
         iframe {
-            width: 85%; // ⬅️ 比左邊寬一點
+            width: 85%; 
             max-width: 800px;
             height: 320px;
         }
@@ -987,23 +950,23 @@ h2 {
 .transport-left {
     display: flex;
     flex-direction: column;
-    gap: 50px; // 每組 transport-item 間距
+    gap: 50px; 
 
     .transport-item {
         display: flex;
-        align-items: center; // 與圖標垂直置中
+        align-items: center;
         gap: 20px;
 
         img.icon {
             width: 100%;
             height: auto;
-            max-width: 90px; // 保持等比例
+            max-width: 90px; 
             flex-shrink: 0;
         }
 
         .item-content {
             display: flex;
-            align-items: center; // 垂直置中所有文字區塊
+            align-items: center;
             gap: 30px;
 
             .text-block-0,
@@ -1012,8 +975,8 @@ h2 {
             .text-block-2 {
                 display: flex;
                 flex-direction: column;
-                justify-content: center; // 🔹 垂直置中
-                align-items: flex-start; // 文字靠左，如果要置中整段文字可改 center
+                justify-content: center; 
+                align-items: flex-start; 
                 gap: 5px;
 
                 .line1 {
@@ -1054,10 +1017,9 @@ h2 {
     display: flex;
     flex-direction: column;
 
-    // 讓三個區塊鋪滿螢幕
-    width: 100vw;
-    margin-left: calc(50% - 50vw); // 🔹 抵消父層 margin，強制滿版
 
+    width: 100vw;
+    margin-left: calc(50% - 50vw); 
 
 
     .section-floral {
@@ -1069,13 +1031,13 @@ h2 {
     .section-highlight {
         width: 100%;
         height: 600px;
-        background-color: rgba(210, 236, 255, 0.5); // #D2ECFF 50%
+        background-color: rgba(210, 236, 255, 0.5); 
     }
 
     .section-extra-floral {
         width: 100%;
         height: 330px;
-        background-color: rgba(214, 246, 220, 0.5); // #D6F6DC 50%
+        background-color: rgba(214, 246, 220, 0.5); 
     }
 
     h3 {
@@ -1103,7 +1065,7 @@ h2 {
         align-items: center;
         position: absolute;
         top: 1vh;
-        right: 8vw; // 🔹 往右移，避免壓到花卉
+        right: 8vw;
         gap: 1rem;
 
         h3 {
@@ -1127,7 +1089,6 @@ h2 {
 
         .floral-line {
             stroke-dasharray: 200;
-            /* 先大概設值，可以用 path 長度 */
             stroke-dashoffset: 200;
 
             /* 初始隱藏 */
@@ -1164,7 +1125,7 @@ h2 {
         }
 
         .draw-line {
-            stroke-dasharray: 500; // 這個數值稍微大於 path 長度
+            stroke-dasharray: 500;
             stroke-dashoffset: 500;
             animation: draw 4s infinite alternate; // 2秒動畫
         }
@@ -1206,12 +1167,12 @@ h2 {
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 25rem; // 根據花背景圖高度調整
+            min-height: 25rem; 
 
             .flower-bg {
                 width: 20rem;
                 height: auto;
-                display: block; // 避免 inline-img 導致高度問題
+                display: block;
 
             }
 
@@ -1221,13 +1182,13 @@ h2 {
                 height: auto;
 
 
-                // 🔹 這裡控制 flower1 的位置
-                transform: translate(10px, -10px); // x=右移, y=上移 (自行調整)
+
+                transform: translate(10px, -10px); 
                 transition: transform 0.5s ease, filter 0.5s ease;
             }
 
             &:hover .flower-main {
-                transform: translateY(-50px) scale(1.05); // 往上移動 10px，並放大 5%
+                transform: translateY(-50px) scale(1.05);
                 filter: brightness(1.1); // 提亮
                 transition: transform 0.5s ease, filter 0.5s ease; // 平滑動畫
 
@@ -1235,10 +1196,10 @@ h2 {
         }
 
         .flower-text {
-            position: absolute; // 🔹 疊在 flower-bg 上
-            top: 90%; // 垂直置中
+            position: absolute; 
+            top: 90%; 
             left: 55%;
-            transform: translate(-50%, -50%); // 完美置中
+            transform: translate(-50%, -50%);
 
             font-size: 1.5rem;
             font-weight: 700;
@@ -1272,8 +1233,8 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; // 水平置中
-    align-items: center; // 垂直置中
+    justify-content: center; 
+    align-items: center; 
 
 
 
@@ -1301,8 +1262,8 @@ h2 {
             position: absolute;
             width: 150px;
             height: 150px;
-            top: -4vh; // Point 上方
-            left: -15%; // 可以自由調整左邊距
+            top: -4vh; 
+            left: -15%; 
 
             .draw-line {
                 stroke-dasharray: 500;
@@ -1313,8 +1274,8 @@ h2 {
 
         .highlight-line-right {
             position: absolute;
-            top: -2vh; // Point 上方
-            right: 30%; // 可以自由調整右邊距
+            top: -2vh; 
+            right: 30%; 
 
             .draw-line {
                 stroke-dasharray: 500;
@@ -1331,9 +1292,9 @@ h2 {
     }
 
     .highlight-gallery {
-        overflow: visible; // 保證放大不被裁切
+        overflow: visible; 
         display: flex;
-        gap: 5vw; // 每組之間間距
+        gap: 5vw;
         justify-content: flex-start;
 
     }
@@ -1355,10 +1316,10 @@ h2 {
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 100%; // 跟組大小一致
+            width: 100%; 
             height: 100%;
-            max-height: 100%; // 不超過容器
-            object-fit: cover; // 填滿整個組
+            max-height: 100%; 
+            object-fit: cover; 
             z-index: 0;
         }
 
@@ -1367,27 +1328,27 @@ h2 {
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 90%; // 🔹 只限制寬度
-            height: 90%; // 🔹 高度自動保持比例
+            width: 90%; 
+            height: 90%; 
             object-fit: contain;
             z-index: 1;
             transition: all 0.3s ease;
         }
 
         &:hover .highlight-image {
-            width: 100%; // 放大，但保持比例
+            width: 100%;
             height: auto;
 
         }
 
         .highlight-text {
-            margin-top: 400px; // 圖片下方文字
+            margin-top: 400px;
             font-size: 1.2rem;
             font-weight: 800;
             color: #64503C;
             text-align: center;
             z-index: 2;
-            position: relative; // ✅ 文字相對於群組
+            position: relative; 
         }
     }
 
@@ -1411,7 +1372,6 @@ h2 {
             transform: translateX(-50%);
         }
 
-        // 依實際內容長度調整
     }
 
 

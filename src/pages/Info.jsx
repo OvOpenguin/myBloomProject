@@ -443,7 +443,7 @@ const Info = () => {
                       // pagination={{ 
                       //   clickable: true 
                       // }}
-                      autoHeight={true}   // 🔹 Swiper 自動根據每個 slide 的內容高度調整
+                      autoHeight={true}   
 
                       breakpoints={{
                         0: {
@@ -459,7 +459,7 @@ const Info = () => {
                           slidesPerView: 3,
                         },
                         1440: {
-                          slidesPerView: 4, // 🔹 全部顯示
+                          slidesPerView: 4, //  全部顯示
 
                         },
                       }}
