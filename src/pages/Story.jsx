@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { Link } from 'react-router-dom'
-import $ from 'jquery'
+
 // 安裝插建
 import { motion } from "framer-motion";
 import Nav from '../components/Nav'
@@ -18,8 +18,10 @@ import circletxt from '../images/story/story-circle-txt.png'
 
 
 const Story = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
   const [index, setIndex] = useState(0);
-  const selectedFlower = flowers[index];
+  const selectedFlower = flowers[index]; //重要：通過setIndex(i)，將index改變為陣列資料的[i]
+
 
   const changeFlower = (direction) => {
     if (direction === "next") {
@@ -38,28 +40,17 @@ const Story = () => {
   };
 
 
-
-  useEffect(() => {
-    $('.sMenuBtn').on("click", function () {
-      $('.sleft').toggleClass('show');
-    });
-
-    return () => {
-      $('.sMenuBtn').off("click");
-    };
-  }, []);
-
-
   return (
     <>
       <Nav></Nav>
       <div id='story'>
 
-        <div className="sleft" style={{ "--bgColor": selectedFlower.color }}>
+        <div className={`sleft ${menuOpen ? "show" : ""}`} style={{ "--bgColor": selectedFlower.color }}>
           {/* 其他品種 */}
-          <div className="sbook">
+          {/* 裝飾書 */}
+          <figure className="sbook">
             <img src={book} alt="book" />
-          </div>
+          </figure>
           <div className="sother">
             <h3>其他花種</h3>
             <h4>Others</h4>
@@ -67,7 +58,7 @@ const Story = () => {
           {/* 左側-選單 */}
           {/* <div className="sList" style={{ background: `${selectedFlower.color}` }}> */}
           <div className="sList" style={{ "--bgColor": selectedFlower.color }}>
-            {/* 裝飾書 */}
+            
 
             {/* menu */}
             <div className='sMenu'>
@@ -211,7 +202,7 @@ const Story = () => {
           <img className='circletxt' src={circletxt} alt="底圖txt" />
         </div>
 
-        <button className="sMenuBtn">Click!</button>
+        <button className="sMenuBtn" onClick={() => setMenuOpen((prev) => !prev)}>Click!</button>
 
       </div>
     </>

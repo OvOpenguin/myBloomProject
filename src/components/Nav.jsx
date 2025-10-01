@@ -1,41 +1,18 @@
 
 import { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import $ from 'jquery';
+
 import logo from '../images/home/logo.png'
 
 
 
 const Nav = () => {
-    const [openSubMenu, setOpenSubMenu] = useState(null);
-
-    useEffect(() => {
-        $('.hamburger').on("click", function () {
-            console.log("click");
-            $(this).toggleClass('is-active');
-            $('.menu').toggleClass('show');
-        });
-
-        // 卸載元件時，移除事件監聽器，避免記憶體洩漏
-        return () => {
-            $('.hamburger').off("click");
-        };
-    }, []);
-
-    const toggleSubMenu = (menuName) => {
-        if (openSubMenu === menuName) {
-            setOpenSubMenu(null); // 如果已經打開，則收合
-        } else {
-            setOpenSubMenu(menuName); // 打開新的子選單
-        }
-    };
-
-
+    const [menuOpen, setMenuOpen] = useState(false);
     return (
         <header>
 
             {/* 漢堡按鈕 */}
-            <button className="hamburger">
+            <button className="hamburger" onClick={() => setMenuOpen(prev => !prev)}>
                 <span className="bar">
                 </span><span className="bar">
                 </span><span className="bar"></span>
@@ -43,7 +20,7 @@ const Nav = () => {
 
             {/* 導覽列 */}
             <nav>
-                <ul className='menu'>
+                <ul className={`menu ${menuOpen ? "show" : ""}`}>
                     <li className='nav-logo'>
                         <Link to="/"><img src={logo} alt="logo" /></Link>
                     </li>
@@ -85,7 +62,7 @@ const Nav = () => {
                         <NavLink to="/play" className={({ isActive }) => isActive ? "nav-peach active" : ""}>
                             <span className='nav-peach t'>花</span>卉遊戲
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 103 8">
-                                <path className="line" pathLength="1" d="M1.1267 6.25843C0.81667 5.73734 1.20668 5.0667 1.82117 4.28341C2.80927 3.02389 5.56949 2.39733 8.50942 2.13728C11.2065 1.89872 14.5539 2.54954 17.0257 3.4189C20.6196 4.68289 21.441 6.51791 22.0182 6.67323C23.5064 7.0737 27.3582 4.6449 35.6206 2.94709C40.2006 2.00595 46.1894 1.68577 51.6041 1.39605C57.0187 1.10634 61.8369 1.05682 67.4687 1.16497C73.1005 1.27311 79.3998 1.54041 84.2144 1.8717C89.029 2.20298 92.1679 2.59015 94.522 3.03251C96.876 3.47487 98.9136 3.77184 101.15 4.85096"/>
+                                <path className="line" pathLength="1" d="M1.1267 6.25843C0.81667 5.73734 1.20668 5.0667 1.82117 4.28341C2.80927 3.02389 5.56949 2.39733 8.50942 2.13728C11.2065 1.89872 14.5539 2.54954 17.0257 3.4189C20.6196 4.68289 21.441 6.51791 22.0182 6.67323C23.5064 7.0737 27.3582 4.6449 35.6206 2.94709C40.2006 2.00595 46.1894 1.68577 51.6041 1.39605C57.0187 1.10634 61.8369 1.05682 67.4687 1.16497C73.1005 1.27311 79.3998 1.54041 84.2144 1.8717C89.029 2.20298 92.1679 2.59015 94.522 3.03251C96.876 3.47487 98.9136 3.77184 101.15 4.85096" />
                             </svg>
                         </NavLink>
                     </li>
@@ -98,13 +75,8 @@ const Nav = () => {
                             </svg>
                         </NavLink>
                     </li>
-                    {/* <li><Link to="/info">資訊頁</Link></li> */}
-
-
                 </ul>
             </nav>
-
-
         </header>
     )
 
