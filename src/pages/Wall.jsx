@@ -241,6 +241,10 @@ const Wall = () => {
     setIsOpen(true);
     setTimeout(() => {
       closeBtnRef.current?.focus(); // 聚焦到關閉按鈕
+      const popupWrapper = document.querySelector(".popup .wrapper");
+      if (popupWrapper) {
+        popupWrapper.scrollTop = 0; // 強制回到頂端
+      }
     }, 0);
   };
 

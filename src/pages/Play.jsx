@@ -208,7 +208,7 @@ const Play = () => {
                         </filter>
                         <path d="M0 2C40 18.5 46.4619 29.1748 56 55.9999C64.1781 78.9999 45.5234 88.9999 28.4998 55.9999C5.02787 10.4999 86 48.5 112.5 101"
                             stroke="#69C9A0"
-                            stroke-width="5" />
+                            strokeWidth="5" />
                     </svg>
 
                     <Title text="看花影 猜花卉" tag="h2" className="h2-style" />

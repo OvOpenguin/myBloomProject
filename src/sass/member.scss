@@ -829,6 +829,10 @@
       margin: calc(15vh + 72.55px) 15vw 15vh;
     }
 
+    @media(max-width:430px) {
+      margin: auto 0;
+    }
+
     // up
     &::before {
       content: "";
