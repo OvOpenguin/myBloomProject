@@ -122,7 +122,6 @@
         .v-photos {
             display: flex;
             gap: 20px;
-            // overflow: hidden;
             margin-top: 20px;
 
 
@@ -170,7 +169,7 @@
                         @extend %img-cover;
                         display: inline-block;
                         object-position: center;
-                        transition: .5s transform ease-out;
+                        transition: transform .5s ease-out;
                     }
                 }
 
