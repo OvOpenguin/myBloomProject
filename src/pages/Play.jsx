@@ -136,19 +136,18 @@ const questions = [
     }
 ];
 
-// 隨機抽題函式，避免選到同一題
+// 隨機抽題function：開始遊戲 & 下一題會使用到
 const getRandomQuestion = (previousIndex) => {
     let newIndex;
     do {
         newIndex = Math.floor(Math.random() * questions.length);
-    } while (newIndex === previousIndex); // 只要新索引和上一題的索引相同，就繼續產生
+    } while (newIndex === previousIndex);
     return newIndex;
 };
 
 
 
 const Play = () => {
-
     const [gameStarted, setGameStarted] = useState(false);
     const [currentQ, setCurrentQ] = useState(0);
     const [showAnswer, setShowAnswer] = useState(false);
@@ -156,7 +155,7 @@ const Play = () => {
 
     // 處理遊戲開始的邏輯
     const startGame = () => {
-        const initialIndex = getRandomQuestion(-1); // 第一次開始時，傳入一個不可能的索引，例如 -1
+        const initialIndex = getRandomQuestion(-1); // 重要：由於題庫index不可能為-1，第一題會通過隨機抽題function來抽題。
         setGameStarted(true);
         setCurrentQ(initialIndex);
         setShowAnswer(false);
@@ -165,13 +164,13 @@ const Play = () => {
 
     // 處理下一題的邏輯
     const nextQuestion = () => {
-        const newIndex = getRandomQuestion(currentQ); // 傳入目前題目的索引，讓函式避開它
+        const newIndex = getRandomQuestion(currentQ); //重要:呼叫隨機抽題function => 得到newIndex => 通過 setCurrentQ(newIndex) 更新題目
         setCurrentQ(newIndex);
         setShowAnswer(false);
         setWrongAnswers([]);
     };
 
-    // 處理playEnd的邏輯
+    // 處理playEnd的邏輯(全部歸0)
     const endGame = () => {
         setGameStarted(false);
         setShowAnswer(false);
@@ -186,7 +185,6 @@ const Play = () => {
 
                 {/* 裝飾 */}
                 <div className="t l1"><img src={l1} alt="黃線" /></div>
-                {/* <div className="t l2"><img src={l2} alt="紫線" /></div> */}
                 <div className="t t2"><img src={t2} alt="t2" /></div>
                 <div className="t t7"><img src={t7} alt="t7" /></div>
                 <div className="t t12"><img src={t12} alt="t12" /></div>
@@ -218,7 +216,7 @@ const Play = () => {
                         <br />仔細看花瓣形狀、葉序特徵，
                         <br />你是否能從黑影中，一眼認出這朵花的名字？</p>
 
-                    {/* 下方開始/結束按鍵 */}
+                    {/* 開始/結束按鍵 */}
                     <div className='playBtn'>
                         {!gameStarted
                             ? (<div className="start-btn" onClick={startGame}><img src={playStart} alt="playStart" /></div>)
@@ -233,16 +231,15 @@ const Play = () => {
                     {/* showAnswer代表是否已有答案顯示，初始為不顯示false，!反轉後為true => 顯示剪影 */}
                     {/* 未答對 => 顯示剪影 */}
                     <figure>
-                        {!showAnswer ? (
-                            <img src={questions[currentQ].silhouette} alt="剪影" />
-                        ) : (
-                            <>
+                        {!showAnswer   //在所有狀態管理中，只有點選正確選項時 => setShowAnswer(true) ， 且[currentQ]是通過隨機抽題function回傳的newIndex，該newIndex會指向題庫的第n題。 
+                            ? (<img src={questions[currentQ].silhouette} alt="剪影" />)
+                            : (<>
                                 <img src={questions[currentQ].image} alt="真實花" />
                                 <figcaption className="correct-answer">
                                     正確答案：{questions[currentQ].answer}
                                 </figcaption>
-                            </>
-                        )}
+                            </>)
+                        }
                     </figure>
 
                     {/* 裝飾 */}
@@ -251,38 +248,38 @@ const Play = () => {
                     {/* 選項區 */}
                     {/* 當gameStarted為true時，選項才會出現。 */}
                     <div className="answer">
-                        {gameStarted ? (
-                            <>
-                                {!showAnswer &&
-                                    questions[currentQ].options.map((opt, i) => (
+                        {gameStarted
+                            ? (
+                                <>
+                                    {!showAnswer &&
+                                        questions[currentQ].options.map((opt, i) => (
+                                            <div
+                                                key={i}
+                                                className={`option ${wrongAnswers.includes(opt) ? "crayon" : ""}`}
+                                                onClick={() => {
+                                                    if (opt === questions[currentQ].answer) {
+                                                        setShowAnswer(true);
+                                                    } else {
+                                                        setWrongAnswers([...wrongAnswers, opt]);
+                                                    }
+                                                }}
+                                            >
+                                                {opt}
+                                            </div>
+                                        ))}
+
+                                    {showAnswer && (
                                         <div
-                                            key={i}
-                                            className={`option ${wrongAnswers.includes(opt) ? "crayon" : ""}`}
-                                            onClick={() => {
-                                                if (opt === questions[currentQ].answer) {
-                                                    setShowAnswer(true);
-                                                } else {
-                                                    setWrongAnswers([...wrongAnswers, opt]);
-                                                }
-                                            }}
+                                            className="next"
+                                            onClick={nextQuestion}
                                         >
-                                            {opt}
+                                            下一題
                                         </div>
-                                    ))}
-                                {showAnswer && (
-                                    <div
-                                        className="next"
-                                        onClick={nextQuestion}
-                                    >
-                                        下一題
-                                    </div>
-                                )}
-                            </>
-                        ) : (
-                            <div className="placeholder"></div>)}
+                                    )}
+                                </>
+                            )
+                            : (<div className="placeholder"></div>)}
                     </div>
-
-
 
                 </div>
             </div >
