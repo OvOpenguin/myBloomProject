@@ -178,15 +178,6 @@ const Wall = () => {
 
     setScrollWidth(listRef1.current);
     setScrollWidth(listRef2.current);
-
-    // if (ul1) {
-    //   const totalWidth = ul1.scrollWidth / 2; // 一份的寬度
-    //   ul1.style.setProperty("--scrollWidth", `-${totalWidth}px`);
-    // }
-    // if (ul2) {
-    //   const totalWidth = ul2.scrollWidth / 2;
-    //   ul2.style.setProperty("--scrollWidth", `-${totalWidth}px`);
-    // }
   }, []);
 
   // 點愛心
