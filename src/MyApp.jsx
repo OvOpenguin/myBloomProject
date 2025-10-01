@@ -3,9 +3,8 @@ import React, { useState, useEffect } from "react";
 
 import ScrollToTop from './components/ScrollToTop'
 
-import Nav from './components/Nav'
 import Footer from './components/Footer'
-import Loading from "./components/Loading";
+
 
 import Home from './pages/Home'
 import Map from './pages/Map'
@@ -21,13 +20,7 @@ import ButterflyCursor from './components/ButterflyCursor';
 
 
 const MyApp = () => {
-    // const [loading, setLoading] = useState(true);
-    // useEffect(() => {
-    //     const timer = setTimeout(() => setLoading(false), 3000);
-    //     return () => clearTimeout(timer);
-    // }, []);
 
-    // if (loading) return <Loading />;
     return (
 
         <div className="wrap">

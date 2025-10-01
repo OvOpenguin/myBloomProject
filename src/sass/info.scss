@@ -390,8 +390,14 @@ h2 {
         transform: translateX(-50%);
         width: clamp(80px, 10vw, 120px);
 
+        @media (max-width: 1024px) {
+            left: 45%;
+            top: -6vh;
+        }
+
         @media (max-width: 640px) {
             left: 45%;
+            top: -5vh;
         }
 
         img {
@@ -505,14 +511,14 @@ h2 {
 
     .tab {
         padding: 5px 20px;
-        font-size: 20px;
+        font-size: 1.2rem;
         font-weight: 400;
         color: #64503C;
         cursor: pointer;
         transition: all 0.3s ease;
 
         &.active {
-            font-size: 24px;
+            font-size: 1.5rem;
             font-weight: 700;
             color: #64503C;
             border-bottom: 3px solid #b69f88;

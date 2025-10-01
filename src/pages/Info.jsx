@@ -131,7 +131,7 @@ const Info = () => {
     );
 
     if (rainProb >= 60) return raining;
-    if (rainProb <= 10) return sunny;
+    if (rainProb <= 30) return sunny;
     return cloudy;
   };
 
