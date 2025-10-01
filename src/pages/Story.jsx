@@ -18,28 +18,32 @@ import circletxt from '../images/story/story-circle-txt.png'
 
 
 const Story = () => {
-  // 呼叫useState
   const [index, setIndex] = useState(0);
-  // 滾輪偵測
-  const handleWheel = (e) => {
-    if (e.deltaY > 0) {
-      // 滾輪往下 -> 下一朵
+  const selectedFlower = flowers[index];
+
+  const changeFlower = (direction) => {
+    if (direction === "next") {
       setIndex((prev) => (prev + 1) % flowers.length);
-    } else if (e.deltaY < 0) {
-      // 滾輪往上 -> 上一朵
+    } else if (direction === "prev") {
       setIndex((prev) => (prev - 1 + flowers.length) % flowers.length);
     }
   };
 
-  const selectedFlower = flowers[index];
+  const handleWheel = (e) => {
+    if (e.deltaY > 0) {
+      changeFlower("next");
+    } else if (e.deltaY < 0) {
+      changeFlower("prev");
+    }
+  };
 
-  // 花的清單切換
+
+
   useEffect(() => {
     $('.sMenuBtn').on("click", function () {
       $('.sleft').toggleClass('show');
     });
 
-    // 卸載元件時，移除事件監聽器，避免記憶體洩漏
     return () => {
       $('.sMenuBtn').off("click");
     };
@@ -193,6 +197,15 @@ const Story = () => {
             initial={{ opacity: 0.5, rotate: 0 }}
             animate={{ opacity: 1, rotate: 0 }}
             transition={{ duration: 0.8 }}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            onDragEnd={(e, info) => {
+              if (info.offset.x > 50) {
+                changeFlower("prev"); // 往右拖 → 上一朵
+              } else if (info.offset.x < -50) {
+                changeFlower("next"); // 往左拖 → 下一朵
+              }
+            }}
           />
 
           <img className='circletxt' src={circletxt} alt="底圖txt" />
