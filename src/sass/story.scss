@@ -40,6 +40,12 @@
             top: -120px;
             left: 0px;
             width: 150px;
+            
+            @media (max-width:1440px) {
+                top: -85px;
+                left: 35px;
+                z-index: -1;
+            }
 
             @media (max-width:1200px) {
                 top: -95px;
