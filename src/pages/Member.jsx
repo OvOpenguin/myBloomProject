@@ -1,7 +1,9 @@
 import React, { useRef, useState, useEffect } from "react";
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import { VscEye } from "react-icons/vsc";
 import { VscEyeClosed } from "react-icons/vsc";
+
+
 import Nav from '../components/Nav'
 import FavoriteButton from "../components/FavoriteButton";
 
@@ -26,6 +28,7 @@ import dc1 from '../images/member/member-sign-3.svg';
 
 // sass
 import "../sass/member.scss"
+import { figure } from "framer-motion/client";
 
 <defs>
     <filter id="rough">
@@ -114,7 +117,7 @@ const Favorites = () => {
 }
 
 // 我的花牆
-const Wall = () => {
+const MemberWall = () => {
 
     // 用來儲存圖片預覽的 URL
     const [previewUrls, setPreviewUrls] = useState([]);
@@ -142,18 +145,6 @@ const Wall = () => {
             openPopup();
         };
         reader.readAsDataURL(file);
-
-
-        // 當所有的 Promise 都完成後，更新 state
-        Promise.all(promises)
-            .then(newUurls => {
-                // 將新的 URL 陣列合併到舊的陣列中
-                setPreviewUrls(prevUrls => [...prevUrls, ...urls]);
-                { openPopup() }
-            })
-            .catch(error => {
-                console.error("檔案讀取失敗", error);
-            });
     }
 
 
@@ -264,6 +255,10 @@ const Wall = () => {
                                     onSubmit={handleSubmit}
                                     onReset={handleReset}
                                 >
+                                    <div>
+                                        <label htmlFor="picname"><h3>作者暱稱</h3></label>
+                                        <input className="picname" type="text" name="username" id="username" title="作品名稱" placeholder="請輸入您的大名" required autoFocus></input>
+                                    </div>
 
                                     <div>
                                         <label htmlFor="picname"><h3>作品名稱</h3></label>
@@ -294,15 +289,15 @@ const Wall = () => {
                                             ref={fileInputRef}
                                         />
                                         {previewUrls.length > 0 && (
-                                            <div className="mt-2 flex space-x-2 overflow-x-auto">
+                                            <figure>
                                                 {previewUrls.map((url, index) => (
-                                                    <img key={index} src={url} alt={`預覽圖 ${index + 1}`} className="w-20 h-20 object-cover rounded-md" />
+                                                    <img key={index} src={url} alt={`預覽圖 ${index + 1}`}/>
                                                 ))}
-                                            </div>
+                                            </figure>
                                         )}
                                     </div>
 
-                                    <button className="reset" type="reset" value="提交表單"  onReset={handleReset} >
+                                    <button className="reset" type="reset" value="提交表單" onReset={handleReset} >
                                         重新上傳
                                     </button>
 
@@ -363,7 +358,8 @@ const Profile = ({ username }) => {
                         <fieldset>
                             <div className="prompt">
                                 <div className="label">
-                                    <legend><p>主題</p></legend>
+                                    <p>主題</p>
+                                    {/* <legend></legend> */}
                                 </div>
                                 <span>請選擇感興趣的主題，讓我們推薦合適的內容給您（可複選）</span>
                             </div>
@@ -488,7 +484,10 @@ const SignIn = ({ onLogin }) => {
 
 // 切換各分頁的陣列
 export default function MemberCenter() {
-
+    const location = useLocation();
+    const initialTab = location.state?.tab || "favorites";
+    // 宣告變數 => 顯示目前分頁
+    const [activeKey, setActiveKey] = useState(initialTab);
     // 由 SignIn 帶回的登入資訊
     const [credentials, setCredentials] = useState({
         username: '',
@@ -521,12 +520,11 @@ export default function MemberCenter() {
         localStorage.setItem("credentials", JSON.stringify(userData));
     };
 
-    // 宣告變數 => 顯示目前分頁
-    const [activeKey, setActiveKey] = useState("favorites");
+
 
     const TABS = [
         { key: "favorites", label: "我的收藏", view: <Favorites /> },
-        { key: "wall", label: "我的花牆", view: <Wall /> },
+        { key: "memberwall", label: "我的花牆", view: <MemberWall /> },
         {
             key: "profile", label: "個人中心", view: (
                 <Profile

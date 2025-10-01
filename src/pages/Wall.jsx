@@ -269,17 +269,17 @@ const Wall = () => {
           </p>
           <div className="w-vbtn">
             <button className="h-btn-news" onClick={gotvote}>
-            <span className="circle">
-              <span className="icon arrow"></span>
-            </span>
-            <span className="btn-text">前往投票</span>
-          </button>
+              <span className="circle">
+                <span className="icon arrow"></span>
+              </span>
+              <span className="btn-text">前往投票</span>
+            </button>
           </div>
-          
+
         </div>
 
         <div className="wall-c-photo">
-          <CardFlip/>
+          <CardFlip />
         </div>
       </section>
 
@@ -297,7 +297,7 @@ const Wall = () => {
               if (item.type == 'special') {
                 return (
                   <li className="v-item" key={`special2-${index}`}>
-                    <Link to={"/member"}>
+                    <Link to="/member" state={{ tab: "memberwall" }}>
                       <h3>參加賽事</h3>
                     </Link>
                     <img src={votebotton1} alt="" />
@@ -313,14 +313,14 @@ const Wall = () => {
               if (item.type == 'special2') {
                 return (
                   <li className="v-item" key={`special2-${index}`}>
-                    <Link to={"/member"}>
+                    <Link to="/member" state={{ tab: "memberwall" }}>
                       <h3>參加賽事</h3>
                     </Link>
                     <img src={votebotton2} alt="" />
                   </li>
                 );
               }
-              return <Flowerwall key={index} count={item.count} img={item.img} heart={item.heart} state={item.state}/>
+              return <Flowerwall key={index} count={item.count} img={item.img} heart={item.heart} state={item.state} />
             })}
           </ul>
         </div>

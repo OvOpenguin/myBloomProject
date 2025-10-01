@@ -473,6 +473,7 @@
 
 
           }
+
           &::-webkit-scrollbar {
             background-color: #bae6ff;
             width: 12px;
@@ -502,6 +503,7 @@
           align-items: center;
           z-index: 4;
 
+
           .wrapper {
             background: #F5F5F5;
             padding: 2rem;
@@ -511,6 +513,7 @@
             text-align: center;
             display: flex;
             flex-direction: column;
+            overflow-y: scroll;
 
             h2 {
               margin-bottom: 1rem;
@@ -593,11 +596,6 @@
                 height: 270px;
                 object-fit: contain;
                 object-position: top;
-                display: flex;
-                position: relative;
-                border-radius: 8px;
-                overflow: hidden;
-                flex-shrink: 0;
                 margin: 15px 0 10px;
               }
             }
@@ -673,11 +671,11 @@
 
           }
 
-          
+
         }
       }
 
-      
+
 
     }
 
