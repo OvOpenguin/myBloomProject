@@ -167,7 +167,6 @@
 
                     img {
                         @extend %img-cover;
-                        display: inline-block;
                         object-position: center;
                         transition: transform .5s ease-out;
                     }
