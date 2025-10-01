@@ -3,6 +3,7 @@
 @use "./functions/" as *;
 
 
+
 // swiper 設定
 .indexActivity {
     position: relative;
@@ -806,11 +807,9 @@
         background-image: url(../images/home/homenewsbg.svg);
         background-size: cover;
         max-width: 650px;
-        // min-width: 300px;   
-        //限定最小寬度，避免在手機板過度壓縮
 
-        @media (max-width:500px) {
-            padding: 20px 10px;
+        @media (max-width:560px) {
+            padding: 20px 15px;
         }
 
         ul {
