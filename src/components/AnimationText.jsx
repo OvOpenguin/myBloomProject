@@ -1,4 +1,3 @@
-// src/components/AnimatedText.jsx
 import { motion } from "framer-motion";
 
 

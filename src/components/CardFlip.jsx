@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import '../sass/card.scss';
 import imgCrown from '../images/wall/wall3-sm.jpg';
+import '../sass/card.scss';
 
 const Card = () => {
     const [isFlipped, setIsFlipped] = useState(false);
