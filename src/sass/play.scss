@@ -68,7 +68,8 @@
         align-items: center;
         gap: 30px;
     }
-     @media (max-width:500px) {
+
+    @media (max-width:500px) {
         height: auto;
     }
 
@@ -247,7 +248,7 @@
             background-size: contain;
             background-repeat: no-repeat;
             background-position: 0px 50px;
-            
+
             img {
                 width: 95%;
                 margin: 0 auto;
@@ -257,8 +258,14 @@
         .p-line-o {
             position: absolute;
             left: -150px;
-            bottom: 40%;
+            bottom: 25%;
             transform: rotate(0deg);
+
+            @media (max-width:500px) {
+                bottom: 13%;
+            }
+
+
         }
 
         @media (max-width:1440px) {
@@ -312,7 +319,7 @@
                 width: 100px;
                 line-height: 100px;
                 cursor: pointer;
-               
+
 
                 &:hover {
                     color: $Taoyuan-pink;
