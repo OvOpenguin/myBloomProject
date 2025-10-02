@@ -552,7 +552,8 @@
 
         @media (max-width:1000px) {
             font-size: 1rem;
-            img{
+
+            img {
                 transform: scale(1.2);
             }
         }
@@ -1176,6 +1177,7 @@
 
         .h-wbtn {
             display: flex;
+            justify-content: center;
             justify-self: center;
             margin-top: 5vh;
 

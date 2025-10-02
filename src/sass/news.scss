@@ -195,6 +195,7 @@
 
                     .news-cardTitle {
                         @extend %simple-line;
+                        letter-spacing: 1px;
 
                         @media (max-width:650px) {
                             flex-basis: 100%;

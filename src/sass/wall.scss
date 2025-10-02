@@ -9,7 +9,7 @@
     justify-content: space-around;
     align-items: center;
     padding: 150px 50px;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
     gap: 50px;
     background-image: url(/wall/wallbg02.jpg);
     background-size: cover;
@@ -77,9 +77,22 @@
     .v-title {
         font-weight: 700;
         text-align: center;
-        margin-bottom: 80px;
+        margin-bottom: 50px;
         position: relative;
         z-index: 2;
+
+        p {
+            text-align: center;
+            letter-spacing: 2px;
+            margin-top: 10px;
+            font-size: 1.2rem;
+
+            img {
+                width: 30px;
+                margin: 0 8px;
+                animation: heart 2s infinite;
+            }
+        }
 
         @media (max-width:820px) {
             margin-bottom: 40px;

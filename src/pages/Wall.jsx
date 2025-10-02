@@ -8,6 +8,7 @@ import CardFlip from '../components/CardFlip';
 import GotopBtn from '../components/GotopBtn'
 
 import heart0 from '../images/wall/wall-icon.svg'
+import love from '../images/wall/wall-icon2.svg'
 import votebotton1 from '../images/wall/wall-votebutton1.svg'
 import votebotton2 from '../images/wall/wall-votebotton2.svg'
 import abotton from '../images/wall/wall-abotton.svg'
@@ -269,7 +270,7 @@ const Wall = () => {
           <Title text="CHAMPION" tag="h3" className="h3-style" />
 
           <p>
-            我們正在尋找北區最耀眼的花卉明星！你的一票至關重要。<br />登入會員，每人一票，用你的選擇為它加冕。
+            我們正在尋找北區最耀眼的花卉明星！你的一票至關重要。<br />用你的選票為它加冕！
           </p>
           <div className="w-vbtn">
             <button className="h-btn-news" onClick={gotvote}>
@@ -292,6 +293,7 @@ const Wall = () => {
         <header className="v-title">
           <Title text="花牆票選" tag="h2" className="h2-style" />
           <Title text="VOTING" tag="h3" className="h3-style" />
+          <p>點選<img src={love} alt="愛心" />投下你的一票！</p>
 
         </header>
         <div className="v-photowarp" ref={voteRef}>
@@ -304,7 +306,7 @@ const Wall = () => {
                     <Link to="/member" state={{ tab: "memberwall" }}>
                       <h3>參加賽事</h3>
                     </Link>
-                    <img src={votebotton1} alt="" />
+                    <img src={votebotton1} alt="參加賽事" />
                   </li>
                 );
               }
