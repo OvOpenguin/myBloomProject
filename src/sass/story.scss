@@ -16,7 +16,6 @@
     overflow: hidden;
     position: relative;
     min-height: calc(100vh - 5rem - 72px);
-    // min-height: 770px;
 
     @media (max-width:1024px) {
         min-height: 800px;
