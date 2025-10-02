@@ -432,7 +432,7 @@ const SignIn = ({ onLogin }) => {
                             id="username"
                             type="text"
                             className="username"
-                            placeholder="請輸入電子郵件"
+                            placeholder="請輸入您的帳號"
                             required
                             autoFocus
                             value={username}
