@@ -150,13 +150,14 @@ button {
     &.gotop {
         width: 10rem;
         height: auto;
-        // margin-top: 30px;
         transform: rotate(-90deg);
         display: flex;
         justify-self: flex-end;
         z-index: 5;
         position: fixed;
         bottom: 80px;
+        right:0;
+
 
         .circle {
             transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
@@ -237,3 +238,4 @@ button {
     }
 
 }
+
