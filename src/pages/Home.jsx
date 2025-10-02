@@ -111,12 +111,13 @@ const App = () => {
     }, []);
 
     // 花牆淡入
-    /*
+    
     const containerRef = useRef(null);
     const mm = gsap.matchMedia();
 
     useEffect(() => {
         const container = containerRef.current;
+        if (!container) return;
         const items = container.querySelectorAll(".hv");
 
         // 初始透明度為 0
@@ -129,11 +130,13 @@ const App = () => {
             stagger: 0.1, // 每個元素間隔淡入
             scrollTrigger: {
                 trigger: container,
-                start: "top 70%", // 當容器到視窗觸發
+                start: "top bottom",
                 toggleActions: "play none none reverse",
+                invalidateOnRefresh: true,
             },
         });
-    }, []);*/
+        ScrollTrigger.refresh();
+    }, []);
 
 
     // scroll淡入
@@ -334,7 +337,7 @@ const App = () => {
                                 <Title text="POPULARITY  VOTE" tag="h3" className="h3-style" />
                             </div>
                         </div>
-                        <div className="h-v-photos" >
+                        <div className="h-v-photos" ref={containerRef}>
                             <div className="hv p1"><img src={hfwr1} alt="花牆" /></div>
                             <div className="hv p2"><img src={hfwr2} alt="花牆" /></div>
                             <div className="hv p3"><img src={hfwr3} alt="花牆" /></div>
