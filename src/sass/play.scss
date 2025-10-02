@@ -1,6 +1,7 @@
 @use 'reset';
 @use './variables/' as *;
 
+
 // * {
 //     outline: 1px solid red;
 // }
@@ -203,25 +204,6 @@
             overflow: visible;
             animation: shakeX 2s infinite;
             animation-delay: 1s;
-            @keyframes shakeX {
-                0%,
-                90%,
-                100% {
-                    transform: rotate(0deg);
-                }
-
-                93% {
-                     transform: rotate(-3deg);
-                }
-
-                96% {
-                     transform: rotate(3deg);
-                }
-
-                98% {
-                    transform: rotate(-3deg);
-                }
-            }
         }
 
 
