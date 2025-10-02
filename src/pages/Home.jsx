@@ -111,14 +111,16 @@ const App = () => {
     }, []);
 
     // 花牆淡入
+    /*
     const containerRef = useRef(null);
-    
+    const mm = gsap.matchMedia();
+
     useEffect(() => {
         const container = containerRef.current;
         const items = container.querySelectorAll(".hv");
 
         // 初始透明度為 0
-        gsap.set(items, { opacity: 0 });
+         gsap.set(items, { opacity: 0 });
 
         // 滾動觸發動畫
         gsap.to(items, {
@@ -131,7 +133,8 @@ const App = () => {
                 toggleActions: "play none none reverse",
             },
         });
-    }, []);
+    }, []);*/
+
 
     // scroll淡入
     useEffect(() => {
@@ -141,7 +144,6 @@ const App = () => {
             { opacity: 1, duration: 1, delay: 3, ease: "power2.out" }
         );
     }, []);
-
 
 
     return (
@@ -332,22 +334,22 @@ const App = () => {
                                 <Title text="POPULARITY  VOTE" tag="h3" className="h3-style" />
                             </div>
                         </div>
-                        <div className="h-v-photos" ref={containerRef}>
-                            <div className="hv p1"><img src={hfwr1} alt="" /></div>
-                            <div className="hv p2"><img src={hfwr2} alt="" /></div>
-                            <div className="hv p3"><img src={hfwr3} alt="" /></div>
-                            <div className="hv p4"><img src={hfwr4} alt="" /></div>
-                            <div className="hv p5"><img src={hfwr5} alt="" /></div>
-                            <div className="hv p6"><img src={hfwr6} alt="" /></div>
-                            <div className="hv p7"><img src={hfwr7} alt="" /></div>
-                            <div className="hv d1"><img src={hwde1} alt="" /></div>
-                            <div className="hv d2"><img src={hwde2} alt="" /></div>
-                            <div className="hv d3"><img src={hwde3} alt="" /></div>
-                            <div className="hv d4"><img src={hwde4} alt="" /></div>
-                            <div className="hv d5"><img src={hwde5} alt="" /></div>
-                            <div className="hv d6"><img src={hwde6} alt="" /></div>
-                            <div className="hv d7"><img src={hwde7} alt="" /></div>
-                            <div className="hv d8"><img src={hwde8} alt="" /></div>
+                        <div className="h-v-photos" >
+                            <div className="hv p1"><img src={hfwr1} alt="花牆" /></div>
+                            <div className="hv p2"><img src={hfwr2} alt="花牆" /></div>
+                            <div className="hv p3"><img src={hfwr3} alt="花牆" /></div>
+                            <div className="hv p4"><img src={hfwr4} alt="花牆" /></div>
+                            <div className="hv p5"><img src={hfwr5} alt="花牆" /></div>
+                            <div className="hv p6"><img src={hfwr6} alt="花牆" /></div>
+                            <div className="hv p7"><img src={hfwr7} alt="花牆" /></div>
+                            <div className="hv d1"><img src={hwde1} alt="花牆" /></div>
+                            <div className="hv d2"><img src={hwde2} alt="花牆" /></div>
+                            <div className="hv d3"><img src={hwde3} alt="花牆" /></div>
+                            <div className="hv d4"><img src={hwde4} alt="花牆" /></div>
+                            <div className="hv d5"><img src={hwde5} alt="花牆" /></div>
+                            <div className="hv d6"><img src={hwde6} alt="花牆" /></div>
+                            <div className="hv d7"><img src={hwde7} alt="花牆" /></div>
+                            <div className="hv d8"><img src={hwde8} alt="花牆" /></div>
                         </div>
                         <div className="h-wbtn">
                             <Link to="./wall">

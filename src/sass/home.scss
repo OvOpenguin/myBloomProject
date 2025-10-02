@@ -1176,8 +1176,10 @@
 
         .h-wbtn {
             display: flex;
+            justify-content: center;
             justify-self: center;
             margin-top: 5vh;
+            margin-bottom: 5vh;
 
             .circle {
                 background: #C075E3;
