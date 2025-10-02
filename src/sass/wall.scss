@@ -140,10 +140,18 @@
 
             &.left {
                 animation: scroll-left 45s linear infinite;
+
+                @media (max-width:820px) {
+                    animation: scroll-left 35s linear infinite;
+                }
             }
 
             &.right {
                 animation: scroll-right 40s linear infinite;
+
+                @media (max-width:820px) {
+                    animation: scroll-right 35s linear infinite;
+                }
             }
 
             &:hover {
