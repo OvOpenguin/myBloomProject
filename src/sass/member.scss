@@ -10,9 +10,9 @@
 .wrapper {
   display: grid;
   grid-template-columns: minmax(0, 0.5fr) 2.5fr minmax(50%, 8fr) minmax(0, 0.5fr);
-  grid-template-rows: 40px min(725px) 40px;
+  grid-template-rows: auto minmax(725px) auto;
   column-gap: 20px;
-  height: auto;
+  min-height: calc(100vh - 5rem - 72px);
 
   @media (max-width:831px) {
     height: calc(100vh - 80px);
@@ -509,7 +509,8 @@
             padding: 2rem;
             border-radius: 10px;
             width: 50%;
-            min-width: 400px;
+            height: 600px;
+            min-width: 300px;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -592,11 +593,14 @@
 
               }
 
-              img {
-                height: 270px;
-                object-fit: contain;
-                object-position: top;
+
+              figure {
+                height: 250px;
                 margin: 15px 0 10px;
+                img {
+                  @extend %img-contain;
+                  object-position: center;
+                }
               }
             }
 
