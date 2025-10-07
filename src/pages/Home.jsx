@@ -130,12 +130,13 @@ const App = () => {
             stagger: 0.1, // 每個元素間隔淡入
             scrollTrigger: {
                 trigger: container,
+                scroller: window, 
                 start: "top bottom",
                 toggleActions: "play none none reverse",
                 invalidateOnRefresh: true,
             },
         });
-        ScrollTrigger.refresh();
+        
     }, []);
 
 
@@ -329,7 +330,7 @@ const App = () => {
                 </section>
 
                 {/* 花牆展示 */}
-                <section className="home-vote">
+                <section className="home-vote" ref={containerRef}>
                     <div className="home-inner">
                         <div className="h-v-title">
                             <div className="hv t1">
@@ -337,7 +338,7 @@ const App = () => {
                                 <Title text="POPULARITY  VOTE" tag="h3" className="h3-style" />
                             </div>
                         </div>
-                        <div className="h-v-photos" ref={containerRef}>
+                        <div className="h-v-photos" >
                             <div className="hv p1"><img src={hfwr1} alt="花牆" /></div>
                             <div className="hv p2"><img src={hfwr2} alt="花牆" /></div>
                             <div className="hv p3"><img src={hfwr3} alt="花牆" /></div>
