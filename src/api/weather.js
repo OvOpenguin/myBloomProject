@@ -1,5 +1,5 @@
 export async function fetchWeather(city) {
-  const apiKey = "CWA-D921AB93-923A-4B1E-9E3A-85B505350B1E";
+  const apiKey = "CWA-CB70C905-2148-49DF-A0CD-017A0C1BE1E1";
   const url = `https://opendata.cwa.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=${apiKey}&locationName=${city}`;
 
   try {
